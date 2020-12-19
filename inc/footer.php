@@ -65,7 +65,7 @@
   border-radius: 4px;
   position: fixed;
   bottom: 100px;
-  right: 30px;
+  right: 5px;
   transition: background-color .3s, 
     opacity .5s, visibility .5s;
   opacity: 0;

@@ -58,7 +58,7 @@ if(!$_SESSION['cliente']){
     display: block;
     border: 0px;
     background: rgb(255 159 0) !important;
-    right: 27px;
+    right: 3px;
     top: 155px;
 }
 @media (max-width: 767px) {
