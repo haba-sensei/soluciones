@@ -96,7 +96,7 @@
 <a id="back_to_top"></a>
 <!-- footer mobile -->
  
-<?php include 'inc/modal_login.php'; ?>
+<?php include 'inc/modal_login.php'; include 'inc/redes_sociales.php'; ?>
 
  
 <footer class="footer tre hidden-lg" role="contentinfo">
@@ -297,7 +297,7 @@
                     <ul style="display: inline-flex; position: absolute;  left: -84px;  top: 191px; width: 110%; ">
                         
                             <div class="listado-precio-footer" style="position: relative; z-index: 100;     margin-right: 18px;" align="center">
-                                <a href="registro_clientes.php">Inicie Sesión o Regístrese</a>
+                                <a href="cctv-sys/login.php" >Inicio de Sessión Personal</a>
                             </div>
                             <div class="listado-precio-footer" style="position: relative; z-index: 100;" align="center">
                                 </i> <a href="libro.php"> Libro de Reclamaciones </a></li>

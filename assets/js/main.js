@@ -116,6 +116,30 @@
         itemsMobile: [479, 1]
     });
 
+    $("#new-extra-1").owlCarousel({
+        navigation: false,
+        pagination: false,
+        slideSpeed: 500,
+        stopOnHover: true,
+        autoPlay: true,
+        items: 4,
+        itemsDesktopSmall: [1024, 2],
+        itemsTablet: [600, 1],
+        itemsMobile: [479, 1]
+    });
+
+    $("#new-extra-2").owlCarousel({
+        navigation: false,
+        pagination: false,
+        slideSpeed: 500,
+        stopOnHover: true,
+        autoPlay: true,
+        items: 4,
+        itemsDesktopSmall: [1024, 2],
+        itemsTablet: [600, 1],
+        itemsMobile: [479, 1]
+    });
+
     $("#new-redes").owlCarousel({
         navigation: false,
         pagination: false,

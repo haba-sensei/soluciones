@@ -51,22 +51,22 @@
 <div class="account link-inline">
 	<?php  if(!$_SESSION['NombreAfil']==""){
 							echo ' 
-								 <a href="afiliado/index.php"><i class="fa fa-list-ul"></i><span class="">panel admin</span></a>		
+								 <a href="views/index.php"><i class="fa fa-list-ul"></i><span class="">panel admin</span></a>		
 							 ';
 							}else if(!$_SESSION['Nick_ve']==""){
 								
 								
-							echo '<a href="afiliado/index.php"><i class="fa fa-list-ul"></i><span class="">panel admin</span></a>  ';
+							echo '<a href="views/index.php"><i class="fa fa-list-ul"></i><span class="">panel admin</span></a>  ';
 						}
 						else if(!$_SESSION['Nick_Caja']==""){
 								
 								
-							echo '<a href="afiliado/index.php"><i class="fa fa-list-ul"></i><span class="">panel admin</span></a>  ';
+							echo '<a href="views/index.php"><i class="fa fa-list-ul"></i><span class="">panel admin</span></a>  ';
 						}
 						else if(!$_SESSION['Nick_stock']==""){
 								
 								
-							echo '<a href="afiliado/index.php"><i class="fa fa-list-ul"></i><span class="">panel admin</span></a>   ';
+							echo '<a href="views/index.php"><i class="fa fa-list-ul"></i><span class="">panel admin</span></a>   ';
 						}
 						else if(!$_SESSION['cliente']==""){
 								
