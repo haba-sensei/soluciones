@@ -68,10 +68,15 @@
 								
 								
 							echo '<a href="afiliado/index.php"><i class="fa fa-list-ul"></i><span class="">panel admin</span></a>   ';
+						}else if(!$_SESSION['cliente']==""){
+								
+								
+							echo '<a href="clientes.php"><i class="fa fa-list-ul"></i><span class="">Operaciones</span></a>   ';
 						}else {
-							echo '<a href="cctv-sys/login.php"><i class="icon-user"></i><span class="">Inicio Sesion</span></a>';
+							echo '<a href="javascript:" data-toggle="modal" data-target="#mostrarLogin"><i class="icon-user"></i> Clientes </a>';
 							
 							}
+							
 							
 							
 							 ?>
@@ -145,7 +150,7 @@
                         <a class="navbar-brand" href="index.php">
                             <img src="assets/img/logo.png" alt="">
                         </a>
-                        <button class="b-hamb-btn b-hamb  hidden-lg js-open-left-slidebar"></button>
+                        <button class="b-hamb-btn b-hamb hidden-lg js-open-left-slidebar"></button>
                     </div>
                     <div class="navbar-collapse collapse" style="    position: relative;
     left: 40px;">

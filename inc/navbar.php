@@ -67,12 +67,17 @@
 								
 								
 							echo '<a href="afiliado/index.php"><i class="fa fa-list-ul"></i><span class="">panel admin</span></a>   ';
+						}
+						else if(!$_SESSION['cliente']==""){
+								
+								
+							echo '<a href="clientes.php"><i class="fa fa-list-ul"></i><span class="">Operaciones</span></a>   ';
 						}else {
-							echo '<a href="cctv-sys/login.php"><i class="icon-user"></i><span class="">Inicio Sesion</span></a>';
+							echo '<a href="javascript:" data-toggle="modal" data-target="#mostrarLogin"><i class="icon-user"></i> Clientes </a>';
 							
 							}
 							
-							
+							 
 							 ?>
 	
 	
@@ -140,7 +145,7 @@ background-size: cover;
 <a style="z-index: 100;" class="navbar-brand" href="index.php">
 <img src="assets/img/logo.png" >
 </a>
-<button class="b-hamb-btn b-hamb  hidden-lg js-open-left-slidebar"></button>
+<button class="b-hamb-btn b-hamb hidden-lg js-open-left-slidebar"></button>
 </div>
 <div class="navbar-collapse collapse" style="    position: relative;
     left: 40px;">
@@ -152,7 +157,7 @@ background-size: cover;
 
 <li class="link-1"><a href="infoCat.php?CodigoCat=C000008"><i class="icon-basket-loaded"></i>&nbsp;&nbsp; OFERTAS</a></li>
 
-<li class="link-1"><a href="productos.php"><i class=" icon-wallet "></i>&nbsp;&nbsp; PRODUCTOS</a></li>
+<li class="link-1"><a href="productos.php"><i class=" icon-wallet"></i>&nbsp;&nbsp; PRODUCTOS</a></li>
 
 <li class="link-1"><a href="nosotros.php"><i class=" glyphicon glyphicon-briefcase"></i>&nbsp;&nbsp; NOSOTROS</a></li>
  

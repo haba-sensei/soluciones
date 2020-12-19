@@ -55,9 +55,50 @@
 .face {
     padding: 19px;
 }
-</style>
 
+#back_to_top {
+  display: inline-block;
+  background-color: #FF9800;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#back_to_top::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#back_to_top:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#back_to_top:active {
+  background-color: #555;
+}
+#back_to_top.show {
+  opacity: 1;
+  visibility: visible;
+}
+</style>
+<a id="back_to_top"></a>
 <!-- footer mobile -->
+ 
+<?php include 'inc/modal_login.php'; ?>
+
+ 
 <footer class="footer tre hidden-lg" role="contentinfo">
     <!-- container principal -->
     <div class="container">
@@ -335,7 +376,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-4 footer-herramientas asd  mole  ">
+                <div class="col-lg-4 footer-herramientas asd mole ">
                     <!-- Column1-->
                     <div class="footer-pad ubi">
                         <h4
