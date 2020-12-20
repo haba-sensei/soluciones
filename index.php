@@ -14,6 +14,7 @@ include 'library/config.php';
 include 'library/config-cctv.php';
 include 'library/config-extra-1.php';
 include 'library/config-extra-2.php';
+include 'library/config-extra-3.php';
 include 'library/config_redes.php';
 include 'library/config_alarmas.php';
 
@@ -33,7 +34,7 @@ include 'library/config_alarmas.php';
     <link href="assets/js/bootstrap-touch-slider.css" rel="stylesheet" media="all">
 </head>
 
-<body>
+<body style="padding-right: 0px!important;">
 
 
     <?php include 'inc/navbar.php'; ?>
@@ -1055,27 +1056,6 @@ include 'library/config_alarmas.php';
 
         </section>
 
-        <section class="section" style="    padding-bottom: 22px;">
-            <div class="container">
-                <h1 class="section-title txt-rotate" data-period="2000"
-                    data-rotate='[ "Productos extras 1" ]'></h1>
-                <hr style="margin-bottom: 1px solid #333;">
-                <p class="mb-5" style="margin-top: 17px;
-                    margin-bottom: 23px;" align="center">Productos en Oferta por Liquidacion 10% de Descuento al Publico en General 20%
-                    de Descuento
-                    solo Tecnicos Instaladores, Que Esten Registrado en Nuestra Web y si es Un Cliente Que Compra en Nuestra
-                    Tienda en Linea o Web Tiene un 30% de descuento en Toda Nuestras Sucursales.</p>
-
-                <div class="row">
-
-
-                   
-
-                    <?php include 'inc/slider_extra_1.php'; ?>
-
-        </section>
-
-
         <section class="section" style="    padding-bottom: 1px;">
             <div class="container">
                 <h1 class="section-title txt-rotate" data-period="2000" data-rotate='[ "La Niebla de Seguridad PROTECT" ]'>
@@ -1088,9 +1068,6 @@ include 'library/config_alarmas.php';
                     complemento perfecto que se complementa con los demas sistemas de seguridad.
 
         </section>
-        
-        
-
         <section id="content-area3" style="margin-bottom:0%">
             <div class="container">
                 <a href="formulario_servicios.php">
@@ -1168,44 +1145,308 @@ include 'library/config_alarmas.php';
                         </div>
                     </div>
 
+
+                    
         </section>
         
-        
-       
-        <section class="section" style="    padding-bottom: 22px;">
+        <!-- alarmas -->
+        <section class="section" style="    padding-bottom: 1px;">
             <div class="container">
-                <h1 class="section-title txt-rotate" data-period="2000"
-                    data-rotate='[ "Productos extras 2" ]'></h1>
+                <h1 class="section-title txt-rotate" data-period="2000" data-rotate='[ "ALARMAS" ]'>
+                </h1>
                 <hr style="margin-bottom: 1px solid #333;">
                 <p class="mb-5" style="margin-top: 17px;
-                    margin-bottom: 23px;" align="center">Productos en Oferta por Liquidacion 10% de Descuento al Publico en General 20%
-                    de Descuento
-                    solo Tecnicos Instaladores, Que Esten Registrado en Nuestra Web y si es Un Cliente Que Compra en Nuestra
-                    Tienda en Linea o Web Tiene un 30% de descuento en Toda Nuestras Sucursales.</p>
-
-                <div class="row">
-
-
-                   
-
-                    <?php include 'inc/slider_extra_2.php'; ?>
+                        margin-bottom: 23px;" align="center"> Niebla de Seguridad este es el único sistema de seguridad activo que puede
+                    protegerlo y prevenir a usted y a su hogar, empresa de robos al paso
+                    si ya cuenta con un sistema de alarma o de video de vigilancia este sistema de seguridad es el
+                    complemento perfecto que se complementa con los demas sistemas de seguridad.
 
         </section>
-   
+        <section id="content-area3" style="margin-bottom:0%">
+            <div class="container">
+                <a href="formulario_servicios.php">
+                    <div class="opacidad2 hidden-xs"><span
+                            style=" color: white; font-weight: 700; font-size: 2em;  position: relative;  top: 28px;  left: 14px;">S/.900
+                        </span></div>
+
+
+
+
+
+                    <div class="clearfix hero-land">
+                        <div class="landing caption">
+                            <h2 class="txt-rotate reduceme2" data-period="2000"
+                                data-rotate='[ "! No Pueden Llevar lo Que No Puedan Ver ¡" ]'></h2>
+                            <p class="p-19 p-reduceme2"> </p>
+                            <p class="boton-n-1">
+                                <a href="https://www.youtube.com/channel/UCNI4wnYU1I9nBuX_JOmjZxA"
+                                    class="btn btn-primary fact-btn">VER DEMO</a>
+                                <a href="http://niebla.solucionescctvysistemas.com/" class="btn btn-common">VER MAS</a>
+                            </p>
+
+
+        </section>
+        <section id="services" class="section" style="     padding-bottom: 30px;
+            padding-top: 30px;   background: #f5f5f5;">
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="services-box">
+                            <div class="services-icon">
+                                <i class="glyphicon glyphicon-user"></i>
+                            </div>
+                            <div class="services-content">
+                                <h4><a href="formulario_servicios.php">Protección Inmediata</a></h4>
+                                <p>
+                                    Un cañón de Niebla PROTECT Llenará el Lugar Con una Niebla Densa,
+                                    Para Evitar Que el Intruso Pueda ver Algo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="services-box">
+                            <div class="services-icon">
+                                <i class="glyphicon glyphicon-usd"></i>
+                            </div>
+                            <div class="services-content">
+                                <h4><a href="formulario_servicios.php">Efectivo</a></h4>
+                                <p>
+                                    ¡El Sistema de Seguridad por Niebla PROTECT Es el Método más Efectivo Para la Prevención
+                                    de Robos y Vandalismo!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="services-box">
+                            <div class="services-icon">
+                                <i class="glyphicon glyphicon-leaf"></i>
+                            </div>
+                            <div class="services-content">
+                                <h4><a href="formulario_servicios.php">Inocuo</a></h4>
+                                <p>
+                                    La Niebla de Seguridad No deja Residuo y es Completamente Inocua Para Humanos y
+                                    No daña Equipos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <?php include 'inc/slider_extra_1.php'; ?>
+        </section>
+        
+        <!-- end alarmas -->
+
+         <!-- biometricos -->
+         <section class="section" style="    padding-bottom: 1px;">
+            <div class="container">
+                <h1 class="section-title txt-rotate" data-period="2000" data-rotate='[ "BIOMETRICOS" ]'>
+                </h1>
+                <hr style="margin-bottom: 1px solid #333;">
+                <p class="mb-5" style="margin-top: 17px;
+                        margin-bottom: 23px;" align="center"> Niebla de Seguridad este es el único sistema de seguridad activo que puede
+                    protegerlo y prevenir a usted y a su hogar, empresa de robos al paso
+                    si ya cuenta con un sistema de alarma o de video de vigilancia este sistema de seguridad es el
+                    complemento perfecto que se complementa con los demas sistemas de seguridad.
+
+        </section>
+        <section id="content-area3" style="margin-bottom:0%">
+            <div class="container">
+                <a href="formulario_servicios.php">
+                    <div class="opacidad2 hidden-xs"><span
+                            style=" color: white; font-weight: 700; font-size: 2em;  position: relative;  top: 28px;  left: 14px;">S/.900
+                        </span></div>
+
+
+
+
+
+                    <div class="clearfix hero-land">
+                        <div class="landing caption">
+                            <h2 class="txt-rotate reduceme2" data-period="2000"
+                                data-rotate='[ "! No Pueden Llevar lo Que No Puedan Ver ¡" ]'></h2>
+                            <p class="p-19 p-reduceme2"> </p>
+                            <p class="boton-n-1">
+                                <a href="https://www.youtube.com/channel/UCNI4wnYU1I9nBuX_JOmjZxA"
+                                    class="btn btn-primary fact-btn">VER DEMO</a>
+                                <a href="http://niebla.solucionescctvysistemas.com/" class="btn btn-common">VER MAS</a>
+                            </p>
+
+
+        </section>
+         <section id="services" class="section" style="     padding-bottom: 30px;
+            padding-top: 30px;   background: #f5f5f5;">
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="services-box">
+                            <div class="services-icon">
+                                <i class="glyphicon glyphicon-user"></i>
+                            </div>
+                            <div class="services-content">
+                                <h4><a href="formulario_servicios.php">Protección Inmediata</a></h4>
+                                <p>
+                                    Un cañón de Niebla PROTECT Llenará el Lugar Con una Niebla Densa,
+                                    Para Evitar Que el Intruso Pueda ver Algo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="services-box">
+                            <div class="services-icon">
+                                <i class="glyphicon glyphicon-usd"></i>
+                            </div>
+                            <div class="services-content">
+                                <h4><a href="formulario_servicios.php">Efectivo</a></h4>
+                                <p>
+                                    ¡El Sistema de Seguridad por Niebla PROTECT Es el Método más Efectivo Para la Prevención
+                                    de Robos y Vandalismo!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="services-box">
+                            <div class="services-icon">
+                                <i class="glyphicon glyphicon-leaf"></i>
+                            </div>
+                            <div class="services-content">
+                                <h4><a href="formulario_servicios.php">Inocuo</a></h4>
+                                <p>
+                                    La Niebla de Seguridad No deja Residuo y es Completamente Inocua Para Humanos y
+                                    No daña Equipos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <?php include 'inc/slider_extra_2.php'; ?>
+        </section>
+        
+        <!-- end biometricos -->
+
+         <!-- ofertas -->
+         <section class="section" style="    padding-bottom: 1px;">
+            <div class="container">
+                <h1 class="section-title txt-rotate" data-period="2000" data-rotate='[ "OFERTAS" ]'>
+                </h1>
+                <hr style="margin-bottom: 1px solid #333;">
+                <p class="mb-5" style="margin-top: 17px;
+                        margin-bottom: 23px;" align="center"> Niebla de Seguridad este es el único sistema de seguridad activo que puede
+                    protegerlo y prevenir a usted y a su hogar, empresa de robos al paso
+                    si ya cuenta con un sistema de alarma o de video de vigilancia este sistema de seguridad es el
+                    complemento perfecto que se complementa con los demas sistemas de seguridad.
+
+        </section>
+        <section id="content-area3" style="margin-bottom:0%">
+            <div class="container">
+                <a href="formulario_servicios.php">
+                    <div class="opacidad2 hidden-xs"><span
+                            style=" color: white; font-weight: 700; font-size: 2em;  position: relative;  top: 28px;  left: 14px;">S/.900
+                        </span></div>
+
+
+
+
+
+                    <div class="clearfix hero-land">
+                        <div class="landing caption">
+                            <h2 class="txt-rotate reduceme2" data-period="2000"
+                                data-rotate='[ "! No Pueden Llevar lo Que No Puedan Ver ¡" ]'></h2>
+                            <p class="p-19 p-reduceme2"> </p>
+                            <p class="boton-n-1">
+                                <a href="https://www.youtube.com/channel/UCNI4wnYU1I9nBuX_JOmjZxA"
+                                    class="btn btn-primary fact-btn">VER DEMO</a>
+                                <a href="http://niebla.solucionescctvysistemas.com/" class="btn btn-common">VER MAS</a>
+                            </p>
+
+
+        </section>
+         <section id="services" class="section" style="     padding-bottom: 30px;
+            padding-top: 30px;   background: #f5f5f5;">
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="services-box">
+                            <div class="services-icon">
+                                <i class="glyphicon glyphicon-user"></i>
+                            </div>
+                            <div class="services-content">
+                                <h4><a href="formulario_servicios.php">Protección Inmediata</a></h4>
+                                <p>
+                                    Un cañón de Niebla PROTECT Llenará el Lugar Con una Niebla Densa,
+                                    Para Evitar Que el Intruso Pueda ver Algo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="services-box">
+                            <div class="services-icon">
+                                <i class="glyphicon glyphicon-usd"></i>
+                            </div>
+                            <div class="services-content">
+                                <h4><a href="formulario_servicios.php">Efectivo</a></h4>
+                                <p>
+                                    ¡El Sistema de Seguridad por Niebla PROTECT Es el Método más Efectivo Para la Prevención
+                                    de Robos y Vandalismo!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="services-box">
+                            <div class="services-icon">
+                                <i class="glyphicon glyphicon-leaf"></i>
+                            </div>
+                            <div class="services-content">
+                                <h4><a href="formulario_servicios.php">Inocuo</a></h4>
+                                <p>
+                                    La Niebla de Seguridad No deja Residuo y es Completamente Inocua Para Humanos y
+                                    No daña Equipos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <?php include 'inc/slider_extra_3.php'; ?>
+        </section>
+        
+        <!-- end ofertas -->
    
    
     <style>
-    .box_subs {
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
+        .box_subs {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
 
-    .input_subs {
-        width: 50%;
-        margin: auto;
-        margin-bottom: 22px;
-        margin-top: 22px;
-    }
+        .input_subs {
+            width: 50%;
+            margin: auto;
+            margin-bottom: 22px;
+            margin-top: 22px;
+        }
     </style>
     <section class="p-5 mt-4 text-center bg-primary box_subs">
         <div class="container p-3">
@@ -1316,16 +1557,25 @@ You can check Florin's challenges here: https://www.florin-pop.com/blog/2019/03/
 
 
     </script>
-
+<style>
+.dJvETY {
+    display: flex;
+    margin-top: 14px;
+    position: relative;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    bottom: 43px;
+}
+</style>
     <!-- WhatsHelp.io widget -->
     <script type="text/javascript">
     (function() {
         var options = {
             facebook: "1626920177570816", // Facebook page ID
             whatsapp: "-51 996727562", // WhatsApp number
-            call_to_action: "Hola, Estamos en Linea las 24h ?", // Call to action
+            call_to_action: "Hola, Estamos en Linea las 24h!", // Call to action
             button_color: "#FF0000", // Color of button
-            position: "right", // Position may be 'right' or 'left'
+            position: "left", // Position may be 'right' or 'left'
             order: "facebook,whatsapp", // Order of buttons
         };
         var proto = document.location.protocol,

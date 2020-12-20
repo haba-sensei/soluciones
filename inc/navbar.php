@@ -73,7 +73,7 @@
 								
 							echo '<a href="clientes.php"><i class="fa fa-list-ul"></i><span class="">Operaciones</span></a>   ';
 						}else {
-							echo '<a href="javascript:" data-toggle="modal" data-target="#mostrarLogin"><i class="icon-user"></i> Clientes </a>';
+							echo '<a href="javascript:"  onclick="mostrarLogin();" ><i class="icon-user"></i> Clientes </a>';
 							
 							}
 							

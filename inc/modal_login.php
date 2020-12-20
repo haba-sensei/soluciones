@@ -11,8 +11,10 @@
     min-width: 100%;
     padding: 20px 15px;
     padding-top: 0px;
-    background: linear-gradient(to left, #955dff, #6faaff);
+    background: linear-gradient(to left, #005a8f, #005a8f);
 }
+
+
 
 .pages .page:nth-of-type(1) .input {
     transform: translateX(-100%) scale(0.5);
@@ -29,7 +31,7 @@
 }
 
 .pages .page.signup {
-    background: linear-gradient(to left, #6faaff, #955dff);
+    background: linear-gradient(to left, #005a8f, #005a8f);
 }
 
 .pages .page .title {
@@ -37,6 +39,7 @@
     font-size: 14px;
     position: relative;
     line-height: 14px;
+    color: white;
 }
 
 .pages .page .title i {
@@ -217,69 +220,167 @@ button.close {
         <span aria-hidden="true">&times;</span>
     </button>
 
-    <input type="radio" name="tab" id="signin" checked="checked" />
-    <input type="radio" name="tab" id="register" />
+    <input type="radio" name="tab1" id="signin" checked="checked" />
+
     <div class="pages">
         <div class="page">
-        <form action="process/login.php" method="post" role="form" class=" margin-bottom-0" data-form="login">	
-            <div class="input">
-                <div class="title"> CORREO</div><input class="text" type="text" name="correo-login" placeholder="" />
-            </div>
-            <div class="input">
-                <div class="title"> PASSWORD</div><input class="text" type="password" name="clave-login" placeholder="" />
-            </div>
-            <div class="input"><input type="submit" value="INGRESAR" /></div>
-            
-            </form>
-        </div>
-        <div class="page signup">
-        <form action="process/registro.php" method="post" role="form" class=" margin-bottom-0" >	
-            <div class="input">
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="input">
-                            <div class="title"> NOMBRE</div><input class="text" type="text" name="nombre-reg" placeholder="" />
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="input">
-                            <div class="title"> CORREO</div><input class="text" name="correo-reg" type="email" placeholder="" />
-                        </div>
-                    </div>
+            <form action="process/login.php" method="post" role="form" class=" margin-bottom-0" data-form="login">
+                <div class="input">
+                    <div class="title"> CORREO</div><input class="text" type="text" name="correo-login"
+                        placeholder="" />
                 </div>
+                <div class="input">
+                    <div class="title"> PASSWORD</div><input class="text" type="password" name="clave-login"
+                        placeholder="" />
+                </div>
+                <div class="input"><input type="submit" value="INGRESAR" /></div>
 
-
-            </div>
-
-
-            <div class="input">
-                <div class="title"> PASSWORD</div><input class="text" type="password" name="clave-reg" placeholder="" />
-            </div>
-            <div class="input"><input type="submit" value="REGISTRO" /></div>
             </form>
         </div>
+
     </div>
-    <div class="tabs"><label class="tab" for="signin">
+    <div class="tabs">
+        <label class="tab" for="signin">
             <div class="text">INGRESAR</div>
-        </label><label class="tab" for="register">
-            <div class="text">REGISTRO</div>
-        </label></div>
+        </label>
+        <label class="tab" for="register">
+            <div onclick="mostrarRegistro();" class="text">REGISTRO</div>
+        </label>
+    </div>
 </div>
+
+<div class="modal fade necio" id="mostrarRegistro" tabindex="-1" role="dialog" aria-labelledby="basicModal"
+    aria-hidden="true" style="margin-left: auto;
+    margin-right: auto;
+    width: 39%; margin-top: 7%; ">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+
+    <input type="radio" name="tab" id="register" checked="checked" />
+
+    <div class="pages">
+        <div class="page">
+
+            <div class="page signup">
+                <form action="process/registro.php" method="post" role="form" class=" margin-bottom-0">
+                    <div class="input">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="input">
+                                    <div class="title"> NOMBRE COMPLETO</div><input class="text" type="text"
+                                        name="nombre-reg" placeholder="" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+
+
+                                <div class="input">
+                                    <div class="title"> DOCUMENTO (DNI, RUC, CE)</div><input class="text"
+                                        name="doc-reg" type="text" placeholder="" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+
+
+                                <div class="input">
+                                    <div class="title">RAZÓN SOCIAL </div><input class="text" name="razon-reg"
+                                        type="text" placeholder="" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+
+
+                                <div class="input">
+                                    <div class="title">CORREO</div><input class="text" name="correo-reg" type="email"
+                                        placeholder="" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+
+
+                                <div class="input">
+                                    <div class="title"> TELEFONO </div><input class="text" name="tel-reg"
+                                        type="text" placeholder="" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+
+
+                                <div class="input">
+                                    <div class="title"> PASSWORD</div><input class="text" type="password"
+                                        name="clave-reg" placeholder="" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+
+
+                                <div class="input">
+                                    <input class="form-check-input" style="display:inline-flex!important;" type="radio"
+                                          name="tipo_radio" id="tipo_radio" value="tecnico" checked>
+                                    <label class="form-check-label title" style="color:white;" for="tipo_radio">
+                                        TECNICO
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+
+
+                                <div class="input">
+                                    <input class="form-check-input" style="display:inline-flex!important;" type="radio"  
+                                        id="tipo_radio" name="tipo_radio" value="empresa">
+                                    <label class="form-check-label title" style="color:white;" for="tipo_radio">
+                                       EMPRESA
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+                    <div class="input"><input type="submit" value="REGISTRO" /></div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <div class="tabs">
+        <label class="tab" for="signin">
+            <div onclick="mostrarLogin();" class="text">INGRESAR</div>
+        </label>
+        <label class="tab" for="register">
+            <div onclick="mostrarRegistro();" class="text">REGISTRO</div>
+        </label>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
 <style>
 .iframe_cli {
     margin-left: auto;
     margin-right: auto;
     display: flex;
     margin-top: 10px;
-    
+
 }
- 
 </style>
 <div class="modal fade necio" id="mostrar1" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
 
 
-    <iframe src="registro/pdf/lista_de_precio.pdf" class="iframe_cli" width="50%"
-    height="610px" seamless="seamless"
+    <iframe src="registro/pdf/lista_de_precio.pdf" class="iframe_cli" width="50%" height="610px" seamless="seamless"
         scrolling="no" frameBorder="0" allowFullScreen="false"></iframe>
 </div>

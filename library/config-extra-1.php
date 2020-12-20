@@ -15,7 +15,7 @@ $dbhost = 'localhost';
          mysqli_select_db($GLOBALS["___mysqli_ston"], 'nvoavpfg_bd');
          
          /* Get total number of records */
-         $sql = "SELECT count(CodigoProd) FROM producto where CodigoCat = 'C000002'  ";
+         $sql = "SELECT count(CodigoProd) FROM producto where CodigoCat = 'C000003'  ";
          $rev2 = mysqli_query( $conn ,  $sql);
          //~ WHERE CodigoCat = '$CodProd'
         
@@ -30,7 +30,7 @@ $dbhost = 'localhost';
          
          $left_rec = $rec_count - ($page * $rec_limit);
          $otro=($page * $rec_limit);
-         $sql = "SELECT `producto`.*, `perfil`.*, `producto`.`CodigoCat` FROM `producto`, `perfil` WHERE `producto`.`CodigoCat` = 'C000002'".
+         $sql = "SELECT `producto`.*, `perfil`.*, `producto`.`CodigoCat` FROM `producto`, `perfil` WHERE `producto`.`CodigoCat` = 'C000003'".
             "LIMIT $offset, $rec_limit";
             
          $rev2 = mysqli_query( $conn ,  $sql);

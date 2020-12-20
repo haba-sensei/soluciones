@@ -21,8 +21,12 @@
                     
                 }
                 $_SESSION['cliente']=$nombre;
-                    $_SESSION['pass']=$clave;
-                    $_SESSION['correo']=$correo;
+                $_SESSION['correo']=$correo;
+                $_SESSION['tel']=$tel;
+                $_SESSION['doc']=$doc;
+                $_SESSION['razon']=$razon;
+                $_SESSION['tipo']=$tipo;
+                $_SESSION['correo']=$correo;
                echo '<script> location.href="../clientes.php"; </script>';
             }else{
               echo '<script> alert("Usuario Incorrecto"); location.href="../index.php"; </script>'; 

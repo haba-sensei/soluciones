@@ -207,9 +207,9 @@ if(!$_SESSION['cliente']){
 	            facebook: "1626920177570816", // Facebook page ID
 	            whatsapp: "+51 986838333", // WhatsApp number
 	            line: "https://line.me/ti/p/9NRe_hdeb1", // Line QR code URL
-	            call_to_action: "Hola, Estamos en Linea las 24h ?", // Call to action
+	            call_to_action: "Hola, Estamos en Linea las 24h!", // Call to action
 	            button_color: "#FF0000", // Color of button
-	            position: "right", // Position may be 'right' or 'left'
+	            position: "left", // Position may be 'right' or 'left'
 	            order: "facebook,whatsapp,line;", // Order of buttons
 	        };
 	        var proto = document.location.protocol,

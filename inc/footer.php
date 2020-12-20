@@ -58,14 +58,14 @@
 
 #back_to_top {
   display: inline-block;
-  background-color: #FF9800;
+  background-color: #fc0000;
   width: 50px;
   height: 50px;
   text-align: center;
-  border-radius: 4px;
+  border-radius: 23px;
   position: fixed;
-  bottom: 100px;
-  right: 5px;
+  bottom: 69px;
+  right: 21%;
   transition: background-color .3s, 
     opacity .5s, visibility .5s;
   opacity: 0;
@@ -98,6 +98,20 @@
  
 <?php include 'inc/modal_login.php'; include 'inc/redes_sociales.php'; ?>
 
+<script>
+
+function mostrarLogin() {
+    $("#mostrarLogin").modal("show");
+    $("#mostrarRegistro").modal("hide");
+    
+}
+
+function mostrarRegistro() {
+    $("#mostrarLogin").modal("hide");
+    $("#mostrarRegistro").modal("show");
+    
+}
+</script>
  
 <footer class="footer tre hidden-lg" role="contentinfo">
     <!-- container principal -->

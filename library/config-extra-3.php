@@ -15,27 +15,27 @@ $dbhost = 'localhost';
          mysqli_select_db($GLOBALS["___mysqli_ston"], 'nvoavpfg_bd');
          
          /* Get total number of records */
-         $sql = "SELECT count(CodigoProd) FROM producto where CodigoCat = 'C000005'  ";
-         $rev3 = mysqli_query( $conn ,  $sql);
+         $sql = "SELECT count(CodigoProd) FROM producto where CodigoCat = 'C000008'  ";
+         $rev4 = mysqli_query( $conn ,  $sql);
          //~ WHERE CodigoCat = '$CodProd'
         
          
       
          
-         if(! $rev3 ) {
+         if(! $rev4 ) {
             die('Could not get data: ' . mysqli_error($GLOBALS["___mysqli_ston"]));
          }
-         $row3 = mysqli_fetch_array($rev3,  MYSQLI_NUM );
+         $row3 = mysqli_fetch_array($rev4,  MYSQLI_NUM );
          $rec_count = $row3[0];
          
          $left_rec = $rec_count - ($page * $rec_limit);
          $otro=($page * $rec_limit);
-         $sql = "SELECT `producto`.*, `perfil`.*, `producto`.`CodigoCat` FROM `producto`, `perfil` WHERE `producto`.`CodigoCat` = 'C000005'".
+         $sql = "SELECT `producto`.*, `perfil`.*, `producto`.`CodigoCat` FROM `producto`, `perfil` WHERE `producto`.`CodigoCat` = 'C000008'".
             "LIMIT $offset, $rec_limit";
             
-         $rev3 = mysqli_query( $conn ,  $sql);
+         $rev4 = mysqli_query( $conn ,  $sql);
          
-         if(! $rev3 ) {
+         if(! $rev4 ) {
             die('Could not get data: ' . mysqli_error($GLOBALS["___mysqli_ston"]));
          }
 ?>
