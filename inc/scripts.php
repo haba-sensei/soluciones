@@ -17,7 +17,7 @@
 <script type="text/javascript" src="assets/js/main.js"></script>
 <script type="text/javascript" src="assets/js/jquery.mixitup.min.js"></script>
 <script type="text/javascript" src="assets/js/smooth-scroll.polyfills.js"></script>
-<script type="text/javascript" src="assets/js/styleTiping.js"></script>
+<script type="text/javascript" src="assets/js/styleTiping.js" defer></script>
 
 <script type="text/javascript" src="assets/js/jquery.stepy.min.js"></script>
 

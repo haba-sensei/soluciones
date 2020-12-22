@@ -60,7 +60,7 @@
 							echo '<a href="views/index.php"><i class="fa fa-list-ul"></i><span class="">panel admin</span></a>  ';
 						}
 						else if(!$_SESSION['Nick_Caja']==""){
-								
+								 
 								
 							echo '<a href="views/index.php"><i class="fa fa-list-ul"></i><span class="">panel admin</span></a>  ';
 						}
@@ -73,7 +73,7 @@
 								
 							echo '<a href="clientes.php"><i class="fa fa-list-ul"></i><span class="">Operaciones</span></a>   ';
 						}else {
-							echo '<a href="javascript:" onclick="mostrarLogin();"><i class="icon-user"></i> Clientes </a>';
+							echo '<a href="cctv-sys/login.php" ><i class="icon-user"></i> Iniciar Session </a>';
 							
 							}
 							

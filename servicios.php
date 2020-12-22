@@ -333,7 +333,7 @@ Licencia: Proveedor de servicios
             line: "https://line.me/ti/p/9NRe_hdeb1", // Line QR code URL
             call_to_action: "Hola, Estamos en Linea las 24h!", // Call to action
             button_color: "#FF0000", // Color of button
-            position: "left", // Position may be 'right' or 'left'
+           position: "right", // Position may be 'right' or 'left'
             order: "facebook,whatsapp,line;", // Order of buttons
         };
         var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;

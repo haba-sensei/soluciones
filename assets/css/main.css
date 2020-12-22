@@ -1972,6 +1972,9 @@ button {
     color: #3f51b5
 }
 
+
+/* content area 3*/
+
 #content-area3 {
     background: url(../img/bg/bg4.jpg) no-repeat center center;
     background-size: cover;
@@ -2009,6 +2012,53 @@ button {
 #content-area3 .caption p i {
     color: #3f51b5
 }
+
+
+/* content area 3 - fin */
+
+
+/* content area 3*/
+
+#content-area5 {
+    background: url(../img/bg/bg5.jpg) no-repeat center center;
+    background-size: cover;
+    height: 63%;
+}
+
+#content-area5 .landing {
+    float: left;
+    width: 50%;
+    overflow: hidden;
+    position: relative
+}
+
+#content-area5 .landing img {
+    width: 100%
+}
+
+#content-area5 .caption {
+    position: relative;
+    top: 40%;
+    padding: 90px 0 40px;
+}
+
+#content-area5 .caption h2 {
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 20px
+}
+
+#content-area5 .caption p {
+    margin-bottom: 70px;
+    color: #fff;
+}
+
+#content-area5 .caption p i {
+    color: #3f51b5
+}
+
+
+/* content area 3 - fin */
 
 #content-area4 {
     background: url(../img/bg/bg2.jpg) no-repeat center top;

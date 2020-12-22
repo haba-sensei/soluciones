@@ -128,7 +128,7 @@ if(!$_SESSION['cliente']){
 	    <h3 class="span titulo_client"  >RECURSOS CERTIFICADOS PARA TECNICOS</h3>
 		<h4 class="span " style="text-align: center; color:white;" >Bienvenido <?php echo $_SESSION['cliente']; ?> </h4>
 	    <div class="close_session">
-	        <a href="process/logout_cli.php"> <i class="fa fa-sign-out out_cli fa-rotate-180" aria-hidden="true"></i></a>
+	        <a href="process/logout_cli.php"> <i class="fa fa-unlock out_cli " aria-hidden="true"></i> </a>
 	    </div>
 
 
@@ -209,7 +209,7 @@ if(!$_SESSION['cliente']){
 	            line: "https://line.me/ti/p/9NRe_hdeb1", // Line QR code URL
 	            call_to_action: "Hola, Estamos en Linea las 24h!", // Call to action
 	            button_color: "#FF0000", // Color of button
-	            position: "left", // Position may be 'right' or 'left'
+	           position: "right", // Position may be 'right' or 'left'
 	            order: "facebook,whatsapp,line;", // Order of buttons
 	        };
 	        var proto = document.location.protocol,
@@ -229,7 +229,11 @@ if(!$_SESSION['cliente']){
 
 	    </script>
 	    <!-- /WhatsHelp.io widget -->
-
+		<style>
+		.social-bar{
+			display:none!important;
+		}
+		</style>
 	    <?php include 'inc/slider_bottom.php'; ?>
 	    <?php include 'inc/footer.php'; ?>
 	    <?php include 'inc/scripts.php'; ?>
