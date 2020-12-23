@@ -2,12 +2,25 @@
  .social-bar {
 	position: fixed;
 	right: 0;
-	top: 35%;
+	top: 42%;
 	font-size: 1.5rem;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
 	z-index: 100;
+}
+
+@media(max-width: 767px){
+	.social-bar {
+	position: fixed;
+	right: 0;
+	top: 48%;
+	font-size: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	z-index: 100;
+}
 }
 
 .icon {

@@ -1,4 +1,4 @@
-	<!--
+<!--
 Author: SOLUCIONES
 Empresa: SOLUCIONES CCTV Y SISTEMAS 
 Copyrigt: Uso Comercial 
@@ -16,7 +16,61 @@ Licencia: Proveedor de servicios
 	
 	<!DOCTYPE html>
 	<html lang="en">
+<!-- ACA  -->
+<style>
+@media (max-width: 767px) {
+    /* .bann{
+        display:none;
+    } */
+}
 
+.bann {
+    background: #00b3e3;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.ajust_login_new {
+    color: #333;
+    border-radius: 6px;
+    padding: 7px 14px;
+    background: white;
+    margin-left: 99px;
+}
+
+@media (max-width: 767px) {
+    .bann_1 {
+        display: none;
+    }
+
+    .ajust_login_new {
+        margin-left: 0px;
+        margin-top: 9px;
+        display: inline-block;
+    }
+
+    .img_ajust_new {
+        height: 29px;
+    }
+}
+</style>
+<div class="">
+    <a href="infoCat.php?CodigoCat=C000008">
+        <img alt="" class="img_ajust_new" src="assets/img/1.gif" style="width: 100%;">
+    </a>
+</div>
+<div class="bann">
+
+    <span> Recibe un DESCUENTO EXCLUSIVO en tu primera compra al suscribirte a nuestro newsletter semanal </span>
+    <a href="javascript:" class="ajust_login_new" onclick="mostrarLogin();"><i class="icon-user"></i> INGRESO CLIENTES
+    </a>
+
+</div>
+<!-- aqui -->
 
 	<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<?php include 'inc/links.php';?>
@@ -28,7 +82,7 @@ Licencia: Proveedor de servicios
 </div>
 <section style="    background: #f5f5f5;     padding-bottom: 1%;">
 	<div id="get_quote" class="ajuste">
-			<div class="container  animated fadeInUp">
+			<div class="container animated fadeInUp">
 				<div class="row">
 					<div class="col-md-9">
 						<h3 class="hidden-xs">¿ Estas Buscando un Soporte Tecnico Para su Empresa ?</h3>
@@ -60,7 +114,7 @@ Licencia: Proveedor de servicios
 			
 			<div class="portfolio sist" data-cat="sist">
 			
-                                    <div class="services-item text-center wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
+                                    <div class="text-center services-item wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
                                         <a href="servicio_webs.php"><div class="icono-atel icon-01"></div></a>
                                         <h4>PAGINAS WEBS</h4>
                                         
@@ -73,7 +127,7 @@ Licencia: Proveedor de servicios
 					
 
 			<div class="portfolio sist" data-cat="sist">
-				<div class="services-item text-center wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
+				<div class="text-center services-item wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
                                         <a href="servicio_computo.php"><div class="icono-atel icon-02"></div></a>
                                         <h4>COMPUTO Y SISTEMAS</h4>
                                         
@@ -85,7 +139,7 @@ Licencia: Proveedor de servicios
 			</div>		
 			
 			<div class="portfolio sist" data-cat="sist">
-				<div class="services-item text-center wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
+				<div class="text-center services-item wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
                                         <a href="servicio_cableado.php"><div class="icono-atel icon-03"></div></a>
                                         <h4>CABLEADO EIA/TIA</h4>
                                         
@@ -96,7 +150,7 @@ Licencia: Proveedor de servicios
                                     </div><!-- /.row -->
 			</div>				
 			<div class="portfolio sist" data-cat="sist">
-				<div class="services-item text-center wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
+				<div class="text-center services-item wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
                                        <a href="servicio_radioenlace.php"><div class="icono-atel icon-04"></div></a>
                                         <h4>RADIO ENLACES 5.8</h4>
                                         
@@ -107,7 +161,7 @@ Licencia: Proveedor de servicios
                                     </div><!-- /.row -->
 			</div>	
 			<div class="portfolio segu" data-cat="segu">
-				<div class="services-item text-center wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
+				<div class="text-center services-item wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
                                          <a href="servicio_camarascctv.php"><div class="icono-atel icon-05"></div></a>
                                         <h4>CAMARAS CCTV-IP</h4>
                                         
@@ -119,7 +173,7 @@ Licencia: Proveedor de servicios
 			</div>	
 						
 			<div class="portfolio segu" data-cat="segu">
-				<div class="services-item text-center wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
+				<div class="text-center services-item wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
                                         <a href="servicio_alarmas.php"><div class="icono-atel icon-06"></div></a>
                                         <h4>ALARMAS DE SEGURIDAD</h4>
                                         
@@ -130,7 +184,7 @@ Licencia: Proveedor de servicios
                                     </div><!-- /.row -->
 			</div>			
 			<div class="portfolio segu" data-cat="segu">
-				<div class="services-item text-center wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
+				<div class="text-center services-item wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
                                         <a href="servicio_automatizacion.php"><div class="icono-atel icon-07"></div></a>
                                         <h4>AUTOMATIZACIÓN </h4>
                                         
@@ -142,7 +196,7 @@ Licencia: Proveedor de servicios
 			</div>	
 			
 			<div class="portfolio acce" data-cat="acce">
-				<div class="services-item text-center wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
+				<div class="text-center services-item wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
                                         <a href="servicio_autos.php"><div class="icono-atel icon-08"></div></a>
                                         <h4>SEGURIDAD VEHICULAR</h4>
                                         
@@ -154,7 +208,7 @@ Licencia: Proveedor de servicios
 			</div>	
 			
 			<div class="portfolio segu" data-cat="segu">
-				<div class="services-item text-center wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
+				<div class="text-center services-item wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
                                         <a href="servicio_cerco.php"><div class="icono-atel icon-09"></div></a>
                                         <h4>CERCO ELECTRICO</h4>
                                         
@@ -166,7 +220,7 @@ Licencia: Proveedor de servicios
 			</div>																																							
 			
 			<div class="portfolio acce" data-cat="acce">
-				<div class="services-item text-center wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
+				<div class="text-center services-item wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
                                           <a href="servicio_biometrico.php"><div class="icono-atel icon-10"></div></a>
                                         <h4>ACCESO BIOMETRICO</h4>
                                         
@@ -178,7 +232,7 @@ Licencia: Proveedor de servicios
 			</div>														
 			
 			<div class="portfolio acce" data-cat="acce">
-				<div class="services-item text-center wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
+				<div class="text-center services-item wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
                                         <a href="servicio_videoporteros.php"><div class="icono-atel icon-11"></div></a>
                                         <h4>VIDEO PORTEROS</h4>
                                         
@@ -190,7 +244,7 @@ Licencia: Proveedor de servicios
 			</div>				
 			
 			<div class="portfolio acce" data-cat="acce">
-			<div class="services-item text-center wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
+			<div class="text-center services-item wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
                                         <a href="servicio_intercomunicador.php"><div class="icono-atel icon-12"></div></a>
                                         <h4>INTERCOMUNICADORES</h4>
                                         
@@ -201,7 +255,7 @@ Licencia: Proveedor de servicios
                                     </div><!-- /.row -->
 			</div>			
 			<div class="portfolio otro" data-cat="otro">
-				<div class="services-item text-center wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
+				<div class="text-center services-item wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
                                         <a href="servicio_paneles.php"><div class="icono-atel icon-13"></div></a>
                                         <h4>PANELES SOLARES</h4>
                                         
@@ -213,7 +267,7 @@ Licencia: Proveedor de servicios
 			</div>							
 
 			<div class="portfolio otro" data-cat="otro">
-				<div class="services-item text-center wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
+				<div class="text-center services-item wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
                                        <a href="servicio_aireacondicionado.php"><div class="icono-atel icon-14"></div></a>
                                         <h4>AIRE ACONDICIONADO</h4>
                                         
@@ -225,7 +279,7 @@ Licencia: Proveedor de servicios
 			</div>																								
 
 			<div class="portfolio otro" data-cat="otro">
-				<div class="services-item text-center wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
+				<div class="text-center services-item wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
                                          <a href="servicio_electronica.php"><div class="icono-atel icon-15"></div></a>
                                         <h4>ELECTRONICA</h4>
                                         
@@ -237,7 +291,7 @@ Licencia: Proveedor de servicios
 			</div>				
 			
 			<div class="portfolio otro" data-cat="otro">
-				<div class="services-item text-center wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
+				<div class="text-center services-item wow flipInX" data-wow-offset="10" style="visibility: visible; animation-name: flipInX;">
                                          <a href="servicio_electricidad.php"><div class="icono-atel icon-16"></div></a>
                                         <h4>ELECTRICIDAD</h4>
                                         

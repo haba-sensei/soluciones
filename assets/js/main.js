@@ -90,19 +90,29 @@
         "use strict";
         $('#loader').fadeOut();
     });
-    $("#new-products").owlCarousel({
-        navigation: true,
+    $("#new-products1").owlCarousel({
+        navigation: false,
         pagination: false,
         slideSpeed: 500,
         stopOnHover: true,
-        autoPlay: false,
+        autoPlay: true,
         items: 4,
         itemsDesktopSmall: [1024, 2],
         itemsTablet: [600, 1],
         itemsMobile: [479, 1]
     });
-    $('#new-products').find('.owl-prev').html('<i class="fa fa-angle-left"></i>');
-    $('#new-products').find('.owl-next').html('<i class="fa fa-angle-right"></i>');
+    $("#new-products2").owlCarousel({
+        navigation: false,
+        pagination: false,
+        slideSpeed: 500,
+        stopOnHover: true,
+        autoPlay: true,
+        items: 4,
+        itemsDesktopSmall: [1024, 2],
+        itemsTablet: [600, 1],
+        itemsMobile: [479, 1]
+    });
+
 
     $("#new-cctv").owlCarousel({
         navigation: false,

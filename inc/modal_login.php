@@ -210,12 +210,50 @@ button.close {
 .necio {
     padding-right: 0px !important;
 }
+.ajust_modal_registro_new {
+    margin-left: auto;
+    margin-right: auto;
+    width: 39%; 
+    margin-top: 7%;
+}
+
+.ajust_modal_login_new {
+    margin-left: auto;
+    margin-right: auto;
+    width: 39%;
+    margin-top: 10%; 
+}
+
+ 
+
+
+@media(max-width: 767px){
+	.ajust_modal_login_new {
+        margin-left: auto;
+    margin-right: auto;
+    width: 88%;
+    margin-top: 40%;
+    
+}
+.ajust_modal_registro_new {
+    
+margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    margin-top: 7%;
+    z-index: 99999999;
+}
+
+
+
+
+}
+
+
 </style>
 
-<div class="modal fade necio" id="mostrarLogin" tabindex="-1" role="dialog" aria-labelledby="basicModal"
-    aria-hidden="true" style="margin-left: auto;
-    margin-right: auto;
-    width: 39%; margin-top: 10%; ">
+<div class="modal fade necio ajust_modal_login_new " id="mostrarLogin" tabindex="-1" role="dialog" aria-labelledby="basicModal"
+    aria-hidden="true"  >
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
@@ -249,10 +287,8 @@ button.close {
     </div>
 </div>
 
-<div class="modal fade necio" id="mostrarRegistro" tabindex="-1" role="dialog" aria-labelledby="basicModal"
-    aria-hidden="true" style="margin-left: auto;
-    margin-right: auto;
-    width: 39%; margin-top: 7%; ">
+<div class="modal fade necio ajust_modal_registro_new " id="mostrarRegistro" tabindex="-1" role="dialog" aria-labelledby="basicModal"
+    aria-hidden="true" >
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>

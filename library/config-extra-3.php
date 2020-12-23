@@ -27,7 +27,7 @@ $dbhost = 'localhost';
          }
          $row3 = mysqli_fetch_array($rev4,  MYSQLI_NUM );
          $rec_count = $row3[0];
-         
+          
          $left_rec = $rec_count - ($page * $rec_limit);
          $otro=($page * $rec_limit);
          $sql = "SELECT `producto`.*, `perfil`.*, `producto`.`CodigoCat` FROM `producto`, `perfil` WHERE `producto`.`CodigoCat` = 'C000008'".

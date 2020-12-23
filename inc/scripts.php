@@ -54,9 +54,7 @@ function modalFrame(id) {
 
            
             break;
-        case 2:
-            $("#mostrarLogin").modal("show");
-            break;
+         
 
     }
 
