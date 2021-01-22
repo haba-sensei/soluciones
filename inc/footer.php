@@ -150,11 +150,10 @@ function mostrarRegistro() {
                         <a href="sucursal.php">Sucursales </a></li>
 
                          <li class="f_ali_izq"><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i>
-                        <a href="Pedidos.php">Mis Pedidos </a>
-                        
+                        <a href="Pedidos.php">Registrarse </a>
                    
                          <li class="f_ali_izq"><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i>
-                        <a href="descargas.php">Descargas </a>
+                        <a href="view_cart.php">Cotizar Aqui </a>
                         
                     </li>
                 </ul>
@@ -193,7 +192,7 @@ function mostrarRegistro() {
     <ul style="">
                         
                         <div class="listado-precio-footer" style="" align="center">
-                            <a href="https://drive.google.com/file/d/16yUhCuE6Neyumrqeza9v_JmNI74Y6LFZ/view?usp=sharing">Inicie Sesión o Regístrese</a>
+                            <a href="descargas.php">Descargas de Aplicativos</a>
                         </div>
                         <div class="listado-precio-footer" aria-hidden="true"></i> <a
                             href="libro.php"> Libro de Reclamaciones </a></li>
@@ -311,7 +310,7 @@ function mostrarRegistro() {
                     <ul style="display: inline-flex; position: absolute;  left: -84px;  top: 191px; width: 110%; ">
                         
                             <div class="listado-precio-footer" style="position: relative; z-index: 100;     margin-right: 18px;" align="center">
-                                <a href="cctv-sys/login.php" >Inicio de Sessión Personal</a>
+                                <a href="descargas.php" >Descargas de Aplicativos</a>
                             </div>
                             <div class="listado-precio-footer" style="position: relative; z-index: 100;" align="center">
                                 </i> <a href="libro.php"> Libro de Reclamaciones </a></li>
@@ -344,10 +343,10 @@ function mostrarRegistro() {
                                 <a href="sucursal.php">Sucursales </a></li>
                             
                             <li><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i>
-                                <a href="cctv-sys/login.php">Inicio Sesion
+                                <a href="inc/modal_login.php">Registrarse
 
                             <li><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i>
-                                <a href="view_cart.php">Cotizar producto
+                                <a href="view_cart.php">Cotizar Aqui
                                 </a></li>
                                 
                                 

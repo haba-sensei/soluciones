@@ -76,7 +76,13 @@
       "lengthMenu": false,
 	});
   })
-  
+  $(function () {
+    $('#example3').DataTable({
+      iDisplayLength: 5,
+      aLengthMenu:  [5, 50, 100, 150, 200, 250], 
+      "lengthMenu": false,
+	});
+  })
 </script>
 	<script>
   $(function () {

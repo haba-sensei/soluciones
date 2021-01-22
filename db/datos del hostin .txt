@@ -1,0 +1,80 @@
+ACCESO A HOSTIN SOLUCIONES PARAMHOST 
+http://cpanel.solucionescctvysistemas.com
+User:  nvoavpfg 
+Pass:  7fZT*tR#5sk61X       
+
+DNS HOSTIN PARAMHOST
+ns3.paramhost.net  
+ns4.paramhost.net
+
+ACCESO A HOSTING SOLUCIONES 
+https://clientes.paramhost.com/viewinvoice.php
+User: jhonnyolartegamboa@gmail.com
+Pass: olarteG29
+
+ACCESO A DOMINIO SOLUCIONES 
+https://dominio.com.pe/
+User: solucionescctvysistemassac@gmail.com
+Pass: Olarte29*
+
+DNS DOMINIO 
+ns11.servidorglobal.com
+ns12.servidorglobal.com
+ns13.servidorglobal.com
+ns14.servidorglobal.com   
+
+CONFIGURACION BD EN XAMP CPANEL WEB SOLUCIONES
+base de datos: nvoavpfg_bd 
+User:   nvoavpfg_user
+Pass:   GI{O8d^S@{G6
+puerto: localhost
+
+ACCESO DE USUARIOS A WEB SOLUCIONES
+
+User: soluciones
+Pass: 20601883164
+
+User: jhonny
+Pass: 45726128
+
+CORREOS CORPORATIVOS SOLUCIONES
+
+User: ventas@solucionescctvysistemas.com
+Pass: Olartegamboa291989
+
+DNS HOSTIN HOSTY
+ns1.dnshosty.net  
+ns2.dnshosty.net 
+ns3.dnshosty.net
+
+CONFIGURACION BD EN XAMP CPANEL WEB SOLUCIONES
+base de datos: efactsod_soluciones 
+User: efactsod_solucio
+Pass:  h3b24p@U
+puerto: localhost 
+
+ACCESO A HOSTIN PARAMHOST
+http://cpanel.automotrizvictormanuel.com/
+User: automott
+Pass: k09q4kZHWuX4;)
+
+CONFIGURACION BD EN XAMP CPANEL WEB AUTOMOTRIZVICTORMANUEL
+base de datos:efactsod_BD 
+User:   efactsod_user 
+Pass:   h3b24p@U
+puerto: localhost
+
+CLAVE WIFI
+
+wlan_7270
+MATEOALBA753629148
+
+Wlan_660E
+MATEOALBA753629148
+
+MOVISTAR_8B30
+1222301115
+
+iconos css
+
+https://www.w3schools.com/icons/fontawesome_icons_text.asp

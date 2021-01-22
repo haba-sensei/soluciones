@@ -1,7 +1,7 @@
 <?php
 error_reporting(E_PARSE);
 $user = "nvoavpfg_user";
-						$pass = "";
+						$pass = "GI{O8d^S@{G6";
 						try {
 							$dbh = new PDO('mysql:host=localhost;dbname=nvoavpfg_bd', $user, $pass);
 } catch (PDOException $e) {

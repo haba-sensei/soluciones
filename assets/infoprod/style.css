@@ -241,8 +241,8 @@ span i {
 
 .icon {
     float: left;
-    font-size: 40px;
-    margin-right: 10px;
+    /* font-size: 40px;
+    margin-right: 10px; */
 }
 
 .opening-time p span.opentime {

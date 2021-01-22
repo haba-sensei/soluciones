@@ -14,7 +14,7 @@
 	.social-bar {
 	position: fixed;
 	right: 0;
-	top: 48%;
+	top: 55%;
 	font-size: 1.5rem;
 	display: flex;
 	flex-direction: column;
@@ -36,8 +36,9 @@
     padding-right: 20px;
 }
 
-.fa-twitter2 {
-	background: #339DC5;
+.fa-whatsapp2 {
+	background: #0a8b0e;
+	padding-right: 12px;
 }
 
 .fa-youtube2 {
@@ -69,8 +70,8 @@
 </style>
 
 <div class="social-bar">
-    <a href="javascript:" class="icon fa fa-facebook2 fa-facebook" target="_blank"></a>
-    <a href="javascript:" class="icon fa fa-twitter2 fa-twitter" target="_blank"></a>
-    <a href="javascript:" class="icon fa fa-youtube2 fa-youtube" target="_blank"></a>
-    <a href="javascript:" class="icon fa fa-instagram2 fa-instagram" target="_blank"></a>
+    <a href="https://www.facebook.com/solucionescctvysistemas/" class="icon fa fa-facebook2 fa-facebook" target="_blank"></a>
+    <a href="https://api.whatsapp.com/send/?phone=51996727562&text&app_absent=0" class="icon fa fa-whatsapp2 fa-whatsapp" target="_blank"></a>
+    <a href="https://www.youtube.com/channel/UCNI4wnYU1I9nBuX_JOmjZxA" class="icon fa fa-youtube2 fa-youtube" target="_blank"></a>
+    <a href="https://www.instagram.com/solucionescctvysistemas/" class="icon fa fa-instagram2 fa-instagram" target="_blank"></a>
   </div>

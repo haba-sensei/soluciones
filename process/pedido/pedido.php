@@ -6,11 +6,11 @@
             
                   <thead class="bg-green" style="letter-spacing: 2px;">
                    <tr>
-                    <th>Nº de Cotizacion</th>
+                    <th>Nº de Pedido</th>
                     <th>Fecha </th>
                     <th>Razon Social</th>
-                    
-                    <th>Importe Total de Cotizacion</th>
+                    <th>Importe Total </th>
+                    <th>Estado</th>
                     <th>Opciones</th>
                   </tr>
                   </thead>
@@ -18,19 +18,20 @@
 				  <?php
             
 			
-			$ordenU=  ejecutarSQL::consultar("select * from cotizacion where Estado = 0; ");
+			$ordenU=  ejecutarSQL::consultar("select * from cotizacion_online");
             
-            while($ordenP=mysqli_fetch_assoc($ordenU)){
+        while($ordenP=mysqli_fetch_assoc($ordenU)){
 				$ordenList=$ordenP['id_cotizacion'];
 				$ordenFech=$ordenP['fecha_cotizacion'];
 				$ordenNit=$ordenP['ID'];
 				$ordenEst=$ordenP['Estado'];
-				$ordenPrice=$ordenP['GranTotal'];
+        $ordenPrice=$ordenP['GranTotal'];
+        
 				
 				
 					?>
 				<tr>
-                    <td><a href="actualizarPedido.php?id_cotizacion=<?php echo $ordenList ?>"><?php echo $ordenList ?></a></td>
+                    <td><a href="actualizarPedido_online.php?id_cotizacion=<?php echo $ordenList ?>"><?php echo $ordenList ?></a></td>
                     <td><?php echo $ordenFech ?></td>
                     <td>
                     <?php 
@@ -41,9 +42,26 @@
                     </td>
                     
                     <td>S/ <?php echo number_format($ordenPrice,2) ?></td>
+                    <td><?php 
+                    switch ($ordenEst) {
+                      case 0:
+                        echo "No Aprobado";
+                        break;
+                      case 1:
+                        echo "Aprobado";
+                        break;
+                      case 2:
+                        echo "Cotizado";
+                        break;
+                    }
+                    
+                    
+                    
+                    ?></td>
                     <td align="center">
-                     <a data-toggle="tooltip" data-placement="top" title="Actualizar" class="btn btn-primary btn-sm"  href="actualizarPedido.php?id_cotizacion=<?php echo $ordenList ?>"> Ver Orden </a>
-                     <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-sm" onclick="return confirm('estas seguro de eliminar?');" href="process/cotizacion/delcotiza.php?id_cotizacion=<?php echo $ordenList ?>"> <i style="color:#FFF" class="glyphicon glyphicon-trash"></i> </a>
+                     
+                     <a data-toggle="tooltip" data-placement="top" title="Actualizar" class="btn btn-primary btn-sm"  href="actualizarPedido_online.php?id_cotizacion=<?php echo $ordenList ?>"> Ver Orden </a>
+                     <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-sm" onclick="return confirm('estas seguro de eliminar?');" href="process/cotizacion/delcotiza.php?id_cotizacion=<?php echo $ordenList ?>"> Eliminar </a>
                      </td>
                   </tr>
                   
@@ -61,4 +79,37 @@
                     </div>
 								
 								
-					
+          <script >
+            
+
+          function  clickme(selectObject) {
+            var value_id = selectObject.value;  
+            var value_tipo = selectObject.tipo; 
+            console.log(selectObject.tipo);
+            
+          //   var value_tipo = tipo.value;
+
+          //   $.ajax({
+          //   type: "POST",
+          //   url: "process/pedido/PedidoController.php",
+          //   data: {
+          //     id : value_id,
+          //     type: value_tipo
+          //   },
+          //   beforeSend: function(){
+                
+          //   },
+          //   error: function() {
+                
+          //   },
+          //   success: function (data) {
+          //      alert(data);
+          //   }
+          // });
+
+
+
+
+            
+          }
+          </script>

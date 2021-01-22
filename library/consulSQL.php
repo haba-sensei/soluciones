@@ -40,11 +40,16 @@ class consultasSQL{
         return $consul;
     }
 }
-date_default_timezone_set("America/Lima");
-  $fecha = date("Y-m-d");  
-//   $url = 'https://api.sunat.cloud/cambio/'.$fecha.'';
-//   $data = json_decode(file_get_contents($url), true);
-//   $compra_dolar = $data[''.$fecha.'']['compra'];
-$compra_dolar = 3.44;
-  $dolar_format = round($compra_dolar,2);
-  $globalTasaCambio_dolar =  $dolar_format;
+    date_default_timezone_set("America/Lima");
+    $ch = curl_init();
+    $fecha = date("Y-m-d");  
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_URL, 'https://api.sunat.cloud/cambio/'.$fecha);
+    $result = curl_exec($ch);
+    curl_close($ch);
+
+    $obj = json_decode($result);
+    $compra_dolar = $obj->$fecha->compra;
+     
+    $globalTasaCambio_dolar =  $compra_dolar;

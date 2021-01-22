@@ -22,6 +22,10 @@ include 'library/config_alarmas.php';
 
 <!DOCTYPE html>
 <html lang="en">
+<link rel="shortcut icon" href="assets/img/favicon.png">
+
+
+
 <!-- ACA  -->
 <style>
 @media (max-width: 767px) {
@@ -74,7 +78,7 @@ include 'library/config_alarmas.php';
     position: relative;
     }
     #content-area5 {
-    background: url(assets/img/bg/bg5_movil.jpg) no-repeat center center;
+    background: url(assets/img/bg/bg5_movil.jpeg) no-repeat center center;
     background-size: cover;
     height: 63%;
     }
@@ -87,9 +91,8 @@ include 'library/config_alarmas.php';
 </div>
 <div class="bann">
 
-    <span> Recibe un DESCUENTO EXCLUSIVO en tu primera compra al suscribirte a nuestro newsletter semanal </span>
-    <a href="javascript:" class="ajust_login_new" onclick="mostrarLogin();"><i class="icon-user"></i> INGRESO CLIENTES
-    </a>
+    <span> Recibe Un DESCUENTO EXCLUSIVO En Tu Primera COMPRA al Registrarse En Nuestra Tienda En Linea. </span>
+    <a href="javascript:" class="ajust_login_new" onclick="mostrarLogin();"><i class="icon-user"></i> LOGIN CLIENTES</a>
 
 </div>
 <!-- aqui -->
@@ -481,7 +484,7 @@ include 'library/config_alarmas.php';
     <section class="section" style="    padding-bottom: 22px;">
         <div class="container">
             <h1 class="section-title txt-rotate" data-period="2000"
-                data-rotate='[ "Productos Informaticos en Oferta" ]'></h1>
+                data-rotate='[ "Computadoras Laptops en Oferta" ]'></h1>
             <hr style="margin-bottom: 1px solid #333;">
             <p class="mb-5" style="margin-top: 17px;
                         margin-bottom: 23px;" align="center">Productos en Oferta por Liquidacion 10% de Descuento al
@@ -491,7 +494,7 @@ include 'library/config_alarmas.php';
 
             <div class="row">
 
-                <?php include 'inc/slider_prod.php'; ?>
+                <?php include 'inc/slider_extra_3.php'; ?>
 
     </section>
 
@@ -501,10 +504,10 @@ include 'library/config_alarmas.php';
             </h1>
             <hr style="margin-bottom: 1px solid #333;">
             <p class="mb-5" style="margin-top: 17px;
-                    margin-bottom: 23px;" align="center">Soluciones de Factura Electrónica para Desarrolladores y
+                    margin-bottom: 23px;" align="center">Soluciones de Facturacion Electrónica para Desarrolladores y
                 Emprendedores. Todo
                 nuestro sistemas Genera con rapidez Facturas Boletas Cotizaciones Notas Guias de Remision Defrente a
-                Sunat ERP Actualizado,Incluye Certificado Digital Por 1 Año Gratis, Cuenta con un Soporte Permanente
+                Sunat ERP Actualizado, Incluye Certificado Digital Por 1 Año Gratis, Cuenta con un Soporte Permanente
                 Pida su Visita Tecnica.</p>
 
     </section>
@@ -544,7 +547,7 @@ include 'library/config_alarmas.php';
                         <div class="services-content">
                             <h4><a href="http://demo.nubefactsoluciones.com">Acceso al sistema Facturador</a></h4>
                             <p>
-                                Accesos Usuario = demo@gmail.com Pasword = 123456 Pida su Sistema
+                                Accesos al Sistema Demo Usuario = demo@gmail.com Pasword = 123456 Pida su Sistema
                             </p>
                         </div>
                     </div>
@@ -604,7 +607,7 @@ include 'library/config_alarmas.php';
                             <i class="fa fa-tablet"></i>
                         </div>
                         <div class="services-content">
-                            <h4><a href="http://nubefact.solucionescctvysistemas.com/">Full Responsive</a></h4>
+                            <h4><a href="http://nubefact.solucionescctvysistemas.com/">Diseños Full Responsive</a></h4>
                             <p>
                                 Adaptados para Cualquier Resolución de Pantalla modo Escritorio - Movil .
                             </p>
@@ -619,7 +622,7 @@ include 'library/config_alarmas.php';
                             <i class="fa fa-keyboard-o"></i>
                         </div>
                         <div class="services-content">
-                            <h4><a href="https://erp.solucionescctvysistemas.com/">Sistemas Actuales</a></h4>
+                            <h4><a href="https://erp.solucionescctvysistemas.com/">Sistemas ERP Actuales</a></h4>
                             <p>
                                 Sistemas de Gestion para Ferreterias, Restaurantes,y Otros Rubros en General.
                             </p>
@@ -632,17 +635,17 @@ include 'library/config_alarmas.php';
 
     <section class="section" style="    padding-bottom: 22px;">
         <div class="container">
-            <h1 class="section-title txt-rotate" data-period="2000" data-rotate='[ "Computadoras Laptops en Oferta" ]'>
+            <h1 class="section-title txt-rotate" data-period="2000" data-rotate='[ "Productos Informaticos en Oferta" ]'>
             </h1>
             <hr style="margin-bottom: 1px solid #333;">
             <p class="mb-5" style="margin-top: 17px;
                         margin-bottom: 23px;" align="center">Productos en Oferta por Liquidacion 10% de Descuento al
                 Publico en General 20%
                 de Descuento solo Tecnicos, Que Esten Registrado en Nuestra Web y si es Un Cliente Que
-                Compra en Nuestra Tienda en Linea o Web Tiene un 30% de descuento en Toda Nuestras Sucursales.</p>
+                Compra en Nuestra Tienda en Linea Tiene un 30% de descuento en Toda Nuestras Sucursales.</p>
 
             <div class="row">
-                <?php include 'inc/slider_extra_3.php'; ?>
+                <?php include 'inc/slider_prod.php'; ?> 
 
 
     </section>
@@ -796,7 +799,7 @@ include 'library/config_alarmas.php';
                         <div class="services-content">
                             <h4><a href="http://www.solucionescctvysistemas.com/cpanel">Acceso al Cpanel Cloud</a></h4>
                             <p>
-                                Usuario = soluci12 Pasword = )tB@bc7k49C7EB Pida su Demo
+                                Acceso al Demo Cpanel Usuario = soluci12 Pasword = )tB@bc7k49C7EB Pida su Demo
                             </p>
                         </div>
                     </div>
@@ -811,7 +814,36 @@ include 'library/config_alarmas.php';
                         <div class="services-content">
                             <h4><a href="http://nubefact.solucionescctvysistemas.com/">Desarrollo de Webs</a></h4>
                             <p>
-                                Basados en Laravel - PHP 7.2 - JavaScript - Bootstrap Html5
+                                Desarrollamos con Diferentes Lenguajes de Programación Basados en Laravel PHP 7.2 JavaScript Bootstrap Html5.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                  <div class="col-md-4 col-sm-6">
+                    <div class="services-box">
+                        <div class="services-icon">
+                            <i class="fa fa-shopping-bag"></i>
+                        </div>
+                        <div class="services-content">
+                            <h4><a href="http://hosting.solucionescctvysistemas.com">Venta de Dominios .Com</a></h4>
+                            <p>
+                                Cada Vez más Gente Confía en Nosotros Antes Que en Otros Proveedores de Dominios.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                    <div class="col-md-4 col-sm-6">
+                    <div class="services-box">
+                        <div class="services-icon">
+                            <i class="fa fa-database"></i>
+                        </div>
+                        <div class="services-content">
+                            <h4><a href="http://www.solucionescctvysistemas.com/cpanel">Alojamiento VPS Cloud</a></h4>
+                            <p>
+                                Acceso Root Completo en un Entorno de Alojamiento Totalmente Escalable.
                             </p>
                         </div>
                     </div>
@@ -821,17 +853,31 @@ include 'library/config_alarmas.php';
                 <div class="col-md-4 col-sm-6">
                     <div class="services-box">
                         <div class="services-icon">
-                            <i class="fa fa-shopping-bag"></i>
+                            <i class="fa fa-expeditedssl"></i>
                         </div>
                         <div class="services-content">
-                            <h4><a href="http://hosting.solucionescctvysistemas.com">Venta de Dominios</a></h4>
+                            <h4><a href="http://nubefact.solucionescctvysistemas.com/">Seguridad SSL Gratuita</a></h4>
                             <p>
-                                .com.cl.co.pe.com.mx.com.ar.us.net.org.biz, certificados SSL.
+                                Incluimos Certificados SSL en Todos los Dominios para Que los Datos Transmitidos Estén Siempre Seguros.
                             </p>
                         </div>
                     </div>
                 </div>
 
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="services-box">
+                        <div class="services-icon">
+                            <i class="fa fa-users"></i>
+                        </div>
+                        <div class="services-content">
+                            <h4><a href="http://hosting.solucionescctvysistemas.com">Soporte MyTime</a></h4>
+                            <p>
+                                Siempre Disponible para Ayudar a los Clientes a Configurar sus Productos y Realizar Tareas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
 
     </section>
@@ -846,7 +892,7 @@ include 'library/config_alarmas.php';
                 General 20%
                 de Descuento
                 solo Tecnicos, Que Esten Registrado en Nuestra Web y si es Un Cliente Que Compra en Nuestra
-                Tienda en Linea o Web Tiene un 30% de descuento en Toda Nuestras Sucursales.</p>
+                Tienda en Linea Tiene un 30% de descuento en Toda Nuestras Sucursales.</p>
 
             <div class="row">
 
@@ -857,15 +903,12 @@ include 'library/config_alarmas.php';
 
     <section class="section" style="    padding-bottom: 1px;">
         <div class="container">
-            <h1 class="section-title txt-rotate" data-period="2000" data-rotate='[ "Pida su Monitoreo GPS Las 24/H" ]'>
+            <h1 class="section-title txt-rotate" data-period="2000" data-rotate='[ "Pida su Monitoreo CCTV Las 24/H" ]'>
             </h1>
             <hr style="margin-bottom: 1px solid #333;">
             <p class="mb-5" style="margin-top: 17px;
-                    margin-bottom: 23px;" align="center">Nuestros Servicio de GPS Incluye; Vigilancia Permanente
-                Durante las
-                Horas Contratadas, Asumiendo la Responsabilidad de Prevenir Robos de su Vehiculo. Nuestro Personal
-                Expecializado Monitoreara Permanente Por 12/24 Horas, Si ya Cuenta con un Sistema de GPS Pida su Visita
-                Tecnica.</p>
+                    margin-bottom: 23px;" align="center">Contamos con Operadores de Centro de Control Especializados en el Monitoreo
+                     de las Instalaciones de Nuestros Clientes a través de las Cámaras CCTV, Los Dispositivos de Control de Accesos, Intrusión y Emergencias Pida su Visita Tecnica.</p>
             <style>
 
 
@@ -882,14 +925,14 @@ include 'library/config_alarmas.php';
                 <div class="clearfix hero-land">
                     <div class="landing caption ">
                         <h2 class="txt-rotate reduceme2" data-period="2000"
-                            data-rotate='[ "! Tu Vehiculo Siempre Protegido Las 24/H ¡" ]'>
+                            data-rotate='[ "! Tu Hogar Siempre Protegido Las 24/H ¡" ]'>
                         </h2>
                         <p class="p-19 p-reduceme"></p>
 
                         <p class="boton-n-1">
-                            <a href="http://192.95.18.68:8080/track/Track" class="btn btn-primary fact-btn2">VER DEMO
+                            <a href="demo_camaraip.php" class="btn btn-primary fact-btn2">VER DEMO
                             </a>
-                            <a href="http://gps.solucionescctvysistemas.com/" class="btn btn-common">VER MAS </a>
+                            <a href="formulario_servicios.php" class="btn btn-common">COTIZA AQUI </a>
                         </p>
                     </div>
                 </div>
@@ -910,7 +953,7 @@ include 'library/config_alarmas.php';
                         <div class="services-content">
                             <h4><a href="formulario_servicios.php">Monitoreo Permanente</a></h4>
                             <p>
-                                Nuestro Personal Estara Constantemente Monitoreando la Ubicacion del Vehiculo.
+                                Nuestro Personal Estara Constantemente Monitoreando su Hogar Negocio.
                             </p>
                         </div>
                     </div>
@@ -919,12 +962,55 @@ include 'library/config_alarmas.php';
                 <div class="col-md-4 col-sm-6">
                     <div class="services-box">
                         <div class="services-icon">
-                            <i class="fa fa-desktop"></i>
+                            <i class="fa fa-bullhorn"></i>
                         </div>
                         <div class="services-content">
-                            <h4><a href="formulario_servicios.php">GPS Plataforma</a></h4>
+                            <h4><a href="formulario_servicios.php">Alarma Contra Robo</a></h4>
                             <p>
-                                Es un Sistema de Seguimiento GPS de uso Fácil a través de PC y Celular.
+                                Nuestras Alarmas Son las Más Segura, Protegiendo su Hogar en Cualquier Situación de Peligro..
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="services-box">
+                        <div class="services-icon">
+                            <i class="fa fa-bolt"></i>
+                        </div>
+                        <div class="services-content">
+                            <h4><a href="formulario_servicios.php">Cerco Electrico Perimetral</a></h4>
+                            <p>
+                                La Principal Ventaja de un Cerco Eléctrico te Permite Detectar a un Intruso Cuando Está En el Perímetro De su Propiedad.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="services-box">
+                        <div class="services-icon">
+                            <i class="fa fa-shield"></i>
+                        </div>
+                        <div class="services-content">
+                            <h4><a href="formulario_servicios.php"> Control Biometrico</a></h4>
+                            <p>
+                                El Control de Acceso nos Brinda Seguridad de Areas Importantes, Para Mantener un Registro de Entradas y Salidas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="services-box">
+                        <div class="services-icon">
+                            <i class="fa fa-fire"></i>
+                        </div>
+                        <div class="services-content">
+                            <h4><a href="formulario_servicios.php">Alarma Contra Incendio </a></h4>
+                            <p>
+                                Nuestro sistema de Alarmas, Detecta Riesgo Ante un Posible Siniestro, En su Hogar u Empresa, minimiza los riesgos.
                             </p>
                         </div>
                     </div>
@@ -937,52 +1023,9 @@ include 'library/config_alarmas.php';
                             <i class="fa fa-user-secret"></i>
                         </div>
                         <div class="services-content">
-                            <h4><a href="formulario_servicios.php">GPS Personal Portatil</a></h4>
+                            <h4><a href="formulario_servicios.php">Barrido Electronico</a></h4>
                             <p>
-                                Es un Dispositivo que Sirve para Localizar Ancianos, Niños y Mercancias.
-
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="services-box">
-                        <div class="services-icon">
-                            <i class="fa fa-truck"></i>
-                        </div>
-                        <div class="services-content">
-                            <h4><a href="formulario_servicios.php">GPS Para Camiones</a></h4>
-                            <p>
-                                GPS Satelital Para Camiones en Tiempo Real Transmsion a SUTRAN MTC.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6">
-                    <div class="services-box">
-                        <div class="services-icon">
-                            <i class="fa fa-taxi"></i>
-                        </div>
-                        <div class="services-content">
-                            <h4><a href="formulario_servicios.php">GPS Para Taxis </a></h4>
-                            <p>
-                                GPS Satelital Para Taxis o Alquileres de Autos transmision cada 30 segundos.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-md-4 col-sm-6">
-                    <div class="services-box">
-                        <div class="services-icon">
-                            <i class="fa fa-map-marker"></i>
-                        </div>
-                        <div class="services-content">
-                            <h4><a href="formulario_servicios.php">GPS Accesorios</a></h4>
-                            <p>
-                                Boton de Panico Audio en cabina Rele Corte de Motor Sensor de Encendido y Apagado.
+                                El Barrido Electrónico Es la Contramedida de Seguridad. Consiste En la Búsqueda de Aparatos de Espionaje.
 
                             </p>
                         </div>
@@ -1004,7 +1047,7 @@ include 'library/config_alarmas.php';
                 Publico en General 20%
                 de Descuento
                 solo Tecnicos, Que Esten Registrado en Nuestra Web y si es Un Cliente Que Compra en Nuestra
-                Tienda en Linea o Web Tiene un 30% de descuento en Toda Nuestras Sucursales.</p>
+                Tienda en Linea Tiene un 30% de descuento en Toda Nuestras Sucursales.</p>
 
             <div class="row">
 
@@ -1032,7 +1075,7 @@ include 'library/config_alarmas.php';
         <div class="container">
             <a href="formulario_servicios.php">
                 <div class="opacidad2 hidden-xs"><span
-                        style=" color: white; font-weight: 700; font-size: 2em;  position: relative;  top: 28px;  left: 14px;">S/.900
+                        style=" color: white; font-weight: 700; font-size: 2em;  position: relative;  top: 28px;  left: 14px;">S/.350
                     </span></div>
 
 
@@ -1045,9 +1088,9 @@ include 'library/config_alarmas.php';
                             data-rotate='[ "! Tu Vehiculo Siempre Protegido Las 24/H ¡" ]'></h2>
                         <p class="p-19 p-reduceme2"> </p>
                         <p class="boton-n-1">
-                            <a href="https://www.youtube.com/channel/UCNI4wnYU1I9nBuX_JOmjZxA"
+                            <a href="demo_gps.php"
                                 class="btn btn-primary fact-btn">VER DEMO</a>
-                            <a href="http://niebla.solucionescctvysistemas.com/" class="btn btn-common">VER MAS</a>
+                            <a href="http://gps.solucionescctvysistemas.com/" class="btn btn-common">VER MAS</a>
                         </p>
 
 
@@ -1151,14 +1194,14 @@ include 'library/config_alarmas.php';
     <section class="section" style="    padding-bottom: 22px;">
         <div class="container">
             <h1 class="section-title txt-rotate" data-period="2000"
-                data-rotate='[ "Productos de Seguridad en Oferta" ]'></h1>
+                data-rotate='[ "Productos de CCTV - IP en Oferta" ]'></h1>
             <hr style="margin-bottom: 1px solid #333;">
             <p class="mb-5" style="margin-top: 17px;
                     margin-bottom: 23px;" align="center">Productos en Oferta por Liquidacion 10% de Descuento al
                 Publico en General 20%
                 de Descuento
                 solo Tecnicos, Que Esten Registrado en Nuestra Web y si es Un Cliente Que Compra en Nuestra
-                Tienda en Linea o Web Tiene un 30% de descuento en Toda Nuestras Sucursales.</p>
+                Tienda en Linea Tiene un 30% de descuento en Toda Nuestras Sucursales.</p>
 
             <div class="row">
 
@@ -1216,10 +1259,10 @@ include 'library/config_alarmas.php';
                 <div class="col-md-4 col-sm-6">
                     <div class="services-box">
                         <div class="services-icon">
-                            <i class="glyphicon glyphicon-user"></i>
+                            <i class="fa fa-fire-extinguisher"></i>
                         </div>
                         <div class="services-content">
-                            <h4><a href="formulario_servicios.php">Protección Inmediata</a></h4>
+                            <h4><a href="formulario_servicios.php"> 100 % Inmediata</a></h4>
                             <p>
                                 Un cañón de Niebla PROTECT Llenará el Lugar Con una Niebla Densa,
                                 Para Evitar Que el Intruso Pueda ver Algo.
@@ -1231,10 +1274,10 @@ include 'library/config_alarmas.php';
                 <div class="col-md-4 col-sm-6">
                     <div class="services-box">
                         <div class="services-icon">
-                            <i class="glyphicon glyphicon-usd"></i>
+                            <i class="fa fa-eye-slash"></i>
                         </div>
                         <div class="services-content">
-                            <h4><a href="formulario_servicios.php">Efectivo</a></h4>
+                            <h4><a href="formulario_servicios.php"> 100 % Efectivo</a></h4>
                             <p>
                                 ¡El Sistema de Seguridad por Niebla PROTECT Es el Método más Efectivo Para la Prevención
                                 de Robos y Vandalismo!
@@ -1247,13 +1290,57 @@ include 'library/config_alarmas.php';
                 <div class="col-md-4 col-sm-6">
                     <div class="services-box">
                         <div class="services-icon">
-                            <i class="glyphicon glyphicon-leaf"></i>
+                            <i class="icon-chemistry"></i>
                         </div>
                         <div class="services-content">
-                            <h4><a href="formulario_servicios.php">Inocuo</a></h4>
+                            <h4><a href="formulario_servicios.php"> 100 % Inocuo</a></h4>
                             <p>
                                 La Niebla de Seguridad No deja Residuo y es Completamente Inocua Para Humanos y
                                 No daña Equipos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-md-4 col-sm-6">
+                    <div class="services-box">
+                        <div class="services-icon">
+                            <i class="fa fa-flask"></i>
+                        </div>
+                        <div class="services-content">
+                            <h4><a href="formulario_servicios.php">100 % Inofensivo</a></h4>
+                            <p>
+                                El Humo Es de Grado Alimenticio, Es Inofensivo Para los Humanos o Animales y Objetos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="services-box">
+                        <div class="services-icon">
+                            <i class="fa fa-home"></i>
+                        </div>
+                        <div class="services-content">
+                            <h4><a href="formulario_servicios.php">Donde Utilizarlo</a></h4>
+                            <p>
+                                Niebla Es un Sistema Antirrobo Activo. Esto Significa Que no Necesita del Accionar de Personas Para Impedir el Robo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="services-box">
+                        <div class="services-icon">
+                            <i class="fa fa-group"></i>
+                        </div>
+                        <div class="services-content">
+                            <h4><a href="formulario_servicios.php">Por Que Elegirnos</a></h4>
+                            <p>
+                                La Confianza de Nuestros Clientes Avala Nuestro Trabajo. Nuestro Principal Objetivo es Ofrecer la Máxima Seguridad.
                             </p>
                         </div>
                     </div>
@@ -1264,14 +1351,14 @@ include 'library/config_alarmas.php';
     <section class="section" style="    padding-bottom: 22px;">
         <div class="container">
             <h1 class="section-title txt-rotate" data-period="2000"
-                data-rotate='[ "Productos de Control y Acceso en Oferta" ]'></h1>
+                data-rotate='[ "Productos Biometricos en Oferta" ]'></h1>
             <hr style="margin-bottom: 1px solid #333;">
             <p class="mb-5" style="margin-top: 17px;
                     margin-bottom: 23px;" align="center">Productos en Oferta por Liquidacion 10% de Descuento al
                 Publico en General 20%
                 de Descuento
                 solo Tecnicos, Que Esten Registrado en Nuestra Web y si es Un Cliente Que Compra en Nuestra
-                Tienda en Linea o Web Tiene un 30% de descuento en Toda Nuestras Sucursales.</p>
+                Tienda en Linea Tiene un 30% de descuento en Toda Nuestras Sucursales.</p>
 
             <div class="row">
 
@@ -1414,17 +1501,13 @@ include 'library/config_alarmas.php';
                     </div>
                 </div>
             </div>
+            
+           
 
+
+<!-- sucribte  -->
 
     </section>
-
-    <!-- end alarmas -->
-
-    <?php 
-    //   include 'inc/slider_extra_1.php'; 
-    //   include 'inc/slider_extra_2.php'; 
-        
-     ?>
 
 
     <style>
@@ -1434,7 +1517,7 @@ include 'library/config_alarmas.php';
     }
 
     .input_subs {
-        width: 50%;
+        width: 75%;
         margin: auto;
         margin-bottom: 22px;
         margin-top: 22px;
@@ -1474,14 +1557,16 @@ include 'library/config_alarmas.php';
     </style>
     <section class="p-5 mt-4 text-center bg-primary box_subs">
         <div class="container p-3">
-            <h3>SUBSCRIBETE AHORA</h3>
+            <h3>Si te ha gustado, nuestra pagina web y nuestros productos puedes recibir mas en tu correo</h3>
             <form action="process/subscript.php" method="POST">
                 <input type="email" name="correo-subs" class="form-control input_subs"
                     placeholder="Ingresa tu Correo Electronico">
-                <button type="submit" class="btn btn-warning">Subscribete</button>
+                <button type="submit" class="btn btn-warning">Suscribete</button>
             </form>
         </div>
+       
     </section>
+     <!-- sucribte  -->
 
     <?php include 'inc/slider_bottom.php'; ?>
     <?php include 'inc/footer.php'; ?>
@@ -1568,7 +1653,9 @@ include 'library/config_alarmas.php';
             $('body').flurry('destroy');
         } catch (err) {} finally {
             $('body').flurry({
-                character: '❄❅❆*⛄☃',
+               <!-- borrar este para epoca navideña  -->  character: '❄❅❆*⛄☃',
+                character: '⭐✨⭐✨⭐✨',
+               
                 height: 400,
                 speed: 5000,
                 frequency: 150,
@@ -1618,7 +1705,158 @@ include 'library/config_alarmas.php';
     })();
     </script>
     <!-- /WhatsHelp.io widget -->
+    
+    
+ <!-- bloquea copiado de web  -->
+<script language="JavaScript" type="text/javascript">
+function click(){
+if(event.button==2){
+alert('SOLUCIONES CCTV & SISTEMAS S.A.C © 2020 Todos los Derechos Reservados.');
+}
+}
+document.onmousedown=click
+</script>
+ <!-- bloquea copiado de web  -->
+ 
+ 
+ <!-- bloquea copiado de texto  -->
+ 
+ <script language="Javascript"> 
+function disableselect(e){ 
+return false 
+} 
+function reEnable(){ 
+return true 
+} 
+document.onselectstart=new Function ("return false" ) 
+if (window.sidebar){ 
+document.onmousedown=disableselect 
+document.onclick=reEnable 
+} 
+</script>
 
+<!-- bloquea copiado de texto  -->
+
+
+
+ <!-- SCRIPT CONTROL DE COOKIES -->
+<script type="text/javascript">
+function controlcookies() {
+         // si variable no existe se crea (al clicar en Aceptar)
+    localStorage.controlcookie = (localStorage.controlcookie || 0);
+ 
+    localStorage.controlcookie++; // incrementamos cuenta de la cookie
+    cookie1.style.display='none'; // Esconde la política de cookies
+}
+</script>
+<!--- Codigo para la política de cookies-->
+ 
+ 
+<style type="text/css">
+ 
+/* CSS para la animación y localización de los DIV de cookies */
+ 
+@keyframes desaparecer
+{
+0%		{bottom: 0px;}
+80%		{bottom: 0px;}
+100%		{bottom: -50px;}
+}
+ 
+@-webkit-keyframes desaparecer /* Safari and Chrome */
+{
+0%		{bottom: 0px;}
+80%		{bottom: 0px;}
+100%		{bottom: -50px;}
+}
+ 
+@keyframes aparecer
+{
+0%		{bottom: -38px;}
+10%		{bottom: 0px;}
+90%		{bottom: 0px;}
+100%		{bottom: -38px;}
+}
+ 
+@-webkit-keyframes aparecer /* Safari and Chrome */
+{
+0%		{bottom: -38px;}
+10%		{bottom: 0px;}
+90%		{bottom: 0px;}
+100%		{bottom: -38px;}
+}
+#cookiesms1:target {
+    display: none;
+}
+.cookiesms{	
+	width:100%;
+	height:95px;
+	margin:0 auto;
+	padding-left:6%;
+        padding-top:5px;
+        font-size: 1.2em;
+	clear:both;
+        font-weight: strong;
+color: #0C18B8;
+bottom:0px;
+position:fixed;
+left: 0px;
+background-color: #FFFFFF;
+filter:alpha(opacity=50); /* For IE8 and earlier */
+transition: bottom 1s;
+-webkit-transition:bottom 1s; /* Safari */
+-webkit-box-shadow: 3px -3px 1px rgba(50, 50, 50, 0.56);
+-moz-box-shadow:    3px -3px 1px rgba(50, 50, 50, 0.56);
+box-shadow:         3px -3px 1px rgba(50, 50, 50, 0.56);
+z-index:999999999;
+}
+ 
+.cookiesms:hover{
+bottom:0px;
+}
+.cookies2{
+background-color: #df7e0f;
+display:inline;
+
+filter:alpha(opacity=95);
+position:absolute; 
+left:0%; 
+top:-30px;
+font-size:15px;
+height:30px;
+padding-left:25px;
+padding-right:25px;
+-webkit-border-top-right-radius: 15px;
+-webkit-border-top-left-radius: 15px;
+-moz-border-radius-topright: 15px;
+-moz-border-radius-topleft: 15px;
+border-top-right-radius: 15px;
+border-top-left-radius: 15px;
+-webkit-box-shadow: 3px -3px 1px rgba(50, 50, 50, 0.56);
+-moz-box-shadow:    3px -3px 1px rgba(50, 50, 50, 0.56);
+box-shadow:         3px -3px 1px rgba(50, 50, 50, 0.56);
+}
+ 
+/* Fin del CSS para cookies */
+ 
+</style>
+<!--Código HTML de la política de cookies -->
+ 
+<!--La URL incluida es la parte que se ha de modificar -->
+ 
+<div class="cookiesms" id="cookie1">
+Esta web utiliza cookies, puedes ver nuestra  <a href="tu-url-donde-explicas-la-politica-de-cookies">la política de cookies, aquí</a> 
+Si continuas navegando estás aceptándola
+<button onclick="controlcookies()"class="btn btn-warning">ACEPTAR</button> 
+<div  class="cookies2" onmouseover="document.getElementById('cookie1').style.bottom = '0px';">Política de Cookies  </div>
+</div>
+<script type="text/javascript">
+if (localStorage.controlcookie>0){ 
+document.getElementById('cookie1').style.bottom = '-50px';
+}
+</script>
+ 
+<!-- Fin del código de cookies --->
 </body>
 
 

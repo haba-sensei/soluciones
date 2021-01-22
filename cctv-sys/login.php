@@ -9,11 +9,11 @@
 <!--<![endif]-->
 <head>
 	<meta charset="utf-8" />
-	 <title>SOLUCIONES CCTV Y SISTEMAS</title>
+	 <title>::SOLUCIONES CCTV Y SISTEMAS::</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
-	<link rel="icon" type="image/png" href="img/icono.png" />
+	<link rel="shortcut icon" href="assets/img/favicon.png">
 	<!-- ================== BEGIN BASE CSS STYLE ================== -->
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
 	<link href="assets/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" />

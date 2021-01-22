@@ -1,6 +1,6 @@
 <!--
 Author: Haba_Sensei
-Empresa: Elysium 
+Empresa: ::SOLUCIONES CCTV Y SISTEMAS:: 
 Copyrigt: Uso Comercial 
 Licencia: Proveedor de servicios
 
@@ -15,7 +15,7 @@ Licencia: Proveedor de servicios
 	
 	<html lang="en"><!--<![endif]--><head>
 	<meta charset="utf-8">
-	 <title>::  Hab.System ::</title>
+	 <title>::SOLUCIONES CCTV Y SISTEMAS::</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
 	<meta content="" name="description">
 	<meta content="" name="author">
