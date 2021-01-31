@@ -4,6 +4,7 @@
 									<ul class="nav">
 						<li class="active"><a href="index.php"><i class="fas fa-home fa-fw"></i> <span style="letter-spacing: 3px;">Inicio</span></a></li>
 						
+						<li class="active"><a href="../contable/index.php"><i class="fas fa-book fa-fw"></i> <span style="letter-spacing: 3px;">Contabilidad</span></a></li>
 						
 					<li class="has-sub ">
 						<a href="javascript:;">

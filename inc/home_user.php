@@ -1,13 +1,34 @@
-
 <?php
 		 $con1= ejecutarSQL::consultar("SELECT * from producto");
 		 $prod = mysqli_num_rows($con1);
+         
+         $espera_ped = 1;
+         $aprob_ped = 2;
+         
+         $espera_cot = 0;
+         $aprob_cot = 3;
+
+		  
+         
+
+
 		 
-		 $const=0;
-		 
-		 $con2= ejecutarSQL::consultar("SELECT * from cotizacion_online  ");
-		 $stock = mysqli_num_rows($con2);
-		 
+         
+         $pedido_con_aprob= ejecutarSQL::consultar("SELECT `cotizacion_online`.*, `cotizacion_online`.`Estado` FROM `cotizacion_online` WHERE `cotizacion_online`.`Estado` = '$aprob_ped'  ");
+         $pedido_aprob = mysqli_num_rows($pedido_con_aprob);
+
+         $pedido_con_espera= ejecutarSQL::consultar("SELECT `cotizacion_online`.*, `cotizacion_online`.`Estado` FROM `cotizacion_online` WHERE `cotizacion_online`.`Estado` = '$espera_ped'  ");
+         $pedido_espera = mysqli_num_rows($pedido_con_espera);
+
+ 
+         $cotiza_con_aprob= ejecutarSQL::consultar("SELECT `cotizacion_online`.*, `cotizacion_online`.`Estado` FROM `cotizacion_online` WHERE `cotizacion_online`.`Estado` = '$aprob_cot'  ");
+         $cotiza_aprob = mysqli_num_rows($cotiza_con_aprob);
+
+         $cotiza_con_espera= ejecutarSQL::consultar("SELECT `cotizacion_online`.*, `cotizacion_online`.`Estado` FROM `cotizacion_online` WHERE `cotizacion_online`.`Estado` = '$espera_cot'  ");
+         $cotiza_espera = mysqli_num_rows($cotiza_con_espera);
+         
+         
+
 		 $const=0;
 		 
 		 $con3= ejecutarSQL::consultar("SELECT `producto`.*, `producto`.`Stock` FROM `producto` WHERE `producto`.`Stock` =$const  ");
@@ -18,140 +39,122 @@
 
 
 <div id="content" class="content">
-			<!-- begin breadcrumb -->
-			<ol class="breadcrumb pull-right">
-				<li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
-				<li class="breadcrumb-item active">Panel Principal</li>
-			</ol>
-			<!-- end breadcrumb -->
-			<!-- begin page-header -->
-			<h1 class="page-header">Panel Principal <small></small></h1>
-			<!-- end page-header -->
-			
-			<!-- begin row -->
-			<div class="row">
-				<!-- begin col-3 -->
-				<div class="col-lg-4 col-md-6">
-					<div class="widget widget-stats bg-blue-darker">
-						<div class="stats-icon"><i class="fa fa-tags"></i></div>
-						<div class="stats-info">
-							<h4>LISTA DE PRODUCTOS</h4>
-							<p><?php echo $prod ?></p>	
+    <!-- begin breadcrumb -->
+    <ol class="breadcrumb pull-right">
+        <li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
+        <li class="breadcrumb-item active">Panel Principal</li>
+    </ol>
+    <!-- end breadcrumb -->
+    <!-- begin page-header -->
 
-						</div>
-						<div class="stats-link">
-							<a href="actualizarStock.php">Ver Articulos <i class="fa fa-arrow-alt-circle-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<!-- end col-3 -->
-				<!-- begin col-3 -->
-				<div class="col-lg-4 col-md-6">
-					<div class="widget widget-stats bg-red-darker">
-						<div class="stats-icon"><i class="fa fa-users"></i></div>
-						<div class="stats-info">
-							<h4>ARTICULOS AGOTADOS.</h4>
-							<p><?php echo $stock_agotado ?></p>	
-						</div>
-						<div class="stats-link">
-							<a href="actualizarStockAgotado.php">Ver Articulos<i class="fa fa-arrow-alt-circle-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<!-- end col-3 -->
-				<!-- begin col-3 -->
-				<div class="col-lg-4 col-md-6">
-					<div class="widget widget-stats bg-orange-darker">
-						<div class="stats-icon"><i class="fa fa-list"></i></div>
-						<div class="stats-info">
-							<h4>LISTA DE COTIZACIONES.</h4>
-							<p><?php echo  $stock ?></p>	
-<!--
-							
--->
-						</div>
-						<div class="stats-link">
-							<a href="javascript:;">Ver Cotizaciones <i class="fa fa-arrow-alt-circle-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<!-- end col-3 -->
-				<!-- begin col-3 -->
-				
-				<!-- end col-3 -->
-			</div>
-			 <div class="panel panel-inverse">
-                        <!-- begin panel-heading -->
-                        <div class="panel-heading">
-                            
-                            <h4 class="panel-title">Lista de Pedidos</h4>
-                        </div>
-                        <!-- end panel-heading -->
-                        <!-- begin panel-body -->
-                        <div class="panel-body">
+    <!-- end page-header -->
+    <h1 class="page-header">Panel Principal<small></small></h1>
+    <!-- begin row -->
+    <div class="row">
 
-<div class="table-responsive">
-                <table id="example2" class="table no-margin " >
-                  <thead class="bg-blue">
-                  <tr>
-                    <th>Orden ID</th>
-                    <th>Fecha </th>
-                    <th>Cliente</th>
-                    
-                    <th>Total de Compra</th>
-                    <th>Opciones</th>
-                  </tr>
-                  </thead>
-                  <tbody >
-				  <?php
-            
-			//$ordenU=  ejecutarSQL::consultar("SELECT `venta`.* FROM `venta` LEFT JOIN `detalle` ON `detalle`.`Orden` = `venta`.`Orden` LEFT JOIN `producto` ON `detalle`.`CodigoProd` = `producto`.`CodigoProd`");
-            
-			$ordenU=  ejecutarSQL::consultar("select * from cotizacion_online where Estado = 0; ");
-            
-            while($ordenP=mysqli_fetch_assoc($ordenU)){
-				$ordenList=$ordenP['id_cotizacion'];
-				$ordenFech=$ordenP['fecha_cotizacion'];
-				$ordenNit=$ordenP['ID'];
-				$ordenEst=$ordenP['Estado'];
-				$ordenPrice=$ordenP['GranTotal'];
-				
-				
-					?>
-                  <tr>
-                    <td><a href="actualizarPedido_online.php?id_cotizacion=<?php echo $ordenList ?>"><?php echo $ordenList ?></a></td>
-                    <td><?php echo $ordenFech ?></td>
-                    <td>
-                    <?php 
-                    $conUs= ejecutarSQL::consultar("select * from clientes where ID=$ordenNit");
-                    while($UsP=mysqli_fetch_assoc($conUs)){
-					echo $UsP['NombreEmpresa'];}
-                    ?>
-                    </td>
-                    
-                    <td>S/ <?php echo number_format($ordenPrice,2) ?></td>
-                    <td align="center">
-                     <a data-toggle="tooltip" data-placement="top" title="Actualizar" class="btn btn-primary btn-sm"  href="actualizarPedido_online.php?id_cotizacion=<?php echo $ordenList ?>"> Ver Orden </a>
-                     
-                     </td>
-                  </tr>
-                  
-                <?php } ?>  
-                  </tbody>
-                </table>
-                
-              </div>
+        <div class="col-lg-6 col-md-6">
+            <div class="widget widget-stats hljs-wrapper">
+                <div class="stats-icon"><i class="fa fa-tags" style="color: #009fff;"></i></div>
+                <div class="stats-info">
+                    <h4>TOTAL ARTICULOS</h4>
+                    <p><?php echo $prod ?></p>
+
+                </div>
+                <div class="stats-link">
+                    <a href="actualizarStock.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
 
 
+        <div class="col-lg-6 col-md-6">
+            <div class="widget widget-stats hljs-wrapper">
+                <div class="stats-icon"><i class="fa fa-minus-circle" style="color: #ef2121;"></i></div>
+                <div class="stats-info">
+                    <h4>ARTICULOS AGOTADOS</h4>
+                    <p><?php echo $stock_agotado ?></p>
+                </div>
+                <div class="stats-link">
+                    <a href="actualizarStockAgotado.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
 
 
-                        <!-- end panel-body -->
-                    </div>
-			    </div>
-			    <!-- end col-10 -->
-			</div>
-			<!-- end row -->
-		</div>
-					
-					
-					
+        
+    </div>
+
+    
+    <div class="row">
+        <div class="col-lg-6 col-md-6">
+            <div class="widget widget-stats hljs-wrapper">
+                <div class="stats-icon"><i class="fa fa-window-maximize" style="color: #009fff;"></i></div>
+                <div class="stats-info">
+                    <h4>PEDIDOS APROBADOS</h4>
+                    <p><?php echo $pedido_aprob ?></p>
+
+                </div>
+                <div class="stats-link">
+                    <a href="listaPedidos.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-6 col-md-6">
+            <div class="widget widget-stats hljs-wrapper">
+                <div class="stats-icon"><i class="fa fa-minus-circle" style="color: #ef2121;"></i></div>
+                <div class="stats-info">
+                    <h4>PEDIDOS EN ESPERA</h4>
+                    <p><?php echo $pedido_espera ?></p>
+                </div>
+                <div class="stats-link">
+                    <a href="actualizarPedidos.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+
+         
+
+         
+    </div>
+
+     
+    <div class="row">
+        <div class="col-lg-6 col-md-6">
+            <div class="widget widget-stats hljs-wrapper">
+                <div class="stats-icon"><i class="fa fa-window-restore" style="color: #009fff;"></i></div>
+                <div class="stats-info">
+                    <h4>COTIZACIONES APROBADAS</h4>
+                    <p><?php echo $cotiza_aprob ?></p>
+
+                </div>
+                <div class="stats-link" >
+                    <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-6 col-md-6">
+            <div class="widget widget-stats hljs-wrapper">
+                <div class="stats-icon"><i class="fa fa-minus-circle" style="color: #ef2121;"></i></div>
+                <div class="stats-info">
+                    <h4>COTIZACIONES EN ESPERA</h4>
+                    <p><?php echo $cotiza_espera ?></p>
+                </div>
+                <div class="stats-link">
+                    <a href="actualizarCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+
+        
+    </div>
+
+    <!-- end col-10 -->
+</div>
+<!-- end row -->
+</div>

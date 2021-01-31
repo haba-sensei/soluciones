@@ -918,6 +918,7 @@ include_once("library/config.inc.php");
         $.datepicker.regional['es'] = {
             closeText: 'Cerrar',
             prevText: '< Ant',
+            minDate: 0,
             nextText: 'Sig >',
             currentText: 'Hoy',
             monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre',

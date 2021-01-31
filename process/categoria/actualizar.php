@@ -5,7 +5,7 @@ include '../../library/consulSQL.php';
  
 
 sleep(2);
-
+ 
 //print_r($codeCatUp);
 
 $codeOldCatUp=$_POST['categ-code-old'];

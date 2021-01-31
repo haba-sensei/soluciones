@@ -381,22 +381,18 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                                                             <li class="jsx-3342506598 price-0">
                                                                 <div data-variant="PDP_MAIN" class="jsx-3342506598 cmr-icon-container">
                                                                     <span id="" class="copy13 primary high jsx-3736277290 normal " style="font-size: 27px; font-weight: 700;padding-bottom: 10px;">
+                                                                     $ <?php 
+                                                                         $precio_sol = number_format($fila['Precio'], 2 );
+                                                                         $precio_dolar_sin_f = number_format($precio_sol / $globalTasaCambio_dolar, 2); 
+                                                                         echo $precio_dolar_sin_f;
+                                                                         ?>
+                                                                    -
                                                                     <?php echo $fila['Simbolo']; ?>
                                                                         <?php echo number_format($fila['Precio'], 2 )?>
                                                                     </span>
                                                                 </div>
                                                             </li>
-                                                            <li class="jsx-3342506598 price-1">
-                                                                <div data-variant="PDP_MAIN" class="jsx-3342506598 cmr-icon-container">
-                                                                    <span id="" class="copy14 primary jsx-3736277290 normal ">
-                                                                        $ <?php 
-                                                                         $precio_sol = number_format($fila['Precio'], 2 );
-                                                                         $precio_dolar_sin_f = number_format($precio_sol / $globalTasaCambio_dolar, 2); 
-                                                                         echo $precio_dolar_sin_f;
-                                                                         ?>
-                                                                    </span>
-                                                                </div>
-                                                            </li>
+                                                             
                                                         </ol>
                                                     </div>
                                                     <div id="cmr-points" class="jsx-4060520461 cmr-points fa--cmr-points" style="font-size: 1.5rem!important;">Cotizacion & Compra</div>
