@@ -13,7 +13,7 @@ $company = $cs->get($ruc);
 if (!$company) {
     echo 'Not found';
     return;
-}
+} 
 
 echo json_encode($company);
 	

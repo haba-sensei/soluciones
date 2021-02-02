@@ -1,17 +1,20 @@
 <?php
-	header('Content-Type: text/plain');
 
-	require ("src/autoload.php");
+use Peru\Sunat\RucFactory;
 
-	$cliente = new \Sunat\Sunat();
-	
-	$ruc = ( isset($_REQUEST["nruc"]))? $_REQUEST["nruc"] : false;
-	echo $cliente->search( $ruc, true );
-	
-	
-	
-	
-	
-	
+require '../../autoload.php';
+
+$ruc = $_POST['ruc'];
+
+$factory = new RucFactory();
+$cs = $factory->create();
+
+$company = $cs->get($ruc);
+if (!$company) {
+    echo 'Not found';
+    return;
+}
+
+echo json_encode($company);
 	
 ?>

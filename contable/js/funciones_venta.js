@@ -28,22 +28,6 @@ function agregardatos_venta(num_factura, num_boleta, anulado, bajas, date, ruc, 
 
 }
 
-function agregaform_venta(datos) {
-
-    d = datos.split('||');
-
-    $('#id').val(d[0]);
-    $('#num_factura_u').val(d[1]);
-    $('#num_boleta_u').val(d[2]);
-    $('#anulado_u').val(d[3]);
-    $('#bajas_u').val(d[4]);
-    $('#date_u').val(d[7] + "/" + d[6] + "/" + d[5])
-    $('#ruc_u').val(d[8]);
-    $('#r_social_u').val(d[9]);
-    $('#monto_u').val(d[10]);
-
-
-}
 
 function actualizaDatos_venta() {
 
@@ -156,43 +140,74 @@ function eliminarDatos_venta(id) {
 function busqueda(ruc) {
     //$this.button('loading');
     $.ajaxblock();
-    $.ajax({
-        data: { "nruc": $("#ruc").val() },
-        type: "POST",
-        dataType: "json",
-        url: "sunat/consulta.php",
-    }).done(function(data, textStatus, jqXHR) {
-        if (data['success'] != "false" && data['success'] != false) {
-            $("#json_code").text(JSON.stringify(data, null, '\t'));
+    var documento = $("#ruc").val();
 
-            var res = JSON.stringify(data['result']['RUC']);
-            // alert(data['result']['RUC']);
-            //console.log(JSON.stringify(respuesta));
-            $('#direccion').val(data['result']['Direccion']);
-            $('#r_social').val(data['result']['RazonSocial']);
-            $('#tipo').val(data['result']['Tipo']);
-            if (typeof(data['result']) != 'undefined') {
-
-                //$("#tbody").html("");
-                $.each(data['result'], function(i, v) {
-                    //$("#tbody").append('<tr><td>'+i+'<\/td><td>'+v+'<\/td><\/tr>');
-
-                });
-            }
-
-            $.ajaxunblock();
-        } else {
-            if (typeof(data['msg']) != 'undefined') {
-                alert(data['msg']);
-                $('#direccion').val('');
-                $('#tipo').val('');
-                $('#r_social').val('');
-            }
-            //$this.button('reset');
-            $.ajaxunblock();
-        }
-    }).fail(function(jqXHR, textStatus, errorThrown) {
-        alert("Solicitud fallida:" + textStatus);
+    if (documento == '') {
+        alert("Documento Vacio");
         $.ajaxunblock();
-    });
+    } else {
+        $.ajax({
+            type: "POST",
+            url: "../sunat/consulta.php",
+            data: {
+                "ruc": $("#ruc").val()
+            },
+            dataType: "json",
+        }).done(function(result) {
+
+
+
+            $('#razon_social').val(result['razonSocial']);
+
+            $('#dir_fiscal').val(result['direccion'] + " - " + result['distrito']);
+
+            $.ajaxunblock();
+
+
+        }).fail(function(jqXHR, textStatus, errorThrown) {
+            alert("Documento Invalido");
+            $.ajaxunblock();
+        });
+
+
+    }
+
+}
+
+
+function busquedaUpdate(ruc) {
+    //$this.button('loading');
+    $.ajaxblock();
+    var documento = $("#ruc_up").val();
+
+    if (documento == '') {
+        alert("Documento Vacio");
+        $.ajaxunblock();
+    } else {
+        $.ajax({
+            type: "POST",
+            url: "../sunat/consulta.php",
+            data: {
+                "ruc": $("#ruc_up").val()
+            },
+            dataType: "json",
+        }).done(function(result) {
+
+
+
+            $('#razon_social_up').val(result['razonSocial']);
+
+            $('#dir_fiscal_up').val(result['direccion'] + " - " + result['distrito']);
+
+            $.ajaxunblock();
+
+
+        }).fail(function(jqXHR, textStatus, errorThrown) {
+            alert("Documento Invalido");
+            $.ajaxunblock();
+        });
+
+
+    }
+
 }

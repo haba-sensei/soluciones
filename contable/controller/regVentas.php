@@ -1,6 +1,6 @@
 <?php
 session_start();
-error_reporting(E_ALL ^ E_NOTICE);
+
 include '../php/configServer.php';
 include '../php/consulSQL.php';
 
@@ -47,9 +47,9 @@ consultasSQL::InsertSQL("ventas",
                           '$tipo_pago',
                           '$estado_sunat',
                           '$estado_cpe',
-                          '$monto'
+                          '$monto_total'
                          "); 
 
-echo $num_comprobante;
+ 
 
        

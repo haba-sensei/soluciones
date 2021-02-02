@@ -65,7 +65,12 @@
         while($datos_impuesto=mysqli_fetch_assoc($verImpuesto)){
 
           $impuesto =  $datos_impuesto['estado'];
-          $impuesto_total =  $datos_impuesto['monto'];
+          $impuesto_total =  number_format($datos_impuesto['monto'], 2);
+          $impuesto_total_f =  number_format($datos_impuesto['monto'], 2, '.', '');
+
+           
+          $impuesto_igv_up =  number_format($datos_impuesto['igv'], 2, '.', '');
+          
         }
 
       }
@@ -82,8 +87,9 @@
             'total_mes' => "S/ ".$total_mes,
             'total_venta' =>$total_venta,
             'impuesto' => $impuesto,
-            'impuesto_total_f' => $impuesto_total,
-            'impuesto_total' => "S/ ".$impuesto_total
+            'impuesto_total_f' => $impuesto_total_f,
+            'impuesto_total' => "S/ ".$impuesto_total,
+            'impuesto_igv_up' => $impuesto_igv_up
             
         );
     echo json_encode($arreglo_data);

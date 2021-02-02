@@ -3,6 +3,10 @@
 require 'ventaController.php';
 $fecha =   $_GET['fechaGet'];
 
+$fecha_anual = $_GET['fechaAnual'];
+
+
+ 
 $table_data->get('ventas','id',array(
                               'num_comprobante',
                               'tipo_comprobante', 
@@ -19,5 +23,5 @@ $table_data->get('ventas','id',array(
                               'monto_total',
                               'id'
                                
-                            ), $fecha);
+                            ), $fecha, $fecha_anual);
 

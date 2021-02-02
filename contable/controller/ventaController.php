@@ -29,7 +29,7 @@
    
    
        
-       public function get($table, $index_column, $columns, $fecha_filtro) {
+       public function get($table, $index_column, $columns, $fecha_filtro, $fecha_anual) {
         
             $numAnual = strftime("%Y", strtotime($fecha_filtro));  
             $numMes_format = date("m", strtotime($fecha_filtro)); 
@@ -146,27 +146,38 @@
                     
                }
                
-   
-            //    $addQuery = "SELECT `categoria`.*, `categoria`.`CodigoCat` FROM `categoria` WHERE `categoria`.`CodigoCat` = '$row[9]'";
-            //    $statement2 = $this->_db->prepare($addQuery);
-            //    $statement2->execute();
-            //    $addResult = $statement2->fetchAll();
-               
-            //    foreach ($addResult as $key2) {
-            //        // array_replace($row, array(9 => $key2['Nombre']));
-   
-            //        array_push($row, $key2['Nombre']);
-            //    }
+    
 
             $numAnual_f = strftime("%Y", strtotime($row[5]));  
             $numMes_format_f = date("m", strtotime($row[5])); 
+               
+            
+               if ($fecha_anual == "s") {
+
+                    if($numAnual_f == $numAnual && $numMes_format_f == $numMes_format) {
+                        $output['aaData'][] = $row;
+                    }else {
+
+                    }
+
+                    
+               }else {
+
+                    if($fecha_anual == $numAnual_f){
+
+                        $output['aaData'][] = $row;
+
+                     } 
 
 
-                if ($numAnual_f == $numAnual && $numMes_format_f == $numMes_format) {
-                    $output['aaData'][] = $row;
-                }else{ 
-                   
-                }
+               }
+
+               
+
+
+
+
+                  
                 
               
                
@@ -176,7 +187,7 @@
           
            
           
-           echo json_encode( $output );
+           echo json_encode(  $output );
        }
        
    }
@@ -184,22 +195,5 @@
    header('Cache-Control: no-store, no-cache, must-revalidate');
    // Create instance of TableData class
    $table_data = new TableData();
-    
-//    $table_data->get('ventas','id',array(
-//                               'num_comprobante',
-//                               'tipo_comprobante', 
-//                               'ruc',
-//                               'razon_social',
-//                               'dir_fiscal',
-//                               'fecha_emision',
-//                               'descripcion',
-//                               'por_concepto',
-//                               'moneda',
-//                               'tipo_pago',
-//                               'estado_sunat',
-//                               'estado_cpe',
-//                               'monto_total',
-//                               'id'
-                               
-//                             ), '2021-01-30');
+     
    ?>
