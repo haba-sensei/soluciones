@@ -79,6 +79,13 @@ function preguntarSiNo_venta(id) {
         function() { alertify.error('Se cancelo') });
 }
 
+function preguntarSiNo_compra(id) {
+    alertify.confirm('Eliminar Datos', '¿Esta seguro de eliminar este registro?',
+        function() { eliminarDatos_compra(id) },
+        function() { alertify.error('Se cancelo') });
+}
+
+
 function eliminarDatos_venta(id) {
 
     cadena = "id=" + id;
@@ -100,6 +107,26 @@ function eliminarDatos_venta(id) {
         }
     });
 }
+
+function eliminarDatos_compra(id) {
+
+    cadena = "id=" + id;
+
+    $.ajax({
+        type: "POST",
+        url: "php/eliminarDatos_compra.php",
+        data: cadena,
+        success: function(r) {
+            if (r == 1) {
+
+                window.location.reload(true);
+            } else {
+                alertify.error("Fallo el servidor :(");
+            }
+        }
+    });
+}
+
 (function($) {
     $.ajaxblock = function() {
         $("body").prepend("<div id='ajax-overlay'><div id='ajax-overlay-body' class='center'><i class='fa fa-spinner fa-pulse fa-3x fa-fw'></i><span class='sr-only'>Loading...</span></div></div>");

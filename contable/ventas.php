@@ -969,15 +969,15 @@
 
                                                 switch (full[10]) {
                                                     case 'sunat_aceptado':
-                                                        var res = "<button class='btn btn-success btn-sm btn-square rounded-pill'><span class='btn-icon icofont-ui-check' style='color:white;'></span></button>";
+                                                        var res = "<button class='btn btn-success btn-sm btn-square rounded-pill'><span class='btn-icon icofont-ui-check' style='color:white;'><span style='display:none;'>Aceptado</span></span></button>";
                                                     break;
                                                 
                                                     case 'sunat_rechazado':
-                                                        var res = "<button class='btn btn-danger btn-sm btn-square rounded-pill'><span class='btn-icon icofont-ui-close' style='color:white;'></span></button>";
+                                                        var res = "<button class='btn btn-danger btn-sm btn-square rounded-pill'><span class='btn-icon icofont-ui-close' style='color:white;'><span style='display:none;'>Rechazado</span></span></button>";
                                                     break;
 
                                                     case 'sunat_anulado':
-                                                        var res = "<button class='btn btn-warning btn-sm btn-square rounded-pill'><span class='btn-icon icofont-ui-remove' style='color:white;'></span></button>";
+                                                        var res = "<button class='btn btn-warning btn-sm btn-square rounded-pill'><span class='btn-icon icofont-ui-remove' style='color:white;'><span style='display:none;'>Anulado</span></span></button>";
                                                     break;
                                                 }
                                                     
@@ -992,15 +992,15 @@
 
                                                 switch (full[11]) {
                                                     case 'estado_cancelado':
-                                                        var res = "<button class='btn btn-success btn-sm btn-square rounded-pill'><span class='btn-icon icofont-ui-check' style='color:white;'></span></button>";
+                                                        var res = "<button class='btn btn-success btn-sm btn-square rounded-pill'><span class='btn-icon icofont-ui-check' style='color:white;'><span style='display:none;'>Cancelado</span></span></button>";
                                                     break;
                                                 
                                                     case 'estado_a_cuenta':
-                                                        var res = "<button class='btn btn-warning btn-sm btn-square rounded-pill'><span class='btn-icon icofont-dollar-plus' style='color:white;'></span></button>";
+                                                        var res = "<button class='btn btn-warning btn-sm btn-square rounded-pill'><span class='btn-icon icofont-dollar-plus' style='color:white;'><span style='display:none;'>A Cuenta</span></span></button>";
                                                     break;
 
                                                     case 'estado_a_credito':
-                                                        var res = "<button class='btn btn-danger btn-sm btn-square rounded-pill'><span class='btn-icon icofont-calendar' style='color:white;'></span></button>";
+                                                        var res = "<button class='btn btn-danger btn-sm btn-square rounded-pill'><span class='btn-icon icofont-calendar' style='color:white;'><span style='display:none;'>A Credito</span></span></button>";
                                                     break;
                                                 }
                                                     

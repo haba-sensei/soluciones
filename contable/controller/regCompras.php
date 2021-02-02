@@ -1,0 +1,49 @@
+<?php
+session_start();
+
+include '../php/configServer.php';
+include '../php/consulSQL.php';
+
+
+$num_comprobante = $_POST['num_comprobante']; 
+$tipo_comprobante = $_POST['tipo_comprobante'];
+$ruc = $_POST['ruc'];
+$razon_social = $_POST['razon_social'];
+$dir_fiscal = $_POST['dir_fiscal'];
+$fecha_emision = $_POST['fecha_emision'];
+$moneda = $_POST['moneda'];
+$tipo_pago = $_POST['tipo_pago'];
+$estado_sunat = $_POST['estado_sunat'];
+$estado_cpe = $_POST['estado_cpe'];
+$monto_total = $_POST['monto_total'];
+
+ 
+
+consultasSQL::InsertSQL("compras", 
+                        "num_comprobante, 
+                        tipo_comprobante,
+                        ruc,
+                        razon_social,
+                        dir_fiscal, 
+                        fecha_emision,
+                        moneda, 
+                        tipo_pago, 
+                        estado_sunat, 
+                        estado_cpe, 
+                        monto_total", 
+                        "'$num_comprobante',
+                         '$tipo_comprobante',
+                          '$ruc',
+                          '$razon_social',
+                          '$dir_fiscal',
+                          '$fecha_emision',
+                          '$moneda',
+                          '$tipo_pago',
+                          '$estado_sunat',
+                          '$estado_cpe',
+                          '$monto_total'
+                         "); 
+
+ 
+
+       
