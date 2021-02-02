@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-02-2021 a las 04:11:35
+-- Tiempo de generación: 03-02-2021 a las 00:06:51
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.11
 
@@ -101,17 +101,25 @@ INSERT INTO `clientes` (`ID`, `NombreEmpresa`, `Correo`, `Telefono`, `Direccion`
 
 CREATE TABLE `compras` (
   `id` int(11) NOT NULL,
-  `num_factura` varchar(30) NOT NULL,
-  `num_boleta` varchar(30) NOT NULL,
-  `anulado` varchar(30) NOT NULL,
-  `bajas` varchar(30) NOT NULL,
-  `dia` text NOT NULL,
-  `mes` text NOT NULL,
-  `year` text NOT NULL,
-  `ruc` text NOT NULL,
-  `r_social` text NOT NULL,
-  `monto` text NOT NULL
+  `num_comprobante` varchar(30) NOT NULL,
+  `tipo_comprobante` varchar(15) NOT NULL,
+  `ruc` varchar(30) NOT NULL,
+  `razon_social` varchar(150) NOT NULL,
+  `dir_fiscal` varchar(150) NOT NULL,
+  `fecha_emision` varchar(15) NOT NULL,
+  `moneda` varchar(15) NOT NULL,
+  `tipo_pago` varchar(30) NOT NULL,
+  `estado_sunat` varchar(30) NOT NULL,
+  `estado_cpe` varchar(30) NOT NULL,
+  `monto_total` decimal(16,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `compras`
+--
+
+INSERT INTO `compras` (`id`, `num_comprobante`, `tipo_comprobante`, `ruc`, `razon_social`, `dir_fiscal`, `fecha_emision`, `moneda`, `tipo_pago`, `estado_sunat`, `estado_cpe`, `monto_total`) VALUES
+(1, '1232131', 'factura', '20601883164', 'SOLUCIONES CCTV & SISTEMAS S.A.C.', 'MZA. H LOTE. 13 SEC.  1 - GP. 15 - VILLA EL SALVADOR', '2021/02/02', 'S/', 'efectivo', 'sunat_rechazado', 'estado_cancelado', '203.32');
 
 -- --------------------------------------------------------
 
@@ -1677,7 +1685,7 @@ CREATE TABLE `taza_cambio` (
 --
 
 INSERT INTO `taza_cambio` (`id`, `taza`) VALUES
-(1, '3.644');
+(1, '3.636');
 
 -- --------------------------------------------------------
 
@@ -1736,7 +1744,6 @@ CREATE TABLE `ventas` (
 --
 
 INSERT INTO `ventas` (`id`, `num_comprobante`, `tipo_comprobante`, `ruc`, `razon_social`, `dir_fiscal`, `fecha_emision`, `descripcion`, `por_concepto`, `moneda`, `tipo_pago`, `estado_sunat`, `estado_cpe`, `monto_total`) VALUES
-(2, '00002', 'nota_credito', '20601883164', '123123123', 'qweqwewqe', '2021/01/01', '123123123', 'producto', '$', 'efectivo', 'sunat_aceptado', 'estado_cancelado', '500.34'),
 (3, '0004', 'guia_remision', '20601883164', 'SOLUCIONES CCTV & SISTEMAS S.A.C.', 'MZA. H LOTE. 13 SEC.  1 - GP. 15 - VILLA EL SALVADOR', '2021/01/01', 'askdjajsjlkda', 'servicio', '$', 'transferencia', 'sunat_aceptado', 'estado_cancelado', '121.99'),
 (4, '00002', 'factura', '2060188316313', 'qwewqewqe', 'qweewqqwe', '2021/02/01', 'wqeewq', 'servicio', 'S/', 'efectivo', 'sunat_aceptado', 'estado_cancelado', '1233.56'),
 (10, '0004', 'factura', '20601883164', 'SOLUCIONES CCTV & SISTEMAS S.A.C.', 'MZA. H LOTE. 13 SEC.  1 - GP. 15 - VILLA EL SALVADOR', '2021/02/01', 'descripcion', 'producto', '$', 'efectivo', 'sunat_rechazado', 'estado_a_cuenta', '203.32'),
@@ -1840,6 +1847,12 @@ ALTER TABLE `ventas`
 --
 ALTER TABLE `afiliado`
   MODIFY `CodAfil` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `compras`
+--
+ALTER TABLE `compras`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `impuestos`
