@@ -12,7 +12,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>ComVen | HabaDev2 </title>
+    <title>ComVen | HabaDev </title>
     <meta name="keywords" content="ComVen-App">
     <meta name="description" content="">
     <meta name="author" content="">
