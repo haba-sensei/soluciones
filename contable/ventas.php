@@ -219,7 +219,7 @@
                                                 </div>
                                             </div>
                                             <div class="col col-6">
-                                                <h6 class="mt-0 mb-1">Monto Anual</h6>
+                                                <h6 class="mt-0 mb-1">Total del Año</h6>
                                                 <div class="count text-primary fs-20" id="monto_anual_venta">
                                                 </div>
                                             </div>
@@ -258,7 +258,7 @@
                                                 </div>
                                                 </div>
                                                 <div class="col col-6">
-                                                    <h6 class="mt-0 mb-1">Monto Mensual</h6>
+                                                    <h6 class="mt-0 mb-1">Total del Mes</h6>
                                                     <div class="count text-primary fs-20" id="monto_mes_venta">
                                                     </div>
                                                 </div>
@@ -274,8 +274,8 @@
                                             <div class="row align-items-center">
                                                 <div
                                                     style="position: absolute; background: #f58634; height: 26%; width: 40.3%; left: 0; top: 0;">
-                                                    <span style="padding-left: 10px; color:white;">Estado
-                                                        Retencion</span>
+                                                    <span style="padding-left: 22px; color:white;">Estado
+                                                        Renta</span>
                                                 </div>
                                                 <div
                                                     style="position: absolute; border-right: 1px solid #d6b7b7; height: 74%;  bottom: 0; left: 40%;">
@@ -292,7 +292,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col col-6">
-                                                    <h6 class="mt-0 mb-1">Retención Igv</h6>
+                                                    <h6 class="mt-0 mb-1">Total Renta del Mes</h6>
                                                     <div class="count text-primary fs-20" id="impuesto_retencion">
 
                                                     </div>
@@ -309,8 +309,8 @@
                                             <div class="row align-items-center">
                                                 <div
                                                     style="position: absolute; background: #f58634; height: 26%; width: 40.3%; left: 0; top: 0;">
-                                                    <span style="padding-left: 10px; color:white;">Estado
-                                                        Impuesto</span>
+                                                    <span style="padding-left: 28px; color:white;">Estado
+                                                        IGV</span>
                                                 </div>
                                                 <div
                                                     style="position: absolute; border-right: 1px solid #d6b7b7; height: 74%;  bottom: 0; left: 40%;">
@@ -327,7 +327,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col col-6">
-                                                    <h6 class="mt-0 mb-1">Impuesto Total</h6>
+                                                    <h6 class="mt-0 mb-1">Total Igv del Mes</h6>
                                                     <div class="count text-primary fs-20" id="impuesto_total">
 
                                                     </div>
@@ -364,8 +364,9 @@
                                                 <th scope="col">Fecha Emisión</th>
                                                 <th scope="col">Estado Sunat</th>
                                                 <th scope="col">Estado CPE</th>
-                                                <th scope="col">Acciones</th>
+                                                
                                                 <th scope="col">Monto Total</th>
+                                                <th scope="col">Acciones</th>
                                                 
                                                 
                                                 <th scope="col">Dirección Fiscal</th>
@@ -872,11 +873,11 @@
                             <div class="col-sm-12">
                                 <form id="update_impuesto" method="POST"
                                     onsubmit="updateImpuesto(); return false">
-                                    <label for="monto_impuesto_up">Impuesto</label>
+                                    <label for="monto_impuesto_up">IGV 18%</label>
                                     <input type="text" class="rounded form-control" name="monto_impuesto"
                                         id="monto_impuesto_up">
                                         <br>
-                                        <label for="monto_igv_up">Retención</label>
+                                        <label for="monto_igv_up">Renta 5%</label>
                                     <input type="text" class="rounded form-control" name="monto_igv"
                                     id="monto_igv_up">
                                     <input type="hidden" class="rounded form-control"
@@ -893,7 +894,7 @@
 
                                         <option value="">Seleciona una opcion</option>
                                         <option value="Pagado">Pagado</option>
-                                        <option value="Retencion">Retencion</option>
+                                       
                                         <option value="No Pagado">No Pagado</option>
                                        
 
@@ -902,7 +903,7 @@
                                     </select>
                                     <br><br>
                                     <button class="text-white rounded form-control bg-success"
-                                        type="submit">Guardar
+                                        type="submit">Pagar Impuesto
                                     </button>
                                 </form>
                             </div>
@@ -1057,6 +1058,15 @@
                                             }
                                         },
                                         {
+                                            "sName": "MONTO TOTAL",
+                                            "bSearchable": false,
+                                            "bSortable": false,
+                                            "mRender": function(data, type, full) {
+
+                                                return "S/ "+full[12]
+                                            }
+                                        },
+                                        {
                                             "sName": "ACCIONES",
                                             "bSearchable": false,
                                             "bSortable": false,
@@ -1064,15 +1074,6 @@
 
                                                 return "<button class='btn btn-info btn-sm btn-square rounded-pill' data-toggle='modal'  data-target='#modalEdicion' onclick='agregaform_venta("+ full[13] +")'><span class='btn-icon icofont-ui-edit' style='color:white;'></span></button> <button class='btn btn-error btn-sm btn-square rounded-pill' onclick='preguntarSiNo_venta("+ full[13] +")'><span class='btn-icon icofont-ui-delete'></span></button>";
                                               
-                                            }
-                                        },
-                                        {
-                                            "sName": "MONTO TOTAL",
-                                            "bSearchable": false,
-                                            "bSortable": false,
-                                            "mRender": function(data, type, full) {
-
-                                                return "S/ "+full[12]
                                             }
                                         },
                                         {
@@ -1133,7 +1134,7 @@
                                         {
                                             extend: 'excel',
                                             "exportOptions": {
-                                                "columns": [ 0, 1, 2, 3, 4, 5, 6, 13, 12, 8 ]
+                                                "columns": [ 0, 1, 2, 3, 4, 5, 6, 13, 12, 7 ]
                                             }
                                         },
                                         {
@@ -1141,7 +1142,7 @@
                                             orientation: 'landscape',
                                             pageSize: 'LETTER',
                                             "exportOptions": {
-                                                "columns": [ 0, 1, 2, 3, 4, 5, 6, 13, 12, 8 ]
+                                                "columns": [ 0, 1, 2, 3, 4, 5, 6, 13, 12, 7 ]
                                             }
                                         }  
                                     ]

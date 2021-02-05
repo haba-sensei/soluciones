@@ -78,16 +78,16 @@
       }
       
      
-
+      // 
 
         $arreglo_data=array (
             'año' => $numAnual,
-            'total_num_anual' => "Total ".$total_num_anual,
+            'total_num_anual' => "Nro. Total: ".$total_num_anual,
             'total_anual' => "S/ ".$total_anual,
             'mes' => $numMes,
             'num_mes' => $numMes_format,
             'total_mes' => "S/ ".$total_mes,
-            'total_venta' => "Total ".$total_venta,
+            'total_venta' => "Nro. Total: ".$total_venta,
             'retencion' => $retencion,
             'impuesto' => $impuesto,
             'impuesto_total_f' => $impuesto_total_f,

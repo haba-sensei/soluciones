@@ -224,7 +224,7 @@
                                                 </div>
                                             </div>
                                             <div class="col col-6">
-                                                <h6 class="mt-0 mb-1">Monto Anual</h6>
+                                                <h6 class="mt-0 mb-1">Total del Año</h6>
                                                 <div class="count text-primary fs-20" id="monto_anual_venta">
                                                 </div>
                                             </div>
@@ -268,7 +268,7 @@
                                                 </div>
                                                 </div>
                                                 <div class="col col-6">
-                                                    <h6 class="mt-0 mb-1" >Monto Mensual</h6>
+                                                    <h6 class="mt-0 mb-1" >Total del Mes</h6>
                                                     <div class="count text-primary fs-20" id="monto_mes_venta">
                                                     </div>
                                                 </div>
@@ -303,8 +303,9 @@
                                                 <th scope="col">Fecha Emisión</th>
                                                 <th scope="col">Estado Sunat</th>
                                                 <th scope="col">Estado CPE</th>
-                                                <th scope="col">Acciones</th>
+                                                
                                                 <th scope="col">Monto Total</th>
+                                                <th scope="col">Acciones</th>
                                                 <th scope="col">Dirección Fiscal</th>
                                                 
                                                  
@@ -956,21 +957,21 @@
                                             }
                                         },
                                         {
-                                            "sName": "ACCIONES",
-                                            "bSearchable": false,
-                                            "bSortable": false,
-                                            "mRender": function(data, type, full) {
-
-                                                return "<button class='btn btn-info btn-sm btn-square rounded-pill' data-toggle='modal'  data-target='#modalEdicion' onclick='agregaform_compra("+ full[11] +")'><span class='btn-icon icofont-ui-edit' style='color:white;'></span></button> <button class='btn btn-error btn-sm btn-square rounded-pill' onclick='preguntarSiNo_compra("+ full[11] +")'><span class='btn-icon icofont-ui-delete'></span></button>";
-                                            }
-                                        },
-                                        {
                                             "sName": "MONTO TOTAL",
                                             "bSearchable": false,
                                             "bSortable": false,
                                             "mRender": function(data, type, full) {
 
                                                 return "S/ "+full[10]
+                                            }
+                                        },
+                                        {
+                                            "sName": "ACCIONES",
+                                            "bSearchable": false,
+                                            "bSortable": false,
+                                            "mRender": function(data, type, full) {
+
+                                                return "<button class='btn btn-info btn-sm btn-square rounded-pill' data-toggle='modal'  data-target='#modalEdicion' onclick='agregaform_compra("+ full[11] +")'><span class='btn-icon icofont-ui-edit' style='color:white;'></span></button> <button class='btn btn-error btn-sm btn-square rounded-pill' onclick='preguntarSiNo_compra("+ full[11] +")'><span class='btn-icon icofont-ui-delete'></span></button>";
                                             }
                                         },
                                         {
@@ -1012,7 +1013,7 @@
                                         {
                                             extend: 'excel',
                                             "exportOptions": {
-                                                "columns": [ 0, 1, 2, 3, 4, 5, 6, 10, 11, 8]
+                                                "columns": [ 0, 1, 2, 3, 4, 5, 6, 10, 11 ,7]
                                             }
                                         },
                                         {
@@ -1020,7 +1021,7 @@
                                             orientation: 'landscape',
                                             pageSize: 'LETTER',
                                             "exportOptions": {
-                                                "columns": [ 0, 1, 2, 3, 4, 5, 6, 10, 11, 8]
+                                                "columns": [ 0, 1, 2, 3, 4, 5, 6, 10, 11 ,7]
                                             }
                                         }  
                                     ]
