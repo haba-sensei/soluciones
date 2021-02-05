@@ -247,10 +247,15 @@
                                                 <div class="col col-6" align="center"
                                                     style="position: relative; left: 54px; top: 8px; transform: translateX(-50%); ">
                                                     <div class="p-0 opacity-50 icon fs-19 text-primary "
-                                                        id="mes_actual_venta">
+                                                        id="mes_actual_venta" style="position:relative; top: -8px;">
 
 
                                                     </div>
+                                                    <div
+                                                    style="position: absolute; background: #f58634; height: 72%; width: 86.3%; left: 10px; top: 30px;">
+                                                    <span style="padding-left: 0; color:white;" id="num_venta">
+                                                    </span>
+                                                </div>
                                                 </div>
                                                 <div class="col col-6">
                                                     <h6 class="mt-0 mb-1">Monto Mensual</h6>
@@ -264,18 +269,37 @@
                             </div>
                             <div class="col col-12 col-md-6 col-xl-3">
                                 <div class="card animated fadeInUp delay-03s bg-light">
-                                    <div class="card-body">
-                                        <div class="row align-items-center">
-                                            <div class="col col-5">
-                                                <div class="p-0 opacity-50 icon fs-48 text-primary icofont-money-bag">
+                                <a href="javascript:" onclick="openModal()">
+                                        <div class="card-body" style="border-left: 1px solid #d6b7b7;">
+                                            <div class="row align-items-center">
+                                                <div
+                                                    style="position: absolute; background: #f58634; height: 26%; width: 40.3%; left: 0; top: 0;">
+                                                    <span style="padding-left: 10px; color:white;">Estado
+                                                        Retencion</span>
+                                                </div>
+                                                <div
+                                                    style="position: absolute; border-right: 1px solid #d6b7b7; height: 74%;  bottom: 0; left: 40%;">
+                                                </div>
+                                                <div
+                                                    style="position: absolute; border-bottom: 1px solid #d6b7b7; width: 40%;  bottom: 0; left: 0;">
+                                                </div>
+                                                <div class="col col-6" align="center"
+                                                    style="position: relative; left: 54px; top: 8px; transform: translateX(-50%); ">
+                                                    <div class="p-0 opacity-50 icon fs-19 text-primary "
+                                                        id="retencion">
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="col col-6">
+                                                    <h6 class="mt-0 mb-1">Retención Igv</h6>
+                                                    <div class="count text-primary fs-20" id="impuesto_retencion">
+
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col col-7">
-                                                <h6 class="mt-0 mb-1">Nro de Ventas </h6>
-                                                <div class="count text-primary fs-20" id="num_venta"> </div>
-                                            </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                             </div>
                             <div class="col col-12 col-md-6 col-xl-3">
@@ -312,19 +336,7 @@
                                         </div>
                                     </a>
 
-                                    <!-- <div class="card-body">
-                                        <div class="row align-items-center">
-                                            <div class="col col-5">
-                                                <div class="p-0 opacity-50 icon fs-48 text-primary icofont-dollar-plus">
-                                                </div>
-                                            </div>
-                                            <div class="col col-7">
-                                                <h6 class="mt-0 mb-1 text-nowrap">Impuesto</h6>
-                                                <div class="count text-primary fs-20" id="impuesto_venta">  
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> -->
+                                    
                                 </div>
                             </div>
 
@@ -352,8 +364,10 @@
                                                 <th scope="col">Fecha Emisión</th>
                                                 <th scope="col">Estado Sunat</th>
                                                 <th scope="col">Estado CPE</th>
-                                                <th scope="col">Tipo Pago</th>
+                                                <th scope="col">Acciones</th>
                                                 <th scope="col">Monto Total</th>
+                                                
+                                                
                                                 <th scope="col">Dirección Fiscal</th>
                                                 
                                                 <th scope="col">Descripción </th>
@@ -362,7 +376,7 @@
                                                  
                                                
                                                 
-                                                <th scope="col">Acciones</th>
+                                                <th scope="col">Tipo de Pago</th>
 
                                             </tr>
                                         </thead>
@@ -412,19 +426,23 @@
                                     <div class="form-group with-prefix-icon">
                                         <div class="prefix-icon icofont-attachment"></div>
                                         <div class="input-group ">
-                                            <input name="num_comprobante"  class="rounded form-control" type="text"
+                                            <input name="num_comprobante" id="num_comprobante" class="rounded form-control" type="text"
                                                 placeholder="N° Comprobante" style="border-top-left-radius: 0 !important;
                                                                     border-bottom-left-radius: 0 !important;
                                                                     border-top-right-radius: 0px !important;
                                                                     border-bottom-right-radius: 0px !important;">
                                             <div class="input-group-addon">
-                                                <select class="rounded form-control" name="tipo_comprobante" style="padding-left: 0px;
-                                                                            padding-right: 0px;
-                                                                            border-top-left-radius: 0 !important;
-                                                                            border-bottom-left-radius: 0 !important;
-                                                                            border-top-right-radius: 0px !important;
-                                                                            border-bottom-right-radius: 0px !important;
-                                                                            padding-bottom: 10px;">
+                                                <select class="rounded form-control" name="tipo_comprobante" id="tipo_comprobante" style="padding-left: 0px;
+                                                                                                                                                padding-right: 0px;
+                                                                                                                                                border-top-left-radius: 0 !important;
+                                                                                                                                                border-bottom-left-radius: 0 !important;
+                                                                                                                                                border-top-right-radius: 6px !important;
+                                                                                                                                                border-bottom-right-radius: 6px !important;
+                                                                                                                                                padding-bottom: 10px;
+                                                                                                                                                border-style: solid;
+                                                                                                                                                border-color: #ffffff;
+                                                                                                                                                background: #336cfb;
+                                                                                                                                                color: #f7f7f7;">
                                                     <option value="">Tipo</option>
                                                     <option value="factura">Factura</option>
                                                     <option value="boleta">Boleta</option>
@@ -470,7 +488,7 @@
 
                                 <div class="col-12 col-md-3">
                                     <div class="form-group with-prefix-icon">
-                                        <div class="prefix-icon icofont-ui-calendar"></div><input name="fecha_emision"
+                                        <div class="prefix-icon icofont-ui-calendar"></div><input name="fecha_emision" id="fecha_emision"
                                             placeholder="FECHA EMISION" class="rounded form-control datepicker">
                                     </div>
                                 </div>
@@ -478,7 +496,7 @@
                                 <div class="col-12 col-md-3">
                                     <div class="form-group with-prefix-icon">
                                         <div class="prefix-icon icofont-money"></div><input type="text"
-                                            name="descripcion" class="rounded form-control" placeholder="DESCRIPCION">
+                                        id="descripcion"  name="descripcion" class="rounded form-control" placeholder="DESCRIPCION">
 
                                     </div>
                                 </div>
@@ -487,7 +505,7 @@
                                 <div class="col-12 col-md-3">
                                     <div class="form-group with-prefix-icon">
                                         <div class="prefix-icon icofont-money"></div>
-                                        <select class="rounded form-control" name="por_concepto">
+                                        <select class="rounded form-control" id="por_concepto" name="por_concepto">
                                             <option value="">POR CONCEPTO</option>
                                             <option value="servicio">SERVICIO</option>
                                             <option value="producto">PRODUCTO</option>
@@ -503,7 +521,7 @@
                                 <div class="col-12 col-md-3">
                                     <div class="form-group with-prefix-icon">
                                         <div class="prefix-icon icofont-money"></div>
-                                        <select class="rounded form-control" name="moneda">
+                                        <select class="rounded form-control" name="moneda" id="moneda">
                                             <option value="">TIPO DE MONEDA</option>
                                             <option value="$">$ </option>
                                             <option value="S/">S/</option>
@@ -516,7 +534,7 @@
                                 <div class="col-12 col-md-3">
                                     <div class="form-group with-prefix-icon">
                                         <div class="prefix-icon icofont-money"></div>
-                                        <select class="rounded form-control" name="tipo_pago">
+                                        <select class="rounded form-control" id="tipo_pago" name="tipo_pago">
                                             <option value="">TIPO DE PAGO</option>
                                             <option value="efectivo">EFECTIVO</option>
                                             <option value="transferencia">TRANSFERENCIA</option>
@@ -533,7 +551,7 @@
                                 <div class="col-12 col-md-3">
                                     <div class="form-group with-prefix-icon">
                                         <div class="prefix-icon icofont-money"></div>
-                                        <select class="rounded form-control" name="estado_sunat">
+                                        <select class="rounded form-control" id="estado_sunat" name="estado_sunat">
                                             <option value="">ESTADO SUNAT</option>
                                             <option value="sunat_aceptado">ACECPTADO</option>
                                             <option value="sunat_rechazado">RECHAZADO</option>
@@ -550,7 +568,7 @@
                                 <div class="col-12 col-md-3">
                                     <div class="form-group with-prefix-icon">
                                         <div class="prefix-icon icofont-money"></div>
-                                        <select class="rounded form-control" name="estado_cpe">
+                                        <select class="rounded form-control" id="estado_cpe" name="estado_cpe">
                                             <option value="">ESTADO CPE</option>
                                             <option value="estado_cancelado">CANCELADO</option>
                                             <option value="estado_a_cuenta">A CUENTA</option>
@@ -563,7 +581,7 @@
                                 <div class="col-12 col-md-3">
                                     <div class="form-group with-prefix-icon">
                                         <div class="prefix-icon icofont-money"></div><input type="text"
-                                            name="monto_total" class="rounded form-control" placeholder="MONTO TOTAL">
+                                            name="monto_total" id="monto_total" class="rounded form-control" placeholder="MONTO TOTAL">
 
                                     </div>
                                 </div>
@@ -625,12 +643,16 @@
                                                                     border-bottom-right-radius: 0px !important;">
                                             <div class="input-group-addon">
                                                 <select class="rounded form-control" id="tipo_comprobante_up" name="tipo_comprobante_up" style="padding-left: 0px;
-                                                                            padding-right: 0px;
-                                                                            border-top-left-radius: 0 !important;
-                                                                            border-bottom-left-radius: 0 !important;
-                                                                            border-top-right-radius: 0px !important;
-                                                                            border-bottom-right-radius: 0px !important;
-                                                                            padding-bottom: 10px;">
+                                                                                                                                                padding-right: 0px;
+                                                                                                                                                border-top-left-radius: 0 !important;
+                                                                                                                                                border-bottom-left-radius: 0 !important;
+                                                                                                                                                border-top-right-radius: 6px !important;
+                                                                                                                                                border-bottom-right-radius: 6px !important;
+                                                                                                                                                padding-bottom: 10px;
+                                                                                                                                                border-style: solid;
+                                                                                                                                                border-color: #ffffff;
+                                                                                                                                                background: #336cfb;
+                                                                                                                                                color: #f7f7f7;">
                                                     <option value="">Tipo</option>
                                                     <option value="factura">Factura</option>
                                                     <option value="boleta">Boleta</option>
@@ -850,9 +872,11 @@
                             <div class="col-sm-12">
                                 <form id="update_impuesto" method="POST"
                                     onsubmit="updateImpuesto(); return false">
+                                    <label for="monto_impuesto_up">Impuesto</label>
                                     <input type="text" class="rounded form-control" name="monto_impuesto"
                                         id="monto_impuesto_up">
                                         <br>
+                                        <label for="monto_igv_up">Retención</label>
                                     <input type="text" class="rounded form-control" name="monto_igv"
                                     id="monto_igv_up">
                                     <input type="hidden" class="rounded form-control"
@@ -863,12 +887,15 @@
 
 
                                     <br>
+                                    <label for="opcion_impuesto">Acciones</label>
                                     <select id="opcion_impuesto" name="opcion_impuesto"
                                         class="selectpicker ">
 
                                         <option value="">Seleciona una opcion</option>
                                         <option value="Pagado">Pagado</option>
+                                        <option value="Retencion">Retencion</option>
                                         <option value="No Pagado">No Pagado</option>
+                                       
 
 
 
@@ -905,6 +932,28 @@
                             <script type="text/javascript" src="librerias/datatable/datatable.js"></script>
 
                             <script>
+
+                            $(function($) {
+                                $.fn.datepicker.dates['es'] = {
+                                    days: ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes",
+                                        "Sábado",
+                                        "Domingo"
+                                    ],
+                                    daysShort: ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"],
+                                    daysMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa", "Do"],
+                                    months: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
+                                        "Agosto",
+                                        "Septiembre",
+                                        "Octubre", "Noviembre", "Diciembre"
+                                    ],
+                                    monthsShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago",
+                                        "Sep", "Oct",
+                                        "Nov",
+                                        "Dic"
+                                    ],
+                                    today: "Hoy"
+                                };
+                            });
                             function gestor_venta(fecha, anual) {
 
                                 $('#example2').DataTable({
@@ -1008,12 +1057,13 @@
                                             }
                                         },
                                         {
-                                            "sName": "TIPO PAGO",
+                                            "sName": "ACCIONES",
                                             "bSearchable": false,
                                             "bSortable": false,
                                             "mRender": function(data, type, full) {
 
-                                                return full[9]
+                                                return "<button class='btn btn-info btn-sm btn-square rounded-pill' data-toggle='modal'  data-target='#modalEdicion' onclick='agregaform_venta("+ full[13] +")'><span class='btn-icon icofont-ui-edit' style='color:white;'></span></button> <button class='btn btn-error btn-sm btn-square rounded-pill' onclick='preguntarSiNo_venta("+ full[13] +")'><span class='btn-icon icofont-ui-delete'></span></button>";
+                                              
                                             }
                                         },
                                         {
@@ -1022,7 +1072,7 @@
                                             "bSortable": false,
                                             "mRender": function(data, type, full) {
 
-                                                return full[12]
+                                                return "S/ "+full[12]
                                             }
                                         },
                                         {
@@ -1063,12 +1113,12 @@
                                             }
                                         },
                                         {
-                                            "sName": "ACCIONES",
+                                            "sName": "TIPO DE PAGO",
                                             "bSearchable": false,
                                             "bSortable": false,
                                             "mRender": function(data, type, full) {
                                                 
-                                              return "<button class='btn btn-info btn-sm btn-square rounded-pill' data-toggle='modal'  data-target='#modalEdicion' onclick='agregaform_venta("+ full[13] +")'><span class='btn-icon icofont-ui-edit'></span></button> <button class='btn btn-error btn-sm btn-square rounded-pill' onclick='preguntarSiNo_venta("+ full[13] +")'><span class='btn-icon icofont-ui-delete'></span></button>";
+                                              return full[9]
                                                 
                                             }
                                         }
@@ -1083,7 +1133,7 @@
                                         {
                                             extend: 'excel',
                                             "exportOptions": {
-                                                "columns": [ 0, 1, 2, 3, 4, 5, 6, 7, 12, 8 ]
+                                                "columns": [ 0, 1, 2, 3, 4, 5, 6, 13, 12, 8 ]
                                             }
                                         },
                                         {
@@ -1091,7 +1141,7 @@
                                             orientation: 'landscape',
                                             pageSize: 'LETTER',
                                             "exportOptions": {
-                                                "columns": [ 0, 1, 2, 3, 4, 5, 6, 7, 12, 8 ]
+                                                "columns": [ 0, 1, 2, 3, 4, 5, 6, 13, 12, 8 ]
                                             }
                                         }  
                                     ]
@@ -1126,6 +1176,8 @@
                                         $("#monto_mes_venta").html(data["total_mes"]);
                                         $("#num_venta").html(data["total_venta"]);
                                         $("#impuesto_venta").html(data["impuesto"]);
+                                        $("#retencion").html(data["retencion"]);
+                                        $("#impuesto_retencion").html(data["impuesto_igv"]);
                                         $("#impuesto_total").html(data["impuesto_total"]);
 
                                         document.getElementById("monto_impuesto_up").value = data[
@@ -1239,6 +1291,21 @@
                                         metricas_venta($fecha_compuesta);
                                         gestor_venta($fecha_compuesta, anual1);
                                         fechaEstatica($fecha_compuesta);
+                                        
+                                        document.getElementById("num_comprobante").value = "";
+                                        document.getElementById("tipo_comprobante").value = "";
+                                        document.getElementById("ruc").value = "";
+                                        document.getElementById("razon_social").value = "";
+                                        document.getElementById("dir_fiscal").value = "";
+                                        document.getElementById("fecha_emision").value = "";
+                                        document.getElementById("descripcion").value = "";
+                                        document.getElementById("por_concepto").value = "";
+                                        document.getElementById("moneda").value = "";
+                                        document.getElementById("tipo_pago").value = "";
+                                        document.getElementById("estado_sunat").value = "";
+                                        document.getElementById("estado_cpe").value = "";
+                                        document.getElementById("monto_total").value = "";
+                                         
                                     }
                                 });
 
@@ -1312,27 +1379,7 @@
                             
                             }
 
-                             $(function($) {
-                                $.fn.datepicker.dates['es'] = {
-                                    days: ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes",
-                                        "Sábado",
-                                        "Domingo"
-                                    ],
-                                    daysShort: ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"],
-                                    daysMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa", "Do"],
-                                    months: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
-                                        "Agosto",
-                                        "Septiembre",
-                                        "Octubre", "Noviembre", "Diciembre"
-                                    ],
-                                    monthsShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago",
-                                        "Sep", "Oct",
-                                        "Nov",
-                                        "Dic"
-                                    ],
-                                    today: "Hoy"
-                                };
-                            });
+                             
                              
                            
                             </script>

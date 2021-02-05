@@ -191,14 +191,14 @@
                         <!-- metricas  -->
                         <div class="row">
 
-                            <div class="col col-12 col-md-6 col-xl-3">
+                            <div class="col col-12 col-md-6 col-xl-6">
                                 <div class="card animated fadeInUp delay-01s bg-light">
                                 <a href="javascript:" onclick="reporteAnual()">
                                     <div class="card-body" style="border-left: 1px solid #d6b7b7;">
                                         <div class="row align-items-center">
                                             <div
                                                 style="position: absolute; background: #3164e4; height: 26%; width: 40.3%; left: 0; top: 0;">
-                                                <span style="padding-left: 30px; color:white;">Año Actual </span>
+                                                <span style="padding-left: 37%; color:white;">Año Actual </span>
                                             </div>
                                             <div
                                                 style="position: absolute; border-right: 1px solid #d6b7b7; height: 74%;  bottom: 0; left: 40%;">
@@ -208,12 +208,17 @@
                                             </div>
                                             <div class="col col-6" align="center"
                                                 style="position: relative; left: 54px; top: 8px; transform: translateX(-50%); margin-bottom: 13px;">
-                                                <div class="p-0 opacity-50 icon fs-19 text-primary " id="anual_actual">
+                                                <div class="p-0 opacity-50 icon fs-19 text-primary " id="anual_actual" style="position: relative; left: 67px;">
 
                                                 </div>
                                                 <input type="hidden" id="anual_">
                                                 <div
-                                                    style="position: absolute; background: #3164e4; height: 72%; width: 86.3%; left: 10px; top: 38px;">
+                                                    style="position: absolute;
+                                                            background: #3164e4;
+                                                            height: 72%;
+                                                            width: 83%;
+                                                            left: 94px;
+                                                            top: 38px;">
                                                     <span style="padding-left: 0; color:white;" id="total_num_anual">
                                                     </span>
                                                 </div>
@@ -228,14 +233,14 @@
                                      </a> 
                                 </div>
                             </div>
-                            <div class="col col-12 col-md-6 col-xl-3">
+                            <div class="col col-12 col-md-6 col-xl-6">
                                 <div class="card animated fadeInUp delay-02s bg-light">
                                     <a href="" data-toggle="modal" data-target="#modalMes">
                                         <div class="card-body" style="border-left: 1px solid #d6b7b7;">
                                             <div class="row align-items-center">
                                                 <div
                                                     style="position: absolute; background: #3164e4; height: 26%; width: 40.3%; left: 0; top: 0;">
-                                                    <span style="padding-left: 10px; color:white;">Selecciona el
+                                                    <span style="padding-left: 75px; color:white;">Selecciona el
                                                         Mes</span>
                                                 </div>
                                                 <div
@@ -247,13 +252,23 @@
                                                 <div class="col col-6" align="center"
                                                     style="position: relative; left: 54px; top: 8px; transform: translateX(-50%); ">
                                                     <div class="p-0 opacity-50 icon fs-19 text-primary "
-                                                        id="mes_actual_venta">
+                                                        id="mes_actual_venta" style="position: relative; top: -8px; left: 66px;">
 
 
                                                     </div>
+                                                    <div
+                                                    style="position: absolute;
+                                                            background: #3164e4;
+                                                            height: 72%;
+                                                            width: 83%;
+                                                            left: 94px;
+                                                            top: 30px;">
+                                                    <span style="padding-left: 0; color:white;" id="num_venta">
+                                                    </span>
+                                                </div>
                                                 </div>
                                                 <div class="col col-6">
-                                                    <h6 class="mt-0 mb-1">Monto Mensual</h6>
+                                                    <h6 class="mt-0 mb-1" >Monto Mensual</h6>
                                                     <div class="count text-primary fs-20" id="monto_mes_venta">
                                                     </div>
                                                 </div>
@@ -262,71 +277,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="col col-12 col-md-6 col-xl-3">
-                                <div class="card animated fadeInUp delay-03s bg-light">
-                                    <div class="card-body">
-                                        <div class="row align-items-center">
-                                            <div class="col col-5">
-                                                <div class="p-0 opacity-50 icon fs-48 text-primary icofont-money-bag">
-                                                </div>
-                                            </div>
-                                            <div class="col col-7">
-                                                <h6 class="mt-0 mb-1">Nro de Compras </h6>
-                                                <div class="count text-primary fs-20" id="num_venta"> </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col col-12 col-md-6 col-xl-3">
-                                <div class="card animated fadeInUp delay-04s bg-light">
-                                    <a href="javascript:" onclick="openModal()">
-                                        <div class="card-body" style="border-left: 1px solid #d6b7b7;">
-                                            <div class="row align-items-center">
-                                                <div
-                                                    style="position: absolute; background: #3164e4; height: 26%; width: 40.3%; left: 0; top: 0;">
-                                                    <span style="padding-left: 10px; color:white;">Estado
-                                                        Impuesto</span>
-                                                </div>
-                                                <div
-                                                    style="position: absolute; border-right: 1px solid #d6b7b7; height: 74%;  bottom: 0; left: 40%;">
-                                                </div>
-                                                <div
-                                                    style="position: absolute; border-bottom: 1px solid #d6b7b7; width: 40%;  bottom: 0; left: 0;">
-                                                </div>
-                                                <div class="col col-6" align="center"
-                                                    style="position: relative; left: 54px; top: 8px; transform: translateX(-50%); ">
-                                                    <div class="p-0 opacity-50 icon fs-19 text-primary "
-                                                        id="impuesto_venta">
-
-
-                                                    </div>
-                                                </div>
-                                                <div class="col col-6">
-                                                    <h6 class="mt-0 mb-1">Impuesto Total</h6>
-                                                    <div class="count text-primary fs-20" id="impuesto_total">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-
-                                    <!-- <div class="card-body">
-                                        <div class="row align-items-center">
-                                            <div class="col col-5">
-                                                <div class="p-0 opacity-50 icon fs-48 text-primary icofont-dollar-plus">
-                                                </div>
-                                            </div>
-                                            <div class="col col-7">
-                                                <h6 class="mt-0 mb-1 text-nowrap">Impuesto</h6>
-                                                <div class="count text-primary fs-20" id="impuesto_venta">  
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> -->
-                                </div>
-                            </div>
+                           
 
 
 
@@ -352,7 +303,7 @@
                                                 <th scope="col">Fecha Emisión</th>
                                                 <th scope="col">Estado Sunat</th>
                                                 <th scope="col">Estado CPE</th>
-                                                <th scope="col">Tipo Pago</th>
+                                                <th scope="col">Acciones</th>
                                                 <th scope="col">Monto Total</th>
                                                 <th scope="col">Dirección Fiscal</th>
                                                 
@@ -361,7 +312,7 @@
                                                  
                                                
                                                 
-                                                <th scope="col">Acciones</th>
+                                                <th scope="col">Tipo de Pago</th>
 
                                             </tr>
                                         </thead>
@@ -411,19 +362,23 @@
                                     <div class="form-group with-prefix-icon">
                                         <div class="prefix-icon icofont-attachment"></div>
                                         <div class="input-group ">
-                                            <input name="num_comprobante"  class="rounded form-control" type="text"
+                                            <input name="num_comprobante" id="num_comprobante" class="rounded form-control" type="text"
                                                 placeholder="N° Comprobante" style="border-top-left-radius: 0 !important;
                                                                     border-bottom-left-radius: 0 !important;
                                                                     border-top-right-radius: 0px !important;
                                                                     border-bottom-right-radius: 0px !important;">
                                             <div class="input-group-addon">
-                                                <select class="rounded form-control" name="tipo_comprobante" style="padding-left: 0px;
-                                                                            padding-right: 0px;
-                                                                            border-top-left-radius: 0 !important;
-                                                                            border-bottom-left-radius: 0 !important;
-                                                                            border-top-right-radius: 0px !important;
-                                                                            border-bottom-right-radius: 0px !important;
-                                                                            padding-bottom: 10px;">
+                                                <select class="rounded form-control" id="tipo_comprobante" name="tipo_comprobante" style="padding-left: 0px;
+                                                                                                                    padding-right: 0px;
+                                                                                                                    border-top-left-radius: 0 !important;
+                                                                                                                    border-bottom-left-radius: 0 !important;
+                                                                                                                    border-top-right-radius: 6px !important;
+                                                                                                                    border-bottom-right-radius: 6px !important;
+                                                                                                                    padding-bottom: 10px;
+                                                                                                                    border-style: solid;
+                                                                                                                    border-color: #ffffff;
+                                                                                                                    background: #336cfb;
+                                                                                                                    color: #f7f7f7;">
                                                     <option value="">Tipo</option>
                                                     <option value="factura">Factura</option>
                                                     <option value="boleta">Boleta</option>
@@ -469,7 +424,7 @@
 
                                 <div class="col-12 col-md-3">
                                     <div class="form-group with-prefix-icon">
-                                        <div class="prefix-icon icofont-ui-calendar"></div><input name="fecha_emision"
+                                        <div class="prefix-icon icofont-ui-calendar"></div><input id="fecha_emision" name="fecha_emision"
                                             placeholder="FECHA EMISION" class="rounded form-control datepicker">
                                     </div>
                                 </div>
@@ -485,7 +440,7 @@
                                 <div class="col-12 col-md-3">
                                     <div class="form-group with-prefix-icon">
                                         <div class="prefix-icon icofont-money"></div>
-                                        <select class="rounded form-control" name="moneda">
+                                        <select class="rounded form-control" name="moneda" id="moneda" >
                                             <option value="">TIPO DE MONEDA</option>
                                             <option value="$">$ </option>
                                             <option value="S/">S/</option>
@@ -498,7 +453,7 @@
                                 <div class="col-12 col-md-3">
                                     <div class="form-group with-prefix-icon">
                                         <div class="prefix-icon icofont-money"></div>
-                                        <select class="rounded form-control" name="tipo_pago">
+                                        <select class="rounded form-control" name="tipo_pago" id="tipo_pago" >
                                             <option value="">TIPO DE PAGO</option>
                                             <option value="efectivo">EFECTIVO</option>
                                             <option value="transferencia">TRANSFERENCIA</option>
@@ -515,7 +470,7 @@
                                 <div class="col-12 col-md-3">
                                     <div class="form-group with-prefix-icon">
                                         <div class="prefix-icon icofont-money"></div>
-                                        <select class="rounded form-control" name="estado_sunat">
+                                        <select class="rounded form-control"   name="estado_sunat" id="estado_sunat">
                                             <option value="">ESTADO SUNAT</option>
                                             <option value="sunat_aceptado">ACECPTADO</option>
                                             <option value="sunat_rechazado">RECHAZADO</option>
@@ -532,7 +487,7 @@
                                 <div class="col-12 col-md-3">
                                     <div class="form-group with-prefix-icon">
                                         <div class="prefix-icon icofont-money"></div>
-                                        <select class="rounded form-control" name="estado_cpe">
+                                        <select class="rounded form-control" name="estado_cpe" id="estado_cpe" >
                                             <option value="">ESTADO CPE</option>
                                             <option value="estado_cancelado">CANCELADO</option>
                                             <option value="estado_a_cuenta">A CUENTA</option>
@@ -545,7 +500,7 @@
                                 <div class="col-12 col-md-3">
                                     <div class="form-group with-prefix-icon">
                                         <div class="prefix-icon icofont-money"></div><input type="text"
-                                            name="monto_total" class="rounded form-control" placeholder="MONTO TOTAL">
+                                        name="monto_total"  id="monto_total"    class="rounded form-control" placeholder="MONTO TOTAL">
 
                                     </div>
                                 </div>
@@ -607,12 +562,16 @@
                                                                     border-bottom-right-radius: 0px !important;">
                                             <div class="input-group-addon">
                                                 <select class="rounded form-control" id="tipo_comprobante_up" name="tipo_comprobante_up" style="padding-left: 0px;
-                                                                            padding-right: 0px;
-                                                                            border-top-left-radius: 0 !important;
-                                                                            border-bottom-left-radius: 0 !important;
-                                                                            border-top-right-radius: 0px !important;
-                                                                            border-bottom-right-radius: 0px !important;
-                                                                            padding-bottom: 10px;">
+                                                                                                                    padding-right: 0px;
+                                                                                                                    border-top-left-radius: 0 !important;
+                                                                                                                    border-bottom-left-radius: 0 !important;
+                                                                                                                    border-top-right-radius: 6px !important;
+                                                                                                                    border-bottom-right-radius: 6px !important;
+                                                                                                                    padding-bottom: 10px;
+                                                                                                                    border-style: solid;
+                                                                                                                    border-color: #ffffff;
+                                                                                                                    background: #336cfb;
+                                                                                                                    color: #f7f7f7;">
                                                     <option value="">Tipo</option>
                                                     <option value="factura">Factura</option>
                                                     <option value="boleta">Boleta</option>
@@ -870,6 +829,30 @@
                             <script type="text/javascript" src="librerias/datatable/datatable.js"></script>
 
                             <script>
+                                $(function($) {
+                                        $.fn.datepicker.dates['es'] = {
+                                            days: ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes",
+                                                "Sábado",
+                                                "Domingo"
+                                            ],
+                                            daysShort: ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"],
+                                            daysMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa", "Do"],
+                                            months: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
+                                                "Agosto",
+                                                "Septiembre",
+                                                "Octubre", "Noviembre", "Diciembre"
+                                            ],
+                                            monthsShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago",
+                                                "Sep", "Oct",
+                                                "Nov",
+                                                "Dic"
+                                            ],
+                                            today: "Hoy"
+                                        };
+                                 });
+
+
+
                             function gestor_compra(fecha, anual) {
 
                                 $('#example2').DataTable({
@@ -973,12 +956,12 @@
                                             }
                                         },
                                         {
-                                            "sName": "TIPO PAGO",
+                                            "sName": "ACCIONES",
                                             "bSearchable": false,
                                             "bSortable": false,
                                             "mRender": function(data, type, full) {
 
-                                                return full[7]
+                                                return "<button class='btn btn-info btn-sm btn-square rounded-pill' data-toggle='modal'  data-target='#modalEdicion' onclick='agregaform_compra("+ full[11] +")'><span class='btn-icon icofont-ui-edit' style='color:white;'></span></button> <button class='btn btn-error btn-sm btn-square rounded-pill' onclick='preguntarSiNo_compra("+ full[11] +")'><span class='btn-icon icofont-ui-delete'></span></button>";
                                             }
                                         },
                                         {
@@ -987,7 +970,7 @@
                                             "bSortable": false,
                                             "mRender": function(data, type, full) {
 
-                                                return full[10]
+                                                return "S/ "+full[10]
                                             }
                                         },
                                         {
@@ -1009,12 +992,12 @@
                                             }
                                         },
                                         {
-                                            "sName": "ACCIONES",
+                                            "sName": "TIPO DE PAGO",
                                             "bSearchable": false,
                                             "bSortable": false,
                                             "mRender": function(data, type, full) {
                                                 
-                                              return "<button class='btn btn-info btn-sm btn-square rounded-pill' data-toggle='modal'  data-target='#modalEdicion' onclick='agregaform_compra("+ full[11] +")'><span class='btn-icon icofont-ui-edit'></span></button> <button class='btn btn-error btn-sm btn-square rounded-pill' onclick='preguntarSiNo_compra("+ full[11] +")'><span class='btn-icon icofont-ui-delete'></span></button>";
+                                                return full[7]
                                                 
                                             }
                                         }
@@ -1029,7 +1012,7 @@
                                         {
                                             extend: 'excel',
                                             "exportOptions": {
-                                                "columns": [ 0, 1, 2, 3, 4, 5, 6, 7, 10, 8 ]
+                                                "columns": [ 0, 1, 2, 3, 4, 5, 6, 10, 11, 8]
                                             }
                                         },
                                         {
@@ -1037,7 +1020,7 @@
                                             orientation: 'landscape',
                                             pageSize: 'LETTER',
                                             "exportOptions": {
-                                                "columns": [ 0, 1, 2, 3, 4, 5, 6, 7, 10, 8 ]
+                                                "columns": [ 0, 1, 2, 3, 4, 5, 6, 10, 11, 8]
                                             }
                                         }  
                                     ]
@@ -1183,6 +1166,19 @@
                                         metricas_compra($fecha_compuesta);
                                         gestor_compra($fecha_compuesta, anual1);
                                         fechaEstatica($fecha_compuesta);
+
+                                        document.getElementById("num_comprobante").value = "";
+                                        document.getElementById("tipo_comprobante").value = "";
+                                        document.getElementById("ruc").value = "";
+                                        document.getElementById("razon_social").value = "";
+                                        document.getElementById("dir_fiscal").value = "";
+                                        document.getElementById("fecha_emision").value = "";
+                                         
+                                        document.getElementById("moneda").value = "";
+                                        document.getElementById("tipo_pago").value = "";
+                                        document.getElementById("estado_sunat").value = "";
+                                        document.getElementById("estado_cpe").value = "";
+                                        document.getElementById("monto_total").value = "";
                                     }
                                 });
 
@@ -1254,27 +1250,7 @@
                             
                             }
 
-                             $(function($) {
-                                $.fn.datepicker.dates['es'] = {
-                                    days: ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes",
-                                        "Sábado",
-                                        "Domingo"
-                                    ],
-                                    daysShort: ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"],
-                                    daysMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa", "Do"],
-                                    months: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
-                                        "Agosto",
-                                        "Septiembre",
-                                        "Octubre", "Noviembre", "Diciembre"
-                                    ],
-                                    monthsShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago",
-                                        "Sep", "Oct",
-                                        "Nov",
-                                        "Dic"
-                                    ],
-                                    today: "Hoy"
-                                };
-                            });
+                             
                              
                            
                             </script>

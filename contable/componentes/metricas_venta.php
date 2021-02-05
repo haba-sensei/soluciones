@@ -11,7 +11,7 @@
     
       $fecha =   $_POST['fecha_envio'];
 
-    
+
       $numAnual = strftime("%Y", strtotime($fecha));  
       $numMes_format = date("m", strtotime($fecha)); 
       $numMes = strftime("%B", strtotime($fecha) );  
@@ -55,9 +55,10 @@
 
       if ($total_num_impuesto == 0) {
         $impuesto = "No Pagado";
-        $monto = 0;
          
-        consultasSQL::InsertSQL("impuestos", "anual, mensual, monto, estado", "'$numAnual', '$numMes_format', '$monto','$impuesto' "); 
+        $monto = 0;
+        $igv = 0;
+        consultasSQL::InsertSQL("impuestos", "anual, mensual, igv, monto, estado", "'$numAnual', '$numMes_format','$igv', '$monto','$impuesto'"); 
            
         // consultasSQL::UpdateSQL("usuarios", "correo='$correo', last_login='$last_login_up' ", "correo='$correo'");
       }else {
@@ -65,10 +66,11 @@
         while($datos_impuesto=mysqli_fetch_assoc($verImpuesto)){
 
           $impuesto =  $datos_impuesto['estado'];
+          $retencion =  $datos_impuesto['estado'];
           $impuesto_total =  number_format($datos_impuesto['monto'], 2);
           $impuesto_total_f =  number_format($datos_impuesto['monto'], 2, '.', '');
 
-           
+          $impuesto_igv =  number_format($datos_impuesto['igv'], 2);
           $impuesto_igv_up =  number_format($datos_impuesto['igv'], 2, '.', '');
           
         }
@@ -85,10 +87,12 @@
             'mes' => $numMes,
             'num_mes' => $numMes_format,
             'total_mes' => "S/ ".$total_mes,
-            'total_venta' =>$total_venta,
+            'total_venta' => "Total ".$total_venta,
+            'retencion' => $retencion,
             'impuesto' => $impuesto,
             'impuesto_total_f' => $impuesto_total_f,
             'impuesto_total' => "S/ ".$impuesto_total,
+            'impuesto_igv' => "S/ ".$impuesto_igv,
             'impuesto_igv_up' => $impuesto_igv_up
             
         );

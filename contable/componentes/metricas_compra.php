@@ -85,7 +85,7 @@
             'mes' => $numMes,
             'num_mes' => $numMes_format,
             'total_mes' => "S/ ".$total_mes,
-            'total_venta' =>$total_venta,
+            'total_venta' => "Total ".$total_venta,
             'impuesto' => $impuesto,
             'impuesto_total_f' => $impuesto_total_f,
             'impuesto_total' => "S/ ".$impuesto_total,
