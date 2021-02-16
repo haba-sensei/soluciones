@@ -33,151 +33,146 @@ include_once("library/config.inc.php");
     </nav>
     </div>
     <style>
-        /*form styles*/
-        .msform {
-            width: 100%;
-            margin: 50px auto;
-            text-align: center;
-            position: relative;
-        }
+    /*form styles*/
+    .msform {
+        width: 100%;
+        margin: 50px auto;
+        text-align: center;
+        position: relative;
+    }
 
-        .msform fieldset {
-            background: white;
-            border: 0 none;
-            border-radius: 3px;
-            box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-            /* padding: 20px 30px; */
-            box-sizing: border-box;
-            width: 100%;
-            /* margin: 0 10%; */
-            position: relative;
+    .msform fieldset {
+        background: white;
+        border: 0 none;
+        border-radius: 3px;
+        box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+        /* padding: 20px 30px; */
+        box-sizing: border-box;
+        width: 100%;
+        /* margin: 0 10%; */
+        position: relative;
 
-            /*stacking fieldsets above each other*/
-            position: relative;
-            /*stacking fieldsets above each other*/
-            position: relative;
-        }
+        /*stacking fieldsets above each other*/
+        position: relative;
+        /*stacking fieldsets above each other*/
+        position: relative;
+    }
 
-        /*Hide all except first fieldset*/
-        .msform fieldset:not(:first-of-type) {
-            display: none;
-        }
+    /*Hide all except first fieldset*/
+    .msform fieldset:not(:first-of-type) {
+        display: none;
+    }
 
-        /*inputs*/
-        .msform input,
-        .msform textarea {
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            margin-bottom: 10px;
-            width: 100%;
-            box-sizing: border-box;
-            font-family: montserrat;
-            color: #2C3E50;
-            font-size: 13px;
-        }
+    /*inputs*/
+    .msform input,
+    .msform textarea {
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        margin-bottom: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        font-family: montserrat;
+        color: #2C3E50;
+        font-size: 13px;
+    }
 
-        /*buttons*/
-        .msform .action-button {
-            width: 100px;
-            background: #27AE60;
-            font-weight: bold;
-            color: white;
-            border: 0 none;
-            border-radius: 1px;
-            cursor: pointer;
-            padding: 10px 5px;
-            margin: 10px 5px;
-        }
+    /*buttons*/
+    .msform .action-button {
+        width: 100px;
+        background: #27AE60;
+        font-weight: bold;
+        color: white;
+        border: 0 none;
+        border-radius: 1px;
+        cursor: pointer;
+        padding: 10px 5px;
+        margin: 10px 5px;
+    }
 
-        .msform .action-button:hover,
-        .msform .action-button:focus {
-            box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
-        }
+    .msform .action-button:hover,
+    .msform .action-button:focus {
+        box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+    }
 
-        /*headings*/
-        .fs-title {
-            font-size: 15px;
-            text-transform: uppercase;
-            color: #2C3E50;
-            margin-bottom: 10px;
-        }
+    /*headings*/
+    .fs-title {
+        font-size: 15px;
+        text-transform: uppercase;
+        color: #2C3E50;
+        margin-bottom: 10px;
+    }
 
-        .fs-subtitle {
-            font-weight: normal;
-            font-size: 13px;
-            color: #666;
-            margin-bottom: 20px;
-        }
+    .fs-subtitle {
+        font-weight: normal;
+        font-size: 13px;
+        color: #666;
+        margin-bottom: 20px;
+    }
 
-        /*progressbar*/
-        .progressbar {
-            margin-bottom: 30px;
-            overflow: hidden;
-            /*CSS counters to number the steps*/
-            counter-reset: step;
-        }
+    /*progressbar*/
+    .progressbar {
+        margin-bottom: 30px;
+        overflow: hidden;
+        /*CSS counters to number the steps*/
+        counter-reset: step;
+    }
 
-        .progressbar li {
-            list-style-type: none;
-            color: white;
-            text-transform: uppercase;
-            font-size: 9px;
-            width: 25%;
-            float: left;
-            position: relative;
-        }
+    .progressbar li {
+        list-style-type: none;
+        color: white;
+        text-transform: uppercase;
+        font-size: 14px;
+    width: 25%;
+    float: left;
+    position: relative;
+    font-weight: 600;
+        
+    }
 
-        .progressbar li:before {
-            content: counter(step);
-            counter-increment: step;
-            width: 20px;
-            line-height: 20px;
-            display: block;
-            font-size: 10px;
-            color: #333;
-            background: white;
-            border-radius: 3px;
-            margin: 0 auto 5px auto;
-        }
+    .progressbar li:before {
+        content: counter(step);
+        counter-increment: step;
+        width: 71px;
+        height: 35px;
+        line-height: 35px;
+        display: block;
+        font-size: 16px;
+        color: #333;
+        background: white;
+        border-radius: 8px;
+        margin: 0 auto 5px auto;
+    }
 
-        /*progressbar connectors*/
-        .progressbar li:after {
-            content: '';
-            width: 100%;
-            height: 2px;
-            background: white;
-            position: absolute;
-            left: -50%;
-            top: 9px;
-            z-index: -1;
-            /*put it behind the numbers*/
-        }
+    /*progressbar connectors*/
+    .progressbar li:after {
+        content: '';
+        width: 100%;
+        height: 2px;
+        background: white;
+        position: absolute;
+        left: -50%;
+        top: 9px;
+        z-index: -1;
+        /*put it behind the numbers*/
+    }
 
-        .progressbar li:first-child:after {
-            /*connector not needed before the first step*/
-            content: none;
-        }
+    .progressbar li:first-child:after {
+        /*connector not needed before the first step*/
+        content: none;
+    }
 
-        /*marking active/completed steps green*/
-        /*The number of the step and the connector before it = green*/
-        .progressbar li.active:before,
-        .progressbar li.active:after {
-            background: #27AE60;
-            color: white;
-        }
+    /*marking active/completed steps green*/
+    /*The number of the step and the connector before it = green*/
+    .progressbar li.active:before,
+    .progressbar li.active:after {
+        background: #27AE60;
+        color: white;
+    }
 
-        /* primer slide */
+    /* primer slide */
 
-        @media (max-width: 1366px) {
-
-            .cart-checkout {
-                padding-right: 43px !important;
-                padding-left: 40px !important;
-                margin-right: 104px !important;
-                display: table-cell;
-            }
-        }
+    @media (max-width: 1366px) {
 
         .cart-checkout {
             padding-right: 43px !important;
@@ -185,268 +180,289 @@ include_once("library/config.inc.php");
             margin-right: 104px !important;
             display: table-cell;
         }
+    }
 
-        span,
-        applet,
-        object,
-        iframe,
-        p,
-        blockquote,
-        pre,
-        a,
-        abbr,
-        acronym,
-        address,
-        big,
-        cite,
-        code,
-        del,
-        dfn,
-        em,
-        img,
-        ins,
-        kbd,
-        q,
-        s,
-        samp,
-        small,
-        strike,
-        strong,
-        sub,
-        sup,
-        tt,
-        var,
-        b,
-        u,
-        i,
-        dl,
-        dt,
-        dd,
-        ol,
-        nav ul,
-        nav li,
-        fieldset,
-        form,
-        label,
-        legend,
-        table,
-        caption,
-        tbody,
-        tfoot,
-        thead,
-        tr,
-        th,
-        td,
-        article,
-        aside,
-        canvas,
-        details,
-        embed,
-        figure,
-        figcaption,
-        footer,
-        header,
-        hgroup,
-        menu,
-        nav,
-        output,
-        ruby,
-        section,
-        summary,
-        time,
-        mark,
-        audio,
-        video {
-            margin: 0;
-            padding: 0;
-            border: 0;
-            font-size: 100%;
-            font: inherit;
-            vertical-align: baseline;
-        }
+    .cart-checkout {
+        padding-right: 43px !important;
+        padding-left: 40px !important;
+        margin-right: 104px !important;
+        display: table-cell;
+    }
 
-        .cart-bottom {
-            background: #fff;
-            padding: 2em 2em;
-        }
+    span,
+    applet,
+    object,
+    iframe,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    b,
+    u,
+    i,
+    dl,
+    dt,
+    dd,
+    ol,
+    nav ul,
+    nav li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td,
+    article,
+    aside,
+    canvas,
+    details,
+    embed,
+    figure,
+    figcaption,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    output,
+    ruby,
+    section,
+    summary,
+    time,
+    mark,
+    audio,
+    video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
 
-        .table {
-            border-bottom: 1px solid #ccc;
-        }
+    .cart-bottom {
+        background: #fff;
+        padding: 2em 2em;
+    }
 
-        table {
-            border-collapse: collapse;
-            border-spacing: 0;
-        }
+    .table {
+        border-bottom: 1px solid #ccc;
+    }
 
-        tr.main-heading th {
-            background: #ccc;
-            padding: 1em 7.6em;
-            font-size: 0.9em;
-        }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
 
-        tr.cake-top {
-            border-bottom: 1px solid #ccc;
-            position: relative;
-        }
+    tr.main-heading th {
+        background: #ccc;
+        padding: 1em 7.6em;
+        font-size: 0.9em;
+    }
 
-        td.cakes {
-            /* padding: 1em 0em !important; */
-            padding: 1em 3em !important;
-        }
+    tr.cake-top {
+        border-bottom: 1px solid #ccc;
+        position: relative;
+    }
 
-        td.cakes_de {
-            /* padding: 1em 0em !important; */
-            padding: 1em 3em !important;
-        }
+    td.cakes {
+        /* padding: 1em 0em !important; */
+        padding: 1em 3em !important;
+    }
 
-        td {
-            vertical-align: middle;
-        }
+    td.cakes_de {
+        /* padding: 1em 0em !important; */
+        padding: 1em 3em !important;
+    }
 
-        td.quantity {
-            vertical-align: middle;
-        }
+    td {
+        vertical-align: middle;
+    }
 
-        td.quantity {
-            text-align: center;
-        }
+    td.quantity {
+        vertical-align: middle;
+    }
 
-        td.price {
-            padding: 0em 1em;
-        }
+    td.quantity {
+        text-align: center;
+    }
 
-        td.top-remove {
-            position: relative;
-        }
+    td.price {
+        padding: 0em 1em;
+    }
 
-        .vocher {
-            padding: 1.1em 0em 0em 0em;
-        }
+    td.top-remove {
+        position: relative;
+    }
 
-        .img-inside {
-            width: 134px;
-        }
+    .vocher {
+        padding: 1.1em 0em 0em 0em;
+    }
 
-        .close-btm {
-            position: absolute;
-            top: 66%;
-            right: 28%;
-        }
+    .img-inside {
+        width: 134px;
+    }
 
-        .close-btm h5 {
-            font-size: 0.75em;
-            color: #fff;
-            cursor: pointer;
-            background: #0c517d;
-            padding: 0.5em 1em;
-            border-radius: 3px;
-        }
+    .close-btm {
+        position: absolute;
+        top: 66%;
+        right: 28%;
+    }
 
-        .dis-card {
-            float: left;
-            width: 50%;
-        }
+    .close-btm h5 {
+        font-size: 0.75em;
+        color: #fff;
+        cursor: pointer;
+        background: #0c517d;
+        padding: 0.5em 1em;
+        border-radius: 3px;
+    }
 
-        .dis-total {
-            float: right;
-            width: 50%;
-            text-align: right;
-        }
+    .dis-card {
+        float: left;
+        width: 50%;
+    }
 
-        .dis-total h1 {
-            font-size: 1.1em;
-            color: #000;
-            padding: 0.8em 2em;
-            margin: 0.7em auto;
-            background: rgba(255, 255, 255, .15);
-            display: inline-block;
-            text-align: right;
-        }
+    .dis-total {
+        float: right;
+        width: 50%;
+        text-align: right;
+    }
 
-        .tot-btn {
-            margin-top: 1.3em;
-        }
+    .dis-total h1 {
+        font-size: 1.1em;
+        color: #000;
+        padding: 0.8em 2em;
+        margin: 0.7em auto;
+        background: rgba(255, 255, 255, .15);
+        display: inline-block;
+        text-align: right;
+    }
 
-        .clear {
-            clear: both;
-        }
+    .tot-btn {
+        margin-top: 1.3em;
+    }
 
-        .tot-btn a.shop {
-            font-size: 0.8em;
-            color: #FFF;
-            padding: 0.8em 1em;
-            background: #3f3f3f;
-            border-radius: 3px;
-        }
+    .clear {
+        clear: both;
+    }
 
-        .tot-btn a.check {
-            font-size: 0.8em;
-            color: #FFF;
-            padding: 0.8em 1em;
-            background: #0b507c;
-            border-radius: 3px;
-        }
+    .tot-btn a.shop {
+        font-size: 0.8em;
+        color: #FFF;
+        padding: 0.8em 1em;
+        background: #3f3f3f;
+        border-radius: 3px;
+    }
 
-        .table-fixed {
-            width: 100%;
+    .tot-btn a.check {
+        font-size: 0.8em;
+        color: #FFF;
+        padding: 0.8em 1em;
+        background: #0b507c;
+        border-radius: 3px;
+    }
 
-        }
+    .table-fixed {
+        width: 100%;
 
-        .table-fixed tbody {
-            height: 350px;
-            overflow-y: auto;
-            width: 100%;
-        }
+    }
 
-        .table-fixed thead,
-        .table-fixed tbody,
-        .table-fixed tr,
-        .table-fixed td,
-        .table-fixed th {
-            display: inline-block;
-        }
+    .table-fixed tbody {
+        height: 350px;
+        overflow-y: auto;
+        width: 100%;
+    }
 
-        .table-fixed thead tr th {
-            float: left;
+    .table-fixed thead,
+    .table-fixed tbody,
+    .table-fixed tr,
+    .table-fixed td,
+    .table-fixed th {
+        display: -webkit-inline-box;
+       
+    }
 
-        }
+    .table-fixed thead tr th {
+        float: left;
 
-        .payment-options li .radio-option label .small-text {
-            position: relative;
-            display: block;
-            margin-top: 15px;
-            margin-left: -30px;
-            padding: 10px 15px;
-            letter-spacing: 0;
-            text-transform: none;
-            font-weight: 400;
-            font-size: 14px;
-            color: #888;
-            line-height: 20px;
-            background: #fff;
-        }
+    }
 
-        .deshabilitado {
-            background: #3333337a !important;
-        }
+    .payment-options li .radio-option label .small-text {
+        position: relative;
+        display: block;
+        margin-top: 15px;
+        margin-left: -30px;
+        padding: 10px 15px;
+        letter-spacing: 0;
+        text-transform: none;
+        font-weight: 400;
+        font-size: 14px;
+        color: #888;
+        line-height: 20px;
+        background: #fff;
+    }
 
-        /* fin del primer slide */
+    .deshabilitado {
+        background: #3333337a !important;
+    }
+
+    /* fin del primer slide */
     </style>
 
     <main>
+    <style>
+    .init_1 {
+        height: 175vh;
+    }
+    
+    .init_2 {
+        height: 120vh;
+    }
 
+    .init_3 {
+        height: 140vh;
+    }
+    </style>
 
-        <div class="container margin_60_35" style="    height: 175vh;" id="view_cart">
+        <div class="container margin_60_35 init_1"  id="view_cart">
 
             <!-- multistep form -->
-            <form class="msform"  id="my_awesome_form">
+            <form class="msform" id="my_awesome_form">
                 <!-- progressbar -->
                 <ul class="progressbar">
                     <li class="active" style="color:black!important;">Carrito</li>
                     <li style="color:black!important;">Opciones</li>
-                    <li style="color:black!important;">Detalles</li>
-                    <li style="color:black!important;">Final</li>
+                    <li style="color:black!important;">Datos</li>
+                    <li style="color:black!important;">Finalizar</li>
                 </ul>
 
                 <!-- fieldsets 1 -->
@@ -492,49 +508,50 @@ include_once("library/config.inc.php");
                                         $total = ($total + $subtotal);
                                     ?>
 
-                                        <input type="hidden" name="total" value="<?php echo $total ?>">
-                                        <input type="hidden" name="nro_cot" value="<?php echo $product_qty ?>">
+                                    <input type="hidden" name="total" value="<?php echo $total ?>">
+                                    <input type="hidden" name="nro_cot" value="<?php echo $product_qty ?>">
 
 
-                                        <tr class="cake-top">
-                                            <td class="cakes">
-                                                <div class="product-img">
-                                                    <img class="img-inside" src="assets/img-products/<?php echo $product_img; ?>">
-                                                </div>
-                                            </td>
-                                            <td class="cakes_de cake-text" align="left">
-                                                <div class="product-text">
-                                                    <h3><?php echo $product_name; ?></h3>
-                                                    <p>Modelo: <?php echo $modelo_prod; ?></p>
-                                                    <p>Marca: <?php echo $marca_prod; ?></p>
-                                                    <p>Codigo: <?php echo $product_code; ?></p>
-                                                </div>
-                                            </td>
-                                            <td class="cakes quantity">
-                                                <div class="product-right">
-                                                    <input type="number" data-code="<?php echo $product_code; ?>" class="form-control quantity " style="border: 2px solid #6b6363;" value="<?php echo $product_qty; ?>">
-                                                </div>
-                                            </td>
-                                            <td class="cakes price">
-                                                <?php echo $currency;
+                                    <tr class="cake-top" style=" width: 100%;">
+                                        <td class="cakes">
+                                            <div class="product-img">
+                                                <img class="img-inside" src="assets/img-products/<?php echo $product_img; ?>">
+                                            </div>
+                                        </td>
+                                        <td class="cakes_de cake-text" align="left">
+                                            <div class="product-text">
+                                                <h3><?php echo $product_name; ?></h3>
+                                                <p>Modelo: <?php echo $modelo_prod; ?></p>
+                                                <p>Marca: <?php echo $marca_prod; ?></p>
+                                                <p>Codigo: <?php echo $product_code; ?></p>
+                                            </div>
+                                        </td>
+                                        <td class="cakes quantity">
+                                            <div class="product-right">
+                                                <input type="number" data-code="<?php echo $product_code; ?>" class="form-control quantity "
+                                                    style="border: 2px solid #6b6363;" value="<?php echo $product_qty; ?>">
+                                            </div>
+                                        </td>
+                                        <td class="cakes price">
+                                            <?php echo $currency;
                                                 echo sprintf("&nbsp; %01.2f", number_format($product_price_total, 2)); ?></h4>
 
-                                            </td>
-                                            <td class="cakes top-remove">
-                                                <h4><?php echo $currency;
+                                        </td>
+                                        <td class="cakes top-remove">
+                                            <h4><?php echo $currency;
                                                     echo sprintf("&nbsp; %01.2f", round($product_price_total * $product_qty)); ?></h4>
-                                                <div class="close-btm">
+                                            <div class="close-btm">
 
-                                                    <a href="javascript:" class="remove-item" data-code="<?php echo $product_code; ?>">
-                                                        <h5>Remover</h5>
-                                                    </a>
+                                                <a href="javascript:" class="remove-item" data-code="<?php echo $product_code; ?>">
+                                                    <h5>Remover</h5>
+                                                </a>
 
 
-                                                </div>
-                                            </td>
+                                            </div>
+                                        </td>
 
-                                        </tr>
-                                        <div class="clear"> </div>
+                                    </tr>
+                                    <div class="clear"> </div>
                                     <?php } ?>
                                 </tbody>
                             </table>
@@ -575,21 +592,23 @@ include_once("library/config.inc.php");
                                     <?php echo $currency . sprintf("%01.2f", $grand_total - $tax_amount);  ?></h1>
 
                             </div>
+                             
                             <div class="clear"> </div>
                         </div>
                     </div>
-                    <input type="button" name="next" class="next action-button" value="Continuar" />
+                    <a href='process/limpiar.php' style=" font-weight: 500; margin-right: 60px; padding: 16px; background:red;" class='action-button'>Limpiar Carrito</a>
+                    <input type="button" name="next" class="next action-button" style="padding: 16px;" onclick="ajusteBox();" value="Continuar" />
                 </fieldset>
 
 
                 <!-- fieldsets 2-->
-                <fieldset>
-                    <h2>¿Que Desea Realizar?</h2>
+                <fieldset >
+                    <h2>¿Seleccione una Opción?</h2>
                     <br><br>
-                    <div class="payment-method" align="center">
+                    <div class="payment-method" align="center" >
                         <label for="comprar" class="method cart-checkout">
 
-                            <img style="width: 200px; cursor:pointer;" src="assets\img\comprar2.svg" />
+                            <img style="width: 200px; cursor:pointer;" src="assets\img\img2.png" />
                             <div class="radio-input">
                                 <input id="comprar" type="radio" name="opciones" onclick="javascript:yesnoCheck();">
                                 Comprar Productos <i class="hidden compra_style fa fa-check" aria-hidden="true"></i>
@@ -597,7 +616,7 @@ include_once("library/config.inc.php");
                         </label>
 
                         <label for="cotizar" class="method cart-checkout">
-                            <img style="width: 200px; cursor:pointer;" src="assets\img\cotizar2.svg" />
+                            <img style="width: 200px; cursor:pointer;" src="assets\img\img1.png" />
                             <div class="radio-input">
                                 <input id="cotizar" type="radio" name="opciones" onclick="javascript:yesnoCheck();">
                                 Cotizar Productos <i class="hidden cotiza_style fa fa-check" aria-hidden="true"></i>
@@ -606,8 +625,8 @@ include_once("library/config.inc.php");
 
                     </div>
                     <br><br>
-                    <input type="button" name="previous" class="previous action-button" value="Retroceder" />
-                    <input type="button" name="next" class="next action-button select_ope deshabilitado" value="Continuar" disabled />
+                    <input type="button" name="previous" style="margin-right: 60px; padding: 16px;" class="previous action-button" value="Retroceder" onclick="ajusteBox_end();" >
+                    <input type="button" name="next" style="padding: 16px;" class="next action-button select_ope deshabilitado" onclick="ajusteBox_next();" value="Continuar" disabled />
                 </fieldset>
 
 
@@ -630,13 +649,15 @@ include_once("library/config.inc.php");
                                 <input class="form-control" id="ruc" name="ruc" value="20601883164" placeholder="Buscar Cliente" autocomplete="off">
                                 <span class="input-group-btn">
                                     <button class="btn btn-default" style="    color: #f5f5f5; background: #27ae60; top: -48px; left: 26.5em;font-weight: 600; position: absolute;
-                                        font-size: 17px;" type="submit" onclick="busqueda(this); return false"><i class="fa fa-search" aria-hidden="true"></i> SUNAT</button>
+                                        font-size: 17px;" type="submit" onclick="busqueda(this); return false"><i class="fa fa-search"
+                                            aria-hidden="true"></i> SUNAT</button>
                                 </span>
                                 <img src="ajax.gif" class="ajaxgif hide" style="position: absolute; margin-top: -10px; margin-left: 13px;">
                             </div>
                             <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                 <label>Correo<sup>*</sup></label>
-                                <input type="email" name="correo" value="lycantroponatural@gmail.com" placeholder="jhon@gmail.com" class="form-control">
+                                <input type="email" name="correo" value="lycantroponatural@gmail.com" placeholder="jhon@gmail.com"
+                                    class="form-control">
                             </div><!-- /input-group -->
                             <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                 <label>Razón Social<sup>*</sup></label>
@@ -725,7 +746,8 @@ include_once("library/config.inc.php");
                         }
                         ?>
                         <input type="hidden" name="CodCotiza" value="<?php echo $codigo1 ?>">
-                        <input type="hidden" name="fecha" min="<?php echo date("Y-m-d"); ?>" max="<?php echo date("Y-m-d"); ?>" value="<?php echo date("Y-m-d"); ?>">
+                        <input type="hidden" name="fecha" min="<?php echo date("Y-m-d"); ?>" max="<?php echo date("Y-m-d"); ?>"
+                            value="<?php echo date("Y-m-d"); ?>">
 
                     </div>
 
@@ -735,8 +757,8 @@ include_once("library/config.inc.php");
                     </div>
                     <div class="clear"> </div>
                     <br>
-                    <input type="button" name="previous" class="previous action-button" value="Retroceder" />
-                    <input type="button" name="next" class="next action-button" value="Continuar" />
+                    <input type="button" name="previous" style="padding: 16px; margin-right: 60px;" class="previous action-button" value="Retroceder"  onclick="ajusteBox_retrocede();">
+                    <input type="button" name="next"  style="padding: 16px; " class="next action-button" value="Continuar" onclick="ajusteBox_final();">
 
 
 
@@ -766,45 +788,64 @@ include_once("library/config.inc.php");
 
 
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6" style="border: solid 2px #6c63ff; position: relative; left: -30px; border-radius: 15px;">
                                 <div class="place-order ">
 
                                     <div class="payment-options">
-                                        <ul style="list-style-type: none;">
+                                        <ul style="    list-style: none; padding-bottom: 35px;">
                                             <br>
+                                            <div style="text-align: -webkit-left;">
+                                            
+                                            
+                                            
                                             <li>
-                                                <div class="radio-option">
-                                                    <label for="payment-1"><span class="small-text">*Revise Su Correo, y
-                                                            Descargue su Orden de Compra.</span></label>
+                                                 <div class="radio-option" style="height: 40px;">
+                                                   <label for="payment-1"><span class="small-text" style="margin-top: 0; margin-left: 0; padding: 0;">
+                                                    <strong style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong> Una vez finalizada su compra recibirá un correo de confirmación con su orden de compra .</span></label>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="radio-option">
-                                                    <label for="payment-1"><span class="small-text">*Aperturarse a la
-                                                            Tienda, Con su Orden de Compra.</span></label>
+                                                 <div class="radio-option" style="height: 40px;">
+                                                   <label for="payment-1"><span class="small-text" style="margin-top: 0; margin-left: 0; padding: 0;">
+                                                    <strong style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong> Nuestros asesores de venta se pondrán en contacto para concretar la compra.</span></label>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="radio-option">
-                                                    <label for="payment-1"><span class="small-text">*Cancelar El Importe
-                                                            Total de su Orden de Compra.</span></label>
+                                                 <div class="radio-option" style="height: 60px;">
+                                                   <label for="payment-1"><span class="small-text" style="margin-top: 0; margin-left: 0; padding: 0;">
+                                                    <strong style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong> Una vez emitido su comprobante de pago se procederá a la entrega del producto según su modalidad de despacho elegido entrega en tienda, delivery , envio a provincia.</span></label>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="radio-option">
-                                                    <label for="payment-1"><span class="small-text">*Recoger Su
-                                                            Productos Comprados En Almacen.</span></label>
+                                                 <div class="radio-option" style="height: 60px;">
+                                                   <label for="payment-1"><span class="small-text" style="margin-top: 0; margin-left: 0; padding: 0;">
+                                                    <strong style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong> Si tuviera alguna consulta adicional no dude en comunicarse con su asesor de venta vía WhatsApp al 986838333 - 996727562</span></label>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                 <div class="radio-option" style="height: 60px;">
+                                                   <label for="payment-1"><span class="small-text" style="margin-top: 0; margin-left: 0; padding: 0;">
+                                                    <strong style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong> Para pagos con transferencias y depósitos comunicarse con su asesor de ventas al WhatsApp 986838333</span></label>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                 <div class="radio-option" style="height: 40px;">
+                                                   <label for="payment-1"><span class="small-text" style="margin-top: 0; margin-left: 0; padding: 0;">
+                                                    <strong style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong> Horario de Atención lunes a Sábado de 9am a 6pm</span></label>
                                                 </div>
                                             </li>
 
                                             <li class="">
-                                                <div class="radio-option" id="aca_cotiza">
-                                                <input type="button" name="cotizacion" class=" action-button"  onclick="formSend('cotizacion')" style="width:25%" value="Generar Cotizacion" />
-                                               
-                                               
+                                                <div class="radio-option" id="aca_cotiza" style="text-align: -webkit-center; padding-top: 23px; margin-bottom: -7px;">
+                                                    <input type="button" style="position: absolute; bottom: -126px; padding: 16px; right: 450px; width: 22%;" name="cotizacion" class=" action-button" onclick="formSend('cotizacion')"
+                                                        style="width:25%" value="Generar Cotizacion" />
+
+
                                                 </div>
                                             </li>
-
+                                        </div>
                                         </ul>
                                     </div>
 
@@ -837,44 +878,64 @@ include_once("library/config.inc.php");
 
 
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6"  style="border: solid 2px #6c63ff; position: relative; left: -30px; border-radius: 15px;">
                                 <div class="place-order ">
 
                                     <div class="payment-options">
-                                        <ul style="list-style-type: none;">
+                                        <ul style=" list-style: none; padding-bottom: 35px;">
                                             <br>
+                                            <div style="text-align: -webkit-left;">
+                                            
+                                            
+                                            
                                             <li>
-                                                <div class="radio-option">
-                                                    <label for="payment-1"><span class="small-text">*Revise Su Correo, y
-                                                            Descargue su Orden de Compra.</span></label>
+                                                 <div class="radio-option" style="height: 40px;">
+                                                   <label for="payment-1"><span class="small-text" style="margin-top: 0; margin-left: 0; padding: 0;">
+                                                    <strong style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong> Una vez finalizada su compra recibirá un correo de confirmación con su orden de compra .</span></label>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="radio-option">
-                                                    <label for="payment-1"><span class="small-text">*Aperturarse a la
-                                                            Tienda, Con su Orden de Compra.</span></label>
+                                                 <div class="radio-option" style="height: 40px;">
+                                                   <label for="payment-1"><span class="small-text" style="margin-top: 0; margin-left: 0; padding: 0;">
+                                                    <strong style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong> Nuestros asesores de venta se pondrán en contacto para concretar la compra.</span></label>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="radio-option">
-                                                    <label for="payment-1"><span class="small-text">*Cancelar El Importe
-                                                            Total de su Orden de Compra.</span></label>
+                                                 <div class="radio-option" style="height: 60px;">
+                                                   <label for="payment-1"><span class="small-text" style="margin-top: 0; margin-left: 0; padding: 0;">
+                                                    <strong style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong> Una vez emitido su comprobante de pago se procederá a la entrega del producto según su modalidad de despacho elegido entrega en tienda, delivery , envio a provincia.</span></label>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="radio-option">
-                                                    <label for="payment-1"><span class="small-text">*Recoger Su
-                                                            Productos Comprados En Almacen.</span></label>
-                                                </div>
-                                            </li>
-                                            <li class="">
-                                                <div class="radio-option" id="aca_compra">
-                                                <input type="button" name="compra1" class=" action-button"  onclick="formSend('compra')" style="width:25%" value="Generar Compra" />
-                                           
-                                                 
+                                                 <div class="radio-option" style="height: 60px;">
+                                                   <label for="payment-1"><span class="small-text" style="margin-top: 0; margin-left: 0; padding: 0;">
+                                                    <strong style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong> Si tuviera alguna consulta adicional no dude en comunicarse con su asesor de venta vía WhatsApp al 986838333 - 996727562</span></label>
                                                 </div>
                                             </li>
 
+                                            <li>
+                                                 <div class="radio-option" style="height: 60px;">
+                                                   <label for="payment-1"><span class="small-text" style="margin-top: 0; margin-left: 0; padding: 0;">
+                                                    <strong style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong> Para pagos con transferencias y depósitos comunicarse con su asesor de ventas al WhatsApp 986838333</span></label>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                 <div class="radio-option" style="height: 40px;">
+                                                   <label for="payment-1"><span class="small-text" style="margin-top: 0; margin-left: 0; padding: 0;">
+                                                    <strong style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong> Horario de Atención lunes a Sábado de 9am a 6pm</span></label>
+                                                </div>
+                                            </li>
+                                            
+                                            <li class="">
+                                                <div class="radio-option" id="aca_compra" style=" text-align: -webkit-center; padding-top: 23px; margin-bottom: -7px;">
+                                                    <input type="button" style=" position: absolute; bottom: -126px; right: 466px; width: 23%; padding: 16px;" name="compra1" class=" action-button" onclick="formSend('compra')"
+                                                        value="Generar Compra" />
+
+
+                                                </div>
+                                            </li>
+                                            </div>
                                         </ul>
                                     </div>
 
@@ -890,14 +951,16 @@ include_once("library/config.inc.php");
                         </div>
 
                     </div>
-                    <input type="button" name="previous" class="previous action-button" value="Retroceder" />
+                    <br> <br>
+                    <input type="button" name="previous" style="position: relative; left: -118px; padding: 16px;" class="previous action-button" onclick="ajusteBox_back_final()" value="Retroceder" />
 
-
+                    <a style="display:none;"  href="https://web.whatsapp.com/send?phone=51947320830&amp;text=HOLA+COTIZAME+ESTE+PRODUCTO%0D%0A%0D%0A*Puerta++enmarcada*%0A*PRECIO:*%20S/1.00%0A*URL:*%20https%3A%2F%2Fhttps://solucionescctvysistemas.com/assets/img-products/computadora-dextec-amd-ryzen-3-2200g-8gb-1tb-21-5--fhd.jpg %2Fproducto%2Fpuerta-enmarcada%2F%0D%0A%0D%0AGRACIAS" target="_blank" >
+		    	COTIZAR POR WASAPP		    </a>
                 </fieldset>
-        </form>
+            </form>
 
 
-             
+
 
 
 
@@ -912,315 +975,393 @@ include_once("library/config.inc.php");
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
     <script>
-        function ordenar() {
-            document.getElementById("form_cotiza").submit();
-        }
-        $.datepicker.regional['es'] = {
-            closeText: 'Cerrar',
-            prevText: '< Ant',
-            minDate: 0,
-            nextText: 'Sig >',
-            currentText: 'Hoy',
-            monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre',
-                'Octubre', 'Noviembre', 'Diciembre'
-            ],
-            monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
-            dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
-            dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Juv', 'Vie', 'Sáb'],
-            dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sá'],
-            weekHeader: 'Sm',
-            dateFormat: 'dd/mm/yy',
-            firstDay: 1,
-            isRTL: false,
-            showMonthAfterYear: false,
-            yearSuffix: ''
-        };
-        $.datepicker.setDefaults($.datepicker.regional['es']);
-        $(function() {
-            $("#F_despacho").datepicker();
-        });
+    
+    function ajusteBox() {
 
-
-        function yesnoCheck() {
-
-
-
-            if (document.getElementById('comprar').checked) {
-
-
-                const menj_1 = document.querySelector('.compra_style');
-                menj_1.classList.remove('hidden');
-
-                const menj_2 = document.querySelector('.cotiza_style');
-                menj_2.classList.add('hidden');
-
-
-                $('.select_ope').attr('disabled', false);
-
-                const menj_4 = document.querySelector('.select_ope');
-                menj_4.classList.remove('deshabilitado');
-
-                document.getElementById('TituloCompras').style.display = 'block';
-                document.getElementById('TituloCotiza').style.display = 'none';
-
-                document.getElementById('descarga_compras').style.display = 'block';
-                document.getElementById('descarga_cotiza').style.display = 'none';
-
-
-                document.getElementById('ifYes').style.display = 'block';
-                document.getElementById('ifNo').style.display = 'none';
-
-            } else {
-
-                const menj_1 = document.querySelector('.cotiza_style');
-                menj_1.classList.remove('hidden');
-
-                const menj_2 = document.querySelector('.compra_style');
-                menj_2.classList.add('hidden');
-
-                $('.select_ope').attr('disabled', false);
-
-                const menj_4 = document.querySelector('.select_ope');
-                menj_4.classList.remove('deshabilitado');
-
-                document.getElementById('TituloCompras').style.display = 'none';
-                document.getElementById('TituloCotiza').style.display = 'block';
-
-                document.getElementById('descarga_compras').style.display = 'none';
-                document.getElementById('descarga_cotiza').style.display = 'block';
-
-                document.getElementById('ifYes').style.display = 'none';
-                document.getElementById('ifNo').style.display = 'block';
-
-            }
-        }
-
+        $('.init_1').removeClass("init_1").addClass("init_2");
         
-
-
-        //jQuery time
-        var current_fs, next_fs, previous_fs; //fieldsets
-        var left, opacity, scale; //fieldset properties which we will animate
-        var animating; //flag to prevent quick multi-click glitches
-
-        $(".next").click(function() {
-            if (animating) return false;
-            animating = true;
-
-            current_fs = $(this).parent();
-            next_fs = $(this).parent().next();
-
-            //activate next step on progressbar using the index of next_fs
-            $(".progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-
-            //show the next fieldset
-            next_fs.show();
-            //hide the current fieldset with style
-            current_fs.animate({
-                opacity: 0
-            }, {
-                step: function(now, mx) {
-                    //as the opacity of current_fs reduces to 0 - stored in "now"
-                    //1. scale current_fs down to 80%
-                    scale = 1 - (1 - now) * 0.2;
-                    //2. bring next_fs from the right(50%)
-                    left = (now * 50) + "%";
-                    //3. increase opacity of next_fs to 1 as it moves in
-                    opacity = 1 - now;
-                    current_fs.css({
-                        'transform': 'scale(' + scale + ')',
-                        'position': 'absolute'
-                    });
-                    next_fs.css({
-                        'left': left,
-                        'opacity': opacity
-                    });
-                },
-                duration: 800,
-                complete: function() {
-                    current_fs.hide();
-                    animating = false;
-                },
-                //this comes from the custom easing plugin
-                easing: 'easeInOutBack'
-            });
+         
+        
+        window.scroll({
+        top: 200, 
+        left: 0, 
+        behavior: 'smooth'
         });
+    }
 
-        $(".previous").click(function() {
-            if (animating) return false;
-            animating = true;
+    function ajusteBox_end() {
 
-            current_fs = $(this).parent();
-            previous_fs = $(this).parent().prev();
+    $('.init_2').removeClass("init_2").addClass("init_1");
 
-            //de-activate current step on progressbar
-            $(".progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
 
-            //show the previous fieldset
-            previous_fs.show();
-            //hide the current fieldset with style
-            current_fs.animate({
-                opacity: 0
-            }, {
-                step: function(now, mx) {
-                    //as the opacity of current_fs reduces to 0 - stored in "now"
-                    //1. scale previous_fs from 80% to 100%
-                    scale = 0.8 + (1 - now) * 0.2;
-                    //2. take current_fs to the right(50%) - from 0%
-                    left = ((1 - now) * 50) + "%";
-                    //3. increase opacity of previous_fs to 1 as it moves in
-                    opacity = 1 - now;
-                    current_fs.css({
-                        'left': left
-                    });
-                    previous_fs.css({
-                        'transform': 'scale(' + scale + ')',
-                        'opacity': opacity
-                    });
-                },
-                duration: 800,
-                complete: function() {
-                    current_fs.hide();
-                    animating = false;
-                },
-                //this comes from the custom easing plugin
-                easing: 'easeInOutBack'
-            });
+
+    window.scroll({
+    top: 200, 
+    left: 0, 
+    behavior: 'smooth'
+    });
+    }
+
+    function ajusteBox_next() {
+        
+        $('.init_2').removeClass("init_2").addClass("init_3");
+
+        window.scroll({
+        top: 200, 
+        left: 0, 
+        behavior: 'smooth'
         });
+    }
 
-        (function($) {
-            $.ajaxblock = function() {
-                $("body").prepend(
-                    "<div id='ajax-overlay'><div id='ajax-overlay-body' class='center'><i class='fa fa-spinner fa-pulse fa-3x fa-fw'></i><span class='sr-only'>Loading...</span></div></div>"
-                );
-                $("#ajax-overlay").css({
-                    position: 'absolute',
-                    color: '#FFFFFF',
-                    top: '0',
-                    left: '0',
-                    width: '100%',
-                    height: '100%',
-                    position: 'fixed',
-                    background: 'rgba(39, 38, 46, 0.67)',
-                    'text-align': 'center',
-                    'z-index': '9999'
-                });
-                $("#ajax-overlay-body").css({
-                    position: 'absolute',
-                    top: '40%',
-                    left: '50%',
-                    width: '120px',
-                    height: '48px',
-                    'margin-top': '-12px',
-                    'margin-left': '-60px',
-                    //background: 'rgba(39, 38, 46, 0.1)',
-                    '-webkit-border-radius': '10px',
-                    '-moz-border-radius': '10px',
-                    'border-radius': '10px'
-                });
-                $("#ajax-overlay").fadeIn(50);
-            };
-            $.ajaxunblock = function() {
-                $("#ajax-overlay").fadeOut(100, function() {
-                    $("#ajax-overlay").remove();
-                });
-            };
-        })(jQuery);
+    function ajusteBox_retrocede() {
+        
+        $('.init_3').removeClass("init_3").addClass("init_2");
 
-        function busqueda(ruc) {
-            //$this.button('loading');
-            $.ajaxblock();
-            var documento = $("#ruc").val();
-           
-            if (documento == '') {
-                alert("Documento Vacio");
-                $.ajaxunblock();
-            } else {
-                $.ajax({
-                    type: "POST",
-                    url: "sunat/consulta.php",
-                    data: {
+        window.scroll({
+        top: 200, 
+        left: 0, 
+        behavior: 'smooth'
+        });
+    }
+
+    function ajusteBox_final() { 
+        
+    $('.init_3').removeClass("init_3").addClass("init_2");
+
+    window.scroll({
+    top: 200, 
+    left: 0, 
+    behavior: 'smooth'
+    });
+    
+    }
+
+    function ajusteBox_back_final() { 
+        
+        $('.init_2').removeClass("init_2").addClass("init_3");
+    
+        window.scroll({
+        top: 200, 
+        left: 0, 
+        behavior: 'smooth'
+        });
+        
+        }
+
+
+    function ordenar() {
+        document.getElementById("form_cotiza").submit();
+    }
+    $.datepicker.regional['es'] = {
+        closeText: 'Cerrar',
+        prevText: '< Ant',
+        minDate: 0,
+        nextText: 'Sig >',
+        currentText: 'Hoy',
+        monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre',
+            'Octubre', 'Noviembre', 'Diciembre'
+        ],
+        monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+        dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+        dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Juv', 'Vie', 'Sáb'],
+        dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sá'],
+        weekHeader: 'Sm',
+        dateFormat: 'dd/mm/yy',
+        firstDay: 1,
+        isRTL: false,
+        showMonthAfterYear: false,
+        yearSuffix: ''
+    };
+    $.datepicker.setDefaults($.datepicker.regional['es']);
+    $(function() {
+        $("#F_despacho").datepicker();
+    });
+
+
+    function yesnoCheck() {
+
+
+
+        if (document.getElementById('comprar').checked) {
+
+
+            const menj_1 = document.querySelector('.compra_style');
+            menj_1.classList.remove('hidden');
+
+            const menj_2 = document.querySelector('.cotiza_style');
+            menj_2.classList.add('hidden');
+
+
+            $('.select_ope').attr('disabled', false);
+
+            const menj_4 = document.querySelector('.select_ope');
+            menj_4.classList.remove('deshabilitado');
+
+            document.getElementById('TituloCompras').style.display = 'block';
+            document.getElementById('TituloCotiza').style.display = 'none';
+
+            document.getElementById('descarga_compras').style.display = 'block';
+            document.getElementById('descarga_cotiza').style.display = 'none';
+
+
+            document.getElementById('ifYes').style.display = 'block';
+            document.getElementById('ifNo').style.display = 'none';
+
+        } else {
+
+            const menj_1 = document.querySelector('.cotiza_style');
+            menj_1.classList.remove('hidden');
+
+            const menj_2 = document.querySelector('.compra_style');
+            menj_2.classList.add('hidden');
+
+            $('.select_ope').attr('disabled', false);
+
+            const menj_4 = document.querySelector('.select_ope');
+            menj_4.classList.remove('deshabilitado');
+
+            document.getElementById('TituloCompras').style.display = 'none';
+            document.getElementById('TituloCotiza').style.display = 'block';
+
+            document.getElementById('descarga_compras').style.display = 'none';
+            document.getElementById('descarga_cotiza').style.display = 'block';
+
+            document.getElementById('ifYes').style.display = 'none';
+            document.getElementById('ifNo').style.display = 'block';
+
+        }
+    }
+
+
+
+
+    //jQuery time
+    var current_fs, next_fs, previous_fs; //fieldsets
+    var left, opacity, scale; //fieldset properties which we will animate
+    var animating; //flag to prevent quick multi-click glitches
+
+    $(".next").click(function() {
+        if (animating) return false;
+        animating = true;
+
+        current_fs = $(this).parent();
+        next_fs = $(this).parent().next();
+
+        //activate next step on progressbar using the index of next_fs
+        $(".progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+        //show the next fieldset
+        next_fs.show();
+        //hide the current fieldset with style
+        current_fs.animate({
+            opacity: 0
+        }, {
+            step: function(now, mx) {
+                //as the opacity of current_fs reduces to 0 - stored in "now"
+                //1. scale current_fs down to 80%
+                scale = 1 - (1 - now) * 0.2;
+                //2. bring next_fs from the right(50%)
+                left = (now * 50) + "%";
+                //3. increase opacity of next_fs to 1 as it moves in
+                opacity = 1 - now;
+                current_fs.css({
+                    'transform': 'scale(' + scale + ')',
+                    'position': 'absolute'
+                });
+                next_fs.css({
+                    'left': left,
+                    'opacity': opacity
+                });
+            },
+            duration: 800,
+            complete: function() {
+                current_fs.hide();
+                animating = false;
+            },
+            //this comes from the custom easing plugin
+            easing: 'easeInOutBack'
+        });
+    });
+
+    $(".previous").click(function() {
+        if (animating) return false;
+        animating = true;
+
+        current_fs = $(this).parent();
+        previous_fs = $(this).parent().prev();
+
+        //de-activate current step on progressbar
+        $(".progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+        //show the previous fieldset
+        previous_fs.show();
+        //hide the current fieldset with style
+        current_fs.animate({
+            opacity: 0
+        }, {
+            step: function(now, mx) {
+                //as the opacity of current_fs reduces to 0 - stored in "now"
+                //1. scale previous_fs from 80% to 100%
+                scale = 0.8 + (1 - now) * 0.2;
+                //2. take current_fs to the right(50%) - from 0%
+                left = ((1 - now) * 50) + "%";
+                //3. increase opacity of previous_fs to 1 as it moves in
+                opacity = 1 - now;
+                current_fs.css({
+                    'left': left
+                });
+                previous_fs.css({
+                    'transform': 'scale(' + scale + ')',
+                    'opacity': opacity
+                });
+            },
+            duration: 800,
+            complete: function() {
+                current_fs.hide();
+                animating = false;
+            },
+            //this comes from the custom easing plugin
+            easing: 'easeInOutBack'
+        });
+    });
+
+    (function($) {
+        $.ajaxblock = function() {
+            $("body").prepend(
+                "<div id='ajax-overlay'><div id='ajax-overlay-body' class='center'><i class='fa fa-spinner fa-pulse fa-3x fa-fw'></i><span class='sr-only'>Loading...</span></div></div>"
+            );
+            $("#ajax-overlay").css({
+                position: 'absolute',
+                color: '#FFFFFF',
+                top: '0',
+                left: '0',
+                width: '100%',
+                height: '100%',
+                position: 'fixed',
+                background: 'rgba(39, 38, 46, 0.67)',
+                'text-align': 'center',
+                'z-index': '9999'
+            });
+            $("#ajax-overlay-body").css({
+                position: 'absolute',
+                top: '40%',
+                left: '50%',
+                width: '120px',
+                height: '48px',
+                'margin-top': '-12px',
+                'margin-left': '-60px',
+                //background: 'rgba(39, 38, 46, 0.1)',
+                '-webkit-border-radius': '10px',
+                '-moz-border-radius': '10px',
+                'border-radius': '10px'
+            });
+            $("#ajax-overlay").fadeIn(50);
+        };
+        $.ajaxunblock = function() {
+            $("#ajax-overlay").fadeOut(100, function() {
+                $("#ajax-overlay").remove();
+            });
+        };
+    })(jQuery);
+
+    function busqueda(ruc) {
+        //$this.button('loading');
+        $.ajaxblock();
+        var documento = $("#ruc").val();
+
+        if (documento == '') {
+            alert("Documento Vacio");
+            $.ajaxunblock();
+        } else {
+            $.ajax({
+                type: "POST",
+                url: "sunat/consulta.php",
+                data: {
                     "ruc": $("#ruc").val()
-                    }, 
-                    dataType: "json",
-                }).done(function(result) {
-
-                     
-                    
-                    $('#nombre').val(result['razonSocial']);
-
-                    $('#direccion').val(result['direccion'] + " - " + result['distrito']);
-
-                    $.ajaxunblock();
+                },
+                dataType: "json",
+            }).done(function(result) {
 
 
-                }).fail(function(jqXHR, textStatus, errorThrown) {
-                    alert("Documento Invalido");
-                    $.ajaxunblock();
-                });
+
+                $('#nombre').val(result['razonSocial']);
+
+                $('#direccion').val(result['direccion'] + " - " + result['distrito']);
+
+                $.ajaxunblock();
 
 
-            }
+            }).fail(function(jqXHR, textStatus, errorThrown) {
+                alert("Documento Invalido");
+                $.ajaxunblock();
+            });
+
 
         }
 
-        function formSend(id){
-             
-            var options = $('#my_awesome_form').serialize();
-            options = options + '&' + $.param({ 'operacion': id });
-            $.ajax( {
+    }
+
+    function formSend(id) {
+
+        var options = $('#my_awesome_form').serialize();
+        options = options + '&' + $.param({
+            'operacion': id
+        });
+        $.ajax({
             type: "POST",
             url: "process/ver_cotiza_2.php",
             data: options,
             async: true,
             dataType: 'json',
-            success: function( response ) {
-             
+            success: function(response) {
+
                 html = "";
                 // <input type="button" name="submit[descarga]" class=" action-button" onclick="formSend('descarga')" style="width:25%" value="Descargar Comprobante1" />
                 // <input type="button" name="submit[enviar_correo]" class=" action-button" onclick="formSend('enviar_correo')" style="width:25%"  value="Enviar Correo1" />
-                
-                html += '<a href="assets/pdf/'+response['orden_pdf']+'" class=" action-button" style="width:25%"  download="'+id+'">Descargar Archivo</a>  ';
-                html += '<a href="javascript:" class="action-button" onClick="formMail(&apos;' + response['correo'] + '&apos;, &apos;' + response['orden_pdf'] + '&apos;)"  style="width:25%"> Enviar Correo </a>';
-               switch (id) {
-                   case 'compra':
-                    $('#aca_compra').html(html);
-                       break;
+
+                html += '<a href="assets/pdf/' + response['orden_pdf'] + '" class=" action-button" style="width:25%;     margin-right: 47px;  padding: 16px; background: #f58634!important;"  download="' + id +
+                    '">Descargar Archivo</a>  ';
+                html += '<a href="javascript:" class="action-button" onClick="formMail(&apos;' + response['correo'] + '&apos;, &apos;' +
+                    response['orden_pdf'] + '&apos;)"  style="width:25%; padding: 16px; background: #f58634!important;"> Enviar Correo </a>';
+                switch (id) {
+                    case 'compra':
+                        $('#aca_compra').html(html);
+                        break;
 
                     case 'cotizacion':
                         $('#aca_cotiza').html(html);
-                    break;
-                   
-               }
-               
-              
-            }
-            } );
-        }
+                        break;
 
-
-        function formMail(correo, pedido){
-
-            console.log(pedido);
-            
-            $.ajax( {
-
-                type: "POST",
-                url: "process/send_mail.php",
-                data: {
-                    p: pedido,
-                    c: correo
-                },
-                async: true,
-                beforeSend: function(){
-                    $.ajaxblock();
-                },
-                success: function( response ) {
-                alert(response);
-                    $.ajaxunblock();
-                         
-                
                 }
-            } );
-        }
+
+
+            }
+        });
+    }
+
+
+    function formMail(correo, pedido) {
+
+        console.log(pedido);
+
+        $.ajax({
+
+            type: "POST",
+            url: "process/send_mail.php",
+            data: {
+                p: pedido,
+                c: correo
+            },
+            async: true,
+            beforeSend: function() {
+                $.ajaxblock();
+            },
+            success: function(response) {
+                alert(response);
+                $.ajaxunblock();
+
+
+            }
+        });
+    }
     </script>

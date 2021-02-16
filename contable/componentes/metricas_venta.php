@@ -66,7 +66,7 @@
         while($datos_impuesto=mysqli_fetch_assoc($verImpuesto)){
 
           $impuesto =  $datos_impuesto['estado'];
-          $retencion =  $datos_impuesto['estado'];
+          $retencion =  $datos_impuesto['estado_renta'];
           $impuesto_total =  number_format($datos_impuesto['monto'], 2);
           $impuesto_total_f =  number_format($datos_impuesto['monto'], 2, '.', '');
 

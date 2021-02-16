@@ -189,9 +189,9 @@ function mostrarRegistro() {
     </div>
 
     <div class="container">
-    <ul style="">
+    <ul  >
                         
-                        <div class="listado-precio-footer" style="" align="center">
+                        <div class="listado-precio-footer"   align="center">
                             <a href="descargas.php">Descargas de Aplicativos</a>
                         </div>
                         <div class="listado-precio-footer" aria-hidden="true"></i> <a
