@@ -74,7 +74,7 @@ include_once("library/config.inc.php");
         box-sizing: border-box;
         font-family: montserrat;
         color: #2C3E50;
-        font-size: 13px;
+        font-size: 16px;
     }
 
     /*buttons*/
@@ -123,11 +123,11 @@ include_once("library/config.inc.php");
         color: white;
         text-transform: uppercase;
         font-size: 14px;
-    width: 25%;
-    float: left;
-    position: relative;
-    font-weight: 600;
-        
+        width: 25%;
+        float: left;
+        position: relative;
+        font-weight: 600;
+
     }
 
     .progressbar li:before {
@@ -175,18 +175,18 @@ include_once("library/config.inc.php");
     @media (max-width: 1366px) {
 
         .cart-checkout {
-            padding-right: 43px !important;
-            padding-left: 40px !important;
-            margin-right: 104px !important;
-            display: table-cell;
+            padding-right: 59px !important;
+    padding-left: 74px !important;
+    margin-right: 104px !important;
+    display: table-cell;
         }
     }
 
     .cart-checkout {
-        padding-right: 43px !important;
-        padding-left: 40px !important;
-        margin-right: 104px !important;
-        display: table-cell;
+        padding-right: 59px !important;
+    padding-left: 74px !important;
+    margin-right: 104px !important;
+    display: table-cell;
     }
 
     span,
@@ -283,9 +283,12 @@ include_once("library/config.inc.php");
     }
 
     tr.main-heading th {
-        background: #ccc;
+        background: #005a8f;
         padding: 1em 7.6em;
-        font-size: 0.9em;
+        color: white;
+        font-size: smaller;
+        font-weight: 600;
+        letter-spacing: 2px;
     }
 
     tr.cake-top {
@@ -333,8 +336,8 @@ include_once("library/config.inc.php");
 
     .close-btm {
         position: absolute;
-        top: 66%;
-        right: 28%;
+        top: 54%;
+        right: 60%;
     }
 
     .close-btm h5 {
@@ -353,18 +356,19 @@ include_once("library/config.inc.php");
 
     .dis-total {
         float: right;
-        width: 50%;
-        text-align: right;
+    width: 30%;
+    text-align: right;
+    background: #cecece;
     }
 
     .dis-total h1 {
         font-size: 1.1em;
-        color: #000;
-        padding: 0.8em 2em;
-        margin: 0.7em auto;
-        background: rgba(255, 255, 255, .15);
-        display: inline-block;
-        text-align: right;
+    color: #b31010;
+    padding: 0.8em 2em;
+    margin: 0.7em auto;
+    background: #b5b5b5;
+    display: inline-block;
+    text-align: right;
     }
 
     .tot-btn {
@@ -402,18 +406,15 @@ include_once("library/config.inc.php");
         width: 100%;
     }
 
-    .table-fixed thead,
-    .table-fixed tbody,
-    .table-fixed tr,
-    .table-fixed td,
-    .table-fixed th {
-        display: -webkit-inline-box;
-       
+
+    @media (max-width: 1600px) {
+        .thead_ajust {
+            display: table-caption;
+        }
     }
 
-    .table-fixed thead tr th {
-        float: left;
-
+    .thead_ajust {
+        display: contents;
     }
 
     .payment-options li .radio-option label .small-text {
@@ -435,25 +436,90 @@ include_once("library/config.inc.php");
         background: #3333337a !important;
     }
 
+
+    /* input[type="number"] {
+        -webkit-appearance: textfield;
+        -moz-appearance: textfield;
+        appearance: textfield;
+    }
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    } */
+
+    .number-input {
+        border: 2px solid #bdbdbd;
+        display: inline-flex;
+    }
+
+    .number-input,
+    .number-input * {
+        box-sizing: border-box;
+    }
+
+    .number-input button {
+        outline: none;
+        -webkit-appearance: none;
+        background-color: transparent;
+        border: none;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 1rem;
+        cursor: pointer;
+        margin: 0;
+        position: relative;
+    }
+
+    .number-input button:before,
+    .number-input button:after {
+        display: inline-block;
+        position: absolute;
+        content: '';
+        width: 1rem;
+        height: 2px;
+        background-color: #212121;
+        transform: translate(-50%, -50%);
+        bottom: 1px;
+    }
+
+    .number-input button.plus:after {
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    .number-input input[type=number] {
+        font-family: sans-serif;
+        max-width: 3rem;
+        border: solid #dadada;
+        border-width: 0 2px;
+        font-size: 1rem;
+        height: 0.5rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 0px;
+        padding-bottom: 13px;
+    }
+
     /* fin del primer slide */
     </style>
 
     <main>
-    <style>
-    .init_1 {
-        height: 175vh;
-    }
-    
-    .init_2 {
-        height: 120vh;
-    }
+        <style>
+        .init_1 {
+            height: 175vh;
+        }
 
-    .init_3 {
-        height: 140vh;
-    }
-    </style>
+        .init_2 {
+            height: 120vh;
+        }
 
-        <div class="container margin_60_35 init_1"  id="view_cart">
+        .init_3 {
+            height: 140vh;
+        }
+        </style>
+
+        <div class="container margin_60_35 init_1" id="view_cart">
 
             <!-- multistep form -->
             <form class="msform" id="my_awesome_form">
@@ -464,19 +530,24 @@ include_once("library/config.inc.php");
                     <li style="color:black!important;">Datos</li>
                     <li style="color:black!important;">Finalizar</li>
                 </ul>
+                <style>
+                table {
+                    table-layout: fixed;
 
+                }
+                </style>
                 <!-- fieldsets 1 -->
                 <fieldset>
                     <div class="cart-bottom">
                         <div class="table table-fixed">
                             <table id="shopping-cart-results">
-                                <thead>
+                                <thead class="thead_ajust">
                                     <tr class="main-heading">
-                                        <th>Imagen</th>
-                                        <th class="long-txt">Descripcion</th>
-                                        <th>Cantidad</th>
-                                        <th>Precio</th>
-                                        <th>Total</th>
+                                        <th style="width: 20%">Imagen</th>
+                                        <th style="width: 20%" class="long-txt">Descripcion</th>
+                                        <th style="width: 20%">Cantidad</th>
+                                        <th style="width: 20%">Precio</th>
+                                        <th style="width: 20%">Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -512,13 +583,13 @@ include_once("library/config.inc.php");
                                     <input type="hidden" name="nro_cot" value="<?php echo $product_qty ?>">
 
 
-                                    <tr class="cake-top" style=" width: 100%;">
-                                        <td class="cakes">
+                                    <tr class="cake-top" align="left" style="width: 100%;">
+                                        <td class="cakes" style="width: 20%; word-wrap: break-word;">
                                             <div class="product-img">
                                                 <img class="img-inside" src="assets/img-products/<?php echo $product_img; ?>">
                                             </div>
                                         </td>
-                                        <td class="cakes_de cake-text" align="left">
+                                        <td class="cakes_de cake-text" align="left" style="width: 20%; word-wrap: break-word;">
                                             <div class="product-text">
                                                 <h3><?php echo $product_name; ?></h3>
                                                 <p>Modelo: <?php echo $modelo_prod; ?></p>
@@ -526,23 +597,24 @@ include_once("library/config.inc.php");
                                                 <p>Codigo: <?php echo $product_code; ?></p>
                                             </div>
                                         </td>
-                                        <td class="cakes quantity">
+                                        <td class="cakes quantity" align="left" style="width: 20%; word-wrap: break-word;">
+
+                                            
                                             <div class="product-right">
                                                 <input type="number" data-code="<?php echo $product_code; ?>" class="form-control quantity "
                                                     style="border: 2px solid #6b6363;" value="<?php echo $product_qty; ?>">
                                             </div>
                                         </td>
-                                        <td class="cakes price">
-                                            <?php echo $currency;
-                                                echo sprintf("&nbsp; %01.2f", number_format($product_price_total, 2)); ?></h4>
+                                        <td class="cakes price" style="width: 20%;">
+                                            <?php echo $currency." ".$product_price_total; ?></h4>
 
                                         </td>
-                                        <td class="cakes top-remove">
+                                        <td class="cakes top-remove" style="width: 20%;">
                                             <h4><?php echo $currency;
                                                     echo sprintf("&nbsp; %01.2f", round($product_price_total * $product_qty)); ?></h4>
                                             <div class="close-btm">
 
-                                                <a href="javascript:" class="remove-item" data-code="<?php echo $product_code; ?>">
+                                                <a href="javascript:" align="left" class="remove-item" data-code="<?php echo $product_code; ?>">
                                                     <h5>Remover</h5>
                                                 </a>
 
@@ -567,7 +639,7 @@ include_once("library/config.inc.php");
                                 $grand_total = round($total + $tax_amount);
                             }
                             foreach ($tax_item as $key => $value) {
-                                $list_tax .= $key . ' : ' . $currency . number_format($value, 2) . '<br />';
+                                $list_tax .= $key . ' : ' . $currency." ".number_format($value, 2) . '<br />';
                             }
                             //$shipping_cost = ($shipping_cost)?'Costo de envio : '.$currency. sprintf("%01.2f", $shipping_cost).'<br />':'';	
                             //$shipping_cost
@@ -578,7 +650,7 @@ include_once("library/config.inc.php");
 
 
                             <div class="dis-total">
-                                <h1>Sub Total:&nbsp; <?php echo $currency . number_format($total_format, 2);  ?></h1>
+                                <h1>Sub Total:&nbsp; <?php echo $currency." ". number_format($total_format, 2);  ?></h1>
 
                             </div>
                             <div class="clear"> </div>
@@ -589,35 +661,39 @@ include_once("library/config.inc.php");
                             <div class="clear"> </div>
                             <div class="dis-total">
                                 <h1>Total:&nbsp;
-                                    <?php echo $currency . sprintf("%01.2f", $grand_total - $tax_amount);  ?></h1>
+                                    <?php echo $currency ." ". sprintf("%01.2f", $grand_total - $tax_amount);  ?></h1>
 
                             </div>
-                             
+
                             <div class="clear"> </div>
                         </div>
                     </div>
-                    <a href='process/limpiar.php' style=" font-weight: 500; margin-right: 60px; padding: 16px; background:red;" class='action-button'>Limpiar Carrito</a>
+                    <a href='process/limpiar.php' style=" font-weight: 500; margin-right: 60px; padding: 16px; background:red;"
+                        class='action-button'>Limpiar Carrito</a>
                     <input type="button" name="next" class="next action-button" style="padding: 16px;" onclick="ajusteBox();" value="Continuar" />
                 </fieldset>
 
 
                 <!-- fieldsets 2-->
-                <fieldset >
+                <fieldset>
+                    <div class="default-title">
                     <h2>¿Seleccione una Opción?</h2>
+                    </div>
+                   
                     <br><br>
-                    <div class="payment-method" align="center" >
+                    <div class="payment-method" align="center">
                         <label for="comprar" class="method cart-checkout">
 
-                            <img style="width: 200px; cursor:pointer;" src="assets\img\img2.png" />
-                            <div class="radio-input">
+                            <img style="width: 180px; cursor:pointer;" src="assets\img\img2.png" />
+                            <div class="radio-input" style="font-size: 17px;">
                                 <input id="comprar" type="radio" name="opciones" onclick="javascript:yesnoCheck();">
                                 Comprar Productos <i class="hidden compra_style fa fa-check" aria-hidden="true"></i>
                             </div>
                         </label>
 
                         <label for="cotizar" class="method cart-checkout">
-                            <img style="width: 200px; cursor:pointer;" src="assets\img\img1.png" />
-                            <div class="radio-input">
+                            <img style="width: 180px; cursor:pointer;" src="assets\img\img1.png" />
+                            <div class="radio-input" style="font-size: 17px;">
                                 <input id="cotizar" type="radio" name="opciones" onclick="javascript:yesnoCheck();">
                                 Cotizar Productos <i class="hidden cotiza_style fa fa-check" aria-hidden="true"></i>
                             </div>
@@ -625,25 +701,28 @@ include_once("library/config.inc.php");
 
                     </div>
                     <br><br>
-                    <input type="button" name="previous" style="margin-right: 60px; padding: 16px;" class="previous action-button" value="Retroceder" onclick="ajusteBox_end();" >
-                    <input type="button" name="next" style="padding: 16px;" class="next action-button select_ope deshabilitado" onclick="ajusteBox_next();" value="Continuar" disabled />
+                    <input type="button" name="previous" style="margin-right: 60px; padding: 16px;" class="previous action-button" value="Retroceder"
+                        onclick="ajusteBox_end();">
+                    <input type="button" name="next" style="padding: 16px;" class="next action-button select_ope deshabilitado"
+                        onclick="ajusteBox_next();" value="Continuar" disabled />
                 </fieldset>
 
 
                 <!-- fieldsets 3-->
                 <fieldset>
                     <div id="TituloCompras" style="display:none">
-                        <h2 class="fs-title">Compras</h2>
+                        
                     </div>
                     <div id="TituloCotiza" style="display:none">
-                        <h2 class="fs-title">Cotizar</h2>
+                    
+                        
                     </div>
                     <div class="shop-form">
 
                         <div class="default-title">
                             <h2>DATOS DE CLIENTE:</h2>
                         </div>
-                        <div class="row" align="left" style="padding-right: 50px; padding-left: 50px;">
+                        <div class="row" align="left" style="padding-right: 50px; padding-left: 50px;     font-size: 16px;">
                             <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                 <label>Ruc - Dni <sup>*</sup></label>
                                 <input class="form-control" id="ruc" name="ruc" value="20601883164" placeholder="Buscar Cliente" autocomplete="off">
@@ -674,7 +753,7 @@ include_once("library/config.inc.php");
                             </div>
 
                         </div>
-                        <div id="ifYes" style="display: none;">
+                        <div id="ifYes" style="display: none;     font-size: 16px;">
                             <div class="shop-form">
 
                                 <div class="default-title">
@@ -684,10 +763,11 @@ include_once("library/config.inc.php");
                             </div>
                             <div class="form-group col-md-3 col-sm-3 col-xs-6 " style="padding-left: 50px;">
                                 <label style="float:left">Forma de Entrega <sup>*</sup></label>
-                                <select class="form-control" name="F_entrega">
+                                <select class="form-control" style="font-size: 15px;" name="F_entrega">
+                                    
                                     <option value="Tienda">Despacho en Tienda</option>
-                                    <option value="Lima">Delivery Lima (S/ 15.00)</option>
-                                    <option value="Provincia">Delivery Provincia (S/ 35.00)</option>
+                                    <option value="Lima">Delivery Lima </option>
+                                    <option value="Provincia">Delivery Provincia </option>
 
 
                                 </select>
@@ -696,7 +776,8 @@ include_once("library/config.inc.php");
                             <div class="form-group col-md-3 col-sm-3 col-xs-6">
 
                                 <label style="float:left">Forma de Pago <sup>*</sup></label>
-                                <select class="form-control" name="F_pago">
+                                <select class="form-control"  style="font-size: 15px;" name="F_pago">
+                                  
                                     <option value="Efectivo">Efectivo </option>
                                     <option value="Electronico">Pago Electronico</option>
 
@@ -706,7 +787,7 @@ include_once("library/config.inc.php");
                             <div class="form-group col-md-3 col-sm-3 col-xs-6">
 
                                 <label style="float:left">Fecha de Despacho <sup>*</sup></label>
-                                <input type="text" name="F_despacho" id="F_despacho" class="form-control " placeholder="dd/mm/yy">
+                                <input type="text" name="F_despacho"  style="font-size: 15px;" id="F_despacho" class="form-control " placeholder="dd/mm/yy">
 
 
                             </div>
@@ -719,7 +800,7 @@ include_once("library/config.inc.php");
                             <div class="form-group col-md-3 col-sm-3 col-xs-6" style="padding-right: 50px;">
 
                                 <label style="float:left">Horarios de Entrega <sup>*</sup></label>
-                                <select class="form-control" name="H_entrega">
+                                <select class="form-control"  style="font-size: 15px;" name="H_entrega">
                                     <option value="10:00 Am - 12:00 Pm">10:00 Am - 12:00 Pm </option>
                                     <option value="1:00 Pm - 5:00 Pm">1:00 Pm - 5:00 Pm</option>
 
@@ -757,8 +838,10 @@ include_once("library/config.inc.php");
                     </div>
                     <div class="clear"> </div>
                     <br>
-                    <input type="button" name="previous" style="padding: 16px; margin-right: 60px;" class="previous action-button" value="Retroceder"  onclick="ajusteBox_retrocede();">
-                    <input type="button" name="next"  style="padding: 16px; " class="next action-button" value="Continuar" onclick="ajusteBox_final();">
+                    <input type="button" name="previous" style="padding: 16px; margin-right: 60px;" class="previous action-button" value="Retroceder"
+                        onclick="ajusteBox_retrocede();">
+                    <input type="button" name="next" style="padding: 16px; " class="next action-button" value="Continuar"
+                        onclick="ajusteBox_final();">
 
 
 
@@ -795,57 +878,84 @@ include_once("library/config.inc.php");
                                         <ul style="    list-style: none; padding-bottom: 35px;">
                                             <br>
                                             <div style="text-align: -webkit-left;">
-                                            
-                                            
-                                            
-                                            <li>
-                                                 <div class="radio-option" style="height: 40px;">
-                                                   <label for="payment-1"><span class="small-text" style="margin-top: 0; margin-left: 0; padding: 0;">
-                                                    <strong style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong> Una vez finalizada su compra recibirá un correo de confirmación con su orden de compra .</span></label>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                 <div class="radio-option" style="height: 40px;">
-                                                   <label for="payment-1"><span class="small-text" style="margin-top: 0; margin-left: 0; padding: 0;">
-                                                    <strong style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong> Nuestros asesores de venta se pondrán en contacto para concretar la compra.</span></label>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                 <div class="radio-option" style="height: 60px;">
-                                                   <label for="payment-1"><span class="small-text" style="margin-top: 0; margin-left: 0; padding: 0;">
-                                                    <strong style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong> Una vez emitido su comprobante de pago se procederá a la entrega del producto según su modalidad de despacho elegido entrega en tienda, delivery , envio a provincia.</span></label>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                 <div class="radio-option" style="height: 60px;">
-                                                   <label for="payment-1"><span class="small-text" style="margin-top: 0; margin-left: 0; padding: 0;">
-                                                    <strong style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong> Si tuviera alguna consulta adicional no dude en comunicarse con su asesor de venta vía WhatsApp al 986838333 - 996727562</span></label>
-                                                </div>
-                                            </li>
-
-                                            <li>
-                                                 <div class="radio-option" style="height: 60px;">
-                                                   <label for="payment-1"><span class="small-text" style="margin-top: 0; margin-left: 0; padding: 0;">
-                                                    <strong style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong> Para pagos con transferencias y depósitos comunicarse con su asesor de ventas al WhatsApp 986838333</span></label>
-                                                </div>
-                                            </li>
-
-                                            <li>
-                                                 <div class="radio-option" style="height: 40px;">
-                                                   <label for="payment-1"><span class="small-text" style="margin-top: 0; margin-left: 0; padding: 0;">
-                                                    <strong style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong> Horario de Atención lunes a Sábado de 9am a 6pm</span></label>
-                                                </div>
-                                            </li>
-
-                                            <li class="">
-                                                <div class="radio-option" id="aca_cotiza" style="text-align: -webkit-center; padding-top: 23px; margin-bottom: -7px;">
-                                                    <input type="button" style="position: absolute; bottom: -126px; padding: 16px; right: 450px; width: 22%;" name="cotizacion" class=" action-button" onclick="formSend('cotizacion')"
-                                                        style="width:25%" value="Generar Cotizacion" />
 
 
-                                                </div>
-                                            </li>
-                                        </div>
+
+                                                <li>
+                                                    <div class="radio-option" style="height: 40px;">
+                                                        <label for="payment-1"><span class="small-text"
+                                                                style="margin-top: 0; margin-left: 0; padding: 0;">
+                                                                <strong
+                                                                    style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong>
+                                                                Una vez finalizada su compra recibirá un correo de confirmación con su orden de compra
+                                                                .</span></label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="radio-option" style="height: 40px;">
+                                                        <label for="payment-1"><span class="small-text"
+                                                                style="margin-top: 0; margin-left: 0; padding: 0;">
+                                                                <strong
+                                                                    style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong>
+                                                                Nuestros asesores de venta se pondrán en contacto para concretar la
+                                                                compra.</span></label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="radio-option" style="height: 60px;">
+                                                        <label for="payment-1"><span class="small-text"
+                                                                style="margin-top: 0; margin-left: 0; padding: 0;">
+                                                                <strong
+                                                                    style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong>
+                                                                Una vez emitido su comprobante de pago se procederá a la entrega del producto según su
+                                                                modalidad de despacho elegido entrega en tienda, delivery , envio a
+                                                                provincia.</span></label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="radio-option" style="height: 60px;">
+                                                        <label for="payment-1"><span class="small-text"
+                                                                style="margin-top: 0; margin-left: 0; padding: 0;">
+                                                                <strong
+                                                                    style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong>
+                                                                Si tuviera alguna consulta adicional no dude en comunicarse con su asesor de venta vía
+                                                                WhatsApp al 986838333 - 996727562</span></label>
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <div class="radio-option" style="height: 60px;">
+                                                        <label for="payment-1"><span class="small-text"
+                                                                style="margin-top: 0; margin-left: 0; padding: 0;">
+                                                                <strong
+                                                                    style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong>
+                                                                Para pagos con transferencias y depósitos comunicarse con su asesor de ventas al
+                                                                WhatsApp 986838333</span></label>
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <div class="radio-option" style="height: 40px;">
+                                                        <label for="payment-1"><span class="small-text"
+                                                                style="margin-top: 0; margin-left: 0; padding: 0;">
+                                                                <strong
+                                                                    style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong>
+                                                                Horario de Atención lunes a Sábado de 9am a 6pm</span></label>
+                                                    </div>
+                                                </li>
+
+                                                <li class="">
+                                                    <div class="radio-option" id="aca_cotiza"
+                                                        style="text-align: -webkit-center; padding-top: 23px; margin-bottom: -7px;">
+                                                        <input type="button"
+                                                            style="position: absolute; bottom: -126px; padding: 16px; right: 450px; width: 22%;"
+                                                            name="cotizacion" class=" action-button" onclick="formSend('cotizacion')"
+                                                            style="width:25%" value="Generar Cotizacion" />
+
+
+                                                    </div>
+                                                </li>
+                                            </div>
                                         </ul>
                                     </div>
 
@@ -878,63 +988,90 @@ include_once("library/config.inc.php");
 
 
                             </div>
-                            <div class="col-md-6"  style="border: solid 2px #6c63ff; position: relative; left: -30px; border-radius: 15px;">
+                            <div class="col-md-6" style="border: solid 2px #6c63ff; position: relative; left: -30px; border-radius: 15px;">
                                 <div class="place-order ">
 
                                     <div class="payment-options">
                                         <ul style=" list-style: none; padding-bottom: 35px;">
                                             <br>
                                             <div style="text-align: -webkit-left;">
-                                            
-                                            
-                                            
-                                            <li>
-                                                 <div class="radio-option" style="height: 40px;">
-                                                   <label for="payment-1"><span class="small-text" style="margin-top: 0; margin-left: 0; padding: 0;">
-                                                    <strong style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong> Una vez finalizada su compra recibirá un correo de confirmación con su orden de compra .</span></label>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                 <div class="radio-option" style="height: 40px;">
-                                                   <label for="payment-1"><span class="small-text" style="margin-top: 0; margin-left: 0; padding: 0;">
-                                                    <strong style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong> Nuestros asesores de venta se pondrán en contacto para concretar la compra.</span></label>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                 <div class="radio-option" style="height: 60px;">
-                                                   <label for="payment-1"><span class="small-text" style="margin-top: 0; margin-left: 0; padding: 0;">
-                                                    <strong style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong> Una vez emitido su comprobante de pago se procederá a la entrega del producto según su modalidad de despacho elegido entrega en tienda, delivery , envio a provincia.</span></label>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                 <div class="radio-option" style="height: 60px;">
-                                                   <label for="payment-1"><span class="small-text" style="margin-top: 0; margin-left: 0; padding: 0;">
-                                                    <strong style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong> Si tuviera alguna consulta adicional no dude en comunicarse con su asesor de venta vía WhatsApp al 986838333 - 996727562</span></label>
-                                                </div>
-                                            </li>
-
-                                            <li>
-                                                 <div class="radio-option" style="height: 60px;">
-                                                   <label for="payment-1"><span class="small-text" style="margin-top: 0; margin-left: 0; padding: 0;">
-                                                    <strong style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong> Para pagos con transferencias y depósitos comunicarse con su asesor de ventas al WhatsApp 986838333</span></label>
-                                                </div>
-                                            </li>
-
-                                            <li>
-                                                 <div class="radio-option" style="height: 40px;">
-                                                   <label for="payment-1"><span class="small-text" style="margin-top: 0; margin-left: 0; padding: 0;">
-                                                    <strong style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong> Horario de Atención lunes a Sábado de 9am a 6pm</span></label>
-                                                </div>
-                                            </li>
-                                            
-                                            <li class="">
-                                                <div class="radio-option" id="aca_compra" style=" text-align: -webkit-center; padding-top: 23px; margin-bottom: -7px;">
-                                                    <input type="button" style=" position: absolute; bottom: -126px; right: 466px; width: 23%; padding: 16px;" name="compra1" class=" action-button" onclick="formSend('compra')"
-                                                        value="Generar Compra" />
 
 
-                                                </div>
-                                            </li>
+
+                                                <li>
+                                                    <div class="radio-option" style="height: 40px;">
+                                                        <label for="payment-1"><span class="small-text"
+                                                                style="margin-top: 0; margin-left: 0; padding: 0;">
+                                                                <strong
+                                                                    style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong>
+                                                                Una vez finalizada su compra recibirá un correo de confirmación con su orden de compra
+                                                                .</span></label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="radio-option" style="height: 40px;">
+                                                        <label for="payment-1"><span class="small-text"
+                                                                style="margin-top: 0; margin-left: 0; padding: 0;">
+                                                                <strong
+                                                                    style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong>
+                                                                Nuestros asesores de venta se pondrán en contacto para concretar la
+                                                                compra.</span></label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="radio-option" style="height: 60px;">
+                                                        <label for="payment-1"><span class="small-text"
+                                                                style="margin-top: 0; margin-left: 0; padding: 0;">
+                                                                <strong
+                                                                    style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong>
+                                                                Una vez emitido su comprobante de pago se procederá a la entrega del producto según su
+                                                                modalidad de despacho elegido entrega en tienda, delivery , envio a
+                                                                provincia.</span></label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="radio-option" style="height: 60px;">
+                                                        <label for="payment-1"><span class="small-text"
+                                                                style="margin-top: 0; margin-left: 0; padding: 0;">
+                                                                <strong
+                                                                    style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong>
+                                                                Si tuviera alguna consulta adicional no dude en comunicarse con su asesor de venta vía
+                                                                WhatsApp al 986838333 - 996727562</span></label>
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <div class="radio-option" style="height: 60px;">
+                                                        <label for="payment-1"><span class="small-text"
+                                                                style="margin-top: 0; margin-left: 0; padding: 0;">
+                                                                <strong
+                                                                    style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong>
+                                                                Para pagos con transferencias y depósitos comunicarse con su asesor de ventas al
+                                                                WhatsApp 986838333</span></label>
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <div class="radio-option" style="height: 40px;">
+                                                        <label for="payment-1"><span class="small-text"
+                                                                style="margin-top: 0; margin-left: 0; padding: 0;">
+                                                                <strong
+                                                                    style="color: #27ae60; font-size: 25px;font-weight: 600; vertical-align: -webkit-baseline-middle;">°</strong>
+                                                                Horario de Atención lunes a Sábado de 9am a 6pm</span></label>
+                                                    </div>
+                                                </li>
+
+                                                <li class="">
+                                                    <div class="radio-option" id="aca_compra"
+                                                        style=" text-align: -webkit-center; padding-top: 23px; margin-bottom: -7px;">
+                                                        <input type="button"
+                                                            style=" position: absolute; bottom: -126px; right: 466px; width: 23%; padding: 16px;"
+                                                            name="compra1" class=" action-button" onclick="formSend('compra')"
+                                                            value="Generar Compra" />
+
+
+                                                    </div>
+                                                </li>
                                             </div>
                                         </ul>
                                     </div>
@@ -952,10 +1089,13 @@ include_once("library/config.inc.php");
 
                     </div>
                     <br> <br>
-                    <input type="button" name="previous" style="position: relative; left: -118px; padding: 16px;" class="previous action-button" onclick="ajusteBox_back_final()" value="Retroceder" />
+                    <input type="button" name="previous" style="position: relative; left: -118px; padding: 16px;" class="previous action-button"
+                        onclick="ajusteBox_back_final()" value="Retroceder" />
 
-                    <a style="display:none;"  href="https://web.whatsapp.com/send?phone=51947320830&amp;text=HOLA+COTIZAME+ESTE+PRODUCTO%0D%0A%0D%0A*Puerta++enmarcada*%0A*PRECIO:*%20S/1.00%0A*URL:*%20https%3A%2F%2Fhttps://solucionescctvysistemas.com/assets/img-products/computadora-dextec-amd-ryzen-3-2200g-8gb-1tb-21-5--fhd.jpg %2Fproducto%2Fpuerta-enmarcada%2F%0D%0A%0D%0AGRACIAS" target="_blank" >
-		    	COTIZAR POR WASAPP		    </a>
+                    <a style="display:none;"
+                        href="https://web.whatsapp.com/send?phone=51947320830&amp;text=HOLA+COTIZAME+ESTE+PRODUCTO%0D%0A%0D%0A*Puerta++enmarcada*%0A*PRECIO:*%20S/1.00%0A*URL:*%20https%3A%2F%2Fhttps://solucionescctvysistemas.com/assets/img-products/computadora-dextec-amd-ryzen-3-2200g-8gb-1tb-21-5--fhd.jpg %2Fproducto%2Fpuerta-enmarcada%2F%0D%0A%0D%0AGRACIAS"
+                        target="_blank">
+                        COTIZAR POR WASAPP </a>
                 </fieldset>
             </form>
 
@@ -975,78 +1115,77 @@ include_once("library/config.inc.php");
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
     <script>
-    
     function ajusteBox() {
 
         $('.init_1').removeClass("init_1").addClass("init_2");
-        
-         
-        
+
+
+
         window.scroll({
-        top: 200, 
-        left: 0, 
-        behavior: 'smooth'
+            top: 200,
+            left: 0,
+            behavior: 'smooth'
         });
     }
 
     function ajusteBox_end() {
 
-    $('.init_2').removeClass("init_2").addClass("init_1");
+        $('.init_2').removeClass("init_2").addClass("init_1");
 
 
 
-    window.scroll({
-    top: 200, 
-    left: 0, 
-    behavior: 'smooth'
-    });
+        window.scroll({
+            top: 200,
+            left: 0,
+            behavior: 'smooth'
+        });
     }
 
     function ajusteBox_next() {
-        
+
         $('.init_2').removeClass("init_2").addClass("init_3");
 
         window.scroll({
-        top: 200, 
-        left: 0, 
-        behavior: 'smooth'
+            top: 200,
+            left: 0,
+            behavior: 'smooth'
         });
     }
 
     function ajusteBox_retrocede() {
-        
+
         $('.init_3').removeClass("init_3").addClass("init_2");
 
         window.scroll({
-        top: 200, 
-        left: 0, 
-        behavior: 'smooth'
+            top: 200,
+            left: 0,
+            behavior: 'smooth'
         });
     }
 
-    function ajusteBox_final() { 
-        
-    $('.init_3').removeClass("init_3").addClass("init_2");
+    function ajusteBox_final() {
 
-    window.scroll({
-    top: 200, 
-    left: 0, 
-    behavior: 'smooth'
-    });
-    
-    }
+        $('.init_3').removeClass("init_3").addClass("init_2");
 
-    function ajusteBox_back_final() { 
-        
-        $('.init_2').removeClass("init_2").addClass("init_3");
-    
         window.scroll({
-        top: 200, 
-        left: 0, 
-        behavior: 'smooth'
+            top: 200,
+            left: 0,
+            behavior: 'smooth'
         });
-        
-        }
+
+    }
+
+    function ajusteBox_back_final() {
+
+        $('.init_2').removeClass("init_2").addClass("init_3");
+
+        window.scroll({
+            top: 200,
+            left: 0,
+            behavior: 'smooth'
+        });
+
+    }
 
 
     function ordenar() {
@@ -1319,10 +1458,13 @@ include_once("library/config.inc.php");
                 // <input type="button" name="submit[descarga]" class=" action-button" onclick="formSend('descarga')" style="width:25%" value="Descargar Comprobante1" />
                 // <input type="button" name="submit[enviar_correo]" class=" action-button" onclick="formSend('enviar_correo')" style="width:25%"  value="Enviar Correo1" />
 
-                html += '<a href="assets/pdf/' + response['orden_pdf'] + '" class=" action-button" style="width:25%;     margin-right: 47px;  padding: 16px; background: #f58634!important;"  download="' + id +
+                html += '<a href="assets/pdf/' + response['orden_pdf'] +
+                    '" class=" action-button" style="width:25%;     margin-right: 47px;  padding: 16px; background: #f58634!important;"  download="' +
+                    id +
                     '">Descargar Archivo</a>  ';
                 html += '<a href="javascript:" class="action-button" onClick="formMail(&apos;' + response['correo'] + '&apos;, &apos;' +
-                    response['orden_pdf'] + '&apos;)"  style="width:25%; padding: 16px; background: #f58634!important;"> Enviar Correo </a>';
+                    response['orden_pdf'] +
+                    '&apos;)"  style="width:25%; padding: 16px; background: #f58634!important;"> Enviar Correo </a>';
                 switch (id) {
                     case 'compra':
                         $('#aca_compra').html(html);
