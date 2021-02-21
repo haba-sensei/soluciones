@@ -18,7 +18,75 @@ include_once("library/config.inc.php");
 
 <!DOCTYPE html>
 <html lang="en">
+<style>
+@media (max-width: 767px) {
+    /* .bann{
+        display:none;
+    } */
+}
 
+.bann {
+    background: #00b3e3;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.ajust_login_new {
+    color: #333;
+    border-radius: 6px;
+    padding: 7px 14px;
+    background: white;
+    margin-left: 99px;
+}
+
+@media (max-width: 767px) {
+    .bann_1 {
+        display: none;
+    }
+
+    .ajust_login_new {
+        margin-left: 0px;
+        margin-top: 9px;
+        display: inline-block;
+    }
+
+    .img_ajust_new {
+        height: 29px;
+    }
+    #content-area5 .caption {
+    position: absolute!important;
+    top: 40%!important;
+    padding: 90px 0 178px!important;
+    }
+    #content-area5 .landing {
+    float: left;
+    width: 82%!important;
+    overflow: hidden;
+    position: relative;
+    }
+    #content-area5 {
+    background: url(assets/img/bg/bg5_movil.jpg) no-repeat center center;
+    background-size: cover;
+    height: 63%;
+    }
+}
+</style>
+<div class="" style="    height: 41px;">
+    <a href="infoCat.php?CodigoCat=C000008">
+        <img alt="" class="img_ajust_new" src="assets/img/1.gif" style="width: 100%;">
+    </a>
+</div>
+<div class="bann">
+
+    <span> Recibe un DESCUENTO EXCLUSIVO en tu primera COMPRA al registrarse en nuestra tienda en linea. </span>
+    <a href="javascript:" class="ajust_login_new" onclick="mostrarLogin();"><i class="icon-user"></i> LOGIN CLIENTES
+    </a>
+
+</div>
 
 <head>
     <?php include 'inc/links.php'; ?>
@@ -283,7 +351,7 @@ include_once("library/config.inc.php");
     }
 
     tr.main-heading th {
-        background: #005a8f;
+        background: #555555;
         padding: 1em 7.6em;
         color: white;
         font-size: smaller;
@@ -327,7 +395,7 @@ include_once("library/config.inc.php");
     }
 
     .vocher {
-        padding: 1.1em 0em 0em 0em;
+        padding: 25.1em 0em 0em 0em;
     }
 
     .img-inside {
@@ -342,11 +410,13 @@ include_once("library/config.inc.php");
 
     .close-btm h5 {
         font-size: 0.75em;
-        color: #fff;
-        cursor: pointer;
-        background: #0c517d;
-        padding: 0.5em 1em;
-        border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    background: #f58634;
+    padding: 0.5em 1em;
+    border-radius: 3px;
+    position: relative;
+    left: 15px;
     }
 
     .dis-card {
@@ -356,7 +426,7 @@ include_once("library/config.inc.php");
 
     .dis-total {
         float: right;
-    width: 30%;
+        width: 38%;
     text-align: right;
     background: #cecece;
     }
@@ -364,11 +434,12 @@ include_once("library/config.inc.php");
     .dis-total h1 {
         font-size: 1.1em;
     color: #b31010;
-    padding: 0.8em 2em;
-    margin: 0.7em auto;
-    background: #b5b5b5;
+    padding: 0.8em 1em;
+    margin: 0.0em auto;
+    background: #ffffff;
     display: inline-block;
     text-align: right;
+    border: solid 1px #8e8e8e;
     }
 
     .tot-btn {
@@ -401,9 +472,10 @@ include_once("library/config.inc.php");
     }
 
     .table-fixed tbody {
-        height: 350px;
-        overflow-y: auto;
-        width: 100%;
+        height: 355px;
+    overflow-y: auto;
+    width: 96%;
+    position: absolute;
     }
 
 
@@ -639,7 +711,7 @@ include_once("library/config.inc.php");
                                 $grand_total = round($total + $tax_amount);
                             }
                             foreach ($tax_item as $key => $value) {
-                                $list_tax .= $key . ' : ' . $currency." ".number_format($value, 2) . '<br />';
+                                $list_tax .= $currency." ".number_format($value, 2) . '<br />';
                             }
                             //$shipping_cost = ($shipping_cost)?'Costo de envio : '.$currency. sprintf("%01.2f", $shipping_cost).'<br />':'';	
                             //$shipping_cost
@@ -650,18 +722,20 @@ include_once("library/config.inc.php");
 
 
                             <div class="dis-total">
-                                <h1>Sub Total:&nbsp; <?php echo $currency." ". number_format($total_format, 2);  ?></h1>
+                            <h1 style="width: 64%; ">Sub Total :&nbsp;</h1>
+                                <h1 style="width: 157px;     background: #cecece;"><?php echo $currency." ". number_format($total_format, 2);  ?></h1>
 
                             </div>
                             <div class="clear"> </div>
                             <div class="dis-total">
-                                <h1><?php echo $list_tax; ?></h1>
+                            <h1 style="width: 64%; ">IGV (18 %) : </h1>
+                            <h1 style="width: 157px;     background: #cecece;"><?php echo $list_tax; ?></h1>
 
                             </div>
                             <div class="clear"> </div>
                             <div class="dis-total">
-                                <h1>Total:&nbsp;
-                                    <?php echo $currency ." ". sprintf("%01.2f", $grand_total - $tax_amount);  ?></h1>
+                            <h1 style="width: 64%; ">Total :&nbsp;   </h1>
+                                <h1 style="width: 157px;       color: #00578a;  background: #cecece;"><?php echo $currency ." ". sprintf("%01.2f", $grand_total - $tax_amount);  ?></h1>
 
                             </div>
 
@@ -1103,11 +1177,66 @@ include_once("library/config.inc.php");
 
 
 
-
-
-
     </main><!-- End main -->
 
+
+
+    <style>
+    .box_subs {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .input_subs {
+        width: 50%;
+        margin: auto;
+        margin-bottom: 22px;
+        margin-top: 22px;
+    }
+
+    .close_session {
+        width: 50px;
+        height: 50px;
+        order: 2;
+        padding: 5px;
+        box-sizing: border-box;
+        border-radius: 50%;
+        cursor: pointer;
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.4) 2px 2px 6px;
+        transition: all 0.5s ease 0s;
+        position: absolute;
+        z-index: 200;
+        display: block;
+        border: 0px;
+        background: rgb(255 159 0) !important;
+        right: 3px;
+        top: 155px;
+    }
+
+    .out_cli {
+        color: white;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        display: list-item;
+        margin: auto;
+        font-size: 30px;
+        padding: 4px;
+        padding-right: 1px;
+    }
+    </style>
+    <section class="p-5 mt-4 text-center bg-primary box_subs">
+        <div class="container p-3">
+            <h3>SUBSCRIBETE AHORA</h3>
+            <form action="process/subscript.php" method="POST">
+                <input type="email" name="correo-subs" class="form-control input_subs"
+                    placeholder="Ingresa tu Correo Electronico">
+                <button type="submit" class="btn btn-warning">Subscribete</button>
+            </form>
+        </div>
+       
+    </section>
     <?php include 'inc/slider_bottom.php';  ?>
     <?php include 'inc/footer.php';  ?>
     <?php include 'inc/scripts.php';  ?>
