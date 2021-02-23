@@ -97,19 +97,25 @@
 					while($ordenP=mysqli_fetch_array($ordenU)){
 						$product_name = $ordenP['NombreProd'];
 						$modelo_producto = $ordenP['Modelo'];
+						$product_price_unitario = $ordenP['Precio'];
 						$marca_producto = $ordenP['Marca'];
 						$product_ganancia=$ordenP['ganancia'];
 						$product_medio=$ordenP['medio'];
 						$igv_final=$ordenP['impuesto'];
-						$product_price_total=($product_price);
-
-						$subtotal = ($product_price_total * $product_qty) / 1.18;
-						$subtotal_2 = number_format($product_price_total * $product_qty, 2);
-						$total = $subtotal + $total;
 						
-						$igv_format= ($total * 1.18);
+						$product_price_total=($product_price_unitario); 
+
+						$product_soles_ = number_format($product_price_unitario * $globalTasaCambio_dolar, 2); 
+						
+						$subtotal_f = ($product_price_total * $product_qty) / 1.18;
+						$subtotal = number_format($subtotal_f * $globalTasaCambio_dolar, 2); 
+
+						$subtotal_2 = number_format($product_soles_ * $product_qty, 2);
+						$total = number_format($subtotal + $total, 2);
+						
+						$igv_format= number_format($total * 1.18, 2);
 						$igv = number_format($igv_format - $total, 2);
-						$total_final = $total + $igv;
+						$total_final = number_format($total + $igv, 2);
 						}
 						
 						
@@ -122,7 +128,7 @@
 						"Cant."     => $product_qty,
 						"Codigo"     => $product_code,
 						"Detalles"  => $product_name." - ".$modelo_producto." - ".$marca_producto,
-						"Precio Unit"      => $product_price_total,
+						"Precio Unit"      => $product_soles_,
 						"Total"          => $subtotal_2 );
 				$size = $pdf->addLine( $y, $line );
 				$y   += $size + 2;
@@ -150,8 +156,8 @@
 					break;
 				}
 
-				$total_final = ($total_final + $total_delivery);
-			
+				$total_final = number_format($total_final + $total_delivery, 2);
+				
 				$pdf->SetFont('Arial','B',12);
 				$num_letra = strtoupper(numtoletras($total_final));
 				

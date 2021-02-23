@@ -23,8 +23,8 @@
                                     </style>
 
                                 </div>
-                                <img class="hidden-xs" src="assets/img/whatsapp_2.svg" width="25px;" height="33px;"><span
-                                    class="hidden-xs myDIV">FonoCompras: 986-838-333
+                                <img class="hidden-xs" src="assets/img/salario.svg" width="25px;" height="33px;"><span
+                                    class="hidden-xs myDIV"><?="Taza del Dia:  $ ".$globalTasaCambio_dolar ?>
 								</span>
 								<!-- <ul class="list-group desaparece ">
 									<li class="list-group-item">Contactanos en sitio 1</li>

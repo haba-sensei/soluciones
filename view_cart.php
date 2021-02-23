@@ -155,7 +155,7 @@ include_once("library/config.inc.php");
         border-radius: 1px;
         cursor: pointer;
         padding: 10px 5px;
-        margin: 10px 5px;
+        margin: 10px 10px;
     }
 
     .msform .action-button:hover,
@@ -360,7 +360,7 @@ include_once("library/config.inc.php");
     }
 
     tr.cake-top {
-        border-bottom: 1px solid #ccc;
+        border-bottom: 1px solid #005a8f;
         position: relative;
     }
 
@@ -426,9 +426,9 @@ include_once("library/config.inc.php");
 
     .dis-total {
         float: right;
-        width: 38%;
+    width: 35%;
     text-align: right;
-    background: #cecece;
+    background: #ffffff;
     }
 
     .dis-total h1 {
@@ -631,11 +631,12 @@ include_once("library/config.inc.php");
                                     foreach ($_SESSION["products"] as $product) {
                                         $product_img = $product["Imagen"];
                                         $product_name = $product["NombreProd"];
-                                        $product_price = $product["Precio"];
+                                        $product_price_dolares = $product["Precio"];
                                         $product_code = $product["CodigoProd"];
                                         $product_qty = $product["product_qty"];
                                         $modelo_prod = $product["Modelo"];
                                         $marca_prod =  $product["Marca"];
+                                        $product_price = number_format($product_price_dolares * $globalTasaCambio_dolar, 2); 
 
 
                                         $ordenU =  ejecutarSQL::consultar("SELECT `producto`.*, `perfil`.* FROM `producto` , `perfil`;");
@@ -643,7 +644,7 @@ include_once("library/config.inc.php");
                                         while ($ordenP = mysqli_fetch_assoc($ordenU)) {
 
                                             $product_ganancia = $ordenP['ganancia'];
-                                            $product_medio = $ordenP['medio'];
+                                            $product_medio = $ordenP['medio']; 
                                             $product_price_total = ($product_price * ($product_ganancia + $product_medio) / 100 + $product_price);
                                             $igv_total = ($product_price_total * $product_qty) / 1.18;
                                         }
@@ -683,7 +684,7 @@ include_once("library/config.inc.php");
                                         </td>
                                         <td class="cakes top-remove" style="width: 20%;">
                                             <h4><?php echo $currency;
-                                                    echo sprintf("&nbsp; %01.2f", round($product_price_total * $product_qty)); ?></h4>
+                                                    echo sprintf("&nbsp; %01.2f", number_format($product_price_total * $product_qty, 2)); ?></h4>
                                             <div class="close-btm">
 
                                                 <a href="javascript:" align="left" class="remove-item" data-code="<?php echo $product_code; ?>">
@@ -706,35 +707,35 @@ include_once("library/config.inc.php");
                             $grand_total = $total;
                             foreach ($taxes as $key => $value) {
                                 $import = 1.18;
-                                $tax_amount = round($total - ($total / $import));
+                                $tax_amount = number_format($total - ($total / $import), 2);
                                 $tax_item[$key] = $tax_amount;
-                                $grand_total = round($total + $tax_amount);
+                                $grand_total = number_format($total + $tax_amount, 2);
                             }
                             foreach ($tax_item as $key => $value) {
                                 $list_tax .= $currency." ".number_format($value, 2) . '<br />';
                             }
                             //$shipping_cost = ($shipping_cost)?'Costo de envio : '.$currency. sprintf("%01.2f", $shipping_cost).'<br />':'';	
                             //$shipping_cost
-                            $total_format = round($total / 1.18);
+                            $total_format = number_format($total / 1.18, 2);
                             ?>
 
 
 
 
                             <div class="dis-total">
-                            <h1 style="width: 64%; ">Sub Total :&nbsp;</h1>
+                            <h1 style="width:  40%; ">Sub Total :&nbsp;</h1>
                                 <h1 style="width: 157px;     background: #cecece;"><?php echo $currency." ". number_format($total_format, 2);  ?></h1>
 
                             </div>
                             <div class="clear"> </div>
                             <div class="dis-total">
-                            <h1 style="width: 64%; ">IGV (18 %) : </h1>
+                            <h1 style="width:  40%; ">IGV (18 %) : </h1>
                             <h1 style="width: 157px;     background: #cecece;"><?php echo $list_tax; ?></h1>
 
                             </div>
                             <div class="clear"> </div>
                             <div class="dis-total">
-                            <h1 style="width: 64%; ">Total :&nbsp;   </h1>
+                            <h1 style="width:  40%; ">Total :&nbsp;   </h1>
                                 <h1 style="width: 157px;       color: #00578a;  background: #cecece;"><?php echo $currency ." ". sprintf("%01.2f", $grand_total - $tax_amount);  ?></h1>
 
                             </div>
@@ -742,9 +743,10 @@ include_once("library/config.inc.php");
                             <div class="clear"> </div>
                         </div>
                     </div>
-                    <a href='process/limpiar.php' style=" font-weight: 500; margin-right: 60px; padding: 16px; background:red;"
+                    <a href='process/limpiar.php' style=" font-weight: 600; margin-right: 8px; padding: 16px; background:red;"
                         class='action-button'>Limpiar Carrito</a>
-                    <input type="button" name="next" class="next action-button" style="padding: 16px;" onclick="ajusteBox();" value="Continuar" />
+                        <a href="productos.php" class=" action-button" style="padding: 16px; background:#005a8f;" >Seguir Comprando </a>
+                    <input type="button" name="next" class="next action-button" style="padding: 16px;     font-weight: 600;" onclick="ajusteBox();" value="Continuar" />
                 </fieldset>
 
 
@@ -915,7 +917,7 @@ include_once("library/config.inc.php");
                     <input type="button" name="previous" style="padding: 16px; margin-right: 60px;" class="previous action-button" value="Retroceder"
                         onclick="ajusteBox_retrocede();">
                     <input type="button" name="next" style="padding: 16px; " class="next action-button" value="Continuar"
-                        onclick="ajusteBox_final();">
+                        onclick="ajusteBox_final();" >
 
 
 
@@ -1296,6 +1298,8 @@ include_once("library/config.inc.php");
 
         $('.init_3').removeClass("init_3").addClass("init_2");
 
+        
+
         window.scroll({
             top: 200,
             left: 0,
@@ -1583,6 +1587,8 @@ include_once("library/config.inc.php");
             dataType: 'json',
             success: function(response) {
 
+                alert("Proceso Concluido");
+                
                 html = "";
                 // <input type="button" name="submit[descarga]" class=" action-button" onclick="formSend('descarga')" style="width:25%" value="Descargar Comprobante1" />
                 // <input type="button" name="submit[enviar_correo]" class=" action-button" onclick="formSend('enviar_correo')" style="width:25%"  value="Enviar Correo1" />

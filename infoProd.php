@@ -383,12 +383,13 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                                                                     <span id="" class="copy13 primary high jsx-3736277290 normal " style="font-size: 27px; font-weight: 700;padding-bottom: 10px;">
                                                                      $ <?php 
                                                                          $precio_sol = number_format($fila['Precio'], 2 );
-                                                                         $precio_dolar_sin_f = number_format($precio_sol / $globalTasaCambio_dolar, 2); 
-                                                                         echo $precio_dolar_sin_f;
+                                                                            echo $precio_sol;
                                                                          ?>
                                                                     -
-                                                                    <?php echo $fila['Simbolo']; ?>
-                                                                        <?php echo number_format($fila['Precio'], 2 )?>
+                                                                    
+                                                                        <?php
+                                                                        $precio_sol_dolar_f = number_format($precio_sol * $globalTasaCambio_dolar, 2); 
+                                                                         echo "<small> S/</small>".$precio_sol_dolar_f ?>
                                                                     </span>
                                                                 </div>
                                                             </li>

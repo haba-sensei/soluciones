@@ -1013,7 +1013,7 @@ function draw_code39($code, $x, $y, $w, $h) {
 			
         $product_price_total=$product_price;
        
-        $subtotal = number_format( ($product_price_total * $product_qty) / 1.18 ,2);
+        $subtotal = number_format( ($product_price_total) / 1.18 ,2);
         $total = $subtotal + $total;
         
         $igv_format= ($total * 1.18);

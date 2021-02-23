@@ -99,12 +99,10 @@ if (
             while ($ordenP = mysqli_fetch_assoc($ordenU)) {
                 $product_ganancia = $ordenP['ganancia'];
                 $product_medio = $ordenP['medio'];
-                $product_price_total =
-                    ($product_price * ($product_ganancia + $product_medio)) /
-                    100 +
-                    $product_price;
+                $product_price_total = $product_price;
 
-                $subtotal = $product_price_total * $product_qty;
+                $precio_dolar_f = $product_price_total * $product_qty;
+                $subtotal = number_format($precio_dolar_f * $globalTasaCambio_dolar, 2); 
             }
 
             if (

@@ -102,7 +102,7 @@ Licencia: Proveedor de servicios
 	    </div>
 	 <section style="    background: #f5f5f5;     padding-bottom: 1%;">
 	<div id="get_quote" class="ajuste">
-			<div class="container  animated fadeInUp">
+			<div class="container animated fadeInUp">
 				<div class="row">
 					<div class="col-md-9">
 						<h3 class="hidden-xs">¿ Estas Buscando un Producto Para su Hogar, Empresa ?</h3>
@@ -136,13 +136,15 @@ Licencia: Proveedor de servicios
 
 
 						while ($row = mysqli_fetch_array($retval,  MYSQLI_ASSOC)) {
-							$precio = $row['Precio']; 
+							$precio_dolar = $row['Precio']; 
 							$ganancia = $row['ganancia'];
 							$medio = $row['medio'];
-							$total_prod = $precio * ($ganancia + $medio) / 100 + $precio;
-							$p_p = ($precio * 25 / 100);
-							$p_p_a =  $total_prod + $p_p;
+							$total_prod = $precio * ($ganancia + $medio) / 100 + $precio_dolar;
+							$p_p = ($precio_dolar * 25 / 100);
+							$p_p_a =  $total_prod + $p_p; 
 							$p_p_r = round($p_p_a, 0, PHP_ROUND_HALF_DOWN);
+							
+							$precio_sol_dolar_f = number_format($precio_dolar * $globalTasaCambio_dolar, 2); 
 							echo "<form class='product-form'>
             <div class='col-md-4 col-sm-6 col-xs-12 prod-ajust' >
 		    <div class='shop-product'>
@@ -154,7 +156,7 @@ Licencia: Proveedor de servicios
 			
 								<input name='product_qty' type='hidden' value='1'>" .
 								"<input name='CodigoProd' type='hidden' value='{$row['CodigoProd']}'>" .
-								"<button  class='btn-cart  my-cart-btn btn-common' type='submit'><i class='icon-basket'></i>&nbsp;&nbsp;Añadir</button>" .
+								"<button  class='btn-cart my-cart-btn btn-common' type='submit'><i class='icon-basket'></i>&nbsp;&nbsp;Añadir</button>" .
 								"<a class='btn-quickview md-trigger' href='infoProd.php?CodigoProd={$row['CodigoProd']}'><i class='icon-eye'></i>&nbsp;&nbsp;Ver Producto</a>" .
 								"</div>
 								</div>
@@ -165,14 +167,14 @@ Licencia: Proveedor de servicios
 								"<a style=' font-size: 12px; margin: -31px 0px;position: absolute; margin-right: 27px;  font-size: 14px;' href='infoProd.php?CodigoProd={$row['CodigoProd']}'> {$row['NombreProd']}</a>" .
 								"</h4>" .
 								"<h5 class='price' style='position: absolute; margin-right: 27px;  margin-top: 5px;  font-size: 13px;'><a >{$row['Modelo']} - {$row['Marca']} </a></h5><br>" .
-								"<h5 class='price' style='position: absolute; margin-right: 27px;  margin-top: 11px;  font-size: 15px;'> Antes: <s>{$row['moneda']} {$p_p_r}.00 </s>&nbsp;&nbsp; 25 % DCTO</h5>" .
+								"<h5 class='price' style='position: absolute; margin-right: 27px;  margin-top: 11px;  font-size: 15px;'> Antes: <s>{$row['moneda']} {$p_p_r}.00 </s>&nbsp;&nbsp; 25 % DCTO </h5>" .
 								"<div style='width: 107%; margin-left: -12px; border-top: 1.2px dashed;'></div>".
-								"<div id='ribbon2' style='font-weight:1000;'><span id='contento'>{$row['moneda']} {$total_prod}</span>  <img src='assets/img/tarjeta.png' width='50px' height='30px' ></span> <img src='assets/img/envio.png' width='50px' height='30px' ></div></div>" .
+								"<div id='ribbon2' style='font-weight:1000;'>   <span style='float: left; padding-left: 20px;'>$ {$total_prod} </span> <span id='contento'> <small> S/</small>".$precio_sol_dolar_f." </span>  </div></div>" .
 								"</form></div></div>";
 						}
 						echo "</div></div> 
-         <div class='text-center'>
-         <ul class='pagination m-t-0'>
+								<div class='text-center'>
+								<ul class='pagination m-t-0'>
          ";
 
 						$final = $rec_count / $rec_limit;
