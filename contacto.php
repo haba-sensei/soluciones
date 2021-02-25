@@ -94,6 +94,16 @@ Licencia: Proveedor de servicios
 	</head>
 
 	<body>
+  <style>
+  #search-button {
+    padding: 25px 18px 0px!important;
+  }
+  
+  #search_button {
+    position: relative;
+    top: -14px!important;
+  }
+  </style>
 	    <?php include 'inc/navbar.php'; ?>
 
 	    </nav>
@@ -102,7 +112,7 @@ Licencia: Proveedor de servicios
 </section>
 <section style="    background: #f5f5f5;     padding-bottom: 1%;">
 	<div id="get_quote" class="ajuste">
-			<div class="container  animated fadeInUp">
+			<div class="container animated fadeInUp">
 				<div class="row">
 					<div class="col-md-9">
 						<h3 class="hidden-xs">¿ Estamos Cada Vez más Cerca de Ti Ubicanos ?</h3>
@@ -128,7 +138,7 @@ Licencia: Proveedor de servicios
 	                <div class="icon-bx-wraper bx-style-1 p-a15 center col" style="    border-width: 1px;
     border-style: solid;
     border-color: #2c5b8f;     padding-top: 23px;">
-	                    <div class="icon-bx-sm  m-b20 radius" style="  display: inline-block;
+	                    <div class="icon-bx-sm m-b20 radius" style="  display: inline-block;
     text-align: center;  border-radius: 100%;    background-color: #da551c;     width: 70px;
     height: 70px;
     line-height: 80px; "> <a href="#" class="icon-cell" style="color: #ffffff;"><i style="    font-size: 37px;"
@@ -146,7 +156,7 @@ Licencia: Proveedor de servicios
 	                <div class="icon-bx-wraper bx-style-1 p-a15 center col" style="    border-width: 1px;
     border-style: solid;
     border-color: #2c5b8f;      padding-top: 23px;">
-	                    <div class="icon-bx-sm  m-b20 radius" style="  display: inline-block;
+	                    <div class="icon-bx-sm m-b20 radius" style="  display: inline-block;
     text-align: center;  border-radius: 100%;    background-color: #da551c;    width: 70px;
     height: 70px;
     line-height: 80px; "> <a href="#" class="icon-cell" style="color: #ffffff;"><i style="    font-size: 34px;"
@@ -181,7 +191,7 @@ Licencia: Proveedor de servicios
 	                <div class="icon-bx-wraper bx-style-1 p-a15 center col" style="    border-width: 1px;
     border-style: solid;
     border-color: #2c5b8f;      padding-top: 23px;">
-	                    <div class="icon-bx-sm  m-b20 radius" style="  display: inline-block;
+	                    <div class="icon-bx-sm m-b20 radius" style="  display: inline-block;
     text-align: center;  border-radius: 100%;    background-color: #da551c;     width: 70px;
     height: 70px;
     line-height: 80px; "> <a href="#" class="icon-cell" style="color: #ffffff;"><i style="    font-size: 37px;"
@@ -199,7 +209,7 @@ Licencia: Proveedor de servicios
  </style>
 
 	        <div class="col-md-12" style="    margin-top: 19px;margin-bottom: 28px;">
-	            <div class="header-wrap text-center">
+	            <div class="text-center header-wrap">
 	                <h3 style="    font-size: 28px; color:red;">Asesores De Ventas</h3>
 	                <hr style="margin-bottom: 8px solid #333;">
 	                <p class="description">Si Decea Solicitar un Servicio o contactarnos, Por favor Contactanos Mediante de Nuestro Formulario de Contactar.
@@ -213,7 +223,7 @@ Licencia: Proveedor de servicios
                 <a href="#">
                   <img src="assets/img/team/1.jpg" alt="">
                 </a>
-                <div class="team-social-icon text-center">
+                <div class="text-center team-social-icon">
                   <ul>
                    
                       
@@ -222,7 +232,7 @@ Licencia: Proveedor de servicios
                   </ul>
                 </div>
               </div>
-              <div class="team-content text-center">
+              <div class="text-center team-content">
                 <h4>Jhonny Olarte </h4>
                  <p>Numero Telefonico:986838333</p>
                  
@@ -250,7 +260,7 @@ Licencia: Proveedor de servicios
                 <a href="#">
                   <img src="assets/img/team/2.jpg" alt="">
                 </a>
-                <div class="team-social-icon text-center">
+                <div class="text-center team-social-icon">
                   <ul>
                     
                       
@@ -259,7 +269,7 @@ Licencia: Proveedor de servicios
                   </ul>
                 </div>
               </div>
-              <div class="team-content text-center">
+              <div class="text-center team-content">
                 <h4>Enoc Peña</h4>
                  <p>Numero Telefonico:996727562</p>
                  
@@ -287,7 +297,7 @@ Licencia: Proveedor de servicios
                 <a href="#">
                   <img src="assets/img/team/3.jpg" alt="">
                 </a>
-                <div class="team-social-icon text-center">
+                <div class="text-center team-social-icon">
                   <ul>
                     
                       </a>
@@ -295,7 +305,7 @@ Licencia: Proveedor de servicios
                   </ul>
                 </div>
               </div>
-              <div class="team-content text-center">
+              <div class="text-center team-content">
                 <h4>Jesus Crespo</h4>
                  <p>Numero Telefonico:996727562</p>
                  
@@ -323,7 +333,7 @@ Licencia: Proveedor de servicios
                 <a href="#">
                   <img src="assets/img/team/4.jpg" alt="">
                 </a>
-                <div class="team-social-icon text-center">
+                <div class="text-center team-social-icon">
                   <ul>
                     
                       </a>
@@ -331,7 +341,7 @@ Licencia: Proveedor de servicios
                   </ul>
                 </div>
               </div>
-              <div class="team-content text-center">
+              <div class="text-center team-content">
                 <h4>David Olarte</h4>
                  <p>Numero Telefonico:986838333</p>
                 
@@ -383,7 +393,7 @@ Licencia: Proveedor de servicios
 	        </style>
 
 	        <div class="col-md-12" style="    margin-top: 19px;margin-bottom: 28px;">
-	            <div class="header-wrap text-center">
+	            <div class="text-center header-wrap">
 	                <h3 style="    font-size: 28px; color:red;">Por Favor sus Datos</h3>
 	                <hr style="margin-bottom: 8px solid #333;">
 	                <p class="description">Si Decea Solicitar un Servicio o contactarnos, Por favor Contactanos Mediante de Nuestro Formulario de Contactar.
@@ -446,7 +456,7 @@ Licencia: Proveedor de servicios
 	                                </div>
 	                                <div class="col-md-12 col-xs-12">
 	                                    <button type="submit" class="btn btn-common">Enviar mensaje</button>
-	                                    <div id="msgSubmit" class="h3 text-center hidden"></div>
+	                                    <div id="msgSubmit" class="hidden text-center h3"></div>
 	                                    <div class="clearfix"></div>
 	                                </div>
 	                            </div>

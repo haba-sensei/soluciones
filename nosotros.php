@@ -93,6 +93,16 @@ Licencia: Proveedor de servicios
 	<?php include 'inc/links.php';?>
 	</head>
 	<body>
+	<style>
+  #search-button {
+    padding: 25px 18px 0px!important;
+  }
+  
+  #search_button {
+    position: relative;
+    top: -14px!important;
+  }
+  </style>
 	<?php include_once 'inc/navbar.php';?>
 	
 
@@ -101,7 +111,7 @@ Licencia: Proveedor de servicios
 	
 <section style="    background: #f5f5f5;     padding-bottom: 1%;">
 	<div id="get_quote" class="ajuste">
-			<div class="container  animated fadeInUp">
+			<div class="container animated fadeInUp">
 				<div class="row">
 					<div class="col-md-9">
 						<h3 class="hidden-xs">¿ Bienvenidos a Soluciones Cctv y Sistemas ?</h3>
@@ -136,7 +146,7 @@ Licencia: Proveedor de servicios
 						
 						</p>
 				</div>
-				<div class="ajust-nos	"></div>
+				<div class="ajust-nos "></div>
 				<div class="col-sm-7 col-sm-offset-1 ">
 					<ul class="feat" id="about" style="    list-style: none;">
 						<li>

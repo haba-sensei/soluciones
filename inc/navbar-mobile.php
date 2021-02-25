@@ -5,7 +5,12 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-2">
                         <div class="language-wrapper">
-                            <div class="box-language ">
+                            <div class="box-language " style="background: #f58634;
+                                color: white;
+                                font-weight: 600;
+                                padding-left: 15px;
+                                padding-right: 15px;
+                                margin-top: 3px;">
 
                                 <div class="btn-group toggle-wrap">
 
@@ -26,7 +31,8 @@
                                 <div class="control-group">
 
                                     <input class="search-field" name="s" placeholder="Hola, Tecnolover, ¿Qué Estás Buscando?">
-                                    <button class="search-button" type="submit"><i class="icon-magnifier"></i></button>
+                                    <button class="search-button" type="submit"><i class="icon-magnifier" style="    position: relative;
+    top: -5px;"></i></button>
                                 </div>
                             </form>
                         </div>
@@ -153,7 +159,7 @@
                         <button class="b-hamb-btn b-hamb hidden-lg js-open-left-slidebar"></button>
                     </div>
                     <div class="navbar-collapse collapse" style="    position: relative;
-    left: 40px;">
+    left: 1px;">
 
                         <ul class="nav navbar-nav navbar-right hidden-xs">
                             <li class="link-1"><a href="index.php"><i class="icon-home"></i>&nbsp;&nbsp; INICIO </a>

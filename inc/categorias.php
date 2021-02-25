@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-3 col-sm-3 col-xs-12">
 
-                <div class="widget-ct widget-categories mb-30  hidden-xs">
+                <div class="widget-ct widget-categories mb-30 hidden-xs">
                     <div class="widget-z-title" style=" margin-bottom: -23px;   list-style: none;">
 
                         <h4><i class="fa fa-truck" aria-hidden="true"></i> COMPRA EN LINEA + ENVIO</h4>
@@ -109,9 +109,7 @@
 
                         <?php
 
-						$topV =  ejecutarSQL::consultar("SELECT `producto`.*, `producto`.`Venta`, `perfil`.*
-FROM `perfil`, `producto`
-WHERE (`producto`.`Venta` = 0) ORDER BY RAND() LIMIT 6 ; ");
+						$topV =  ejecutarSQL::consultar("SELECT `producto`.*, `producto`.`Venta`, `perfil`.* FROM `perfil`, `producto` WHERE (`producto`.`Venta` = 1) ORDER BY RAND() LIMIT 6;");
 						while ($fila = mysqli_fetch_array($topV)) {
 							$cod = $fila['CodigoProd'];
 							$nom = $fila['NombreProd'];
@@ -120,19 +118,22 @@ WHERE (`producto`.`Venta` = 0) ORDER BY RAND() LIMIT 6 ; ");
 							$simb = $fila['Simbolo'];
 							$ganancia = $fila['ganancia'];
 							$medio = $fila['medio'];
-							//print_r($nom);
-
+                            $precio_sol_dolar_f = number_format($prec * $globalTasaCambio_dolar, 2);
+							$imp = str_replace(',','',$precio_sol_dolar_f); 
+							 
+							$p_p = number_format($imp *25 / 100 + $imp, 2);
 							?>
-
-
                         <figure class="post-thumb"><a href="infoProd.php?CodigoProd=<?php echo $cod ?> "><img
                                     style=" width: 132px; height: 105px;     margin-left: 67px;"
                                     src="assets/img-products/<?php echo $img ?>" alt=""></a></figure>
                         <h5><a href="infoProd.php?CodigoProd=<?php echo $cod ?> "
                                 style="color: #333; margin-left: 10px;"><?php echo $nom ?></a></h5>
 
-                        <div class="price" style="margin-left: 10px;">
-                            <?php echo $simb ?> <?php echo $prec * ($ganancia + $medio) / 100 + $prec ?>
+                        <div class="price" style="margin-left: 10px; ">
+                        <h5>
+                        <?php echo "$ &NonBreakingSpace;".$prec."&NonBreakingSpace;&NonBreakingSpace; | &NonBreakingSpace;&NonBreakingSpace;"."S/ ".$imp; ?>
+                        </h5>
+                          
                         </div>
 
 

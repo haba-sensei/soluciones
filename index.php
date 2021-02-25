@@ -108,7 +108,16 @@ include 'library/config_alarmas.php';
 </head>
 
 <body style="padding-right: 0px!important;">
-
+<style>
+  #search-button {
+    padding: 25px 18px 0px!important;
+  }
+  
+  #search_button {
+    position: relative;
+    top: -14px!important;
+  }
+  </style>
 
     <?php include 'inc/navbar.php'; ?>
 

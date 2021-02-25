@@ -5,7 +5,12 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-2">
                         <div class="language-wrapper">
-                            <div class="box-language ">
+                            <div class="box-language " style="background: #f58634;
+    color: white;
+    font-weight: 600;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 3px;">
 
                                 <div class="btn-group toggle-wrap">
 
@@ -25,9 +30,9 @@
                             <form role="search" name="form" action="buscador.php" method="get">
                                 <div class="control-group">
 
-                                    <input class="search-field" name="s" placeholder=" Hola, Tecnolover, ¿Qué Estás Buscando?" style="    /* padding: 0px 0px 0px 0px; */
-    /* display: block;">
-                                    <button class="search-button" type="submit"><i class="icon-magnifier"></i></button>
+                                    <input class="search-field" name="s" placeholder=" Hola, Tecnolover, ¿Qué Estás Buscando?">
+                                    <button class="search-button" type="submit"><i class="icon-magnifier" style="    position: relative;
+    top: -5px;"></i></button>
                                 </div>
                             </form>
                         </div>
@@ -36,9 +41,8 @@
 
                                 <li>
 
-                                    <a href="view_cart.php" class="cart-icon cart-btn cart-item"><i
-                                            class="icon-basket"></i>&nbsp;&nbsp;Cotizador<span class="cart-label"
-                                            id="cart-container"><?php 
+                                    <a href="view_cart.php" class="cart-icon cart-btn cart-item"><i class="icon-basket"></i>&nbsp;&nbsp;Cotizador<span
+                                            class="cart-label" id="cart-container"><?php 
 		if(isset($_SESSION["products"])){
 			echo count($_SESSION["products"]); 
 		} else {
@@ -163,8 +167,7 @@
                 <div class="row">
                     <div class="navbar-header">
 
-                        <button type="button" class="navbar-toggle" data-toggle="collapse"
-                            data-target=".navbar-collapse">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <i class="fa fa-bars"></i>
                         </button>
                         <a class="navbar-brand" href="index.php">
@@ -184,14 +187,12 @@
                             <li class="link-1"><a href="cursos.php"><i class="glyphicon glyphicon-book"></i>&nbsp;&nbsp;
                                     CURSOS</a></li>
 
-                            <li class="link-1"><a href="infoCat.php?CodigoCat=C000008"><i
-                                        class="icon-basket-loaded"></i>&nbsp;&nbsp; OFERTAS</a></li>
+                            <li class="link-1"><a href="infoCat.php?CodigoCat=C000008"><i class="icon-basket-loaded"></i>&nbsp;&nbsp; OFERTAS</a></li>
 
                             <li class="link-1"><a href="productos.php"><i class="icon-wallet"></i>&nbsp;&nbsp;
                                     PRODUCTOS</a></li>
 
-                            <li class="link-1"><a href="nosotros.php"><i
-                                        class="glyphicon glyphicon-briefcase"></i>&nbsp;&nbsp; NOSOTROS</a></li>
+                            <li class="link-1"><a href="nosotros.php"><i class="glyphicon glyphicon-briefcase"></i>&nbsp;&nbsp; NOSOTROS</a></li>
 
                             <li class="link-1"><a href="contacto.php"><i class="icon-people"></i>&nbsp;&nbsp;
                                     CONTACTANOS</a></li>
@@ -208,19 +209,47 @@
     </div>
     <nav class="navbar navbar-inverse navbar-fixed-bottom hidden-xs" align="center">
 
-<ul >
-				
-<div style="vertical-align: super;   display: inline-block;"><i style="    font-size: 25px;      margin-left: 40px;   color: infoCat.php?CodigoCat=C000002ff9f00;" class="fa fa-cc-visa" aria-hidden="true"></i></div><div class="bar-contenido"><span class="bar-txt" style="color:white;    font-size: 12px;">Cuenta Bancaria Soluciones<br>BCP:194-357-125-00-0-31</span></div>
-<a href="https://api.whatsapp.com/send?phone=51968933814&text=hola,%20qu%C3%A9%20tal?" style="color: #f58634;"><div style="      vertical-align: super;  display: inline-block;"><i style="    font-size: 30px;     color: infoCat.php?CodigoCat=C000002ff9f00;" class="fa fa-whatsapp" aria-hidden="true"></div></i><div class="bar-contenido"><span class="bar-telefono"></span><span class="bar-txt" style="color:white;    font-size: 12px;">Informes / Asesoria<br>+51 968-933-814</span></div></a>
-<a href="https://api.whatsapp.com/send?phone=51986838333&text=hola,%20qu%C3%A9%20tal?" style="color: #f58634;"><div style="      vertical-align: super;  display: inline-block;"><i style="    font-size: 25px;     color: infoCat.php?CodigoCat=C000002ff9f00;" class="glyphicon glyphicon-phone" aria-hidden="true"></div></i><div class="bar-contenido"><span class="bar-telefono"></span><span class="bar-txt" style="color:white;    font-size: 12px;">Ventas / Soporte<br>+51 986-838-333</span></div></a>
-<a href="https://api.whatsapp.com/send?phone=51996727562&text=hola,%20qu%C3%A9%20tal?" style="color: #f58634;"><div style="      vertical-align: super;  display: inline-block;"><i style="    font-size: 28px;     color: infoCat.php?CodigoCat=C000002ff9f00;" class="fa fa-wrench" aria-hidden="true"></div></i><div class="bar-contenido"><span class="bar-telefono"></span><span class="bar-txt" style="color:white;    font-size: 12px;">Averias / Garantia <br>+51 996-727-562</span></div></a>
-<a href="https://api.whatsapp.com/send?phone=51986838333&text=hola,%20qu%C3%A9%20tal?" style="color: #f58634;"><div style="      vertical-align: super;  display: inline-block;"><i style="    font-size: 30px;     color: infoCat.php?CodigoCat=C000002ff9f00;" class="fa fa-desktop" aria-hidden="true"></div></i><div class="bar-contenido"><span class="bar-telefono"></span><span class="bar-txt" style="color:white;    font-size: 12px;">Soporte / en Linea<br>+51 986-838-333</span></div></a>
-				
+        <ul>
 
-</ul>
+            <div style="vertical-align: super;   display: inline-block;"><i style="    font-size: 25px;      margin-left: 40px;   color:ff9f00;"
+                    class="fa fa-cc-visa" aria-hidden="true"></i></div>
+            <div class="bar-contenido"><span class="bar-txt" style="color:white;    font-size: 12px;">Cuenta Bancaria
+                    Soluciones<br>BCP:194-357-125-00-0-31</span></div>
+            <a href="https://api.whatsapp.com/send?phone=51968933814&text=hola,%20qu%C3%A9%20tal?" style="color: #f58634;">
+                <div style="vertical-align: super;  display: inline-block;">
+                <i style="font-size: 30px;     color:ff9f00;" class="fa fa-whatsapp" aria-hidden="true"> </i>
+                </div>
+                <div class="bar-contenido"><span class="bar-telefono"></span><span class="bar-txt" style="color:white;    font-size: 12px;">Informes /
+                        Asesoria<br>+51 968-933-814</span></div>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=51986838333&text=hola,%20qu%C3%A9%20tal?" style="color: #f58634;">
+                <div style="      vertical-align: super;  display: inline-block;"><i style="    font-size: 25px;     color:ff9f00;"
+                        class="glyphicon glyphicon-phone" aria-hidden="true"></div></i>
+                <div class="bar-contenido"><span class="bar-telefono"></span><span class="bar-txt" style="color:white;    font-size: 12px;">Ventas /
+                        Soporte<br>+51 986-838-333</span></div>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=51996727562&text=hola,%20qu%C3%A9%20tal?" style="color: #f58634;">
+                <div style="      vertical-align: super;  display: inline-block;"><i style="    font-size: 28px;     color:ff9f00;"
+                        class="fa fa-wrench" aria-hidden="true">
+                        </i>
+                        </div>
+               
+                <div class="bar-contenido"><span class="bar-telefono"></span><span class="bar-txt" style="color:white;    font-size: 12px;">Averias /
+                        Garantia <br>+51 996-727-562</span></div>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=51986838333&text=hola,%20qu%C3%A9%20tal?" style="color: #f58634;">
+                <div style="      vertical-align: super;  display: inline-block;"><i style="    font-size: 30px;     color:ff9f00;"
+                        class="fa fa-desktop" aria-hidden="true"></i></div>
+                
+                <div class="bar-contenido"><span class="bar-telefono"></span><span class="bar-txt" style="color:white;    font-size: 12px;">Soporte /
+                        en Linea<br>+51 986-838-333</span></div>
+            </a>
 
 
-</nav>
+        </ul>
+
+
+    </nav>
     <div off-canvas="slidebar-12 left reveal ">
 
         <ul class="side ">
@@ -235,56 +264,42 @@
     top: 23px;
     font-size: 10px;">Cerrar</label>
             </div>
-            <a href="index.php"><i
-                    style=" font-size: 20px; color: #f5f5f5; position: absolute;  z-index: 4;  top: 10px; "
-                    class="icon-home" aria-hidden="true"> </i></i></a>
-            <div class="line"
-                style=" background: #fc0000; position: relative;  left: -12px; width: 101.5%; height: 46px; z-index: -1;"
+            <a href="index.php"><i style=" font-size: 20px; color: #f5f5f5; position: absolute;  z-index: 4;  top: 10px; " class="icon-home"
+                    aria-hidden="true"> </i></i></a>
+            <div class="line" style=" background: #fc0000; position: relative;  left: -12px; width: 101.5%; height: 46px; z-index: -1;"
                 align="center"><label class="lnr " onclick="location.href='productos.php';">
                     <font style="    position: relative; top: 11px;">CATEGORIAS</font>
                 </label></div>
-            <div class="line ajust-menu-cat"><label class="lnr "
-                    onclick="location.href='infoCat.php?CodigoCat=C000000';"><img
-                        src="assets/img/svg_icons/catego/pantalla.svg" alt=""
-                        style="       width: 32px;    height: 35px;">
+            <div class="line ajust-menu-cat"><label class="lnr " onclick="location.href='infoCat.php?CodigoCat=C000000';"><img
+                        src="assets/img/svg_icons/catego/pantalla.svg" alt="" style="       width: 32px;    height: 35px;">
                     <font>&nbsp;&nbsp;&nbsp;&nbsp;COMPUTO INFORMÁTICA</font>
                 </label></div>
-            <div class="line ajust-menu-cat"><label class="lnr "
-                    onclick="location.href='infoCat.php?CodigoCat=C000001';"><img
+            <div class="line ajust-menu-cat"><label class="lnr " onclick="location.href='infoCat.php?CodigoCat=C000001';"><img
                         src="assets/img/svg_icons/catego/wifi.svg" alt="" style="       width: 32px;    height: 35px;">
                     <font>&nbsp;&nbsp;&nbsp;&nbsp;REDES Y RADIO ENLACE</font>
                 </label></div>
-            <div class="line ajust-menu-cat"><label class="lnr "
-                    onclick="location.href='infoCat.php?CodigoCat=C000002';"><img
+            <div class="line ajust-menu-cat"><label class="lnr " onclick="location.href='infoCat.php?CodigoCat=C000002';"><img
                         src="assets/img/svg_icons/catego/cctv.svg" alt="" style="       width: 32px;    height: 35px;">
                     <font>&nbsp;&nbsp;&nbsp;&nbsp;CÁMARAS CCTV-IP</font>
                 </label></div>
-            <div class="line ajust-menu-cat"><label class="lnr"
-                    onclick="location.href='infoCat.php?CodigoCat=C000003';"><img
+            <div class="line ajust-menu-cat"><label class="lnr" onclick="location.href='infoCat.php?CodigoCat=C000003';"><img
                         src="assets/img/svg_icons/catego/fuego.svg" alt="" style="       width: 32px;    height: 35px;">
                     <font>&nbsp;&nbsp;&nbsp;&nbsp;ALARMAS Y DOMOTICA</font>
                 </label></div>
-            <div class="line ajust-menu-cat"><label class="lnr "
-                    onclick="location.href='infoCat.php?CodigoCat=C000004';"><img
-                        src="assets/img/svg_icons/catego/fingerprint.svg" alt=""
-                        style="       width: 32px;    height: 35px;">
+            <div class="line ajust-menu-cat"><label class="lnr " onclick="location.href='infoCat.php?CodigoCat=C000004';"><img
+                        src="assets/img/svg_icons/catego/fingerprint.svg" alt="" style="       width: 32px;    height: 35px;">
                     <font>&nbsp;&nbsp;&nbsp;&nbsp;ACCESO Y CONTROL</font>
                 </label></div>
-            <div class="line ajust-menu-cat"><label class="lnr "
-                    onclick="location.href='infoCat.php?CodigoCat=C000005';"><img
-                        src="assets/img/svg_icons/catego/intercomunicadores_off.svg" alt=""
-                        style="       width: 32px;    height: 35px;">
+            <div class="line ajust-menu-cat"><label class="lnr " onclick="location.href='infoCat.php?CodigoCat=C000005';"><img
+                        src="assets/img/svg_icons/catego/intercomunicadores_off.svg" alt="" style="       width: 32px;    height: 35px;">
                     <font>&nbsp;&nbsp;&nbsp;&nbsp;INTERCOMUNICACION</font>
                 </label></div>
-            <div class="line ajust-menu-cat"><label class="lnr "
-                    onclick="location.href='infoCat.php?CodigoCat=C000006';"><img
+            <div class="line ajust-menu-cat"><label class="lnr " onclick="location.href='infoCat.php?CodigoCat=C000006';"><img
                         src="assets/img/svg_icons/catego/cms.svg" alt="" style="       width: 32px;    height: 35px;">
                     <font>&nbsp;&nbsp;&nbsp;&nbsp;PRODUCTO FERRETERO</font>
                 </label></div>
-            <div class="line ajust-menu-cat"><label class="lnr "
-                    onclick="location.href='infoCat.php?CodigoCat=C000007';"><img
-                        src="assets/img/svg_icons/catego/tecnico.svg" alt=""
-                        style="       width: 32px;    height: 35px;">
+            <div class="line ajust-menu-cat"><label class="lnr " onclick="location.href='infoCat.php?CodigoCat=C000007';"><img
+                        src="assets/img/svg_icons/catego/tecnico.svg" alt="" style="       width: 32px;    height: 35px;">
                     <font>&nbsp;&nbsp;&nbsp;&nbsp;SERVICIOS GENERALES</font>
                 </label></div>
 

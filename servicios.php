@@ -93,6 +93,16 @@ Licencia: Proveedor de servicios
 	<?php include 'inc/links.php';?>
 	</head>
 	<body>
+    <style>
+  #search-button {
+    padding: 25px 18px 0px!important;
+  }
+  
+  #search_button {
+    position: relative;
+    top: -14px!important;
+  }
+  </style>
 	<?php include 'inc/navbar.php';?>
 
 </nav>

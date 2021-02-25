@@ -2,13 +2,19 @@
 
     <?php
 	while ($row = mysqli_fetch_array($rev2,  MYSQLI_ASSOC)) {
-		$precio = $row['Precio'];
+		$precio_dolar = $row['Precio']; 
 		$ganancia = $row['ganancia'];
 		$medio = $row['medio'];
-		$total_prod = $precio * ($ganancia + $medio) / 100 + $precio;
-		$p_p = ($precio * 25 / 100);
-		$p_p_a =  $total_prod + $p_p;
+		$total_prod_f = $precio * ($ganancia + $medio) / 100 + $precio_dolar;
+		$total_prod = number_format($total_prod_f , 2);
+		
+		$p_p_a =  $total_prod + $p_p; 
 		$p_p_r = round($p_p_a, 0, PHP_ROUND_HALF_DOWN);
+		
+		$precio_sol_dolar_f = number_format($precio_dolar * $globalTasaCambio_dolar, 2);
+		$imp = str_replace(',','',$precio_sol_dolar_f); 
+			
+		$p_p = number_format($imp *25 / 100 + $imp, 2);
 		echo "<form class='product-form'>
             <div class=' col-md-12' style='    margin-bottom: 4%;'>
 		    <div class='shop-product2' style='margin-left: 9px; '>
@@ -30,9 +36,12 @@
 			"<a style=' font-size: 12px; margin: -31px 0px;position: absolute; margin-right: 27px;  font-size: 14px;' href='infoProd.php?CodigoProd={$row['CodigoProd']}'> {$row['NombreProd']}</a>" .
 			"</h4>" .
 			"<h5 class='price' style='position: absolute; margin-right: 27px;  margin-top: 5px;  font-size: 13px;'><a >{$row['Modelo']} - {$row['Marca']}</a></h5> <br>" .
-			"<h5 class='price' style='position: absolute; margin-right: 27px;  margin-top: 11px;  font-size: 15px;'> Antes: <s>{$row['moneda']} {$p_p_r}.00 </s>&nbsp;&nbsp; 25 % DCTO</h5>" .
+			"<h5 class='price' style='position: absolute; margin-right: 27px;  margin-top: 11px;  font-size: 14px;'> Antes: <s>{$row['moneda']} {$p_p} </s>&nbsp; SKU: {$row['CodigoProd']}</h5>" .
 			"<div style='width: 107%; margin-left: -12px; border-top: 1.2px dashed;'></div>".
-			"<div id='ribbon' style='font-weight:1000;'><span id='contento'>{$row['moneda']} {$total_prod}</span>  <img src='assets/img/tarjeta.png' width='50px' height='30px' ></span> <img src='assets/img/envio.png' width='50px' height='30px' ></div></div>" .
+			"<div id='ribbon' style='font-weight:1000;     font-size: 16px;'>
+			<span style='float: left; padding-left: 20px;'>$ {$total_prod} </span> <span id='contento'> | </span>  <span style='position: relative; left: 15px;'>   S/".$precio_sol_dolar_f." </span>  
+			
+			</div></div>" .
 			"</form></div></div>";
 	}
 	?>
