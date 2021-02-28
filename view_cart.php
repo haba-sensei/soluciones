@@ -18,6 +18,21 @@ include_once("library/config.inc.php");
 
 <!DOCTYPE html>
 <html lang="en">
+	<link rel="shortcut icon" href="assets/img/favicon.png">	
+<!-- CCS REDES SOCIALES  -->
+</script>
+<script src="https://kit.fontawesome.com/23bdc1261d.js" crossorigin="anonymous"></script>
+<link rel="shortcut icon" href="assets/img/favicon.png">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        media="all">
+        
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.0/css/font-awesome.min.css" rel="stylesheet"
+        media="all">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
+    <link href="assets/js/bootstrap-touch-slider.css" rel="stylesheet" media="all">
+
+<!-- CCS REDES SOCIALES  -->
+
 <style>
 @media (max-width: 767px) {
     /* .bann{
@@ -716,7 +731,9 @@ include_once("library/config.inc.php");
                             }
                             //$shipping_cost = ($shipping_cost)?'Costo de envio : '.$currency. sprintf("%01.2f", $shipping_cost).'<br />':'';	
                             //$shipping_cost
-                            $total_format = number_format($total / 1.18, 2);
+                            $newstr = number_format($total, 2, '.', '');
+                            $total_format = number_format($newstr / 1.18, 2); 
+                            
                             ?>
 
 
@@ -724,7 +741,7 @@ include_once("library/config.inc.php");
 
                             <div class="dis-total">
                             <h1 style="width:  40%; ">Sub Total :&nbsp;</h1>
-                                <h1 style="width: 157px;     background: #cecece;"><?php echo $currency." ". number_format($total_format, 2);  ?></h1>
+                                <h1 style="width: 157px;     background: #cecece;"><?php echo $currency." ". $total_format;  ?></h1>
 
                             </div>
                             <div class="clear"> </div>
@@ -736,7 +753,7 @@ include_once("library/config.inc.php");
                             <div class="clear"> </div>
                             <div class="dis-total">
                             <h1 style="width:  40%; ">Total :&nbsp;   </h1>
-                                <h1 style="width: 157px;       color: #00578a;  background: #cecece;"><?php echo $currency ." ". sprintf("%01.2f", $grand_total - $tax_amount);  ?></h1>
+                                <h1 style="width: 157px;       color: #00578a;  background: #cecece;"><?php echo $currency ." ".number_format($total, 2);  ?></h1>
 
                             </div>
 

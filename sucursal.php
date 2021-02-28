@@ -16,7 +16,21 @@ Licencia: Proveedor de servicios
 
 	<!DOCTYPE html>
 	<html lang="en">
-		<link rel="shortcut icon" href="assets/img/favicon.png">
+		<link rel="shortcut icon" href="assets/img/favicon.png">	
+<!-- CCS REDES SOCIALES  -->
+</script>
+<script src="https://kit.fontawesome.com/23bdc1261d.js" crossorigin="anonymous"></script>
+<link rel="shortcut icon" href="assets/img/favicon.png">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        media="all">
+        
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.0/css/font-awesome.min.css" rel="stylesheet"
+        media="all">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
+    <link href="assets/js/bootstrap-touch-slider.css" rel="stylesheet" media="all">
+
+<!-- CCS REDES SOCIALES  -->
+
 <!-- ACA  -->
 <style>
 @media (max-width: 767px) {
@@ -100,19 +114,18 @@ Licencia: Proveedor de servicios
 	    </div>
 
 </section>
-<section style="    background: #f5f5f5;     padding-bottom: 4%;">
-	<div id="get_quote" class="ajuste">
-			<div class="container  animated fadeInUp">
-				<div class="row">
-					<div class="col-md-9">
-						<h3 class="hidden-xs">¿ Estamos Cada Vez más Cerca de Ti Ubicanos ?</h3>
-					</div>
-					<div class="col-md-3">
-						 <button class="button-two bton-serv hidden-xs" onclick="window.location.href='formulario_servicios.php'"><span>¿ CONTACTAR ?</span></button>
-					</div>
-				</div><!-- End row -->
+
 			</div><!-- End container -->
 		</div>
+	<div class="container" id="service" style="    margin-top: -11px;">
+<h1 class="section-title txt-rotate" data-period="2000" data-rotate='[ "Datos de Contactos Soluciones " ]'></h1> 
+	<hr style="margin-bottom: 1px solid #333;"> 
+	 <p class="mb-5 " style="margin-top: 17px;
+    margin-bottom: 23px;" align="center">Listo para empezar un proyecto con nosotros? Contáctenos a través de nuestros Formulario de Contactar. o por otros medios de contactos, números
+     telefónicos o correo electrónicos en un plazo de 1 Hr como maximo sera respondido por el personal del area de soporte o servicios.</p>
+
+</section>
+
 			        <div class="col-md-12" style="background:white; padding-bottom: 20px;   padding-top: 10px;">
 	            <div class="col-md-3" align="center">
 	                <div class="icon-bx-wraper bx-style-1 p-a15 center col" style="    border-width: 1px;
@@ -465,37 +478,7 @@ Licencia: Proveedor de servicios
 	           
 			 </section>
 
-	            </script>
 
-	            <!-- WhatsHelp.io widget -->
-	            <script type="text/javascript">
-	            (function() {
-	                var options = {
-	                    facebook: "1626920177570816", // Facebook page ID
-	                    whatsapp: "+51 986838333", // WhatsApp number
-	                    line: "https://line.me/ti/p/9NRe_hdeb1", // Line QR code URL
-	                    call_to_action: "Hola, Estamos en Linea las 24h!", // Call to action
-	                    button_color: "#FF0000", // Color of button
-	                   position: "right", // Position may be 'right' or 'left'
-	                    order: "facebook,whatsapp,line;", // Order of buttons
-	                };
-	                var proto = document.location.protocol,
-	                    host = "whatshelp.io",
-	                    url = proto + "//static." + host;
-	                var s = document.createElement('script');
-	                s.type = 'text/javascript';
-	                s.async = true;
-	                s.src = url + '/widget-send-button/js/init.js';
-	                s.onload = function() {
-	                    WhWidgetSendButton.init(host, proto, options);
-	                };
-	                var x = document.getElementsByTagName('script')[0];
-	                x.parentNode.insertBefore(s, x);
-	            })();
-	            </script>
-
-	            </script>
-	            <!-- /WhatsHelp.io widget -->
 	            
 	            <!-- sucribte  -->
 

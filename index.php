@@ -22,8 +22,20 @@ include 'library/config_alarmas.php';
 
 <!DOCTYPE html>
 <html lang="en">
+<link rel="shortcut icon" href="assets/img/favicon.png">	
+<!-- CCS REDES SOCIALES  -->
+</script>
+<script src="https://kit.fontawesome.com/23bdc1261d.js" crossorigin="anonymous"></script>
 <link rel="shortcut icon" href="assets/img/favicon.png">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        media="all">
+        
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.0/css/font-awesome.min.css" rel="stylesheet"
+        media="all">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
+    <link href="assets/js/bootstrap-touch-slider.css" rel="stylesheet" media="all">
 
+<!-- CCS REDES SOCIALES  -->
 
 
 <!-- ACA  -->
@@ -532,8 +544,8 @@ include 'library/config_alarmas.php';
                         data-rotate='[ "! Facturacion Electronica ERP Sunat - Ose ¡" ]'></h1>
                     <p class="p-19 p-reduceme"></p>
                     <p class="boton-n-1">
-                        <a href="http://demo.nubefactsoluciones.com" class="btn btn-primary fact-btn">VER DEMO </a>
-                        <a href="http://nubefact.solucionescctvysistemas.com" class="btn btn-common">VER MAS </a>
+                        <a href="http://demo.cpesoluciones.com" class="btn btn-primary fact-btn">VER DEMO </a>
+                        <a href="https://cpe.solucionescctvysistemas.com" class="btn btn-common">VER MAS </a>
                     </p>
                 </div>
             </div>
@@ -554,7 +566,7 @@ include 'library/config_alarmas.php';
                             <i class="fa fa-unlock-alt"></i>
                         </div>
                         <div class="services-content">
-                            <h4><a href="http://demo.nubefactsoluciones.com">Acceso al sistema Facturador</a></h4>
+                            <h4><a href="http://demo.cpesoluciones.com">Acceso al sistema Facturador</a></h4>
                             <p>
                                 Accesos al Sistema Demo Usuario = demo@gmail.com Pasword = 123456 Pida su Sistema
                             </p>
@@ -569,7 +581,7 @@ include 'library/config_alarmas.php';
                             <i class="fa fa-desktop"></i>
                         </div>
                         <div class="services-content">
-                            <h4><a href="http://demo.nubefactsoluciones.com">Desarrollo de Software</a></h4>
+                            <h4><a href="http://demo.cpesoluciones.com">Desarrollo de Software</a></h4>
                             <p>
                                 Basados en Laravel - PHP 7.2 - JavaScript - Bootstrap y Otros Lenguajes de Programacion
                             </p>
@@ -584,7 +596,7 @@ include 'library/config_alarmas.php';
                             <i class="fa fa-shopping-bag"></i>
                         </div>
                         <div class="services-content">
-                            <h4><a href="http://demo.nubefactsoluciones.com">Elementos de Ecommerce</a></h4>
+                            <h4><a href="http://demo.cpesoluciones.com">Elementos de Ecommerce</a></h4>
                             <p>
                                 Adaptamos tu Tienda Online - Pagina Webs atu Medida con Certificados SSL.
                             </p>
@@ -601,7 +613,7 @@ include 'library/config_alarmas.php';
                             <i class="fa fa-archive"></i>
                         </div>
                         <div class="services-content">
-                            <h4><a href="http://demo.nubefactsoluciones.com">Procesos Administrativos </a></h4>
+                            <h4><a href="http://demo.cpesoluciones.com">Procesos Administrativos </a></h4>
                             <p>
                                 Facturacíon , Control , Inventario , Productos Compuestos Almacen Ventas Compras.
                             </p>
@@ -616,7 +628,7 @@ include 'library/config_alarmas.php';
                             <i class="fa fa-tablet"></i>
                         </div>
                         <div class="services-content">
-                            <h4><a href="http://nubefact.solucionescctvysistemas.com/">Diseños Full Responsive</a></h4>
+                            <h4><a href="http://cpe.soluciones.com/">Diseños Full Responsive</a></h4>
                             <p>
                                 Adaptados para Cualquier Resolución de Pantalla modo Escritorio - Movil .
                             </p>
@@ -1640,9 +1652,8 @@ include 'library/config_alarmas.php';
 
         };
 
-        // Run the show!
+        <!-- script animacion nieve  -->
         filterList.init();
-
 
     });
     </script>
@@ -1674,47 +1685,8 @@ include 'library/config_alarmas.php';
         }
     });
     </script>
+<!-- script animacion nieve  -->
 
-
-
-    </script>
-    <style>
-    .dJvETY {
-        display: flex;
-        margin-top: 14px;
-        position: relative;
-        -webkit-box-pack: start;
-        justify-content: flex-start;
-        bottom: 43px;
-    }
-    </style>
-    <!-- WhatsHelp.io widget -->
-    <script type="text/javascript">
-    (function() {
-        var options = {
-            facebook: "1626920177570816", // Facebook page ID
-            whatsapp: "-51 996727562", // WhatsApp number
-            call_to_action: "Hola, Estamos en Linea las 24h!", // Call to action
-            button_color: "#FF0000", // Color of button
-            position: "right", // Position may be 'right' or 'left'
-            order: "facebook,whatsapp", // Order of buttons
-        };
-        var proto = document.location.protocol,
-            host = "whatshelp.io",
-            url = proto + "//static." + host;
-        var s = document.createElement('script');
-        s.type = 'text/javascript';
-        s.async = true;
-        s.src = url + '/widget-send-button/js/init.js';
-        s.onload = function() {
-            WhWidgetSendButton.init(host, proto, options);
-        };
-        var x = document.getElementsByTagName('script')[0];
-        x.parentNode.insertBefore(s, x);
-    })();
-    </script>
-    <!-- /WhatsHelp.io widget -->
-    
     
  <!-- bloquea copiado de web  -->
 <script language="JavaScript" type="text/javascript">
@@ -1849,6 +1821,7 @@ box-shadow:         3px -3px 1px rgba(50, 50, 50, 0.56);
 /* Fin del CSS para cookies */
  
 </style>
+
 <!--Código HTML de la política de cookies -->
  
 <!--La URL incluida es la parte que se ha de modificar -->
@@ -1866,7 +1839,6 @@ document.getElementById('cookie1').style.bottom = '-50px';
 </script>
  
 <!-- Fin del código de cookies --->
+
 </body>
-
-
 </html>

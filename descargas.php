@@ -17,6 +17,21 @@ Licencia: Proveedor de servicios
 	<!DOCTYPE html>
 	<html lang="en">
 		<link rel="shortcut icon" href="assets/img/favicon.png">
+		
+		<!-- CCS REDES SOCIALES  -->
+</script>
+<script src="https://kit.fontawesome.com/23bdc1261d.js" crossorigin="anonymous"></script>
+<link rel="shortcut icon" href="assets/img/favicon.png">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        media="all">
+        
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.0/css/font-awesome.min.css" rel="stylesheet"
+        media="all">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
+    <link href="assets/js/bootstrap-touch-slider.css" rel="stylesheet" media="all">
+
+<!-- CCS REDES SOCIALES  -->
+
 <!-- ACA  -->
 <style>
 @media (max-width: 767px) {

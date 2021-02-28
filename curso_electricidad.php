@@ -16,6 +16,21 @@ Licencia: Proveedor de servicios
 	
 	<!DOCTYPE html>
 	<html lang="en">
+		<link rel="shortcut icon" href="assets/img/favicon.png">
+		<!-- CCS REDES SOCIALES  -->
+</script>
+<script src="https://kit.fontawesome.com/23bdc1261d.js" crossorigin="anonymous"></script>
+<link rel="shortcut icon" href="assets/img/favicon.png">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        media="all">
+        
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.0/css/font-awesome.min.css" rel="stylesheet"
+        media="all">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
+    <link href="assets/js/bootstrap-touch-slider.css" rel="stylesheet" media="all">
+
+<!-- CCS REDES SOCIALES  -->
+
 <!-- ACA  -->
 <style>
 @media (max-width: 767px) {
@@ -867,29 +882,7 @@ ul {
     </div>
     </div>
     </section>
-    </script>
-
-<!-- WhatsHelp.io widget -->
-<script type="text/javascript">
-    (function () {
-        var options = {
-            facebook: "1626920177570816", // Facebook page ID
-            whatsapp: "+51 986838333", // WhatsApp number
-            line: "https://line.me/ti/p/9NRe_hdeb1", // Line QR code URL
-            call_to_action: "Hola, Estamos en Linea las 24h!", // Call to action
-            button_color: "#FF0000", // Color of button
-           position: "right", // Position may be 'right' or 'left'
-            order: "facebook,whatsapp,line;", // Order of buttons
-        };
-        var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
-        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
-        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
-        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
-    })();
-</script>
-
-</script>
-<!-- /WhatsHelp.io widget -->
+  
    <!-- sucribte  -->
 
     </section>
