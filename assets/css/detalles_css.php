@@ -2667,13 +2667,14 @@ img.jsx-2487856160 {
 </style>
 <style id="__jsx-3624412160">
 .specifications-container.jsx-3624412160 {
-    background-color: #fafafa;
+    background-color: #f7f7f7;
 
 }
 
 @media (min-width:1024px) {
     .specifications-container.jsx-3624412160 {
-        max-width: 305px;
+        max-width: 394px;
+        height: 39vh;
 
     }
 }
@@ -2693,7 +2694,7 @@ img.jsx-2487856160 {
 .specifications-list.jsx-3624412160 {
     font-size: 16px;
     margin: 10px 0;
-    line-height: 1.5;
+    line-height: 2;
 }
 
 @media (min-width:1024px) {
@@ -4731,9 +4732,9 @@ html {
     border: 2px solid #ed9c28;
     outline: none;
     color: white;
-    padding: 8px 12px;
+    padding: 4px;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .opciones-button:hover {
@@ -4741,5 +4742,20 @@ html {
     outline: all;
     border: 2px solid #ed9c28;
     color: #ffffff;
+}
+
+.informacion-button {
+    background: transparent;
+    border: 1px solid #009640;
+    outline: none;
+    color: #009640;
+    padding: 7px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.paddin_cero {
+    padding-left: 0px;
+    padding-right: 0px;
 }
 </style>

@@ -317,26 +317,38 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                     $imagen =  $fila['Imagen'];
                     $categoria =  $fila['CodigoCat'];
 
-                    $res = ($fila['Precio'] * ($fila['ganancia'] + $fila['medio']) / 100 + $fila['Precio']);
+                    $precio_dolar = $fila['Precio'];
+                    $precio_sol = number_format($precio_dolar * $globalTasaCambio_dolar, 2);
+                     
+                    $precio_dolar_tarj = number_format($precio_dolar * 5 / 100 + $precio_dolar, 2);
+                    $precio_sol_tarj =  number_format($precio_sol * 5 / 100 + $precio_sol, 2);
 
+         ?>
+                    <style>
+                .disponible {
+                    background: red;
+                    padding: 9px;
+                    position: absolute;
+                    color: white;
+                    font-size: 16px;
+                    font-weight: 600;
+                    border-radius: 5px;
+                }
 
-        ?>
-    <style>
-
-
-    </style>
+                    </style>
 
     <form class="product-form">
 
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4" style="    border: solid 2px #eee;">
+                <span class="jsx-1130257793 disponible">Disponible</span>
                     <img id="product-zoom" src="assets/img-products/<?php echo  $imagen; ?>"
-                        data-zoom-image="assets/img-products/<?php echo $imagen; ?>" alt="" width="800" height="800" class="jsx-2487856160" />
+                        data-zoom-image="assets/img-products/<?php echo $imagen; ?>" alt="" style="width: 700px; height: 350px;" width="800" height="800" class="jsx-2487856160" />
                 </div>
 
                 <div class="col-md-4">
-                    <h1 class="jsx-3686231685"> <?php echo $fila['NombreProd']; ?> </h1>
+                    <h1 class="jsx-3686231685" style="margin-bottom: 43px;"> <?php echo $fila['NombreProd']; ?> </h1>
 
                     <div class="jsx-3624412160 specifications-container fa--product-characteristic-features caract_dest">
                         <div class="jsx-3624412160 specifications-title">Características destacadas</div>
@@ -359,17 +371,15 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                                     <?php echo $fila['Peso']; ?>
                                 </li>
                                 <li class="jsx-3624412160"><strong class="jsx-3624412160" style="padding-left: 6px;">Stock</strong>:
-                                    <?php echo $fila['Stock']; ?>
+                                     
+                                    <a href="javascript:" class="" style="background: green; color: white; padding: 3px; margin-left: 4px; font-weight: 600;"> Consultar </a>
                                 </li>
                                 <!-- <button type="button" class="btn btn-primary btn-sm">Consultar Stock</button> -->
                             </ul>
                         </div>
                     </div>
 
-                    <button type="button" class="opciones-button" toggle-modal="#informativo-1" style="margin-bottom: 13px;"><i
-                            class="fas fa-shopping-cart" aria-hidden="true"></i> ¿Cómo comprar por web?</button>
-                    <button type="button" class="opciones-button" toggle-modal="#informativo-1"><i class="fas fa-shopping-cart"
-                            aria-hidden="true"></i> ¿Cómo recoger el producto?</button>
+
                 </div>
 
                 <div class="col-md-4">
@@ -380,10 +390,17 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
 
 
                         <ul style="display: grid; grid-template-columns: repeat(2,50%); text-align: center; margin-left: -50px">
-                            <li style="border-right-color: #ff6600; border-right-style: solid;"><span id="our_price_display"
-                                    class="price observaprecion" style=" color: #1d841d;  font-weight: 600;    font-size: 26px;">$1178.00
+                           
+                           <span class="" style="position: absolute; left: 18px; top: 10px; font-size: 17px; color: #e83028; font-weight: 600; text-transform: uppercase;"> Pago con efectivo</span>
+                            <li style="border-right-color: #ff6600; border-right-style: solid; margin-top: 28px;"><span id="our_price_display"
+                                    class="price observaprecion" style=" color: #1d841d;  font-weight: 600;    font-size: 26px;">$ <?=$precio_dolar ?>
                                 </span></li>
-                            <li><span style=" font-size: 26px;  color: #fc0000; font-weight: 600;">S/ 1287.82</span> </li>
+                            <li style="margin-top: 28px;"><span style=" font-size: 26px;  color: #fc0000; font-weight: 600;">S/ <?= $precio_sol?></span> </li>
+                            <span class="" style="position: absolute; left: 18px;    top: 89px; font-size: 17px; color: #e83028; font-weight: 600; text-transform: uppercase;"> Pago con targeta</span>  
+                            <li style="border-right-color: #ff6600; border-right-style: solid;     margin-top: 43px;"><span id="our_price_display"
+                                    class="price observaprecion" style=" color: #1d841d;  font-weight: 600;    font-size: 26px;">$ <?= $precio_dolar_tarj ?>
+                                </span></li>
+                            <li style="margin-top: 43px;"><span style=" font-size: 26px;  color: #fc0000; font-weight: 600;">S/ <?= $precio_sol_tarj ?></span> </li>
                         </ul>
 
 
@@ -392,7 +409,7 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
 
 
                     <div class="row">
-                        <div class="col-12" style=" position: relative;  top: 25px;">
+                        <div class="col-12" style=" position: relative;  top: 35px;">
                             <div class="jsx-2170457292 addToCart-container fa--add-to-cart__desktop agregar_bolsa ">
                                 <div id="buttonForCustomers">
                                     <input name="product_qty" type="hidden" value="1">
@@ -405,38 +422,89 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
 
                         </div>
 
-                        <div class="col-md-6">
-                            <button type="button" class="opciones-button" toggle-modal="#informativo-1"><i class="fas fa-shopping-cart"
-                                    aria-hidden="true"></i> ¿Cómo recoger el producto?</button>
+
+                        <div class="col-md-6" style="    padding-left: 6px;  padding-right: 0px;  width: 40%; border: solid 1px gray; padding-top: 8px; padding-bottom: 8px; margin-top: 23px; margin-right: 8px;">
+                            <a href="" class="">
+                                <img src="https://www.magitech.pe/skin/frontend/ultimo/default/images/bq-at-cotizar.png"
+                                    style="float:left;    max-height: 28px;">
+                                <span class="bq-at-txt" style="padding-top: 4px;">Cotizar este producto</span>
+                            </a>
+                        </div>
+
+                        <div class="col-md-6"
+                            style="padding-left: 13px; padding-right: 0px; width: 45%; border: solid 1px gray; padding-top: 8px; padding-bottom: 8px; margin-top: 23px;">
+                            <a href="" class="">
+                                <img src="https://www.magitech.pe/skin/frontend/ultimo/default/images/bq-at-cotizar.png"
+                                    style="float:left;    max-height: 28px;">
+                                <span class="bq-at-txt" style="padding-top: 4px;">Consultar Delivery</span>
+                            </a>
+                        </div>
+
+                        <div class="col-md-6" style="padding-left: 0px; padding-top: 20px; padding-right: 0px; width: 42%;">
+                            <a href="#contactenos" class="informacion-button"><i class="fas fa-phone-alt" aria-hidden="true"></i> Agenda una LLamada </a>
+                        </div>
+
+                        <div class="col-md-6" style="padding-left: 0px; padding-top: 20px; padding-right: 0px; width: 45%;">
+                            <a href="#contactenos" style="padding-right: 40px;" class="informacion-button"><i class="fas fa-phone-alt" aria-hidden="true"></i> Contacta un Asesor
+                            </a>
+                        </div>
+
+                         <!-- <div class="col-md-6" style="padding-left: 0px; padding-top: 20px; padding-right: 0px; width: 45%;">
+                        <a href="#contactenos" style="padding-right: 18px;" class="informacion-button"><i class="fas fa-phone-alt" aria-hidden="true"></i> Agenda una LLamada </a>
 
                         </div>
 
-                        <div class="col-md-6">
-                            <button type="button" class="opciones-button" toggle-modal="#informativo-1"><i class="fas fa-shopping-cart"
-                                    aria-hidden="true"></i> ¿Cómo recoger el producto?</button>
+                        <div class="col-md-6" style="padding-left: 0px; padding-top: 20px; padding-right: 0px; width: 45%;">
+                        <a href="#contactenos" style="padding-right: 18px;" class="informacion-button"><i class="fas fa-phone-alt" aria-hidden="true"></i> Consulta un producto </a>
+
+                        </div> -->
+                        <!-- 
+                        <div class="col-md-6" style="padding-left: 0px; padding-top: 20px; padding-right: 0px; width: 45%;">
+                        <a href="#contactenos" class="informacion-button"><i class="fas fa-phone-alt" aria-hidden="true"></i> Agenda una LLamada </a>
 
                         </div>
+-->
+                       
 
-                        <div class="col-md-6" style="position: relative;  left: -15px; top: 97px;">
-                            <button type="button" class="btn btn-outline-primary"
-                                style="background: transparent; color: gray; border: solid 1px gray;"> <img src="assets/img/busqueda.png" width="25px"
-                                    style="padding-right: 5px"> ¿Necesitas que te<br> llamemos?</button>
 
+
+
+
+                        <!-- <div class="col-md-6 paddin_cero">
+                        <button type="button" class="opciones-button" toggle-modal="#informativo-1"><i class="fas fa-shopping-cart"
+                            aria-hidden="true"></i> ¿Cómo recoger el producto?</button>
                         </div>
+                        <div class="col-md-6 paddin_cero">
+                        <button type="button" class="opciones-button" toggle-modal="#informativo-1"><i class="fas fa-shopping-cart"
+                            aria-hidden="true"></i> ¿Cómo recoger el producto?</button>
+                        </div> -->
 
-                        <div class="col-md-6">
-                            <button type="button" class="btn btn-outline-primary"
-                                style="background: transparent; color: gray; border: solid 1px gray;  position: relative; bottom: -95px; right: 30px;">
-                                <img src="assets/img/contactanos.png" width="25px" style="padding-right: 5px"> ¿NO ENCUENTRAS LO <br>QUE BUSCAS?
-                            </button>
-                        </div>
+
+
                     </div>
 
 
 
                 </div>
             </div>
-        </div>
+            <br>
+
+            <div class="col-md-12">
+
+                <button type="button" class="opciones-button" style="width: 25%;" toggle-modal="#informativo-1" style="margin-bottom: 13px;"><i
+                        class="fas fa-shopping-cart" aria-hidden="true"></i> ¿Modalidades de pago?</button>
+
+                <button type="button" class="opciones-button" style="width: 25%;" toggle-modal="#informativo-1"><i class="fas fa-shopping-cart"
+                        aria-hidden="true"></i> ¿Como Recojer el Producto?</button>
+                <button type="button" class="opciones-button" style="width: 25%;" toggle-modal="#informativo-1" style="margin-bottom: 13px;"><i
+                        class="fas fa-shopping-cart" aria-hidden="true"></i> ¿Cómo comprar por web?</button>
+                <button type="button" class="opciones-button" style="width: 20%;" toggle-modal="#informativo-1"><i class="fas fa-shopping-cart"
+                        aria-hidden="true"></i> Envios a Lima Metropolitana</button>
+
+
+
+                <br> <br> <br>
+            </div>
 
 
     </form>
