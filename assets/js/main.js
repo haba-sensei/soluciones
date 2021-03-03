@@ -186,6 +186,19 @@
         itemsMobile: [479, 1]
     });
 
+    $("#delivery_data").owlCarousel({
+        loop: true,
+        navigation: false,
+        pagination: false,
+        slideSpeed: 500,
+        stopOnHover: true,
+        autoPlay: true,
+        items: 1,
+        itemsDesktopSmall: [1024, 2],
+        itemsTablet: [600, 1],
+        itemsMobile: [479, 1]
+    });
+
 
     $("#client-logo").owlCarousel({
         navigation: false,

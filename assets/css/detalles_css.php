@@ -4752,6 +4752,7 @@ html {
     padding: 7px;
     border-radius: 4px;
     font-size: 14px;
+    padding-right: 44px;
 }
 
 .paddin_cero {

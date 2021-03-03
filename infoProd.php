@@ -324,27 +324,33 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                     $precio_sol_tarj =  number_format($precio_sol * 5 / 100 + $precio_sol, 2);
 
          ?>
-                    <style>
-                .disponible {
-                    background: red;
-                    padding: 9px;
-                    position: absolute;
-                    color: white;
-                    font-size: 16px;
-                    font-weight: 600;
-                    border-radius: 5px;
-                }
-
-                    </style>
+    <style>
+    .disponible {
+        background: red;
+        padding: 9px;
+        position: absolute;
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 5px;
+    }
+    </style>
 
     <form class="product-form">
 
         <div class="container">
             <div class="row">
                 <div class="col-md-4" style="    border: solid 2px #eee;">
-                <span class="jsx-1130257793 disponible">Disponible</span>
+                    <span class="jsx-1130257793 disponible">Disponible</span>
                     <img id="product-zoom" src="assets/img-products/<?php echo  $imagen; ?>"
-                        data-zoom-image="assets/img-products/<?php echo $imagen; ?>" alt="" style="width: 700px; height: 350px;" width="800" height="800" class="jsx-2487856160" />
+                        data-zoom-image="assets/img-products/<?php echo $imagen; ?>" alt="" style="width: 700px; height: 350px;" width="800"
+                        height="800" class="jsx-2487856160" />
+                        <meta property="og:site_name" content="">
+                        <meta property="og:title" content="" />
+                        <meta property="og:description" content="" />
+                        <meta property="og:image" itemprop="image" content="assets/img-products/<?php echo  $imagen; ?>">
+                        <meta property="og:type" content="website" />
+                        <meta property="og:updated_time" content="1440432930" />
                 </div>
 
                 <div class="col-md-4">
@@ -371,8 +377,9 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                                     <?php echo $fila['Peso']; ?>
                                 </li>
                                 <li class="jsx-3624412160"><strong class="jsx-3624412160" style="padding-left: 6px;">Stock</strong>:
-                                     
-                                    <a href="javascript:" class="" style="background: green; color: white; padding: 3px; margin-left: 4px; font-weight: 600;"> Consultar </a>
+
+                                    <a href="javascript:" class=""
+                                        style="background: green; color: white; padding: 3px; margin-left: 4px; font-weight: 600;"> Consultar </a>
                                 </li>
                                 <!-- <button type="button" class="btn btn-primary btn-sm">Consultar Stock</button> -->
                             </ul>
@@ -390,17 +397,24 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
 
 
                         <ul style="display: grid; grid-template-columns: repeat(2,50%); text-align: center; margin-left: -50px">
-                           
-                           <span class="" style="position: absolute; left: 18px; top: 10px; font-size: 17px; color: #e83028; font-weight: 600; text-transform: uppercase;"> Pago con efectivo</span>
+
+                            <span class=""
+                                style="position: absolute; left: 18px; top: 10px; font-size: 17px; color: #e83028; font-weight: 600; text-transform: uppercase;">
+                                Pago con efectivo</span>
                             <li style="border-right-color: #ff6600; border-right-style: solid; margin-top: 28px;"><span id="our_price_display"
                                     class="price observaprecion" style=" color: #1d841d;  font-weight: 600;    font-size: 26px;">$ <?=$precio_dolar ?>
                                 </span></li>
-                            <li style="margin-top: 28px;"><span style=" font-size: 26px;  color: #fc0000; font-weight: 600;">S/ <?= $precio_sol?></span> </li>
-                            <span class="" style="position: absolute; left: 18px;    top: 89px; font-size: 17px; color: #e83028; font-weight: 600; text-transform: uppercase;"> Pago con targeta</span>  
+                            <li style="margin-top: 28px;"><span style=" font-size: 26px;  color: #fc0000; font-weight: 600;">S/
+                                    <?= $precio_sol?></span> </li>
+                            <span class=""
+                                style="position: absolute; left: 18px;    top: 89px; font-size: 17px; color: #e83028; font-weight: 600; text-transform: uppercase;">
+                                Pago con tarjeta</span>
                             <li style="border-right-color: #ff6600; border-right-style: solid;     margin-top: 43px;"><span id="our_price_display"
-                                    class="price observaprecion" style=" color: #1d841d;  font-weight: 600;    font-size: 26px;">$ <?= $precio_dolar_tarj ?>
+                                    class="price observaprecion" style=" color: #1d841d;  font-weight: 600;    font-size: 26px;">$
+                                    <?= $precio_dolar_tarj ?>
                                 </span></li>
-                            <li style="margin-top: 43px;"><span style=" font-size: 26px;  color: #fc0000; font-weight: 600;">S/ <?= $precio_sol_tarj ?></span> </li>
+                            <li style="margin-top: 43px;"><span style=" font-size: 26px;  color: #fc0000; font-weight: 600;">S/
+                                    <?= $precio_sol_tarj ?></span> </li>
                         </ul>
 
 
@@ -421,13 +435,28 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                             </div>
 
                         </div>
+                        <?php 
+
+                       
+                        $var_telefono = "986838333";
+                         
+                        $link_sala = "%0A%0Ahttps://solucionescctvysistemas.com/infoProd.php?CodigoProd=".$CodProd."";
+                        
+                        $final_sala = "%0A%0AAtentamente+Soluciones+CCTV+y+Sistemas+SAC.";
+
+                        $texto_saludo = "&amp;text=HOLA+QUIERO+COTIZAR+ESTE+PRODUCTO.".$link_sala.$final_sala;
+
+                        $base = "https://api.whatsapp.com/send?phone=51".$var_telefono.$texto_saludo;
 
 
-                        <div class="col-md-6" style="    padding-left: 6px;  padding-right: 0px;  width: 40%; border: solid 1px gray; padding-top: 8px; padding-bottom: 8px; margin-top: 23px; margin-right: 8px;">
-                            <a href="" class="">
-                                <img src="https://www.magitech.pe/skin/frontend/ultimo/default/images/bq-at-cotizar.png"
-                                    style="float:left;    max-height: 28px;">
-                                <span class="bq-at-txt" style="padding-top: 4px;">Cotizar este producto</span>
+                        ?> 
+
+                        <div class="col-md-6"
+                            style="    padding-left: 6px;  padding-right: 0px;  width: 40%; border: solid 1px gray; padding-top: 8px; padding-bottom: 8px; margin-top: 23px; margin-right: 8px;">
+                            <a href="<?=$base?>" class="" target="blank_">
+                                <img src="assets/img/whatsapp_3.svg"
+                                    style="float: left; max-height: 21px; position: absolute; left: -61px;">
+                                <span class="bq-at-txt" style="padding-top: 4px; position: relative;  left: 34px;">Cotizar Whatsapp</span>
                             </a>
                         </div>
 
@@ -441,15 +470,17 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                         </div>
 
                         <div class="col-md-6" style="padding-left: 0px; padding-top: 20px; padding-right: 0px; width: 42%;">
-                            <a href="#contactenos" class="informacion-button"><i class="fas fa-phone-alt" aria-hidden="true"></i> Agenda una LLamada </a>
-                        </div>
-
-                        <div class="col-md-6" style="padding-left: 0px; padding-top: 20px; padding-right: 0px; width: 45%;">
-                            <a href="#contactenos" style="padding-right: 40px;" class="informacion-button"><i class="fas fa-phone-alt" aria-hidden="true"></i> Contacta un Asesor
+                            <a href="#contactenos" class="informacion-button"><i class="fas fa-phone-alt" aria-hidden="true"></i> Consultar Stock
                             </a>
                         </div>
 
-                         <!-- <div class="col-md-6" style="padding-left: 0px; padding-top: 20px; padding-right: 0px; width: 45%;">
+                        <div class="col-md-6" style="padding-left: 0px; padding-top: 20px; padding-right: 0px; width: 45%;">
+                            <a href="#contactenos" style="padding-right: 40px;" class="informacion-button"><i class="fas fa-phone-alt"
+                                    aria-hidden="true"></i> Contacta un Asesor
+                            </a>
+                        </div>
+
+                        <!-- <div class="col-md-6" style="padding-left: 0px; padding-top: 20px; padding-right: 0px; width: 45%;">
                         <a href="#contactenos" style="padding-right: 18px;" class="informacion-button"><i class="fas fa-phone-alt" aria-hidden="true"></i> Agenda una LLamada </a>
 
                         </div>
@@ -464,7 +495,7 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
 
                         </div>
 -->
-                       
+
 
 
 
@@ -489,17 +520,19 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
             </div>
             <br>
 
-            <div class="col-md-12">
+            <div class="col-md-12" style="z-index: 9999;">
 
-                <button type="button" class="opciones-button" style="width: 25%;" toggle-modal="#informativo-1" style="margin-bottom: 13px;"><i
-                        class="fas fa-shopping-cart" aria-hidden="true"></i> ¿Modalidades de pago?</button>
+                <button type="button" class="opciones-button" style="width: 25%; font-size: 16px; font-weight: 500;" data-toggle="modal"
+                    data-target="#comocomprar" style="margin-bottom: 13px;"><i class="fas fa-shopping-cart" aria-hidden="true"></i> Como
+                    Comprar </button>
 
-                <button type="button" class="opciones-button" style="width: 25%;" toggle-modal="#informativo-1"><i class="fas fa-shopping-cart"
-                        aria-hidden="true"></i> ¿Como Recojer el Producto?</button>
-                <button type="button" class="opciones-button" style="width: 25%;" toggle-modal="#informativo-1" style="margin-bottom: 13px;"><i
-                        class="fas fa-shopping-cart" aria-hidden="true"></i> ¿Cómo comprar por web?</button>
-                <button type="button" class="opciones-button" style="width: 20%;" toggle-modal="#informativo-1"><i class="fas fa-shopping-cart"
-                        aria-hidden="true"></i> Envios a Lima Metropolitana</button>
+                <button type="button" class="opciones-button" style="width: 25%; font-size: 16px; font-weight: 500;" data-toggle="modal"
+                    data-target="#formaspago"><i class="fas fa-shopping-cart" aria-hidden="true"></i> Formas de Pago</button>
+                <button type="button" class="opciones-button" style="width: 25%; font-size: 16px; font-weight: 500;" data-toggle="modal"
+                    data-target="#delivery" style="margin-bottom: 13px;"><i class="fas fa-shopping-cart" aria-hidden="true"></i> Formas de
+                    Entrega </button>
+                <button type="button" class="opciones-button" style="width: 24%; font-size: 16px; font-weight: 500;" data-toggle="modal"
+                    data-target="#modal_tiene_garantia"><i class="fas fa-shopping-cart" aria-hidden="true"></i> Garantias </button>
 
 
 
@@ -559,19 +592,37 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                     }
                     echo "</tbody> </table></div> ";
                     ?>
-
-
-    <!--RELATED PRODUCT AREA START-->
-    <div class="related-product hidden-xs" style="background: white;">
+    <br></br>
+    <div class="related-product " style="background: white;">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="title-with-bg">
-                        <span style="color:red;">Otros Productos Relacionados</span>
+                        <span style="color:red;">Informacion de procesos de Venta y Entrega de Productos</span>
                     </div>
                 </div>
-                <div class="related-pro-carousel">
-                    <?php
+                <div id="delivery_data" class="owl-carousel">
+
+                    <img src="assets/img/1.jpeg">
+                    <img src="assets/img/2.jpeg">
+                    <img src="assets/img/3.jpeg">
+                    <img src="assets/img/1.jpeg">
+                </div>
+            </div>
+        </div>
+        <br></br>
+
+        <!--RELATED PRODUCT AREA START-->
+        <div class="related-product hidden-xs" style="background: white;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title-with-bg">
+                            <span style="color:red;">Otros Productos Relacionados</span>
+                        </div>
+                    </div>
+                    <div class="related-pro-carousel">
+                        <?php
 
                             $ordenSlider =  ejecutarSQL::consultar("SELECT `producto`.*, `producto`.`CodigoCat`
                         FROM `producto`
@@ -595,45 +646,46 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                             ?>
 
 
-                    <!--single product-->
-                    <div class="col-md-12">
-                        <div class="sin-product">
-                            <div class="product-top">
-                                <div class="pro-img">
-                                    <a href="infoProd.php?CodigoProd=<?php echo  $CodigoProducto; ?>">
-                                        <img alt="" style="height:268px!important; border-bottom: 1px solid #005a8f;"
-                                            src="assets/img-products/<?php echo  $Imagen_slider2; ?>">
-                                    </a>
-                                </div>
-                                <div class="label_new"><span>Nuevo</span></div>
-                                <div class="name"><a href="#"><?php echo  $NombreProductoCat2; ?></a></div><br>
-                                <div class="name"><a href="#"><?php echo $ModeloProd . " - " . $MarcaProd; ?></a></div><br>
+                        <!--single product-->
+                        <div class="col-md-12">
+                            <div class="sin-product">
+                                <div class="product-top">
+                                    <div class="pro-img">
+                                        <a href="infoProd.php?CodigoProd=<?php echo  $CodigoProducto; ?>">
+                                            <img alt="" style="height:268px!important; border-bottom: 1px solid #005a8f;"
+                                                src="assets/img-products/<?php echo  $Imagen_slider2; ?>">
+                                        </a>
+                                    </div>
+                                    <div class="label_new"><span>Nuevo</span></div>
+                                    <div class="name"><a href="#"><?php echo  $NombreProductoCat2; ?></a></div><br>
+                                    <div class="name"><a href="#"><?php echo $ModeloProd . " - " . $MarcaProd; ?></a></div><br>
 
-                                <div class="rating">
-                                    <span class="price-new" style="text-decoration-line: line-through;"><?php echo "Antes: S/ " . $p_p; ?>
-                                    </span>&nbsp; &nbsp; <strong> 25% DCTO</strong>
-                                </div>
-                                <div class="price">
-                                    <span
-                                        class="price-new"><?php echo "$ ".$Precio_slider2."&nbsp;&nbsp; | &nbsp;&nbsp;"."S/ ".$precio_sol_dolar_f ?></span>
-                                </div>
-                                <a href="infoProd.php?CodigoProd=<?php echo  $CodigoProducto; ?>"
-                                    style="color: #fff; background-color: #005a8f; border-color: #ff9f00" class="btn btn-lg" id="open-01"> Ver Mas</a>
+                                    <div class="rating">
+                                        <span class="price-new" style="text-decoration-line: line-through;"><?php echo "Antes: S/ " . $p_p; ?>
+                                        </span>&nbsp; &nbsp; <strong> 25% DCTO</strong>
+                                    </div>
+                                    <div class="price">
+                                        <span
+                                            class="price-new"><?php echo "$ ".$Precio_slider2."&nbsp;&nbsp; | &nbsp;&nbsp;"."S/ ".$precio_sol_dolar_f ?></span>
+                                    </div>
+                                    <a href="infoProd.php?CodigoProd=<?php echo  $CodigoProducto; ?>"
+                                        style="color: #fff; background-color: #005a8f; border-color: #ff9f00" class="btn btn-lg" id="open-01"> Ver
+                                        Mas</a>
 
+                                </div>
                             </div>
                         </div>
+                        <!--single product-->
+                        <?php }  ?>
                     </div>
-                    <!--single product-->
-                    <?php }  ?>
                 </div>
             </div>
         </div>
-    </div>
-    <!--RELATED PRODUCT AREA END-->
+        <!--RELATED PRODUCT AREA END-->
 
 
 
-    <!-- sdadasda-->
+        <!-- sdadasda-->
 
 
 
@@ -641,653 +693,571 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
     <!--RELATED PRODUCT AREA END-->
 
     <!-- asdasdas -->
-    <div class="modal fade" id="modal_como_comprar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" style="margin-top: 23px;" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    <h4 class="modal-title" id="myModalLabel">
-                        Medios y Formas de Pago
-                    </h4>
+    <div class="modal fade in" id="comocomprar" role="dialog" style="overflow-y: hidden;">
+        <div class="modal-dialog modal-dialog-top modal-md" style="margin-top: 17px;">
+            <div class="modal-content" style="padding: 20px 20px;border:1px">
+                <div class="modal-body" style="overflow-y: scroll;    height: 500px;">
+                    <p>
+                        <strong style="color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;">
+                            <span style="font-size: 17.5pt; font-family: 'Arial','sans-serif'; color: darkorange;"><i class="fa fa-shopping-cart"
+                                    aria-hidden="true"></i> CÓMO COMPRAR</span>
+                        </strong>
+                    </p>
+                    <p style="text-align: justify; background: white; margin: 0cm 0cm 7.5pt 0cm;">
+                        <span style="color: #828282;">
+                            <span style="font-size: 10pt;
+                                font-family: Arial, sans-serif;
+                                font-weight: 600;">Para comprar productos en nuestra tienda virtual, no es necesario estar registrado. Usted puede
+                                adquirir
+                                los productos ofrecidos por la empresa Corporación Yamoshi SRL en la tienda virtual www.yamoshi.com.pe
+                                o en nuestras tiendas ubicadas en Lima o Miraflores. </span>
+                        </span>
+                    </p>
+                    <p style="text-align: justify; background: white; margin: 0cm 0cm 7.5pt 0cm;">
+                        <span style="color: #828282;">
+                            <span style="font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600;">El uso de la tienda virtual y la adquisición de los productos ofertados, supone la aceptación de los términos
+                                y condiciones generales que están publicadas en nuestra web, así como, las condiciones particulares o
+                                específicas que pudieran establecerse en cada caso. </span>
+                        </span>
+                    </p>
+                    <p style="text-align: justify; background: white; margin: 0cm 0cm 7.5pt 0cm;">
+                        <span style="color: #828282;">
+                            <span style="font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600;">Yamoshi podrá modificar las presentes condiciones generales mediante publicación en esta página Web para
+                                su conocimiento y aceptación por los usuarios.</span>
+                        </span>
+                    </p>
+                    <p></p>
+                    <strong>
+                        <span style="font-size: 17.5pt; font-family: 'Arial','sans-serif'; color: darkorange;"><i class="fa fa-laptop"
+                                aria-hidden="true"></i> CATÁLOGO DE PRODUCTOS Y PROCESO DE COMPRA</span>
+                    </strong>
+                    <span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; color: #333333;">
+                        <o:p></o:p>
+                    </span>
+                    </p>
+                    <p class="MsoNormal"
+                        style="margin-bottom: 0.0001pt; text-align: justify; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">
+                        <span style="font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600; color:#828282;">En esta web encontrará un amplio catálogo de productos, ordenado por categorías y subcategorías, así mismo,
+                            encontrará
+                            a su lado izquierdo un menú desplegable con las principales categorías para que pueda buscar su producto
+                            ordenadamente. En la parte superior hay una barra de búsqueda donde puede ingresar los términos o característica
+                            del producto que quiere comprar, así se agilizará el proceso de buscar un producto en nuestra tienda virtual.
+                            <o:p></o:p>
+                        </span>
+                    </p>
+                    <p class="MsoNormal"
+                        style="margin-bottom: 0.0001pt; text-align: justify; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">
+                        <span style="font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600; color:#828282;">Una vez elegido el producto podrá ver el detalle de las características, el sctock, el tiempo de entrega y las
+                            formas de pago. Cuando realice el proceso de añadir el producto a su carrito de compras, empieza el proceso
+                            de pago. El proceso empieza con el registro de sus datos personales y la dirección de envío, luego podrá
+                            escoger las formas de envío que son dos: recojo en nuestras tiendas o entrega a su domicilio. Con el registro
+                            de los datos solicitados en el formulario y la aceptación de los términos del servicio, antes de formalizarlo
+                            podrá visualizar los gastos de transporte y la forma de pago. Siguiendo con su compra, podrá escoger las
+                            formas de pago que son dos: Transferencia o depósito bancario y pago con tarjeta de débito o crédito.
+                            <o:p></o:p>
+                        </span>
+                    </p>
+                    <p class="MsoNormal"
+                        style="margin-bottom: 0.0001pt; text-align: justify; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">
+                        <span style="font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600; color:#828282;">Corporación Yamoshi SRL trabaja con dos plataformas de medios de pago que son Culqi y Mercado Pago. Estas
+                            sólidas
+                            plataformas son muy eficientes en el proceso de compra y protegen la privacidad de sus datos ingresados,
+                            así como la implementación de una eficaz política antifraude.
+                            <o:p></o:p>
+                        </span>
+                    </p>
+                    <p class="MsoNormal"
+                        style="margin-bottom: 0.0001pt; text-align: justify; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">
+                        <span style="font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600; color:#828282;">Por último, al confirmar el pedido recibirá un e-mail de confirmación y podrá recibir el producto en los días
+                            que le indica el correo de aceptación de la orden de compra.</span>
+                    </p>
+                    <p class="MsoNormal"
+                        style="margin-bottom: 0.0001pt; text-align: justify; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">
+                        <span style="font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600; color:#828282;">
+                            <span style="color: #828282;">Nuestra empresa tendrá la facultad de comunicarse con nuestros clientes para confirmar su
+                                compra y validar
+                                los datos registrados en su pedido para la seguridad de ambas partes.&nbsp;</span>
+                            <o:p></o:p>
+                        </span>
+                    </p>
+                    <p class="MsoNoSpacing">
+                    </p>
+                    <p>
+                        <strong>
+                            <span style="font-size: 17.5pt; font-family: 'Arial','sans-serif'; color: darkorange;"><i class="fa fa-credit-card"
+                                    aria-hidden="true"></i> TÉRMINOS Y CONDICIONES DE VENTA</span>
+                        </strong>
+                        <span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; color: #333333;">
+                            <o:p></o:p>
+                        </span>
+                    </p>
+                    <p class="MsoNormal" style="">
+                        <span style="color: #493b3b;">
+                            <b>
+                                <span style="font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600;">Variaciones de precios:</span>
+                            </b>
+                            <span style="font-size: 9.0pt;">
+                                <o:p></o:p>
+                            </span>
+                        </span>
+                    </p>
+                    <p class="MsoNormal"
+                        style="margin-bottom: 0.0001pt; text-align: justify; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">
+                        <span style="font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600; color:#828282;">Los precios que mostramos en nuestra página web son válidos en el momento de hacer su pedido o compra e
+                            incluyen
+                            los impuestos y envíos según la zona de reparto. Estas transacciones son confirmadas por correo electrónico
+                            aceptando la conformidad de la orden de compra. No obstante, los precios de los productos tecnológicos sufren
+                            fluctuaciones que son normales. En la mayoría de los casos los precios bajan, a medida que aparecen nuevos
+                            modelos. No podemos aceptar reclamaciones si usted pide un producto, lo recibe, y al cabo de unos días ve
+                            que se anuncia a un precio menor.</span>
+                    </p>
+                    <p class="MsoNormal" style="    margin-top: 1rem;">
+                        <span style="color: #493b3b;">
+                            <b>
+                                <span style="font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600;">Validez de las ofertas: </span>
+                            </b>
+                            <span style="font-size: 9.0pt;">
+                                <o:p></o:p>
+                            </span>
+                        </span>
+                    </p>
+                    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal;">
+                        <span style="font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600; color:#828282;;">Los artículos que se muestran han sido pedidos en cantidad suficiente para atender la demanda prevista pero,
+                            si alguno se agotara, le ofreceríamos la posibilidad de sustituirlo por otro de valor igual o superior.</span>
+                    </p>
+                    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal;">
+                        <span style="font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600; color:#828282;">
+                            <span style="color: #828282;">Aunque cuidamos al máximo para que no haya errores en nuestra página, le pedimos disculpas
+                                si algún dato
+                                es erróneo. Nos reservamos el derecho a no servir un producto cuyos datos técnicos, detalles o precio
+                                fueran erróneos.</span>
+                            <o:p></o:p>
+                        </span>
+                    </p>
+                    <p class="MsoNoSpacing">
+                    </p>
+                    <p>
+                        <strong>
+                            <span style="font-size: 17.5pt; font-family: 'Arial','sans-serif'; color: darkorange;"><i class="fa fa-envelope"
+                                    aria-hidden="true"></i> CÓMO REGISTRARSE PARA COMPRAR</span>
+                        </strong>
+                        <span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; color: #333333;">
+                            <o:p></o:p>
+                        </span>
+                    </p>
+                    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal;">
+                        <span style="color: #828282;">
+                            <span style="font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600;">Registrarse en </span>
+                            <a href="https://www.yamoshi.com.pe/">
+                                <span style="font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600;color: #493b3b;">www.yamoshi.com.pe</span>
+                            </a>
+                            <span style="    font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600;">
+                                es muy fácil.
+                                <o:p></o:p>
+                            </span>
+                        </span>
+                    </p>
+                    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal;">
+                        <span style="color: #828282;">
+                            <span style="    font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600;">Solo ingrese al link de </span>
+                            <a href="https://yamoshi.com.pe/iniciar-sesion">
+                                <span style="font-size: 9pt; font-family: Arial, sans-serif; color: #493b3b;">Regístrate</span>
+                            </a>
+                            <span
+                                style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; mso-fareast-font-family: 'Times New Roman'; mso-fareast-language: ES-PE;">
+                                en el menú superior de nuestra web, llene los datos solicitados y luego acepte nuestros términos y condiciones.
+                                Y ¡Listo!</span>
+                        </span>
+                    </p>
+                    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal;">
+                        <span style="    font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600;color: #828282;">Recomendaciones al momento de Registrarse:
+                            <o:p></o:p>
+                        </span>
+                    </p>
+                    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal;">
+                        <span style="    font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600; color: #828282;">Verifique que sus datos personales se encuentren escritos de manera correcta, en especial su correo
+                            electrónico
+                            y su documento de identidad.
+                            <o:p></o:p>
+                        </span>
+                    </p>
+                    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal;">
+                        <span style="    font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600; color: #828282;">Utilice un correo electrónico que use de manera frecuente, ya que ahí lo mantendremos informado de todas
+                            nuestras
+                            novedades y promociones, así como las notificaciones con respecto al estado de sus compras.
+                            <o:p></o:p>
+                        </span>
+                    </p>
+                    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal;">
+                        <span style="    font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600; color: #828282;">Utilice una contraseña segura y fácil de recordar, esta debe tener como mínimo 8 caracteres. Evite contraseñas
+                            relacionadas a sus datos personales como fechas importantes, documento de identidad, etc.</span>
+                    </p>
+                    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal;">
+                        <span style="    font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600;color: #828282;">En caso de necesitar ayuda o cualquier información adicional, puede comunicarse a nuestra Central de Servicio
+                            al Cliente al teléfono (01) 237-4491 o al Correo electrónico
+
+                        </span>
+                    </p>
                 </div>
-                <div class="modal-body">
-
-                    <p align="justify">Paga fácil tu compra a través de las siguientes opciones:
-                    </p>
-
-
-                    <p align="justify">• Tarjetas de crédito y débito VISA a través de la pasarela de pago disponible en
-                        nuestra web.</p>
-                    <p align="justify">• Depósitos y transferencias a nuestras cuentas bancarias. Ver más información.
-                    </p>
-                    <p align="justify">• Pago presencial en nuestra tienda física: Puede pagar en efectivo o con
-                        Tarjetas de Crédito Aceptamos todas las tarjetas que tengan los stickers de Visa, MasterCard,
-                        American Express, incluyendo Ripley Y CMR Falabella que
-                        lo contengan.</p>
-
-                    <p align="justify">• Opcional: Pagos con Tarjetas de Crédito VISA en su domicilio a través de un POS
-                        inalámbrico.</p>
-                    En caso deposite o transfiera a cualquiera de nuestras Cuentas Corrientes, no olvide enviar su
-                    constancia o voucher de su operación bancaria vía correo electrónico a
-                    soporte@solucionescctvysistemas.com Para mayor detalle por favor tenga en cuenta la siguiente
-                    información adicional:
-                    </p>
-                    <p align="justify">I. Transferencias y Depósitos:</p>
-                    <p align="justify">SOLUCIONES CCTV & SISTEMAS S.A.C., posee cuentas corrientes en los bancos más
-                        importantes de nuestro país, donde usted podrá depositar o transferir el importe de su compra. A
-                        continuación, le damos las instrucciones para un
-                        pago exitoso; no olvide que en esta modalidad de pago deberá remitir la constancia o voucher
-                        escaneado de su operación bancaria, vía correo electrónico a soporte@solucionescctvysistemas.com
-                        haciendo referencia a su pedido.
-                        </li>
-
-
-                    <p align="justify">1. Banco de Crédito del Perú (BCP)</p>
-                    <p align="justify">En esta entidad bancaria SOLUCIONES CCTV & SISTEMAS S.A.C., posee una cuenta
-                        recaudadora a su nombre, todos los depósitos y transferencias se realizarán únicamente a
-                        través de dicha Cuenta Recaudadora.</p>
-
-                    <p align="justify">Para pagos a través de Depósitos en Ventanilla: indicar al cajero que desea
-                        depositar en la cuenta Recaudadora de SOLUCIONES CCTV & SISTEMAS S.A.C., el cajero le
-                        solicitará su DNI o RUC de ser el caso y le entregará el
-                        voucher respectivo donde se consigna el número de operación de su depósito.</p>
-
-                    <p align="justify">Para pagos a través de Transferencia en Línea Via BCP : Una vez que ingrese a
-                        la web del banco vaya a la opción "Pago de Servicios", “Nuevo Pago”, elija la opción
-                        Empresas Diversas y luego seleccione a SOLUCIONES CCTV &
-                        SISTEMAS S.A.C.; para pagos en Nuevos Soles elija la opción Pago en Soles y para Dólares
-                        Americanos la opción Pago en Dólares.</p>
-
-                    <p align="justify">2. Otros Bancos</p>
-                    <p align="justify">Todas nuestras Cuentas Corrientes indicadas a continuación están a nombre de
-                        SOLUCIONES CCTV & SISTEMAS S.A.C.
-                    </p>
-
-                    <p align="justify">Cuentas Bancarios </p>
-
-                    <p align="justify">• Banco BCP</p>
-                    <p align="justify">Nuevos Soles: 194-357-125-00-0-31</p>
-                    <p align="justify">Banco Continental</p>
-                    <p align="justify">• Nuevos Soles: 4551 0381 8087 3916</p>
-
-                    <p align="justify">• Banco Scotiabank</p>
-                    <p align="justify">Nuevos Soles: 009-022-00000-6192980-58</p>
-                    <p align="justify">• Banco BN</p>
-                    <p align="justify">Nuevos Soles: 000-610-973-84 </p>
-                    <p align="justify">Cuentas Interbancarias</p>
-
-                    <p align="justify">• Banco BCP</p>
-                    <p align="justify">Nuevos Soles: 219413571250003000</p>
-                    <p align="justify">Banco Continental</p>
-                    <p align="justify">• Nuevos Soles: 011-323-000200389677-32</p>
-
-                    <p align="justify">III. Pagos con Crédito Directo (aplica solo a empresas previa coordinación)
-                    </p>
-                    <p align="justify">• Cheques Diferidos, Letras de Cambio o Pagarés.
-                    </p>
-                    <p align="justify">• Los Cheques diferidos serán aceptados hasta 30 días sin intereses.</p>
-                    <p align="justify">• Las Letras serán aceptadas para financiamientos hasta en 6 meses, los
-                        montos de las cuotas serán calculados en base al plazo acordado.</p>
-                    <p align="justify">IV. Pago en Tienda</p>
-                    <p align="justify">Para pagar un pedido solicitado vía web o un producto visualizado en el
-                        catálogo web; usted puede pagar en tienda en soles o dólares al tipo de cambio del día de
-                        las siguientes maneras:</p>
-                    <p align="justify">• En efectivo.
-                    <p align="justify">• Tarjeta de crédito (aceptamos todas las tarjetas que tengan los sticker
-                        de Visa, MasterCard, American Express, incluyendo Ripley Y CMR Falabella que lo
-                        contengan).
-                    </p>
-                    <p align="justify">• Tarjeta de Débito.</p>
-
-                    </p>
-
-                </div>
-
             </div>
         </div>
     </div>
 
-
-    <div class="modal fade" id="modal_puedo_pagarlo2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" style="margin-top: 23px;" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    <h4 class="modal-title" id="myModalLabel">
-                        Despachos y formas de envío
-                    </h4>
+    <!-- sucribte  -->
+    <div class="modal fade in" id="formaspago" role="dialog" style="overflow-y: hidden;">
+        <div class="modal-dialog modal-md" style="margin-top: 17px;">
+            <div class="modal-content" style="padding: 20px 20px;border:1px">
+                <div class="modal-body" style="overflow-y: scroll;    height: 500px;">
+                    <p>
+                        <strong style="color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;">
+                            <span style="font-size: 17.5pt; font-family: 'Arial','sans-serif'; color: darkorange;">FORMAS DE PAGO</span>
+                        </strong>
+                    </p>
+                    <p style="text-align: justify; background: white; margin: 0cm 0cm 7.5pt 0cm;">
+                        <span style="color: #828282;">
+                            <span style="font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600;">En Yamoshi aceptamos varios medios de pago para los pedidos:</span>
+                        </span>
+                    </p>
+                    <p style="text-align: justify; background: white; margin: 0cm 0cm 7.5pt 0cm;">
+                    <p style="color: #828282;">
+                        <span style="font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600;"><i class="fa fa-check"></i> En efectivo en nuestros locales
+                        </span>
+                    </p>
+                    <p style="font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600;">
+                        <i class="fa fa-check"></i> Depósito Bancario
+                    </p>
+                    </p>
+                    <p style="font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600;">
+                        <i class="fa fa-check"></i> Tarjetas de crédito y/o débito
+                    </p>
+                    </p>
+                    </p>
+                    <p style="text-align: justify; background: white; margin: 0cm 0cm 7.5pt 0cm;">
+                        <span style="color: #828282;">
+                            <span style="font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600;">Transferencia o ingreso en cuenta. Puedes ordenar el pago a estas cuentas:</span>
+                        </span>
+                    </p>
+                    <p style="text-align: justify; background: white; margin: 0cm 0cm 7.5pt 0cm;">
+                    <p style="color: #000000;">
+                        <span style="font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600;"><i class="fa fa-user"></i> TITULAR: CORPORACION YAMOSHI SRL.
+                        </span>
+                    </p>
+                    <p style="font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600;color: #000000;">
+                        <i class="fa fa-hashtag" aria-hidden="true"></i> RUC: 20511068496
+                    </p>
+                    </p>
+                    </p>
+                    <strong>
+                        <span style="font-size: 12.5pt; font-family: 'Arial','sans-serif'; color: darkorange;">NUESTRAS CUENTAS CORRIENTES</span>
+                    </strong>
+                    <span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; color: #333333;">
+                        <o:p></o:p>
+                    </span>
+                    </p>
+                    <p class="MsoNormal"
+                        style="margin-bottom: 0.0001pt; text-align: justify; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">
+                        <span style="font-size: 11pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600; color:#073781;">
+                            <i class="fa fa-credit-card-alt" aria-hidden="true"></i> BANCO DE CRÉDITO DEL PERÚ
+                            <o:p></o:p>
+                        </span>
+                    </p>
+                    <p class="MsoNormal"
+                        style="margin-bottom:1pt; text-align: justify; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">
+                    <p style="font-size: 10pt;
+    font-family: Arial, sans-serif;margin-bottom:1pt;
+    font-weight: 600;">Banco BCP Soles: 191-1592154-0-62
+                    </p>
+                    <p style="font-size: 10pt;
+    font-family: Arial, sans-serif;margin-bottom:1pt;
+    font-weight: 600;">CCI Soles: 002-19100159215406259
+                    </p>
+                    <p style="font-size: 10pt;
+    font-family: Arial, sans-serif;margin-bottom:1pt;
+    font-weight: 600;"> Banco BCP Dólares: 191-1560338-1-98
+                    </p>
+                    <p style="font-size: 10pt;
+    font-family: Arial, sans-serif;margin-bottom:1pt;
+    font-weight: 600;"> CCI Dólares: 002-19100156033819857
+                    </p>
+                    </p>
+                    <p class="MsoNormal"
+                        style="margin-bottom: 0.0001pt; text-align: justify; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">
+                        <span style="font-size: 11pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600; color:#120c3d;">
+                            <i class="fa fa-credit-card-alt" aria-hidden="true"></i> BANCO CONTINENTAL BBVA
+                            <o:p></o:p>
+                        </span>
+                    </p>
+                    <p class="MsoNormal"
+                        style="margin-bottom:1pt; text-align: justify; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">
+                    <p style="font-size: 10pt;
+    font-family: Arial, sans-serif;margin-bottom:1pt;
+    font-weight: 600;">Banco BBVA Soles: 0011-0124-0100029906
+                    </p>
+                    <p style="font-size: 10pt;
+    font-family: Arial, sans-serif;margin-bottom:1pt;
+    font-weight: 600;">CCI Soles: 0011-124-000100029906-53
+                    </p>
+                    <p style="font-size: 10pt;
+    font-family: Arial, sans-serif;margin-bottom:1pt;
+    font-weight: 600;"> Banco BBVA Dólares: 0011-0124-0100015921
+                    </p>
+                    <p style="font-size: 10pt;
+    font-family: Arial, sans-serif;margin-bottom:1pt;
+    font-weight: 600;"> CCI Dólares: 0011-124-000100015921-58
+                    </p>
+                    </p>
+                    <p class="MsoNormal"
+                        style="margin-bottom: 0.0001pt; text-align: justify; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">
+                        <span style="font-size: 11pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600; color:#ec0707;">
+                            <i class="fa fa-credit-card-alt" aria-hidden="true"></i> BANCO SCOTIABANK
+                            <o:p></o:p>
+                        </span>
+                    </p>
+                    <p class="MsoNormal"
+                        style="margin-bottom:1pt; text-align: justify; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">
+                    <p style="font-size: 10pt;
+    font-family: Arial, sans-serif;margin-bottom:1pt;
+    font-weight: 600;">Banco Soles: 000 5078075
+                    </p>
+                    <p style="font-size: 10pt;
+    font-family: Arial, sans-serif;margin-bottom:1pt;
+    font-weight: 600;">CCI Soles: 009-039-00-00-0507807598
+                    </p>
+                    <p style="font-size: 10pt;
+    font-family: Arial, sans-serif;margin-bottom:1pt;
+    font-weight: 600;">Banco Dólares: 000 2905931
+                    </p>
+                    <p style="font-size: 10pt;
+    font-family: Arial, sans-serif;margin-bottom:1pt;
+    font-weight: 600;">CCI Dólares: 009-039-00-00-0290593198
+                    </p>
+                    </p>
+                    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal;">
+                        <span style="    font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600;color: #828282;">Envía y/o llama por teléfono para justificar la transferencia. Enviaremos el pedido tras la confirmación del
+                            pago.
+                            <o:p></o:p>
+                        </span>
+                    </p>
+                    <br>
+                    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal;">
+                        <span style="    font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600; color: #828282;">Las transferencias desde entidades distintas pueden tardar hasta dos días hábiles (no cuentan fines de semana
+                            ni feriados) en llegarnos, según normativa bancaria. Mantenemos activos los pedidos por transferencia por cuatro días.
+                            Pasado ese tiempo, si no se ha confirmado el pago, el pedido se anulará automáticamente.
+                            <o:p></o:p>
+                        </span>
+                    </p>
+                    <br>
+                    <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal;">
+                        <span style="    font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600; color: #828282;">Tarjeta Esta forma de pago es inmediata, cómoda y segura. Al terminar tu pedido, podrás hacer el pago en la
+                            página del banco. YAMOSHI no recibirá estos datos ni tendrá acceso a ellos. Puedes asociar a tu cuenta de cliente tantas
+                            tarjetas como quieras para hacer pedidos más rápido. Un pedido por tarjeta se puede pagar en la hora siguiente a su
+                            confirmación. Pasado ese tiempo, si no llega el pago, el pedido será anulado automáticamente.
+                            <o:p></o:p>
+                        </span>
+                    </p>
                 </div>
-                <div class="modal-body">
-                    <p align="justify">SOLUCIONES CCTV & SISTEMAS S.A.C. envía sus productos a Lima Metropolitana y a
-                        todo el país, utilizando sus propias unidades móviles o contratando los servicios de empresas
-                        dedicadas al servicio de transporte terrestre o Courier
-                        que son confiables y con amplia experiencia en el rubro del transporte de mercancías, lo que
-                        garantiza que su compra se encontrará debidamente resguardada hasta que ésta llegue a sus manos.
-                    </p>
-                    <p align="justify">Despachos en Lima Metropolitana</p>
-
-                    <p align="justify">Para las compras vía internet y otras modalidades, la entrega de los productos se
-                        realizará con un intervalo de 24 a 48 horas. Si su pedido es de urgencia puede solicitarlo a su
-                        Operador Online por correo electrónico a soporte@solucionescctvysistemas.com
-                        o comuníquese al 986 838 333</p>
-
-                    <p align="justify">Antes de que su compra le sea entregada nuestros representantes le solicitarán su
-                        Documento Nacional de Identidad - DNI en físico para con ello autenticar su titularidad y
-                        proceder luego a solicitarle su firma en la Guía de
-                        Remisión respectiva donde deberá consignar su nombre completo y el número de su DNI, para
-                        finalmente entregarle su pedido y confirmar la recepción del mismo.
-                    </p>
-                    <p align="justify">Despachos a Provincias</p>
-
-                    <p align="justify">Para las compras vía internet y otras modalidades, los pedidos serán
-                        recepcionados hasta las 12m para proceder a su despacho mediante la agencia de transportes de su
-                        elección. Debe considerar que los envíos de los productos
-                        a provincia irán debidamente embalados y rotulados según la información que usted consignó en el
-                        proceso de compra, teniendo estos un tiempo de entrega de 05 días hábiles en promedio,
-                        dependiendo del destino de entrega;
-                        pudiendo en algunos casos llegar antes de lo establecido.
-                    </p>
-                    <p align="justify">Un representante nuestro, le enviará a su correo electrónico la constancia de la
-                        entrega del producto solicitado a la agencia de transportes elegida por usted, donde se
-                        detallará la hora y fecha de recepción; de esta manera
-                        usted podrá comunicarse con la agencia para coordinar el recojo de sus productos, quien a su vez
-                        le solicitará su DNI para realizar la entrega de la compra en el destino de llegada.</p>
-                    <p align="justify">Otras modalidades de Despacho</p>
-                    <p align="justify">Los despachos también pueden ser enviados vía la empresa Courier que usted elija
-                        o a través de transporte aéreo, previa coordinación. Los costos de envío para esta modalidad
-                        variarán según los destinos y la empresa elegida.</p>
-                    <p align="justify">Para Considerar</p>
-
-                    <p align="justify">• Los envíos y despacho se realizan una vez tengamos confirmado o coordinado su
-                        pago.</p>
-                    <p align="justify">• Los despachos en Lima Metropolitana de equipos de cómputo o de seguridad cctv ,
-                        otro tipo de artículos tendrán un costo de entrega de S/. 15.00 nuevos soles.</p>
-                    <p align="justify">• Los despachos a Provincias vía terrestre tendrán un costo de entrega de S/.
-                        29.00 Nuevos Soles.</p>
-                    <p align="justify">• No se realizan envíos los días domingos ni feriados.
-                    </p>
-                    <p align="justify">• SOLUCIONES CCTV & SISTEMAS S.A.C., cuenta con amplia experiencia para sus
-                        envíos en el ámbito del territorio nacional , con un porcentaje de éxito del 99.9%</p>
-                    <p align="justify">** Cualquier duda o consulta comuníquese al 986 838 333 / 996 7275 62 donde un
-                        representante gustosamente lo atenderá, o de lo contrario puede escribirnos a
-                        soporte@solucionescctvysistemas.com
-                    </p>
-
-
-
-                </div>
-
             </div>
         </div>
     </div>
-
-
-    <div class="modal fade" id="modal_puedo_pagarlo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" style="margin-top: 23px;" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    <h4 class="modal-title" id="myModalLabel">
-                        Cambios, Devoluciones y Reembolsos
-                    </h4>
+    <div class="modal fade in" id="delivery" role="dialog" style="overflow-y: hidden;">
+        <div class="modal-dialog modal-md" style="margin-top: 17px;">
+            <div class="modal-content" style="padding: 20px 20px;border:1px">
+                <div class="modal-body" style="overflow-y: scroll;    height: 500px;">
+                    <p>
+                        <strong style="color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;">
+                            <span style="font-size: 17.5pt; font-family: 'Arial','sans-serif'; color: darkorange;"><i class="fa fa-location-arrow"
+                                    aria-hidden="true"></i> POLÍTICAS DE ENVÍOS Y ENTREGAS</span>
+                        </strong>
+                    </p>
+                    <p style="text-align: justify; background: white; margin: 0cm 0cm 7.5pt 0cm;">
+                        <span style="color: #828282;">
+                            <span style="font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600;">YAMOSHI sólo enviará la mercadería adquirida por el cliente cuando se haya confirmado la compra por la página web, la
+                                confirmación del stock para su despacho y el pago correspondiente por el producto. Esta aprobación se realizará vía
+                                correo electrónico o mediante confirmación telefónica.
+                                <br>
+                                <br>
+                                Nuestra empresa despacha productos dentro de la República del Perú. Envía a Lima Urbana, Lima Periférica, Callao y a
+                                provincias de todo el país, mediante servicios tercerizados de Courier, empresas de transporte terrestre y con nuestra
+                                propia movilidad. </span>
+                        </span>
+                    </p>
+                    <br>
+                    <p>
+                        <strong style="color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;">
+                            <span style="font-size: 17.5pt; font-family: 'Arial','sans-serif'; color: darkorange;"><i class="fa fa-truck"
+                                    aria-hidden="true"></i> ENVÍOS EN LIMA</span>
+                        </strong>
+                    </p>
+                    <p style="text-align: justify; background: white; margin: 0cm 0cm 7.5pt 0cm;">
+                        <span style="color: #828282;">
+                            <span style="font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600;">El envió a domicilio se realiza de Lunes a Viernes en el horario de 10:00am a 7:00pm y Sábados de 10:00am a 1:00pm. Debido a
+                                restricciones por parte de nuestro Courier, no hay envíos a apartados postales.
+                                <br>
+                                <br>
+                                Para las compras online en Lima urbana, la entrega de los productos se realizará en un intervalo de 24 a 48 horas y
+                                mucho dependerá de la disponibilidad del Courier. Para realizar pedidos inmediatos podrá comunicarse con nosotros y
+                                coordinar su despacho. Este servicio estará sujeto a una tarifa adicional al que esta publicado actualmente.
+                    </p>
+                    <br>
+                    <p style="text-align: justify; background: white; margin: 0cm 0cm 7.5pt 0cm;">
+                        <span style="color: #828282;">
+                            <span style="font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600;">Los envíos de nuestros productos se realizan dentro de los días laborables; no se consideran los días, domingos y feriados.
+                                <br>
+                                <br>
+                                Al momento de la entrega del producto el operador logístico o Courier designado siempre solicitará, a la persona
+                                encargada de recepcionar la mercadería, su Documento Oficial de Indentidad para autenticar su titularidad y la
+                                responsabilidad de recibir el pedido. Esta persona tiene que contar con la mayoría de edad para salvaguardar una
+                                entrega eficiente y segura. La persona que recibe el producto es responsable de revisar que le hayan entregado todas
+                                las piezas o partes del producto antes que se retire el operador logístico o Courier. Una vez que se haya retirado, no
+                                habrá lugar a devolución o reclamo de partes o piezas faltantes.
+                    </p>
+                    <br>
+                    <p style="text-align: justify; background: white; margin: 0cm 0cm 7.5pt 0cm;">
+                        <span style="color: #828282;">
+                            <span style="font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600;">La entrega se considera efectuada desde que se pone el producto a disposición del cliente por el operador logístico o Courier
+                                y el cliente firma la recepción de la entrega, correspondiendo a la persona que recibió el producto, verificar a la
+                                recepción y exponer todas las salvedades y reclamos que puedan estar justificados.
+                                <br>
+                                <p>
+                                    <strong style="color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;">
+                                        <span style="font-size: 17.5pt; font-family: 'Arial','sans-serif'; color: darkorange;"><i
+                                                class="fa fa-bookmark" aria-hidden="true"></i> DEVOLUCIONES</span>
+                                    </strong>
+                                </p>
+                                <p style="text-align: justify; background: white; margin: 0cm 0cm 7.5pt 0cm;">
+                                    <span style="color: #828282;">
+                                        <span style="font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600;"><i class="fa fa-check" aria-hidden="true"> </i> Si el envío o caja presenta algún deterioro debe estipularse la anotación
+                                            respectiva en la guía de devolución entregada al operador logístico designado.
+                                            <br>
+                                            <br>
+                                            <i class="fa fa-check" aria-hidden="true"> </i> Si el destinatario no acepta la entrega de la mercadería
+                                            el comprador será responsable por el valor del envío, del cual no habrá reembolso.
+                                            <br>
+                                            <br>
+                                            <i class="fa fa-check" aria-hidden="true"> </i> Si la mercancía ha sido despachada y la dirección de
+                                            entrega está equivocada, incompleta o se necesita un cambio de dirección, existe una comisión por el valor
+                                            del envío, la cual puede ser cobrada por el operador logístico designado.
+                                            <br>
+                                            <br>
+                                            <i class="fa fa-check" aria-hidden="true"> </i> Si la mercancía no es reclamada o no existe una persona
+                                            encargada de recibirlo, el comprador es responsable por el pago del envió y/u otros cargos adicionales
+                                            para devolverla a la dirección de origen.
+                                </p>
+                                <br>
+                                <p>
+                                    <strong style="color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;">
+                                        <span style="font-size: 17.5pt; font-family: 'Arial','sans-serif'; color: darkorange;"><i
+                                                class="fa fa-location-arrow" aria-hidden="true"></i> ENVÍOS DE PEDIDOS AL INTERIOR DEL PERÚ</span>
+                                    </strong>
+                                </p>
+                                <p style="text-align: justify; background: white; margin: 0cm 0cm 7.5pt 0cm;">
+                                    <span style="color: #828282;">
+                                        <span style="font-size: 10pt;
+    font-family: Arial, sans-serif;
+    font-weight: 600;"><i class="fa fa-check" aria-hidden="true"> </i> Los tiempos de entrega por delivery a cualquier parte del Perú varían por la
+                                            localidad donde va los productos solicitados y la lejanía de la ciudad o destino a donde deberá ser
+                                            embarcado dicho producto.
+                                            <br>
+                                            <br>
+                                            <i class="fa fa-check" aria-hidden="true"> </i> Por el momento se realizan envíos a provincias con las
+                                            empresas de transporte locales y el pago es contra entrega (Pago destino).
+                                            <br>
+                                            <br>
+                                            
+                                </p>
                 </div>
-                <div class="modal-body">
-                    <p align="justify">Los productos comprados en solucionescctvysistemas.com pueden ser devueltos y
-                        reembolsados previa aceptación por SOLUCIONES CCTV & SISTEMAS S.A.C. de ser el caso, dentro del
-                        plazo de siete (7) días calendarios contados desde
-                        la fecha en que se recibió el/los producto/s.</p>
-                    <p align="justify">Para poder realizar el reembolso o cambio el producto debe:
-                    </p>
-                    <p align="justify">• Estar en las mismas condiciones en que se entregó, deberá conservar el embalaje
-                        original y estar acompañado de la factura de compra respectiva.</p>
-                    <p align="justify">El envío estará a cargo del Usuario. solucionescctvysistemas.com realizará la
-                        devolución del dinero, en caso que correspondiere mediante depósito del monto pagado por el
-                        producto en cuenta bancaria del Usuario o en efectivo
-                        en su Oficina Principal.
-                    </p>
-                    <p align="justify">Asimismo solucionescctvysistemas.com no garantiza una cantidad específica del
-                        stock de los productos publicitados en su portal web; esto debido a que puede darse el caso de
-                        compras simultáneas que podrían acabar con el stock
-                        de los productos para su venta.
-                    </p>
-                    <p align="justify">En tal sentido, dado el caso que no se cuente con el stock de alguno de los
-                        productos publicitados en el portal web y se haya realizado la compra del mismo se realizará el
-                        reintegro del monto pagado por el Usuario de la siguiente
-                        forma:
-                    </p>
-                    <p align="justify">• En caso el Usuario haya realizado una transferencia de dinero en la cuenta
-                        bancaria de SOLUCIONES CCTV & SISTEMAS S.A.C. desde una cuenta bancaria de su propiedad, ésta se
-                        obliga a realizar al reembolso del dinero pagado
-                        realizando un abono de dinero en la cuenta bancaria del Usuario en el lapso de 48 horas de haber
-                        realizado el pago del producto por el Usuario.</p>
-                    <p align="justify">• En caso el Usuario haya realizado un depósito de dinero en la cuenta bancaria
-                        de SOLUCIONES CCTV & SISTEMAS S.A.C. en efectivo, ésta se obliga a realizar al reembolso del
-                        dinero pagado en sus oficinas dentro del lapso de 48 horas de haber realizado
-                        el pago del producto por parte del Usuario.</p>
-                    <p align="justify">• En caso el Usuario haya usado como medio de pago una Tarjeta de Crédito o
-                        Débito, SOLUCIONES CCTV & SISTEMAS S.A.C. se obliga a tramitar la anulación de la operación
-                        frente a la empresa que procesa el medio de pago y a enviarle
-                        al Usuario mediante correo electrónico el Código de la Operación por concepto de Anulación
-                        dentro del lapso que la empresa estime conveniente.</p>
-                    <p align="justify">En caso de anulación de la compra una vez realizado el pago a través del uso de
-                        Tarjeta de Crédito o Débito por el Usuario, se aplicará una penalidad del 5% del monto de la
-                        transacción por comisiones o cargos por parte de la
-                        entidad emisora de la tarjeta más gastos administrativos.</p>
-
-
-                </div>
-
             </div>
         </div>
     </div>
-
-
-    <div class="modal fade" id="modal_como_envian" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" style="margin-top: 23px;" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    <h4 class="modal-title" id="myModalLabel">
-                        Términos y Condiciones
-                    </h4>
-                </div>
-                <div class="modal-body">
-
-                    <p align="justify">A continuación se describen los Términos y Condiciones Generales (en adelante:
-                        “Términos y Condiciones”) aplicables a la utilización del sitio del Portal WEB ubicado en el URL
-                        www.solucionescctvysistemas.com (en adelante denominado
-                        “SOLUCIONES CCTV & SISTEMAS S.A.C”) que SOLUCIONES CCTV & SISTEMAS S.A.C (en adelante denominada
-                        “SOLUCIONES CCTV & SISTEMAS S.A.C”) pone a disposición de los usuarios que ingresen a su web. La
-                        utilización del sitio web
-                        atribuye la condición de USUARIO del mismo, e implica la aceptación plena y sin reservas de
-                        todas y cada una de las disposiciones incluidas en estos Términos y Condiciones, siendo
-                        obligación del USUARIO leer atentamente
-                        los Términos y Condiciones antes de hacer uso del sitio y de su contenido. Por otro lado, el
-                        Usuario además certifica que es mayor de 18 años de edad. Aceptación de los Términos del
-                        Contrato Los siguientes son los términos
-                        de un convenio legal celebrado entre el Usuario y solucionescctvysistemas.com Al acceder,
-                        navegar, hojear, utilizar, realizar pedidos y/o utilizar todo el resto de funcionalidades que la
-                        WEB de solucionescctvysistemas.com
-                        ofrece, el Usuario admite haber leído y entendido estos términos, está de acuerdo en sujetarse a
-                        los mismos y a cumplir con todas las leyes y reglamentos aplicables. Todo el material, que
-                        incluye diseño, artes, imágenes,
-                        contenido, interfaz suministrado en solucionescctvysistemas.com está protegido por las leyes del
-                        Perú, incluyendo, más no limitado a, las leyes sobre derechos de autor y tratados
-                        internacionales. Sea el caso que el Usuario
-                        no esté de acuerdo con estos Términos y Condiciones, se le solicita deje de acceder y utilizar
-                        el Portal WEB de solucionescctvysistemas.com El Portal WEB de solucionescctvysistemas.com es una
-                        web controlada, administrada
-                        y operada por SOLUCIONES CCTV & SISTEMAS S.A.C desde sus oficinas ubicadas en Lima, Perú.
-                        SOLUCIONES CCTV & SISTEMAS S.A.C no se responsabiliza de la exposición y/o disponibilidad del
-                        material de solucionescctvysistemas.com
-                        en otros lugares, estando prohibido su acceso desde territorios donde su contenido sea ilegal
-                        y/o contrario a la legislación local. Aquellos USUARIOS que decidan ingresar a
-                        solucionescctvysistemas.com desde otros lugares
-                        lo harán bajo su propia iniciativa, riesgo y estricta responsabilidad, al sujetarse a las leyes
-                        de aquel territorio. Cualquier reclamo con relación a, y al uso de, solucionescctvysistemas.com
-                        y el material de su contenido,
-                        está regulado y circunscrito en estricto por las leyes del Perú. Modificaciones de los Términos
-                        de Uso SOLUCIONES CCTV & SISTEMAS S.A.C es libre de actualizar, modificar y/o revisar en
-                        cualquier momento sus Términos y Condiciones
-                        por medio de la actualización de esta publicación y sin la necesidad de avisos previos. El
-                        Usuario que utilice el Portal WEB solucionescctvysistemas.com conviene en darse por obligado por
-                        cualquiera de tales revisiones
-                        y/o actualizaciones, debiendo por ello visitar y navegar periódicamente por esta página para
-                        determinar los Términos y Condiciones vigentes en ese momento, a los cuales el Usuario se
-                        encuentra obligado. Disponibilidad del
-                        Portal Web El Usuario acepta y reconoce que solucionescctvysistemas.com puede no siempre estar
-                        disponible debido a dificultades técnicas o fallas de Internet, de los diversos proveedores con
-                        los que trabaja el alojamiento
-                        en servidores, los medios de pago, operaciones logísticas, entre otros, o por cualquier otro
-                        diverso motivo ajeno a SOLUCIONES CCTV & SISTEMAS S.A.C por ello es que SOLUCIONES CCTV &
-                        SISTEMAS S.A.C no garantiza al 100%
-                        la disponibilidad y continuidad del funcionamiento de solucionescctvysistemas.com; como tampoco
-                        garantiza al 100% su disponibilidad de uso y de los gráficos, mensajes, dibujos, medios de pago,
-                        archivos de sonido y/o imagen,
-                        fotografías, grabaciones, textos, funcionalidades, software y, en general, cualquier clase de
-                        material accesible a través de solucionescctvysistemas.com (en adelante, los “Contenidos”), para
-                        la realización de ninguna actividad
-                        en particular, ni su infalibilidad y, en particular, aunque no de modo exclusivo, que los
-                        Usuarios puedan efectivamente utilizar solucionescctvysistemas.com y los Contenidos. Ni
-                        SOLUCIONES CCTV & SISTEMAS S.A.C ni solucionescctvysistemas.com
-                        se responsabilizan por cualquier daño, perjuicio o pérdida en el equipo del Usuario originado
-                        por fallas en el sistema, servidor o en Internet. De los Contenidos SOLUCIONES CCTV & SISTEMAS
-                        S.A.C y solucionescctvysistemas.com
-                        no asumen responsabilidad de ninguna índole, si en razón del acceso a
-                        solucionescctvysistemas.com o por cualquier transferencia de datos, el equipo del Usuario se
-                        viese afectado por algún virus, o por la presencia de otros
-                        elementos en los contenidos que puedan producir alteraciones en su sistema informático,
-                        documentos electrónicos o ficheros del Usuario. SOLUCIONES CCTV & SISTEMAS S.A.C no garantiza al
-                        100% la exactitud, veracidad, exhaustividad
-                        y actualidad de la información contenida en solucionescctvysistemas.com, al cual en algunos
-                        casos puede contener datos inexactos, incorrectos y/o errores sustanciales o tipográficos. En
-                        consecuencia, SOLUCIONES CCTV & SISTEMAS
-                        S.A.C no asume responsabilidad alguna por los daños y perjuicios que puedan deberse a la falta
-                        de exactitud, veracidad, exhaustividad y actualidad de los Contenidos. SOLUCIONES CCTV &
-                        SISTEMAS S.A.C no se responsabiliza
-                        por los daños y perjuicios de toda naturaleza que puedan deberse a la transmisión, difusión,
-                        almacenamiento, puesta a disposición, recepción, obtención o acceso a los Contenidos, y en
-                        particular, aunque no de modo exclusivo,
-                        por los daños y perjuicios que puedan deberse a: El incumplimiento de la ley, la moral y las
-                        buenas costumbres generalmente aceptadas o el orden público como consecuencia de la transmisión,
-                        difusión, almacenamiento, puesta
-                        a disposición, recepción, obtención o acceso a los Contenidos. La infracción de los derechos de
-                        propiedad intelectual e industrial, de los secretos empresariales, de compromisos contractuales
-                        de cualquier clase, de los
-                        derechos al honor, a la intimidad personal y familiar y a la imagen de las personas, de los
-                        derechos de propiedad y de toda otra naturaleza pertenecientes a un tercero como consecuencia de
-                        la transmisión, difusión, almacenamiento,
-                        puesta a disposición, recepción, obtención o acceso a los Contenidos. La realización de actos de
-                        competencia desleal y publicidad ilícita como consecuencia de la transmisión, difusión,
-                        almacenamiento, puesta a disposición,
-                        recepción, obtención o acceso a los Contenidos. La inadecuación para cualquier clase de
-                        propósito y la defraudación de las expectativas generadas por los Contenidos. El incumplimiento,
-                        retraso en el cumplimiento, cumplimiento
-                        defectuoso o terminación por cualquier causa de las obligaciones contraídas por terceros y
-                        contratos realizados con terceros a través de o con motivo del acceso a los Contenidos. Los
-                        vicios y defectos de toda clase de los
-                        Contenidos transmitidos, d</section>
-
-                        </script>
-
-                        <!-- WhatsHelp.io widget -->
-                        <script type="text/javascript">
-                        (function() {
-                            var options = {
-                                facebook: "1626920177570816", // Facebook page ID
-                                whatsapp: "+51 986838333", // WhatsApp number
-                                line: "https://line.me/ti/p/9NRe_hdeb1", // Line QR code URL
-                                call_to_action: "Hola, Estamos en Linea las 24h!", // Call to action
-                                button_color: "#FF0000", // Color of button
-                                position: "right", // Position may be 'right' or 'left'
-                                order: "facebook,whatsapp,line;", // Order of buttons
-                            };
-                            var proto = document.location.protocol,
-                                host = "whatshelp.io",
-                                url = proto + "//static." + host;
-                            var s = document.createElement('script');
-                            s.type = 'text/javascript';
-                            s.async = true;
-                            s.src = url + '/widget-send-button/js/init.js';
-                            s.onload = function() {
-                                WhWidgetSendButton.init(host, proto, options);
-                            };
-                            var x = document.getElementsByTagName('script')[0];
-                            x.parentNode.insertBefore(s, x);
-                        })();
-                        </script>
-
-                        </script>
-                        <!-- /WhatsHelp.io widget -->ifundidos, almacenados, puestos a disposición o de otra forma
-                        transmitidos o puestos a disposición, recibidos, obtenidos o a los que se haya accedido a través
-                        de solucionescctvysistemas.com Derecho
-                        de Revocación de SOLUCIONES CCTV & SISTEMAS S.A.C SOLUCIONES CCTV & SISTEMAS S.A.C se reserva el
-                        derecho, en cualquier momento y sin necesidad de darle notificación previa a los Usuarios, de
-                        denegar o retirar el acceso
-                        a solucionescctvysistemas.com a cualquier Usuario, denegar el acceso a los Contenidos, o dar por
-                        concluida su calidad de Usuario, por violación de los Términos y Condiciones o las condiciones
-                        particulares que resulten de
-                        aplicación. Obligaciones del Usuario El Usuario se obliga a hacer un uso correcto de
-                        solucionescctvysistemas.com y de los Contenidos que contiene el Portal WEB. El Usuario se
-                        compromete a utilizar Magitech.pe y los Contenidos
-                        de conformidad con la ley, estos Términos y Condiciones, así como con la moral, buenas
-                        costumbres y el orden público. El Usuario se obliga a abstenerse de utilizar
-                        solucionescctvysistemas.com y los Contenidos con fines
-                        o efectos ilícitos, contrarios a lo establecido en estos Términos y Condiciones, lesivos de los
-                        derechos e intereses de terceros, o que de cualquier forma puedan dañar, inutilizar, sobrecargar
-                        o deteriorar los mismos, o
-                        impedir su normal utilización o disfrute por parte de los Usuarios. En especial, el Usuario se
-                        obliga a abstenerse de realizar cualquiera de los siguientes actos: a) Conducta general Queda
-                        prohibido: Utilizar solucionescctvysistemas.com
-                        directa o indirectamente, para violar cualquier ley aplicable a la República del Perú,
-                        cualquiera fuese su naturaleza, ya sea provincial, nacional o internacional. Enviar o transmitir
-                        material pornográfico, sexual u obsceno.
-                        Transmitir, distribuir o almacenar cualquier tipo de información, datos o materiales que violen
-                        leyes o regulaciones provinciales, nacionales o internacionales. Enviar o transmitir información
-                        cuyo contenido sea, directa
-                        o indirectamente, y sin que lo siguiente se considere limitativo, trasgresor, profano, abusivo,
-                        difamatorio y/o fraudulento, o que revele asuntos privados o personales que afecten a persona
-                        alguna, o de lo contrario violen
-                        los derechos de los demás. Acceder a solucionescctvysistemas.com utilizando un nombre o datos
-                        falsos, erróneos o inexistentes, ya sea como persona natural o jurídica. Enviar o transmitir
-                        material alguno que el Usuario no
-                        tenga derecho a transmitir con arreglo a la ley (ya sea de Copyright, marca registrada, secreto
-                        comercial, patentes u otros derechos de la propiedad de terceros) o con arreglo a relaciones
-                        contractuales o fiduciarias (tales
-                        como los contratos de no divulgación). Efectuar acciones que restrinjan, denieguen o impidan a
-                        cualquier individuo, grupo, entidad u organización, el uso de los Contenidos, productos o
-                        servicios ofrecidos a través de solucionescctvysistemas.com
-                        b) Seguridad Queda prohibido: Violar los sistemas de autenticación, verificación de identidad y
-                        seguridad del servidor, redes o cuentas de Usuarios; esto incluye y no se limita a tratar de
-                        acceder a datos no destinados
-                        al Usuario, intentar ingresar en el servidor o cuentas sin contar con la expresa autorización
-                        para hacerlo, o intentar probar la seguridad de las redes de SOLUCIONES CCTV & SISTEMAS S.A.C
-                        utilizando herramientas avanzadas.
-                        Intentar interrupciones en las comunicaciones de Internet, tales como alterar información de
-                        ruteo, sobrecargar deliberadamente un servicio, efectuar ataques informáticos a otras
-                        computadoras sobre Internet, entre otros.
-                        Utilizar cualquier programa, comando o grupo de comandos, o enviar mensajes de cualquier tipo,
-                        destinados a interferir con la sesión establecida por un Usuario en cualquier punto de Internet.
-                        Efectuar cualquier tipo de
-                        monitoreo que implique la intercepción de información no destinadas al Usuario. Enviar o
-                        transmitir archivos que contengan virus u otras características destructivas que puedan afectar
-                        de manera adversa el funcionamiento
-                        de una computadora, smarthphone, o equipo electrónico ajeno y/o puedan afectar el correcto
-                        funcionamiento de los mismos y/o de solucionescctvysistemas.com De las condiciones El acceso a
-                        ciertas páginas de solucionescctvysistemas.com
-                        no tendrá restricciones. Sin perjuicio de esto ciertas páginas o funciones de
-                        solucionescctvysistemas.com de acceso restringido, con lo cual sólo podrán acceder a las mismas
-                        aquel autorizado y registrado como Usuario por
-                        parte de SOLUCIONES CCTV & SISTEMAS S.A.C El Usuario puede registrarse en
-                        solucionescctvysistemas.com en cualquier momento, llenando los datos correspondientes que le
-                        sean solicitados al momento de la inscripción. El Usuario
-                        registrado debe asegurarse que los datos personales proporcionados al momento de efectuar la
-                        Solicitud de Registro o en cualquier otro momento sean correctos, verdaderos y completos. Al
-                        registrarse correctamente, se le
-                        informará al Usuario registrado vía correo electrónico la conformidad del registro. No obstante
-                        lo anterior, solucionescctvysistemas.com se reserva el derecho de verificar los datos del
-                        Usuario y de comprobar que no son
-                        verídicos para dar por terminado el registro. El Usuario registrado se obliga a preservar la
-                        confidencialidad de su contraseña. En consecuencia, el Usuario registrado será responsable por
-                        el acceso a solucionescctvysistemas.com
-                        y las operaciones que se realicen con su nombre de usuario y contraseña, y se obliga a
-                        indemnizar y mantener indemne a SOLUCIONES CCTV & SISTEMAS S.A.C y/o los demás Usuarios por todo
-                        costo, gasto, daño o perjuicio (incluyendo
-                        los honorarios de abogados) que SOLUCIONES CCTV & SISTEMAS S.A.C y/o los demás Usuarios pudieren
-                        tener que pagar o pudieren sufrir como consecuencia, directa o indirecta, de cualquier acceso a
-                        solucionescctvysistemas.com
-                        y/u operación realizada con su nombre de usuario y contraseña. SOLUCIONES CCTV & SISTEMAS S.A.C
-                        se reserva el derecho a modificar unilateralmente, en cualquier momento y sin aviso previo, la
-                        presentación y configuración
-                        de solucionescctvysistemas.com, así como las condiciones requeridas para utilizar
-                        solucionescctvysistemas.com Medios para la obtención de contenidos El Usuario deberá abstenerse
-                        de obtener e incluso de intentar obtener
-                        cualquier tipo de Contenido a través de solucionescctvysistemas.com, empleando para ello medios
-                        o procedimientos distintos a los que según los casos se hayan puesto a disposición o se hayan
-                        indicado para este efecto en
-                        las páginas web donde se encuentren o, en general, de los que se empleen habitualmente en
-                        Internet, siempre que no entrañen un riesgo de daño o inutilización de
-                        solucionescctvysistemas.com, o de los Contenidos. Uso correcto
-                        de los Contenidos El Usuario se obliga a usar los Contenidos de forma diligente, correcta y
-                        lícita y, en particular se compromete a abstenerse de: Utilizar los Contenidos de forma, con
-                        fines o efectos contrarios a la ley,
-                        a la moral y a las buenas costumbres generalmente aceptadas o al orden público. Reproducir o
-                        copiar, distribuir, permitir el acceso del público a través de cualquier modalidad de
-                        comunicación pública, transformar o modificar
-                        los Contenidos, a menos que se cuente con la autorización del titular de los correspondientes
-                        derechos o ello resulte legalmente permitido. Suprimir, eludir o manipular el “Copyright” y
-                        demás datos identificativos de los
-                        derechos de autor de SOLUCIONES CCTV & SISTEMAS S.A.C o de sus titulares incorporados a los
-                        Contenidos, así como los dispositivos técnicos de protección, las huellas digitales o
-                        cualesquiera mecanismos de información que
-                        pudieren contener los Contenidos. Emplear los Contenidos y, en particular, la información de
-                        cualquier clase obtenida a través de Magitech.pe, para comercializar o divulgar de cualquier
-                        modo dicha información. Indemnizaciones
-                        El Usuario defenderá y mantendrá indemne a SOLUCIONES CCTV & SISTEMAS S.A.C y sus controlantes,
-                        así como también a sus afiliadas, funcionarios, directores, empleados, representantes, presentes
-                        o futuros, contra todo daño
-                        y/o perjuicio, cualquiera fuese su naturaleza, inclusive los gastos razonables por honorarios de
-                        abogados, que pudiera surgir con motivo u ocasión de cualquier acción o demanda iniciada por un
-                        tercero como consecuencia
-                        del incumplimiento del Usuario de cualquiera de las cláusulas de los presentes Términos y
-                        Condiciones, o de la violación por el mismo de cualquier ley o derecho de un tercero por la
-                        utilización de solucionescctvysistemas.com
-                        y/o los Contenidos, cuando se deriven o sean ocasionados, directa o indirectamente, del
-                        incumplimiento del Usuario de cualquiera de las cláusulas de los presentes Términos y
-                        Condiciones, o de la violación por el mismo de
-                        cualquier ley o derecho de un tercero. En lo que respecta a la utilización de
-                        solucionescctvysistemas.com bajo exclusiva responsabilidad, el Usuario es consciente y acepta
-                        voluntariamente que el uso de la misma y sus Contenidos
-                        los realiza en todo caso bajo su única y exclusiva responsabilidad Restricciones de Uso Los
-                        derechos de autor de todo el material suministrado en solucionescctvysistemas.com son propiedad
-                        de SOLUCIONES CCTV & SISTEMAS S.A.C
-                        o del creador original de este material. Exceptuando lo expresamente estipulado en este
-                        documento, nada de este material puede ser copiado, reproducido, distribuido, vuelto a publicar,
-                        desplegado, anunciado o transmitido
-                        de ninguna manera o por ningún medio, incluyendo, más no limitado a, medios electrónicos,
-                        mecánicos, de fotocopiado, de grabación o de cualquier otra índole, sin el permiso previo por
-                        escrito de SOLUCIONES CCTV & SISTEMAS
-                        S.A.C o del titular de los derechos de autor. Se otorga permiso para desplegar en pantalla,
-                        copiar y distribuir el material de solucionescctvysistemas.com únicamente para uso personal no
-                        comercial, con la condición de que
-                        el Usuario no modifique el material y que conserve todas las leyendas de derechos de autor y de
-                        otro tipo de propiedad contenidas en este material. Este permiso termina automáticamente si el
-                        Usuario viola cualquiera de
-                        los Términos y Condiciones. A su terminación, el Usuario destruirá de manera inmediata cualquier
-                        material que haya reproducido o impreso. El Usuario tampoco puede, sin el permiso de SOLUCIONES
-                        CCTV & SISTEMAS S.A.C, hacer
-                        réplicas en otro servidor de cualquier material contenido en solucionescctvysistema.com
-                        Cualquier uso no autorizado de cualquier material contenido en solucionescctvysistemas.com puede
-                        constituir una violación de las leyes
-                        de derechos de autor, de las leyes de marcas comerciales, de las leyes de privacidad y
-                        publicidad y de las leyes y los reglamentos de comunicaciones. Procedimiento de cambios,
-                        devoluciones y reembolsos Los productos comprados
-                        en solucionescctvysistemas.com pueden ser devueltos y reembolsados previa revisión técnica o
-                        aceptación por SOLUCIONES CCTV & SISTEMAS S.A.C de ser el caso, dentro del plazo de siete (7)
-                        días calendarios contados desde
-                        la fecha en que se recibió el/los producto/s. Para poder realizar el reembolso o cambio el
-                        producto debe: Estar en las mismas condiciones en que se entregó, deberá conservar el embalaje
-                        original y estar acompañado de la
-                        factura de compra respectiva. El envío estará a cargo del Usuario. solucionescctvysistemas.com
-                        realizará la devolución del dinero, en caso que correspondiere mediante depósito del monto
-                        pagado por el producto en cuenta
-                        bancaria del Usuario o en efectivo en su Oficina Principal. Asimismo solucionescctvysistemas.com
-                        no garantiza una cantidad específica del stock de los productos publicitados en su portal web;
-                        esto debido a que puede darse
-                        el caso de compras simultáneas que podrían acabar con el stock de los productos para su venta.
-                        En tal sentido, dado el caso que no se cuente con el stock de alguno de los productos
-                        publicitados en el portal web y se haya
-                        realizado la compra del mismo se realizará el reintegro del monto pagado por el Usuario de la
-                        siguiente forma: En caso el Usuario haya realizado una transferencia de dinero en la cuenta
-                        bancaria de SOLUCIONES CCTV & SISTEMAS
-                        S.A.C desde una cuenta bancaria de su propiedad, ésta se obliga a realizar al reembolso del
-                        dinero pagado realizando un abono de dinero en la cuenta bancaria del Usuario en el lapso de 48
-                        horas de haber realizado el pago
-                        del producto por el Usuario. En caso el Usuario haya realizado un depósito de dinero en la
-                        cuenta bancaria de SOLUCIONES CCTV & SISTEMAS S.A.C en efectivo, ésta se obliga a realizar al
-                        reembolso del dinero pagado en sus
-                        oficinas dentro del lapso de 48 horas de haber realizado el pago del producto por parte del
-                        Usuario. En caso el Usuario haya usado como medio de pago una Tarjeta de Crédito o Débito,
-                        SOLUCIONES CCTV & SISTEMAS S.A.C se
-                        obliga a tramitar la anulación de la operación frente a la empresa que procesa el medio de pago
-                        y a enviarle al Usuario mediante correo electrónico el Código de la Operación por concepto de
-                        Anulación dentro del lapso que
-                        la empresa estime conveniente. En caso de anulación de la compra una vez realizado el pago a
-                        través del uso de Tarjeta de Crédito o Débito por el Usuario, se aplicará una penalidad del 5%
-                        del monto de la transacción por
-                        comisiones o cargos por parte de la entidad emisora de la tarjeta más gastos administrativos.
-                        Despachos de los Productos Los productos adquiridos a través del sitio se sujetarán a las
-                        condiciones de despacho y entrega elegidas
-                        por el Usuario y disponibles en solucionescctvysistemas.com. La información del lugar de envío
-                        es de exclusiva responsabilidad del Usuario. Los plazos elegidos para el despacho y entrega, se
-                        cuentan desde que el Usuario
-                        haya validado la orden de compra y el medio de pago utilizado, y se consideran días hábiles para
-                        el cumplimiento de dicho plazo. solucionescctvysistemas.com comunicará por mail a los
-                        compradores los datos para que pueda
-                        realizar el seguimiento del estado del envío por Internet. Si el Usuario y/o titular consignado
-                        en la información de envío y datos de facturación del comprobante de compra se encontrara
-                        ausente cuando se le visita para
-                        dejar el pedido, nuestro transportista dejará un aviso en el que figure la hora de la visita. En
-                        caso de que por segunda vez no se encuentre, el envío será reintegrado a
-                        solucionescctvysistemas.com, debiendo el Usuario
-                        ponerse en contacto con nuestras oficinas para coordinar una nueva entrega cuyo costo estará a
-                        exclusivo cargo del Usuario. Jurisdicción y Competencia Cualquier divergencia sobre la validez,
-                        existencia, interpretación,
-                        cumplimiento, incumplimiento o ejecución de estos Términos y Condiciones será dirimida
-                        exclusivamente ante la jurisdicción de los jueces y tribunales del distrito judicial de Lima
-                        Cercado, especializados en lo comercial.
-                        Marcas Comerciales Las marcas comerciales, las marcas de servicio y los logos (en adelante
-                        "Marcas Comerciales") usados y desplegados en solucionescctvysistemas.com son registradas y no
-                        registradas de SOLUCIONES CCTV &
-                        SISTEMAS S.A.C y otros. Nada en solucionescctvysistemas.com deberá ser interpretado como
-                        concesión, por implicación, por exclusión, o de ninguna otra manera, de ninguna licencia o
-                        derecho de uso de cualquier Marca Comercial
-                        desplegada en solucionescctvysistemas.com, sin el permiso por escrito del titular de los
-                        derechos de la Marca Comercial. SOLUCIONES CCTV & SISTEMAS S.A.C hace cumplir de manera enérgica
-                        sus derechos de propiedad intelectual
-                        en toda la extensión de la ley. Los nombres de las marcas usadas y desplegadas en
-                        solucionescctvysistemas.com, sea registradas y no registradas de SOLUCIONES CCTV & SISTEMAS
-                        S.A.C, o el logo de SOLUCIONES CCTV & SISTEMAS
-                        S.A.C, no pueden ser usados de manera alguna, incluyendo anuncios o publicidad relacionados con
-                        la distribución del material en solucionescctvysistemas.com, sin permiso previo por escrito.
-                        SOLUCIONES CCTV & SISTEMAS S.A.C
-                        prohíbe el uso de los logos de su propiedad en forma de enlace ("hot" link) a cualquiera de los
-                        sitios de SOLUCIONES CCTV & SISTEMAS S.A.C, a menos que el establecimiento de un enlace de tal
-                        naturaleza sea aprobado por
-                        SOLUCIONES CCTV & SISTEMAS S.A.C, Responsabilidad Limitada Bajo ninguna circunstancia,
-                        incluyendo, pero no limitando a, negligencia, será SOLUCIONES CCTV & SISTEMAS S.A.C o
-                        solucionescctvysistemas.com responsable por cualquier
-                        daño directo, indirecto, especial, incidental, consecuente, incluyendo, mas no limitado a,
-                        pérdida de información o utilidades, resultado del uso, o la incapacidad para usar el material
-                        en la misma, aún en el caso en que
-                        SOLUCIONES CCTV & SISTEMAS S.A.C o un representante autorizado de SOLUCIONES CCTV & SISTEMAS
-                        S.A.C haya sido puesto al tanto de la posibilidad de tal daño. En el caso en que el uso del
-                        material de Magitech.pe dé como resultado
-                        la necesidad de dar servicio a, reparar o corregir un equipo o información, el Usuario deberá
-                        asumir cualquier costo derivado por ello. Aplicación Los presentes Términos y Condiciones no
-                        podrán ser interpretados como un
-                        contrato de sociedad, mandato, agencia, y no generan ningún tipo de relación entre SOLUCIONES
-                        CCTV & SISTEMAS S.A.C y el Usuario. Si alguna de las condiciones que anteceden fuera declarada
-                        nula, dicha nulidad no afectará
-                        en modo alguno la validez o exigibilidad del resto de las condiciones previstas en estos
-                        Términos y Condiciones. Estos Términos y Condiciones no podrán ser enmendados o modificados por
-                        el Usuario, a excepción de que sea
-                        por medio de un documento escrito y firmado tanto por el Usuario como por el representante legal
-                        de SOLUCIONES CCTV & SISTEMAS S.A.C. La falta de acción de SOLUCIONES CCTV & SISTEMAS S.A.C con
-                        respecto a una violación de
-                        los Términos y Condiciones por parte del Usuario u otros, no afecta el derecho de SOLUCIONES
-                        CCTV & SISTEMAS S.A.C de actuar frente a una violación posterior y/o similar. Los acápites de
-                        los presentes Términos y Condiciones
-                        están puestos únicamente como referencia, y de ninguna manera definen, limitan, delimitan o
-                        describen el ámbito o la extensión de dicha sección. SOLUCIONES CCTV & SISTEMAS S.A.C tiene la
-                        facultad de actualizar estos términos
-                        en cualquier momento. Este acuerdo será gobernado e interpretado de acuerdo a las leyes del
-                        Perú, sin dar efecto a cualquier principio de conflictos de ley. Si alguna disposición de este
-                        acuerdo es ilegal, o presenta un
-                        vacío, o por cualquier razón resulta inaplicable, la misma deberá ser interpretada centro del
-                        marco del acuerdo y en cualquier caso no afectará la validez y la aplicabilidad de las
-                        provisiones restantes. Contáctenos Si
-                        desea contactarnos por cualquier motivo y conocer más sobre nuestras prácticas, por favor
-                        visítenos a la siguiente dirección: Av. el Sol / Av. Revolución Lt. 13 - Mz. H - Gp. 15 - St. 1
-                        Villa el Salvador - Lima - Peru ;
-                        También puede escribirnos a: soporte@solucionescctvysistemas.com o comunicarse con nuestro Call
-                        Center al 986838333.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-
     <div class="modal fade" id="modal_tiene_garantia" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" style="margin-top: 23px;" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                    <h4 class="modal-title" id="myModalLabel">
-                        Garantías</h4>
-                </div>
+        <div class="modal-dialog" style="margin-top: 17px;" role="document">
+            <div class="modal-content" style="padding: 20px 20px;border:1px">
+            <p>
+                        <strong style="color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;">
+                            <span style="font-size: 17.5pt; font-family: 'Arial','sans-serif'; color: darkorange;"><i class="fa fa-location-arrow"
+                                    aria-hidden="true"></i>  GARANTIAS </span>
+                        </strong>
+                    </p>
+                    
+               
                 <div class="modal-body">
                     <p align="justify">La Garantía de su Equipo adquirido en SOLUCIONES CCTV & SISTEMAS S.A.C cubre mano
                         de obra y cambio o reparación de partes de la configuración original del Equipo (Hardware) que
@@ -1769,9 +1739,6 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
             </div>
         </div>
     </div>
-
-    <!-- sucribte  -->
-
     </section>
 
 
