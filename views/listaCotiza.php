@@ -109,17 +109,17 @@ Licencia: Proveedor de servicios
                         <!-- begin breadcrumb -->
                         <ol class="breadcrumb pull-right">
                             <li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
-                            <li class="breadcrumb-item"><a href="javascript:;">Inventario</a></li>
-                            <li class="breadcrumb-item active">Agregar Categoria</li>
+                            <li class="breadcrumb-item"><a href="javascript:;">Cotizacion</a></li>
+                            <li class="breadcrumb-item active">Lista de Cotizacion</li>
                         </ol>
                         <!-- end breadcrumb -->
                         <!-- begin page-header -->
-                        <h1 class="page-header">Agregar Categoria <small> Modulo de Almacen</small></h1>
+                        <h1 class="page-header">Lista de Cotizacion <small> Modulo de Cotizacion</small></h1>
 
 
 
-                        <?php include '../process/categoria/actualizarCat_inv.php'; ?>
-
+                        <?php include '../process/cotiza/cotiza.php'; ?>
+                       
 
 
                         <?php include '../inc/scripts_interno.php' ?>

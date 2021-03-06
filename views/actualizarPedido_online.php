@@ -102,19 +102,60 @@ Licencia: Proveedor de servicios
 			<!-- begin breadcrumb -->
 			<ol class="breadcrumb pull-right">
 				<li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
-				<li class="breadcrumb-item"><a href="javascript:;">Inventario</a></li>
-				<li class="breadcrumb-item active">Añadir Articulos</li>
+				<li class="breadcrumb-item"><a href="javascript:">Ordenes</a></li>
+				<li class="breadcrumb-item active">Ver Orden</li>
 			</ol>
 			<!-- end breadcrumb -->
 			<!-- begin page-header -->
-			<h1 class="page-header">Actualizar Cotizacion<small> Modulo de Cotizaciones</small></h1>
+			<h1 class="page-header">Actualizar Ordenes<small> Modulo de Ordenes</small></h1>
             
-             
-        
-       			<?php include '../process/pedido/actualizar_online.php'; ?>
+			<?php 
+
+             $NumPedido= $_GET['id_cotizacion'];
+			 $type= $_GET['type'];
+			 
+			?>	
+        <div id="caja_orden">
+		
+		
+		</div>
+       			
+						
+
+<!--
+<button type="submit" class="btn btn-sm btn-info button-UPPE" value="res-update-pedido-'.$fila['id_cotizacion'].'"><i style="color:#FFF" class="glyphicon glyphicon-print"></i>&nbsp;&nbsp;&nbsp;Imprimir Cotizacion</button>
+-->
+				  
     
     
    <?php include '../inc/scripts_interno.php' ?>
+   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+
+
+
+		
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Agregar</button>
+      </div>
+    </div>
+  </div>
+</div>
+	<script>
+	
+	
+	</script>
 
 
 </body>

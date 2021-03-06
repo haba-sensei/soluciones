@@ -19,7 +19,7 @@
 					  
 						    <li style=" letter-spacing: 3px;"> <a href="addStock_tec.php"><i class="fa fa-cubes"></i>&nbsp;Añadir Arti.</a></li>
 						    <li  style=" letter-spacing: 3px;"><a href="actualizarStock.php"><i class="fas fa-search"></i>&nbsp;Ver Articulos.</a></li>
-						   
+						    <li  style=" letter-spacing: 3px;"><a href="actualizarStockAgotado.php"><i class="fas fa-search"></i>&nbsp;Sin Stock.</a></li>
 						
 						
 						
@@ -43,7 +43,7 @@
 						<a href="javascript:;">
 					        <b class="caret"></b>
 						    <i class="fa fa-list"></i>
-						    <span style="color:white; letter-spacing: 3px;" >Pedidos</span>
+						    <span style="color:white; letter-spacing: 3px;" >Ordenes</span>
 					    </a>
 						<ul class="sub-menu">
 						    <li style="color:white; letter-spacing: 3px;"><a href="listaPedidos.php"><i class="fas fa-plus-square"></i>&nbsp;Pedidos.</a></li>

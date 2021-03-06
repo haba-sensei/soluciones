@@ -103,19 +103,12 @@
 						$product_medio=$ordenP['medio'];
 						$igv_final=$ordenP['impuesto'];
 						
-						$product_price_total=($product_price_unitario); 
-
 						$product_soles_ = number_format($product_price_unitario * $globalTasaCambio_dolar, 2); 
-						
-						$subtotal_f = ($product_price_total * $product_qty) / 1.18;
-						$subtotal = number_format($subtotal_f * $globalTasaCambio_dolar, 2); 
+						$total_indi =  str_replace(',', '',  $product_soles_ );
+						$subtotal = ($total_indi * $product_qty);
 
-						$subtotal_2 = number_format($product_soles_ * $product_qty, 2);
-						$total = number_format($subtotal + $total, 2);
-						
-						$igv_format= number_format($total * 1.18, 2);
-						$igv = number_format($igv_format - $total, 2);
-						$total_final = number_format($total + $igv, 2);
+   						$total = $subtotal  + $total; 
+						 
 						}
 						
 						
@@ -129,7 +122,7 @@
 						"Codigo"     => $product_code,
 						"Detalles"  => $product_name." - ".$modelo_producto." - ".$marca_producto,
 						"Precio Unit"      => $product_soles_,
-						"Total"          => $subtotal_2 );
+						"Total"          => $subtotal );
 				$size = $pdf->addLine( $y, $line );
 				$y   += $size + 2;
 				
@@ -156,10 +149,10 @@
 					break;
 				}
 
-				$total_final = number_format($total_final + $total_delivery, 2);
+				
 				
 				$pdf->SetFont('Arial','B',12);
-				$num_letra = strtoupper(numtoletras($total_final));
+				$num_letra = strtoupper(numtoletras($total));
 				
 				$pdf->fact_dev12(utf8_decode("Son: "), $num_letra );	
 				$pdf->Code39(10,210, $cod);
@@ -173,7 +166,7 @@
 				$pdf->addCadreEurosFrancs3();
 				$pdf->addCadreEurosFrancs4();
 				
-				unset($_SESSION["products"]);
+				// unset($_SESSION["products"]);
 				 	
 		
 				

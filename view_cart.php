@@ -419,8 +419,9 @@ include_once("library/config.inc.php");
 
     .close-btm {
         position: absolute;
-        top: 54%;
-        right: 60%;
+    top: 54%;
+    right: 80px;
+    display: inline-flex;
     }
 
     .close-btm h5 {
@@ -651,8 +652,8 @@ include_once("library/config.inc.php");
                                         $product_qty = $product["product_qty"];
                                         $modelo_prod = $product["Modelo"];
                                         $marca_prod =  $product["Marca"];
-                                        $product_price = number_format($product_price_dolares * $globalTasaCambio_dolar, 2); 
-
+                                        $product_price = number_format($product_price_dolares * $globalTasaCambio_dolar, 2, '.', ''); 
+                                            
 
                                         $ordenU =  ejecutarSQL::consultar("SELECT `producto`.*, `perfil`.* FROM `producto` , `perfil`;");
 
@@ -660,11 +661,15 @@ include_once("library/config.inc.php");
 
                                             $product_ganancia = $ordenP['ganancia'];
                                             $product_medio = $ordenP['medio']; 
-                                            $product_price_total = ($product_price * ($product_ganancia + $product_medio) / 100 + $product_price);
+                                            $product_price_total = ($product_price);
                                             $igv_total = ($product_price_total * $product_qty) / 1.18;
                                         }
                                         $subtotal = ($product_price_total * $product_qty);
                                         $total = ($total + $subtotal);
+                                        $total_r = $product_price * $product_qty;
+                                        
+                                        $total_indi =  str_replace(',', '',  $total_r );
+                                        // $total_indi = $product_price * $product_qty;
                                     ?>
 
                                     <input type="hidden" name="total" value="<?php echo $total ?>">
@@ -694,16 +699,19 @@ include_once("library/config.inc.php");
                                             </div>
                                         </td>
                                         <td class="cakes price" style="width: 20%;">
-                                            <?php echo $currency." ".$product_price_total; ?></h4>
+                                            <?php echo $currency." ".$product_price; ?></h4>
 
                                         </td>
                                         <td class="cakes top-remove" style="width: 20%;">
                                             <h4><?php echo $currency;
-                                                    echo sprintf("&nbsp; %01.2f", number_format($product_price_total * $product_qty, 2)); ?></h4>
+                                                    echo  $total_indi; ?></h4>
                                             <div class="close-btm">
 
-                                                <a href="javascript:" align="left" class="remove-item" data-code="<?php echo $product_code; ?>">
+                                                <a href="javascript:" align="left" class="remove-item" style="margin-right: 6px;" data-code="<?php echo $product_code; ?>">
                                                     <h5>Remover</h5>
+                                                </a>
+                                                <a href="<?php echo "infoProd.php?CodigoProd=".$product_code; ?>" align="left" class="" >
+                                                    <h5>Ver Prod</h5>
                                                 </a>
 
 
@@ -727,7 +735,7 @@ include_once("library/config.inc.php");
                                 $grand_total = number_format($total + $tax_amount, 2);
                             }
                             foreach ($tax_item as $key => $value) {
-                                $list_tax .= $currency." ".number_format($value, 2) . '<br />';
+                                $list_tax .= $currency." ".$value. '<br />';
                             }
                             //$shipping_cost = ($shipping_cost)?'Costo de envio : '.$currency. sprintf("%01.2f", $shipping_cost).'<br />':'';	
                             //$shipping_cost
@@ -900,9 +908,61 @@ include_once("library/config.inc.php");
                                 </select>
                             </div>
 
+                            <div class="form-group col-md-3 col-sm-3 col-xs-6 " style="padding-left: 50px;">
+                                <label style="float:left">Forma de Entrega <sup>*</sup></label>
+                                <select class="form-control" style="font-size: 15px;" name="F_entrega">
+                                    
+                                    <option value="Tienda">Despacho en Tienda</option>
+                                    <option value="Lima">Delivery Lima </option>
+                                    <option value="Provincia">Delivery Provincia </option>
 
+
+                                </select>
+
+                            </div>
+
+                            <div class="form-group col-md-3 col-sm-3 col-xs-6 " style="padding-left: 50px;">
+                                <label style="float:left">Forma de Entrega <sup>*</sup></label>
+                                <select class="form-control" style="font-size: 15px;" name="F_entrega">
+                                    
+                                    <option value="Tienda">Despacho en Tienda</option>
+                                    <option value="Lima">Delivery Lima </option>
+                                    <option value="Provincia">Delivery Provincia </option>
+
+
+                                </select>
+
+                            </div>
+
+                            <div class="form-group col-md-3 col-sm-3 col-xs-6 " style="padding-left: 50px;">
+                                <label style="float:left">Forma de Entrega <sup>*</sup></label>
+                                <select class="form-control" style="font-size: 15px;" name="F_entrega">
+                                    
+                                    <option value="Tienda">Despacho en Tienda</option>
+                                    <option value="Lima">Delivery Lima </option>
+                                    <option value="Provincia">Delivery Provincia </option>
+
+
+                                </select>
+
+                            </div>
+
+                            <div class="form-group col-md-3 col-sm-3 col-xs-6 " style="padding-left: 50px;">
+                                <label style="float:left">Forma de Entrega <sup>*</sup></label>
+                                <select class="form-control" style="font-size: 15px;" name="F_entrega">
+                                    
+                                    <option value="Tienda">Despacho en Tienda</option>
+                                    <option value="Lima">Delivery Lima </option>
+                                    <option value="Provincia">Delivery Provincia </option>
+
+
+                                </select>
+
+                            </div>
 
                         </div>
+
+                        
 
 
                         <?php
@@ -922,6 +982,10 @@ include_once("library/config.inc.php");
                         <input type="hidden" name="CodCotiza" value="<?php echo $codigo1 ?>">
                         <input type="hidden" name="fecha" min="<?php echo date("Y-m-d"); ?>" max="<?php echo date("Y-m-d"); ?>"
                             value="<?php echo date("Y-m-d"); ?>">
+
+
+
+                           
 
                     </div>
 
@@ -1038,12 +1102,13 @@ include_once("library/config.inc.php");
                                                 </li>
 
                                                 <li class="">
-                                                    <div class="radio-option" id="aca_cotiza"
-                                                        style="text-align: -webkit-center; padding-top: 23px; margin-bottom: -7px;">
-                                                        <input type="button"
+                                                <input type="button"
                                                             style="position: absolute; bottom: -126px; padding: 16px; right: 450px; width: 22%;"
                                                             name="cotizacion" class=" action-button" onclick="formSend('cotizacion')"
                                                             style="width:25%" value="Generar Cotizacion" />
+                                                    <div class="radio-option" id="aca_cotiza"
+                                                        style="text-align: -webkit-center; padding-top: 23px; margin-bottom: -7px;">
+                                                        
 
 
                                                     </div>
@@ -1314,7 +1379,7 @@ include_once("library/config.inc.php");
     function ajusteBox_final() {
 
         $('.init_3').removeClass("init_3").addClass("init_2");
-
+        alert("Todos los Campos son obligatorios");
         
 
         window.scroll({

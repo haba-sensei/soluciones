@@ -70,148 +70,270 @@ $(document).ready(function() {
 <script src="../assets/js/admin.js"></script>
 <script>
 $(document).ready(function(){
-    
-    $('#example2').DataTable({
-        "bProcessing": true,
-         "serverSide": true,
-         "ajax":{
-            url :"../library/dataTablesProdAgotado.php", // json datasource
-            type: "post",  // type of method  , by default would be get
-            error: function(){  // error handling code
-              console.log("error");
-            }
-          }
-        });   
-       
-})
-// $('#example2').DataTable({
-    //     "processing": true,
-    //     "serverSide": true,
-    //     "searching": true,
-    //     "sAjaxSource": "../process/producto/actualizarStck.php",
-    //     "responsive": true,
-    //     "iDisplayLength": "5",
-    //     "aLengthMenu": [5, 50, 100, 150, 200, 250],
-    //     "lengthMenu": false,
-    //     "columns": [{
-    //             "sName": "Imagen",
-    //             "bSearchable": false,
-    //             "bSortable": false,
-    //             "mRender": function(data, type, full) {
+     
+$('#example2').DataTable({
+        "processing": true,
+        "serverSide": true,
+        "searching": true,
+        "sAjaxSource": "../process/producto/actualizarStck.php",
+        "responsive": false,
+        "iDisplayLength": "5",
+        "aLengthMenu": [5, 50, 100, 150, 200, 250],
+        "lengthMenu": false,
+        "columns": [{
+                "sName": "Imagen",
+                "bSearchable": false,
+                "bSortable": false,
+                "mRender": function(data, type, full) {
                      
-    //                 return '<img src=../assets/img-products/' + full[0] + ' width="50" height="50" />'
-    //             }
-    //         },
-    //         {
-    //             "sName": "CodigoProd",
-    //             "bSearchable": true,
-    //             "bSortable": true,
-    //             "mRender": function(data, type, full) {
-    //                 return full[1]
-    //             }
-    //         },
-    //         {
-    //             "sName": "NombreProd",
-    //             "bSearchable": true,
-    //             "bSortable": true,
-    //             "mRender": function(data, type, full) {
-    //                 return full[2]
-    //             }
-    //         },
-    //         {
-    //             "sName": "Modelo",
-    //             "bSearchable": true,
-    //             "bSortable": true,
-    //             "mRender": function(data, type, full) {
-    //                 return full[3]
-    //             }
-    //         },
-    //         {
-    //             "sName": "Marca",
-    //             "bSearchable": true,
-    //             "bSortable": true,
-    //             "mRender": function(data, type, full) {
-    //                 return full[4]
-    //             }
-	// 		},
-    //         {
-    //             "sName": "Detalle",
-    //             "bSearchable": true,
-    //             "bSortable": true,
-    //             "mRender": function(data, type, full) {
-    //                 return full[5]
-    //             }
-    //         },
-    //         {
-    //             "sName": "Compra",
-    //             "bSearchable": true,
-    //             "bSortable": true,
-    //             "mRender": function(data, type, full) {
+                    return '<img src=../assets/img-products/' + full[0] + ' width="50" height="50" />'
+                }
+            },
+            {
+                "sName": "CodigoProd",
+                "bSearchable": true,
+                "bSortable": true,
+                "mRender": function(data, type, full) {
+                    return full[1]
+                }
+            },
+            {
+                "sName": "NombreProd",
+                "bSearchable": true,
+                "bSortable": true,
+                "mRender": function(data, type, full) {
+                    return full[2]
+                }
+            },
+            {
+                "sName": "Modelo",
+                "bSearchable": true,
+                "bSortable": true,
+                "mRender": function(data, type, full) {
+                    return full[3]
+                }
+            },
+            {
+                "sName": "Marca",
+                "bSearchable": true,
+                "bSortable": true,
+                "mRender": function(data, type, full) {
+                    return full[4]
+                }
+			},
+            {
+                "sName": "Detalle",
+                "bSearchable": true,
+                "bSortable": true,
+                "mRender": function(data, type, full) {
+                    return full[5]
+                }
+            },
+            {
+                "sName": "Compra",
+                "bSearchable": true,
+                "bSortable": true,
+                "mRender": function(data, type, full) {
 
-    //                 var taza_dia = document.getElementById("tasa_cambio_dia");
-	// 				var ope =  full[7] / taza_dia.value;
-	// 				var result = parseFloat(ope).toFixed(2);
-	// 				return '$ '+result+'<br>'+'S/  '+full[7]
-    //             }
-    //         },
-    //         {
-    //             "sName": "Venta",
-    //             "bSearchable": false,
-    //             "bSortable": false,
-    //             "mRender": function(data, type, full) {
+                    var taza_dia = document.getElementById("tasa_cambio_dia");
+					var ope =  full[7] / taza_dia.value;
+					var result = parseFloat(ope).toFixed(2);
+					return '$ '+result+'<br>'+'S/  '+full[7]
+                }
+            },
+            {
+                "sName": "Venta",
+                "bSearchable": false,
+                "bSortable": false,
+                "mRender": function(data, type, full) {
 
-    //                 var taza_dia = document.getElementById("tasa_cambio_dia");
-	// 				var ope =  full[8] / taza_dia.value;
-	// 				var result = parseFloat(ope).toFixed(2);
-	// 				return '$ '+result+'<br>'+'S/  '+full[8]
-    //             }
-    //         },
-    //         { 
-    //             "sName": "Categoria",
-    //             "bSearchable": true,
-    //             "bSortable": true,
-    //             "mRender": function(data, type, full) {
+                    var taza_dia = document.getElementById("tasa_cambio_dia");
+					var ope =  full[8] / taza_dia.value;
+					var result = parseFloat(ope).toFixed(2);
+					return '$ '+result+'<br>'+'S/  '+full[8]
+                }
+            },
+            { 
+                "sName": "Categoria",
+                "bSearchable": true,
+                "bSortable": true,
+                "mRender": function(data, type, full) {
 
 					
-    //                 return full[11]
-    //             }
-    //         },
-    //         {
-    //             "sName": "Stock",
-    //             "bSearchable": true,
-    //             "bSortable": true,
-    //             "mRender": function(data, type, full) {
+                    return full[11]
+                }
+            },
+            {
+                "sName": "Stock",
+                "bSearchable": true,
+                "bSortable": true,
+                "mRender": function(data, type, full) {
                  
                   
-    //                 return full[10]
+                    return full[10]
                 
                     
-    //             }
-    //         },
-    //         {
-    //             "sName": "Peso",
-    //             "bSearchable": false,
-    //             "bSortable": false,
-    //             "mRender": function(data, type, full) {
+                }
+            },
+            {
+                "sName": "Peso",
+                "bSearchable": false,
+                "bSortable": false,
+                "mRender": function(data, type, full) {
 
-    //                 return full[6]
-    //             }
-    //         },
-    //         {
-    //             "sName": "Opciones",
-    //             "bSearchable": false,
-    //             "bSortable": false,
-    //             "mRender": function(data, type, full) {
+                    return full[6]
+                }
+            },
+            {
+                "sName": "Opciones",
+                "bSearchable": false,
+                "bSortable": false,
+                "mRender": function(data, type, full) {
                     
-    //                 return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='updateInventario.php?CodigoProd="+ full[1] +"'> <i style='color:#FFF' class='fa fa-edit'></i> Editar </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' onclick='return confirm('estas seguro de eliminar?');' href='delprod.php?CodigoProd="+ full[1] +"'> <i style='color:#FFF' class='fa fa-trash'></i> Eliminar </a>"
+                    return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='updateInventario.php?CodigoProd="+ full[1] +"'> <i style='color:#FFF' class='fa fa-edit'></i> Editar </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' onclick='return confirm('estas seguro de eliminar?');' href='delprod.php?CodigoProd="+ full[1] +"'> <i style='color:#FFF' class='fa fa-trash'></i> Eliminar </a>"
                     
                
                
-    //             }
-    //         } 
-    //     ] 
+                }
+            } 
+        ] 
 
-    // });
+    });
+
+    $('#agotado_table').DataTable({
+        "processing": true,
+        "serverSide": true,
+        "searching": true,
+        "sAjaxSource": "../process/producto/actualizarStckAgotado.php",
+        "responsive": false,
+        "iDisplayLength": "5",
+        "aLengthMenu": [5, 50, 100, 150, 200, 250],
+        "lengthMenu": false,
+        "columns": [{
+                "sName": "Imagen",
+                "bSearchable": false,
+                "bSortable": false,
+                "mRender": function(data, type, full) {
+                     
+                    return '<img src=../assets/img-products/' + full[0] + ' width="50" height="50" />'
+                }
+            },
+            {
+                "sName": "CodigoProd",
+                "bSearchable": true,
+                "bSortable": true,
+                "mRender": function(data, type, full) {
+                    return full[1]
+                }
+            },
+            {
+                "sName": "NombreProd",
+                "bSearchable": true,
+                "bSortable": true,
+                "mRender": function(data, type, full) {
+                    return full[2]
+                }
+            },
+            {
+                "sName": "Modelo",
+                "bSearchable": true,
+                "bSortable": true,
+                "mRender": function(data, type, full) {
+                    return full[3]
+                }
+            },
+            {
+                "sName": "Marca",
+                "bSearchable": true,
+                "bSortable": true,
+                "mRender": function(data, type, full) {
+                    return full[4]
+                }
+			},
+            {
+                "sName": "Detalle",
+                "bSearchable": true,
+                "bSortable": true,
+                "mRender": function(data, type, full) {
+                    return full[5]
+                }
+            },
+            {
+                "sName": "Compra",
+                "bSearchable": true,
+                "bSortable": true,
+                "mRender": function(data, type, full) {
+
+                    var taza_dia = document.getElementById("tasa_cambio_dia");
+					var ope =  full[7] / taza_dia.value;
+					var result = parseFloat(ope).toFixed(2);
+					return '$ '+result+'<br>'+'S/  '+full[7]
+                }
+            },
+            {
+                "sName": "Venta",
+                "bSearchable": false,
+                "bSortable": false,
+                "mRender": function(data, type, full) {
+
+                    var taza_dia = document.getElementById("tasa_cambio_dia");
+					var ope =  full[8] / taza_dia.value;
+					var result = parseFloat(ope).toFixed(2);
+					return '$ '+result+'<br>'+'S/  '+full[8]
+                }
+            },
+            { 
+                "sName": "Categoria",
+                "bSearchable": true,
+                "bSortable": true,
+                "mRender": function(data, type, full) {
+
+					
+                    return full[11]
+                }
+            },
+            {
+                "sName": "Stock",
+                "bSearchable": true,
+                "bSortable": true,
+                "mRender": function(data, type, full) {
+                 
+                  
+                    return full[10]
+                
+                    
+                }
+            },
+            {
+                "sName": "Peso",
+                "bSearchable": false,
+                "bSortable": false,
+                "mRender": function(data, type, full) {
+
+                    return full[6]
+                }
+            },
+            {
+                "sName": "Opciones",
+                "bSearchable": false,
+                "bSortable": false,
+                "mRender": function(data, type, full) {
+                    
+                    return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='updateInventario.php?CodigoProd="+ full[1] +"'> <i style='color:#FFF' class='fa fa-edit'></i> Editar </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' onclick='return confirm('estas seguro de eliminar?');' href='delprod.php?CodigoProd="+ full[1] +"'> <i style='color:#FFF' class='fa fa-trash'></i> Eliminar </a>"
+                    
+               
+               
+                }
+            } 
+        ] 
+
+    })
+
+
+
+
+    
+});
 $(function() {
     $('#art_agotado').DataTable({
         "processing": true,
@@ -380,4 +502,4 @@ $("#on").draggable({
 });
 </script>
 
-<!-- ================== END PAGE LEVEL JS ================== -->
+ 

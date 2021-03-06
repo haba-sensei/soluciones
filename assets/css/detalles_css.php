@@ -2674,7 +2674,7 @@ img.jsx-2487856160 {
 @media (min-width:1024px) {
     .specifications-container.jsx-3624412160 {
         max-width: 394px;
-        height: 39vh;
+        height: 41vh;
 
     }
 }

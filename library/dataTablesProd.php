@@ -2,7 +2,7 @@
 include 'configServer.php';
 class TableData { 
  	private $_db;
-	public function __construct() {
+	public function __construct() { 
 		try {			
 			$host		= SERVER;
 			$database	= BD;
@@ -50,7 +50,7 @@ class TableData {
 		 */
 		$sWhere = "";
 		 
-		$sWhere2 = "WHERE Stock = '0' ";
+		$sWhere2 = "";
 		
 
 		if ( isset($_GET['sSearch']) && $_GET['sSearch'] != "" ) {

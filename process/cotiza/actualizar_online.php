@@ -1,7 +1,6 @@
 	
                        <?php
              $NumPedido=$_GET['id_cotizacion'];
-             $type =$_GET['type'];
 			 
 			 $pUP=  ejecutarSQL::consultar("SELECT `cotizacion_online`.*, `cotizacion_online`.`id_cotizacion`, `cotizacion_online`.`ID`, `clientes`.`NombreEmpresa`, `clientes`.`Telefono`, `clientes`.`Correo` FROM `cotizacion_online` LEFT JOIN `clientes` ON `cotizacion_online`.`ID` = `clientes`.`ID` WHERE ((`cotizacion_online`.`id_cotizacion` ='$NumPedido') )");
                    while($fila=mysqli_fetch_array($pUP)){
@@ -14,7 +13,7 @@
 					<label class="col-md-3">Razon Social</label>
 					<label class="col-md-2">Ruc / Dni</label>
 					<label class="col-md-2">Nº de Celular </label>
-                    <label class="col-md-2">Correo Electronico</label>
+                    <label class="col-md-2">Correo</label>
                
 				 </div>
 				 
@@ -63,7 +62,7 @@ WHERE `cotizacion_online`.`id_cotizacion` = '$NumPedido';");
 							<table class="table table-bordered ">
              <thead>
                         <tr>
-                          <th>Item </th>
+                          <th>Item</th>
                           <th>Articulos Cotizados</th>
                           <th>Nº de Cotizacion</th>
                           <th>Cantidad</th>

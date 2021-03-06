@@ -831,7 +831,7 @@ function draw_code39($code, $x, $y, $w, $h) {
 	$nums=1;
 	$sumador_total=0;
 	$subtotal=0;
-	$total=0;
+	$total_z=0;
 	$sql=ejecutarSQL::consultar("SELECT `producto`.*, `perfil`.*, `producto`.`nro_cot` FROM `producto`	, `perfil`;");
 	foreach($_SESSION["products"] as $product){					
 					$product_name = $product["NombreProd"]; 
@@ -849,12 +849,12 @@ function draw_code39($code, $x, $y, $w, $h) {
 				$igv_final=$ordenP['impuesto'];
 				}
 				
-				$product_price_total=($product_price * ($product_ganancia + $product_medio) / 100 + $product_price);
+				$product_price_total=($product_price);
 				$subtotal = ($product_price_total * $product_qty);
-				$total = $subtotal + $total;
+				$total_z = $subtotal + $total_z;
 				
-				$igv= ($igv_final *  $total)/100;
-				$total_final = ($total + $igv);
+				$igv= ($igv_final *  $total_z)/100;
+				$total_final = ($total_z  + $igv);
 	$i = $i + 1;
 	$nums++;
 	
@@ -873,7 +873,7 @@ function draw_code39($code, $x, $y, $w, $h) {
 		
     $this->SetFont( "Arial", "B", 8);
     $this->SetXY( $r1+98, $y1+5 );
-    $this->Cell(15,4,"S/ ".$total, 0, 0, "C");
+    $this->Cell(15,4,"S/ ".$total_z , 0, 0, "C");
      $this->SetXY( $r1+98, $y1+10 );
     $this->Cell(15,4, "S/ ".$igv, 0, 0, "C");
      $this->SetXY( $r1+98, $y1+15 );
@@ -977,8 +977,8 @@ function draw_code39($code, $x, $y, $w, $h) {
     $this->Cell(15,4, utf8_decode("DELIVERY"), 0, 0, "C");
     $this->SetXY( $r1+2.8, $y1+32 );
     $this->Cell(15,4, utf8_decode("IMPORTE ( T )"), 0, 0, "C");
-    $this->SetXY( $r1-1, $y1+40 );
-    $this->Cell(15,4, utf8_decode("SALDO"), 0, 0, "C");
+    $this->SetXY( $r1+3.5, $y1+40 );
+    $this->Cell(15,4, utf8_decode("5% TARJETAS"), 0, 0, "C");
 	
 	$condiciones=1;	
 	$i = 0;
@@ -986,6 +986,7 @@ function draw_code39($code, $x, $y, $w, $h) {
 	$sumador_total=0;
 	$subtotal=0;
     $total=0;
+    $total_final = 0;
     $cod = $_POST['CodCotiza'];
 	$_cotizacion_1 = ejecutarSQL::consultar("select * from detalle_cotizacion_online where id_cotizacion='" . $cod . "'");
 
@@ -1004,7 +1005,7 @@ function draw_code39($code, $x, $y, $w, $h) {
         default:
             $total_delivery = number_format(0, 2);
         break;
-    }
+    } 
 
 	while($codProductosP1=mysqli_fetch_array($_cotizacion_1)){
 		 
@@ -1013,19 +1014,27 @@ function draw_code39($code, $x, $y, $w, $h) {
 			
         $product_price_total=$product_price;
        
-        $subtotal = number_format( ($product_price_total) / 1.18 ,2);
-        $total = $subtotal + $total;
+        $subtotal = $product_price_total / 1.18;
         
+        $total = $subtotal + $total;
+        $total_indi =  str_replace(',', '',  $total );
+        $total_indi_1 = number_format($total_indi , 2);
         $igv_format= ($total * 1.18);
-        $igv = number_format($igv_format - $total, 2);
-        $total_final_f = $total + $igv;
-        $total_final = $total_final_f ;
+        $igv = $igv_format - $total;
+        $total_igv =  str_replace(',', '',  $igv );
+        $igv = number_format($total_igv , 2);
+        
+        
         $i = $i + 1;
         $nums++;	
+        $total_final =  $total_final + $product_price;
+        $total_final_f =  number_format($total_final, 2);
+
+       
     }
-    $total_final = ($total_final + $total_delivery);
-    
-    
+    $calc =  str_replace(',', '',  $total_final_f  );
+    $otro = $calc  * 5 / 100 + $calc;
+    $total_final_s =  number_format($otro, 2);
    //print_r($i);
     //$dinero=($_GET['dinero']); 
     //$vuelto = str_replace(",","",$dinero - $total_final);
@@ -1036,7 +1045,7 @@ function draw_code39($code, $x, $y, $w, $h) {
     $this->Cell(15,4,"S / 0.00", 0, 0, "C");
 	
 	$this->SetXY( $r1+40, $y1+8 );
-    $this->Cell(15,4,"S /  ".$total, 0, 0, "C");
+    $this->Cell(15,4,"S /  ".$total_indi_1, 0, 0, "C");
     
 	$this->SetXY( $r1+40, $y1+16 );
     $this->Cell(15,4,"S /  ".$igv, 0, 0, "C");
@@ -1045,10 +1054,10 @@ function draw_code39($code, $x, $y, $w, $h) {
     $this->Cell(15,4,"S /  ".$total_delivery, 0, 0, "C");
     
     $this->SetXY( $r1+40, $y1+32 );
-    $this->Cell(15,4,"S / ".$total_final, 0, 0, "C");
+    $this->Cell(15,4,"S / ".$total_final_f, 0, 0, "C");
     
     $this->SetXY( $r1+40, $y1+40 );
-    $this->Cell(15,4,"S / .........", 0, 0, "C");
+    $this->Cell(15,4,"S / ".$total_final_s, 0, 0, "C");
 	
 	
 	}

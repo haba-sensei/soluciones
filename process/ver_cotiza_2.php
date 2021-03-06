@@ -102,7 +102,7 @@ if (
                 $product_price_total = $product_price;
 
                 $precio_dolar_f = $product_price_total * $product_qty;
-                $subtotal = number_format($precio_dolar_f * $globalTasaCambio_dolar, 2); 
+                $subtotal = $precio_dolar_f * $globalTasaCambio_dolar; 
             }
 
             if (

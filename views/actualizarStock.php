@@ -114,7 +114,13 @@ Licencia: Proveedor de servicios
                         <h1 class="page-header">Busqueda de Articulos <small> Modulo de Almacen</small></h1>
 
 
-
+<style>
+div.dataTables_wrapper div.dataTables_info {
+    padding-top: 0px;  
+     white-space: unset;
+     /* overflow-x: hidden!important; */
+}
+</style>
 
 
                         <div class="panel panel-inverse">
@@ -128,24 +134,14 @@ Licencia: Proveedor de servicios
                             </div>
                             <!-- end panel-heading -->
                             <!-- begin panel-body -->
+
+                            
                             <div class="panel-body">
-                                <div class="table-responsive" style="overflow-x: hidden!important;">
+                                <div class="table-responsive" style="">
                                     <table id="example2" class="table table-condensed display responsive nowrap" style="width:100%" >
                                         <thead class="bg-blue">
                                             <tr>
-                                           
-
-                                                
-                                                <th>Cod</th>
-                                                <th>Articulo</th>
-                                                <th>Stock</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-
-                                        </tbody>
-                                    </table>
-                                     <!-- <th>Imagen</th>
+                                                <th>Imagen</th>
                                                 <th>Cod</th>
                                                 <th>Articulo</th>
                                                 <th>Modelo</th>
@@ -156,7 +152,14 @@ Licencia: Proveedor de servicios
                                                 <th>Categoria</th>
                                                 <th>Stock</th>
                                                 <th>Peso</th>
-                                                <th>Opciones</th> -->
+                                                <th>Opciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        </tbody>
+                                    </table>
+                                    
                                 </div>
                             </div>
                             <!-- end panel-body -->
