@@ -83,7 +83,7 @@
 			$total=0;
 			$sql=ejecutarSQL::consultar("SELECT `producto`.*, `perfil`.*, `producto`.`nro_cot` FROM `producto`	, `perfil`;");
 			$_cotizacion_ = ejecutarSQL::consultar("select * from detalle_cotizacion_online where id_cotizacion='" . $cod . "'");
-		
+			$costo_adicional = $_POST['costo_adicional'];
 			while($codProductosP=mysqli_fetch_array($_cotizacion_)){
 				$product_code = $codProductosP['CodigoProd'];	
 				$product_qty = $codProductosP['Cantidad'];				
@@ -107,11 +107,11 @@
 						$total_indi =  str_replace(',', '',  $product_soles_ );
 						$subtotal = ($total_indi * $product_qty);
 
-   						$total = $subtotal  + $total; 
+   						$total = $subtotal  + $total ; 
 						 
 						}
 						
-						
+						$fin_total = $costo_adicional + $total;
 						
 						
 			$pdf->SetFillColor(255,255,255);
@@ -134,25 +134,12 @@
 				
 				}				
 			
-				switch ($F_entrega) {
-					case 'Lima':
-						$total_delivery = number_format(15, 2);
-					break;
-					case 'Provincia':
-						$total_delivery = number_format(35, 2);
-					break;
-					case 'Tienda':
-						$total_delivery = number_format(0, 2);
-					break;
-					default:
-						$total_delivery = number_format(0, 2);
-					break;
-				}
+			 
 
 				
 				
 				$pdf->SetFont('Arial','B',12);
-				$num_letra = strtoupper(numtoletras($total));
+				$num_letra = strtoupper(numtoletras($fin_total));
 				
 				$pdf->fact_dev12(utf8_decode("Son: "), $num_letra );	
 				$pdf->Code39(10,210, $cod);

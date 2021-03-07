@@ -862,103 +862,83 @@ include_once("library/config.inc.php");
                                 </div>
 
                             </div>
-                            <div class="form-group col-md-3 col-sm-3 col-xs-6 " style="padding-left: 50px;">
-                                <label style="float:left">Forma de Entrega <sup>*</sup></label>
-                                <select class="form-control" style="font-size: 15px;" name="F_entrega">
+
+                            <div class="row">
+                            
+                                <div class="form-group col-md-6 col-sm-6 col-xs-6" style="padding-left: 50px;">
+
+                                    <label style="float:left">Forma de Pago <sup>*</sup></label>
+                                    <select class="form-control"  style="font-size: 15px;" name="F_pago">
                                     
-                                    <option value="Tienda">Despacho en Tienda</option>
-                                    <option value="Lima">Delivery Lima </option>
-                                    <option value="Provincia">Delivery Provincia </option>
+                                        <option value="Efectivo">Efectivo </option>
+                                        <option value="Electronico">Pago Electronico</option>
+
+                                    </select>
+                                </div>                  
+                                <div class="form-group col-md-6 col-sm-6 col-xs-6 " >
+                                    <label style="float:left">Forma de Entrega <sup>*</sup></label>
+                                    <select class="form-control" style="font-size: 15px;" name="F_entrega" id="F_entrega" >
+                                        
+                                        <option value="Tienda">Despacho en Tienda</option>
+                                        <option value="Lima">Delivery Lima </option>
+                                        <option value="Provincia">Delivery Provincia </option>
 
 
-                                </select>
+                                    </select>
 
-                            </div>
-                            <div class="form-group col-md-3 col-sm-3 col-xs-6">
+                                </div>
+                                
+                                <!-- <div class="form-group col-md-3 col-sm-3 col-xs-6">
 
-                                <label style="float:left">Forma de Pago <sup>*</sup></label>
-                                <select class="form-control"  style="font-size: 15px;" name="F_pago">
-                                  
-                                    <option value="Efectivo">Efectivo </option>
-                                    <option value="Electronico">Pago Electronico</option>
-
-                                </select>
-                            </div>
-
-                            <div class="form-group col-md-3 col-sm-3 col-xs-6">
-
-                                <label style="float:left">Fecha de Despacho <sup>*</sup></label>
-                                <input type="text" name="F_despacho"  style="font-size: 15px;" id="F_despacho" class="form-control " placeholder="dd/mm/yy">
+                                    <label style="float:left">Fecha de Despacho <sup>*</sup></label>
+                                    <input type="text" name="F_despacho"  style="font-size: 15px;" id="F_despacho" class="form-control " placeholder="dd/mm/yy">
 
 
-                            </div>
+                                </div>
+                                <div class="form-group col-md-3 col-sm-3 col-xs-6" style="padding-right: 50px;">
+
+                                    <label style="float:left">Horarios de Entrega <sup>*</sup></label>
+                                    <select class="form-control"  style="font-size: 15px;" name="H_entrega">
+                                        <option value="10:00 Am - 12:00 Pm">10:00 Am - 12:00 Pm </option>
+                                        <option value="1:00 Pm - 5:00 Pm">1:00 Pm - 5:00 Pm</option>
+
+                                    </select>
+                                </div> -->
+
+                            </div>   
+                            
+                            <div class="row">
+                            
+                            
+                                <div class="form-group col-md-3 col-sm-3 col-xs-6 " style="padding-left: 50px;">
+                                    <label style="float:left">Distritos <sup>*</sup></label>
+                                    <select class="form-control" style="font-size: 15px;" name="distritos_v" id="distritos_v">
+                                    <option value="" > - Elige un distrito - </option>
+                                    </select>
+
+                                </div>
+                                <div class="form-group col-md-3 col-sm-3 col-xs-6">
+
+                                    <label style="float:left">Costo Adicional <sup>*</sup></label>
+                                    <input type="text" name="costo_adicional" id="costo_adicional" value="" placeholder="Costo Adicional" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3 col-sm-3 col-xs-6">
+
+                                    <label style="float:left">Direccion de envio <sup>*</sup></label>
+                                    <input type="text" name="dir_delivery"  placeholder="Direccion de Envio" style="font-size: 15px;"   class="form-control " >
 
 
+                                </div>
+                                <div class="form-group col-md-3 col-sm-3 col-xs-6" style="padding-right: 50px;">
 
+                                    <label style="float:left">Referencia <sup>*</sup></label>
+                                    <input type="text" name="referencia_delivery"  placeholder="Referencia" style="font-size: 15px;" id="referencia_delivery" class="form-control " >
 
+                                </div>
 
+                            </div>  
 
-                            <div class="form-group col-md-3 col-sm-3 col-xs-6" style="padding-right: 50px;">
-
-                                <label style="float:left">Horarios de Entrega <sup>*</sup></label>
-                                <select class="form-control"  style="font-size: 15px;" name="H_entrega">
-                                    <option value="10:00 Am - 12:00 Pm">10:00 Am - 12:00 Pm </option>
-                                    <option value="1:00 Pm - 5:00 Pm">1:00 Pm - 5:00 Pm</option>
-
-                                </select>
-                            </div>
-
-                            <div class="form-group col-md-3 col-sm-3 col-xs-6 " style="padding-left: 50px;">
-                                <label style="float:left">Forma de Entrega <sup>*</sup></label>
-                                <select class="form-control" style="font-size: 15px;" name="F_entrega">
-                                    
-                                    <option value="Tienda">Despacho en Tienda</option>
-                                    <option value="Lima">Delivery Lima </option>
-                                    <option value="Provincia">Delivery Provincia </option>
-
-
-                                </select>
-
-                            </div>
-
-                            <div class="form-group col-md-3 col-sm-3 col-xs-6 " style="padding-left: 50px;">
-                                <label style="float:left">Forma de Entrega <sup>*</sup></label>
-                                <select class="form-control" style="font-size: 15px;" name="F_entrega">
-                                    
-                                    <option value="Tienda">Despacho en Tienda</option>
-                                    <option value="Lima">Delivery Lima </option>
-                                    <option value="Provincia">Delivery Provincia </option>
-
-
-                                </select>
-
-                            </div>
-
-                            <div class="form-group col-md-3 col-sm-3 col-xs-6 " style="padding-left: 50px;">
-                                <label style="float:left">Forma de Entrega <sup>*</sup></label>
-                                <select class="form-control" style="font-size: 15px;" name="F_entrega">
-                                    
-                                    <option value="Tienda">Despacho en Tienda</option>
-                                    <option value="Lima">Delivery Lima </option>
-                                    <option value="Provincia">Delivery Provincia </option>
-
-
-                                </select>
-
-                            </div>
-
-                            <div class="form-group col-md-3 col-sm-3 col-xs-6 " style="padding-left: 50px;">
-                                <label style="float:left">Forma de Entrega <sup>*</sup></label>
-                                <select class="form-control" style="font-size: 15px;" name="F_entrega">
-                                    
-                                    <option value="Tienda">Despacho en Tienda</option>
-                                    <option value="Lima">Delivery Lima </option>
-                                    <option value="Provincia">Delivery Provincia </option>
-
-
-                                </select>
-
-                            </div>
+                             
 
                         </div>
 
@@ -1328,6 +1308,61 @@ include_once("library/config.inc.php");
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
     <script>
+
+    
+
+    $(document).ready(function(){
+
+        $("#F_entrega").change(function(){
+            var x = $(this).val();
+
+            $.ajax({
+                url: 'library/delivery.php',
+                type: 'post',
+                data: {
+                    x: x
+                },
+                dataType: 'json',
+                success:function(response){
+
+                    var len = response.length;
+
+                    $("#distritos_v").empty();
+                    
+                    $("#distritos_v").append("<option value='' > - Elige un distrito - </option>");
+                    for( var i = 0; i<len; i++){
+                         
+                        var nombre = response[i]['nombre'];
+
+                        $("#distritos_v").append("<option value='"+nombre+"'>"+nombre+"</option>");
+                        
+                    }
+ 
+
+                }
+            });
+        });
+
+        $("#distritos_v").change(function(){
+        var z = $(this).val();
+        
+        $.ajax({
+            url: 'library/delivery_costo.php',
+            type: 'post',
+            data: {
+                z: z
+            }, 
+            success:function(response){
+ 
+                document.getElementById("costo_adicional").value = response;
+
+            }
+        });
+        });
+
+        });
+
+
     function ajusteBox() {
 
         $('.init_1').removeClass("init_1").addClass("init_2");

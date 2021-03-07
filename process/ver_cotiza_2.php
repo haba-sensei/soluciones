@@ -16,8 +16,10 @@ $aSubmitVal = $_POST['operacion'];
 
 $F_entrega = $_POST['F_entrega'];
 $F_pago = $_POST['F_pago'];
-$F_despacho = $_POST['F_despacho'];
-$H_entrega = $_POST['H_entrega'];
+$distritos_ = $_POST['distritos_v'];
+$costo_adicional = $_POST['costo_adicional'];
+$direccion_envio = $_POST['dir_delivery'];
+$referencia = $_POST['referencia_delivery'];
 
 $total = $_POST['total'];
 
@@ -70,8 +72,8 @@ if (
                 $estado = 1;
                 consultasSQL::InsertSQL(
                     'detalle_compra_online',
-                    'id_cotizacion, forma_entrega, forma_pago, fecha_despacho, horario_entrega',
-                    " '$cod' ,'$F_entrega','$F_pago','$F_despacho', '$H_entrega'"
+                    'id_cotizacion, forma_entrega, forma_pago, distrito, costo_adicional, dir_envio, referencia',
+                    " '$cod' ,'$F_entrega','$F_pago', '$distritos_', '$costo_adicional', '$direccion_envio', '$referencia'"
                 );
                 break;
         }

@@ -990,22 +990,9 @@ function draw_code39($code, $x, $y, $w, $h) {
     $cod = $_POST['CodCotiza'];
 	$_cotizacion_1 = ejecutarSQL::consultar("select * from detalle_cotizacion_online where id_cotizacion='" . $cod . "'");
 
-    $F_entrega = $_POST['F_entrega'];
+    $costo_adicional = $_POST['costo_adicional'];
 
-    switch ($F_entrega) {
-        case 'Lima':
-            $total_delivery = number_format(15, 2);
-        break;
-        case 'Provincia':
-            $total_delivery = number_format(35, 2);
-        break;
-        case 'Tienda':
-            $total_delivery = number_format(0, 2);
-        break;
-        default:
-            $total_delivery = number_format(0, 2);
-        break;
-    } 
+     
 
 	while($codProductosP1=mysqli_fetch_array($_cotizacion_1)){
 		 
@@ -1028,12 +1015,13 @@ function draw_code39($code, $x, $y, $w, $h) {
         $i = $i + 1;
         $nums++;	
         $total_final =  $total_final + $product_price;
-        $total_final_f =  number_format($total_final, 2);
+        $total_final_f =  number_format($total_final + $costo_adicional, 2);
 
        
     }
+    
     $calc =  str_replace(',', '',  $total_final_f  );
-    $otro = $calc  * 5 / 100 + $calc;
+    $otro = $calc  * 5 / 100 + $calc ; 
     $total_final_s =  number_format($otro, 2);
    //print_r($i);
     //$dinero=($_GET['dinero']); 
@@ -1051,7 +1039,7 @@ function draw_code39($code, $x, $y, $w, $h) {
     $this->Cell(15,4,"S /  ".$igv, 0, 0, "C");
 	
     $this->SetXY( $r1+40, $y1+24 );
-    $this->Cell(15,4,"S /  ".$total_delivery, 0, 0, "C");
+    $this->Cell(15,4,"S /  ".$costo_adicional, 0, 0, "C");
     
     $this->SetXY( $r1+40, $y1+32 );
     $this->Cell(15,4,"S / ".$total_final_f, 0, 0, "C");
