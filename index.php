@@ -85,7 +85,7 @@ include 'library/config_alarmas.php';
     }
     #content-area5 .landing {
     float: left;
-    width: 82%!important;
+    width: 87%!important;
     overflow: hidden;
     position: relative;
     }
@@ -95,6 +95,9 @@ include 'library/config_alarmas.php';
     height: 63%;
     }
 }
+
+ 
+
 </style>
 <div class="">
     <a href="infoCat.php?CodigoCat=C000008">
@@ -1690,12 +1693,12 @@ include 'library/config_alarmas.php';
     
  <!-- bloquea copiado de web  -->
 <script language="JavaScript" type="text/javascript">
-function click(){
-if(event.button==2){
-alert('SOLUCIONES CCTV & SISTEMAS S.A.C © 2020 Todos los Derechos Reservados.');
-}
-}
-document.onmousedown=click
+// function click(){
+// if(event.button==2){
+// alert('SOLUCIONES CCTV & SISTEMAS S.A.C © 2020 Todos los Derechos Reservados.');
+// }
+// }
+// document.onmousedown=click
 </script>
  <!-- bloquea copiado de web  -->
  

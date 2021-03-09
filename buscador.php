@@ -165,7 +165,7 @@ $buscame = $bus->buscar();
 		    <div class='add-to-links'>
 		    <input name='product_qty' type='hidden' value='1'>".
 		    "<input name='CodigoProd' type='hidden' value='{$buscame[$i]['CodigoProd']}'>".
-		    "<button  class='btn-cart  my-cart-btn btn-common' type='submit'><i class='icon-basket'></i>&nbsp;&nbsp;Añadir</button>".
+		    "<button  class='btn-cart my-cart-btn btn-common' type='submit'><i class='icon-basket'></i>&nbsp;&nbsp;Añadir</button>".
 	        "<a class='btn-quickview md-trigger' href='infoProd.php?CodigoProd={$buscame[$i]['CodigoProd']}'><i class='icon-eye'></i>&nbsp;&nbsp;Ver Producto</a>".
 		    "</div>
 		    </div>
@@ -179,8 +179,7 @@ $buscame = $bus->buscar();
 								"<h5 class='price' style='position: absolute; margin-right: 27px;  margin-top: 11px;  font-size: 14px;'> Antes: <s>{$buscame[$i]['Moneda']} {$p_p} </s>&nbsp; SKU: {$buscame[$i]['CodigoProd']}</h5>" .
 								"<div style='width: 107%; margin-left: -12px; border-top: 1.2px dashed;'></div>".
 								"<div id='ribbon2' style='font-weight:1000;'>
-                                <span style='float: left; padding-left: 20px;'>$ {$total_prod} </span> <span id='contento'> | </span>  <span style='position: relative;
-								left: 15px;'>   S/".$precio_sol_dolar_f." </span> 
+                                <span class='precio_left' >$ {$total_prod} </span> <span id='contento'> | </span>  <span class='precio_right' > S/".$precio_sol_dolar_f." </span>  
                                 </div></div>" .
 								"</form></div></div>";
          }

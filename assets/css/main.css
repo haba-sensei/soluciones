@@ -2348,7 +2348,7 @@ footer .contact-list li i {
 }
 
 footer ul li {
-    padding: 5px 0
+    padding: 5px 5px;
 }
 
 footer ul li a {
@@ -2512,7 +2512,7 @@ footer .block-subscribe .form-control {
 }
 
 .services-box .services-content p {
-    font-size: 13px
+    font-size: 12px
 }
 
 .team {
@@ -8053,6 +8053,12 @@ a.call_us_bt {
         padding: 90px 0 168px;
     }
     
+    #content-area5 .caption h2 {
+        font-size: 21px;
+        color: #fff;
+        margin-bottom: 20px;
+    }
+    
     #content-area2 .caption h2 {
         font-size: 21px;
     }
@@ -8287,4 +8293,14 @@ a.call_us_bt {
     background-color: #000000d1;
     background: url(../img/map_footer.png) center center fixed #24262e;
     background-size: 35rem;
+}
+.precio_left {
+    padding-left: 20px;
+    position: absolute;
+    left: 0;
+}
+.precio_right {
+    padding-right: 5px;
+    position: absolute;
+    right: 8px;
 }

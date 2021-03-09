@@ -119,7 +119,7 @@ include 'library/config2.php';
     </div>
     <section style="    background: #f5f5f5;     padding-bottom: 1%;">
 	<div id="get_quote" class="ajuste">
-			<div class="container  animated fadeInUp">
+			<div class="container animated fadeInUp">
 				<div class="row">
 					<div class="col-md-9">
 						<h3 class="hidden-xs">¿ Estas Buscando un Producto Para su Hogar, Empresa ?</h3>
@@ -179,7 +179,7 @@ include 'library/config2.php';
 		    <div class='add-to-links'>
 		    <input name='product_qty' type='hidden' value='1'>" .
 								"<input name='CodigoProd' type='hidden' value='{$row['CodigoProd']}'>" .
-								"<button  class='btn-cart  my-cart-btn btn-common' type='submit'><i class='icon-basket'></i>&nbsp;&nbsp;Añadir</button>" .
+								"<button  class='btn-cart my-cart-btn btn-common' type='submit'><i class='icon-basket'></i>&nbsp;&nbsp;Añadir</button>" .
 								"<a class='btn-quickview md-trigger' href='infoProd.php?CodigoProd={$row['CodigoProd']}'><i class='icon-eye'></i>&nbsp;&nbsp;Ver Producto</a>" .
 								"</div>
 		    </div>
@@ -193,7 +193,7 @@ include 'library/config2.php';
 								"<h5 class='price' style='position: absolute; margin-right: 27px;  margin-top: 11px;  font-size: 14px;'>Antes: <s>{$row['moneda']} {$p_p} </s>&nbsp; SKU: {$row['CodigoProd']}</h5>" .
 								"<div style='width: 107%; margin-left: -12px; border-top: 1.2px dashed;'></div>".
 								"<div id='ribbon2' style='font-weight:1000;'>
-								<span style='float: left; padding-left: 20px;'>$ {$total_prod} </span> <span id='contento'> | </span>  <span style='position: relative; left: 15px;'>   S/".$precio_sol_dolar_f." </span> 
+								<span class='precio_left' >$ {$total_prod} </span> <span id='contento'> | </span>  <span class='precio_right' > S/".$precio_sol_dolar_f." </span>  
 								
 								</div>
 								</div>

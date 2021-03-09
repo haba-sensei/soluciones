@@ -188,8 +188,9 @@ Licencia: Proveedor de servicios
 								"<h5 class='price' style='position: absolute; margin-right: 27px;  margin-top: 5px;  font-size: 13px;'><a >{$row['Modelo']} - {$row['Marca']} </a></h5><br>" .
 								"<h5 class='price' style='position: absolute; margin-right: 27px;  margin-top: 11px;  font-size: 14px;'> Antes: <s>{$row['moneda']} {$p_p} </s>&nbsp; SKU: {$row['CodigoProd']}</h5>" .
 								"<div style='width: 107%; margin-left: -12px; border-top: 1.2px dashed;'></div>".
-								"<div id='ribbon2' style='font-weight:1000;'>   <span style='float: left; padding-left: 20px;'>$ {$total_prod} </span> <span id='contento'> | </span>  <span style='position: relative;
-								left: 15px;'>   S/".$precio_sol_dolar_f." </span>  </div></div>" .
+								"<div id='ribbon2' style='font-weight:1000;'>  
+								<span class='precio_left' >$ {$total_prod} </span> <span id='contento'> | </span>  <span class='precio_right' > S/".$precio_sol_dolar_f." </span>  
+								 </div></div>" .
 								"</form></div></div>";
 						}
 						echo "</div></div> 

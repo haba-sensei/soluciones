@@ -1023,7 +1023,7 @@ function draw_code39($code, $x, $y, $w, $h) {
     $calc =  str_replace(',', '',  $total_final_f  );
     $otro = $calc  * 5 / 100 + $calc ; 
     $total_final_s =  number_format($otro, 2);
-   //print_r($i);
+    //print_r($i);
     //$dinero=($_GET['dinero']); 
     //$vuelto = str_replace(",","",$dinero - $total_final);
 	
