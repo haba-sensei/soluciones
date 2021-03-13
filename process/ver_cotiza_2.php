@@ -1,66 +1,38 @@
 <?php
-error_reporting(E_PARSE);
+// error_reporting(E_PARSE);
 session_start();
 
-// $ID = $_POST['ruc']; 
-// $nombEmpresa = $_POST['nombre'];
-// $correo = $_POST['correo'];
-// $tel = $_POST['telefono'];
-// $dir = $_POST['direccion'];
-// $cod = $_POST['CodCotiza'];
-// $fecha = $_POST['fecha'];
-// $total = $_POST['total'];
-// $total_final = $total;
-// $aSubmitVal = $_POST['operacion'];
+$ID = $_POST['ruc']; 
+$nombEmpresa = $_POST['nombre'];
+$correo = $_POST['correo'];
+$tel = $_POST['telefono'];
+$dir = $_POST['direccion'];
+$cod = $_POST['CodCotiza'];
+$fecha = $_POST['fecha'];
+$total = $_POST['total'];
+$total_final = $total;
+$aSubmitVal = $_POST['operacion'];
 
 
-// $F_entrega = $_POST['F_entrega'];
-// $F_pago = $_POST['F_pago'];
-// $M_pago = $_POST['M_pago'];
-// $distritos_ = $_POST['distritos_v'];
-// $costo_adicional = $_POST['costo_adicional'];
-// $direccion_envio = $_POST['dir_delivery'];
-// $referencia = $_POST['referencia_delivery'];
+$F_entrega = $_POST['F_entrega'];
+$F_pago = $_POST['F_pago'];
+$M_pago = $_POST['M_pago'];
+$distritos_ = $_POST['distritos_v'];
+$costo_adicional = $_POST['costo_adicional'];
+$direccion_envio = $_POST['dir_delivery'];
+$referencia = $_POST['referencia_delivery'];
 
-// $total = $_POST['total'];
+$total = $_POST['total'];
 
-
-$ID = "20601883164"; 
-$nombEmpresa = "INDUSTRIA E INVERSIONES FIVESA E.I.R.L.- FIVESA E.I.R.L.";
-$correo = "algo@gmail.com";
-$tel = "901283901823";
-$dir = "AV. SEPARADORA INDUSTRIAL MZA. F1 LOTE. 6 IND. PARQUE INDUSTRIAL VILLA EL SALVADOR ";
-$cod = "ON000018";
-$fecha = "10/03/2021";
-$total = 1000;
-$total_final = 1000;
-$aSubmitVal = "compra";
-
-
-$F_entrega = "Provincia";
-$F_pago = "efectivo";
-$M_pago = "de contado";
-$distritos_ = "villa el salvador";
-$costo_adicional = 50;
-$direccion_envio = "AV. SEPARADORA INDUSTRIAL MZA. F1 LOTE. 6 IND. PARQUE INDUSTRIAL VILLA EL SALVADOR ";
-$referencia = "Cerca de el tren de villa el salvador";
-
-$total = 1000;
-
+ 
 
 
 include '../library/configServer.php';
 include '../library/consulSQL.php';
-
 include_once '../library/config.inc.php';
-include 'plantilla.php';
+include_once 'plantilla.php';
 require '../library/conexion.php';
 include 'numerosAletras.php';
-
-
-
-
-
 
 
 if (
@@ -98,8 +70,8 @@ if (
                 $estado = 1;
                 consultasSQL::InsertSQL(
                     'detalle_compra_online',
-                    'id_cotizacion, forma_entrega, forma_pago, distrito, costo_adicional, dir_envio, referencia',
-                    " '$cod' ,'$F_entrega','$F_pago', '$distritos_', '$costo_adicional', '$direccion_envio', '$referencia'"
+                    'id_cotizacion, forma_entrega, forma_pago, medio_pago, distrito, costo_adicional, dir_envio, referencia',
+                    " '$cod' ,'$F_entrega','$F_pago', '$M_pago', '$distritos_', '$costo_adicional', '$direccion_envio', '$referencia'"
                 );
                 break;
         }
@@ -133,13 +105,13 @@ if (
                 $subtotal = $precio_dolar_f * $globalTasaCambio_dolar; 
             }
 
-            // if (
-            //     // consultasSQL::InsertSQL(
-            //     //     'detalle_cotizacion_online',
-            //     //     'id_cotizacion, CodigoProd, Cantidad, SubTotal',
-            //     //     "'$cod','$product_code','$product_qty','$subtotal'"
-            //     // )
-            // );
+            if (
+                consultasSQL::InsertSQL(
+                    'detalle_cotizacion_online',
+                    'id_cotizacion, CodigoProd, Cantidad, SubTotal',
+                    "'$cod','$product_code','$product_qty','$subtotal'"
+                )
+            );
         }
     } else {
         $_cotizacion = ejecutarSQL::consultar("select * from detalle_cotizacion_online where id_cotizacion='" . $cod . "'");
@@ -149,7 +121,7 @@ if (
 
         include 'base_cotizacion.php';
 
-        $pdf->Output("algo.pdf", 'I');
+        $pdf->Output("../assets/pdf/$cod.pdf","F");
 
 
         $orden = $cod.'.pdf';

@@ -24,20 +24,28 @@
 			"Telefonos: ".utf8_decode($row['telefono'])."\n".
 			"Cuentas Bancarias: ".utf8_decode($row['banco1'])." / ".utf8_decode($row['banco2'])
 			);
-				
-							switch ($estado) {
-								case 0:
-									$tipo_operacion = "COTIZACION";
-									$medio_pago = "Efectivo-Visa";
-									$estatus_operacion = "En Revision";
-									break;
-								case 1:
-									$tipo_operacion = "COMPRA";
-									$medio_pago = $F_pago;
-									$estatus_operacion = "En Revision";
-									break;
-								 
-							}
+			$aSubmitVal = $_POST['operacion'];
+			
+				switch ($aSubmitVal) {
+					case 'cotizacion':
+						$tipo_operacion = "COTIZACION";
+						$medio_pago = "Al Contado";
+						$estatus_operacion = "En Revision";
+						$M_pago = "Efectivo-Visa";
+						$F_entrega = "Tienda";
+						$distritos_ = "-";
+						$costo_adicional = 0.00;
+						$direccion_envio = "-";
+						$referencia = "-";
+						break;
+					case 'compra':
+						$tipo_operacion = "COMPRA";
+						$medio_pago = $F_pago;
+						$estatus_operacion = "En Revision";
+						$costo_adicional = $_POST['costo_adicional'];
+						break;
+						
+				}
 							$hora_actual_ =  date('d/m/Y h:i A');
 							$fecha_actual;
 				$pdf->fact_dev(utf8_decode( "RUC "), $row['ID'] );
@@ -99,7 +107,7 @@
 			$total=0;
 			$sql=ejecutarSQL::consultar("SELECT `producto`.*, `perfil`.*, `producto`.`nro_cot` FROM `producto`	, `perfil`;");
 			$_cotizacion_ = ejecutarSQL::consultar("select * from detalle_cotizacion_online where id_cotizacion='" . $cod . "'");
-			$costo_adicional = $_POST['costo_adicional'];
+			
 			while($codProductosP=mysqli_fetch_array($_cotizacion_)){
 				$product_code = $codProductosP['CodigoProd'];	
 				$product_qty = $codProductosP['Cantidad'];				
@@ -128,8 +136,10 @@
 						 
 						}
 						
-						$fin_total_f = $costo_adicional + $total;
-						$fin_total = number_format($fin_total_f, 2);
+					
+					
+						$fin_total_base = $costo_adicional + $total;
+						$fin_total = number_format($fin_total_base, 2);
 						
 			$pdf->SetFillColor(255,255,255);
 			//." ".$modelo_producto."  ".$marca_producto." "."( ".$serial_producto." )"
@@ -156,7 +166,7 @@
 				
 				
 				$pdf->SetFont('Arial','B',12);
-				$num_letra = strtoupper(numtoletras($fin_total_f));
+				$num_letra = strtoupper(numtoletras($fin_total_base));
 				
 				$pdf->fact_dev12(utf8_decode("Son: "), $num_letra );	
 				$pdf->Code39(10,210, $cod);
@@ -170,7 +180,7 @@
 				$pdf->addCadreEurosFrancs3();
 				$pdf->addCadreEurosFrancs4();
 				
-				// unset($_SESSION["products"]);
+				unset($_SESSION["products"]);
 				 	
 		
 				

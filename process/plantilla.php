@@ -2,7 +2,7 @@
 	
 	require '../fpdf/fpdf.php';
 	require '../library/conexion.php';
-	
+   
 	
 	
 	class PDF_Invoice extends FPDF
@@ -983,19 +983,23 @@ function draw_code39($code, $x, $y, $w, $h) {
     // $this->Line( $r1, $y1+30, $r2, $y1+30); // linea debajo de operacion de vuelto
         
     $this->SetFont( "Arial", "B", 8);
-    $this->SetXY( $r1+5, $y1 );
-    $this->Cell(15,4, utf8_decode("OP EXONERADA"), 0, 0, "C");
-    $this->SetXY( $r1+3, $y1+8 );
-    $this->Cell(15,4, utf8_decode("OP GRAVADA"), 0, 0, "C");
-    $this->SetXY( $r1+2.5, $y1+16 );
-    $this->Cell(15,4, utf8_decode("IGV    ( 18% )"), 0, 0, "C");
-    $this->SetXY( $r1+1, $y1+24 );
-    $this->Cell(15,4, utf8_decode("DELIVERY"), 0, 0, "C");
-    $this->SetXY( $r1+2.8, $y1+32 );
-    $this->Cell(15,4, utf8_decode("IMPORTE ( T )"), 0, 0, "C");
-    $this->SetXY( $r1+3.5, $y1+40 );
-    $this->Cell(15,4, utf8_decode("5% TARJETAS"), 0, 0, "C");
-	
+    $this->SetXY( $r1+1, $y1+1 );
+    $this->Cell(15,4, utf8_decode("Subtotal "), 0, 0, "C");
+    $this->SetXY( $r1+1, $y1+6 );
+    $this->Cell(15,4, utf8_decode("Igv 18% "), 0, 0, "C");
+    $this->SetXY( $r1+5.3, $y1+11.5 );
+    $this->Cell(15,4, utf8_decode("Total de Venta "), 0, 0, "C");
+    $this->SetXY( $r1+1.5, $y1+17.5 );
+    $this->Cell(15,4, utf8_decode("A cuenta "), 0, 0, "C");
+    $this->SetXY( $r1+1.3, $y1+23 );
+    $this->Cell(15,4, utf8_decode("Delivery "), 0, 0, "C");
+    $this->SetXY( $r1+8, $y1+28.5 );
+    $this->Cell(15,4, utf8_decode("Total a Pagar Soles"), 0, 0, "C");
+	$this->SetXY( $r1+9.7, $y1+34 );
+    $this->Cell(15,4, utf8_decode("Total a Pagar Dolares"), 0, 0, "C");
+    $this->SetXY( $r1+6.8, $y1+40 );
+    $this->Cell(15,4, utf8_decode("Total con Tarjeta"), 0, 0, "C");
+
 	$condiciones=1;	
 	$i = 0;
 	$nums=1;
@@ -1006,9 +1010,17 @@ function draw_code39($code, $x, $y, $w, $h) {
     $cod = $_POST['CodCotiza'];
 	$_cotizacion_1 = ejecutarSQL::consultar("select * from detalle_cotizacion_online where id_cotizacion='" . $cod . "'");
 
-    $costo_adicional = $_POST['costo_adicional'];
+    $aSubmitVal = $_POST['operacion'];
 
-     
+    switch ($aSubmitVal) {
+        case 'cotizacion':
+            $costo_adicional = 0.00;
+            break;
+        case 'compra':
+            $costo_adicional = $_POST['costo_adicional'];
+            break;
+            
+    }
 
 	while($codProductosP1=mysqli_fetch_array($_cotizacion_1)){
 		 
@@ -1031,40 +1043,131 @@ function draw_code39($code, $x, $y, $w, $h) {
         $i = $i + 1;
         $nums++;	
         $total_final =  $total_final + $product_price;
-        $total_final_f =  number_format($total_final + $costo_adicional, 2);
-
+        $total_venta_f =  number_format($total_final, 2);
+        $total_venta_delivery =  number_format($total_final + $costo_adicional, 2);
        
     }
     
-    $calc =  str_replace(',', '',  $total_final_f  );
+    $calc =  str_replace(',', '',  $total_venta_f  );
     $otro = $calc  * 5 / 100 + $calc ; 
-    $total_final_s =  number_format($otro, 2);
+    $total_tarjeta =  number_format($otro, 2);
+
+    $calc_cuenta =  str_replace(',', '',  $total_venta_f  );
+    $a_cuenta_f = ($calc_cuenta * 40 / 100);
+    $a_cuenta =  number_format($a_cuenta_f, 2);
+
+    date_default_timezone_set("America/Lima");
+    $ch = curl_init();
+    $fecha = date("Y-m-d");  
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_URL, 'https://api.sunat.cloud/cambio/'.$fecha);
+    $result = curl_exec($ch);
+    curl_close($ch);
+
+    $obj = json_decode($result);
+    
+    if ( @fopen("https://google.com", "r") ) 
+        {
+        $status = "true";
+        } 
+        else 
+        {
+        $status = "false";
+        } 
+    //display connection status
+
+
+    if ( isset($obj->error) ) {
+
+        $taza_dia_cons = ejecutarSQL::consultar("SELECT `taza_cambio`.*, `taza_cambio`.`id` FROM `taza_cambio` WHERE `taza_cambio`.`id` = '1';");
+       
+        while($tazaC=mysqli_fetch_array($taza_dia_cons)){ 
+        $compra_dolar=$tazaC['taza'];        
+        }
+
+        $globalTasaCambio_dolar =  $compra_dolar;
+        
+        
+
+    }else {
+
+
+        if($status == "false"){
+
+            $taza_dia_cons = ejecutarSQL::consultar("SELECT `taza_cambio`.*, `taza_cambio`.`id` FROM `taza_cambio` WHERE `taza_cambio`.`id` = '1';");
+       
+            while($tazaC=mysqli_fetch_array($taza_dia_cons)){ 
+            $compra_dolar=$tazaC['taza'];        
+            }
+    
+            $globalTasaCambio_dolar =  $compra_dolar;
+
+        }else {
+
+            date_default_timezone_set("America/Lima");
+            $ch = curl_init();
+            $fecha = date("Y-m-d");  
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_URL, 'https://api.sunat.cloud/cambio/'.$fecha);
+            $result = curl_exec($ch);
+            curl_close($ch);
+    
+            $obj = json_decode($result);
+    
+            $compra_dolar = $obj->$fecha->compra;
+            // $obj->$fecha->compra
+            consultasSQL::UpdateSQL("taza_cambio", "id='1', taza='$compra_dolar'", "id='1'");
+    
+            $taza_dia_cons = ejecutarSQL::consultar("SELECT `taza_cambio`.*, `taza_cambio`.`id` FROM `taza_cambio` WHERE `taza_cambio`.`id` = '1';");
+           
+            while($tazaC=mysqli_fetch_array($taza_dia_cons)){ 
+            $compra_dolar=$tazaC['taza'];        
+            }
+    
+            $globalTasaCambio_dolar =  $compra_dolar;
+
+
+        } 
+
+    } 
+
+    $total_dolares_f = $total_venta_delivery / $globalTasaCambio_dolar; 
+    $total_dolares_final =  number_format($total_dolares_f, 2);
+
     //print_r($i);
     //$dinero=($_GET['dinero']); 
     //$vuelto = str_replace(",","",$dinero - $total_final);
 	
 	
 	
-	$this->SetXY( $r1+40, $y1 );
-    $this->Cell(15,4,"S / 0.00", 0, 0, "C");
+	$this->SetXY( $r1+40, $y1+1 );
+    $this->Cell(15,4,"S/".$total_indi_1, 0, 0, "C");
 	
-	$this->SetXY( $r1+40, $y1+8 );
-    $this->Cell(15,4,"S /  ".$total_indi_1, 0, 0, "C");
+	$this->SetXY( $r1+40, $y1+6 );
+    $this->Cell(15,4,"S/".$igv, 0, 0, "C");
     
-	$this->SetXY( $r1+40, $y1+16 );
-    $this->Cell(15,4,"S /  ".$igv, 0, 0, "C");
+	$this->SetXY( $r1+40, $y1+11.5 );
+    $this->Cell(15,4,"S/".$total_venta_f, 0, 0, "C");
 	
-    $this->SetXY( $r1+40, $y1+24 );
-    $this->Cell(15,4,"S /  ".$costo_adicional, 0, 0, "C");
+    $this->SetXY( $r1+40, $y1+17.5 );
+    $this->Cell(15,4,"S/".$a_cuenta, 0, 0, "C");
     
-    $this->SetXY( $r1+40, $y1+32 );
-    $this->Cell(15,4,"S / ".$total_final_f, 0, 0, "C");
+    $this->SetXY( $r1+40, $y1+23 );
+    $this->Cell(15,4,"S/".$costo_adicional, 0, 0, "C");
     
+    $this->SetXY( $r1+40, $y1+28.5 );
+    $this->Cell(15,4,"S/.$total_venta_delivery", 0, 0, "C");
+	
+    $this->SetXY( $r1+40, $y1+34 );
+    $this->Cell(15,4,"$ ".$total_dolares_final, 0, 0, "C");
+
     $this->SetXY( $r1+40, $y1+40 );
-    $this->Cell(15,4,"S / ".$total_final_s, 0, 0, "C");
-	
+    $this->Cell(15,4,"S/".$total_tarjeta, 0, 0, "C");
 	
 	}
+   
 	
 	
 	

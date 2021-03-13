@@ -870,21 +870,36 @@ include_once("library/config.inc.php");
                             </div>
 
                             <div class="row">
-                            
-                                <div class="form-group col-md-6 col-sm-6 col-xs-6" style="padding-left: 50px;">
+                             
+                                <div class="form-group col-md-4" style="padding-left: 50px;">
 
                                     <label style="float:left">Forma de Pago <sup>*</sup></label>
                                     <select class="form-control"  style="font-size: 15px;" name="F_pago">
-                                    
-                                        <option value="Efectivo">Efectivo </option>
-                                        <option value="Electronico">Pago Electronico</option>
+                                        <option >Seleciona una Opción</option>
+                                        <option value="Al Contado">Al Contado</option>
+                                        <option value="A Cuenta">A Cuenta</option>
+                                       
 
                                     </select>
-                                </div>                  
-                                <div class="form-group col-md-6 col-sm-6 col-xs-6 " >
+                                </div>      
+
+                                <div class="form-group col-md-4" >
+
+                                    <label style="float:left">Medio de Pago <sup>*</sup></label>
+                                    <select class="form-control"  style="font-size: 15px;" name="M_pago">
+                                        <option >Seleciona una Opción</option>
+                                        <option value="Efectivo">Efectivo</option>
+                                        <option value="Electronico">Deposito</option> 
+                                        <option value="Tarjeta">Tarjeta</option> 
+                                       
+
+                                    </select>
+                                </div>   
+                                            
+                                <div class="form-group col-md-4" style="padding-right: 50px;">
                                     <label style="float:left">Forma de Entrega <sup>*</sup></label>
                                     <select class="form-control" style="font-size: 15px;" name="F_entrega" id="F_entrega" >
-                                        
+                                        <option >Seleciona una Opción</option>
                                         <option value="Tienda">Despacho en Tienda</option>
                                         <option value="Lima">Delivery Lima </option>
                                         <option value="Provincia">Delivery Provincia </option>
@@ -1088,14 +1103,14 @@ include_once("library/config.inc.php");
                                                 </li>
 
                                                 <li class="">
-                                                <input type="button"
-                                                            style="position: absolute; bottom: -126px; padding: 16px; right: 450px; width: 22%;"
-                                                            name="cotizacion" class=" action-button" onclick="formSend('cotizacion')"
-                                                            style="width:25%" value="Generar Cotizacion" />
+                                               
                                                     <div class="radio-option" id="aca_cotiza"
                                                         style="text-align: -webkit-center; padding-top: 23px; margin-bottom: -7px;">
                                                         
-
+                                                        <input type="button"
+                                                            style="position: absolute; bottom: -126px; padding: 16px; right: 450px; width: 22%;"
+                                                            name="cotizacion" class=" action-button" onclick="formSend('cotizacion')"
+                                                            style="width:25%" value="Generar Cotizacion" />
 
                                                     </div>
                                                 </li>
@@ -1206,14 +1221,14 @@ include_once("library/config.inc.php");
                                                 </li>
 
                                                 <li class="">
-                                                <input type="button"
-                                                            style=" position: absolute; bottom: -126px; right: 466px; width: 23%; padding: 16px;"
-                                                            name="compra1" class=" action-button" onclick="formSend('compra')"
-                                                            value="Generar Compra" />
+                                                
                                                     <div class="radio-option" id="aca_compra"
                                                         style=" text-align: -webkit-center; padding-top: 23px; margin-bottom: -7px;">
                                                         
-
+                                                        <input type="button"
+                                                            style=" position: absolute; bottom: -126px; right: 466px; width: 23%; padding: 16px;"
+                                                            name="compra1" class=" action-button" onclick="formSend('compra')"
+                                                            value="Generar Compra" />
 
                                                     </div>
                                                 </li>
@@ -1698,7 +1713,7 @@ include_once("library/config.inc.php");
     }
 
     function formSend(id) {
-
+        
         var options = $('#my_awesome_form').serialize();
         options = options + '&' + $.param({
             'operacion': id
@@ -1711,19 +1726,14 @@ include_once("library/config.inc.php");
             dataType: 'json',
             success: function(response) {
 
-                alert("Proceso Concluido");
-                
+                alert("PROCESO TERMINADO");
+                // console.log(response);
                 html = "";
-                // <input type="button" name="submit[descarga]" class=" action-button" onclick="formSend('descarga')" style="width:25%" value="Descargar Comprobante1" />
-                // <input type="button" name="submit[enviar_correo]" class=" action-button" onclick="formSend('enviar_correo')" style="width:25%"  value="Enviar Correo1" />
+                // // <input type="button" name="submit[descarga]" class=" action-button" onclick="formSend('descarga')" style="width:25%" value="Descargar Comprobante1" />
+                // // <input type="button" name="submit[enviar_correo]" class=" action-button" onclick="formSend('enviar_correo')" style="width:25%"  value="Enviar Correo1" />
 
-                html += '<a href="assets/pdf/' + response['orden_pdf'] +
-                    '" class=" action-button" style="width:25%;     margin-right: 47px;  padding: 16px; background: #f58634!important;"  download="' +
-                    id +
-                    '">Descargar Archivo</a>  ';
-                html += '<a href="javascript:" class="action-button" onClick="formMail(&apos;' + response['correo'] + '&apos;, &apos;' +
-                    response['orden_pdf'] +
-                    '&apos;)"  style="width:25%; padding: 16px; background: #f58634!important;"> Enviar Correo </a>';
+                html += '<a href="assets/pdf/'+ response['orden_pdf'] + '" class=" action-button" style="width:25%;     margin-right: 47px;  padding: 16px; background: #f58634!important;"  download="' + id + '">Descargar Archivo</a>  ';
+                html += '<a href="javascript:" class="action-button" onClick="formMail(&apos;' + response['correo'] + '&apos;, &apos;' + response['orden_pdf'] + '&apos;)"  style="width:25%; padding: 16px; background: #f58634!important;"> Enviar Correo </a>';
                 switch (id) {
                     case 'compra':
                         $('#aca_compra').html(html);
