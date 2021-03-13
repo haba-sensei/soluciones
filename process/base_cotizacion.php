@@ -19,11 +19,11 @@
 			
 			$pdf->Image('../assets/img/logo2.png',8,8,30,30);
 			$pdf->addSociete( utf8_decode($row['nombre_empresa']),
-				utf8_decode("Dirección: ").utf8_decode($row['direccion'])."\n".
-							"Web: ".$row['web']."\n".
-							"Telefonos: ".utf8_decode($row['telefono'])."\n".
-							"Cuentas Bancarias: ".utf8_decode($row['banco1'])." / ".utf8_decode($row['banco2'])
-							);
+			utf8_decode("Dirección: ").utf8_decode($row['direccion'])."\n".
+			"Web: ".$row['web']."\n".
+			"Telefonos: ".utf8_decode($row['telefono'])."\n".
+			"Cuentas Bancarias: ".utf8_decode($row['banco1'])." / ".utf8_decode($row['banco2'])
+			);
 				
 							switch ($estado) {
 								case 0:
@@ -38,20 +38,36 @@
 									break;
 								 
 							}
-							
+							$hora_actual_ =  date('d/m/Y h:i A');
+							$fecha_actual;
 				$pdf->fact_dev(utf8_decode( "RUC "), $row['ID'] );
 				$pdf->fact_dev2(utf8_decode( $tipo_operacion." ELECTRONICA ") );
-				$pdf->fact_dev2_1(utf8_decode($cod)  );
-				$pdf->fact_dev3(utf8_decode( "Ruc / Dni: "), $ID );
-				$pdf->fact_dev4(utf8_decode( "Razón Social: "), $nombEmpresa );
-				$pdf->fact_dev5(utf8_decode( "Dir-Fiscal: "), $dir);
-				$pdf->fact_dev6(utf8_decode( "Emisión: "), $fecha_actual);
-				$pdf->fact_dev6_5(utf8_decode("|  Despacho: "), $F_entrega);
-				$pdf->fact_dev6_6(utf8_decode("|  Entrega: "), $F_despacho." - ".$H_entrega);
-				$pdf->fact_dev7(utf8_decode( "Medio de Pago: "), $medio_pago);
-				$pdf->fact_dev8(utf8_decode( "Estatus Cotizado:"), $estatus_operacion);
-				$pdf->fact_dev9(utf8_decode( "Validez: "), "5 Dias Habiles");
-				$pdf->fact_dev10(utf8_decode( "Vendedor: "), "Soluciones");
+				$pdf->fact_dev2_1(utf8_decode($cod));
+				$pdf->fact_dev3(utf8_decode( "SEÑOR(ES): "), $nombEmpresa );
+				$cantidad_num =  strlen($ID);
+							
+				switch ($cantidad_num) {
+					case 8:
+						$tipo_doc = "DNI :";
+					break;
+					case 11:
+						$tipo_doc = "RUC :";
+					break;
+ 
+				}
+
+				$pdf->fact_dev4(utf8_decode($tipo_doc), $ID );
+				$pdf->fact_dev5(utf8_decode( "DIRECCIÓN: "), $dir);
+				$pdf->fact_dev6(utf8_decode( "DIRECCIÓN ENTREGA: "), $distritos_." - ".$direccion_envio);
+				// $pdf->fact_dev6_5(utf8_decode("|  Despacho: "), $F_entrega);
+				// $pdf->fact_dev6_6(utf8_decode("|  Entrega: "), $F_despacho." - ".$H_entrega);
+				$pdf->fact_dev7(utf8_decode( "Emisión: "), $hora_actual_);
+				$pdf->fact_dev8(utf8_decode( "Forma de Pago: "), $medio_pago);
+				$pdf->fact_dev9(utf8_decode( "Medio de Pago: "), $M_pago);
+				$pdf->fact_dev10(utf8_decode( "Forma de Entrega: "), $F_entrega);
+				$pdf->fact_dev11(utf8_decode( "Estatus:"), $estatus_operacion);
+				$pdf->fact_dev13(utf8_decode( "Vendedor: "), "Soluciones");
+				
 				
 			}
 			
@@ -76,8 +92,8 @@
 			$pdf->addLineFormat($cols);
 			$pdf->addLineFormat($cols);
 		
-			$y    = 73;
-			$pdf->SetFont('Arial','',8);
+			$y    = 85;
+			$pdf->SetFont('Arial','B',8);
 			$i = 1;
 			$subtotal=0;
 			$total=0;
@@ -105,14 +121,15 @@
 						
 						$product_soles_ = number_format($product_price_unitario * $globalTasaCambio_dolar, 2); 
 						$total_indi =  str_replace(',', '',  $product_soles_ );
-						$subtotal = ($total_indi * $product_qty);
 
-   						$total = $subtotal  + $total ; 
+						$subtotal_f = ($total_indi * $product_qty);
+						$subtotal = number_format($subtotal_f, 2);
+   						$total = $subtotal_f + $total ; 
 						 
 						}
 						
-						$fin_total = $costo_adicional + $total;
-						
+						$fin_total_f = $costo_adicional + $total;
+						$fin_total = number_format($fin_total_f, 2);
 						
 			$pdf->SetFillColor(255,255,255);
 			//." ".$modelo_producto."  ".$marca_producto." "."( ".$serial_producto." )"
@@ -122,7 +139,7 @@
 						"Codigo"     => $product_code,
 						"Detalles"  => $product_name." - ".$modelo_producto." - ".$marca_producto,
 						"Precio Unit"      => $product_soles_,
-						"Total"          => $subtotal );
+						"Total"          => $subtotal  );
 				$size = $pdf->addLine( $y, $line );
 				$y   += $size + 2;
 				
@@ -139,7 +156,7 @@
 				
 				
 				$pdf->SetFont('Arial','B',12);
-				$num_letra = strtoupper(numtoletras($fin_total));
+				$num_letra = strtoupper(numtoletras($fin_total_f));
 				
 				$pdf->fact_dev12(utf8_decode("Son: "), $num_letra );	
 				$pdf->Code39(10,210, $cod);

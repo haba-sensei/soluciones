@@ -150,7 +150,7 @@ function mostrarRegistro() {
                         <a href="sucursal.php">Sucursales </a></li>
 
                          <li class="f_ali_izq"><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i>
-                        <a href="Pedidos.php">Descargas </a>
+                        <a href="Pedidos.php">Registrarse </a>
                    
                          <li class="f_ali_izq"><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i>
                         <a href="view_cart.php">Cotizar Aqui </a>
@@ -187,53 +187,50 @@ function mostrarRegistro() {
 
         <div class="row" style="    padding-top: 19px;">
             <div class="col-xs-5">
-                <h4 class="f_sangria">Para Cliente</h4>
+                <h4 class="f_sangria">Mapa Del Sitio</h4>
                 <ul>
 
                     <li class="f_ali_izq"><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i>
-                        <a href="#"> Soporte</a></li>
+                        <a href="index.php"> Inicio</a></li>
                     <li class="f_ali_izq"><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i>
-                        <a href="#"> Sorteos</a></li>
+                        <a href="servicios.php"> Servicios</a></li>
                     <li class="f_ali_izq"><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i>
-                        <a href="#"> Consultas</a></li>
+                        <a href="nosotros.php"> Nosotros</a></li>
                     <li class="f_ali_izq"><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i>
-                        <a href="#"> Reclamos</a></li>
+                        <a href="contacto.php"> Contactar</a></li>
                     <li class="f_ali_izq"><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i>
-                        <a href="#">Garantías</a></li>
+                        <a href="sucursal.php">Sucursales </a></li>
 
                          <li class="f_ali_izq"><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i>
-                        <a href="#"> Trabaja Aqui </a>
+                        <a href="Pedidos.php">Registrarse </a>
                    
                          <li class="f_ali_izq"><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i>
-                        <a href="#">Capacitacion  </a>
+                        <a href="view_cart.php">Cotizar Aqui </a>
                         
                     </li>
                 </ul>
             </div>
             <div class="col-xs-5" style="margin-left: 50px;">
-                <h4 class="f_sangria f_ali_der">Mi Cuenta</h4>
+                <h4 class="f_sangria f_ali_der">Para Tecnicos</h4>
                 <ul>
 
                     <li class="f_ali_izq"><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i> <a
-                            href="#"> Regístrate  </a></li>
-                            
+                            href="infoCat.php?CodigoCat=C000008"> Ofertas  </a></li>
                     <li class="f_ali_izq"><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i> <a
-                            href="#"> Suscribete </a></li>
+                            href="productos.php"> Productos </a></li>
                             
                    <li class="f_ali_izq"><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i> <a
-                            href="#"> Empresas  </a></li>
+                            href="http://gps.solucionescctvysistemas.com"> Web Gps  </a></li>
                             
                    <li class="f_ali_izq"><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i> <a
-                            href="#"> Mis Pedidos </a></li>
+                            href="http://niebla.solucionescctvysistemas.com"> Web Niebla </a></li>
                             
-                    <li class="f_ali_izq"><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i> <a href="#">
-                             Proveedores </a></li>
-                             
+                    <li class="f_ali_izq"><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i> <a href="cursos.php">
+                            Web Cursos </a></li>
                     <li class="f_ali_izq"><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i> <a
-                            href="#"> Distribuidores  </a></li>
-                            
+                            href="http://nubefact.solucionescctvysistemas.com"> Web Sistema  </a></li>
                     <li class="f_ali_izq"><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i> <a
-                            href="https://cpe.solucionescctvysistemas.com"> Comprobante </a></li>
+                            href="http://hosting.solucionescctvysistemas.com"> Web Hosting </a></li>
                                         
                    
                 </ul>
@@ -396,7 +393,7 @@ function mostrarRegistro() {
                                 <a href="sucursal.php">Sucursales </a></li>
                             
                             <li><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i>
-                                <a href="inc/modal_login.php">Descargas
+                                <a href="inc/modal_login.php">Registrarse
 
                             <li><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i>
                                 <a href="view_cart.php">Cotizar Aqui
@@ -412,29 +409,25 @@ function mostrarRegistro() {
                 <div class="col-lg-2 footer-ctn-sub col-sm-3">
                     <!-- Column1-->
                     <div class="footer-pad">
-                        <h4 style="border-bottom: 1px dashed #ff9f00; width: 88px; padding-bottom: 3px;">Para Cliente</h4>
+                        <h4 style="border-bottom: 1px dashed #ff9f00; width: 88px; padding-bottom: 3px;">Mapa de sitio</h4>
 
                         <ul>
                             <li style="    margin-top: 11px;"><i class="fa fa-arrow-right redMenu"
-                                    aria-hidden="true"></i><a href="#"> Garantías</a></li>
-                                    
-                            <li><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i><a href="#">
-                                    Reclamos</a></li>
-                                    
-                            <li><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i><a href="#">
-                                    Consultas</a></li>
-                                    
-                            <li><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i><a href="#">
-                                     Sorteos Online</a></li>
-                                     
+                                    aria-hidden="true"></i><a href="index.php"> Inicio</a></li>
+                            <li><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i><a href="servicios.php">
+                                    Servicios</a></li>
+                            <li><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i><a href="nosotros.php">
+                                    Nosotros</a></li>
+                            <li><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i><a href="contacto.php">
+                                    Contactar</a></li>
                             <li><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i>
-                                <a href="#">Soporte Tecnico </a></li>
+                                <a href="sucursal.php">Sucursales </a></li>
                             
                             <li><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i>
-                                <a href="#">Bolsa de Trabajo
+                                <a href="inc/modal_login.php">Registrarse
 
                             <li><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i>
-                                <a href="#">Capacitaciones
+                                <a href="view_cart.php">Cotizar Aqui
                                 </a></li>
                                 
                                 
@@ -447,29 +440,25 @@ function mostrarRegistro() {
                 <div class="col-lg-2 footer-ctn-sub col-sm-3">
                     <!-- Column1-->
                     <div class="footer-pad">
-                        <h4 style="border-bottom: 1px dashed #ff9f00; width: 88px; padding-bottom: 3px;">Mi Cuenta</h4>
+                        <h4 style="border-bottom: 1px dashed #ff9f00; width: 88px; padding-bottom: 3px;">Mapa de sitio</h4>
 
                         <ul>
                             <li style="    margin-top: 11px;"><i class="fa fa-arrow-right redMenu"
-                                    aria-hidden="true"></i><a href="#">Regístrate </a></li>
-                                    
-                            <li><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i><a href="#">
-                                   Suscribete </a></li>
-                                   
-                            <li><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i><a href="#">
-                                    Mis Pedidos</a></li>
-                                    
-                            <li><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i><a href="#">
-                                    Proveedores</a></li>
-                                    
+                                    aria-hidden="true"></i><a href="index.php"> Inicio</a></li>
+                            <li><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i><a href="servicios.php">
+                                    Servicios</a></li>
+                            <li><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i><a href="nosotros.php">
+                                    Nosotros</a></li>
+                            <li><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i><a href="contacto.php">
+                                    Contactar</a></li>
                             <li><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i>
-                                <a href="#"> Ventas Empresas</a></li>
+                                <a href="sucursal.php">Sucursales </a></li>
                             
                             <li><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i>
-                                <a href="#">Ventas Distribuidor
+                                <a href="inc/modal_login.php">Registrarse
 
                             <li><i class="fa fa-arrow-right redMenu" aria-hidden="true"></i>
-                                <a href="https://cpe.solucionescctvysistemas.com">Factura Electronica
+                                <a href="view_cart.php">Cotizar Aqui
                                 </a></li>
                                 
                                 

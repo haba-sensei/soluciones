@@ -75,37 +75,36 @@ function addSociete2( $nom, $adresse )
 			$this->MultiCell($length, 4, $adresse);
 			
 		}		
-		function fact_dev( $libelle, $num )
-{
+		function fact_dev( $libelle, $num )   {
 	
-	
-    $r1  = $this->w - 60;
-    $r2  = $r1 + 50;
-    $y1  = 10;
-    $y2  = $y1 + 15;
-    $mid = ($r1 + $r2 ) / 2;
-    
-    $texte  = $libelle . "  N- ".$num;    
-    $szfont = 12;
-    $loop   = 0;
-    
-    while ( $loop == 0 )
-    {
-       $this->SetFont( "Arial", "B", $szfont );
-       $sz = $this->GetStringWidth( $texte );
-       if ( ($r1+$sz) > $r2 )
-          $szfont --;
-       else
-          $loop ++;
-    }
+            
+            $r1  = $this->w - 60;
+            $r2  = $r1 + 50;
+            $y1  = 10;
+            $y2  = $y1 + 15;
+            $mid = ($r1 + $r2 ) / 2;
+            
+            $texte  = $libelle . "  N- ".$num;    
+            $szfont = 12;
+            $loop   = 0;
+            
+            while ( $loop == 0 )
+            {
+            $this->SetFont( "Arial", "B", $szfont );
+            $sz = $this->GetStringWidth( $texte );
+            if ( ($r1+$sz) > $r2 )
+                $szfont --;
+            else
+                $loop ++;
+            }
 
-    $this->SetLineWidth(0.1);
-    $this->SetFillColor(255,255,255);
-    $this->RoundedRect($r1, $y1, ($r2 - $r1), $y2, 2.5, 'DF');
-    
-    $this->SetXY( $r1+1, $y1+2);
-    $this->Cell($r2-$r1 -1,5, $texte, 0, 0, "C" );
-}
+            $this->SetLineWidth(0.1);
+            $this->SetFillColor(255,255,255);
+            $this->RoundedRect($r1, $y1, ($r2 - $r1), $y2, 2.5, 'DF');
+            
+            $this->SetXY( $r1+1, $y1+2);
+            $this->Cell($r2-$r1 -1,5, $texte, 0, 0, "C" );
+        }
 function fact_dev2( $libelle )
 {
 	
@@ -171,10 +170,10 @@ function fact_dev3( $libelle, $num )
     $r1  = $this->w - 206;
     $r2  = $r1 + 196;
     $y1  = 37;
-    $y2  = $y1 - 13;
+    $y2  = $y1 - 4;
     $mid = ($r1 + $r2 ) / 2;
     
-    $texte  = $libelle . "  N- ".$num;    
+    $texte  = $libelle." ".$num;    
     $szfont = 9;
     $loop   = 0;
     
@@ -191,9 +190,9 @@ function fact_dev3( $libelle, $num )
     $this->SetLineWidth(0.1);
     $this->SetFillColor(255,255,255);
     $this->RoundedRect($r1, $y1, ($r2 - $r1), $y2, 2.5, 'DF');
-     $this->Line( $r1+146,  $y1+24, $r1+146, $y2+13); // linea derecha operaciones 
+     $this->Line( $r1+146,  $y1+33, $r1+146, $y2+4); // linea derecha operaciones 
     $this->SetXY( $r1+1, $y1+2);
-    $this->Cell($r2-$r1 -1,5, $texte, 0, 0, "L" );
+    $this->Cell($r2-$r1 -1, 5, $texte, 0, 0, "L" );
 }
 function fact_dev4( $libelle, $num )
 {
@@ -225,31 +224,30 @@ function fact_dev4( $libelle, $num )
 }
 function fact_dev5( $libelle, $num )
 {
-	
-	
     $r1  = $this->w - 206;
-    $r2  = $r1 + 195;
+    $r2  = $r1 - 150;
     $y1  = 47;
-    $y2  = $y1 - 3;
-    $mid = ($r1 + $r2 ) / 4;
+     
     
     $texte  = $libelle." ".$num;    
-    $szfont = 9;
-    $loop   = 0;
-    
-    while ( $loop == 0 )
-    {
-       $this->SetFont( "Arial", "B", $szfont );
-       $sz = $this->GetStringWidth( $texte );
-       if ( ($r1+$sz) > $r2 )
-          $szfont --;
-       else
-          $loop ++;
-    }
-
+   
     
     $this->SetXY( $r1+1, $y1+2);
-    $this->Cell($r2-$r1 -1,5, $texte, 0, 0, "L" );
+    $this->SetFont('Arial','B', 9);
+    $length = $this->GetStringWidth( $texte );
+    //Coordonnées de la société
+
+    $this->MultiCell(145, 5, $texte, 0, 'L');
+
+    
+    // $this->SetXY( $r1+1, $y1+2);
+    // // $this->Ln(10);
+    // $this->Cell($r2-$r1 -1, 5, $texte, 0, 0, "L" );
+    // $length = $this->GetStringWidth( $sz );
+    //Coordonnées de la société
+
+   
+    
 }
 function fact_dev6( $libelle, $num )
 {
@@ -257,27 +255,17 @@ function fact_dev6( $libelle, $num )
 	
     $r1  = $this->w - 206;
     $r2  = $r1 + 195;
-    $y1  = 52;
+    $y1  = 57;
     $y2  = $y1 - 3;
     $mid = ($r1 + $r2 ) / 4;
     
     $texte  = $libelle." ".$num;    
-    $szfont = 9;
-    $loop   = 0;
-    
-    while ( $loop == 0 )
-    {
-       $this->SetFont( "Arial", "B", $szfont );
-       $sz = $this->GetStringWidth( $texte );
-       if ( ($r1+$sz) > $r2 )
-          $szfont --;
-       else
-          $loop ++;
-    }
-
-    
     $this->SetXY( $r1+1, $y1+2);
-    $this->Cell($r2-$r1 -1,5, $texte, 0, 0, "L" );
+    $this->SetFont('Arial','B', 9);
+    $length = $this->GetStringWidth( $texte );
+    //Coordonnées de la société
+
+    $this->MultiCell(145, 5, $texte, 0, 'L');
 }
 
 function fact_dev6_5( $libelle, $num )
@@ -451,19 +439,19 @@ function fact_dev10( $libelle, $num )
 }
 function fact_dev11( $libelle, $num )
 {
-	$r1  = $this->w - 207;
-    $r2  = $r1 + 120;
-    $y1  = 217;
-    $y2  = $y1 + 2;
-    $mid = ($r1 + $r2 ) / 2;
+    $r1  = $this->w - 206;
+    $r2  = $r1 + 195;
+    $y1  = 57;
+    $y2  = $y1 - 3;
+    $mid = ($r1 + $r2 ) / 4;
     
-    $texte  = $libelle . " ".$num;    
-    $szfont = 16;
+    $texte  = $libelle." ".$num;    
+    $szfont = 9;
     $loop   = 0;
-    
+
     while ( $loop == 0 )
     {
-       $this->SetFont( "Arial", "B", $szfont);
+       $this->SetFont( "Arial", "B", $szfont );
        $sz = $this->GetStringWidth( $texte );
        if ( ($r1+$sz) > $r2 )
           $szfont --;
@@ -471,12 +459,40 @@ function fact_dev11( $libelle, $num )
           $loop ++;
     }
 
-    //$this->SetLineWidth(0.1);
-    $this->SetFillColor(255,255,255);
-    //$this->RoundedRect($r1, $y1, ($r2 - $r1), $y2, 2.5, 'DF');
+    
     $this->SetXY( $r1+1, $y1+2);
-    $this->Cell($r2-$r1 +76,6, $texte, 1, 0, "L" );
+    $this->Cell($r2-$r1 -1,5, $texte, 0, 0, "R" );
 }
+
+function fact_dev13( $libelle, $num )
+{
+    $r1  = $this->w - 206;
+    $r2  = $r1 + 195;
+    $y1  = 62;
+    $y2  = $y1 - 3;
+    $mid = ($r1 + $r2 ) / 4;
+    
+    $texte  = $libelle." ".$num;    
+    $szfont = 9;
+    $loop   = 0;
+
+    while ( $loop == 0 )
+    {
+       $this->SetFont( "Arial", "B", $szfont );
+       $sz = $this->GetStringWidth( $texte );
+       if ( ($r1+$sz) > $r2 )
+          $szfont --;
+       else
+          $loop ++;
+    }
+
+    
+    $this->SetXY( $r1+1, $y1+2);
+    $this->Cell($r2-$r1 -1,5, $texte, 0, 0, "R" );
+}
+
+
+
 function fact_dev12( $libelle, $num )
 {
 	$r1  = $this->w - 207;
@@ -513,7 +529,7 @@ function addCols( $tab )
     
     $r1  = 10;
     $r2  = $this->w - ($r1 * 2) ;
-    $y1  = 65;
+    $y1  = 75;
     $y2  = $this->h - 80 - $y1;
     $this->SetXY( $r1, $y1 );
     $this->Rect( $r1, $y1, $r2, $y2, "D");

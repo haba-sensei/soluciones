@@ -699,12 +699,12 @@ include_once("library/config.inc.php");
                                             </div>
                                         </td>
                                         <td class="cakes price" style="width: 20%;">
-                                            <?php echo $currency." ".$product_price; ?></h4>
+                                            <?php echo $currency." ".number_format($product_price, 2); ?></h4>
 
                                         </td>
                                         <td class="cakes top-remove" style="width: 20%;">
                                             <h4><?php echo $currency;
-                                                    echo  $total_indi; ?></h4>
+                                                    echo number_format($total_indi, 2); ?></h4>
                                             <div class="close-btm">
 
                                                 <a href="javascript:" align="left" class="remove-item" style="margin-right: 6px;" data-code="<?php echo $product_code; ?>">
@@ -760,8 +760,14 @@ include_once("library/config.inc.php");
                             </div>
                             <div class="clear"> </div>
                             <div class="dis-total">
-                            <h1 style="width:  40%; ">Total :&nbsp;   </h1>
+                            <h1 style="width:  40%; ">Total Sol :&nbsp;   </h1>
                                 <h1 style="width: 157px;       color: #00578a;  background: #cecece;"><?php echo $currency ." ".number_format($total, 2);  ?></h1>
+
+                            </div>
+                            <div class="clear"> </div>
+                            <div class="dis-total">
+                            <h1 style="width:  40%; ">Total Dolar :&nbsp;   </h1>
+                                <h1 style="width: 157px;       color: #238028;  background: #cecece;"><?php echo "$ ".number_format($total / $globalTasaCambio_dolar, 2, '.', ','); ?></h1>
 
                             </div>
 
@@ -1200,12 +1206,13 @@ include_once("library/config.inc.php");
                                                 </li>
 
                                                 <li class="">
-                                                    <div class="radio-option" id="aca_compra"
-                                                        style=" text-align: -webkit-center; padding-top: 23px; margin-bottom: -7px;">
-                                                        <input type="button"
+                                                <input type="button"
                                                             style=" position: absolute; bottom: -126px; right: 466px; width: 23%; padding: 16px;"
                                                             name="compra1" class=" action-button" onclick="formSend('compra')"
                                                             value="Generar Compra" />
+                                                    <div class="radio-option" id="aca_compra"
+                                                        style=" text-align: -webkit-center; padding-top: 23px; margin-bottom: -7px;">
+                                                        
 
 
                                                     </div>
