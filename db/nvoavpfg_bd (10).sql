@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-03-2021 a las 03:10:52
+-- Tiempo de generación: 13-03-2021 a las 09:01:25
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.11
 
@@ -155,7 +155,45 @@ INSERT INTO `cotizacion_online` (`id_cotizacion`, `ID`, `fecha_cotizacion`, `Gra
 ('ON000007', '20601883164', '2021-03-06', '22355.15', 1),
 ('ON000008', '20601883164', '2021-03-06', '22355.15', 1),
 ('ON000009', '20601883164', '2021-03-06', '22355.15', 1),
-('ON000010', '20601883164', '2021-03-06', '22355.15', 1);
+('ON000010', '20601883164', '2021-03-06', '22355.15', 1),
+('ON000011', '20601883164', '2021-03-08', '1847.02', 1),
+('ON000012', '20601883164', '2021-03-09', '49270.7', 1),
+('ON000013', '20601883164', '2021-03-09', '49270.7', 1),
+('ON000014', '20601883164', '2021-03-09', '49270.7', 1),
+('ON000015', '20601883164', '2021-03-10', '49270.7', 1),
+('ON000016', '20601883164', '2021-03-10', '49270.7', 1),
+('ON000017', '20601883164', '2021-03-10', '49270.7', 1),
+('ON000018', '20601883164', '2021-03-10', '49270.7', 1),
+('ON000019', '20601883164', '2021-03-13', '557.19', 1),
+('ON000020', '20601883164', '2021-03-13', '557.19', 1),
+('ON000021', '20601883164', '2021-03-13', '557.19', 1),
+('ON000022', '20601883164', '2021-03-13', '121.77', 0),
+('ON000023', '20601883164', '2021-03-13', '121.77', 0),
+('ON000024', '20601883164', '2021-03-13', '121.77', 0),
+('ON000025', '20601883164', '2021-03-13', '121.77', 0),
+('ON000026', '20601883164', '2021-03-13', '121.77', 0),
+('ON000027', '20601883164', '2021-03-13', '121.77', 0),
+('ON000028', '20601883164', '2021-03-13', '121.77', 0),
+('ON000029', '20601883164', '2021-03-13', '243.54', 1),
+('ON000030', '20601883164', '2021-03-13', '243.54', 1),
+('ON000031', '20601883164', '2021-03-13', '243.54', 1),
+('ON000032', '20601883164', '2021-03-13', '243.54', 1),
+('ON000033', '20601883164', '2021-03-13', '243.54', 1),
+('ON000034', '20601883164', '2021-03-13', '243.54', 1),
+('ON000035', '20601883164', '2021-03-13', '243.54', 1),
+('ON000036', '20601883164', '2021-03-13', '243.54', 1),
+('ON000037', '20601883164', '2021-03-13', '243.54', 0),
+('ON000038', '20601883164', '2021-03-13', '243.54', 0),
+('ON000039', '20601883164', '2021-03-13', '243.54', 0),
+('ON000040', '20601883164', '2021-03-13', '243.54', 0),
+('ON000041', '20601883164', '2021-03-13', '243.54', 0),
+('ON000042', '20601883164', '2021-03-13', '243.54', 0),
+('ON000043', '20601883164', '2021-03-13', '243.54', 0),
+('ON000044', '20601883164', '2021-03-13', '243.54', 0),
+('ON000045', '20601883164', '2021-03-13', '243.54', 0),
+('ON000046', '20601883164', '2021-03-13', '243.54', 0),
+('ON000047', '20601883164', '2021-03-13', '243.54', 0),
+('ON000048', '20601883164', '2021-03-13', '243.54', 1);
 
 -- --------------------------------------------------------
 
@@ -167,6 +205,7 @@ CREATE TABLE `detalle_compra_online` (
   `id_cotizacion` varchar(15) NOT NULL,
   `forma_entrega` varchar(15) NOT NULL,
   `forma_pago` varchar(15) NOT NULL,
+  `medio_pago` varchar(45) NOT NULL,
   `distrito` varchar(55) NOT NULL,
   `costo_adicional` decimal(16,2) NOT NULL,
   `dir_envio` text NOT NULL,
@@ -177,17 +216,37 @@ CREATE TABLE `detalle_compra_online` (
 -- Volcado de datos para la tabla `detalle_compra_online`
 --
 
-INSERT INTO `detalle_compra_online` (`id_cotizacion`, `forma_entrega`, `forma_pago`, `distrito`, `costo_adicional`, `dir_envio`, `referencia`) VALUES
-('ON000000', 'Lima', 'Electronico', '', '0.00', '', ''),
-('ON000002', 'Lima', 'Electronico', '', '50.00', '', ''),
-('ON000003', 'Lima', 'Efectivo', 'miraflores', '50.00', 'sdfdsfs', 'dfsdfsdffdf'),
-('ON000004', 'Provincia', 'Electronico', 'amazonas', '70.00', 'dddd', 'sssss'),
-('ON000005', 'Provincia', 'Electronico', 'amazonas', '70.00', 'iiii', 'iiiiooo'),
-('ON000006', 'Lima', 'Efectivo', 'miraflores', '50.00', 'asda', 'sadasd'),
-('ON000007', 'Lima', 'Efectivo', 'miraflores', '50.00', 'sad', 'asd'),
-('ON000008', 'Lima', 'Efectivo', 'miraflores', '50.00', 'sad', 'sdaa'),
-('ON000009', 'Provincia', 'Efectivo', 'villa el salvador', '30.00', 'dsf', 'sdf'),
-('ON000010', 'Lima', 'Electronico', 'villa maria', '20.00', '213', '123');
+INSERT INTO `detalle_compra_online` (`id_cotizacion`, `forma_entrega`, `forma_pago`, `medio_pago`, `distrito`, `costo_adicional`, `dir_envio`, `referencia`) VALUES
+('ON000000', 'Lima', 'Electronico', '', '', '0.00', '', ''),
+('ON000002', 'Lima', 'Electronico', '', '', '50.00', '', ''),
+('ON000003', 'Lima', 'Efectivo', '', 'miraflores', '50.00', 'sdfdsfs', 'dfsdfsdffdf'),
+('ON000004', 'Provincia', 'Electronico', '', 'amazonas', '70.00', 'dddd', 'sssss'),
+('ON000005', 'Provincia', 'Electronico', '', 'amazonas', '70.00', 'iiii', 'iiiiooo'),
+('ON000006', 'Lima', 'Efectivo', '', 'miraflores', '50.00', 'asda', 'sadasd'),
+('ON000007', 'Lima', 'Efectivo', '', 'miraflores', '50.00', 'sad', 'asd'),
+('ON000008', 'Lima', 'Efectivo', '', 'miraflores', '50.00', 'sad', 'sdaa'),
+('ON000009', 'Provincia', 'Efectivo', '', 'villa el salvador', '30.00', 'dsf', 'sdf'),
+('ON000010', 'Lima', 'Electronico', '', 'villa maria', '20.00', '213', '123'),
+('ON000011', 'Lima', 'Efectivo', '', 'miraflores', '50.00', 'aslkdjalsdk', 'lkajsflaksjf'),
+('ON000012', 'Lima', 'Electronico', '', 'miraflores', '50.00', 'algun sitio', 'al lado de algo'),
+('ON000013', 'Lima', 'Electronico', '', 'villa maria', '20.00', 'aladaslkaljdk', 'asdasñdkasdñlak'),
+('ON000014', 'Lima', 'Electronico', '', 'miraflores', '50.00', 'sdasdsad', 'sad asdass'),
+('ON000015', 'Provincia', 'Efectivo', '', 'villa el salvador', '30.00', 'soy una direccion de envio', 'soy una referencia'),
+('ON000016', 'Provincia', 'Electronico', '', 'amazonas', '70.00', 'soy una direccion larga asd asd asd asd dasd asd ', 'werwerwer'),
+('ON000017', 'Tienda', 'Efectivo', '', 'tienda local', '0.00', 'askldjaskdjakj', 'akjdaklsdjsadklj'),
+('ON000018', 'Provincia', 'Electronico', '', 'villa el salvador', '30.00', 'weqweqe qweqweqweqwe qweqwe qweqweqw eqweq wqweq eqwe qweqweqw qweqw qweqweqweqweq wwqefeffeqw qwdqwdqwd qwdqd ', 'qwqwe qweqwe qweqw qwe qweqweqweqweqweeqweqweqweqwe qwqeqwe qwe qwe qeqw eqwe '),
+('ON000019', 'Lima', 'Al Contado', '', 'miraflores', '50.00', 'algo de envio', 'algo de referencia'),
+('ON000020', 'Tienda', 'Al Contado', '', 'tienda local', '0.00', 'asdas', 'asdasdasdasd'),
+('ON000021', 'Provincia', 'Al Contado', '', 'villa el salvador', '30.00', 'cxzcxczx', 'zxczxccz'),
+('ON000029', 'Lima', 'Al Contado', 'Electronico', 'villa maria', '20.00', 'hjkhjkhk', 'jhkhjk'),
+('ON000030', 'Lima', 'Al Contado', 'Electronico', 'miraflores', '50.00', 'vbcbc', 'cvbcvbcvb'),
+('ON000031', 'Lima', 'A Cuenta', 'Efectivo', 'miraflores', '50.00', 'dsfsdfsd', 'sdfsdfsdf'),
+('ON000032', 'Lima', 'Al Contado', 'Efectivo', 'villa maria', '20.00', 'fgfg', 'dfgdfgdg'),
+('ON000033', 'Lima', 'Al Contado', 'Efectivo', 'miraflores', '50.00', 'fdsfdsf', 'sdfsdfsd'),
+('ON000034', 'Tienda', 'A Cuenta', 'Electronico', 'tienda local', '0.00', 'fgdgdfgdgdfg', 'fssssssss'),
+('ON000035', 'Lima', 'Al Contado', 'Electronico', 'villa maria', '20.00', 'dfgdg', 'fgdg'),
+('ON000036', 'Provincia', 'Al Contado', 'Efectivo', 'villa el salvador', '30.00', 'zxczxczc', 'zxcsdasdad'),
+('ON000048', 'Provincia', 'A Cuenta', 'Tarjeta', 'amazonas', '70.00', 'ghfghfg', 'fg hhf g gfh');
 
 -- --------------------------------------------------------
 
@@ -239,7 +298,54 @@ INSERT INTO `detalle_cotizacion_online` (`id_cotizacion`, `CodigoProd`, `Cantida
 ('ON000009', 'P000001', 1, '121.18'),
 ('ON000010', 'P000867', 2, '18014.83'),
 ('ON000010', 'P000866', 1, '4219.13'),
-('ON000010', 'P000001', 1, '121.18');
+('ON000010', 'P000001', 1, '121.18'),
+('ON000011', 'P000977', 1, '1847.02'),
+('ON000012', 'P000985', 10, '49270.68'),
+('ON000013', 'P000985', 10, '49270.68'),
+('ON000014', 'P000985', 10, '49270.68'),
+('ON000015', 'P000985', 10, '49270.68'),
+('ON000016', 'P000985', 10, '49270.68'),
+('ON000017', 'P000985', 10, '49270.68'),
+('ON000018', 'P000985', 10, '49270.68'),
+('ON000019', 'P000001', 1, '121.77'),
+('ON000019', 'P000002', 1, '121.77'),
+('ON000019', 'P000003', 1, '132.84'),
+('ON000019', 'P000006', 1, '180.81'),
+('ON000020', 'P000001', 1, '121.77'),
+('ON000020', 'P000002', 1, '121.77'),
+('ON000020', 'P000003', 1, '132.84'),
+('ON000020', 'P000006', 1, '180.81'),
+('ON000021', 'P000001', 1, '121.77'),
+('ON000021', 'P000002', 1, '121.77'),
+('ON000021', 'P000003', 1, '132.84'),
+('ON000021', 'P000006', 1, '180.81'),
+('ON000022', 'P000002', 1, '121.77'),
+('ON000023', 'P000002', 1, '121.77'),
+('ON000024', 'P000002', 1, '121.77'),
+('ON000025', 'P000002', 1, '121.77'),
+('ON000026', 'P000002', 1, '121.77'),
+('ON000027', 'P000002', 1, '121.77'),
+('ON000028', 'P000002', 1, '121.77'),
+('ON000029', 'P000002', 2, '243.54'),
+('ON000030', 'P000002', 2, '243.54'),
+('ON000031', 'P000002', 2, '243.54'),
+('ON000032', 'P000002', 2, '243.54'),
+('ON000033', 'P000002', 2, '243.54'),
+('ON000034', 'P000002', 2, '243.54'),
+('ON000035', 'P000002', 2, '243.54'),
+('ON000036', 'P000002', 2, '243.54'),
+('ON000037', 'P000002', 2, '243.54'),
+('ON000038', 'P000002', 2, '243.54'),
+('ON000039', 'P000002', 2, '243.54'),
+('ON000040', 'P000002', 2, '243.54'),
+('ON000041', 'P000002', 2, '243.54'),
+('ON000042', 'P000002', 2, '243.54'),
+('ON000043', 'P000002', 2, '243.54'),
+('ON000044', 'P000002', 2, '243.54'),
+('ON000045', 'P000002', 2, '243.54'),
+('ON000046', 'P000002', 2, '243.54'),
+('ON000047', 'P000002', 2, '243.54'),
+('ON000048', 'P000002', 2, '243.54');
 
 -- --------------------------------------------------------
 
@@ -1437,7 +1543,7 @@ CREATE TABLE `taza_cambio` (
 --
 
 INSERT INTO `taza_cambio` (`id`, `taza`) VALUES
-(1, '3.672');
+(1, '3.690');
 
 -- --------------------------------------------------------
 
