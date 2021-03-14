@@ -136,10 +136,22 @@
 						 
 						}
 						
+						switch ($F_pago) {
+							case 'Al Contado':
+								$a_cuenta_base  = 0.00;
+								break;
+							
+							case 'A Cuenta':
+								$calc_cuenta_base =  str_replace(',', '',  $total);
+								$a_cuenta_f_base = ($calc_cuenta_base * 40 / 100);
+								$a_cuenta_base =  number_format($a_cuenta_f_base, 2);
+								break;
+						}
+
+						
 					
-					
-						$fin_total_base = $costo_adicional + $total;
-						$fin_total = number_format($fin_total_base, 2);
+						$fin_total_base = $costo_adicional + $total - $a_cuenta_base;
+						// $fin_total = number_format($fin_total_base, 2);
 						
 			$pdf->SetFillColor(255,255,255);
 			//." ".$modelo_producto."  ".$marca_producto." "."( ".$serial_producto." )"

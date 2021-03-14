@@ -1727,7 +1727,7 @@ include_once("library/config.inc.php");
             success: function(response) {
 
                 alert("PROCESO TERMINADO");
-                // console.log(response);
+                console.log(response);
                 html = "";
                 // // <input type="button" name="submit[descarga]" class=" action-button" onclick="formSend('descarga')" style="width:25%" value="Descargar Comprobante1" />
                 // // <input type="button" name="submit[enviar_correo]" class=" action-button" onclick="formSend('enviar_correo')" style="width:25%"  value="Enviar Correo1" />

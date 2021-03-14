@@ -1015,9 +1015,11 @@ function draw_code39($code, $x, $y, $w, $h) {
     switch ($aSubmitVal) {
         case 'cotizacion':
             $costo_adicional = 0.00;
+            $F_pago = "Al Contado";
             break;
         case 'compra':
             $costo_adicional = $_POST['costo_adicional'];
+            $F_pago = $_POST['F_pago'];
             break;
             
     }
@@ -1048,13 +1050,27 @@ function draw_code39($code, $x, $y, $w, $h) {
        
     }
     
-    $calc =  str_replace(',', '',  $total_venta_f  );
-    $otro = $calc  * 5 / 100 + $calc ; 
+    switch ($F_pago) {
+        case 'Al Contado':
+            $a_cuenta = 0.00;
+            break;
+        
+        case 'A Cuenta':
+            $calc_cuenta =  str_replace(',', '',  $total_venta_f  );
+            $a_cuenta_f = ($calc_cuenta * 40 / 100);
+            $a_cuenta =  number_format($a_cuenta_f, 2);
+            break;
+    }
+
+    
+
+    $valor_final_con_acuenta = $total_venta_delivery - $a_cuenta;
+
+    $calc =  str_replace(',', '', $valor_final_con_acuenta  );
+    $otro = $calc  * 5 / 100 + $calc; 
     $total_tarjeta =  number_format($otro, 2);
 
-    $calc_cuenta =  str_replace(',', '',  $total_venta_f  );
-    $a_cuenta_f = ($calc_cuenta * 40 / 100);
-    $a_cuenta =  number_format($a_cuenta_f, 2);
+   
 
     date_default_timezone_set("America/Lima");
     $ch = curl_init();
@@ -1133,12 +1149,15 @@ function draw_code39($code, $x, $y, $w, $h) {
 
     } 
 
-    $total_dolares_f = $total_venta_delivery / $globalTasaCambio_dolar; 
+    $total_dolares_f = $valor_final_con_acuenta / $globalTasaCambio_dolar; 
     $total_dolares_final =  number_format($total_dolares_f, 2);
+   
+    $calc_cuenta_dolares =  str_replace(',', '',  $total_dolares_final   );
+    $a_cuenta_f_dolar = ($calc_cuenta_dolares * 40 / 100);
+    $a_cuenta_dolar =  number_format($a_cuenta_f_dolar, 2);
 
-    //print_r($i);
-    //$dinero=($_GET['dinero']); 
-    //$vuelto = str_replace(",","",$dinero - $total_final);
+    $valor_final_con_acuenta_dolares = $total_dolares_final - $a_cuenta_dolar;
+    
 	
 	
 	
@@ -1158,10 +1177,10 @@ function draw_code39($code, $x, $y, $w, $h) {
     $this->Cell(15,4,"S/".$costo_adicional, 0, 0, "C");
     
     $this->SetXY( $r1+40, $y1+28.5 );
-    $this->Cell(15,4,"S/.$total_venta_delivery", 0, 0, "C");
+    $this->Cell(15,4,"S/.$valor_final_con_acuenta", 0, 0, "C");
 	
     $this->SetXY( $r1+40, $y1+34 );
-    $this->Cell(15,4,"$ ".$total_dolares_final, 0, 0, "C");
+    $this->Cell(15,4,"$ ".$valor_final_con_acuenta_dolares, 0, 0, "C");
 
     $this->SetXY( $r1+40, $y1+40 );
     $this->Cell(15,4,"S/".$total_tarjeta, 0, 0, "C");

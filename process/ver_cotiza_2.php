@@ -53,7 +53,7 @@ if (
                 "'$ID','$nombEmpresa','$correo','$tel','$dir'"
             )
         );
-    }
+    } 
 
     $verificar_cotizacion = ejecutarSQL::consultar("select * from cotizacion_online where id_cotizacion='" . $cod . "'");
     $num_cotizacion_row = mysqli_num_rows($verificar_cotizacion);
