@@ -321,8 +321,12 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                     $precio_sol = number_format($precio_dolar * $globalTasaCambio_dolar, 2);
                     
                     $precio_dolar_tarj = number_format($precio_dolar * 5 / 100 + $precio_dolar, 2);
-                    $precio_sol_tarj =  number_format($precio_sol * 5 / 100 + $precio_sol, 2, '','');
+                    
+                    $precio_sol_tarj_f =  number_format($precio_dolar_tarj * 5 / 100 + $precio_dolar_tarj,2);
+                    $precio_sol_tarj = number_format($precio_sol_tarj_f * $globalTasaCambio_dolar, 2);
+
                     // number_format($precio_sol  * 5 / 100 + $precio_sol, 2);
+                    // number_format($precio_sol * 5 / 100 + $precio_sol, 2, '','');
          ?>
     <style>
     .disponible {
@@ -354,7 +358,7 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                 </div>
 
                 <div class="col-md-4">
-                    <h1 class="jsx-3686231685" style="margin-bottom: 43px;"> <?php echo $fila['NombreProd']; ?> </h1>
+                    <h1 class="jsx-3686231685" style="margin-bottom: 43px; font-size: 23px;"> <?php echo $fila['NombreProd']; ?> </h1>
 
                     <div class="jsx-3624412160 specifications-container fa--product-characteristic-features caract_dest">
                         <div class="jsx-3624412160 specifications-title">DETALLES DEL PRODUCTO </div>

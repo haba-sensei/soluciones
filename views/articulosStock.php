@@ -118,7 +118,14 @@ Licencia: Proveedor de servicios
 div.dataTables_wrapper div.dataTables_info {
     padding-top: 0px;  
      white-space: unset;
-     /* overflow-x: hidden!important; */
+   /* overflow-x: hidden!important; */
+}
+
+  
+.table-responsive {
+    
+    overflow-x: hidden!important;
+   
 }
 </style>
 
@@ -137,11 +144,11 @@ div.dataTables_wrapper div.dataTables_info {
 
                             
                             <div class="panel-body">
-                                <div class="table-responsive" style="">
-                                    <table id="agotado_table" class="table table-condensed display responsive nowrap" style="width:100%" >
+                                <div class="table-responsive">
+                                    <table id="stock_table" class="table table-condensed display responsive nowrap" style="width:100%" >
                                         <thead class="bg-red">
                                             <tr>
-                                            <th>Imagen</th>
+                                                <th>Imagen</th>
                                                 <th>Cod</th>
                                                 <th>Articulo</th>
                                                 <th>Modelo</th> 
@@ -153,6 +160,7 @@ div.dataTables_wrapper div.dataTables_info {
                                                 <th>Categoria</th>
                                                 <th>Stock</th>
                                                 <th>Peso</th>
+                                                
                                             </tr>
                                         </thead>
                                         <tbody>

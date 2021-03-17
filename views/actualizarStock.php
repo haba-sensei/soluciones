@@ -141,18 +141,18 @@ div.dataTables_wrapper div.dataTables_info {
                                     <table id="example2" class="table table-condensed display responsive nowrap" style="width:100%" >
                                         <thead class="bg-blue">
                                             <tr>
-                                                <th>Imagen</th>
+                                            <th>Imagen</th>
                                                 <th>Cod</th>
                                                 <th>Articulo</th>
-                                                <th>Modelo</th>
+                                                <th>Modelo</th> 
                                                 <th>Marca</th>
-                                                <th>Detalle</th>
                                                 <th>Compra</th>
                                                 <th>Venta</th>
+                                                <th>Opciones</th>
+                                                <th>Detalle</th> 
                                                 <th>Categoria</th>
                                                 <th>Stock</th>
                                                 <th>Peso</th>
-                                                <th>Opciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>

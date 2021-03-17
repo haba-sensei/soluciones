@@ -832,7 +832,7 @@ include_once("library/config.inc.php");
                         <div class="row" align="left" style="padding-right: 50px; padding-left: 50px;     font-size: 16px;">
                             <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                 <label>Ruc - Dni <sup>*</sup></label>
-                                <input class="form-control" id="ruc" name="ruc" value="20601883164" placeholder="Buscar Cliente" autocomplete="off">
+                                <input class="form-control" id="ruc" name="ruc"  placeholder="Buscar Cliente" autocomplete="off">
                                 <span class="input-group-btn">
                                     <button class="btn btn-default" style="    color: #f5f5f5; background: #27ae60; top: -48px; left: 26.5em;font-weight: 600; position: absolute;
                                         font-size: 17px;" type="submit" onclick="busqueda(this); return false"><i class="fa fa-search"
@@ -842,7 +842,7 @@ include_once("library/config.inc.php");
                             </div>
                             <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                 <label>Correo<sup>*</sup></label>
-                                <input type="email" name="correo" value="lycantroponatural@gmail.com" placeholder="jhon@gmail.com"
+                                <input type="email" name="correo"  placeholder="jhon@gmail.com"
                                     class="form-control">
                             </div><!-- /input-group -->
                             <div class="form-group col-md-6 col-sm-6 col-xs-12">
@@ -852,11 +852,11 @@ include_once("library/config.inc.php");
 
                             <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                 <label>Numero de Celular <sup>*</sup></label>
-                                <input type="text" name="telefono" value="123213123123" placeholder="0044 43345523" class="form-control">
+                                <input type="text" name="telefono"  placeholder="0044 43345523" class="form-control">
                             </div>
                             <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                 <label>Dirección Fiscal <sup>*</sup></label>
-                                <input type="text" name="direccion" id="direccion" value="" placeholder="Dirección" class="form-control">
+                                <input type="text" name="direccion" id="direccion"  placeholder="Dirección" class="form-control">
                             </div>
 
                         </div>

@@ -99,7 +99,14 @@ Licencia: Proveedor de servicios
 						 
 						case 2:
 							 
-							include '../inc/sidebar_ventas.php';
+							include '../inc/sidebar_almacen.php';
+							include '../inc/home_user.php';
+							include '../inc/scripts_interno.php';
+						 break;
+
+						 case 3:
+							 
+							include '../inc/sidebar_almacen1.php';
 							include '../inc/home_user.php';
 							include '../inc/scripts_interno.php';
 						 break;

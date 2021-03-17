@@ -69,14 +69,14 @@ $(document).ready(function() {
 <script src="../assets/js/scripts.js"></script>
 <script src="../assets/js/admin.js"></script>
 <script>
-$(document).ready(function(){
-     
-$('#example2').DataTable({
+$(document).ready(function() {
+
+    $('#example2').DataTable({
         "processing": true,
         "serverSide": true,
         "searching": true,
         "sAjaxSource": "../process/producto/actualizarStck.php",
-        "responsive": false,
+        "responsive": true,
         "iDisplayLength": "5",
         "aLengthMenu": [5, 50, 100, 150, 200, 250],
         "lengthMenu": false,
@@ -85,7 +85,7 @@ $('#example2').DataTable({
                 "bSearchable": false,
                 "bSortable": false,
                 "mRender": function(data, type, full) {
-                     
+
                     return '<img src=../assets/img-products/' + full[0] + ' width="50" height="50" />'
                 }
             },
@@ -120,14 +120,6 @@ $('#example2').DataTable({
                 "mRender": function(data, type, full) {
                     return full[4]
                 }
-			},
-            {
-                "sName": "Detalle",
-                "bSearchable": true,
-                "bSortable": true,
-                "mRender": function(data, type, full) {
-                    return full[5]
-                }
             },
             {
                 "sName": "Compra",
@@ -136,9 +128,15 @@ $('#example2').DataTable({
                 "mRender": function(data, type, full) {
 
                     var taza_dia = document.getElementById("tasa_cambio_dia");
-					var ope =  full[7] / taza_dia.value;
-					var result = parseFloat(ope).toFixed(2);
-					return '$ '+result+'<br>'+'S/  '+full[7]
+                    var ope = full[7] * taza_dia.value;
+                    const options = {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                    };
+                    const total_sol = Number(ope).toLocaleString('en', options);
+                    const total_dolar = Number(full[7]).toLocaleString('en', options);
+                    // var result = parseFloat(ope).toFixed(2);
+                    return '$ ' + total_dolar + '<br>' + 'S/  ' + total_sol
                 }
             },
             {
@@ -148,18 +146,48 @@ $('#example2').DataTable({
                 "mRender": function(data, type, full) {
 
                     var taza_dia = document.getElementById("tasa_cambio_dia");
-					var ope =  full[8] / taza_dia.value;
-					var result = parseFloat(ope).toFixed(2);
-					return '$ '+result+'<br>'+'S/  '+full[8]
+                    var ope = full[8] * taza_dia.value;
+                    const options = {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                    };
+                    const total_sol = Number(ope).toLocaleString('en', options);
+                    const total_dolar = Number(full[8]).toLocaleString('en', options);
+                    // var result = parseFloat(ope).toFixed(2);
+                    return '$ ' + total_dolar + '<br>' + 'S/  ' + total_sol
                 }
             },
-            { 
+            {
+                "sName": "Opciones",
+                "bSearchable": false,
+                "bSortable": false,
+                "mRender": function(data, type, full) {
+
+                    return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='updateInventario.php?CodigoProd=" +
+                        full[1] +
+                        "'> <i style='color:#FFF' class='fa fa-edit'></i>  </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' onclick='return confirm('estas seguro de eliminar?');' href='delprod.php?CodigoProd=" +
+                        full[1] + "'> <i style='color:#FFF' class='fa fa-trash'></i>  </a>"
+
+
+
+                }
+            },
+            {
+                "sName": "Detalle",
+                "bSearchable": true,
+                "bSortable": true,
+                "mRender": function(data, type, full) {
+                    return full[5]
+                }
+            },
+
+            {
                 "sName": "Categoria",
                 "bSearchable": true,
                 "bSortable": true,
                 "mRender": function(data, type, full) {
 
-					
+
                     return full[11]
                 }
             },
@@ -168,11 +196,11 @@ $('#example2').DataTable({
                 "bSearchable": true,
                 "bSortable": true,
                 "mRender": function(data, type, full) {
-                 
-                  
+
+
                     return full[10]
-                
-                    
+
+
                 }
             },
             {
@@ -183,20 +211,8 @@ $('#example2').DataTable({
 
                     return full[6]
                 }
-            },
-            {
-                "sName": "Opciones",
-                "bSearchable": false,
-                "bSortable": false,
-                "mRender": function(data, type, full) {
-                    
-                    return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='updateInventario.php?CodigoProd="+ full[1] +"'> <i style='color:#FFF' class='fa fa-edit'></i> Editar </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' onclick='return confirm('estas seguro de eliminar?');' href='delprod.php?CodigoProd="+ full[1] +"'> <i style='color:#FFF' class='fa fa-trash'></i> Eliminar </a>"
-                    
-               
-               
-                }
-            } 
-        ] 
+            }
+        ]
 
     });
 
@@ -205,7 +221,7 @@ $('#example2').DataTable({
         "serverSide": true,
         "searching": true,
         "sAjaxSource": "../process/producto/actualizarStckAgotado.php",
-        "responsive": false,
+        "responsive": true,
         "iDisplayLength": "5",
         "aLengthMenu": [5, 50, 100, 150, 200, 250],
         "lengthMenu": false,
@@ -214,7 +230,7 @@ $('#example2').DataTable({
                 "bSearchable": false,
                 "bSortable": false,
                 "mRender": function(data, type, full) {
-                     
+
                     return '<img src=../assets/img-products/' + full[0] + ' width="50" height="50" />'
                 }
             },
@@ -249,14 +265,6 @@ $('#example2').DataTable({
                 "mRender": function(data, type, full) {
                     return full[4]
                 }
-			},
-            {
-                "sName": "Detalle",
-                "bSearchable": true,
-                "bSortable": true,
-                "mRender": function(data, type, full) {
-                    return full[5]
-                }
             },
             {
                 "sName": "Compra",
@@ -265,9 +273,15 @@ $('#example2').DataTable({
                 "mRender": function(data, type, full) {
 
                     var taza_dia = document.getElementById("tasa_cambio_dia");
-					var ope =  full[7] / taza_dia.value;
-					var result = parseFloat(ope).toFixed(2);
-					return '$ '+result+'<br>'+'S/  '+full[7]
+                    var ope = full[7] * taza_dia.value;
+                    const options = {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                    };
+                    const total_sol = Number(ope).toLocaleString('en', options);
+                    const total_dolar = Number(full[7]).toLocaleString('en', options);
+                    // var result = parseFloat(ope).toFixed(2);
+                    return '$ ' + total_dolar + '<br>' + 'S/  ' + total_sol
                 }
             },
             {
@@ -277,18 +291,48 @@ $('#example2').DataTable({
                 "mRender": function(data, type, full) {
 
                     var taza_dia = document.getElementById("tasa_cambio_dia");
-					var ope =  full[8] / taza_dia.value;
-					var result = parseFloat(ope).toFixed(2);
-					return '$ '+result+'<br>'+'S/  '+full[8]
+                    var ope = full[8] * taza_dia.value;
+                    const options = {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                    };
+                    const total_sol = Number(ope).toLocaleString('en', options);
+                    const total_dolar = Number(full[8]).toLocaleString('en', options);
+                    // var result = parseFloat(ope).toFixed(2);
+                    return '$ ' + total_dolar + '<br>' + 'S/  ' + total_sol
                 }
             },
-            { 
+            {
+                "sName": "Opciones",
+                "bSearchable": false,
+                "bSortable": false,
+                "mRender": function(data, type, full) {
+
+                    return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='updateInventario.php?CodigoProd=" +
+                        full[1] +
+                        "'> <i style='color:#FFF' class='fa fa-edit'></i>  </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' onclick='return confirm('estas seguro de eliminar?');' href='delprod.php?CodigoProd=" +
+                        full[1] + "'> <i style='color:#FFF' class='fa fa-trash'></i>  </a>"
+
+
+
+                }
+            },
+            {
+                "sName": "Detalle",
+                "bSearchable": true,
+                "bSortable": true,
+                "mRender": function(data, type, full) {
+                    return full[5]
+                }
+            },
+
+            {
                 "sName": "Categoria",
                 "bSearchable": true,
                 "bSortable": true,
                 "mRender": function(data, type, full) {
 
-					
+
                     return full[11]
                 }
             },
@@ -297,11 +341,11 @@ $('#example2').DataTable({
                 "bSearchable": true,
                 "bSortable": true,
                 "mRender": function(data, type, full) {
-                 
-                  
+
+
                     return full[10]
-                
-                    
+
+
                 }
             },
             {
@@ -312,27 +356,159 @@ $('#example2').DataTable({
 
                     return full[6]
                 }
+            }
+
+        ]
+
+    });
+
+    $('#stock_table').DataTable({
+        "processing": true,
+        "serverSide": true,
+        "searching": true,
+        "sAjaxSource": "../process/producto/actualizarStck_lista.php",
+        "responsive": true,
+        "iDisplayLength": "5",
+        "aLengthMenu": [5, 50, 100, 150, 200, 250],
+        "lengthMenu": false,
+        "columns": [{
+                "sName": "Imagen",
+                "bSearchable": false,
+                "bSortable": false,
+                "mRender": function(data, type, full) {
+
+                    return '<img src=../assets/img-products/'+full[0]+' width="50" height="50" />'
+                }
+            },
+            {
+                "sName": "CodigoProd",
+                "bSearchable": true,
+                "bSortable": true,
+                "mRender": function(data, type, full) {
+                    return full[1]
+                }
+            },
+            {
+                "sName": "NombreProd",
+                "bSearchable": true,
+                "bSortable": true,
+                "mRender": function(data, type, full) {
+                    return full[2]
+                }
+            },
+            {
+                "sName": "Modelo",
+                "bSearchable": true,
+                "bSortable": true,
+                "mRender": function(data, type, full) {
+                    return full[3]
+                }
+            },
+            {
+                "sName": "Marca",
+                "bSearchable": true,
+                "bSortable": true,
+                "mRender": function(data, type, full) {
+                    return full[4]
+                }
+            },
+            {
+                "sName": "Compra",
+                "bSearchable": true,
+                "bSortable": true,
+                "mRender": function(data, type, full) {
+
+                    var taza_dia = document.getElementById("tasa_cambio_dia");
+                    var ope = full[7] * taza_dia.value;
+                    const options = {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                    };
+                    const total_sol = Number(ope).toLocaleString('en', options);
+                    const total_dolar = Number(full[7]).toLocaleString('en', options);
+                    // var result = parseFloat(ope).toFixed(2);
+                    return '$ ' + total_dolar + '<br>' + 'S/  ' + total_sol
+                }
+            },
+            {
+                "sName": "Venta",
+                "bSearchable": false,
+                "bSortable": false,
+                "mRender": function(data, type, full) {
+
+                    var taza_dia = document.getElementById("tasa_cambio_dia");
+                    var ope = full[8] * taza_dia.value;
+                    const options = {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                    };
+                    const total_sol = Number(ope).toLocaleString('en', options);
+                    const total_dolar = Number(full[8]).toLocaleString('en', options);
+                    // var result = parseFloat(ope).toFixed(2);
+                    return '$ ' + total_dolar + '<br>' + 'S/  ' + total_sol
+                }
             },
             {
                 "sName": "Opciones",
                 "bSearchable": false,
                 "bSortable": false,
                 "mRender": function(data, type, full) {
-                    
-                    return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='updateInventario.php?CodigoProd="+ full[1] +"'> <i style='color:#FFF' class='fa fa-edit'></i> Editar </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' onclick='return confirm('estas seguro de eliminar?');' href='delprod.php?CodigoProd="+ full[1] +"'> <i style='color:#FFF' class='fa fa-trash'></i> Eliminar </a>"
-                    
-               
-               
+
+                    return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='updateInventario.php?CodigoProd=" +
+                        full[1] +
+                        "'> <i style='color:#FFF' class='fa fa-edit'></i>  </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' onclick='return confirm('estas seguro de eliminar?');' href='delprod.php?CodigoProd=" +
+                        full[1] + "'> <i style='color:#FFF' class='fa fa-trash'></i>  </a>"
+
+
+
                 }
-            } 
-        ] 
+            },
+            {
+                "sName": "Detalle",
+                "bSearchable": true,
+                "bSortable": true,
+                "mRender": function(data, type, full) {
+                    return full[5]
+                }
+            },
 
-    })
+            {
+                "sName": "Categoria",
+                "bSearchable": true,
+                "bSortable": true,
+                "mRender": function(data, type, full) {
+
+
+                    return full[11]
+                }
+            },
+            {
+                "sName": "Stock",
+                "bSearchable": true,
+                "bSortable": true,
+                "mRender": function(data, type, full) {
+
+
+                    return full[10]
+
+
+                }
+            },
+            {
+                "sName": "Peso",
+                "bSearchable": false,
+                "bSortable": false,
+                "mRender": function(data, type, full) {
+
+                    return full[6]
+                }
+            }
+        ]
+
+    });
 
 
 
-
-    
 });
 $(function() {
     $('#art_agotado').DataTable({
@@ -348,7 +524,7 @@ $(function() {
                 "bSearchable": false,
                 "bSortable": false,
                 "mRender": function(data, type, full) {
-                     
+
                     return '<img src=../assets/img-products/' + full[0] + ' width="50" height="50" />'
                 }
             },
@@ -383,7 +559,7 @@ $(function() {
                 "mRender": function(data, type, full) {
                     return full[4]
                 }
-			},
+            },
             {
                 "sName": "Detalle",
                 "bSearchable": true,
@@ -399,9 +575,15 @@ $(function() {
                 "mRender": function(data, type, full) {
 
                     var taza_dia = document.getElementById("tasa_cambio_dia");
-					var ope =  full[7] / taza_dia.value;
-					var result = parseFloat(ope).toFixed(2);
-					return '$ '+result+'<br>'+'S/  '+full[7]
+                    var ope = full[7] / taza_dia.value;
+                    const options = {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                    };
+                    const total_sol = Number(ope).toLocaleString('en', options);
+                    const total_dolar = Number(full[7]).toLocaleString('en', options);
+                    // var result = parseFloat(ope).toFixed(2);
+                    return '$ ' + total_dolar + '<br>' + 'S/  ' + total_sol
                 }
             },
             {
@@ -411,18 +593,24 @@ $(function() {
                 "mRender": function(data, type, full) {
 
                     var taza_dia = document.getElementById("tasa_cambio_dia");
-					var ope =  full[8] / taza_dia.value;
-					var result = parseFloat(ope).toFixed(2);
-					return '$ '+result+'<br>'+'S/  '+full[8]
+                    var ope = full[8] / taza_dia.value;
+                    const options = {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                    };
+                    const total_sol = Number(ope).toLocaleString('en', options);
+                    const total_dolar = Number(full[8]).toLocaleString('en', options);
+                    // var result = parseFloat(ope).toFixed(2);
+                    return '$ ' + total_dolar + '<br>' + 'S/  ' + total_sol
                 }
             },
-            { 
+            {
                 "sName": "Categoria",
                 "bSearchable": true,
                 "bSortable": true,
                 "mRender": function(data, type, full) {
 
-					
+
                     return full[11]
                 }
             },
@@ -431,15 +619,15 @@ $(function() {
                 "bSearchable": true,
                 "bSortable": true,
                 "mRender": function(data, type, full) {
-                 
+
                     if (full[10] == 0) {
-                    $(full[10]).remove();
-                }else {
-                    console.log(full[10]);
-                    return full[10]
-                }
-                
-                    
+                        $(full[10]).remove();
+                    } else {
+                        console.log(full[10]);
+                        return full[10]
+                    }
+
+
                 }
             },
             {
@@ -456,13 +644,16 @@ $(function() {
                 "bSearchable": false,
                 "bSortable": false,
                 "mRender": function(data, type, full) {
-                    
-                    return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='updateInventario.php?CodigoProd="+ full[1] +"'> <i style='color:#FFF' class='fa fa-edit'></i> Editar </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' onclick='return confirm('estas seguro de eliminar?');' href='delprod.php?CodigoProd="+ full[1] +"'> <i style='color:#FFF' class='fa fa-trash'></i> Eliminar </a>"
-                    
-               
-               
+
+                    return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='updateInventario.php?CodigoProd=" +
+                        full[1] +
+                        "'> <i style='color:#FFF' class='fa fa-edit'></i> Editar </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' onclick='return confirm('estas seguro de eliminar?');' href='delprod.php?CodigoProd=" +
+                        full[1] + "'> <i style='color:#FFF' class='fa fa-trash'></i> Eliminar </a>"
+
+
+
                 }
-            } 
+            }
         ],
         // "rowCallback": function( row, data, index ) {
         //         // if (data["Estado"] === null) {
@@ -501,5 +692,3 @@ $("#on").draggable({
     disabled: true
 });
 </script>
-
- 
