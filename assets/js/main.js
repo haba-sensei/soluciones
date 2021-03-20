@@ -194,7 +194,7 @@
         stopOnHover: true,
         autoPlay: true,
         items: 1,
-        itemsDesktopSmall: [1024, 2],
+        itemsDesktopSmall: [1270, 2],
         itemsTablet: [600, 1],
         itemsMobile: [479, 1]
     });

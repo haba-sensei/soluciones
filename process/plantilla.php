@@ -1176,14 +1176,14 @@ function draw_code39($code, $x, $y, $w, $h) {
     $this->SetXY( $r1+40, $y1+23 );
     $this->Cell(15,4,"S/".$costo_adicional, 0, 0, "C");
     
-    $this->SetXY( $r1+40, $y1+28.5 );
-    $this->Cell(15,4,"S/.$valor_final_con_acuenta", 0, 0, "C");
+    // $this->SetXY( $r1+40, $y1+28.5 );
+    // $this->Cell(15,4,"S/.$valor_final_con_acuenta", 0, 0, "C");
 	
-    $this->SetXY( $r1+40, $y1+34 );
-    $this->Cell(15,4,"$ ".$valor_final_con_acuenta_dolares, 0, 0, "C");
+    // $this->SetXY( $r1+40, $y1+34 );
+    // $this->Cell(15,4,"$ ".$valor_final_con_acuenta_dolares, 0, 0, "C");
 
-    $this->SetXY( $r1+40, $y1+40 );
-    $this->Cell(15,4,"S/".$total_tarjeta, 0, 0, "C");
+    // $this->SetXY( $r1+40, $y1+40 );
+    // $this->Cell(15,4,"S/".$total_tarjeta, 0, 0, "C");
 	
 	}
    

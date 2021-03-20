@@ -318,27 +318,35 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                     $categoria =  $fila['CodigoCat'];
 
                     $precio_dolar = $fila['Precio'];
+                    $precio_dolar_f = number_format($fila['Precio'], 2);
                     $precio_sol = number_format($precio_dolar * $globalTasaCambio_dolar, 2);
                     
                     $precio_dolar_tarj = number_format($precio_dolar * 5 / 100 + $precio_dolar, 2);
+                   
+                    $imp = str_replace(',','',$precio_dolar_tarj); 
                     
-                    $precio_sol_tarj_f =  number_format($precio_dolar_tarj * 5 / 100 + $precio_dolar_tarj,2);
-                    $precio_sol_tarj = number_format($precio_sol_tarj_f * $globalTasaCambio_dolar, 2);
+                    $precio_sol_tarj_f =  number_format($imp * 5 / 100 + $imp ,2);
+                    
+                    $imp2 = str_replace(',','',$precio_sol_tarj_f); 
+                    
+                    $precio_sol_tarj = number_format($imp2 * $globalTasaCambio_dolar, 2);;
+                    
+                    // $precio_sol_tarj = number_format($precio_sol_tarj_f * $globalTasaCambio_dolar, 2);
 
                     // number_format($precio_sol  * 5 / 100 + $precio_sol, 2);
                     // number_format($precio_sol * 5 / 100 + $precio_sol, 2, '','');
-         ?>
-    <style>
-    .disponible {
-        background: red;
-        padding: 9px;
-        position: absolute;
-        color: white;
-        font-size: 16px;
-        font-weight: 600;
-        border-radius: 5px;
-    }
-    </style>
+                    ?>
+                    <style>
+                    .disponible {
+                        background: red;
+                        padding: 9px;
+                        position: absolute;
+                        color: white;
+                        font-size: 16px;
+                        font-weight: 600;
+                        border-radius: 5px;
+                    }
+                    </style>
 
     <form class="product-form">
 
@@ -349,12 +357,12 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                     <img id="product-zoom" src="assets/img-products/<?php echo  $imagen; ?>"
                         data-zoom-image="assets/img-products/<?php echo $imagen; ?>" alt="" style="width: 700px; height: 350px;" width="800"
                         height="800" class="jsx-2487856160" />
-                        <meta property="og:site_name" content="">
-                        <meta property="og:title" content="" />
-                        <meta property="og:description" content="" />
-                        <meta property="og:image" itemprop="image" content="assets/img-products/<?php echo  $imagen; ?>">
-                        <meta property="og:type" content="website" />
-                        <meta property="og:updated_time" content="1440432930" />
+                    <meta property="og:site_name" content="">
+                    <meta property="og:title" content="" />
+                    <meta property="og:description" content="" />
+                    <meta property="og:image" itemprop="image" content="assets/img-products/<?php echo  $imagen; ?>">
+                    <meta property="og:type" content="website" />
+                    <meta property="og:updated_time" content="1440432930" />
                 </div>
 
                 <div class="col-md-4">
@@ -364,12 +372,12 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                         <div class="jsx-3624412160 specifications-title">DETALLES DEL PRODUCTO </div>
                         <div class="jsx-3624412160 specifications-list">
                             <ul class="jsx-3624412160" style="font-size: 16px;">
-								
-                               
-                                 
+
+
+
                                 <li class="jsx-3624412160"><strong class="jsx-3624412160" style="padding-left: 6px;">Marca</strong>:
                                     <?php echo $fila['Marca']; ?>
-                                    
+
                                 </li>
                                 <li class="jsx-3624412160"><strong class="jsx-3624412160" style="padding-left: 6px;">Modelo</strong>:
                                     <?php echo $fila['Modelo']; ?>
@@ -377,20 +385,20 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
 
                                 <li class="jsx-3624412160"><strong class="jsx-3624412160" style="padding-left: 6px;">Estado</strong>:
                                     <?php echo $fila['Detalle']; ?>
-                                 </li>
-                                    
-                                    <li class="jsx-3624412160"><strong class="jsx-3624412160" style="padding-left: 6px;">Código</strong>:
-                                    <?php echo $fila['CodigoProd']; ?>
-                                    
                                 </li>
-                                    
-                                    <li class="jsx-3624412160"><strong class="jsx-3624412160" style="padding-left: 6px;">Precio </strong>:
-                                     <a> Incluye IGV </a>
-                                    
+
+                                <li class="jsx-3624412160"><strong class="jsx-3624412160" style="padding-left: 6px;">Código</strong>:
+                                    <?php echo $fila['CodigoProd']; ?>
+
+                                </li>
+
+                                <li class="jsx-3624412160"><strong class="jsx-3624412160" style="padding-left: 6px;">Precio </strong>:
+                                    <a> Incluye IGV </a>
+
                                 </li>
                                 <li class="jsx-3624412160"><strong class="jsx-3624412160" style="padding-left: 6px;">Oferta</strong>:
                                     <a> Valida Hasta Agotar Stock</a>
-                                    
+
                                 </li>
                                 <li class="jsx-3624412160"><strong class="jsx-3624412160" style="padding-left: 6px;">Stock</strong>:
 
@@ -418,18 +426,20 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                                 style="position: absolute; left: 18px; top: 10px; font-size: 12px; color: #005a8f; font-weight: 600; text-transform: uppercase;">
                                 Precio válido en efectivo, transferencia bancaria</span>
                             <li style="border-right-color: #ff6600; border-right-style: solid; margin-top: 28px;"><span id="our_price_display"
-                                    class="price observaprecion" style=" color: #1d841d;  font-weight: 600;    font-size: 28px;">$ <?=$precio_dolar ?>
+                                    class="price observaprecion" style=" color: #1d841d;  font-weight: 600;    font-size: 28px;">$ <?=$precio_dolar_f ?>
                                 </span></li>
                             <li style="margin-top: 28px;"><span style=" font-size: 28px;  color: #fc0000; font-weight: 600;">S/
                                     <?= $precio_sol?></span> </li>
                             <span class=""
                                 style="position: absolute; left: 18px;    top: 107px; font-size: 12px; color: #005a8f; font-weight: 600; text-transform: uppercase;">
                                 5% adicional para pago con tarjeta de crédito, débito</span>
-                            <li style="border-right-color: #ff6600; border-right-style: solid;  position: relative; top: 18px;   margin-top: 43px;"><span id="our_price_display"
-                                    class="price observaprecion" style=" color: #1d841d;  font-weight: 600;    font-size: 24px;">$
+                            <li style="border-right-color: #ff6600; border-right-style: solid;  position: relative; top: 18px;   margin-top: 43px;">
+                                <span id="our_price_display" class="price observaprecion"
+                                    style=" color: #1d841d;  font-weight: 600;    font-size: 24px;">$
                                     <?= $precio_dolar_tarj ?>
                                 </span></li>
-                            <li style="margin-top: 43px; position: relative; top: 18px;"><span style=" font-size: 24px;  color: #fc0000; font-weight: 600;">S/
+                            <li style="margin-top: 43px; position: relative; top: 18px;"><span
+                                    style=" font-size: 24px;  color: #fc0000; font-weight: 600;">S/
                                     <?= $precio_sol_tarj ?></span> </li>
                         </ul>
 
@@ -445,7 +455,7 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                                     <input name="product_qty" type="hidden" value="1">
                                     <input name="CodigoProd" type="hidden" value="<?php echo $CodProd ?>">
                                     <button type="submit" class="jsx-1816208196 button btn-cart my-cart-btn button-primary button-primary-xtra-large">
-                                        <i class="icon-basket-loaded"></i> Comprar Producto 
+                                        <i class="icon-basket-loaded"></i> Comprar Producto
                                     </button>
                                 </div>
                             </div>
@@ -465,13 +475,12 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                         $base = "https://api.whatsapp.com/send?phone=51".$var_telefono.$texto_saludo;
 
 
-                        ?> 
+                        ?>
 
                         <div class="col-md-6"
                             style="    padding-left: 6px;  padding-right: 0px;  width: 40%; border: solid 1px gray; padding-top: 8px; padding-bottom: 8px; margin-top: 23px; margin-right: 8px;">
                             <a href="<?=$base?>" class="" target="blank_">
-                                <img src="assets/img/whatsapp_3.svg"
-                                    style="float: left; max-height: 21px; position: absolute; left: -61px;">
+                                <img src="assets/img/whatsapp_3.svg" style="float: left; max-height: 21px; position: absolute; left: -61px;">
                                 <span class="bq-at-txt" style="padding-top: 4px; position: relative;  left: 34px;">Cotizar Whatsapp</span>
                             </a>
                         </div>
@@ -486,7 +495,8 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                         </div>
 
                         <div class="col-md-6" style="padding-left: 0px; padding-top: 20px; padding-right: 0px; width: 42%;">
-                            <a href="<?=$base?>" target="blank_" class="informacion-button"><i class="fas fa-phone-alt" aria-hidden="true"></i> Consultar Stock
+                            <a href="<?=$base?>" target="blank_" class="informacion-button"><i class="fas fa-phone-alt" aria-hidden="true"></i>
+                                Consultar Stock
                             </a>
                         </div>
 
@@ -609,19 +619,19 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                     echo "</tbody> </table></div> ";
                     ?>
     <br></br>
-   
- 
-        <!--RELATED PRODUCT AREA START-->
-        <div class="related-product hidden-xs" style="background: white;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="title-with-bg">
-                            <span style="color:red;">Otros Productos Relacionados</span>
-                        </div>
+
+
+    <!--RELATED PRODUCT AREA START-->
+    <div class="related-product hidden-xs" style="background: white;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title-with-bg">
+                        <span style="color:red;">Otros Productos Relacionados</span>
                     </div>
-                    <div class="related-pro-carousel">
-                        <?php
+                </div>
+                <div class="related-pro-carousel">
+                    <?php
 
                             $ordenSlider =  ejecutarSQL::consultar("SELECT `producto`.*, `producto`.`CodigoCat`
                         FROM `producto`
@@ -645,44 +655,46 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                             ?>
 
 
-                        <!--single product-->
-                        <div class="col-md-12">
-                            <div class="sin-product">
-                                <div class="product-top">
-                                    <div class="pro-img">
-                                        <a href="infoProd.php?CodigoProd=<?php echo  $CodigoProducto; ?>">
-                                            <img alt="" style="height:268px!important; border-bottom: 1px solid #005a8f;"
-                                                src="assets/img-products/<?php echo  $Imagen_slider2; ?>">
-                                        </a>
-                                    </div>
-                                    <div class="label_new"><span>Nuevo</span></div>
-                                    <div class="name"><a href="#"><?php echo  $NombreProductoCat2; ?></a></div><br>
-                                    <div class="name"><a href="#"><?php echo $ModeloProd . " - " . $MarcaProd; ?></a></div><br>
-
-                                    <div class="rating">
-                                        <span class="price-new" style="text-decoration-line: line-through;"><?php echo "Antes: S/ " . $p_p; ?>
-                                        </span>&nbsp; &nbsp; <strong> 25% DCTO</strong>
-                                    </div>
-                                    <div class="price">
-                                        <span
-                                            class="price-new"><?php echo "$ ".$Precio_slider2."&nbsp;&nbsp; | &nbsp;&nbsp;"."S/ ".$precio_sol_dolar_f ?></span>
-                                    </div>
-                                    <a href="infoProd.php?CodigoProd=<?php echo  $CodigoProducto; ?>"
-                                        style="color: #fff; background-color: #005a8f; border-color: #ff9f00" class="btn btn-lg" id="open-01"> Ver
-                                        Mas</a>
-
+                    <!--single product-->
+                    <div class="col-md-12">
+                        <div class="sin-product">
+                            <div class="product-top">
+                                <div class="pro-img">
+                                    <a href="infoProd.php?CodigoProd=<?php echo  $CodigoProducto; ?>">
+                                        <img alt="" style="height:268px!important; border-bottom: 1px solid #005a8f;"
+                                            src="assets/img-products/<?php echo  $Imagen_slider2; ?>">
+                                    </a>
                                 </div>
+                                <div class="label_new"><span>Nuevo</span></div>
+                                <div class="name"><a href="#"><?php echo  $NombreProductoCat2; ?></a></div><br>
+                                <div class="name"><a href="#"><?php echo $ModeloProd . " - " . $MarcaProd; ?></a></div><br>
+
+                                <div class="rating">
+                                    <span class="price-new" style="text-decoration-line: line-through;"><?php echo "Antes: S/ " . $p_p; ?>
+                                    </span>&nbsp; &nbsp; <strong> <?php echo "Sku: ".$CodigoProducto; ?> </strong>
+                                    
+                                </div>
+                                
+                                <div class="price">
+                                    <span
+                                        class="price-new"><?php echo "$ ".$Precio_slider2."&nbsp;&nbsp; | &nbsp;&nbsp;"."S/ ".$precio_sol_dolar_f ?></span>
+                                </div>
+                                <a href="infoProd.php?CodigoProd=<?php echo  $CodigoProducto; ?>"
+                                    style="color: #fff; background-color: #005a8f; border-color: #ff9f00" class="btn btn-lg" id="open-01"> Ver
+                                    Mas</a>
+
                             </div>
                         </div>
-                        <!--single product-->
-                        <?php }  ?>
                     </div>
+                    <!--single product-->
+                    <?php }  ?>
                 </div>
             </div>
         </div>
-        <!--RELATED PRODUCT AREA END-->
-        <br></br>
-        <div class="related-product " style="background: white;">
+    </div>
+    <!--RELATED PRODUCT AREA END-->
+    <br></br>
+    <div class="related-product " style="background: white;">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -690,17 +702,26 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                         <span style="color:red;">Informacion de procesos de Venta y Entrega de Productos</span>
                     </div>
                 </div>
+                <style>
+                img {
+                    max-width: 97%;
+                    height: auto;
+                }
+                </style>
                 <div id="delivery_data" class="owl-carousel">
 
-                    <img src="assets/img/comprar.jpg">
-                    <img src="assets/img/lima.jpg">
-                    <img src="assets/img/provincia.jpg">
-                    <img src="assets/img/comprar.jpg">
+                    <img src="assets/img/1comprar.jpg">
+                    <img src="assets/img/2pagos.jpg">
+                    <img src="assets/img/3lima.jpg">
+                    <img src="assets/img/4provincia.jpg">
+                    <img src="assets/img/5entrega.jpg">
+                    <img src="assets/img/6garantia.jpg">
+                    <img src="assets/img/7soporte.jpg">
                 </div>
             </div>
         </div>
         <br></br>
-        
+
 
         <!-- sdadasda-->
 
@@ -726,7 +747,8 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                                 font-family: Arial, sans-serif;
                                 font-weight: 600;">Para comprar productos en nuestra tienda virtual, no es necesario estar registrado. Usted puede
                                 adquirir
-                                los productos ofrecidos por la empresa SOLUCIONES CCTV Y SISTEMAS SAC en la tienda virtual www.solucionescctvysistemas.com
+                                los productos ofrecidos por la empresa SOLUCIONES CCTV Y SISTEMAS SAC en la tienda virtual
+                                www.solucionescctvysistemas.com
                                 o en toda nuestras tiendas. </span>
                         </span>
                     </p>
@@ -743,7 +765,8 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                         <span style="color: #828282;">
                             <span style="font-size: 10pt;
     font-family: Arial, sans-serif;
-    font-weight: 600;">SOLUCIONES CCTV Y SISTEMAS SAC podrá modificar las presentes condiciones generales mediante publicación en esta página Web para
+    font-weight: 600;">SOLUCIONES CCTV Y SISTEMAS SAC podrá modificar las presentes condiciones generales mediante publicación en esta página Web
+                                para
                                 su conocimiento y aceptación por los usuarios.</span>
                         </span>
                     </p>
@@ -786,7 +809,8 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                         style="margin-bottom: 0.0001pt; text-align: justify; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">
                         <span style="font-size: 10pt;
     font-family: Arial, sans-serif;
-    font-weight: 600; color:#828282;">SOLUCIONES CCTV Y SISTEMAS SAC trabaja con dos plataformas de medios de pago que son Culqi y Mercado Pago. Estas
+    font-weight: 600; color:#828282;">SOLUCIONES CCTV Y SISTEMAS SAC trabaja con dos plataformas de medios de pago que son Culqi y Mercado Pago.
+                            Estas
                             sólidas
                             plataformas son muy eficientes en el proceso de compra y protegen la privacidad de sus datos ingresados,
                             así como la implementación de una eficaz política antifraude.
@@ -1013,8 +1037,8 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
     font-weight: 600;"><i class="fa fa-user"></i> TITULAR: SOLUCIONES CCTV Y SISTEMAS SAC.
                         </span>
                     </p>
-                    
-                    
+
+
                     <p style="text-align: justify; background: white; margin: 0cm 0cm 7.5pt 0cm;">
                     <p style="color: #000000;">
                         <span style="font-size: 10pt;
@@ -1022,7 +1046,7 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
     font-weight: 600;"><i class="fa fa-user"></i> TITULAR: JHONNY DAVID OLARTE GAMBOA
                         </span>
                     </p>
-                    
+
                     <p style="font-size: 10pt;
     font-family: Arial, sans-serif;
     font-weight: 600;color: #000000;">
@@ -1031,7 +1055,8 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                     </p>
                     </p>
                     <strong>
-                        <span style="font-size: 12.5pt; font-family: 'Arial','sans-serif'; color: darkorange;">NUESTRAS CUENTAS CORRIENTES AHORRO</span>
+                        <span style="font-size: 12.5pt; font-family: 'Arial','sans-serif'; color: darkorange;">NUESTRAS CUENTAS CORRIENTES
+                            AHORRO</span>
                     </strong>
                     <span style="font-size: 9.0pt; font-family: 'Arial','sans-serif'; color: #333333;">
                         <o:p></o:p>
@@ -1084,7 +1109,7 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
     font-family: Arial, sans-serif;margin-bottom:1pt;
     font-weight: 600;">CCI Soles: 011-323-000200389677-32
                     </p>
-                    
+
                     </p>
                     <p class="MsoNormal"
                         style="margin-bottom: 0.0001pt; text-align: justify; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">
@@ -1105,7 +1130,7 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
     font-family: Arial, sans-serif;margin-bottom:1pt;
     font-weight: 600;">CCI Soles: 009-022-00000-6192980-58
                     </p>
-                    
+
                     </p>
                     <p class="MsoNormal" style="margin-bottom: .0001pt; text-align: justify; line-height: normal;">
                         <span style="    font-size: 10pt;
@@ -1130,7 +1155,8 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                         <span style="    font-size: 10pt;
     font-family: Arial, sans-serif;
     font-weight: 600; color: #828282;">Tarjeta Esta forma de pago es inmediata, cómoda y segura. Al terminar tu pedido, podrás hacer el pago en la
-                            página del banco. SOLUCIONES CCTV Y SISTEMAS SAC no recibirá estos datos ni tendrá acceso a ellos. Puedes asociar a tu cuenta de cliente tantas
+                            página del banco. SOLUCIONES CCTV Y SISTEMAS SAC no recibirá estos datos ni tendrá acceso a ellos. Puedes asociar a tu
+                            cuenta de cliente tantas
                             tarjetas como quieras para hacer pedidos más rápido. Un pedido por tarjeta se puede pagar en la hora siguiente a su
                             confirmación. Pasado ese tiempo, si no llega el pago, el pedido será anulado automáticamente.
                             <o:p></o:p>
@@ -1154,7 +1180,8 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                         <span style="color: #828282;">
                             <span style="font-size: 10pt;
     font-family: Arial, sans-serif;
-    font-weight: 600;">SOLUCIONES CCTV Y SISTEMAS SAC sólo enviará la mercadería adquirida por el cliente cuando se haya confirmado la compra por la página web, la
+    font-weight: 600;">SOLUCIONES CCTV Y SISTEMAS SAC sólo enviará la mercadería adquirida por el cliente cuando se haya confirmado la compra por la
+                                página web, la
                                 confirmación del stock para su despacho y el pago correspondiente por el producto. Esta aprobación se realizará vía
                                 correo electrónico o mediante confirmación telefónica.
                                 <br>
@@ -1176,7 +1203,8 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                             <span style="font-size: 10pt;
     font-family: Arial, sans-serif;
     font-weight: 600;">El envió a domicilio se realiza de Lunes a Viernes en el horario de 10:00am a 5:00pm y Sábados de 10:00am a 2:00pm. Debido a
-                                restricciones por parte de nuestro Courier, no hay envíos a apartados postales. Los envios seran enviados por GLOVO, RAPPI o por su Courier de preferecia
+                                restricciones por parte de nuestro Courier, no hay envíos a apartados postales. Los envios seran enviados por GLOVO,
+                                RAPPI o por su Courier de preferecia
                                 <br>
                                 <br>
                                 Para las compras online en Lima urbana, la entrega de los productos se realizará en un intervalo de 24 a 48 horas y
@@ -1254,7 +1282,7 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                                             empresas de transporte locales como MARVISUR, SHALOM y el pago es contra entrega (Pago destino).
                                             <br>
                                             <br>
-                                            
+
                                 </p>
                 </div>
             </div>
@@ -1263,14 +1291,14 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
     <div class="modal fade" id="modal_tiene_garantia" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" style="margin-top: 17px;" role="document">
             <div class="modal-content" style="padding: 20px 20px;border:1px">
-            <p>
-                        <strong style="color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;">
-                            <span style="font-size: 17.5pt; font-family: 'Arial','sans-serif'; color: darkorange;"><i class="fa fa-location-arrow"
-                                    aria-hidden="true"></i>  GARANTIAS </span>
-                        </strong>
-                    </p>
-                    
-               
+                <p>
+                    <strong style="color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;">
+                        <span style="font-size: 17.5pt; font-family: 'Arial','sans-serif'; color: darkorange;"><i class="fa fa-location-arrow"
+                                aria-hidden="true"></i> GARANTIAS </span>
+                    </strong>
+                </p>
+
+
                 <div class="modal-body">
                     <p align="justify">La Garantía de su Equipo adquirido en SOLUCIONES CCTV & SISTEMAS S.A.C cubre mano
                         de obra y cambio o reparación de partes de la configuración original del Equipo (Hardware) que

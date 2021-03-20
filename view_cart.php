@@ -934,7 +934,7 @@ include_once("library/config.inc.php");
                                 <div class="form-group col-md-3 col-sm-3 col-xs-6 " style="padding-left: 50px;">
                                     <label style="float:left">Distritos <sup>*</sup></label>
                                     <select class="form-control" style="font-size: 15px;" name="distritos_v" id="distritos_v">
-                                    <option value="" > - Elige un distrito - </option>
+                                    <option value="" >  Selecciona una Opción </option>
                                     </select>
 
                                 </div>
@@ -1351,7 +1351,7 @@ include_once("library/config.inc.php");
 
                     $("#distritos_v").empty();
                     
-                    $("#distritos_v").append("<option value='' > - Elige un distrito - </option>");
+                    $("#distritos_v").append("<option value='' > Selecciona una Opción </option>");
                     for( var i = 0; i<len; i++){
                          
                         var nombre = response[i]['nombre'];
