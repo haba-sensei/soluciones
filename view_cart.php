@@ -652,7 +652,8 @@ include_once("library/config.inc.php");
                                         $product_qty = $product["product_qty"];
                                         $modelo_prod = $product["Modelo"];
                                         $marca_prod =  $product["Marca"];
-                                        $product_price = number_format($product_price_dolares * $globalTasaCambio_dolar, 2, '.', ''); 
+                                        // $product_price = number_format($product_price_dolares * $globalTasaCambio_dolar, 2, '.', ''); 
+                                        $product_price = number_format($product_price_dolares, 2, '.', ''); 
                                             
 
                                         $ordenU =  ejecutarSQL::consultar("SELECT `producto`.*, `perfil`.* FROM `producto` , `perfil`;");
@@ -871,7 +872,7 @@ include_once("library/config.inc.php");
 
                             <div class="row">
                              
-                                <div class="form-group col-md-4" style="padding-left: 50px;">
+                                <div class="form-group col-md-3" style="padding-left: 50px;">
 
                                     <label style="float:left">Forma de Pago <sup>*</sup></label>
                                     <select class="form-control"  style="font-size: 15px;" name="F_pago">
@@ -883,7 +884,7 @@ include_once("library/config.inc.php");
                                     </select>
                                 </div>      
 
-                                <div class="form-group col-md-4" >
+                                <div class="form-group col-md-3" >
 
                                     <label style="float:left">Medio de Pago <sup>*</sup></label>
                                     <select class="form-control"  style="font-size: 15px;" name="M_pago">
@@ -896,13 +897,26 @@ include_once("library/config.inc.php");
                                     </select>
                                 </div>   
                                             
-                                <div class="form-group col-md-4" style="padding-right: 50px;">
+                                <div class="form-group col-md-3" style="padding-right: 50px;">
                                     <label style="float:left">Forma de Entrega <sup>*</sup></label>
                                     <select class="form-control" style="font-size: 15px;" name="F_entrega" id="F_entrega" >
                                         <option >Seleciona una Opción</option>
                                         <option value="Tienda">Despacho en Tienda</option>
                                         <option value="Lima">Delivery Lima </option>
                                         <option value="Provincia">Delivery Provincia </option>
+
+
+                                    </select>
+
+                                </div>
+
+                                <div class="form-group col-md-3" style="padding-right: 50px;">
+                                    <label style="float:left">Moneda de Pago <sup>*</sup></label>
+                                    <select class="form-control" style="font-size: 15px;" name="Moneda_pago" id="Moneda_pago" >
+                                        <option >Seleciona una Opción</option>
+                                        <option value="soles">Soles</option>
+                                        <option value="dolares">Dolares</option>
+                                        
 
 
                                     </select>
@@ -932,7 +946,7 @@ include_once("library/config.inc.php");
                             
                             
                                 <div class="form-group col-md-3 col-sm-3 col-xs-6 " style="padding-left: 50px;">
-                                    <label style="float:left">Distritos <sup>*</sup></label>
+                                    <label style="float:left">Forma de Delivery <sup>*</sup></label>
                                     <select class="form-control" style="font-size: 15px;" name="distritos_v" id="distritos_v">
                                     <option value="" >  Selecciona una Opción </option>
                                     </select>
@@ -940,7 +954,7 @@ include_once("library/config.inc.php");
                                 </div>
                                 <div class="form-group col-md-3 col-sm-3 col-xs-6">
 
-                                    <label style="float:left">Costo Adicional <sup>*</sup></label>
+                                    <label style="float:left">Costo Delivery <sup>*</sup></label>
                                     <input type="text" name="costo_adicional" id="costo_adicional" value="" placeholder="Costo Adicional" class="form-control">
                                 </div>
                                 <div class="form-group col-md-3 col-sm-3 col-xs-6">
@@ -1221,7 +1235,10 @@ include_once("library/config.inc.php");
                                                 </li>
 
                                                 <li class="">
-                                                
+                                                <input type="button"
+                                                            style=" position: absolute; bottom: -126px; right: 466px; width: 23%; padding: 16px;"
+                                                            name="compra1" class=" action-button" onclick="formSend('compra')"
+                                                            value="Generar Compra" />
                                                     <div class="radio-option" id="aca_compra"
                                                         style=" text-align: -webkit-center; padding-top: 23px; margin-bottom: -7px;">
                                                         
@@ -1727,7 +1744,7 @@ include_once("library/config.inc.php");
             success: function(response) {
 
                 alert("PROCESO TERMINADO");
-                console.log(response);
+                
                 html = "";
                 // // <input type="button" name="submit[descarga]" class=" action-button" onclick="formSend('descarga')" style="width:25%" value="Descargar Comprobante1" />
                 // // <input type="button" name="submit[enviar_correo]" class=" action-button" onclick="formSend('enviar_correo')" style="width:25%"  value="Enviar Correo1" />

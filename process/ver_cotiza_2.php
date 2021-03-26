@@ -17,13 +17,12 @@ $aSubmitVal = $_POST['operacion'];
 $F_entrega = $_POST['F_entrega'];
 $F_pago = $_POST['F_pago'];
 $M_pago = $_POST['M_pago'];
+$Moneda_pago = $_POST['Moneda_pago'];
 $distritos_ = $_POST['distritos_v'];
 $costo_adicional = $_POST['costo_adicional'];
 $direccion_envio = $_POST['dir_delivery'];
 $referencia = $_POST['referencia_delivery'];
-
-$total = $_POST['total'];
-
+ 
  
 
 
@@ -32,7 +31,17 @@ include '../library/consulSQL.php';
 include_once '../library/config.inc.php';
 include_once 'plantilla.php';
 require '../library/conexion.php';
-include 'numerosAletras.php';
+
+switch ($Moneda_pago) {
+    case 'soles':
+        include 'numerosAletras_soles.php';
+        break;
+    
+        case 'dolares':
+        include 'numerosAletras_dolares.php';
+            break;
+}
+
 
 
 if (
@@ -65,6 +74,7 @@ if (
         switch ($aSubmitVal) {
             case 'cotizacion':
                 $estado = 0;
+                $total_final_f  = $total_final;
                 break;
             case 'compra':
                 $estado = 1;
@@ -73,13 +83,24 @@ if (
                     'id_cotizacion, forma_entrega, forma_pago, medio_pago, distrito, costo_adicional, dir_envio, referencia',
                     " '$cod' ,'$F_entrega','$F_pago', '$M_pago', '$distritos_', '$costo_adicional', '$direccion_envio', '$referencia'"
                 );
+
+                if($M_pago == "Tarjeta"){
+
+                    $total_tarjeta = ($total_final * 5) / 100;
+
+
+                    $total_final_f = $total_final + $total_tarjeta;
+                }else {
+                    $total_final_f = $total_final;
+                }
+
                 break;
         }
         
         consultasSQL::InsertSQL(
             'cotizacion_online',
             'id_cotizacion, ID, fecha_cotizacion, GranTotal, Estado',
-            "'$cod','$ID','$fecha','$total_final', '$estado'"
+            "'$cod','$ID','$fecha','$total_final_f', '$estado'"
         );
         
         
@@ -102,7 +123,8 @@ if (
                 $product_price_total = $product_price;
 
                 $precio_dolar_f = $product_price_total * $product_qty;
-                $subtotal = $precio_dolar_f * $globalTasaCambio_dolar; 
+                // $subtotal = $precio_dolar_f * $globalTasaCambio_dolar; 
+                $subtotal = $precio_dolar_f;
             }
 
             if (

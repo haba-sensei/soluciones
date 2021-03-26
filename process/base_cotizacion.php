@@ -25,6 +25,7 @@
 			"Cuentas Bancarias: ".utf8_decode($row['banco1'])." / ".utf8_decode($row['banco2'])
 			);
 			$aSubmitVal = $_POST['operacion'];
+			$Moneda_pago = $_POST['Moneda_pago'];
 			
 				switch ($aSubmitVal) {
 					case 'cotizacion':
@@ -39,10 +40,20 @@
 						$referencia = "-";
 						break;
 					case 'compra':
+						$M_pago = $_POST['M_pago'];
 						$tipo_operacion = "COMPRA";
 						$medio_pago = $F_pago;
 						$estatus_operacion = "En Revision";
-						$costo_adicional = $_POST['costo_adicional'];
+						switch ($Moneda_pago) {
+							case 'soles':
+								$costo_adicional = $_POST['costo_adicional'];
+								break;
+							
+								case 'dolares':
+								$costo_adicional = number_format($_POST['costo_adicional'] / $globalTasaCambio_dolar, 2);
+									break;
+						}
+						
 						break;
 						
 				}
@@ -127,7 +138,19 @@
 						$product_medio=$ordenP['medio'];
 						$igv_final=$ordenP['impuesto'];
 						
-						$product_soles_ = number_format($product_price_unitario * $globalTasaCambio_dolar, 2); 
+						
+
+						switch ($Moneda_pago) {
+							case 'soles':
+								$product_soles_ = number_format($product_price_unitario * $globalTasaCambio_dolar, 2); 
+								break;
+							
+								case 'dolares':
+								$product_soles_ = number_format($product_price_unitario, 2); 
+									break;
+						}
+
+
 						$total_indi =  str_replace(',', '',  $product_soles_ );
 
 						$subtotal_f = ($total_indi * $product_qty);
@@ -173,12 +196,22 @@
 				
 				}				
 			
-			 
-
 				
+				
+				if($M_pago == "Tarjeta"){
+
+                    $total_tarjeta = ($fin_total_base * 5) / 100;
+
+
+                    $fin_total_base_f = $fin_total_base + $total_tarjeta;
+                }else {
+
+					$fin_total_base_f = $fin_total_base;
+					
+				}
 				
 				$pdf->SetFont('Arial','B',12);
-				$num_letra = strtoupper(numtoletras($fin_total_base));
+				$num_letra = strtoupper(numtoletras($fin_total_base_f));
 				
 				$pdf->fact_dev12(utf8_decode("Son: "), $num_letra );	
 				$pdf->Code39(10,210, $cod);
@@ -192,7 +225,7 @@
 				$pdf->addCadreEurosFrancs3();
 				$pdf->addCadreEurosFrancs4();
 				
-				unset($_SESSION["products"]);
+				//unset($_SESSION["products"]);
 				 	
 		
 				

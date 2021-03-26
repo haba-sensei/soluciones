@@ -982,23 +982,57 @@ function draw_code39($code, $x, $y, $w, $h) {
     $this->Line( $r1+35,  $y1, $r1+35, $y2); // linea derecha operaciones 
     // $this->Line( $r1, $y1+30, $r2, $y1+30); // linea debajo de operacion de vuelto
         
-    $this->SetFont( "Arial", "B", 8);
-    $this->SetXY( $r1+1, $y1+1 );
+    $this->SetFont( "Arial", "B", 12);
+    $this->SetXY( $r1+4, $y1+4 );
     $this->Cell(15,4, utf8_decode("Subtotal "), 0, 0, "C");
-    $this->SetXY( $r1+1, $y1+6 );
-    $this->Cell(15,4, utf8_decode("Igv 18% "), 0, 0, "C");
-    $this->SetXY( $r1+5.3, $y1+11.5 );
-    $this->Cell(15,4, utf8_decode("Total de Venta "), 0, 0, "C");
-    $this->SetXY( $r1+1.5, $y1+17.5 );
-    $this->Cell(15,4, utf8_decode("A cuenta "), 0, 0, "C");
-    $this->SetXY( $r1+1.3, $y1+23 );
-    $this->Cell(15,4, utf8_decode("Delivery "), 0, 0, "C");
-    $this->SetXY( $r1+8, $y1+28.5 );
-    $this->Cell(15,4, utf8_decode("Total a Pagar Soles"), 0, 0, "C");
-	$this->SetXY( $r1+9.7, $y1+34 );
-    $this->Cell(15,4, utf8_decode("Total a Pagar Dolares"), 0, 0, "C");
-    $this->SetXY( $r1+6.8, $y1+40 );
-    $this->Cell(15,4, utf8_decode("Total con Tarjeta"), 0, 0, "C");
+
+    
+    $F_pago = $_POST['F_pago'];
+    switch ($F_pago) {
+        case 'A Cuenta':
+
+            $this->SetXY( $r1+4, $y1+12 );
+            $this->Cell(15,4, utf8_decode("Igv 18% "), 0, 0, "C");
+
+            $this->SetXY( $r1+4, $y1+21 );
+            $this->Cell(15,4, utf8_decode("Delivery "), 0, 0, "C");
+        
+            $this->SetXY( $r1+5, $y1+29 );
+            $this->Cell(15,4, utf8_decode("A cuenta "), 0, 0, "C");
+        
+            $this->SetXY( $r1+10, $y1+37 );
+            $this->Cell(15,4, utf8_decode("Total de Venta "), 0, 0, "C");
+            break;
+        
+        case 'Al Contado':
+
+            $this->SetXY( $r1+4, $y1+15 );
+            $this->Cell(15,4, utf8_decode("Igv 18% "), 0, 0, "C");            
+        
+            $this->SetXY( $r1+10, $y1+35 );
+            $this->Cell(15,4, utf8_decode("Total de Venta "), 0, 0, "C");
+        
+            $this->SetXY( $r1+4.3, $y1+25 );
+            $this->Cell(15,4, utf8_decode("Delivery "), 0, 0, "C");
+            break;
+        default:
+
+            $this->SetXY( $r1+4, $y1+15 );
+            $this->Cell(15,4, utf8_decode("Igv 18% "), 0, 0, "C");
+              
+            $this->SetXY( $r1+10, $y1+35 );
+            $this->Cell(15,4, utf8_decode("Total de Venta "), 0, 0, "C");
+        
+            $this->SetXY( $r1+4.3, $y1+25 );
+            $this->Cell(15,4, utf8_decode("Delivery "), 0, 0, "C");
+            
+            break;
+    }
+
+
+    
+
+     
 
 	$condiciones=1;	
 	$i = 0;
@@ -1011,15 +1045,26 @@ function draw_code39($code, $x, $y, $w, $h) {
 	$_cotizacion_1 = ejecutarSQL::consultar("select * from detalle_cotizacion_online where id_cotizacion='" . $cod . "'");
 
     $aSubmitVal = $_POST['operacion'];
-
+    $Moneda_pago = $_POST['Moneda_pago'];
+    
     switch ($aSubmitVal) {
         case 'cotizacion':
             $costo_adicional = 0.00;
             $F_pago = "Al Contado";
             break;
         case 'compra':
-            $costo_adicional = $_POST['costo_adicional'];
-            $F_pago = $_POST['F_pago'];
+            switch ($Moneda_pago) {
+                case 'soles':
+                    $costo_adicional = $_POST['costo_adicional'];
+                    $F_pago = $_POST['F_pago'];
+                    break;
+                
+                    case 'dolares':
+                        $costo_adicional = $_POST['costo_adicional'];
+                        $F_pago = $_POST['F_pago'];
+                        break;
+            }
+           
             break;
             
     }
@@ -1159,22 +1204,86 @@ function draw_code39($code, $x, $y, $w, $h) {
     $valor_final_con_acuenta_dolares = $total_dolares_final - $a_cuenta_dolar;
     
 	
-	
-	
-	$this->SetXY( $r1+40, $y1+1 );
-    $this->Cell(15,4,"S/".$total_indi_1, 0, 0, "C");
-	
-	$this->SetXY( $r1+40, $y1+6 );
-    $this->Cell(15,4,"S/".$igv, 0, 0, "C");
+	switch ($Moneda_pago) {
+        case 'soles':
+            $simbolo ="S/";
+            $delivery_f = $costo_adicional;
+            break;
+        
+            case 'dolares':
+                $simbolo ="$";
+                $delivery_f = number_format($costo_adicional / $globalTasaCambio_dolar, 2);
+                break;
+
+                default:
+                    $simbolo ="S/";
+                    $delivery_f = $costo_adicional;
+                    break;        
+    }
+    $M_pago = $_POST['M_pago'];
+
+    if($M_pago == "Tarjeta"){
+
+        $total_tarjeta = ($total_venta_f * 5) / 100;
+
+
+        $total_con_tarjeta =  $total_tarjeta;
+    }else {
+
+        $total_con_tarjeta = 0;
+        
+    }
+
+
     
-	$this->SetXY( $r1+40, $y1+11.5 );
-    $this->Cell(15,4,"S/".$total_venta_f, 0, 0, "C");
+	$this->SetXY( $r1+40, $y1+4 );
+    $this->Cell(15,4, $simbolo." ".$total_indi_1, 0, 0, "C");
 	
-    $this->SetXY( $r1+40, $y1+17.5 );
-    $this->Cell(15,4,"S/".$a_cuenta, 0, 0, "C");
+	
+
+    switch ($F_pago) { 
+
+        case 'A Cuenta':
+
+            $this->SetXY( $r1+40, $y1+12 );
+            $this->Cell(15,4, $simbolo." ".$igv, 0, 0, "C"); 
+
+            $this->SetXY( $r1+40, $y1+21 );
+            $this->Cell(15,4, $simbolo." ".$delivery_f, 0, 0, "C");
+            
+            $this->SetXY( $r1+40, $y1+29 );
+            $this->Cell(15,4, $simbolo." ".$a_cuenta, 0, 0, "C");
+            
+            $this->SetXY( $r1+40, $y1+37 );
+            $this->Cell(15,4, $simbolo." ".($total_venta_f - $a_cuenta + $delivery_f + $total_con_tarjeta), 0, 0, "C");
+           
+            $this->SetFont( "Arial", "B", 8);
+            $this->SetXY( $r1+40, $y1+41 );
+            $this->Cell(15,4,"5% Extra ", 0, 0, "C");
+           
+           
+            break;
+
+        case 'Al Contado':
+
+            $this->SetXY( $r1+40, $y1+15 );
+            $this->Cell(15,4, $simbolo." ".$igv, 0, 0, "C");
+
+            $this->SetXY( $r1+40, $y1+35 );
+            $this->Cell(15,4, $simbolo." ".($total_venta_f + $delivery_f + $total_con_tarjeta), 0, 0, "C");
+             
+            
+            $this->SetXY( $r1+40, $y1+25 );
+            $this->Cell(15,4, $simbolo." ".$delivery_f, 0, 0, "C");
+
+            $this->SetFont( "Arial", "B", 8);
+            $this->SetXY( $r1+40, $y1+40 );
+            $this->Cell(15,4,"5% Extra ", 0, 0, "C");
+            break;
+
+    }
     
-    $this->SetXY( $r1+40, $y1+23 );
-    $this->Cell(15,4,"S/".$costo_adicional, 0, 0, "C");
+	
     
     // $this->SetXY( $r1+40, $y1+28.5 );
     // $this->Cell(15,4,"S/.$valor_final_con_acuenta", 0, 0, "C");
