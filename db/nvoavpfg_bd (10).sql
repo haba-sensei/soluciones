@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-03-2021 a las 09:01:25
+-- Tiempo de generación: 29-03-2021 a las 07:54:56
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.11
 
@@ -42,8 +42,9 @@ CREATE TABLE `afiliado` (
 --
 
 INSERT INTO `afiliado` (`CodAfil`, `NitAfil`, `NombreAfil`, `Clave`, `Estatus`, `CodigoArea`, `PrefCat`) VALUES
-(1, '20601883164', 'soluciones', '31c1966705c0327af7a6d3422d65872b', 'activo', '1', '1'),
-(2, '20601883164', 'soluciones2', '31c1966705c0327af7a6d3422d65872b', 'activo', '2', '2');
+(1, '20601883164', 'administrador', '202cb962ac59075b964b07152d234b70', 'activo', '1', '1'),
+(2, '20601883164', 'almacen', '202cb962ac59075b964b07152d234b70', 'activo', '2', '2'),
+(3, '20601883164', 'almacen1', '202cb962ac59075b964b07152d234b70', 'activo', '3', '3');
 
 -- --------------------------------------------------------
 
@@ -91,7 +92,8 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`ID`, `NombreEmpresa`, `Correo`, `Telefono`, `Direccion`) VALUES
-('20601883164', 'wqeqweqweqw', 'lycantroponatural@gmail.com', '12312312312', 'akjadajdaskljaskdj');
+('20601883164', 'wqeqweqweqw', 'lycantroponatural@gmail.com', '12312312312', 'akjadajdaskljaskdj'),
+('123123', '2qweqwewe', 'sadasdada', 'sadasdasd', 'asdsdad');
 
 -- --------------------------------------------------------
 
@@ -137,6 +139,7 @@ CREATE TABLE `cotizacion_online` (
   `ID` varchar(30) CHARACTER SET latin1 NOT NULL,
   `fecha_cotizacion` date NOT NULL,
   `GranTotal` varchar(20) NOT NULL,
+  `descuento` decimal(16,2) NOT NULL,
   `Estado` int(1) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -144,56 +147,9 @@ CREATE TABLE `cotizacion_online` (
 -- Volcado de datos para la tabla `cotizacion_online`
 --
 
-INSERT INTO `cotizacion_online` (`id_cotizacion`, `ID`, `fecha_cotizacion`, `GranTotal`, `Estado`) VALUES
-('ON000000', '20601883164', '2021-03-05', '22355.15', 1),
-('ON000001', '20601883164', '2021-03-05', '22355.15', 0),
-('ON000002', '20601883164', '2021-03-06', '22355.15', 1),
-('ON000003', '20601883164', '2021-03-06', '22355.15', 1),
-('ON000004', '20601883164', '2021-03-06', '22355.15', 1),
-('ON000005', '20601883164', '2021-03-06', '22355.15', 1),
-('ON000006', '20601883164', '2021-03-06', '22355.15', 1),
-('ON000007', '20601883164', '2021-03-06', '22355.15', 1),
-('ON000008', '20601883164', '2021-03-06', '22355.15', 1),
-('ON000009', '20601883164', '2021-03-06', '22355.15', 1),
-('ON000010', '20601883164', '2021-03-06', '22355.15', 1),
-('ON000011', '20601883164', '2021-03-08', '1847.02', 1),
-('ON000012', '20601883164', '2021-03-09', '49270.7', 1),
-('ON000013', '20601883164', '2021-03-09', '49270.7', 1),
-('ON000014', '20601883164', '2021-03-09', '49270.7', 1),
-('ON000015', '20601883164', '2021-03-10', '49270.7', 1),
-('ON000016', '20601883164', '2021-03-10', '49270.7', 1),
-('ON000017', '20601883164', '2021-03-10', '49270.7', 1),
-('ON000018', '20601883164', '2021-03-10', '49270.7', 1),
-('ON000019', '20601883164', '2021-03-13', '557.19', 1),
-('ON000020', '20601883164', '2021-03-13', '557.19', 1),
-('ON000021', '20601883164', '2021-03-13', '557.19', 1),
-('ON000022', '20601883164', '2021-03-13', '121.77', 0),
-('ON000023', '20601883164', '2021-03-13', '121.77', 0),
-('ON000024', '20601883164', '2021-03-13', '121.77', 0),
-('ON000025', '20601883164', '2021-03-13', '121.77', 0),
-('ON000026', '20601883164', '2021-03-13', '121.77', 0),
-('ON000027', '20601883164', '2021-03-13', '121.77', 0),
-('ON000028', '20601883164', '2021-03-13', '121.77', 0),
-('ON000029', '20601883164', '2021-03-13', '243.54', 1),
-('ON000030', '20601883164', '2021-03-13', '243.54', 1),
-('ON000031', '20601883164', '2021-03-13', '243.54', 1),
-('ON000032', '20601883164', '2021-03-13', '243.54', 1),
-('ON000033', '20601883164', '2021-03-13', '243.54', 1),
-('ON000034', '20601883164', '2021-03-13', '243.54', 1),
-('ON000035', '20601883164', '2021-03-13', '243.54', 1),
-('ON000036', '20601883164', '2021-03-13', '243.54', 1),
-('ON000037', '20601883164', '2021-03-13', '243.54', 0),
-('ON000038', '20601883164', '2021-03-13', '243.54', 0),
-('ON000039', '20601883164', '2021-03-13', '243.54', 0),
-('ON000040', '20601883164', '2021-03-13', '243.54', 0),
-('ON000041', '20601883164', '2021-03-13', '243.54', 0),
-('ON000042', '20601883164', '2021-03-13', '243.54', 0),
-('ON000043', '20601883164', '2021-03-13', '243.54', 0),
-('ON000044', '20601883164', '2021-03-13', '243.54', 0),
-('ON000045', '20601883164', '2021-03-13', '243.54', 0),
-('ON000046', '20601883164', '2021-03-13', '243.54', 0),
-('ON000047', '20601883164', '2021-03-13', '243.54', 0),
-('ON000048', '20601883164', '2021-03-13', '243.54', 1);
+INSERT INTO `cotizacion_online` (`id_cotizacion`, `ID`, `fecha_cotizacion`, `GranTotal`, `descuento`, `Estado`) VALUES
+('ON000000', '20601883164', '2021-03-26', '16456', '0.00', 1),
+('ON000001', '20601883164', '2021-03-26', '345.00', '0.00', 1);
 
 -- --------------------------------------------------------
 
@@ -209,44 +165,17 @@ CREATE TABLE `detalle_compra_online` (
   `distrito` varchar(55) NOT NULL,
   `costo_adicional` decimal(16,2) NOT NULL,
   `dir_envio` text NOT NULL,
-  `referencia` text NOT NULL
+  `referencia` text NOT NULL,
+  `moneda` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `detalle_compra_online`
 --
 
-INSERT INTO `detalle_compra_online` (`id_cotizacion`, `forma_entrega`, `forma_pago`, `medio_pago`, `distrito`, `costo_adicional`, `dir_envio`, `referencia`) VALUES
-('ON000000', 'Lima', 'Electronico', '', '', '0.00', '', ''),
-('ON000002', 'Lima', 'Electronico', '', '', '50.00', '', ''),
-('ON000003', 'Lima', 'Efectivo', '', 'miraflores', '50.00', 'sdfdsfs', 'dfsdfsdffdf'),
-('ON000004', 'Provincia', 'Electronico', '', 'amazonas', '70.00', 'dddd', 'sssss'),
-('ON000005', 'Provincia', 'Electronico', '', 'amazonas', '70.00', 'iiii', 'iiiiooo'),
-('ON000006', 'Lima', 'Efectivo', '', 'miraflores', '50.00', 'asda', 'sadasd'),
-('ON000007', 'Lima', 'Efectivo', '', 'miraflores', '50.00', 'sad', 'asd'),
-('ON000008', 'Lima', 'Efectivo', '', 'miraflores', '50.00', 'sad', 'sdaa'),
-('ON000009', 'Provincia', 'Efectivo', '', 'villa el salvador', '30.00', 'dsf', 'sdf'),
-('ON000010', 'Lima', 'Electronico', '', 'villa maria', '20.00', '213', '123'),
-('ON000011', 'Lima', 'Efectivo', '', 'miraflores', '50.00', 'aslkdjalsdk', 'lkajsflaksjf'),
-('ON000012', 'Lima', 'Electronico', '', 'miraflores', '50.00', 'algun sitio', 'al lado de algo'),
-('ON000013', 'Lima', 'Electronico', '', 'villa maria', '20.00', 'aladaslkaljdk', 'asdasñdkasdñlak'),
-('ON000014', 'Lima', 'Electronico', '', 'miraflores', '50.00', 'sdasdsad', 'sad asdass'),
-('ON000015', 'Provincia', 'Efectivo', '', 'villa el salvador', '30.00', 'soy una direccion de envio', 'soy una referencia'),
-('ON000016', 'Provincia', 'Electronico', '', 'amazonas', '70.00', 'soy una direccion larga asd asd asd asd dasd asd ', 'werwerwer'),
-('ON000017', 'Tienda', 'Efectivo', '', 'tienda local', '0.00', 'askldjaskdjakj', 'akjdaklsdjsadklj'),
-('ON000018', 'Provincia', 'Electronico', '', 'villa el salvador', '30.00', 'weqweqe qweqweqweqwe qweqwe qweqweqw eqweq wqweq eqwe qweqweqw qweqw qweqweqweqweq wwqefeffeqw qwdqwdqwd qwdqd ', 'qwqwe qweqwe qweqw qwe qweqweqweqweqweeqweqweqweqwe qwqeqwe qwe qwe qeqw eqwe '),
-('ON000019', 'Lima', 'Al Contado', '', 'miraflores', '50.00', 'algo de envio', 'algo de referencia'),
-('ON000020', 'Tienda', 'Al Contado', '', 'tienda local', '0.00', 'asdas', 'asdasdasdasd'),
-('ON000021', 'Provincia', 'Al Contado', '', 'villa el salvador', '30.00', 'cxzcxczx', 'zxczxccz'),
-('ON000029', 'Lima', 'Al Contado', 'Electronico', 'villa maria', '20.00', 'hjkhjkhk', 'jhkhjk'),
-('ON000030', 'Lima', 'Al Contado', 'Electronico', 'miraflores', '50.00', 'vbcbc', 'cvbcvbcvb'),
-('ON000031', 'Lima', 'A Cuenta', 'Efectivo', 'miraflores', '50.00', 'dsfsdfsd', 'sdfsdfsdf'),
-('ON000032', 'Lima', 'Al Contado', 'Efectivo', 'villa maria', '20.00', 'fgfg', 'dfgdfgdg'),
-('ON000033', 'Lima', 'Al Contado', 'Efectivo', 'miraflores', '50.00', 'fdsfdsf', 'sdfsdfsd'),
-('ON000034', 'Tienda', 'A Cuenta', 'Electronico', 'tienda local', '0.00', 'fgdgdfgdgdfg', 'fssssssss'),
-('ON000035', 'Lima', 'Al Contado', 'Electronico', 'villa maria', '20.00', 'dfgdg', 'fgdg'),
-('ON000036', 'Provincia', 'Al Contado', 'Efectivo', 'villa el salvador', '30.00', 'zxczxczc', 'zxcsdasdad'),
-('ON000048', 'Provincia', 'A Cuenta', 'Tarjeta', 'amazonas', '70.00', 'ghfghfg', 'fg hhf g gfh');
+INSERT INTO `detalle_compra_online` (`id_cotizacion`, `forma_entrega`, `forma_pago`, `medio_pago`, `distrito`, `costo_adicional`, `dir_envio`, `referencia`, `moneda`) VALUES
+('ON000000', 'Lima', 'Al Contado', 'Efectivo', 'miraflores', '50.00', 'direccion ', 'referencia', 'dolares'),
+('ON000001', 'Lima', 'Al Contado', 'Efectivo', 'miraflores', '50.00', 'qweqeqw', 'qweqweq', 'dolares');
 
 -- --------------------------------------------------------
 
@@ -255,6 +184,7 @@ INSERT INTO `detalle_compra_online` (`id_cotizacion`, `forma_entrega`, `forma_pa
 --
 
 CREATE TABLE `detalle_cotizacion_online` (
+  `id` int(11) NOT NULL,
   `id_cotizacion` varchar(15) NOT NULL,
   `CodigoProd` varchar(30) CHARACTER SET latin1 NOT NULL,
   `Cantidad` int(11) NOT NULL,
@@ -265,87 +195,12 @@ CREATE TABLE `detalle_cotizacion_online` (
 -- Volcado de datos para la tabla `detalle_cotizacion_online`
 --
 
-INSERT INTO `detalle_cotizacion_online` (`id_cotizacion`, `CodigoProd`, `Cantidad`, `SubTotal`) VALUES
-('ON000000', 'P000867', 2, '18014.83'),
-('ON000000', 'P000866', 1, '4219.13'),
-('ON000000', 'P000001', 1, '121.18'),
-('ON000001', 'P000867', 2, '18014.83'),
-('ON000001', 'P000866', 1, '4219.13'),
-('ON000001', 'P000001', 1, '121.18'),
-('ON000002', 'P000867', 2, '18014.83'),
-('ON000002', 'P000866', 1, '4219.13'),
-('ON000002', 'P000001', 1, '121.18'),
-('ON000003', 'P000867', 2, '18014.83'),
-('ON000003', 'P000866', 1, '4219.13'),
-('ON000003', 'P000001', 1, '121.18'),
-('ON000004', 'P000867', 2, '18014.83'),
-('ON000004', 'P000866', 1, '4219.13'),
-('ON000004', 'P000001', 1, '121.18'),
-('ON000005', 'P000867', 2, '18014.83'),
-('ON000005', 'P000866', 1, '4219.13'),
-('ON000005', 'P000001', 1, '121.18'),
-('ON000006', 'P000867', 2, '18014.83'),
-('ON000006', 'P000866', 1, '4219.13'),
-('ON000006', 'P000001', 1, '121.18'),
-('ON000007', 'P000867', 2, '18014.83'),
-('ON000007', 'P000866', 1, '4219.13'),
-('ON000007', 'P000001', 1, '121.18'),
-('ON000008', 'P000867', 2, '18014.83'),
-('ON000008', 'P000866', 1, '4219.13'),
-('ON000008', 'P000001', 1, '121.18'),
-('ON000009', 'P000867', 2, '18014.83'),
-('ON000009', 'P000866', 1, '4219.13'),
-('ON000009', 'P000001', 1, '121.18'),
-('ON000010', 'P000867', 2, '18014.83'),
-('ON000010', 'P000866', 1, '4219.13'),
-('ON000010', 'P000001', 1, '121.18'),
-('ON000011', 'P000977', 1, '1847.02'),
-('ON000012', 'P000985', 10, '49270.68'),
-('ON000013', 'P000985', 10, '49270.68'),
-('ON000014', 'P000985', 10, '49270.68'),
-('ON000015', 'P000985', 10, '49270.68'),
-('ON000016', 'P000985', 10, '49270.68'),
-('ON000017', 'P000985', 10, '49270.68'),
-('ON000018', 'P000985', 10, '49270.68'),
-('ON000019', 'P000001', 1, '121.77'),
-('ON000019', 'P000002', 1, '121.77'),
-('ON000019', 'P000003', 1, '132.84'),
-('ON000019', 'P000006', 1, '180.81'),
-('ON000020', 'P000001', 1, '121.77'),
-('ON000020', 'P000002', 1, '121.77'),
-('ON000020', 'P000003', 1, '132.84'),
-('ON000020', 'P000006', 1, '180.81'),
-('ON000021', 'P000001', 1, '121.77'),
-('ON000021', 'P000002', 1, '121.77'),
-('ON000021', 'P000003', 1, '132.84'),
-('ON000021', 'P000006', 1, '180.81'),
-('ON000022', 'P000002', 1, '121.77'),
-('ON000023', 'P000002', 1, '121.77'),
-('ON000024', 'P000002', 1, '121.77'),
-('ON000025', 'P000002', 1, '121.77'),
-('ON000026', 'P000002', 1, '121.77'),
-('ON000027', 'P000002', 1, '121.77'),
-('ON000028', 'P000002', 1, '121.77'),
-('ON000029', 'P000002', 2, '243.54'),
-('ON000030', 'P000002', 2, '243.54'),
-('ON000031', 'P000002', 2, '243.54'),
-('ON000032', 'P000002', 2, '243.54'),
-('ON000033', 'P000002', 2, '243.54'),
-('ON000034', 'P000002', 2, '243.54'),
-('ON000035', 'P000002', 2, '243.54'),
-('ON000036', 'P000002', 2, '243.54'),
-('ON000037', 'P000002', 2, '243.54'),
-('ON000038', 'P000002', 2, '243.54'),
-('ON000039', 'P000002', 2, '243.54'),
-('ON000040', 'P000002', 2, '243.54'),
-('ON000041', 'P000002', 2, '243.54'),
-('ON000042', 'P000002', 2, '243.54'),
-('ON000043', 'P000002', 2, '243.54'),
-('ON000044', 'P000002', 2, '243.54'),
-('ON000045', 'P000002', 2, '243.54'),
-('ON000046', 'P000002', 2, '243.54'),
-('ON000047', 'P000002', 2, '243.54'),
-('ON000048', 'P000002', 2, '243.54');
+INSERT INTO `detalle_cotizacion_online` (`id`, `id_cotizacion`, `CodigoProd`, `Cantidad`, `SubTotal`) VALUES
+(1, 'ON000000', 'P000990', 2, '5708.00'),
+(2, 'ON000000', 'P000992', 2, '8370.00'),
+(3, 'ON000000', 'P000989', 1, '2378.00'),
+(24, 'ON000001', 'P000001', 5, '165.00'),
+(12, 'ON000001', 'P000004', 5, '180.00');
 
 -- --------------------------------------------------------
 
@@ -1543,7 +1398,7 @@ CREATE TABLE `taza_cambio` (
 --
 
 INSERT INTO `taza_cambio` (`id`, `taza`) VALUES
-(1, '3.690');
+(1, '3.730');
 
 -- --------------------------------------------------------
 
@@ -1652,7 +1507,9 @@ ALTER TABLE `cotizacion_online`
 -- Indices de la tabla `detalle_cotizacion_online`
 --
 ALTER TABLE `detalle_cotizacion_online`
-  ADD KEY `id_cotizacion` (`id_cotizacion`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_cotizacion` (`id_cotizacion`),
+  ADD KEY `id_cotizacion_2` (`id_cotizacion`);
 
 --
 -- Indices de la tabla `distritos`
@@ -1716,13 +1573,19 @@ ALTER TABLE `ventas`
 -- AUTO_INCREMENT de la tabla `afiliado`
 --
 ALTER TABLE `afiliado`
-  MODIFY `CodAfil` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `CodAfil` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `compras`
 --
 ALTER TABLE `compras`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT de la tabla `detalle_cotizacion_online`
+--
+ALTER TABLE `detalle_cotizacion_online`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de la tabla `distritos`

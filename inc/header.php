@@ -25,7 +25,7 @@
     <link href="../assets/plugins/gritter/css/jquery.gritter.css" rel="stylesheet" />
      <link href="../assets/plugins/datepicker/daterangepicker.css" rel="stylesheet" />
 	<!-- ================== END PAGE LEVEL STYLE ================== -->
-	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
 	<!-- ================== BEGIN BASE JS ================== -->
 	<script src="../assets/plugins/pace/pace.min.js"></script>
 	<!-- ================== END BASE JS ================== -->

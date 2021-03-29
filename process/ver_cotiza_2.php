@@ -80,8 +80,8 @@ if (
                 $estado = 1;
                 consultasSQL::InsertSQL(
                     'detalle_compra_online',
-                    'id_cotizacion, forma_entrega, forma_pago, medio_pago, distrito, costo_adicional, dir_envio, referencia',
-                    " '$cod' ,'$F_entrega','$F_pago', '$M_pago', '$distritos_', '$costo_adicional', '$direccion_envio', '$referencia'"
+                    'id_cotizacion, forma_entrega, forma_pago, medio_pago, distrito, costo_adicional, dir_envio, referencia, moneda',
+                    " '$cod' ,'$F_entrega','$F_pago', '$M_pago', '$distritos_', '$costo_adicional', '$direccion_envio', '$referencia', '$Moneda_pago'"
                 );
 
                 if($M_pago == "Tarjeta"){

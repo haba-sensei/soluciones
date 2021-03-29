@@ -56,7 +56,7 @@
 <script src="../assets/plugins/datepicker/moment.min.js"></script>
 <script src="../assets/plugins/datepicker/daterangepicker.min.js"></script>
 <script src="../assets/js/demo/form-plugins.demo.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js"></script>
 <script>
 $(document).ready(function() {
     App.init();
@@ -71,7 +71,7 @@ $(document).ready(function() {
 <script>
 $(document).ready(function() {
 
-    $('#example2').DataTable({
+    $('#example2').DataTable({ 
         "processing": true,
         "serverSide": true,
         "searching": true,
@@ -506,6 +506,8 @@ $(document).ready(function() {
         ]
 
     });
+
+   
 
 
 

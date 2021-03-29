@@ -81,7 +81,7 @@ $conn=@mysqli_connect(SERVER, USER, PASS, BD);
         $compra_dolar=$tazaC['taza'];        
         }
 
-        $globalTasaCambio_dolar =  $compra_dolar;
+        $globalTasaCambio_dolar = number_format($compra_dolar, 2);
         
         
 
@@ -96,7 +96,7 @@ $conn=@mysqli_connect(SERVER, USER, PASS, BD);
             $compra_dolar=$tazaC['taza'];        
             }
     
-            $globalTasaCambio_dolar =  $compra_dolar;
+            $globalTasaCambio_dolar =  number_format($compra_dolar, 2);
 
         }else {
 
@@ -111,7 +111,8 @@ $conn=@mysqli_connect(SERVER, USER, PASS, BD);
     
             $obj = json_decode($result);
     
-            $compra_dolar = $obj->$fecha->compra;
+            $compra_dolar_data = $obj->$fecha->compra;
+            $compra_dolar = number_format($compra_dolar_data, 2);
             // $obj->$fecha->compra
             consultasSQL::UpdateSQL("taza_cambio", "id='1', taza='$compra_dolar'", "id='1'");
     
@@ -121,7 +122,7 @@ $conn=@mysqli_connect(SERVER, USER, PASS, BD);
             $compra_dolar=$tazaC['taza'];        
             }
     
-            $globalTasaCambio_dolar =  $compra_dolar;
+            $globalTasaCambio_dolar = number_format($compra_dolar, 2);
 
 
         }

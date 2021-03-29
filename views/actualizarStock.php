@@ -161,7 +161,7 @@ div.dataTables_wrapper div.dataTables_info {
                                     </table>
                                     
                                 </div>
-                            </div>
+                            </div> 
                             <!-- end panel-body -->
                         </div>
                     </div>

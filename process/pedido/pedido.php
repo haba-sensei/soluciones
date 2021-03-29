@@ -39,11 +39,11 @@
                     <?php 
                     $conUs= ejecutarSQL::consultar("select * from clientes where ID=$ordenNit");
                     while($UsP=mysqli_fetch_assoc($conUs)){
-					echo $UsP['NombreEmpresa'];}
+				            	echo $UsP['NombreEmpresa'];}
                     ?>
                     </td>
                     
-                    <td>S/ <?php echo number_format($ordenPrice,2) ?></td>
+                    <td>$ <?php echo number_format($ordenPrice,2) ?></td>
                     <td><?php 
                     switch ($ordenEst) {
                       case 0:

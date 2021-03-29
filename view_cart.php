@@ -652,7 +652,7 @@ include_once("library/config.inc.php");
                                         $product_qty = $product["product_qty"];
                                         $modelo_prod = $product["Modelo"];
                                         $marca_prod =  $product["Marca"];
-                                        // $product_price = number_format($product_price_dolares * $globalTasaCambio_dolar, 2, '.', ''); 
+                                        $product_price_soles = number_format($globalTasaCambio_dolar * $product_price_dolares , 2, '.', ''); 
                                         $product_price = number_format($product_price_dolares, 2, '.', ''); 
                                             
 
@@ -662,12 +662,21 @@ include_once("library/config.inc.php");
 
                                             $product_ganancia = $ordenP['ganancia'];
                                             $product_medio = $ordenP['medio']; 
+
+                                            
+
+
+                                            
                                             $product_price_total = ($product_price);
+                                            $product_price_total_soles = ($product_price_soles);
+                                            $igv_total_soles = ($product_price_total_soles * $product_qty) / 1.18;
                                             $igv_total = ($product_price_total * $product_qty) / 1.18;
                                         }
-                                        $subtotal = ($product_price_total * $product_qty);
-                                        $total = ($total + $subtotal);
-                                        $total_r = $product_price * $product_qty;
+                                        $subtotal = ($product_price_total_soles * $product_qty);
+                                        $subtotal_dolares = ($product_price_total * $product_qty);
+                                        $total = ($total + $subtotal_dolares);
+                                        $total_soles = ($total + $subtotal);
+                                        $total_r = $product_price_soles * $product_qty;
                                         
                                         $total_indi =  str_replace(',', '',  $total_r );
                                         // $total_indi = $product_price * $product_qty;
@@ -700,7 +709,7 @@ include_once("library/config.inc.php");
                                             </div>
                                         </td>
                                         <td class="cakes price" style="width: 20%;">
-                                            <?php echo $currency." ".number_format($product_price, 2); ?></h4>
+                                            <?php echo $currency." ".number_format($product_price_soles, 2); ?></h4>
 
                                         </td>
                                         <td class="cakes top-remove" style="width: 20%;">
@@ -727,21 +736,21 @@ include_once("library/config.inc.php");
                         </div>
                         <div class="vocher">
                             <?php
-
-                            $grand_total = $total;
+                            $subtotal_final =  $total * $globalTasaCambio_dolar;
+                            
                             foreach ($taxes as $key => $value) {
                                 $import = 1.18;
-                                $tax_amount = number_format($total - ($total / $import), 2);
+                                $tax_amount = number_format($subtotal_final - ($subtotal_final / $import), 2);
                                 $tax_item[$key] = $tax_amount;
-                                $grand_total = number_format($total + $tax_amount, 2);
+                                $grand_total = number_format($subtotal_final + $tax_amount, 2);
                             }
                             foreach ($tax_item as $key => $value) {
                                 $list_tax .= $currency." ".$value. '<br />';
                             }
                             //$shipping_cost = ($shipping_cost)?'Costo de envio : '.$currency. sprintf("%01.2f", $shipping_cost).'<br />':'';	
                             //$shipping_cost
-                            $newstr = number_format($total, 2, '.', '');
-                            $total_format = number_format($newstr / 1.18, 2); 
+                            $newstr = number_format($total_final_soles, 2, '.', '');
+                            $total_format = number_format($subtotal_final / 1.18, 2); 
                             
                             ?>
 
@@ -762,13 +771,13 @@ include_once("library/config.inc.php");
                             <div class="clear"> </div>
                             <div class="dis-total">
                             <h1 style="width:  40%; ">Total Sol :&nbsp;   </h1>
-                                <h1 style="width: 157px;       color: #00578a;  background: #cecece;"><?php echo $currency ." ".number_format($total, 2);  ?></h1>
+                                <h1 style="width: 157px;       color: #00578a;  background: #cecece;"><?php echo $currency ." ".number_format($total * $globalTasaCambio_dolar, 2, '.', ',');  ?></h1>
 
                             </div>
                             <div class="clear"> </div>
                             <div class="dis-total">
                             <h1 style="width:  40%; ">Total Dolar :&nbsp;   </h1>
-                                <h1 style="width: 157px;       color: #238028;  background: #cecece;"><?php echo "$ ".number_format($total / $globalTasaCambio_dolar, 2, '.', ','); ?></h1>
+                                <h1 style="width: 157px;       color: #238028;  background: #cecece;"><?php echo "$ ".number_format($total, 2, '.', ','); ?></h1>
 
                             </div>
 
