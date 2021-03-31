@@ -99,7 +99,9 @@ include '../../library/consulSQL.php';
                     $total_dolares = number_format($fila['Precio'] * $fila['Cantidad'], 2);
                     $total_indi =  str_replace(',', '',  $total_dolares );
                     $total_soles = number_format($globalTasaCambio_dolar * $total_indi ,2);
-                    $precio_unit = number_format($fila['Precio'], 2);
+                    $total_dolares_f = number_format($globalTasaCambio_dolar * $fila['Precio'] ,2);
+                    $precio_unit_soles = number_format($total_dolares_f , 2);
+                    $precio_unit_dolares = number_format($fila['Precio'], 2);
                     // href="../infoProd.php?CodigoProd='.$fila['CodigoProd'].'"
                     echo '
                           <tr>
@@ -113,7 +115,11 @@ include '../../library/consulSQL.php';
                           <span class="">(Marca) = '.$fila['Marca'].'</span><br>
                           <span class="">(Sku) = '.$fila['CodigoProd'].'</span>
                           </td>
-                          <td class="ajut_centrado_orden">$ '.$precio_unit.'</td>
+                          <td class="ajut_centrado_orden">
+                          $ '.$precio_unit_dolares.' <br>
+                          S/ '.$precio_unit_soles.'
+                          
+                          </td>
                           <td class="ajut_centrado_orden">S/ '.$total_soles.'</td> 
                           <td class="ajut_centrado_orden">$ '.$total_dolares.'</td>
                           <td class="ajut_centrado_orden">
@@ -170,28 +176,38 @@ include '../../library/consulSQL.php';
                 $subtotal = number_format($totalGeneral - $monto_igv, 2);
                 
                  if($tipo_pago == "A Cuenta"){
-                    $total_a_cuenta = number_format($totalGeneral * 40 /100, 2);
+                    $total_a_cuenta = number_format($totalGeneral * 0.40, 2);
                  }else {
                     $total_a_cuenta = 0;
                  }
 
                  if($medio_pago == "Tarjeta"){
-                    $total_tarjeta = number_format($totalGeneral * 5 /100, 2);
+                    $total_tarjeta = number_format($totalGeneral * 0.05, 2);
                  }else {
                     $total_tarjeta = 0;
                  }
 
                  
                                   
-                $total_a_facturar = number_format($totalGeneral - $descuento_format, 2); 
+                $total_a_facturar = number_format($totalGeneral - $descuento_format + $costo_delivery + $total_tarjeta, 2);
+                $total_a_facturar_format = number_format($totalGeneral, 2);  
                 
                 $total_final_format_without_comma =  str_replace(',', '',  $total_a_facturar);
-                $total_a_cuenta_format_without_comma =  str_replace(',', '',  $total_a_cuenta);
-                $total_final_tarjeta_format_without_comma =  str_replace(',', '',  $total_tarjeta);
-
                 
-                $total_a_pagar =  number_format($total_final_format_without_comma + $costo_delivery - $total_a_cuenta_format_without_comma + $total_final_tarjeta_format_without_comma, 2);
-                  
+                $total_final_tarjeta_format_without_comma =  str_replace(',', '',  $total_tarjeta);
+                 
+                $total_a_pagar_general =  number_format($total_final_format_without_comma + $costo_delivery + $total_final_tarjeta_format_without_comma, 2);
+                $total_a_pagar_general_format_without_comma =  str_replace(',', '',   $total_a_pagar_general);
+                
+                if($tipo_pago == "A Cuenta"){
+                    $total_a_cuenta = number_format($total_a_pagar_general_format_without_comma * 0.40, 2);
+                    $total_a_cuenta_format_without_comma =  str_replace(',', '',  $total_a_cuenta);
+                }else {
+                    $total_a_cuenta = 0;
+                    $total_a_cuenta_format_without_comma = 0;
+                 }
+                $total_a_pagar_a_cuenta_format =  number_format($total_a_pagar_general_format_without_comma - $total_a_cuenta_format_without_comma, 2);
+                $total_a_pagar_general_format =  number_format($total_a_pagar_general_format_without_comma , 2);
                }
 			 
 		echo '
@@ -220,21 +236,11 @@ include '../../library/consulSQL.php';
                 <tr class="borde_lateral">
                 <td colspan="4" class="border_hidden fondo_vacio"></td> 
                 <td>TOTAL A FACTURAR</td>
-                <td>'.$simbolo.$total_a_facturar.'</td>
+                <td>'.$simbolo.$total_a_facturar_format.'</td>
                 </tr>
 
                 '; 
-                if( $tipo_pago == "A Cuenta"){
-                    echo '<tr class="borde_lateral">
-                    <td colspan="4" class="border_hidden fondo_vacio"></td>
-                     
-                    <td>A CUENTA 40%</td>
-                    <td>'.$simbolo.$total_a_cuenta.'</td>
-                    </tr>
-                   ';
-                }else {
-                    echo '';
-                }  
+                
                if($forma_de_entrega == "Lima" || $forma_de_entrega == "Provincia"){
                 echo '
                 <tr class="borde_lateral">
@@ -258,16 +264,43 @@ include '../../library/consulSQL.php';
                 }else {
                     echo '';
                 }
-                echo ' 
+                if( $tipo_pago == "A Cuenta"){
+                    
+                    echo '
                     <tr class="borde_lateral">
                     <td colspan="4" class="border_hidden fondo_vacio"></td>
                      
                     <td>TOTAL A PAGAR</td>
-                    <td>'.$simbolo.$total_a_pagar.'</td>
+                    <td>'.$simbolo.$total_a_pagar_general.'</td>
+                    </tr>
+                    
+                    <tr class="borde_lateral">
+                    <td colspan="4" class="border_hidden fondo_vacio"></td>
+                     
+                    <td>A CUENTA 40%</td>
+                    <td>'.$simbolo.$total_a_cuenta.'</td>
+                    </tr>
+                    
+                    <tr class="borde_lateral">
+                    <td colspan="4" class="border_hidden fondo_vacio"></td>
+                     
+                    <td>SALDO A PAGAR</td>
+                    <td>'.$simbolo.$total_a_pagar_a_cuenta_format.'</td>
+                    </tr>
+                   ';
+                }else {
+                    echo ' 
+                    <tr class="borde_lateral">
+                    <td colspan="4" class="border_hidden fondo_vacio"></td>
+                     
+                    <td>TOTAL A PAGAR</td>
+                    <td>'.$simbolo.$total_a_pagar_general_format.'</td>
                     </tr>
                     
                     <tr>
                     '; 
+                }  
+               
                     if($estado == 2){
                         echo '
                         <tr class="borde_lateral">
