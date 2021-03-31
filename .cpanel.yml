@@ -1,6 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/vlrrywof/public_html/fgm-remisse.com/
+    - export DEPLOYPATH=/home/vlrrywof/fgm-remisse.com/
     - /bin/cp -R * $DEPLOYPATH
     - cp .htaccess $DEPLOYPATH
