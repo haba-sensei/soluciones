@@ -160,6 +160,7 @@
 					case 'soles':
 						 
 						$monto_soles = $GranTotal * $globalTasaCambio_dolar;
+						
 						$monto_final = $monto_soles - $descuento - $a_cuenta + $tarjeta_5_porciento + $costo_adicional;
 
 						break;
@@ -167,7 +168,8 @@
 					case 'dolares':
 
 						$monto_dolares = $GranTotal;
-						$monto_final = $monto_dolares - $descuento - $a_cuenta + $tarjeta_5_porciento + $costo_adicional;
+						$monto_delivery = number_format($costo_adicional / $globalTasaCambio_dolar, 2) ;
+						$monto_final = $monto_dolares - $descuento - $a_cuenta + $tarjeta_5_porciento + $monto_delivery;
 
 						break;
 				}

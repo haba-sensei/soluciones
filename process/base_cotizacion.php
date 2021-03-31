@@ -25,10 +25,11 @@
 			"Cuentas Bancarias: ".utf8_decode($row['banco1'])." / ".utf8_decode($row['banco2'])
 			);
 			$aSubmitVal = $_POST['operacion'];
-			$Moneda_pago = $_POST['Moneda_pago'];
+			
 			
 				switch ($aSubmitVal) {
 					case 'cotizacion':
+						$Moneda_pago = "soles";
 						$tipo_operacion = "COTIZACION";
 						$medio_pago = "Al Contado";
 						$estatus_operacion = "En Revision";
@@ -40,6 +41,7 @@
 						$referencia = "-";
 						break;
 					case 'compra':
+						$Moneda_pago = $_POST['Moneda_pago'];
 						$M_pago = $_POST['M_pago'];
 						$tipo_operacion = "COMPRA";
 						$medio_pago = $F_pago;
@@ -157,23 +159,50 @@
 						$subtotal = number_format($subtotal_f, 2);
    						$total = $subtotal_f + $total ; 
 						 
-						}
-						
-						switch ($F_pago) {
-							case 'Al Contado':
-								$a_cuenta_base  = 0.00;
+						} 
+
+						switch ($aSubmitVal) {
+							case 'cotizacion': 
+								$base_tarjeta_precio = $total;
+								$fin_total_base =  $total;
+								$fin_total_base_f = $fin_total_base;
+							break;
+
+							case 'compra': 
+
+								switch ($F_pago) {
+									case 'Al Contado':
+										$a_cuenta_base  = 0.00;
+										break;
+									
+									case 'A Cuenta':
+										$calc_cuenta_base =  str_replace(',', '',  $total);
+										$a_cuenta_f_base = ($calc_cuenta_base * 0.40);
+										$a_cuenta_base =  number_format($a_cuenta_f_base, 2);
+										break;
+								}
+
+								$base_tarjeta_precio = $total;
+								$fin_total_base =  $total + $costo_adicional - $a_cuenta_base;
+											
+												
+								if($M_pago == "Tarjeta"){
+
+									$total_tarjeta = number_format($base_tarjeta_precio * 0.05, 2);
+
+
+									$fin_total_base_f = $fin_total_base + $total_tarjeta;
+								}else {
+
+									$fin_total_base_f = $fin_total_base;
+									
+								}
+
 								break;
 							
-							case 'A Cuenta':
-								$calc_cuenta_base =  str_replace(',', '',  $total);
-								$a_cuenta_f_base = ($calc_cuenta_base * 40 / 100);
-								$a_cuenta_base =  number_format($a_cuenta_f_base, 2);
-								break;
 						}
-
+						// 
 						
-					
-						$fin_total_base = $costo_adicional + $total - $a_cuenta_base;
 						// $fin_total = number_format($fin_total_base, 2);
 						
 			$pdf->SetFillColor(255,255,255);
@@ -198,20 +227,9 @@
 			
 				
 				
-				if($M_pago == "Tarjeta"){
-
-                    $total_tarjeta = ($fin_total_base * 5) / 100;
-
-
-                    $fin_total_base_f = $fin_total_base + $total_tarjeta;
-                }else {
-
-					$fin_total_base_f = $fin_total_base;
-					
-				}
 				
 				$pdf->SetFont('Arial','B',12);
-				$num_letra = strtoupper(numtoletras($fin_total_base_f));
+				$num_letra = strtoupper(numtoletras( $fin_total_base_f ));
 				
 				$pdf->fact_dev12(utf8_decode("Son: "), $num_letra );	
 				$pdf->Code39(10,210, $cod);
@@ -225,7 +243,7 @@
 				$pdf->addCadreEurosFrancs3();
 				$pdf->addCadreEurosFrancs4();
 				
-				//unset($_SESSION["products"]);
+				unset($_SESSION["products"]);
 				 	
 		
 				

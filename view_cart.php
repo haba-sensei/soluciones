@@ -1126,7 +1126,7 @@ include_once("library/config.inc.php");
                                                 </li>
 
                                                 <li class="">
-                                               
+                                                
                                                     <div class="radio-option" id="aca_cotiza"
                                                         style="text-align: -webkit-center; padding-top: 23px; margin-bottom: -7px;">
                                                         
@@ -1375,15 +1375,15 @@ include_once("library/config.inc.php");
 
                     var len = response.length;
 
-                    $("#distritos_v").empty();
-                    
-                    $("#distritos_v").append("<option value='' > Selecciona una Opción </option>");
-                    for( var i = 0; i<len; i++){
-                         
-                        var nombre = response[i]['nombre'];
+                    $('#distritos_v').empty(); 
+                    $('#distritos_v').append('<option > Selecciona una Opción </option>');
+                    var i = 0;
+                    for( var i = 0; i < len; i++){
 
-                        $("#distritos_v").append("<option value='"+nombre+"'>"+nombre+"</option>");
-                        
+                    var lista = response[i]['lista'];
+
+                    $('#distritos_v').append(lista);
+
                     }
  
 
@@ -1752,8 +1752,8 @@ include_once("library/config.inc.php");
             dataType: 'json',
             success: function(response) {
 
-                alert("PROCESO TERMINADO");
-                
+                alert("APROBADO CON EXITO");
+                // console.log(response);
                 html = "";
                 // // <input type="button" name="submit[descarga]" class=" action-button" onclick="formSend('descarga')" style="width:25%" value="Descargar Comprobante1" />
                 // // <input type="button" name="submit[enviar_correo]" class=" action-button" onclick="formSend('enviar_correo')" style="width:25%"  value="Enviar Correo1" />

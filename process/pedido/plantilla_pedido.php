@@ -1127,7 +1127,7 @@ function draw_code39($code, $x, $y, $w, $h) {
             $simbolo ="S/";
             $monto_soles = $GranTotal * $globalTasaCambio_dolar;
             $monto_igv = $monto_soles * 1.18 - $monto_soles; 
-
+            $monto_delivery = $costo_adicional;
             $subtotal_final = $monto_soles - $monto_igv;
             $operacion = $monto_soles - $a_cuenta - $descuento + $costo_adicional + $tarjeta_5_porciento;
             $total_venta = number_format($operacion , 2 ) ;
@@ -1140,7 +1140,8 @@ function draw_code39($code, $x, $y, $w, $h) {
             $monto_igv = $monto_dolares * 1.18 - $monto_dolares; 
 
             $subtotal_final = $monto_dolares - $monto_igv;
-            $operacion = $monto_dolares - $a_cuenta - $descuento + $costo_adicional + $tarjeta_5_porciento;
+            $monto_delivery = number_format($costo_adicional / $globalTasaCambio_dolar, 2) ;
+            $operacion = $monto_dolares - $a_cuenta - $descuento + $monto_delivery + $tarjeta_5_porciento;
             $total_venta = number_format($operacion , 2 ) ;
             break;
 
@@ -1163,7 +1164,7 @@ function draw_code39($code, $x, $y, $w, $h) {
             $this->Cell(15,4, $simbolo." ".$monto_igv, 0, 0, "C"); 
 
             $this->SetXY( $r1+40, $y1+21 );
-            $this->Cell(15,4, $simbolo." ".$costo_adicional, 0, 0, "C");
+            $this->Cell(15,4, $simbolo." ".$monto_delivery, 0, 0, "C");
             
             $this->SetXY( $r1+40, $y1+29 );
             $this->Cell(15,4, $simbolo." ".$a_cuenta, 0, 0, "C");
@@ -1193,7 +1194,7 @@ function draw_code39($code, $x, $y, $w, $h) {
              
             
             $this->SetXY( $r1+40, $y1+25 );
-            $this->Cell(15,4, $simbolo." ".$costo_adicional, 0, 0, "C");
+            $this->Cell(15,4, $simbolo." ".$monto_delivery, 0, 0, "C");
 
            if($tarjeta_5_porciento > 0.00){
                 $this->SetFont( "Arial", "B", 8);

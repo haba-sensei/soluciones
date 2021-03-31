@@ -1068,55 +1068,6 @@ function draw_code39($code, $x, $y, $w, $h) {
             break;
             
     }
-
-	while($codProductosP1=mysqli_fetch_array($_cotizacion_1)){
-		 
-		$product_qty = $codProductosP1['Cantidad'];				
-		$product_price = $codProductosP1['SubTotal'];
-			
-        $product_price_total=$product_price;
-       
-        $subtotal = $product_price_total / 1.18;
-        
-        $total = $subtotal + $total;
-        $total_indi =  str_replace(',', '',  $total );
-        $total_indi_1 = number_format($total_indi , 2);
-        $igv_format= ($total * 1.18);
-        $igv = $igv_format - $total;
-        $total_igv =  str_replace(',', '',  $igv );
-        $igv = number_format($total_igv , 2);
-        
-        
-        $i = $i + 1;
-        $nums++;	
-        $total_final =  $total_final + $product_price;
-        $total_venta_f =  number_format($total_final, 2);
-        $total_venta_delivery =  number_format($total_final + $costo_adicional, 2);
-       
-    }
-    
-    switch ($F_pago) {
-        case 'Al Contado':
-            $a_cuenta = 0.00;
-            break;
-        
-        case 'A Cuenta':
-            $calc_cuenta =  str_replace(',', '',  $total_venta_f  );
-            $a_cuenta_f = ($calc_cuenta * 40 / 100);
-            $a_cuenta =  number_format($a_cuenta_f, 2);
-            break;
-    }
-
-    
-
-    $valor_final_con_acuenta = $total_venta_delivery - $a_cuenta;
-
-    $calc =  str_replace(',', '', $valor_final_con_acuenta  );
-    $otro = $calc  * 5 / 100 + $calc; 
-    $total_tarjeta =  number_format($otro, 2);
-
-   
-
     date_default_timezone_set("America/Lima");
     $ch = curl_init();
     $fecha = date("Y-m-d");  
@@ -1193,12 +1144,78 @@ function draw_code39($code, $x, $y, $w, $h) {
         } 
 
     } 
+	while($codProductosP1=mysqli_fetch_array($_cotizacion_1)){
+		 
+		$product_qty = $codProductosP1['Cantidad'];				
+		$product_price = $codProductosP1['SubTotal'];
+			
+        $product_price_total=$product_price;
+       
+       
+
+        switch ($Moneda_pago) {
+        case 'soles':
+            $subtotal = $product_price_total  * $globalTasaCambio_dolar;
+            break;
+            
+        case 'dolares':
+            $subtotal = $product_price_total;
+            // $delivery_f = number_format($costo_adicional, 2);
+            break;
+    
+        default:
+            $subtotal = $product_price_total  * $globalTasaCambio_dolar;
+            break;        
+        }
+        
+        $total = $subtotal + $total;
+        $total_indi =  str_replace(',', '',  $total );
+        
+        $total_indi_1 = number_format($total_indi , 2);
+        $igv_format= $total_indi_1 - ($total_indi_1 * 0.18);
+        $igv =   $total_indi_1 - $igv_format;
+        $total_subtotal =  $igv_format;
+        $total_igv =  str_replace(',', '',  $igv );
+        $igv = number_format($total_igv , 2);
+        
+        
+        $i = $i + 1;
+        $nums++;	
+        $total_final =  $total_final + $subtotal;
+        $total_venta_f =  number_format($total_final, 2);
+        $total_venta_delivery =  number_format($total_final + $costo_adicional, 2);
+       
+    }
+    
+    switch ($F_pago) {
+        case 'Al Contado':
+            $a_cuenta = 0.00;
+            break;
+        
+        case 'A Cuenta':
+            $calc_cuenta =  str_replace(',', '',  $total_venta_f  );
+            $a_cuenta_f = ($calc_cuenta * 0.40);
+            $a_cuenta =  number_format($a_cuenta_f, 2);
+            break;
+    }
+
+    
+
+    $valor_final_con_acuenta = $total_venta_delivery - $a_cuenta;
+
+    $calc =  str_replace(',', '', $valor_final_con_acuenta  );
+    $otro = $calc  * 0.05 + $calc; 
+    $total_tarjeta =  number_format($otro, 2);
+
+   
+
+    
 
     $total_dolares_f = $valor_final_con_acuenta / $globalTasaCambio_dolar; 
     $total_dolares_final =  number_format($total_dolares_f, 2);
    
     $calc_cuenta_dolares =  str_replace(',', '',  $total_dolares_final   );
-    $a_cuenta_f_dolar = ($calc_cuenta_dolares * 40 / 100);
+    $a_cuenta_f_dolar = ($calc_cuenta_dolares * 0.40);
     $a_cuenta_dolar =  number_format($a_cuenta_f_dolar, 2);
 
     $valor_final_con_acuenta_dolares = $total_dolares_final - $a_cuenta_dolar;
@@ -1224,7 +1241,7 @@ function draw_code39($code, $x, $y, $w, $h) {
 
     if($M_pago == "Tarjeta"){
 
-        $total_tarjeta = ($total_venta_f * 5) / 100;
+        $total_tarjeta = ($total_venta_f * 0.05);
 
 
         $total_con_tarjeta =  $total_tarjeta;
@@ -1237,14 +1254,14 @@ function draw_code39($code, $x, $y, $w, $h) {
 
     
 	$this->SetXY( $r1+40, $y1+4 );
-    $this->Cell(15,4, $simbolo." ".$total_indi_1, 0, 0, "C");
+    $this->Cell(15,4, $simbolo." ".$total_subtotal, 0, 0, "C");
 	
 	
 
     switch ($F_pago) { 
 
         case 'A Cuenta':
-
+            $oper = $total_venta_f - $a_cuenta + $delivery_f + $total_con_tarjeta;
             $this->SetXY( $r1+40, $y1+12 );
             $this->Cell(15,4, $simbolo." ".$igv, 0, 0, "C"); 
 
@@ -1255,30 +1272,35 @@ function draw_code39($code, $x, $y, $w, $h) {
             $this->Cell(15,4, $simbolo." ".$a_cuenta, 0, 0, "C");
             
             $this->SetXY( $r1+40, $y1+37 );
-            $this->Cell(15,4, $simbolo." ".($total_venta_f - $a_cuenta + $delivery_f + $total_con_tarjeta), 0, 0, "C");
-           
+            $this->Cell(15,4, $simbolo." ".number_format($oper, 2), 0, 0, "C");
+            if($M_pago == "Tarjeta"){
             $this->SetFont( "Arial", "B", 8);
             $this->SetXY( $r1+40, $y1+41 );
             $this->Cell(15,4,"5% Extra ", 0, 0, "C");
-           
+            }
            
             break;
 
         case 'Al Contado':
+            
+            $oper = $total_venta_f + $delivery_f + $total_con_tarjeta;
+
+
 
             $this->SetXY( $r1+40, $y1+15 );
             $this->Cell(15,4, $simbolo." ".$igv, 0, 0, "C");
 
             $this->SetXY( $r1+40, $y1+35 );
-            $this->Cell(15,4, $simbolo." ".($total_venta_f + $delivery_f + $total_con_tarjeta), 0, 0, "C");
+            $this->Cell(15,4, $simbolo." ".number_format($oper, 2), 0, 0, "C");
              
             
             $this->SetXY( $r1+40, $y1+25 );
             $this->Cell(15,4, $simbolo." ".$delivery_f, 0, 0, "C");
-
+            if($M_pago == "Tarjeta"){
             $this->SetFont( "Arial", "B", 8);
             $this->SetXY( $r1+40, $y1+40 );
             $this->Cell(15,4,"5% Extra ", 0, 0, "C");
+            }
             break;
 
     }

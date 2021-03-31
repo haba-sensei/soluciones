@@ -17,13 +17,20 @@ $aSubmitVal = $_POST['operacion'];
 $F_entrega = $_POST['F_entrega'];
 $F_pago = $_POST['F_pago'];
 $M_pago = $_POST['M_pago'];
-$Moneda_pago = $_POST['Moneda_pago'];
+
 $distritos_ = $_POST['distritos_v'];
 $costo_adicional = $_POST['costo_adicional'];
 $direccion_envio = $_POST['dir_delivery'];
 $referencia = $_POST['referencia_delivery'];
  
- 
+switch ($aSubmitVal) {
+    case 'cotizacion':
+        $Moneda_pago = "soles";
+    break;
+    case 'compra':
+    $Moneda_pago = $_POST['Moneda_pago'];
+    break;
+ }
 
 
 include '../library/configServer.php';
@@ -100,7 +107,7 @@ if (
         consultasSQL::InsertSQL(
             'cotizacion_online',
             'id_cotizacion, ID, fecha_cotizacion, GranTotal, Estado',
-            "'$cod','$ID','$fecha','$total_final_f', '$estado'"
+            "'$cod','$ID','$fecha','$total_final', '$estado'"
         );
         
         
@@ -139,7 +146,7 @@ if (
         $_cotizacion = ejecutarSQL::consultar("select * from detalle_cotizacion_online where id_cotizacion='" . $cod . "'");
     }
 
-    if($aSubmitVal){
+   
 
         include 'base_cotizacion.php';
 
@@ -152,7 +159,7 @@ if (
 
         $arr = array( "orden_pdf" => $orden,"orden_"    => $orden_, "correo"    => $correo );
         echo json_encode($arr);
-    }	
+     
     }
 
 
