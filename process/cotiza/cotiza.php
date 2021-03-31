@@ -6,10 +6,10 @@
             
                   <thead class="bg-blue" style="letter-spacing: 2px;">
                    <tr>
-                    <th>Nº de Cotiza</th>
+                   <th>N° Cotiza</th>
                     <th>Fecha </th>
                     <th>Razon Social</th>
-                    <th>Importe Total </th>
+                    <th>Importe</th>
                     <th>Estado</th>
                     <th>Opciones</th>
                   </tr>
@@ -18,9 +18,7 @@
 				  <?php
             
 			
-			$ordenU=  ejecutarSQL::consultar("SELECT `cotizacion_online`.*, `cotizacion_online`.`Estado`
-      FROM `cotizacion_online`
-      WHERE `cotizacion_online`.`Estado` = '0';");
+			$ordenU=  ejecutarSQL::consultar("SELECT `cotizacion_online`.*, `cotizacion_online`.`Estado` FROM `cotizacion_online` WHERE `cotizacion_online`.`Estado` = '0' ORDER BY `cotizacion_online`.`id_cotizacion` ASC");
             
         while($ordenP=mysqli_fetch_assoc($ordenU)){
 				$ordenList=$ordenP['id_cotizacion'];
@@ -33,13 +31,13 @@
 				
 					?>
 				<tr>
-                    <td><a href="actualizarPedido_online.php?id_cotizacion=<?php echo $ordenList ?>&type=pedido"><?php echo $ordenList ?></a></td>
+                    <td><a href="actualizarCotiza_online.php?id_cotizacion=<?php echo $ordenList ?>&type=pedido"><?php echo $ordenList ?></a></td>
                     <td><?php echo $ordenFech ?></td>
                     <td>
                     <?php 
                     $conUs= ejecutarSQL::consultar("select * from clientes where ID=$ordenNit");
                     while($UsP=mysqli_fetch_assoc($conUs)){
-					echo $UsP['NombreEmpresa'];}
+				          	echo $UsP['NombreEmpresa'];}
                     ?>
                     </td>
                     
@@ -62,7 +60,7 @@
                     ?></td>
                     <td align="center">
                      
-                     <a data-toggle="tooltip" data-placement="top" title="Actualizar" class="btn btn-primary btn-sm"  href="actualizarPedido_online.php?id_cotizacion=<?php echo $ordenList ?>&type=cotiza"> Ver Orden </a>
+                     <a data-toggle="tooltip" data-placement="top" title="Actualizar" class="btn btn-primary btn-sm"  href="actualizarCotiza_online.php?id_cotizacion=<?php echo $ordenList ?>&type=cotiza"> Ver Orden </a>
                      <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-sm" onclick="return confirm('estas seguro de eliminar?');" href="process/cotizacion/delcotiza.php?id_cotizacion=<?php echo $ordenList ?>"> Eliminar </a>
                      </td>
                   </tr>
@@ -88,26 +86,7 @@
             var value_id = selectObject.value;  
             var value_tipo = selectObject.tipo; 
             console.log(selectObject.tipo);
-            
-          //   var value_tipo = tipo.value;
-
-          //   $.ajax({
-          //   type: "POST",
-          //   url: "process/pedido/PedidoController.php",
-          //   data: {
-          //     id : value_id,
-          //     type: value_tipo
-          //   },
-          //   beforeSend: function(){
-                
-          //   },
-          //   error: function() {
-                
-          //   },
-          //   success: function (data) {
-          //      alert(data);
-          //   }
-          // });
+             
 
 
 

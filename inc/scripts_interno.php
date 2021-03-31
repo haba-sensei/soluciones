@@ -675,6 +675,7 @@ $(function() {
         iDisplayLength: 5,
         aLengthMenu: [5, 50, 100, 150, 200, 250],
         "lengthMenu": false,
+        "aaSorting": [ [0,'desc'] ]
     });
 })
 </script>
