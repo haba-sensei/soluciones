@@ -3,6 +3,10 @@ http://cpanel.solucionescctvysistemas.com
 User:  nvoavpfg 
 Pass:  7fZT*tR#5sk61X       
 
+ACCESO SSH 
+User: id_rsa
+Pass:  7fZT*tR#5sk61X   
+
 DNS HOSTIN PARAMHOST
 ns3.paramhost.net  
 ns4.paramhost.net

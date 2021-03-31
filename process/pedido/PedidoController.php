@@ -36,6 +36,8 @@ include '../../library/consulSQL.php';
              
             $totalGeneral_sin_formato = $precio_base['GranTotal']; 
             $descuento = $precio_base['descuento']; 
+            $estado = $precio_base['Estado']; 
+            $fecha_cotizacion = $precio_base['fecha_cotizacion']; 
         }
 		
 		?>
@@ -257,7 +259,7 @@ include '../../library/consulSQL.php';
                     echo '';
                 }
                 echo ' 
-                <tr class="borde_lateral">
+                    <tr class="borde_lateral">
                     <td colspan="4" class="border_hidden fondo_vacio"></td>
                      
                     <td>TOTAL A PAGAR</td>
@@ -265,21 +267,37 @@ include '../../library/consulSQL.php';
                     </tr>
                     
                     <tr>
-                    
+                    '; 
+                    if($estado == 2){
+                        echo '
+                        <tr class="borde_lateral">
+                    <td colspan="4" class="border_hidden fondo_vacio">
+                     Fecha de Aprobado:  '.$fecha_cotizacion.'
+                    </td>
                      
-                     
+                    <td>ESTADO</td>
+                    <td>APROBADO</td>
+                    </tr>
                     
+                    <tr>
+                        
+                        ';
+                    }else{
+
+                        
+                    }
+                    echo '  
                     <td  colspan="4" style="border-top: solid 2px rgba(255, 255, 255, .15);  vertical-align: middle;">
-                    <button class="btn btn-new   " onclick="modalDescuento(&quot;'.$NumPedido.' &quot;)"><i class="fas fa-percent fa-fw"></i> DESCUENTO </button>
-                    <button class="btn btn-new   "><i class="fas fa-credit-card fa-fw"></i> FORMA DE PAGO</button>
-                    <button class="btn btn-new   "><i class="fas fa-handshake fa-fw"></i> MEDIO DE PAGO</button>
-                    <button class="btn btn-new   "><i class="fas fa-truck fa-fw"></i> DELIVERY </button>
+                    <button class="btn btn-new " onclick="modalDescuento(&quot;'.$NumPedido.' &quot;)"><i class="fas fa-percent fa-fw"></i> DESCUENTO </button>
+                    <button class="btn btn-new " onclick="modalFormaPago(&quot;'.$NumPedido.' &quot;)"><i class="fas fa-credit-card fa-fw"></i> FORMA DE PAGO</button>
+                    <button class="btn btn-new " onclick="modalMedioPago(&quot;'.$NumPedido.' &quot;)"><i class="fas fa-handshake fa-fw"></i> MEDIO DE PAGO</button>
+                    <button class="btn btn-new " onclick="modalDelivery(&quot;'.$NumPedido.' &quot;)"><i class="fas fa-truck fa-fw"></i> DELIVERY </button>
                      
                     </td>
                      
                     <td  colspan="2">
-                    <button class="btn btn-new btn-block "><i class="fas fa-check fa-fw"></i> APROBAR </button>
-                    <button class="btn btn-new btn-block "><i class="fas fa-print fa-fw"></i> IMPRIMIR </button>
+                    <button class="btn btn-new btn-block " onclick="approved(&quot;'.$NumPedido.'&quot; , &quot;'.$total_a_cuenta.'&quot; , &quot;'.$total_tarjeta.'&quot;)"><i class="fas fa-check fa-fw"></i> APROBAR </button>
+                    <a class="btn btn-new btn-block " target="_blank" href="../process/pedido/pedido_imprimir.php?num_cotiza='.$NumPedido.'"><i class="fas fa-print fa-fw"></i> IMPRIMIR </a>
                     </td>
                     
                     </tr>

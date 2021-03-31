@@ -15,18 +15,18 @@ while($datos_delivery=mysqli_fetch_array($verDelivery)){
 
         $ubicacion_delivery=$datos_delivery['nombre'];
         // $precio_delivery=$datos_delivery['precio'];
-
+        $objLista = " <option value='".$datos_delivery['nombre']."' > ".$datos_delivery['nombre']." </option> ";
          
        $distritos_array[] = array(
-        'nombre' => $ubicacion_delivery        
+        'lista' => $objLista        
          
        ); 
-      
+       
      
     }
 
    
-    echo json_encode($distritos_array); 
+    echo json_encode($distritos_array);
     
 
     

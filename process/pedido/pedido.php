@@ -6,7 +6,7 @@
             
                   <thead class="bg-green" style="letter-spacing: 2px;">
                    <tr>
-                    <th>Nº de Pedido</th>
+                    <th>N° Pedido</th>
                     <th>Fecha </th>
                     <th>Razon Social</th>
                     <th>Importe Total </th>

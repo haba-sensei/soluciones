@@ -222,6 +222,62 @@ Licencia: Proveedor de servicios
                             </div>
                         </div>
 
+                        <div class="modal fade" id="modalFormaPago" aria-hidden="true" role="dialog">
+                            <div class="modal-dialog modal-dialog-centered modal-xs" role="document">
+                                <div class="modal-content">
+
+                                    <div class="modal-body">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <div class="container">
+                                            <div class="row" id="cuerpoFormaPago">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="modalMedioPago" aria-hidden="true" role="dialog">
+                            <div class="modal-dialog modal-dialog-centered modal-xs" role="document">
+                                <div class="modal-content">
+
+                                    <div class="modal-body">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <div class="container">
+                                            <div class="row" id="cuerpoMedioPago">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="modalDelivery" aria-hidden="true" role="dialog">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content">
+
+                                    <div class="modal-body">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <div class="container">
+                                        <form id="deliveryForm" >
+                                            <div class="row" id="cuerpoDelivery">
+ 
+                                            </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
 						<div class="modal fade" id="modalNewProd" aria-hidden="true" role="dialog">
                             <div class="modal-dialog modal-xl" role="document">
                                 <div class="modal-content">
@@ -430,6 +486,63 @@ Licencia: Proveedor de servicios
  						  
 						}
 
+                        function modalFormaPago(num_cotiza){
+
+                            $.ajax({
+                                type: "POST",
+                                url: "../process/pedido/ModalFormaPagoPedidoController.php",
+                                data: {
+                                    num_cotiza: num_cotiza
+                                },
+                                success: function(data) {
+                                    
+                                    $('#cuerpoFormaPago').html(data);
+                                    $('#modalFormaPago').modal('show');
+
+
+                                }
+                            }); 
+
+                        }
+
+                        function modalMedioPago(num_cotiza){
+
+                            $.ajax({
+                                type: "POST",
+                                url: "../process/pedido/ModalMedioPagoPedidoController.php",
+                                data: {
+                                    num_cotiza: num_cotiza
+                                },
+                                success: function(data) {
+                                    
+                                    $('#cuerpoMedioPago').html(data);
+                                    $('#modalMedioPago').modal('show');
+
+
+                                }
+                            }); 
+
+                        }
+
+                        function modalDelivery(num_cotiza){
+
+                            $.ajax({
+                                type: "POST",
+                                url: "../process/pedido/ModalDeliveryPedidoController.php",
+                                data: {
+                                    num_cotiza: num_cotiza
+                                },
+                                success: function(data) {
+                                    
+                                    $('#cuerpoDelivery').html(data);
+                                    $('#modalDelivery').modal('show');
+
+
+                                }
+                            }); 
+
+                        }
+
 						function addNewDescuento(num_cotiza){
 							cant = document.getElementById('valor_descuento').value;
 
@@ -451,6 +564,70 @@ Licencia: Proveedor de servicios
 
 						}
 
+                        function addNewFormaPago(num_cotiza){
+							cant = document.getElementById('valor_FormaPago').value;
+                             
+							$.ajax({
+                                type: "POST",
+                                url: "../process/pedido/NewFormaPagoPedidoController.php",
+                                data: {
+                                    num_cotiza: num_cotiza,
+									cant: cant
+                                },
+                                success: function(data) {
+                                    
+									$('#modalFormaPago').modal('hide');
+									swal("Agregado con Exito", "", "success");  
+									cargarOrden('<?=$NumPedido?>', '<?=$type?>');
+                                }
+                            }); 
+
+
+
+						}
+
+                        function addNewMedioPago(num_cotiza){
+							cant = document.getElementById('valor_MedioPago').value;
+                             
+							$.ajax({
+                                type: "POST",
+                                url: "../process/pedido/NewMedioPagoPedidoController.php",
+                                data: {
+                                    num_cotiza: num_cotiza,
+									cant: cant
+                                },
+                                success: function(data) {
+                                    
+									$('#modalMedioPago').modal('hide');
+									swal("Agregado con Exito", "", "success");  
+									cargarOrden('<?=$NumPedido?>', '<?=$type?>');
+                                }
+                            }); 
+
+
+
+						}
+
+                        function addNewDelivery(num_cotiza){
+                            var serialize = $('#deliveryForm').serialize();
+                            serialize = serialize + '&' + $.param({
+                                'num_cotiza': num_cotiza
+                            });
+                            $.ajax({
+                                type: "POST",
+                                url: "../process/pedido/NewDeliveryPedidoController.php",
+                                data: serialize,
+                                async: true,
+                                success: function(data) { 
+									$('#modalDelivery').modal('hide');
+									swal("Agregado con Exito", "", "success");  
+									cargarOrden('<?=$NumPedido?>', '<?=$type?>');
+                                }
+                            }); 
+
+
+                        }
+
 						function ResetDescuento(num_cotiza){
 
 							cant = 0;
@@ -468,6 +645,27 @@ Licencia: Proveedor de servicios
                                 }
                             }); 
 						}
+
+                        function approved(num_cotiza, a_cuenta, tarjeta_5_porciento){
+                            
+							$.ajax({
+                                type: "POST",
+                                url: "../process/pedido/ApprovedPedidoController.php",
+                                data: {
+                                    num_cotiza: num_cotiza,
+                                    a_cuenta: a_cuenta,
+                                    tarjeta_5_porciento: tarjeta_5_porciento
+                                },
+                                success: function(data) {
+									 
+									swal("Aprobado con Exito", "", "success");  
+									cargarOrden('<?=$NumPedido?>', '<?=$type?>');
+                                }
+                            }); 
+                        }
+
+                       
+                        
 
 						$('#table_new_prod').DataTable({
 							"processing": true,
@@ -564,8 +762,9 @@ Licencia: Proveedor de servicios
 
 						});
 
-						
-
+                          
+                       
+                  
                         </script>
 
 
