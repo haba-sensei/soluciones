@@ -33,7 +33,39 @@
 				
 					?>
 				<tr>
-                    <td><a href="actualizarPedido_online.php?id_cotizacion=<?php echo $ordenList ?>&type=pedido"><?php echo $ordenList ?></a></td>
+                    <td>
+                    
+                    <?php 
+
+                    
+                    switch ($_SESSION['CodigoArea']) { 
+
+                        case 1: 
+                            echo '  <a href="actualizarPedido_online.php?id_cotizacion='.$ordenList.'&type=pedido">'.$ordenList.'</a>';
+                        break;
+                        case 2:  
+                            echo ' - ';
+                        break;
+                        break;
+                        case 3: 
+                          echo ' - ';
+                        break;
+                        case 4: 
+                          echo '  <a href="actualizarPedido_online.php?id_cotizacion='.$ordenList.'&type=pedido">'.$ordenList.'</a>';
+                        break;
+                        case 5: 
+                          echo '  <a href="actualizarPedido_online.php?id_cotizacion='.$ordenList.'&type=pedido">'.$ordenList.'</a>';
+                        break;
+                        case 6: 
+                              ' - ';
+                        break;
+                    }
+
+                    ?>
+                   
+                    
+                    
+                    </td>
                     <td><?php echo $ordenFech ?></td>
                     <td>
                     <?php 
@@ -61,9 +93,35 @@
                     
                     ?></td>
                     <td align="center">
-                     
-                     <a data-toggle="tooltip" data-placement="top" title="Actualizar" class="btn btn-primary btn-sm"  href="actualizarPedido_online.php?id_cotizacion=<?php echo $ordenList ?>&type=pedido"> Ver Orden </a>
-                     <a data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn btn-danger btn-sm" onclick="return confirm('estas seguro de eliminar?');" href="process/cotizacion/delcotiza.php?id_cotizacion=<?php echo $ordenList ?>"> Eliminar </a>
+                    <?php 
+
+                    
+                    switch ($_SESSION['CodigoArea']) { 
+
+                        case 1: 
+                            echo '  <a data-toggle="tooltip" data-placement="top" title="Actualizar" class="btn btn-primary btn-sm"  href="actualizarPedido_online.php?id_cotizacion='.$ordenList.'&type=pedido"> Ver Orden </a>';
+                        break;
+                        case 2:  
+                            echo ' - ';
+                        break;
+                        break;
+                        case 3: 
+                          echo ' - ';
+                        break;
+                        case 4: 
+                          echo '  <a data-toggle="tooltip" data-placement="top" title="Actualizar" class="btn btn-primary btn-sm"  href="actualizarPedido_online.php?id_cotizacion='.$ordenList.'&type=pedido"> Ver Orden </a>';
+                        break;
+                        case 5: 
+                          echo '  <a data-toggle="tooltip" data-placement="top" title="Actualizar" class="btn btn-primary btn-sm"  href="actualizarPedido_online.php?id_cotizacion='.$ordenList.'&type=pedido"> Ver Orden </a>';
+                        break;
+                        case 6: 
+                              ' - ';
+                        break;
+                    }
+
+                    ?>
+                  
+                    
                      </td>
                   </tr>
                   

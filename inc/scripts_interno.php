@@ -136,7 +136,35 @@ $(document).ready(function() {
                     const total_sol = Number(ope).toLocaleString('en', options);
                     const total_dolar = Number(full[7]).toLocaleString('en', options);
                     // var result = parseFloat(ope).toFixed(2);
-                    return '$ ' + total_dolar + '<br>' + 'S/  ' + total_sol
+                    $CodArea = <?= $_SESSION['CodigoArea'] ?>;
+                    switch ($CodArea) {
+
+                        case 1: 
+                            return '$ ' + total_dolar + '<br>' + 'S/  ' + total_sol
+                        break;
+
+                        case 2: 
+                            return '$ ' + total_dolar + '<br>' + 'S/  ' + total_sol
+                        break;
+
+                        case 3: 
+                            return ' <span style="text-align: center;"> - - - - - -</span>'
+                        break;
+
+                        case 4: 
+                              return ' <span style="text-align: center;"> - - - - - -</span>'
+                        break;
+
+                        case 5: 
+                              return ' <span style="text-align: center;"> - - - - - -</span>'
+                        break;
+
+                        case 6: 
+                              return ' <span style="text-align: center;"> - - - - - -</span>'
+                        break;
+
+                    }
+                   
                 }
             },
             {
@@ -163,12 +191,41 @@ $(document).ready(function() {
                 "bSortable": false,
                 "mRender": function(data, type, full) {
 
-                    return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='updateInventario.php?CodigoProd=" +
-                        full[1] +
-                        "'> <i style='color:#FFF' class='fa fa-edit'></i>  </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' onclick='return confirm('estas seguro de eliminar?');' href='delprod.php?CodigoProd=" +
-                        full[1] + "'> <i style='color:#FFF' class='fa fa-trash'></i>  </a>"
 
+                    $CodArea = <?= $_SESSION['CodigoArea'] ?>;
+                    switch ($CodArea) {
 
+                        case 1: 
+                            return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='updateInventario.php?CodigoProd=" +
+                                full[1] +
+                                "'> <i style='color:#FFF' class='fa fa-edit'></i>  </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' onclick='return confirm('estas seguro de eliminar?');' href='delprod.php?CodigoProd=" +
+                                full[1] + "'> <i style='color:#FFF' class='fa fa-trash'></i>  </a>"
+                        break;
+
+                        case 2: 
+                            return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='updateInventario.php?CodigoProd=" +
+                                full[1] +
+                                "'> <i style='color:#FFF' class='fa fa-edit'></i>  </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' onclick='return confirm('estas seguro de eliminar?');' href='delprod.php?CodigoProd=" +
+                                full[1] + "'> <i style='color:#FFF' class='fa fa-trash'></i>  </a>"
+                        break;
+
+                        case 3: 
+                            return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='javascript:' > <i style='color:#FFF' class='fa fa-edit'></i>  </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' href='javascript:' > <i style='color:#FFF' class='fa fa-trash'></i>  </a>"
+                        break;
+
+                        case 4: 
+                            return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='javascript:' > <i style='color:#FFF' class='fa fa-edit'></i>  </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' href='javascript:' > <i style='color:#FFF' class='fa fa-trash'></i>  </a>"
+                        break;
+
+                        case 5: 
+                            return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='javascript:' > <i style='color:#FFF' class='fa fa-edit'></i>  </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' href='javascript:' > <i style='color:#FFF' class='fa fa-trash'></i>  </a>"
+                        break;
+
+                        case 6: 
+                            return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='javascript:' > <i style='color:#FFF' class='fa fa-edit'></i>  </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' href='javascript:' > <i style='color:#FFF' class='fa fa-trash'></i>  </a>"
+                        break;
+
+                    } 
 
                 }
             },
@@ -281,7 +338,34 @@ $(document).ready(function() {
                     const total_sol = Number(ope).toLocaleString('en', options);
                     const total_dolar = Number(full[7]).toLocaleString('en', options);
                     // var result = parseFloat(ope).toFixed(2);
-                    return '$ ' + total_dolar + '<br>' + 'S/  ' + total_sol
+                    $CodArea = <?= $_SESSION['CodigoArea'] ?>;
+                    switch ($CodArea) {
+
+                        case 1: 
+                            return '$ ' + total_dolar + '<br>' + 'S/  ' + total_sol
+                        break;
+
+                        case 2: 
+                            return '$ ' + total_dolar + '<br>' + 'S/  ' + total_sol
+                        break;
+
+                        case 3: 
+                            return ' <span style="text-align: center;"> - - - - - -</span>'
+                        break;
+
+                        case 4: 
+                              return ' <span style="text-align: center;"> - - - - - -</span>'
+                        break;
+
+                        case 5: 
+                              return ' <span style="text-align: center;"> - - - - - -</span>'
+                        break;
+
+                        case 6: 
+                              return ' <span style="text-align: center;"> - - - - - -</span>'
+                        break;
+
+                    }
                 }
             },
             {
@@ -308,11 +392,40 @@ $(document).ready(function() {
                 "bSortable": false,
                 "mRender": function(data, type, full) {
 
-                    return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='updateInventario.php?CodigoProd=" +
-                        full[1] +
-                        "'> <i style='color:#FFF' class='fa fa-edit'></i>  </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' onclick='return confirm('estas seguro de eliminar?');' href='delprod.php?CodigoProd=" +
-                        full[1] + "'> <i style='color:#FFF' class='fa fa-trash'></i>  </a>"
+                   $CodArea = <?= $_SESSION['CodigoArea'] ?>;
+                    switch ($CodArea) {
 
+                        case 1: 
+                            return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='updateInventario.php?CodigoProd=" +
+                                full[1] +
+                                "'> <i style='color:#FFF' class='fa fa-edit'></i>  </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' onclick='return confirm('estas seguro de eliminar?');' href='delprod.php?CodigoProd=" +
+                                full[1] + "'> <i style='color:#FFF' class='fa fa-trash'></i>  </a>"
+                        break;
+
+                        case 2: 
+                            return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='updateInventario.php?CodigoProd=" +
+                                full[1] +
+                                "'> <i style='color:#FFF' class='fa fa-edit'></i>  </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' onclick='return confirm('estas seguro de eliminar?');' href='delprod.php?CodigoProd=" +
+                                full[1] + "'> <i style='color:#FFF' class='fa fa-trash'></i>  </a>"
+                        break;
+
+                        case 3: 
+                            return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='javascript:' > <i style='color:#FFF' class='fa fa-edit'></i>  </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' href='javascript:' > <i style='color:#FFF' class='fa fa-trash'></i>  </a>"
+                        break;
+
+                        case 4: 
+                            return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='javascript:' > <i style='color:#FFF' class='fa fa-edit'></i>  </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' href='javascript:' > <i style='color:#FFF' class='fa fa-trash'></i>  </a>"
+                        break;
+
+                        case 5: 
+                            return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='javascript:' > <i style='color:#FFF' class='fa fa-edit'></i>  </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' href='javascript:' > <i style='color:#FFF' class='fa fa-trash'></i>  </a>"
+                        break;
+
+                        case 6: 
+                            return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='javascript:' > <i style='color:#FFF' class='fa fa-edit'></i>  </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' href='javascript:' > <i style='color:#FFF' class='fa fa-trash'></i>  </a>"
+                        break;
+
+                    } 
 
 
                 }
@@ -427,7 +540,34 @@ $(document).ready(function() {
                     const total_sol = Number(ope).toLocaleString('en', options);
                     const total_dolar = Number(full[7]).toLocaleString('en', options);
                     // var result = parseFloat(ope).toFixed(2);
-                    return '$ ' + total_dolar + '<br>' + 'S/  ' + total_sol
+                    $CodArea = <?= $_SESSION['CodigoArea'] ?>;
+                    switch ($CodArea) {
+
+                        case 1: 
+                            return '$ ' + total_dolar + '<br>' + 'S/  ' + total_sol
+                        break;
+
+                        case 2: 
+                            return '$ ' + total_dolar + '<br>' + 'S/  ' + total_sol
+                        break;
+
+                        case 3: 
+                            return ' <span style="text-align: center;"> - - - - - -</span>'
+                        break;
+
+                        case 4: 
+                              return ' <span style="text-align: center;"> - - - - - -</span>'
+                        break;
+
+                        case 5: 
+                              return ' <span style="text-align: center;"> - - - - - -</span>'
+                        break;
+
+                        case 6: 
+                              return ' <span style="text-align: center;"> - - - - - -</span>'
+                        break;
+
+                    }
                 }
             },
             {
@@ -454,11 +594,40 @@ $(document).ready(function() {
                 "bSortable": false,
                 "mRender": function(data, type, full) {
 
-                    return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='updateInventario.php?CodigoProd=" +
-                        full[1] +
-                        "'> <i style='color:#FFF' class='fa fa-edit'></i>  </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' onclick='return confirm('estas seguro de eliminar?');' href='delprod.php?CodigoProd=" +
-                        full[1] + "'> <i style='color:#FFF' class='fa fa-trash'></i>  </a>"
+                   $CodArea = <?= $_SESSION['CodigoArea'] ?>;
+                    switch ($CodArea) {
 
+                        case 1: 
+                            return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='updateInventario.php?CodigoProd=" +
+                                full[1] +
+                                "'> <i style='color:#FFF' class='fa fa-edit'></i>  </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' onclick='return confirm('estas seguro de eliminar?');' href='delprod.php?CodigoProd=" +
+                                full[1] + "'> <i style='color:#FFF' class='fa fa-trash'></i>  </a>"
+                        break;
+
+                        case 2: 
+                            return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='updateInventario.php?CodigoProd=" +
+                                full[1] +
+                                "'> <i style='color:#FFF' class='fa fa-edit'></i>  </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' onclick='return confirm('estas seguro de eliminar?');' href='delprod.php?CodigoProd=" +
+                                full[1] + "'> <i style='color:#FFF' class='fa fa-trash'></i>  </a>"
+                        break;
+
+                        case 3: 
+                            return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='javascript:' > <i style='color:#FFF' class='fa fa-edit'></i>  </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' href='javascript:' > <i style='color:#FFF' class='fa fa-trash'></i>  </a>"
+                        break;
+
+                        case 4: 
+                            return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='javascript:' > <i style='color:#FFF' class='fa fa-edit'></i>  </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' href='javascript:' > <i style='color:#FFF' class='fa fa-trash'></i>  </a>"
+                        break;
+
+                        case 5: 
+                            return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='javascript:' > <i style='color:#FFF' class='fa fa-edit'></i>  </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' href='javascript:' > <i style='color:#FFF' class='fa fa-trash'></i>  </a>"
+                        break;
+
+                        case 6: 
+                            return " <a data-toggle='tooltip' data-placement='top' title='Editar' class='btn btn-primary '  href='javascript:' > <i style='color:#FFF' class='fa fa-edit'></i>  </a><a data-toggle='tooltip' data-placement='top' title='Eliminar' class='btn btn-danger ' href='javascript:' > <i style='color:#FFF' class='fa fa-trash'></i>  </a>"
+                        break;
+
+                    } 
 
 
                 }
@@ -480,7 +649,7 @@ $(document).ready(function() {
 
 
                     return full[11]
-                }
+                } 
             },
             {
                 "sName": "Stock",
@@ -682,6 +851,11 @@ $(function() {
 <script>
 $(function() {
     $('#example1').DataTable({
+        iDisplayLength: 8,
+        aLengthMenu: [8, 50, 100, 150, 200, 250],
+        "lengthMenu": false,
+    });
+    $('#clientes_1').DataTable({
         iDisplayLength: 8,
         aLengthMenu: [8, 50, 100, 150, 200, 250],
         "lengthMenu": false,

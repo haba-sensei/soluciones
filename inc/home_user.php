@@ -52,274 +52,55 @@
      $CodArea = $_SESSION['CodigoArea'];
     switch ($CodArea) {
         case 1:
-       echo '
-            <div class="row">
-
-                <div class="col-lg-4 col-md-4">
-                    <div class="widget widget-stats hljs-wrapper">
-                        <div class="stats-icon"><i class="fa fa-tags" style="color: #009fff;"></i></div>
-                        <div class="stats-info">
-                            <h4>ARTICULOS TOTALES </h4>
-                            <p>'. $prod.' </p>
-
-                    </div>
-                    <div class="stats-link">
-                        <a href="actualizarStock.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
-                    </div>
-        
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4">
-                <div class="widget widget-stats hljs-wrapper">
-                    <div class="stats-icon"><i class="fa fa-tags" style="color: #009fff;"></i></div>
-                    <div class="stats-info">
-                        <h4>ARTICULOS EN STOCK</h4>
-                        <p> '.$stock_abilitado.' </p>
-
-                    </div>
-                    <div class="stats-link">
-                        <a href="articulosStock.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4">
-                <div class="widget widget-stats hljs-wrapper">
-                    <div class="stats-icon"><i class="fa fa-minus-circle" style="color: #ef2121;"></i></div>
-                    <div class="stats-info">
-                        <h4>ARTICULOS AGOTADOS</h4>
-                        <p> '.$stock_agotado.' </p>
-                    </div>
-                    <div class="stats-link">
-                        <a href="actualizarStockAgotado.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            </div>
-
-            <div class="row">
-
-            <div class="col-lg-4 col-md-4">
-            <div class="widget widget-stats hljs-wrapper">
-                <div class="stats-icon"><i class="fa fa-minus-circle" style="color: #ef2121;"></i></div>
-                <div class="stats-info">
-                    <h4>PEDIDOS EN ESPERA</h4>
-                    <p> '.$pedido_espera.' </p>
-                </div>
-                <div class="stats-link">
-                    <a href="actualizarPedidos.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
-                </div>
-            </div>
-        </div>
-                
-
-                <div class="col-lg-4 col-md-4">
-                    <div class="widget widget-stats hljs-wrapper">
-                        <div class="stats-icon"><i class="fa fa-window-maximize" style="color: #009fff;"></i></div>
-                        <div class="stats-info">
-                            <h4>PEDIDOS APROBADOS</h4>
-                            <p> '.$pedido_aprob.' </p>
-
-                        </div>
-                        <div class="stats-link">
-                            <a href="listaPedidos.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                <div class="widget widget-stats hljs-wrapper">
-                    <div class="stats-icon"><i class="fa fa-window-maximize" style="color: #009fff;"></i></div>
-                    <div class="stats-info">
-                        <h4>PEDIDOS TOTALES</h4>
-                        <p> '.$pedido_total.' </p>
-
-                    </div>
-                    <div class="stats-link">
-                        <a href="listaPedidos.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
-                    </div>
-                </div>
-            </div>
-                
-            </div>
-
-
-            <div class="row">
-
-               
-            <div class="col-lg-4 col-md-4">
-            <div class="widget widget-stats hljs-wrapper">
-                <div class="stats-icon"><i class="fa fa-minus-circle" style="color: #ef2121;"></i></div>
-                <div class="stats-info">
-                    <h4>COTIZACIONES EN ESPERA</h4>
-                    <p> '.$cotiza_espera.' </p>
-                </div>
-                <div class="stats-link">
-                    <a href="actualizarCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
-                </div>
-            </div>
-        </div>
-
-                <div class="col-lg-4 col-md-4">
-                    <div class="widget widget-stats hljs-wrapper">
-                        <div class="stats-icon"><i class="fa fa-window-restore" style="color: #009fff;"></i></div>
-                        <div class="stats-info">
-                            <h4>COTIZACIONES APROBADAS</h4>
-                            <p> '.$cotiza_aprob.' </p>
-
-                        </div>
-                        <div class="stats-link">
-                            <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                <div class="widget widget-stats hljs-wrapper">
-                    <div class="stats-icon"><i class="fa fa-window-restore" style="color: #009fff;"></i></div>
-                    <div class="stats-info">
-                        <h4>COTIZACIONES TOTALES</h4>
-                        <p>  '.$cotiza_total.' </p>
-
-                    </div>
-                    <div class="stats-link">
-                        <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
-                    </div>
-                </div>
-            </div>
-
-                
-            </div>
-
-            <div class="row">
-            <div class="col-lg-4 col-md-4">
-            <div class="widget widget-stats hljs-wrapper">
-                <div class="stats-icon"><i class="fa fa-minus-circle" style="color: #ef2121;"></i></div>
-                <div class="stats-info">
-                    <h4>DELIVERYS EN ESPERA</h4>
-                    <p>'. $cotiza_espera.' </p>
-                </div>
-                <div class="stats-link">
-                    <a href="actualizarCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
-                </div>
-            </div>
-        </div>
-                
-
-
-                <div class="col-lg-4 col-md-4">
-                    <div class="widget widget-stats hljs-wrapper">
-                        <div class="stats-icon"><i class="fa fa-window-restore" style="color: #009fff;"></i></div>
-                        <div class="stats-info">
-                            <h4>DELIVERYS APROBADOS</h4>
-                            <p>'. $cotiza_aprob.' </p>
-
-                        </div>
-                        <div class="stats-link">
-                            <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-4">
-                <div class="widget widget-stats hljs-wrapper">
-                    <div class="stats-icon"><i class="fa fa-window-restore" style="color: #009fff;"></i></div>
-                    <div class="stats-info">
-                        <h4>DELIVERYS TOTALES</h4>
-                        <p>  '.$cotiza_total.' </p>
-
-                    </div>
-                    <div class="stats-link">
-                        <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
-                    </div>
-                </div>
-            </div>
-                
-
-            </div>
-
-            ';
-            break;
-            case 2:
             echo '
-            <div class="row">
+                    <div class="row">
 
-                <div class="col-lg-4 col-md-4">
-                    <div class="widget widget-stats hljs-wrapper">
-                        <div class="stats-icon"><i class="fa fa-tags" style="color: #009fff;"></i></div>
-                        <div class="stats-info">
-                            <h4>ARTICULOS TOTALES </h4>
-                            <p> '.$prod.' </p>
+                        <div class="col-lg-4 col-md-4">
+                            <div class="widget widget-stats hljs-wrapper">
+                                <div class="stats-icon"><i class="fa fa-tags" style="color: #009fff;"></i></div>
+                                <div class="stats-info">
+                                    <h4>ARTICULOS TOTALES </h4>
+                                    <p>'. $prod.' </p>
 
-                        </div>
-                        <div class="stats-link">
-                            <a href="actualizarStock.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-4">
-                    <div class="widget widget-stats hljs-wrapper">
-                        <div class="stats-icon"><i class="fa fa-tags" style="color: #009fff;"></i></div>
-                        <div class="stats-info">
-                            <h4>ARTICULOS EN STOCK</h4>
-                            <p> '.$stock_abilitado.' </p>
-
-                        </div>
-                        <div class="stats-link">
-                            <a href="articulosStock.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                            </div>
+                            <div class="stats-link">
+                                <a href="actualizarStock.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                            </div>
+                
                         </div>
                     </div>
-                </div>
 
-                <div class="col-lg-4 col-md-4">
-                    <div class="widget widget-stats hljs-wrapper">
-                        <div class="stats-icon"><i class="fa fa-minus-circle" style="color: #ef2121;"></i></div>
-                        <div class="stats-info">
-                            <h4>ARTICULOS AGOTADOS</h4>
-                            <p> '.$stock_agotado.' </p>
-                        </div>
-                        <div class="stats-link">
-                            <a href="actualizarStockAgotado.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            ';
-            break;
-            case 3:
-            echo '
-            <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="widget widget-stats hljs-wrapper">
+                            <div class="stats-icon"><i class="fa fa-tags" style="color: #009fff;"></i></div>
+                            <div class="stats-info">
+                                <h4>ARTICULOS EN STOCK</h4>
+                                <p> '.$stock_abilitado.' </p>
 
-
-                <div class="col-lg-4 col-md-4">
-                    <div class="widget widget-stats hljs-wrapper">
-                        <div class="stats-icon"><i class="fa fa-window-maximize" style="color: #009fff;"></i></div>
-                        <div class="stats-info">
-                            <h4>PEDIDOS TOTALES</h4>
-                            <p> '.$pedido_total.' </p>
-
-                        </div>
-                        <div class="stats-link">
-                            <a href="listaPedidos.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                            </div>
+                            <div class="stats-link">
+                                <a href="articulosStock.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-lg-4 col-md-4">
-                    <div class="widget widget-stats hljs-wrapper">
-                        <div class="stats-icon"><i class="fa fa-window-maximize" style="color: #009fff;"></i></div>
-                        <div class="stats-info">
-                            <h4>PEDIDOS APROBADOS</h4>
-                            <p> '.$pedido_aprob.' </p>
-
-                        </div>
-                        <div class="stats-link">
-                            <a href="listaPedidos.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="widget widget-stats hljs-wrapper">
+                            <div class="stats-icon"><i class="fa fa-minus-circle" style="color: #ef2121;"></i></div>
+                            <div class="stats-info">
+                                <h4>ARTICULOS AGOTADOS</h4>
+                                <p> '.$stock_agotado.' </p>
+                            </div>
+                            <div class="stats-link">
+                                <a href="actualizarStockAgotado.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    </div>
 
-                <div class="col-lg-4 col-md-4">
+                    <div class="row">
+
+                    <div class="col-lg-4 col-md-4">
                     <div class="widget widget-stats hljs-wrapper">
                         <div class="stats-icon"><i class="fa fa-minus-circle" style="color: #ef2121;"></i></div>
                         <div class="stats-info">
@@ -331,46 +112,90 @@
                         </div>
                     </div>
                 </div>
-            </div>
+                        
 
+                        <div class="col-lg-4 col-md-4">
+                            <div class="widget widget-stats hljs-wrapper">
+                                <div class="stats-icon"><i class="fa fa-window-maximize" style="color: #009fff;"></i></div>
+                                <div class="stats-info">
+                                    <h4>PEDIDOS APROBADOS</h4>
+                                    <p> '.$pedido_aprob.' </p>
 
-            <div class="row">
-
-                <div class="col-lg-4 col-md-4">
-                    <div class="widget widget-stats hljs-wrapper">
-                        <div class="stats-icon"><i class="fa fa-window-restore" style="color: #009fff;"></i></div>
-                        <div class="stats-info">
-                            <h4>COTIZACIONES TOTALES</h4>
-                            <p>  '.$cotiza_total.' </p>
-
+                                </div>
+                                <div class="stats-link">
+                                    <a href="listaPedidos.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="stats-link">
-                            <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
+                        <div class="col-lg-4 col-md-4">
+                        <div class="widget widget-stats hljs-wrapper">
+                            <div class="stats-icon"><i class="fa fa-window-maximize" style="color: #009fff;"></i></div>
+                            <div class="stats-info">
+                                <h4>PEDIDOS TOTALES</h4>
+                                <p> '.$pedido_total.' </p>
 
-
-                <div class="col-lg-4 col-md-4">
-                    <div class="widget widget-stats hljs-wrapper">
-                        <div class="stats-icon"><i class="fa fa-window-restore" style="color: #009fff;"></i></div>
-                        <div class="stats-info">
-                            <h4>COTIZACIONES APROBADAS</h4>
-                            <p> '.$cotiza_aprob.' </p>
-
-                        </div>
-                        <div class="stats-link">
-                            <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                            </div>
+                            <div class="stats-link">
+                                <a href="listaPedidos.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                        
+                    </div>
 
 
-                <div class="col-lg-4 col-md-4">
+                    <div class="row">
+
+                    
+                    <div class="col-lg-4 col-md-4">
                     <div class="widget widget-stats hljs-wrapper">
                         <div class="stats-icon"><i class="fa fa-minus-circle" style="color: #ef2121;"></i></div>
                         <div class="stats-info">
                             <h4>COTIZACIONES EN ESPERA</h4>
+                            <p> '.$cotiza_espera.' </p>
+                        </div>
+                        <div class="stats-link">
+                            <a href="actualizarCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                        <div class="col-lg-4 col-md-4">
+                            <div class="widget widget-stats hljs-wrapper">
+                                <div class="stats-icon"><i class="fa fa-window-restore" style="color: #009fff;"></i></div>
+                                <div class="stats-info">
+                                    <h4>COTIZACIONES APROBADAS</h4>
+                                    <p> '.$cotiza_aprob.' </p>
+
+                                </div>
+                                <div class="stats-link">
+                                    <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                        <div class="widget widget-stats hljs-wrapper">
+                            <div class="stats-icon"><i class="fa fa-window-restore" style="color: #009fff;"></i></div>
+                            <div class="stats-info">
+                                <h4>COTIZACIONES TOTALES</h4>
+                                <p>  '.$cotiza_total.' </p>
+
+                            </div>
+                            <div class="stats-link">
+                                <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                        
+                    </div>
+
+                    <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                    <div class="widget widget-stats hljs-wrapper">
+                        <div class="stats-icon"><i class="fa fa-minus-circle" style="color: #ef2121;"></i></div>
+                        <div class="stats-info">
+                            <h4>DELIVERYS EN ESPERA</h4>
                             <p>'. $cotiza_espera.' </p>
                         </div>
                         <div class="stats-link">
@@ -378,56 +203,403 @@
                         </div>
                     </div>
                 </div>
-            </div>
+                        
 
-            <div class="row">
 
-                <div class="col-lg-4 col-md-4">
-                    <div class="widget widget-stats hljs-wrapper">
-                        <div class="stats-icon"><i class="fa fa-window-restore" style="color: #009fff;"></i></div>
-                        <div class="stats-info">
-                            <h4>DELIVERYS TOTALES</h4>
-                            <p> '. $cotiza_total.' </p>
+                        <div class="col-lg-4 col-md-4">
+                            <div class="widget widget-stats hljs-wrapper">
+                                <div class="stats-icon"><i class="fa fa-window-restore" style="color: #009fff;"></i></div>
+                                <div class="stats-info">
+                                    <h4>DELIVERYS APROBADOS</h4>
+                                    <p>'. $cotiza_aprob.' </p>
 
+                                </div>
+                                <div class="stats-link">
+                                    <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="stats-link">
-                            <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+
+                        <div class="col-lg-4 col-md-4">
+                        <div class="widget widget-stats hljs-wrapper">
+                            <div class="stats-icon"><i class="fa fa-window-restore" style="color: #009fff;"></i></div>
+                            <div class="stats-info">
+                                <h4>DELIVERYS TOTALES</h4>
+                                <p>  '.$cotiza_total.' </p>
+
+                            </div>
+                            <div class="stats-link">
+                                <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                        
 
+                    </div>
 
-                <div class="col-lg-4 col-md-4">
-                    <div class="widget widget-stats hljs-wrapper">
-                        <div class="stats-icon"><i class="fa fa-window-restore" style="color: #009fff;"></i></div>
-                        <div class="stats-info">
-                            <h4>DELIVERYS APROBADOS</h4>
-                            <p>' .$cotiza_aprob.' </p>
-
-                        </div>
-                        <div class="stats-link">
-                            <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+            ';
+        break;
+        
+        case 2:
+            echo '
+                    <div class="row">
+    
+                        <div class="col-lg-4 col-md-4">
+                            <div class="widget widget-stats hljs-wrapper">
+                                <div class="stats-icon"><i class="fa fa-tags" style="color: #009fff;"></i></div>
+                                <div class="stats-info">
+                                    <h4>ARTICULOS TOTALES </h4>
+                                    <p>'. $prod.' </p>
+    
+                            </div>
+                            <div class="stats-link">
+                                <a href="actualizarStock.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                            </div>
+                
                         </div>
                     </div>
-                </div>
+    
+                    <div class="col-lg-4 col-md-4">
+                        <div class="widget widget-stats hljs-wrapper">
+                            <div class="stats-icon"><i class="fa fa-tags" style="color: #009fff;"></i></div>
+                            <div class="stats-info">
+                                <h4>ARTICULOS EN STOCK</h4>
+                                <p> '.$stock_abilitado.' </p>
+    
+                            </div>
+                            <div class="stats-link">
+                                <a href="articulosStock.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col-lg-4 col-md-4">
+                        <div class="widget widget-stats hljs-wrapper">
+                            <div class="stats-icon"><i class="fa fa-minus-circle" style="color: #ef2121;"></i></div>
+                            <div class="stats-info">
+                                <h4>ARTICULOS AGOTADOS</h4>
+                                <p> '.$stock_agotado.' </p>
+                            </div>
+                            <div class="stats-link">
+                                <a href="actualizarStockAgotado.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+    
+                     
+                        
+     
+    
+            ';
+        break;
 
-
-                <div class="col-lg-4 col-md-4">
+        case 3:
+            echo '
+                    <div class="row">
+    
+                        <div class="col-lg-4 col-md-4">
+                            <div class="widget widget-stats hljs-wrapper">
+                                <div class="stats-icon"><i class="fa fa-tags" style="color: #009fff;"></i></div>
+                                <div class="stats-info">
+                                    <h4>ARTICULOS TOTALES </h4>
+                                    <p>'. $prod.' </p>
+    
+                            </div>
+                            <div class="stats-link">
+                                <a href="actualizarStock.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                            </div>
+                
+                        </div>
+                    </div>
+    
+                    <div class="col-lg-4 col-md-4">
+                        <div class="widget widget-stats hljs-wrapper">
+                            <div class="stats-icon"><i class="fa fa-tags" style="color: #009fff;"></i></div>
+                            <div class="stats-info">
+                                <h4>ARTICULOS EN STOCK</h4>
+                                <p> '.$stock_abilitado.' </p>
+    
+                            </div>
+                            <div class="stats-link">
+                                <a href="articulosStock.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col-lg-4 col-md-4">
+                        <div class="widget widget-stats hljs-wrapper">
+                            <div class="stats-icon"><i class="fa fa-minus-circle" style="color: #ef2121;"></i></div>
+                            <div class="stats-info">
+                                <h4>ARTICULOS AGOTADOS</h4>
+                                <p> '.$stock_agotado.' </p>
+                            </div>
+                            <div class="stats-link">
+                                <a href="actualizarStockAgotado.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+    
+                    
+    
+            ';
+        break;
+        
+        case 4:
+            echo '
+                    
+    
+                    <div class="row">
+    
+                    <div class="col-lg-4 col-md-4">
                     <div class="widget widget-stats hljs-wrapper">
                         <div class="stats-icon"><i class="fa fa-minus-circle" style="color: #ef2121;"></i></div>
                         <div class="stats-info">
-                            <h4>DELIVERYS EN ESPERA</h4>
-                            <p>' .$cotiza_espera.' </p>
+                            <h4>PEDIDOS EN ESPERA</h4>
+                            <p> '.$pedido_espera.' </p>
+                        </div>
+                        <div class="stats-link">
+                            <a href="actualizarPedidos.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                        
+    
+                        <div class="col-lg-4 col-md-4">
+                            <div class="widget widget-stats hljs-wrapper">
+                                <div class="stats-icon"><i class="fa fa-window-maximize" style="color: #009fff;"></i></div>
+                                <div class="stats-info">
+                                    <h4>PEDIDOS APROBADOS</h4>
+                                    <p> '.$pedido_aprob.' </p>
+    
+                                </div>
+                                <div class="stats-link">
+                                    <a href="listaPedidos.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                        <div class="widget widget-stats hljs-wrapper">
+                            <div class="stats-icon"><i class="fa fa-window-maximize" style="color: #009fff;"></i></div>
+                            <div class="stats-info">
+                                <h4>PEDIDOS TOTALES</h4>
+                                <p> '.$pedido_total.' </p>
+    
+                            </div>
+                            <div class="stats-link">
+                                <a href="listaPedidos.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    </div>
+    
+    
+                    <div class="row">
+    
+                    
+                    <div class="col-lg-4 col-md-4">
+                    <div class="widget widget-stats hljs-wrapper">
+                        <div class="stats-icon"><i class="fa fa-minus-circle" style="color: #ef2121;"></i></div>
+                        <div class="stats-info">
+                            <h4>COTIZACIONES EN ESPERA</h4>
+                            <p> '.$cotiza_espera.' </p>
                         </div>
                         <div class="stats-link">
                             <a href="actualizarCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
+    
+                        <div class="col-lg-4 col-md-4">
+                            <div class="widget widget-stats hljs-wrapper">
+                                <div class="stats-icon"><i class="fa fa-window-restore" style="color: #009fff;"></i></div>
+                                <div class="stats-info">
+                                    <h4>COTIZACIONES APROBADAS</h4>
+                                    <p> '.$cotiza_aprob.' </p>
+    
+                                </div>
+                                <div class="stats-link">
+                                    <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                        <div class="widget widget-stats hljs-wrapper">
+                            <div class="stats-icon"><i class="fa fa-window-restore" style="color: #009fff;"></i></div>
+                            <div class="stats-info">
+                                <h4>COTIZACIONES TOTALES</h4>
+                                <p>  '.$cotiza_total.' </p>
+    
+                            </div>
+                            <div class="stats-link">
+                                <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+    
+                        
+                    </div>
+    
+                    
+    
+            ';
+        break;
 
-            </div>
-';
-break;
+        case 5:
+            echo '
+                     
+    
+                    <div class="row">
+    
+                    <div class="col-lg-4 col-md-4">
+                    <div class="widget widget-stats hljs-wrapper">
+                        <div class="stats-icon"><i class="fa fa-minus-circle" style="color: #ef2121;"></i></div>
+                        <div class="stats-info">
+                            <h4>PEDIDOS EN ESPERA</h4>
+                            <p> '.$pedido_espera.' </p>
+                        </div>
+                        <div class="stats-link">
+                            <a href="actualizarPedidos.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                        
+    
+                        <div class="col-lg-4 col-md-4">
+                            <div class="widget widget-stats hljs-wrapper">
+                                <div class="stats-icon"><i class="fa fa-window-maximize" style="color: #009fff;"></i></div>
+                                <div class="stats-info">
+                                    <h4>PEDIDOS APROBADOS</h4>
+                                    <p> '.$pedido_aprob.' </p>
+    
+                                </div>
+                                <div class="stats-link">
+                                    <a href="listaPedidos.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                        <div class="widget widget-stats hljs-wrapper">
+                            <div class="stats-icon"><i class="fa fa-window-maximize" style="color: #009fff;"></i></div>
+                            <div class="stats-info">
+                                <h4>PEDIDOS TOTALES</h4>
+                                <p> '.$pedido_total.' </p>
+    
+                            </div>
+                            <div class="stats-link">
+                                <a href="listaPedidos.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    </div>
+    
+    
+                    <div class="row">
+    
+                    
+                    <div class="col-lg-4 col-md-4">
+                    <div class="widget widget-stats hljs-wrapper">
+                        <div class="stats-icon"><i class="fa fa-minus-circle" style="color: #ef2121;"></i></div>
+                        <div class="stats-info">
+                            <h4>COTIZACIONES EN ESPERA</h4>
+                            <p> '.$cotiza_espera.' </p>
+                        </div>
+                        <div class="stats-link">
+                            <a href="actualizarCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+    
+                        <div class="col-lg-4 col-md-4">
+                            <div class="widget widget-stats hljs-wrapper">
+                                <div class="stats-icon"><i class="fa fa-window-restore" style="color: #009fff;"></i></div>
+                                <div class="stats-info">
+                                    <h4>COTIZACIONES APROBADAS</h4>
+                                    <p> '.$cotiza_aprob.' </p>
+    
+                                </div>
+                                <div class="stats-link">
+                                    <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                        <div class="widget widget-stats hljs-wrapper">
+                            <div class="stats-icon"><i class="fa fa-window-restore" style="color: #009fff;"></i></div>
+                            <div class="stats-info">
+                                <h4>COTIZACIONES TOTALES</h4>
+                                <p>  '.$cotiza_total.' </p>
+    
+                            </div>
+                            <div class="stats-link">
+                                <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+    
+                        
+                    </div>
+     
+    
+            ';
+        break;
+
+        case 6:
+            echo '
+                    
+    
+                    <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                    <div class="widget widget-stats hljs-wrapper">
+                        <div class="stats-icon"><i class="fa fa-minus-circle" style="color: #ef2121;"></i></div>
+                        <div class="stats-info">
+                            <h4>DELIVERYS EN ESPERA</h4>
+                            <p>'. $cotiza_espera.' </p>
+                        </div>
+                        <div class="stats-link">
+                            <a href="actualizarCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                        
+    
+    
+                        <div class="col-lg-4 col-md-4">
+                            <div class="widget widget-stats hljs-wrapper">
+                                <div class="stats-icon"><i class="fa fa-window-restore" style="color: #009fff;"></i></div>
+                                <div class="stats-info">
+                                    <h4>DELIVERYS APROBADOS</h4>
+                                    <p>'. $cotiza_aprob.' </p>
+    
+                                </div>
+                                <div class="stats-link">
+                                    <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-lg-4 col-md-4">
+                        <div class="widget widget-stats hljs-wrapper">
+                            <div class="stats-icon"><i class="fa fa-window-restore" style="color: #009fff;"></i></div>
+                            <div class="stats-info">
+                                <h4>DELIVERYS TOTALES</h4>
+                                <p>  '.$cotiza_total.' </p>
+    
+                            </div>
+                            <div class="stats-link">
+                                <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                        
+    
+                    </div>
+    
+            ';
+        break;
 }
 ?>
 

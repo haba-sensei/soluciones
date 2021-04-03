@@ -1,7 +1,7 @@
 <?php 
 include '../../library/configServer.php';
 include '../../library/consulSQL.php';
-
+session_start();
         $NumPedido =$_POST['num_cotiza'];
         $type=$_POST['type'];   
         
@@ -105,7 +105,31 @@ include '../../library/consulSQL.php';
                           <tr>
                           <td class="ajut_centrado_orden">
                           '.$fila['Cantidad'].'
-                          <button class="btn btn-block btn-new agregar_cant" onclick="modalCantidadProd(&quot;'.$NumPedido.'&quot; , &quot;'.$fila['CodigoProd'].'&quot;)" > <i class="fas fa-minus fa-fw"></i> Cantidad <i class="fas fa-plus fa-fw"></i></button>
+                          ';
+                          switch ($_SESSION['CodigoArea']) { 
+  
+                              case 1: 
+                                  echo ' <button class="btn btn-block btn-new agregar_cant" onclick="modalCantidadProd(&quot;'.$NumPedido.'&quot; , &quot;'.$fila['CodigoProd'].'&quot;)" > <i class="fas fa-minus fa-fw"></i> Cantidad <i class="fas fa-plus fa-fw"></i></button>';
+                              break;
+                              case 2:  
+                                   echo ' <button class="btn btn-block btn-new agregar_cant" > <i class="fas fa-minus fa-fw"></i> Cantidad <i class="fas fa-plus fa-fw"></i></button>';
+                              break;
+                              break;
+                              case 3: 
+                                 echo ' <button class="btn btn-block btn-new agregar_cant" > <i class="fas fa-minus fa-fw"></i> Cantidad <i class="fas fa-plus fa-fw"></i></button>';
+                              break;
+                              case 4: 
+                                  echo ' <button class="btn btn-block btn-new agregar_cant" onclick="modalCantidadProd(&quot;'.$NumPedido.'&quot; , &quot;'.$fila['CodigoProd'].'&quot;)" > <i class="fas fa-minus fa-fw"></i> Cantidad <i class="fas fa-plus fa-fw"></i></button>';
+                              break;
+                              case 5: 
+                                  echo ' <button class="btn btn-block btn-new agregar_cant" > <i class="fas fa-minus fa-fw"></i> Cantidad <i class="fas fa-plus fa-fw"></i></button>';
+                              break;
+                              case 6: 
+                                  echo ' <button class="btn btn-block btn-new agregar_cant" > <i class="fas fa-minus fa-fw"></i> Cantidad <i class="fas fa-plus fa-fw"></i></button>';
+                              break;
+                          }
+                          echo '
+                         
                           </td>
                           <td>
                           <span class="">'.$fila['NombreProd'].'</span><br>
@@ -118,7 +142,33 @@ include '../../library/consulSQL.php';
                           <td class="ajut_centrado_orden">$ '.$total_dolares.'</td>
                           <td class="ajut_centrado_orden">
                           <a href="../infoProd.php?CodigoProd='.$fila['CodigoProd'].'" target="_blank" class="btn btn-new btn-block "><i class="fas fa-eye fa-fw"></i> VER ARTICULO</a> 
-                          <button class="btn btn-elim btn-block " onclick="elimProd(&quot;'.$fila['id'].' &quot; , &quot;'.$NumPedido.' &quot;)"><i class="fas fa-trash fa-fw"></i> ELIMINAR</button> 
+                          ';
+                          switch ($_SESSION['CodigoArea']) { 
+  
+                              case 1: 
+                                  echo ' <button class="btn btn-elim btn-block " onclick="elimProd(&quot;'.$fila['id'].' &quot; , &quot;'.$NumPedido.' &quot;)"><i class="fas fa-trash fa-fw"></i> ELIMINAR</button> ';
+                              break;
+                              case 2:  
+                                   echo '<button class="btn btn-elim btn-block " ><i class="fas fa-trash fa-fw"></i> ELIMINAR</button> ';
+                              break;
+                              break;
+                              case 3: 
+                                 echo '<button class="btn btn-elim btn-block " ><i class="fas fa-trash fa-fw"></i> ELIMINAR</button> ';
+                              break;
+                              case 4: 
+                                  echo ' <button class="btn btn-elim btn-block " onclick="elimProd(&quot;'.$fila['id'].' &quot; , &quot;'.$NumPedido.' &quot;)"><i class="fas fa-trash fa-fw"></i> ELIMINAR</button> ';
+                              break;
+                              case 5: 
+                                  echo '<button class="btn btn-elim btn-block " ><i class="fas fa-trash fa-fw"></i> ELIMINAR</button> ';
+                              break;
+                              case 6: 
+                                  echo '<button class="btn btn-elim btn-block " ><i class="fas fa-trash fa-fw"></i> ELIMINAR</button> ';
+                              break;
+                          }
+                          echo '
+                         
+                         
+                         
                           </td> 
                           </tr>
                         </tbody>
@@ -254,8 +304,11 @@ include '../../library/consulSQL.php';
 
                         
                     }
-                    echo '  
-                    <td  colspan="4" style="border-top: solid 2px rgba(255, 255, 255, .15);  vertical-align: middle;">
+
+                    switch ($_SESSION['CodigoArea']) { 
+  
+                        case 1: 
+                            echo '<td  colspan="4" style="border-top: solid 2px rgba(255, 255, 255, .15);  vertical-align: middle;">
                     <button class="btn btn-new " style="background: #ab2200!important" onclick="modalDescuento(&quot;'.$NumPedido.' &quot;)"><i class="fas fa-percent fa-fw"></i> DESCUENTO </button>
                      
                     </td>
@@ -263,7 +316,67 @@ include '../../library/consulSQL.php';
                     <td  colspan="2">
                     <button class="btn btn-new btn-block " style="background: #ab2200!important" onclick="registro_compra(&quot;'.$NumPedido.'&quot; , &quot;'.$total_a_cuenta.'&quot; , &quot;'.$total_tarjeta.'&quot;)"><i class="fas fa-check fa-fw"></i> REGISTRAR COMPRA </button>
                     <a class="btn btn-new btn-block "  style="background: #ab2200!important" target="_blank" href="../process/cotiza/cotiza_imprimir.php?num_cotiza='.$NumPedido.'"><i class="fas fa-print fa-fw"></i> IMPRIMIR </a>
+                    </td>';
+                        break;
+                        case 2:  
+                             echo '<td  colspan="4" style="border-top: solid 2px rgba(255, 255, 255, .15);  vertical-align: middle;">
+                             <button class="btn btn-new " style="background: #ab2200!important" ><i class="fas fa-percent fa-fw"></i> DESCUENTO </button>
+                              
+                             </td>
+                              
+                             <td  colspan="2">
+                             <button class="btn btn-new btn-block " style="background: #ab2200!important" ><i class="fas fa-check fa-fw"></i> REGISTRAR COMPRA </button>
+                             <a class="btn btn-new btn-block "  style="background: #ab2200!important" target="_blank" href="../process/cotiza/cotiza_imprimir.php?num_cotiza='.$NumPedido.'"><i class="fas fa-print fa-fw"></i> IMPRIMIR </a>
+                             </td>';
+                        break;
+                        break;
+                        case 3: 
+                           echo '<td  colspan="4" style="border-top: solid 2px rgba(255, 255, 255, .15);  vertical-align: middle;">
+                             <button class="btn btn-new " style="background: #ab2200!important" ><i class="fas fa-percent fa-fw"></i> DESCUENTO </button>
+                              
+                             </td>
+                              
+                             <td  colspan="2">
+                             <button class="btn btn-new btn-block " style="background: #ab2200!important" ><i class="fas fa-check fa-fw"></i> REGISTRAR COMPRA </button>
+                             <a class="btn btn-new btn-block "  style="background: #ab2200!important" target="_blank" href="../process/cotiza/cotiza_imprimir.php?num_cotiza='.$NumPedido.'"><i class="fas fa-print fa-fw"></i> IMPRIMIR </a>
+                             </td>';
+                        break;
+                        case 4: 
+                            echo '<td  colspan="4" style="border-top: solid 2px rgba(255, 255, 255, .15);  vertical-align: middle;">
+                    <button class="btn btn-new " style="background: #ab2200!important" onclick="modalDescuento(&quot;'.$NumPedido.' &quot;)"><i class="fas fa-percent fa-fw"></i> DESCUENTO </button>
+                     
                     </td>
+                     
+                    <td  colspan="2">
+                    <button class="btn btn-new btn-block " style="background: #ab2200!important" onclick="registro_compra(&quot;'.$NumPedido.'&quot; , &quot;'.$total_a_cuenta.'&quot; , &quot;'.$total_tarjeta.'&quot;)"><i class="fas fa-check fa-fw"></i> REGISTRAR COMPRA </button>
+                    <a class="btn btn-new btn-block "  style="background: #ab2200!important" target="_blank" href="../process/cotiza/cotiza_imprimir.php?num_cotiza='.$NumPedido.'"><i class="fas fa-print fa-fw"></i> IMPRIMIR </a>
+                    </td>';
+                        break;
+                        case 5: 
+                            echo '<td  colspan="4" style="border-top: solid 2px rgba(255, 255, 255, .15);  vertical-align: middle;">
+                             <button class="btn btn-new " style="background: #ab2200!important" ><i class="fas fa-percent fa-fw"></i> DESCUENTO </button>
+                              
+                             </td>
+                              
+                             <td  colspan="2">
+                             <button class="btn btn-new btn-block " style="background: #ab2200!important" ><i class="fas fa-check fa-fw"></i> REGISTRAR COMPRA </button>
+                             <a class="btn btn-new btn-block "  style="background: #ab2200!important" target="_blank" href="../process/cotiza/cotiza_imprimir.php?num_cotiza='.$NumPedido.'"><i class="fas fa-print fa-fw"></i> IMPRIMIR </a>
+                             </td>';
+                        break;
+                        case 6: 
+                            echo '<td  colspan="4" style="border-top: solid 2px rgba(255, 255, 255, .15);  vertical-align: middle;">
+                             <button class="btn btn-new " style="background: #ab2200!important" ><i class="fas fa-percent fa-fw"></i> DESCUENTO </button>
+                              
+                             </td>
+                              
+                             <td  colspan="2">
+                             <button class="btn btn-new btn-block " style="background: #ab2200!important" ><i class="fas fa-check fa-fw"></i> REGISTRAR COMPRA </button>
+                             <a class="btn btn-new btn-block "  style="background: #ab2200!important" target="_blank" href="../process/cotiza/cotiza_imprimir.php?num_cotiza='.$NumPedido.'"><i class="fas fa-print fa-fw"></i> IMPRIMIR </a>
+                             </td>';
+                        break;
+                    }
+                    echo '  
+                    
                     
                     </tr>
                     
@@ -276,8 +389,37 @@ include '../../library/consulSQL.php';
                 </div> 
                <div align="center" class="col-md-12" style="padding-top: 10px;">
 				
-				<button class="btn btn-block btn-new" style="background: #ab2200!important" data-toggle="modal" data-target="#modalNewProd" ><i class="fas fa-plus fa-fw"></i> AGREGAR OTRO ARTICULO</button>
-				  </div> 
+				
+				
+                ';
+
+                switch ($_SESSION['CodigoArea']) { 
+
+                    case 1: 
+                        echo '<button class="btn btn-block btn-new" style="background: #ab2200!important" data-toggle="modal" data-target="#modalNewProd" ><i class="fas fa-plus fa-fw"></i> AGREGAR OTRO ARTICULO</button>';
+                    break;
+                    case 2:  
+                        echo ' <button class="btn btn-block btn-new" style="background: #ab2200!important"  ><i class="fas fa-plus fa-fw"></i> AGREGAR OTRO ARTICULO</button>';
+                    break;
+                    break;
+                    case 3: 
+                      echo ' <button class="btn btn-block btn-new" style="background: #ab2200!important"  ><i class="fas fa-plus fa-fw"></i> AGREGAR OTRO ARTICULO</button>';
+                    break;
+                    case 4: 
+                      echo ' <button class="btn btn-block btn-new" style="background: #ab2200!important" data-toggle="modal" data-target="#modalNewProd" ><i class="fas fa-plus fa-fw"></i> AGREGAR OTRO ARTICULO</button>';
+                    break;
+                    case 5: 
+                      echo ' <button class="btn btn-block btn-new" style="background: #ab2200!important"  ><i class="fas fa-plus fa-fw"></i> AGREGAR OTRO ARTICULO</button>';
+                    break;
+                    case 6: 
+                        echo ' <button class="btn btn-block btn-new" style="background: #ab2200!important"  ><i class="fas fa-plus fa-fw"></i> AGREGAR OTRO ARTICULO</button>';
+                    break;
+                }
+                
+                echo '  
+                
+                
+                </div> 
                 
 				   </form>	';
 				?>

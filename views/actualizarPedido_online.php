@@ -67,15 +67,10 @@ Licencia: Proveedor de servicios
 
                             <div class="info">
 
-                                <?php
-
-								if(!$_SESSION['NombreAfil']==""){echo ' '.$_SESSION['NombreAfil'].' <small>Modulo de Administración</small>';}
-								
-								
-								
-								
-								
+                            <?php
+									include '../inc/titulos_header_admin.php';
 								?>
+								
 
                             </div>
                         </a>
@@ -88,18 +83,8 @@ Licencia: Proveedor de servicios
                     <li class="nav-header active">Mapa del Sitio</li>
 
                     <?php 
-					 $CodArea = $_SESSION['CodigoArea'];
-					 switch ($CodArea) {
-						 case 1:
-							include '../inc/sidebar.php';
-						break;
-						 
-						case 2:
-							 
-							include '../inc/sidebar_ventas.php';
-							 
-						 break;
-					 }
+					  include '../inc/sidebar.php';
+					
 					 ?>
 
                     <div id="content" class="content">
@@ -269,6 +254,26 @@ Licencia: Proveedor de servicios
                                         <div class="container">
                                         <form id="deliveryForm" >
                                             <div class="row" id="cuerpoDelivery">
+ 
+                                            </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="modalMoneda" aria-hidden="true" role="dialog">
+                            <div class="modal-dialog modal-dialog-centered " role="document">
+                                <div class="modal-content">
+
+                                    <div class="modal-body">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <div class="container">
+                                        <form id="monedaForm" >
+                                            <div class="row" id="cuerpoMoneda">
  
                                             </div>
                                             </form>
@@ -543,6 +548,25 @@ Licencia: Proveedor de servicios
 
                         }
 
+                        function modalMoneda(num_cotiza){
+
+                            $.ajax({
+                                type: "POST",
+                                url: "../process/pedido/ModalMonedaPedidoController.php",
+                                data: {
+                                num_cotiza: num_cotiza
+                                },
+                                success: function(data) {
+
+                                $('#cuerpoMoneda').html(data);
+                                $('#modalMoneda').modal('show');
+
+
+                                }
+                            }); 
+
+                        }
+
 						function addNewDescuento(num_cotiza){
 							cant = document.getElementById('valor_descuento').value;
 
@@ -620,6 +644,26 @@ Licencia: Proveedor de servicios
                                 async: true,
                                 success: function(data) { 
 									$('#modalDelivery').modal('hide');
+									swal("Agregado con Exito", "", "success");  
+									cargarOrden('<?=$NumPedido?>', '<?=$type?>');
+                                }
+                            }); 
+
+
+                        }
+
+                        function addNewMoneda(num_cotiza){
+                            moneda = document.getElementById('valor_moneda').value;
+                            
+                            $.ajax({
+                                type: "POST",
+                                url: "../process/pedido/NewMonedaPedidoController.php",
+                                data: {
+                                    moneda: moneda,
+                                    num_cotiza: num_cotiza
+                                }, 
+                                success: function(data) {  
+									$('#modalMoneda').modal('hide');
 									swal("Agregado con Exito", "", "success");  
 									cargarOrden('<?=$NumPedido?>', '<?=$type?>');
                                 }

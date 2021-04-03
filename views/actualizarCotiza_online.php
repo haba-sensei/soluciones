@@ -66,15 +66,8 @@ Licencia: Proveedor de servicios
                         <a data-toggle="nav-profile">
 
                             <div class="info">
-
-                                <?php
-
-								if(!$_SESSION['NombreAfil']==""){echo ' '.$_SESSION['NombreAfil'].' <small>Modulo de Administración</small>';}
-								
-								
-								
-								
-								
+                            <?php
+									include '../inc/titulos_header_admin.php';
 								?>
 
                             </div>
@@ -88,18 +81,8 @@ Licencia: Proveedor de servicios
                     <li class="nav-header active">Mapa del Sitio</li>
 
                     <?php 
-					 $CodArea = $_SESSION['CodigoArea'];
-					 switch ($CodArea) {
-						 case 1:
-							include '../inc/sidebar.php';
-						break;
-						 
-						case 2:
-							 
-							include '../inc/sidebar_ventas.php';
-							 
-						 break;
-					 }
+					  include '../inc/sidebar.php';
+					
 					 ?>
 
                     <div id="content" class="content">

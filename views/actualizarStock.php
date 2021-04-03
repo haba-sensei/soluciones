@@ -68,13 +68,7 @@ Licencia: Proveedor de servicios
                             <div class="info">
 
                                 <?php
-
-								if(!$_SESSION['NombreAfil']==""){echo ' '.$_SESSION['NombreAfil'].' <small>Modulo de Administración</small>';}
-								
-								
-								
-								
-								
+									include '../inc/titulos_header_admin.php';
 								?>
 
                             </div>
@@ -88,18 +82,8 @@ Licencia: Proveedor de servicios
                     <li class="nav-header active">Mapa del Sitio</li>
 
                     <?php 
-					 $CodArea = $_SESSION['CodigoArea'];
-					 switch ($CodArea) {
-						 case 1:
-							include '../inc/sidebar.php';
-						break;
-						 
-						case 2:
-							 
-							include '../inc/sidebar_ventas.php';
-							 
-						 break;
-					 }
+					  include '../inc/sidebar.php';
+					  
 					 ?>
 
                     <div id="content" class="content">
@@ -127,7 +111,7 @@ div.dataTables_wrapper div.dataTables_info {
                             <!-- begin panel-heading -->
                             <div class="panel-heading" style="    display: flex;">
 
-                                <h4 class="panel-title">Lista de Cotizaciones</h4>
+                                <h4 class="panel-title">Lista de Articulos</h4>
                                 <span
                                     style="position: relative; left: 71%;"><?php echo "Taza del Dia ".$globalTasaCambio_dolar; ?></span>
 									<input type="hidden" id="tasa_cambio_dia" value="<?php echo $globalTasaCambio_dolar; ?>">

@@ -64,21 +64,10 @@ Licencia: Proveedor de servicios
 
                             <div class="info">
 
-                                <?php
-
-									switch ($_SESSION['CodigoArea']) {
-										case 1:
-											echo ' '.$_SESSION['NombreAfil'].'<small>Modulo de Administración 1</small>';
-											break;
-										case 2:
-											echo ' '.$_SESSION['NombreAfil'].'<small>Modulo de Ventas</small>';
-											break;
-										default:
-											header("Location: ../login.php");
-											exit();
-											break;
-								}
+                            <?php
+									include '../inc/titulos_header_admin.php';
 								?>
+								
 
                             </div>
                         </a>
@@ -91,19 +80,10 @@ Licencia: Proveedor de servicios
                     <li class="nav-header active">Mapa del Sitio</li>
 
                     <?php 
-					 $CodArea = $_SESSION['CodigoArea'];
-					 switch ($CodArea) {
-						 case 1:
-							include '../inc/sidebar.php';
-						break;
-						 
-						case 2:
-							 
-							include '../inc/sidebar_ventas.php';
-							 
-						 break;
-					 }
+					  include '../inc/sidebar.php';
+					
 					 ?>
+
 
                     <div id="content" class="content">
                         <!-- begin breadcrumb -->
