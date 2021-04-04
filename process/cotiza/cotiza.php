@@ -38,7 +38,7 @@
                     switch ($_SESSION['CodigoArea']) { 
 
                     case 1: 
-                    echo '<a href="actualizarCotiza_online.php?id_cotizacion='.$ordenList.'&type=pedido">'.$ordenList.' ?></a>';
+                    echo '<a href="actualizarCotiza_online.php?id_cotizacion='.$ordenList.'&type=pedido">'.$ordenList.'</a>';
                     break;
                     case 2:  
                     echo ' - ';

@@ -859,8 +859,121 @@ $(function() {
         iDisplayLength: 8,
         aLengthMenu: [8, 50, 100, 150, 200, 250],
         "lengthMenu": false,
+        "aaSorting": [ [0,'desc'] ]
     });
 })
+
+    function enviarDelivery(id_pedido){
+       
+        swal({
+            title: "Seguro que desea Enviar?",
+            text: "Esta operacion es definitiva!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-success",
+            confirmButtonText: "Enviar!",
+            closeOnConfirm: false
+        },
+        function() { 
+            
+            $.ajax({
+                type: "POST",
+                url: "../process/deliveryController.php",
+                data: {
+                    id_pedido: id_pedido
+                },
+                success: function(data) {
+                    
+                    if (data == "exito") {
+
+                        swal("Delivery Enviado", "", "success"); 
+                        setTimeout(function(){ location.reload() }, 2000);
+                    } 
+                      
+                }
+            });
+
+
+
+        });
+
+
+    }
+
+    function enviarProvincia(id_pedido){
+       
+       swal({
+           title: "Seguro que desea Enviar a Provincia?",
+           text: "Esta operacion es definitiva!",
+           type: "warning",
+           showCancelButton: true,
+           confirmButtonClass: "btn-success",
+           confirmButtonText: "Enviar!",
+           closeOnConfirm: false
+       },
+       function() { 
+           
+           $.ajax({
+               type: "POST",
+               url: "../process/provinciaController.php",
+               data: {
+                   id_pedido: id_pedido
+               },
+               success: function(data) {
+                   
+                   if (data == "exito") {
+
+                       swal("Delivery Enviado a Provincia", "", "success"); 
+                       setTimeout(function(){ location.reload() }, 2000);
+                   } 
+                     
+               }
+           });
+
+
+
+       });
+
+
+   }
+
+   function recojoTienda(id_pedido){
+       
+       swal({
+           title: "Seguro que desea Entregar?",
+           text: "Esta operacion es definitiva!",
+           type: "warning",
+           showCancelButton: true,
+           confirmButtonClass: "btn-success",
+           confirmButtonText: "Entregar!",
+           closeOnConfirm: false
+       },
+       function() { 
+           
+           $.ajax({
+               type: "POST",
+               url: "../process/recojoTiendaController.php",
+               data: {
+                   id_pedido: id_pedido
+               },
+               success: function(data) {
+                   
+                   if (data == "exito") {
+
+                       swal("Pedido entregado con exito", "", "success"); 
+                       setTimeout(function(){ location.reload() }, 2000);
+                   } 
+                     
+               }
+           });
+
+
+
+       });
+
+
+   }
+
 </script>
 
 

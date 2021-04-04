@@ -7,7 +7,7 @@
 			<li class="active"><a href="index.php"><i class="fas fa-home fa-fw"></i> <span style="letter-spacing: 3px;">Inicio</span></a></li>
 
 			<li class="active"><a href="../contable/index.php"><i class="fas fa-book fa-fw"></i> <span style="letter-spacing: 3px;">Contabilidad</span></a></li>
-
+			<li class="active"><a href="tazaCambio.php"><i class="fas fa-money-bill-alt fa-fw"></i> <span style="letter-spacing: 3px;">Taza Cambio</span></a></li>
 			<li class="has-sub ">
 			<a href="javascript:;">
 			<b class="caret"></b>
@@ -71,6 +71,28 @@
 			</li>
 			<li class="active"><a href="clientes.php"><i class="fas fa-users fa-fw"></i> <span style="letter-spacing: 3px;">Clientes</span></a></li>
 
+			<li class="has-sub active">
+			<a href="javascript:;">
+			<b class="caret"></b>
+			<i class="fa fa-truck" style="font-size:16px;"></i>
+			<span style="color:white; letter-spacing: 3px;" >Despachos</span>
+			</a>
+			<ul class="sub-menu">
+
+			<li class="has-sub ">
+
+
+			<li style=" letter-spacing: 3px;"> <a href="delivery.php"><i class="fa fa-cubes"></i>&nbsp;Delivery</a></li>
+			<li  style=" letter-spacing: 3px;"><a href="envios.php"><i class="fas fa-cubes"></i>&nbsp;Envios</a></li>
+			<li  style=" letter-spacing: 3px;"><a href="recojo.php"><i class="fas fa-cubes"></i>&nbsp;Recojo</a></li>
+
+
+
+			</li>
+
+			</ul>
+
+			</li>
 
 			<li class="active"><a href="../process/logout.php"><i class="fas fa-key"></i> <span>Cerrar Session</span></a></li>
 			</ul>
@@ -268,9 +290,30 @@
 			<ul class="nav">
 			<li class="active"><a href="index.php"><i class="fas fa-home fa-fw"></i> <span style="letter-spacing: 3px;">Inicio</span></a></li>
  
-			<li class="active"><a href="delivery.php"><i class="fas fa-truck fa-fw"></i> <span style="letter-spacing: 3px;">Delivery</span></a></li>
+		 
+
+			<li class="has-sub ">
+			<a href="javascript:;">
+			<b class="caret"></b>
+			<i class="fa fa-truck" style="font-size:16px;"></i>
+			<span style="color:white; letter-spacing: 3px;" >Despachos</span>
+			</a>
+			<ul class="sub-menu">
+
+			<li class="has-sub ">
 
 
+			<li style=" letter-spacing: 3px;"> <a href="delivery.php"><i class="fa fa-cubes"></i>&nbsp;Delivery</a></li>
+			<li  style=" letter-spacing: 3px;"><a href="envios.php"><i class="fas fa-cubes"></i>&nbsp;Envios</a></li>
+			<li  style=" letter-spacing: 3px;"><a href="recojo.php"><i class="fas fa-cubes"></i>&nbsp;Recojo</a></li>
+
+
+
+			</li>
+
+			</ul>
+
+			</li>
 			<li class="active"><a href="../process/logout.php"><i class="fas fa-key"></i> <span>Cerrar Session</span></a></li>
 			</ul>
 			</div>

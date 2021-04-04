@@ -53,11 +53,11 @@
 					break;
  
 				}
-
+				$hora = date('h:i A');
 				$pdf->fact_dev4(utf8_decode($tipo_doc), $ID_cliente_2 );
 				$pdf->fact_dev5(utf8_decode( "DIRECCIÓN: "), $Direccion);
 				$pdf->fact_dev6(utf8_decode( "DIRECCIÓN ENTREGA: "), $dir_envio." - ".$distrito." - ".$referencia);
-				$pdf->fact_dev7(utf8_decode( "Emisión: "), $fecha_cotizacion);
+				$pdf->fact_dev7(utf8_decode( "Emisión: "), $fecha_cotizacion." ".$hora);
 				$pdf->fact_dev8(utf8_decode( "Forma de Pago: "), $forma_pago);
 				$pdf->fact_dev9(utf8_decode( "Medio de Pago: "), $medio_pago);
 
@@ -72,14 +72,16 @@
 					case 'Tienda':
 						$despacho = "Recojo";
 						break;
-					 
+					default:
+						$despacho = "Recojo";
+						break; 
 				}
 
 
 
 				$pdf->fact_dev10(utf8_decode( "Forma de Entrega: "), $despacho);
 				$pdf->fact_dev11(utf8_decode( "Estatus:"), $estatus_operacion);
-				$pdf->fact_dev13(utf8_decode( "Vendedor: "), "Soluciones");
+				$pdf->fact_dev13(utf8_decode( "Taza Dia:"), "S/ ".$globalTasaCambio_dolar);
 				
 				
 			}

@@ -486,7 +486,7 @@ session_start();
                     case 1: 
                         echo '<button class="btn btn-block btn-new" data-toggle="modal" data-target="#modalNewProd" ><i class="fas fa-plus fa-fw"></i> AGREGAR OTRO ARTICULO</button>';
                     break;
-                    case 2:  
+                    case 2:   
                         echo ' <button class="btn btn-block btn-new"  ><i class="fas fa-plus fa-fw"></i> AGREGAR OTRO ARTICULO</button>';
                     break;
                     break;

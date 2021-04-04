@@ -945,7 +945,7 @@ function draw_code39($code, $x, $y, $w, $h) {
     $this->SetXY( $r1-1, $y1+18 );
 	$this->Cell(15,4, utf8_decode("* Cancelar El Importe Total De Cotizacion En Caja"), 0, 0, "L");
     $this->SetXY( $r1-1, $y1+24 );
-	$this->Cell(15,4, utf8_decode("* Recoger Su Productos Cotizados En Almacen"), 0, 0, "L");
+	$this->Cell(15,4, utf8_decode("* Tiempo de Vigencia 4 Dias Habiles"), 0, 0, "L");
     	
 	}
 	function addCadreEurosFrancs3()
@@ -1042,83 +1042,13 @@ function draw_code39($code, $x, $y, $w, $h) {
             break;
     }
 
-    date_default_timezone_set("America/Lima");
-    $ch = curl_init();
-    $fecha = date("Y-m-d");  
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_URL, 'https://api.sunat.cloud/cambio/'.$fecha);
-    $result = curl_exec($ch);
-    curl_close($ch);
-
-    $obj = json_decode($result);
-    
-    if ( @fopen("https://google.com", "r") ) 
-        {
-        $status = "true";
-        } 
-        else 
-        {
-        $status = "false";
-        } 
-    //display connection status
-
-
-    if ( isset($obj->error) ) {
-
-        $taza_dia_cons = ejecutarSQL::consultar("SELECT `taza_cambio`.*, `taza_cambio`.`id` FROM `taza_cambio` WHERE `taza_cambio`.`id` = '1';");
+    $taza_dia_cons = ejecutarSQL::consultar("SELECT `taza_cambio`.*, `taza_cambio`.`id` FROM `taza_cambio` WHERE `taza_cambio`.`id` = '1';");
        
         while($tazaC=mysqli_fetch_array($taza_dia_cons)){ 
         $compra_dolar=$tazaC['taza'];        
         }
 
         $globalTasaCambio_dolar = number_format($compra_dolar, 2);
-        
-        
-
-    }else {
-
-
-        if($status == "false"){
-
-            $taza_dia_cons = ejecutarSQL::consultar("SELECT `taza_cambio`.*, `taza_cambio`.`id` FROM `taza_cambio` WHERE `taza_cambio`.`id` = '1';");
-       
-            while($tazaC=mysqli_fetch_array($taza_dia_cons)){ 
-            $compra_dolar=$tazaC['taza'];        
-            }
-    
-            $globalTasaCambio_dolar =  number_format($compra_dolar, 2);
-
-        }else {
-
-            date_default_timezone_set("America/Lima");
-            $ch = curl_init();
-            $fecha = date("Y-m-d");  
-            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_URL, 'https://api.sunat.cloud/cambio/'.$fecha);
-            $result = curl_exec($ch);
-            curl_close($ch);
-    
-            $obj = json_decode($result);
-    
-            $compra_dolar_data = $obj->$fecha->compra;
-            $compra_dolar = number_format($compra_dolar_data, 2);
-            // $obj->$fecha->compra
-            consultasSQL::UpdateSQL("taza_cambio", "id='1', taza='$compra_dolar'", "id='1'");
-    
-            $taza_dia_cons = ejecutarSQL::consultar("SELECT `taza_cambio`.*, `taza_cambio`.`id` FROM `taza_cambio` WHERE `taza_cambio`.`id` = '1';");
-           
-            while($tazaC=mysqli_fetch_array($taza_dia_cons)){ 
-            $compra_dolar=$tazaC['taza'];        
-            }
-    
-            $globalTasaCambio_dolar = number_format($compra_dolar, 2);
-
-
-        } 
-
-    }
    
  
   
@@ -1126,9 +1056,9 @@ function draw_code39($code, $x, $y, $w, $h) {
         case 'soles':
             $simbolo ="S/";
             $monto_soles = $GranTotal * $globalTasaCambio_dolar;
-            $monto_igv = $monto_soles * 1.18 - $monto_soles; 
+            $monto_igv = number_format( $monto_soles * 1.18 - $monto_soles, 2); 
             $monto_delivery = $costo_adicional;
-            $subtotal_final = $monto_soles - $monto_igv;
+            $subtotal_final = number_format( $monto_soles - $monto_igv, 2);
             $operacion = $monto_soles - $a_cuenta - $descuento + $costo_adicional + $tarjeta_5_porciento;
             $total_venta = number_format($operacion , 2 ) ;
             
