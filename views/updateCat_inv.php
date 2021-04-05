@@ -60,23 +60,8 @@ Licencia: Proveedor de servicios
 							
 							<div class="info">
 								
-								<?php
-
-								if(!$_SESSION['NombreAfil']==""){echo ' '.$_SESSION['NombreAfil'].' <small>Modulo de Administración</small>';}
-								
-								else if(!$_SESSION['Nick_stock']==""){echo ' '.$_SESSION['Nick_stock'].'<small>Modulo de Almacen</small> ';}
-								
-								else if(!$_SESSION['Nick_ve']==""){echo ' '.$_SESSION['Nick_ve'].'<small>Modulo de Ventas</small> ';}
-								
-								else if(!$_SESSION['Nick_Caja']==""){echo ' '.$_SESSION['Nick_Caja'].'<small>Modulo de Caja</small> ';}
-								else{
-								header("Location: ../login.php");
-							    exit();
-								
-								}
-								
-								
-								
+							<?php
+									include '../inc/titulos_header_admin.php';
 								?>
 								
 							</div>
@@ -90,18 +75,8 @@ Licencia: Proveedor de servicios
 					<li class="nav-header active">Mapa del Sitio</li>
 					
 					<?php 
-					 $CodArea = $_SESSION['CodigoArea'];
-					 switch ($CodArea) {
-						 case 1:
-							include '../inc/sidebar.php';
-						break;
-						 
-						case 2:
-							 
-							include '../inc/sidebar_ventas.php';
-							 
-						 break;
-					 }
+					  include '../inc/sidebar.php';
+					
 					 ?>
 					
 				<div id="content" class="content">

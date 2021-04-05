@@ -213,7 +213,7 @@
                             <p>'. $delivery_espera.' </p>
                         </div>
                         <div class="stats-link">
-                            <a href="actualizarCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                            <a href="deliveryEspera.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -229,7 +229,7 @@
     
                                 </div>
                                 <div class="stats-link">
-                                    <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                    <a href="deliveryAprobado.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -243,7 +243,7 @@
     
                             </div>
                             <div class="stats-link">
-                                <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                <a href="deliveryTotales.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -306,6 +306,7 @@
      
     
             ';
+            include '../views/tabla_busqueda_articulos.php';
         break;
 
         case 3:
@@ -358,6 +359,7 @@
                     
     
             ';
+            include '../views/tabla_busqueda_articulos.php';
         break;
         
         case 4:
@@ -410,55 +412,13 @@
                     </div>
     
     
-                    <div class="row">
-    
                     
-                    <div class="col-lg-4 col-md-4">
-                    <div class="widget widget-stats hljs-wrapper">
-                        <div class="stats-icon"><i class="fa fa-minus-circle" style="color: #ef2121;"></i></div>
-                        <div class="stats-info">
-                            <h4>COTIZACIONES EN ESPERA</h4>
-                            <p> '.$cotiza_espera.' </p>
-                        </div>
-                        <div class="stats-link">
-                            <a href="actualizarCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-    
-                        <div class="col-lg-4 col-md-4">
-                            <div class="widget widget-stats hljs-wrapper">
-                                <div class="stats-icon"><i class="fa fa-window-restore" style="color: #009fff;"></i></div>
-                                <div class="stats-info">
-                                    <h4>COTIZACIONES APROBADAS</h4>
-                                    <p> '.$cotiza_aprob.' </p>
-    
-                                </div>
-                                <div class="stats-link">
-                                    <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4">
-                        <div class="widget widget-stats hljs-wrapper">
-                            <div class="stats-icon"><i class="fa fa-window-restore" style="color: #009fff;"></i></div>
-                            <div class="stats-info">
-                                <h4>COTIZACIONES TOTALES</h4>
-                                <p>  '.$cotiza_total.' </p>
-    
-                            </div>
-                            <div class="stats-link">
-                                <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-    
-                        
-                    </div>
     
                     
     
             ';
+            
+            include '../process/pedido/pedido.php';
         break;
 
         case 5:
@@ -510,55 +470,11 @@
                         
                     </div>
     
-    
-                    <div class="row">
-    
-                    
-                    <div class="col-lg-4 col-md-4">
-                    <div class="widget widget-stats hljs-wrapper">
-                        <div class="stats-icon"><i class="fa fa-minus-circle" style="color: #ef2121;"></i></div>
-                        <div class="stats-info">
-                            <h4>COTIZACIONES EN ESPERA</h4>
-                            <p> '.$cotiza_espera.' </p>
-                        </div>
-                        <div class="stats-link">
-                            <a href="actualizarCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-    
-                        <div class="col-lg-4 col-md-4">
-                            <div class="widget widget-stats hljs-wrapper">
-                                <div class="stats-icon"><i class="fa fa-window-restore" style="color: #009fff;"></i></div>
-                                <div class="stats-info">
-                                    <h4>COTIZACIONES APROBADAS</h4>
-                                    <p> '.$cotiza_aprob.' </p>
-    
-                                </div>
-                                <div class="stats-link">
-                                    <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4">
-                        <div class="widget widget-stats hljs-wrapper">
-                            <div class="stats-icon"><i class="fa fa-window-restore" style="color: #009fff;"></i></div>
-                            <div class="stats-info">
-                                <h4>COTIZACIONES TOTALES</h4>
-                                <p>  '.$cotiza_total.' </p>
-    
-                            </div>
-                            <div class="stats-link">
-                                <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-    
-                        
-                    </div>
+     
      
     
             ';
+            include '../process/pedido/pedido.php';
         break;
 
         case 6:
@@ -574,7 +490,7 @@
                             <p>'. $delivery_espera.' </p>
                         </div>
                         <div class="stats-link">
-                            <a href="actualizarCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                            <a href="deliveryEspera.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -590,7 +506,7 @@
     
                                 </div>
                                 <div class="stats-link">
-                                    <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                    <a href="deliveryAprobado.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -604,7 +520,7 @@
     
                             </div>
                             <div class="stats-link">
-                                <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                <a href="deliveryTotales.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -613,6 +529,7 @@
                     </div>
     
             ';
+            include '../views/tabla_delivery_espera.php';
         break;
 }
 ?>

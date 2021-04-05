@@ -71,7 +71,7 @@
 			</li>
 			<li class="active"><a href="clientes.php"><i class="fas fa-users fa-fw"></i> <span style="letter-spacing: 3px;">Clientes</span></a></li>
 
-			<li class="has-sub active">
+			<li class="has-sub ">
 			<a href="javascript:;">
 			<b class="caret"></b>
 			<i class="fa fa-truck" style="font-size:16px;"></i>
@@ -229,20 +229,9 @@
 		echo ' 
 			<ul class="nav">
 			<li class="active"><a href="index.php"><i class="fas fa-home fa-fw"></i> <span style="letter-spacing: 3px;">Inicio</span></a></li>
-
-			
-			<li class="has-sub ">
-			<a href="javascript:;">
-			<b class="caret"></b>
-			<i class="fa fa-list"></i>
-			<span style="color:white; letter-spacing: 3px;" >Ordenes</span>
-			</a>
-			<ul class="sub-menu">
-			<li style="color:white; letter-spacing: 3px;"><a href="listaPedidos.php"><i class="fas fa-plus-square"></i>&nbsp;Pedidos.</a></li>
-			<li  style="color:white; letter-spacing: 3px;"><a href="listaCotiza.php"><i class="fas fa-plus-square"></i>&nbsp;Cotizacion.</a></li>
-
-			</ul>
-			</li>
+ 
+			<li class="active"><a href="listaPedidos.php"><i class="fas fa-plus-square"></i> <span style="letter-spacing: 3px;">Pedidos.</span></a></li>
+			<li class="active"><a href="listaCotiza.php"><i class="fas fa-plus-square"></i> <span style="letter-spacing: 3px;">Cotizacion.</span></a></li>
 			
 			<li class="active"><a href="clientes.php"><i class="fas fa-users fa-fw"></i> <span style="letter-spacing: 3px;">Clientes</span></a></li>
 
@@ -261,22 +250,12 @@
 			<li class="active"><a href="index.php"><i class="fas fa-home fa-fw"></i> <span style="letter-spacing: 3px;">Inicio</span></a></li>
 
 			  
-			<li class="has-sub ">
-			<a href="javascript:;">
-			<b class="caret"></b>
-			<i class="fa fa-list"></i>
-			<span style="color:white; letter-spacing: 3px;" >Ordenes</span>
-			</a>
-			<ul class="sub-menu">
-			<li style="color:white; letter-spacing: 3px;"><a href="listaPedidos.php"><i class="fas fa-plus-square"></i>&nbsp;Pedidos.</a></li>
-			<li  style="color:white; letter-spacing: 3px;"><a href="listaCotiza.php"><i class="fas fa-plus-square"></i>&nbsp;Cotizacion.</a></li>
-
-			</ul>
-			</li>
-			 
+			
+			<li class="active"><a href="listaPedidos.php"><i class="fas fa-plus-square"></i> <span style="letter-spacing: 3px;">Pedidos.</span></a></li>
+			<li class="active"><a href="listaCotiza.php"><i class="fas fa-plus-square"></i> <span style="letter-spacing: 3px;">Cotizacion.</span></a></li>
+			
 			<li class="active"><a href="clientes.php"><i class="fas fa-users fa-fw"></i> <span style="letter-spacing: 3px;">Clientes</span></a></li>
-
-
+  
 			<li class="active"><a href="../process/logout.php"><i class="fas fa-key"></i> <span>Cerrar Session</span></a></li>
 			</ul>
 			</div>

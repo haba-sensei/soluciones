@@ -173,7 +173,7 @@ Licencia: Proveedor de servicios
                      
                     
                        <td style="display: flex;">
-                          <button class="btn btn-block btn-new" style="margin-right: 10px; margin-top: 8px; margin-left: 10px;" ><i class="fas fa-plus fa-fw"></i> Imprimir  </button>
+					   	  <a href="../process/pedido/pedido_imprimir.php?num_cotiza=<?=$id_coti?>" target="_blank" class="btn btn-block btn-new"  style="margin-right: 10px; margin-top: 8px; margin-left: 10px;" ><i class="fas fa-plus fa-fw"></i> Imprimir  </a>
                           <button class="btn btn-block btn-new"  onclick="recojoTienda(&quot;<?php echo $id_coti ?>&quot;)" style="margin-right: 10px; margin-top: 8px; margin-left: 10px;"  ><i class="fas fa-plus fa-fw"></i> Pedido Entregado</button>
                           
                            

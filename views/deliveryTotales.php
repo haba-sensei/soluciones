@@ -85,16 +85,16 @@ Licencia: Proveedor de servicios
 			<!-- begin breadcrumb -->
 			<ol class="breadcrumb pull-right">
 				<li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
-				<li class="breadcrumb-item"><a href="javascript:;">Envios a Provincia</a></li>
-				<li class="breadcrumb-item active">Buscar Envios a Provincia</li>
+				<li class="breadcrumb-item"><a href="javascript:;">Despachos</a></li>
+				<li class="breadcrumb-item active">Buscar Despachos</li>
 			</ol>
 			<!-- end breadcrumb -->
 			<!-- begin page-header -->
-			<h1 class="page-header">Busqueda de Envios a Provincia <small> Modulo de Envios a Provincia</small></h1>
+			<h1 class="page-header">Lista Despachos En Espera<small> Modulo de Despachos</small></h1>
             
              
        <style>
-         .btn-new {
+        .btn-new {
             background: #0d74b3 !important;
             color: white;
             font-weight: 600;
@@ -129,7 +129,7 @@ Licencia: Proveedor de servicios
                         <!-- begin panel-heading -->
                         <div class="panel-heading">
                             
-                            <h4 class="panel-title">Lista de Envios a Provincia</h4>
+                            <h4 class="panel-title">Lista de Delivery</h4>
                         </div>
                         <!-- end panel-heading -->
                         <!-- begin panel-body -->
@@ -141,7 +141,7 @@ Licencia: Proveedor de servicios
                    
                     <th>N° Pedido</th> 
                     <th>Fecha Emision</th>
-                   
+                    <th>Forma de Entrega</th>
                     <th>Opciones</th>
                      
                     
@@ -154,7 +154,7 @@ Licencia: Proveedor de servicios
                   $pedido_con_espera_delivery_cons = ejecutarSQL::consultar("SELECT `cotizacion_online`.`id_cotizacion`, `cotizacion_online`.`fecha_cotizacion`, `cotizacion_online`.`Estado`, `detalle_compra_online`.`id_cotizacion`, `detalle_compra_online`.`forma_entrega`
                   FROM `cotizacion_online`
                       , `detalle_compra_online`
-                  WHERE `cotizacion_online`.`Estado` = '2' AND `detalle_compra_online`.`id_cotizacion` = `cotizacion_online`.`id_cotizacion`");
+                  WHERE `cotizacion_online`.`Estado` BETWEEN '2' AND '4' AND `detalle_compra_online`.`id_cotizacion` = `cotizacion_online`.`id_cotizacion` ");
                   while($ordenP=mysqli_fetch_assoc($pedido_con_espera_delivery_cons)){
                   
                     $id_coti =$ordenP['id_cotizacion'];
@@ -164,17 +164,32 @@ Licencia: Proveedor de servicios
                      
 
 
-                    if($forma_entrega == "Provincia"){
+                    if($forma_entrega == "Lima" || $forma_entrega == "Provincia" || $forma_entrega == "Tienda" ){
                 ?>
                   
                   <tr>
                      <td><?php echo  $id_coti ?></td>
 					 <td><?php echo $fecha_coti ?></td>
+                     <td><?php 
+                     switch ($forma_entrega) {
+                      case 'Lima':
+                        echo "Delivery a Lima";
+                       break;
+
+                       case 'Provincia':
+                        echo "Envio a Provincia";
+                       break;
+                       case 'Tienda':
+                        echo "Recojo en Tienda";
+                       break;
+                     }
+                     
+                    ?></td>
                      
                     
                        <td style="display: flex;">
-					   <a href="../process/pedido/pedido_imprimir.php?num_cotiza=<?=$id_coti?>" target="_blank" class="btn btn-block btn-new"  style="margin-right: 10px; margin-top: 8px; margin-left: 10px;" ><i class="fas fa-plus fa-fw"></i> Imprimir  </a>
-						  <button class="btn btn-block btn-new"  onclick="enviarProvincia(&quot;<?php echo $id_coti ?>&quot;)" style="margin-right: 10px; margin-top: 8px; margin-left: 10px;"  ><i class="fas fa-plus fa-fw"></i> Delivery Enviado a Provincia</button>
+                          <a href="../process/pedido/pedido_imprimir.php?num_cotiza=<?=$id_coti?>" target="_blank" class="btn btn-block btn-new"  style="margin-right: 10px; margin-top: 8px; margin-left: 10px;" ><i class="fas fa-plus fa-fw"></i> Imprimir  </a>
+                          <button class="btn btn-block btn-new"  onclick="enviarDelivery(&quot;<?php echo $id_coti ?>&quot;)" style="margin-right: 10px; margin-top: 8px; margin-left: 10px;"  ><i class="fas fa-plus fa-fw"></i> Delivery Enviado</button>
                           
                            
                            

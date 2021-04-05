@@ -98,13 +98,13 @@ Licencia: Proveedor de servicios
                         <h1 class="page-header">Busqueda de Articulos <small> Modulo de Almacen</small></h1>
 
 
-<style>
-div.dataTables_wrapper div.dataTables_info {
-    padding-top: 0px;  
-     white-space: unset;
-     /* overflow-x: hidden!important; */
-}
-</style>
+                            <style>
+                            div.dataTables_wrapper div.dataTables_info {
+                                padding-top: 0px;  
+                                white-space: unset;
+                                /* overflow-x: hidden!important; */
+                            }
+                            </style>
 
 
                         <div class="panel panel-inverse">

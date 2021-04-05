@@ -17,16 +17,19 @@
         $stockProd= $_POST['prod-stock'];
         $detaProd= $_POST['prod-detalle'];
         $tecProd= $_POST['prod-tecnico'];
+        $unidadMedidaProd= $_POST['unidadMedida'];
+        $codigoBarraProd= $_POST['codigoBarras'];
+
         $venta= "0";
         
        
 		
-        if(!$codeProd=="" && !$nameProd=="" && !$cateProd==""  && !$priceProd=="" && !$priceCompraProd=="" && !$modelProd=="" && !$marcaProd=="" && !$pesoProd=="" && !$stockProd=="" && !$detaProd=="" && !$tecProd=="" && !$_FILES['img']['name']==""){
+        if(!$codeProd=="" && !$nameProd=="" && !$cateProd==""  && !$priceProd=="" && !$priceCompraProd=="" && !$modelProd=="" && !$marcaProd=="" && !$pesoProd=="" && !$stockProd=="" && !$detaProd=="" && !$codigoBarraProd =="" && !$unidadMedidaProd =="" && !$tecProd=="" && !$_FILES['img']['name']==""){
             $verificar=  ejecutarSQL::consultar("select * from producto where CodigoProd='".$codeProd."'");
             $verificaltotal = mysqli_num_rows($verificar);
             if($verificaltotal<=0){
                 if(move_uploaded_file($_FILES['img']['tmp_name'],"../../assets/img-products/".$_FILES['img']['name'])){
-                    if(consultasSQL::InsertSQL("producto", "CodigoProd, NombreProd, CodigoCat, Precio, Compra, Modelo, Marca, Peso, Stock, Detalle, Venta, TecDetalle, Imagen", "'$codeProd','$nameProd','$cateProd','$priceProd', '$priceCompraProd', '$modelProd','$marcaProd','$pesoProd','$stockProd','$detaProd','$venta','$tecProd','".$_FILES['img']['name']."'")){
+                    if(consultasSQL::InsertSQL("producto", "CodigoProd, NombreProd, CodigoCat, Precio, Compra, Modelo, Marca, Peso, Stock, Detalle, Venta, TecDetalle, Imagen, codigoBarras, unidadMedida", "'$codeProd','$nameProd','$cateProd','$priceProd', '$priceCompraProd', '$modelProd','$marcaProd','$pesoProd','$stockProd','$detaProd','$venta','$tecProd', '".$_FILES['img']['name']."', '$codigoBarraProd', '$unidadMedidaProd'")){
                        echo '
                              <script>
         $(document).ready(function(){

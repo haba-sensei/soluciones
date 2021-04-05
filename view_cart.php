@@ -623,19 +623,97 @@ include_once("library/config.inc.php");
                     table-layout: fixed;
 
                 }
+                @media (max-width: 767px){
+
+                .ocultame_mobil {
+                    display: none;
+                }
+
+                .texto_mobil {
+                    font-size: large!important;
+                }
+
+                .texto_precio_mobil {
+                    font-size: xx-large!important; 
+                    font-weight: 600!important;
+                    text-align: -webkit-center!important;
+                }
+
+                .botones_remove_ver_prod {
+                    font-size: 22px!important;
+                }
+                .ajust_caja_voucher_mobil {
+                    display: inline!important;
+                }
+                .dis-total {
+                float: right;
+                width: 100%!important;
+                text-align: right;
+                background: #ffffff;
+                }
+
+                .cart-checkout {
+                padding-right: 59px !important;
+                padding-left: 50px !important;
+                margin-right: 104px !important;
+                display: table-cell;
+                }
+                
+
+                .ajust_cajas_compra {
+                    padding-left: 50px;
+                    padding-right: 50px;
+                }
+                
+                .init_3 {
+                height: 232vh;
+                }
+                .ajust_box_term {
+                    margin-left: 31px;
+                    margin-right: 40px;
+                    left: 0px!important;
+                }
+
+                .init_2 {
+                height: 141vh;
+                }
+                
+                .generar_coti {
+                    position: absolute!important;
+                    bottom: -127px!important;
+                    padding: 16px!important;
+                    right: -7px!important;
+                    width: 51%!important;
+                }
+
+                .btn_sunat_ajust {
+                    color: #f5f5f5;
+                    background: #27ae60;
+                    top: -48px;
+                    left: 10em!important;
+                    font-weight: 600;
+                    position: absolute;
+                    font-size: 17px;
+                }
+
+                .enviar_correo_btn {
+                    margin-left: -48px!important;
+                }
+            }
+ 
                 </style>
                 <!-- fieldsets 1 -->
                 <fieldset>
                     <div class="cart-bottom">
-                        <div class="table table-fixed">
+                        <div class="table table-responsive">
                             <table id="shopping-cart-results">
                                 <thead class="thead_ajust">
                                     <tr class="main-heading">
-                                        <th style="width: 20%">Imagen</th>
-                                        <th style="width: 20%" class="long-txt">Descripcion</th>
-                                        <th style="width: 20%">Cantidad</th>
-                                        <th style="width: 20%">Precio</th>
-                                        <th style="width: 20%">Total</th>
+                                        <th style="width: 20%" class="ocultame_mobil">Imagen</th>
+                                        <th style="width: 20%" class="long-txt texto_mobil">Descripcion</th>
+                                        <th style="width: 20%" class="texto_mobil">Cantidad</th>
+                                        <th style="width: 20%" class="texto_mobil">Precio</th>
+                                        <th style="width: 20%" class="texto_mobil">Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -687,7 +765,7 @@ include_once("library/config.inc.php");
 
 
                                     <tr class="cake-top" align="left" style="width: 100%;">
-                                        <td class="cakes" style="width: 20%; word-wrap: break-word;">
+                                        <td class="cakes ocultame_mobil" style="width: 20%; word-wrap: break-word;">
                                             <div class="product-img">
                                                 <img class="img-inside" src="assets/img-products/<?php echo $product_img; ?>">
                                             </div>
@@ -704,18 +782,18 @@ include_once("library/config.inc.php");
 
                                             
                                             <div class="product-right">
-                                                <input type="number" data-code="<?php echo $product_code; ?>" class="form-control quantity "
+                                                <input type="number" data-code="<?php echo $product_code; ?>" class="form-control quantity texto_precio_mobil"
                                                     style="border: 2px solid #6b6363;" value="<?php echo $product_qty; ?>">
                                             </div>
                                         </td>
-                                        <td class="cakes price" style="width: 20%;">
+                                        <td class="cakes price texto_precio_mobil" style="width: 20%;">
                                             <?php echo $currency." ".number_format($product_price_soles, 2); ?></h4>
 
                                         </td>
-                                        <td class="cakes top-remove" style="width: 20%;">
-                                            <h4><?php echo $currency;
+                                        <td class="cakes top-remove " style="width: 20%;">
+                                            <h4 class="texto_precio_mobil"><?php echo $currency;
                                                     echo number_format($total_indi, 2); ?></h4>
-                                            <div class="close-btm">
+                                            <div class="close-btm botones_remove_ver_prod">
 
                                                 <a href="javascript:" align="left" class="remove-item" style="margin-right: 6px;" data-code="<?php echo $product_code; ?>">
                                                     <h5>Remover</h5>
@@ -734,7 +812,7 @@ include_once("library/config.inc.php");
                                 </tbody>
                             </table>
                         </div>
-                        <div class="vocher">
+                        <div class="vocher ajust_caja_voucher_mobil">
                             <?php
                             $subtotal_final =  $total * $globalTasaCambio_dolar;
                             
@@ -844,7 +922,7 @@ include_once("library/config.inc.php");
                                 <label>Ruc - Dni <sup>*</sup></label>
                                 <input class="form-control" id="ruc" name="ruc"  placeholder="Buscar Cliente" autocomplete="off">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-default" style="    color: #f5f5f5; background: #27ae60; top: -48px; left: 26.5em;font-weight: 600; position: absolute;
+                                    <button class="btn btn-default btn_sunat_ajust" style="    color: #f5f5f5; background: #27ae60; top: -48px; left: 26.5em;font-weight: 600; position: absolute;
                                         font-size: 17px;" type="submit" onclick="busqueda(this); return false"><i class="fa fa-search"
                                             aria-hidden="true"></i> SUNAT</button>
                                 </span>
@@ -881,33 +959,8 @@ include_once("library/config.inc.php");
 
                             <div class="row">
                              
-                                <div class="form-group col-md-3" style="padding-left: 50px;">
-
-                                    <label style="float:left">Forma de Pago <sup>*</sup></label>
-                                    <select class="form-control"  style="font-size: 15px;" name="F_pago">
-                                        <option >Seleciona una Opción</option>
-                                        <option value="Al Contado">Al Contado</option>
-                                        <option value="A Cuenta">A Cuenta</option>
-                                       
-
-                                    </select>
-                                </div>      
-
-                                <div class="form-group col-md-3" >
-
-                                    <label style="float:left">Medio de Pago <sup>*</sup></label>
-                                    <select class="form-control"  style="font-size: 15px;" name="M_pago">
-                                        <option >Seleciona una Opción</option>
-                                        <option value="Efectivo">Efectivo</option>
-                                        <option value="Electronico">Deposito</option> 
-                                        <option value="Tarjeta">Tarjeta</option> 
-                                       
-
-                                    </select>
-                                </div>   
-                                            
-                                <div class="form-group col-md-3" style="padding-right: 50px;">
-                                    <label style="float:left">Forma de Entrega <sup>*</sup></label>
+                                <div class="form-group col-md-3 ajust_cajas_compra" style="padding-left: 50px;">
+                                <label style="float:left">Forma de Entrega <sup>*</sup></label>
                                     <select class="form-control" style="font-size: 15px;" name="F_entrega" id="F_entrega" >
                                         <option >Seleciona una Opción</option>
                                         <option value="Tienda">Despacho en Tienda</option>
@@ -916,19 +969,38 @@ include_once("library/config.inc.php");
 
 
                                     </select>
+                                    
+                                </div>      
+
+                                <div class="form-group col-md-3 ajust_cajas_compra" >
+                                <label style="float:left">Forma de Delivery <sup>*</sup></label>
+                                    <select class="form-control" style="font-size: 15px;" name="distritos_v" id="distritos_v">
+                                    <option value="" >  Selecciona una Opción </option>
+                                    </select>
+                                    
+                                </div>   
+                                            
+                                <div class="form-group col-md-3 ajust_cajas_compra" style="padding-right: 50px;">
+
+                                <label style="float:left">Costo Delivery <sup>*</sup></label>
+                                    <input type="text" name="costo_adicional" id="costo_adicional" value="" placeholder="Costo Adicional" class="form-control">
+
+                                    
+                               
+                                
 
                                 </div>
 
-                                <div class="form-group col-md-3" style="padding-right: 50px;">
-                                    <label style="float:left">Moneda de Pago <sup>*</sup></label>
-                                    <select class="form-control" style="font-size: 15px;" name="Moneda_pago" id="Moneda_pago" >
+                                <div class="form-group col-md-3 ajust_cajas_compra" style="padding-right: 50px;">
+                                <label style="float:left">Forma de Pago <sup>*</sup></label>
+                                    <select class="form-control"  style="font-size: 15px;" name="F_pago">
                                         <option >Seleciona una Opción</option>
-                                        <option value="soles">Soles</option>
-                                        <option value="dolares">Dolares</option>
-                                        
-
+                                        <option value="Al Contado">Al Contado</option>
+                                        <option value="A Cuenta">A Cuenta</option>
+                                       
 
                                     </select>
+                                   
 
                                 </div>
                                 
@@ -954,26 +1026,40 @@ include_once("library/config.inc.php");
                             <div class="row">
                             
                             
-                                <div class="form-group col-md-3 col-sm-3 col-xs-6 " style="padding-left: 50px;">
-                                    <label style="float:left">Forma de Delivery <sup>*</sup></label>
-                                    <select class="form-control" style="font-size: 15px;" name="distritos_v" id="distritos_v">
-                                    <option value="" >  Selecciona una Opción </option>
+                                <div class="form-group col-md-3 ajust_cajas_compra" style="padding-left: 50px;">
+                                <label style="float:left">Medio de Pago <sup>*</sup></label>
+                                    <select class="form-control"  style="font-size: 15px;" name="M_pago">
+                                        <option >Seleciona una Opción</option>
+                                        <option value="Efectivo">Efectivo</option>
+                                        <option value="Electronico">Deposito</option> 
+                                        <option value="Tarjeta">Tarjeta</option> 
+                                       
+
                                     </select>
+                                
 
                                 </div>
-                                <div class="form-group col-md-3 col-sm-3 col-xs-6">
+                                <div class="form-group col-md-3 ajust_cajas_compra">
+                                <label style="float:left">Moneda de Pago <sup>*</sup></label>
+                                    <select class="form-control" style="font-size: 15px;" name="Moneda_pago" id="Moneda_pago" >
+                                        <option >Seleciona una Opción</option>
+                                        <option value="soles">Soles</option>
+                                        <option value="dolares">Dolares</option>
+                                        
 
-                                    <label style="float:left">Costo Delivery <sup>*</sup></label>
-                                    <input type="text" name="costo_adicional" id="costo_adicional" value="" placeholder="Costo Adicional" class="form-control">
+
+                                    </select>
+                                  
+                                
                                 </div>
-                                <div class="form-group col-md-3 col-sm-3 col-xs-6">
+                                <div class="form-group col-md-3 ajust_cajas_compra">
 
                                     <label style="float:left">Direccion de envio <sup>*</sup></label>
                                     <input type="text" name="dir_delivery"  placeholder="Direccion de Envio" style="font-size: 15px;"   class="form-control " >
 
 
                                 </div>
-                                <div class="form-group col-md-3 col-sm-3 col-xs-6" style="padding-right: 50px;">
+                                <div class="form-group col-md-3 ajust_cajas_compra" style="padding-right: 50px;">
 
                                     <label style="float:left">Referencia <sup>*</sup></label>
                                     <input type="text" name="referencia_delivery"  placeholder="Referencia" style="font-size: 15px;" id="referencia_delivery" class="form-control " >
@@ -1052,7 +1138,7 @@ include_once("library/config.inc.php");
 
 
                             </div>
-                            <div class="col-md-6" style="border: solid 2px #6c63ff; position: relative; left: -30px; border-radius: 15px;">
+                            <div class="col-md-6 ajust_box_term" style="border: solid 2px #6c63ff; position: relative; left: -30px; border-radius: 15px;">
                                 <div class="place-order ">
 
                                     <div class="payment-options">
@@ -1132,7 +1218,7 @@ include_once("library/config.inc.php");
                                                         
                                                         <input type="button"
                                                             style="position: absolute; bottom: -126px; padding: 16px; right: 450px; width: 22%;"
-                                                            name="cotizacion" class=" action-button" onclick="formSend('cotizacion')"
+                                                            name="cotizacion" class=" action-button generar_coti" onclick="formSend('cotizacion')"
                                                             style="width:25%" value="Generar Cotizacion" />
 
                                                     </div>
@@ -1170,7 +1256,7 @@ include_once("library/config.inc.php");
 
 
                             </div>
-                            <div class="col-md-6" style="border: solid 2px #6c63ff; position: relative; left: -30px; border-radius: 15px;">
+                            <div class="col-md-6 ajust_box_term" style="border: solid 2px #6c63ff; position: relative; left: -30px; border-radius: 15px;">
                                 <div class="place-order ">
 
                                     <div class="payment-options">
@@ -1253,7 +1339,7 @@ include_once("library/config.inc.php");
                                                         
                                                         <input type="button"
                                                             style=" position: absolute; bottom: -126px; right: 466px; width: 23%; padding: 16px;"
-                                                            name="compra1" class=" action-button" onclick="formSend('compra')"
+                                                            name="compra1" class=" action-button generar_coti"   onclick="formSend('compra')"
                                                             value="Generar Compra" />
 
                                                     </div>
@@ -1759,7 +1845,7 @@ include_once("library/config.inc.php");
                 // // <input type="button" name="submit[enviar_correo]" class=" action-button" onclick="formSend('enviar_correo')" style="width:25%"  value="Enviar Correo1" />
 
                 html += '<a href="assets/pdf/'+ response['orden_pdf'] + '" class=" action-button" style="width:25%;     margin-right: 47px;  padding: 16px; background: #f58634!important;"  download="' + id + '">Descargar Archivo</a>  ';
-                html += '<a href="javascript:" class="action-button" onClick="formMail(&apos;' + response['correo'] + '&apos;, &apos;' + response['orden_pdf'] + '&apos;)"  style="width:25%; padding: 16px; background: #f58634!important;"> Enviar Correo </a>';
+                html += '<a href="javascript:" class="action-button enviar_correo_btn" onClick="formMail(&apos;' + response['correo'] + '&apos;, &apos;' + response['orden_pdf'] + '&apos;)"  style="width:25%; padding: 16px; background: #f58634!important;"> Enviar Correo </a>';
                 switch (id) {
                     case 'compra':
                         $('#aca_compra').html(html);

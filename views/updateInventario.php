@@ -67,18 +67,8 @@ Licencia: Proveedor de servicios
 
                             <div class="info">
 
-                                <?php
-
-								if(!$_SESSION['NombreAfil']==""){echo ' '.$_SESSION['NombreAfil'].' <small>Modulo de Administración</small>';}
-								
-								else{
-								header("Location: ../login.php");
-							    exit();
-								
-								}
-								
-								
-								
+                            <?php
+									include '../inc/titulos_header_admin.php';
 								?>
 
                             </div>
@@ -92,18 +82,8 @@ Licencia: Proveedor de servicios
                     <li class="nav-header active">Mapa del Sitio</li>
 
                     <?php 
-					 $CodArea = $_SESSION['CodigoArea'];
-					 switch ($CodArea) {
-						 case 1:
-							include '../inc/sidebar.php';
-						break;
-						 
-						case 2:
-							 
-							include '../inc/sidebar_ventas.php';
-							 
-						 break;
-					 }
+					  include '../inc/sidebar.php';
+					
 					 ?>
 
                     <div id="content" class="content">
@@ -167,6 +147,8 @@ Licencia: Proveedor de servicios
 															$precio=$data['Precio'];
 															$unidades=$data['Stock'];
 															$cat=$data['CodigoCat'];
+                                                            $codigoBarras=$data['codigoBarras'];
+                                                            $unidadMedida=$data['unidadMedida'];
 															
 															
 															//print_r($DetalleTec);
@@ -183,9 +165,12 @@ Licencia: Proveedor de servicios
                                                     break;
                                                 
                                                 default:
-                                                    $readOnly = "readonly";
-                                                    $disabled = "disabled";
-                                                    $ocultar = "color: transparent!important;";
+                                                    // $readOnly = "readonly";
+                                                    // $disabled = "disabled";
+                                                    // $ocultar = "color: transparent!important;";
+                                                    $readOnly = "";
+                                                    $disabled = "";
+                                                    $ocultar = "";
                                                     break;
                                             }
 
@@ -250,6 +235,15 @@ Licencia: Proveedor de servicios
                                                 value="<?php echo $unidades ?>" required maxlength="20"
                                                 pattern="[0-9]{1,20}" name="prod-stock" autocomplete="off">
                                         </div>
+
+                                        <div class="form-group">
+                                            <label>Codigo de Barras</label>
+                                            <input type="text" class="form-control" placeholder="Codigo de Barras"
+                                                value="<?php echo $codigoBarras ?>" 
+                                                name="codigoBarras" autocomplete="off">
+                                        </div>
+
+                                        
                                         <div class="form-group">
                                             <label>Imagen de Articulo</label>
                                             <input class="input-file" type="file" name="img" id="img" accept="image/*" <?php echo $disabled; ?>>
@@ -285,6 +279,14 @@ Licencia: Proveedor de servicios
                                         <input type=="text" value="<?php echo $detalle ?>" class="form-control"
                                             name="prod-detalle" placeholder="Detalle de Articulo" autocomplete="off" <?php echo $readOnly; ?>>
                                     </div>
+
+                                    <div class="form-group">
+                                            <label>Unidad de Medida</label>
+                                            <input type="text" class="form-control" placeholder="Unidad de Medida"
+                                                value="<?php echo $unidadMedida ?>" 
+                                                name="unidadMedida" autocomplete="off">
+                                        </div>
+
                                     <div class="form-group">
                                         <label>Descripción Técnica</label>
                                         <textarea class="form-control"

@@ -17,13 +17,15 @@ $marcaProdUp=$_POST['prod-marca'];
 $pesoProdUp=$_POST['prod-peso'];
 $stockProdUp=$_POST['prod-stock'];
 $detaProdUp=$_POST['prod-detalle'];
+$codigoBarrasProdUp=$_POST['codigoBarras'];
+$unidadMedidaProdUp=$_POST['unidadMedida'];
 $detalleTecProdUp=$_POST['prod-tecnico'];
 $imgOldProdUp=$_POST['img-old-prod'];
 
 
 //print_r($imgOldProdUp);
 if(move_uploaded_file($_FILES['img']['tmp_name'],"../assets/img-products/".$_FILES['img']['name'])){
-   if(consultasSQL::UpdateSQL("producto", "CodigoProd='$codeProdUp', NombreProd='$nameProdUp', CodigoCat='$catProdUp',Precio='$priceProdUp', Compra='$priceCompraProdUp',Modelo='$modelProdUp',Marca='$marcaProdUp',Peso='$pesoProdUp',Stock='$stockProdUp',Detalle='$detaProdUp',TecDetalle='$detalleTecProdUp',Imagen='".$_FILES['img']['name']."'", "CodigoProd='$codeOldProdUp'")){
+   if(consultasSQL::UpdateSQL("producto", "CodigoProd='$codeProdUp', NombreProd='$nameProdUp', CodigoCat='$catProdUp',Precio='$priceProdUp', Compra='$priceCompraProdUp',Modelo='$modelProdUp',Marca='$marcaProdUp',Peso='$pesoProdUp',Stock='$stockProdUp',Detalle='$detaProdUp',TecDetalle='$detalleTecProdUp',Imagen='".$_FILES['img']['name']."' , codigoBarras='$codigoBarrasProdUp', unidadMedida='$unidadMedidaProdUp' ", "CodigoProd='$codeOldProdUp'")){
      echo '
      <script>
         $(document).ready(function(){
@@ -68,7 +70,7 @@ if(move_uploaded_file($_FILES['img']['tmp_name'],"../assets/img-products/".$_FIL
  ';
 }
  }else{
-	if(consultasSQL::UpdateSQL("producto", "CodigoProd='$codeProdUp', NombreProd='$nameProdUp', CodigoCat='$catProdUp',Precio='$priceProdUp', Compra='$priceCompraProdUp',Modelo='$modelProdUp',Marca='$marcaProdUp',Peso='$pesoProdUp',Stock='$stockProdUp',Detalle='$detaProdUp',TecDetalle='$detalleTecProdUp',Imagen='$imgOldProdUp'", "CodigoProd='$codeOldProdUp'")){
+	if(consultasSQL::UpdateSQL("producto", "CodigoProd='$codeProdUp', NombreProd='$nameProdUp', CodigoCat='$catProdUp',Precio='$priceProdUp', Compra='$priceCompraProdUp',Modelo='$modelProdUp',Marca='$marcaProdUp',Peso='$pesoProdUp',Stock='$stockProdUp',Detalle='$detaProdUp',TecDetalle='$detalleTecProdUp',Imagen='$imgOldProdUp' , codigoBarras='$codigoBarrasProdUp', unidadMedida='$unidadMedidaProdUp' ", "CodigoProd='$codeOldProdUp'")){
   echo '
      <script>
         $(document).ready(function(){

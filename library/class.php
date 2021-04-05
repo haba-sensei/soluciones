@@ -20,7 +20,7 @@ class Buscador
 	public function buscar()
 	{
 		//print_r($_GET);exit;
-		$query = "SELECT `producto`.*, `perfil`.*, `producto`.`NombreProd` FROM `producto` , `perfil` WHERE NombreProd like '%".$_GET['s']."%' OR Marca like '%".$_GET['s']."%' OR Modelo like '%".$_GET['s']."%'  OR CodigoProd like '%".$_GET['s']."%' ;";
+		$query = "SELECT `producto`.*, `perfil`.*, `producto`.`NombreProd` FROM `producto` , `perfil` WHERE NombreProd like '%".$_GET['s']."%' OR Marca like '%".$_GET['s']."%' OR Modelo like '%".$_GET['s']."%' OR codigoBarras like '%".$_GET['s']."%'  OR CodigoProd like '%".$_GET['s']."%' ;";
 		$res = mysqli_query(Conectar::con(), $query);
 		while ($reg=mysqli_fetch_assoc($res))
 		{

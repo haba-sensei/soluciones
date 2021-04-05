@@ -1107,7 +1107,7 @@ function draw_code39($code, $x, $y, $w, $h) {
         $total_indi_1 = number_format($total_indi , 2);
         $igv_format= $total_indi_1 - ($total_indi_1 * 0.18);
         $igv =   $total_indi_1 - $igv_format;
-        $total_subtotal =  $igv_format;
+        $total_subtotal = number_format($igv_format, 2);
         $total_igv =  str_replace(',', '',  $igv );
         $igv = number_format($total_igv , 2);
         

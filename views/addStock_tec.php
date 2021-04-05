@@ -64,19 +64,8 @@ Licencia: Proveedor de servicios
 
                             <div class="info">
 
-                                <?php
-
-								if(!$_SESSION['NombreAfil']==""){echo ' '.$_SESSION['NombreAfil'].' <small>Modulo de Administración</small>';}
-								
-								
-								else{
-								header("Location: ../login.php");
-							    exit();
-								
-								}
-								
-								
-								
+                            <?php
+									include '../inc/titulos_header_admin.php';
 								?>
 
                             </div>
@@ -90,18 +79,8 @@ Licencia: Proveedor de servicios
                     <li class="nav-header active">Mapa del Sitio</li>
 
                     <?php 
-					 $CodArea = $_SESSION['CodigoArea'];
-					 switch ($CodArea) {
-						 case 1:
-							include '../inc/sidebar.php';
-						break;
-						 
-						case 2:
-							 
-							include '../inc/sidebar_ventas.php';
-							 
-						 break;
-					 }
+					  include '../inc/sidebar.php';
+					
 					 ?>
 
                     <div id="content" class="content">
@@ -214,6 +193,14 @@ contenido
                                                 required maxlength="20" pattern="[0-9]{1,20}" name="prod-stock"
                                                 autocomplete="off">
                                         </div>
+
+                                        <div class="form-group">
+                                            <label>Codigo de Barras</label>
+                                            <input type="text" class="form-control" placeholder="Codigo de Barras"
+                                                required name="codigoBarras"
+                                                autocomplete="off">
+                                        </div>
+                                        
                                         <div class="form-group" style="margin-top: 6%;">
                                             <label>Imagen de Articulo</label>
                                             <input class="input-file" type="file" name="img">
@@ -251,12 +238,21 @@ contenido
                                         <input type="text" class="form-control" name="prod-detalle"
                                             placeholder="Detalle de Articulo" autocomplete="off">
                                     </div>
+                                    
+                                    <div class="form-group">
+                                            <label>Unidad de Medida</label>
+                                            <input type="text" class="form-control" placeholder="Unidad de Medida"
+                                                required name="unidadMedida"
+                                                autocomplete="off">
+                                        </div>
+                                        
                                     <div class="form-group">
                                         <label>Descripción de Articulo</label>
                                         <textarea style="    word-break: break-all;" class="form-control"
                                             name="prod-tecnico" placeholder="Descripción de Articulo"
                                             autocomplete="off"></textarea>
                                     </div>
+                                    
                                 </div>
 
                                 <div class="col-md-9" style="margin-left:10%;     width: 909px;">
