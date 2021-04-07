@@ -63,7 +63,7 @@ $(document).ready(function() {
     TableManageButtons.init();
     FormPlugins.init();
 });
-</script>
+</script> 
 
 <script src="../assets/js/config_cotiza.js"></script>
 <script src="../assets/js/scripts.js"></script>
@@ -268,7 +268,25 @@ $(document).ready(function() {
 
                     return full[6]
                 }
-            }
+            },
+            {
+                "sName": "CodBarra",
+                "bSearchable": false,
+                "bSortable": false,
+                "mRender": function(data, type, full) {
+                     
+                    return full[11]
+                }
+            },
+            {
+                "sName": "UnitMedida",
+                "bSearchable": false,
+                "bSortable": false,
+                "mRender": function(data, type, full) {
+
+                    return full[12]
+                }
+            } 
         ]
 
     });
@@ -469,7 +487,25 @@ $(document).ready(function() {
 
                     return full[6]
                 }
-            }
+            },
+            {
+                "sName": "CodBarra",
+                "bSearchable": false,
+                "bSortable": false,
+                "mRender": function(data, type, full) {
+                     
+                    return full[11]
+                }
+            },
+            {
+                "sName": "UnitMedida",
+                "bSearchable": false,
+                "bSortable": false,
+                "mRender": function(data, type, full) {
+
+                    return full[12]
+                }
+            } 
 
         ]
 
@@ -671,7 +707,25 @@ $(document).ready(function() {
 
                     return full[6]
                 }
-            }
+            },
+            {
+                "sName": "CodBarra",
+                "bSearchable": false,
+                "bSortable": false,
+                "mRender": function(data, type, full) {
+                     
+                    return full[11]
+                }
+            },
+            {
+                "sName": "UnitMedida",
+                "bSearchable": false,
+                "bSortable": false,
+                "mRender": function(data, type, full) {
+
+                    return full[12]
+                }
+            } 
         ]
 
     });

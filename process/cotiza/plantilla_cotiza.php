@@ -1011,9 +1011,10 @@ function draw_code39($code, $x, $y, $w, $h) {
 
         $simbolo ="S/";
         $monto_soles = $GranTotal * $globalTasaCambio_dolar;
-        $monto_igv = number_format( $monto_soles * 1.18 - $monto_soles, 2); 
+       
         
-        $subtotal_final = number_format( $monto_soles - $monto_igv, 2);
+        $subtotal_final = number_format($monto_soles / 1.18, 2);
+        $monto_igv = number_format( $monto_soles - $subtotal_final , 2); 
         $operacion = $monto_soles - $descuento;
         $total_venta = number_format($operacion , 2 ) ;
  

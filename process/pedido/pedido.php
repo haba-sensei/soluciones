@@ -75,7 +75,10 @@
                     ?>
                     </td>
                     
-                    <td>$ <?php echo number_format($ordenPrice,2) ?></td>
+                    <td>S/ <?php  
+                    $total_soles =  number_format($ordenPrice * $globalTasaCambio_dolar , 2);
+                    echo $total_soles;
+                    ?></td>
                     <td><?php 
                     switch ($ordenEst) {
                       case 0:

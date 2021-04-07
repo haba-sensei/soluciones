@@ -1056,9 +1056,12 @@ function draw_code39($code, $x, $y, $w, $h) {
         case 'soles':
             $simbolo ="S/";
             $monto_soles = $GranTotal * $globalTasaCambio_dolar;
-            $monto_igv = number_format( $monto_soles * 1.18 - $monto_soles, 2); 
+
+            $subtotal_final = number_format( $monto_soles / 1.18 , 2);
+            $monto_igv = number_format( $monto_soles - $subtotal_final, 2); 
+            
             $monto_delivery = $costo_adicional;
-            $subtotal_final = number_format( $monto_soles - $monto_igv, 2);
+            
             $operacion = $monto_soles - $a_cuenta - $descuento + $costo_adicional + $tarjeta_5_porciento;
             $total_venta = number_format($operacion , 2 ) ;
             
@@ -1066,10 +1069,11 @@ function draw_code39($code, $x, $y, $w, $h) {
         
         case 'dolares':
             $simbolo ="$";
-            $monto_dolares = $GranTotal;
-            $monto_igv = $monto_dolares * 1.18 - $monto_dolares; 
+            $monto_dolares = $GranTotal; 
 
-            $subtotal_final = $monto_dolares - $monto_igv;
+            $subtotal_final = $monto_dolares / 1.18;
+            $monto_igv = $monto_dolares - $subtotal_final; 
+
             $monto_delivery = number_format($costo_adicional / $globalTasaCambio_dolar, 2) ;
             $operacion = $monto_dolares - $a_cuenta - $descuento + $monto_delivery + $tarjeta_5_porciento;
             $total_venta = number_format($operacion , 2 ) ;

@@ -144,7 +144,8 @@ div.dataTables_wrapper div.dataTables_info {
                                                 <th>Categoria</th>
                                                 <th>Stock</th>
                                                 <th>Peso</th>
-                                                
+                                                <th>CodBarras</th>
+                                                <th>UniTMedida</th>
                                             </tr>
                                         </thead>
                                         <tbody>

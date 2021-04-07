@@ -75,72 +75,12 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
     }
 
     .agregar_bolsa {
-        position: fixed;
-        top: 91.4vh;
-        width: 102% !important;
-        z-index: 1001;
-        left: -3px;
-    }
-
-    .whatsapp_cons {
-        padding-left: 10px!important;
-        padding-right: 0px!important;
-        width: 51%!important;
-        border: solid 1px gray!important;
-        padding-top: 12px!important;
-        padding-bottom: 11px!important;
-        margin-top: 23px!important;
-        margin-right: 8px!important;
-    }
-
-    .cons_stock{
-        
-    padding-left: 0px!important;
-    padding-top: 20px!important;
-    padding-right: 0px!important;
-    width: 69%!important;
-    }
-
-    .cons_asesor {
-        padding-left: 0px!important;
-    padding-top: 20px!important;
-    padding-right: 0px!important;
-    width: 50%!important;
-    position: absolute!important;
-    right: -5px;
-    bottom: -1px;
-    }
-
-    .inside_asesor {
-        padding-right: 14px!important;
-    }
-
-    .adicional_5_porcent {
         position: absolute;
-    left: 1px!important;
-    top: 107px;
-    font-size: 12px;
-    color: #005a8f;
-    font-weight: 600;
-    text-transform: uppercase;
+        top: 92vh;
+        left: 43px;
+        width: 66% !important;
     }
 
-    .btn_consultas {
-        z-index: 999;
-    position: absolute;
-    bottom: -60vh;
-     
-
-    }
-
-    .btn_terminos {
-        width: 100%!important;
-    font-size: 16px!important;
-    font-weight: 500!important;
-    position: relative!important;
-    bottom: -30vh!important;
-    margin-bottom: 13px!important;
-    }
 
     .termino_uso {
 
@@ -163,11 +103,7 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
     .caract_dest {
         position: absolute;
         left: 14px;
-        bottom: -83vh;
-    }
-
-    .tabla_mbl {
-        margin-top: 29vh!important;
+        bottom: -27vh;
     }
 
     .garantia_calidad {
@@ -221,38 +157,6 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
 @media (max-width: 767px) {
     .bann_1 {
         display: none;
-    }
-
-    .btn_consultas_mix {
-        margin-top: 51vh;
-    }
-
-    .consult_delivery {
-        padding-left: 13px!important;
-    padding-right: 0px!important;
-    width: 45%!important;
-    border: solid 1px gray!important;
-    padding-top: 8px!important;
-    padding-bottom: 8px!important;
-    margin-top: 23px!important;
-    position: absolute!important;
-    bottom: 49px;
-    left: 181px;
-    }
-
-    .table_mbl {
-        width: 100%!important;
-    max-width: 100%!important;
-    margin-bottom: 20px!important;
-    border: 1px solid #ddd!important;
-    margin-left: auto!important;
-    margin-right: auto!important;
-    position: relative!important;
-    top: -40vh!important;
-    }
-
-    .formacion_btn {
-        margin-top: -21vh!important;
     }
 
     .ajust_login_new {
@@ -526,7 +430,7 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                                 </span></li>
                             <li style="margin-top: 28px;"><span style=" font-size: 28px;  color: #fc0000; font-weight: 600;">S/
                                     <?= $precio_sol?></span> </li>
-                            <span class="adicional_5_porcent" 
+                            <span class=""
                                 style="position: absolute; left: 18px;    top: 107px; font-size: 12px; color: #005a8f; font-weight: 600; text-transform: uppercase;">
                                 5% adicional para pago con tarjeta de crédito, débito</span>
                             <li style="border-right-color: #ff6600; border-right-style: solid;  position: relative; top: 18px;   margin-top: 43px;">
@@ -544,7 +448,7 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
 
 
 
-                    <div class="row btn_consultas_mix">
+                    <div class="row">
                         <div class="col-12" style=" position: relative;  top: 35px;">
                             <div class="jsx-2170457292 addToCart-container fa--add-to-cart__desktop agregar_bolsa ">
                                 <div id="buttonForCustomers">
@@ -573,7 +477,7 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
 
                         ?>
 
-                        <div class="col-md-6 whatsapp_cons"
+                        <div class="col-md-6"
                             style="    padding-left: 6px;  padding-right: 0px;  width: 40%; border: solid 1px gray; padding-top: 8px; padding-bottom: 8px; margin-top: 23px; margin-right: 8px;">
                             <a href="<?=$base?>" class="" target="blank_">
                                 <img src="assets/img/whatsapp_3.svg" style="float: left; max-height: 21px; position: absolute; left: -61px;">
@@ -581,7 +485,7 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                             </a>
                         </div>
 
-                        <div class="col-md-6 consult_delivery"
+                        <div class="col-md-6"
                             style="padding-left: 13px; padding-right: 0px; width: 45%; border: solid 1px gray; padding-top: 8px; padding-bottom: 8px; margin-top: 23px;">
                             <a href="" class="">
                                 <img src="https://www.magitech.pe/skin/frontend/ultimo/default/images/bq-at-cotizar.png"
@@ -590,14 +494,14 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                             </a>
                         </div>
 
-                        <div class="col-md-6 cons_stock" style="padding-left: 0px; padding-top: 20px; padding-right: 0px; width: 42%;">
+                        <div class="col-md-6" style="padding-left: 0px; padding-top: 20px; padding-right: 0px; width: 42%;">
                             <a href="<?=$base?>" target="blank_" class="informacion-button"><i class="fas fa-phone-alt" aria-hidden="true"></i>
                                 Consultar Stock
                             </a>
                         </div>
 
-                        <div class="col-md-6 cons_asesor" style="padding-left: 0px; padding-top: 20px; padding-right: 0px; width: 45%;">
-                            <a href="#contactenos" style="padding-right: 40px;" class="inside_asesor informacion-button"><i class="fas fa-phone-alt"
+                        <div class="col-md-6" style="padding-left: 0px; padding-top: 20px; padding-right: 0px; width: 45%;">
+                            <a href="#contactenos" style="padding-right: 40px;" class="informacion-button"><i class="fas fa-phone-alt"
                                     aria-hidden="true"></i> Contacta un Asesor
                             </a>
                         </div>
@@ -642,19 +546,19 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
             </div>
             <br>
 
-            <div class="col-md-12 btn_consultas"  >
+            <div class="col-md-12" style="z-index: 999;">
 
-                <button type="button" class="opciones-button btn_terminos" style="width: 25%; font-size: 16px; font-weight: 500;" data-toggle="modal"
+                <button type="button" class="opciones-button" style="width: 25%; font-size: 16px; font-weight: 500;" data-toggle="modal"
                     data-target="#comocomprar" style="margin-bottom: 13px;"><i class="fas fa-shopping-cart" aria-hidden="true"></i> Como
                     Comprar </button>
 
-                <button type="button" class="opciones-button btn_terminos" style="width: 25%; font-size: 16px; font-weight: 500;" data-toggle="modal"
-                    data-target="#formaspago"><i class="fa fa-credit-card" aria-hidden="true"></i> Formas de Pago</button>
-                <button type="button" class="opciones-button btn_terminos" style="width: 25%; font-size: 16px; font-weight: 500;" data-toggle="modal"
-                    data-target="#delivery" style="margin-bottom: 13px;"><i class="fa fa-truck" aria-hidden="true"></i> Formas de
+                <button type="button" class="opciones-button" style="width: 25%; font-size: 16px; font-weight: 500;" data-toggle="modal"
+                    data-target="#formaspago"><i class="fas fa-shopping-cart" aria-hidden="true"></i> Formas de Pago</button>
+                <button type="button" class="opciones-button" style="width: 25%; font-size: 16px; font-weight: 500;" data-toggle="modal"
+                    data-target="#delivery" style="margin-bottom: 13px;"><i class="fas fa-shopping-cart" aria-hidden="true"></i> Formas de
                     Entrega </button>
-                <button type="button" class="opciones-button btn_terminos" style="width: 24%; font-size: 16px; font-weight: 500;" data-toggle="modal"
-                    data-target="#modal_tiene_garantia"><i class="fa fa-cubes" aria-hidden="true"></i> Garantias </button>
+                <button type="button" class="opciones-button" style="width: 24%; font-size: 16px; font-weight: 500;" data-toggle="modal"
+                    data-target="#modal_tiene_garantia"><i class="fas fa-shopping-cart" aria-hidden="true"></i> Garantias </button>
 
 
 
@@ -682,7 +586,7 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                                </div> 
                             </div>         
                         </div>
-                        <table class='table table_mbl table-bordered table-striped fixedtable ' style='    width: 92%;
+                        <table class='table table-bordered table-striped fixedtable' style='    width: 92%;
                         max-width: 100%;
                         margin-bottom: 20px;
                         border: 1px solid #ddd;
@@ -790,7 +694,7 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
     </div>
     <!--RELATED PRODUCT AREA END-->
     <br></br>
-    <div class="related-product formacion_btn" style="background: white;">
+    <div class="related-product " style="background: white;">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -1162,8 +1066,8 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                         style="margin-bottom: 0.0001pt; text-align: justify; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">
                         <span style="font-size: 11pt;
     font-family: Arial, sans-serif;
-    font-weight: 600; color:#028484;">
-                            <i class="fa fa-credit-card-alt" aria-hidden="true"></i> BANCO DE CRÉDITO BCP
+    font-weight: 600; color:#002a8d;">
+                            <i class="fa fa-credit-card-alt" aria-hidden="true"></i> BANCO DE CRÉDITO DEL PERÚ
                             <o:p></o:p>
                         </span>
                     </p>
@@ -1171,7 +1075,7 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                         style="margin-bottom:1pt; text-align: justify; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">
                     <p style="font-size: 10pt;
     font-family: Arial, sans-serif;margin-bottom:1pt;
-    font-weight: 600;">Soles: 194-35712500-0-31
+    font-weight: 600;">Banco BCP Soles: 194-35712500-0-31
                     </p>
                     <p style="font-size: 10pt;
     font-family: Arial, sans-serif;margin-bottom:1pt;
@@ -1179,50 +1083,18 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                     </p>
                     <p style="font-size: 10pt;
     font-family: Arial, sans-serif;margin-bottom:1pt;
-    font-weight: 600;"> Dólares: 194-35712500-0-31
+    font-weight: 600;"> Banco BCP Dólares: 194-35712500-0-31
                     </p>
                     <p style="font-size: 10pt;
     font-family: Arial, sans-serif;margin-bottom:1pt;
     font-weight: 600;"> CCI Dólares: 002-19413571250003198
                     </p>
-                    
-                    
                     </p>
                     <p class="MsoNormal"
                         style="margin-bottom: 0.0001pt; text-align: justify; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">
                         <span style="font-size: 11pt;
     font-family: Arial, sans-serif;
-    font-weight: 600; color:green;">
-                            <i class="fa fa-credit-card-alt" aria-hidden="true"></i> BANCO INTERBANK
-                            <o:p></o:p>
-                        </span>
-                    </p>
-                    <p class="MsoNormal"
-                        style="margin-bottom:1pt; text-align: justify; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">
-                    <p style="font-size: 10pt;
-    font-family: Arial, sans-serif;margin-bottom:1pt;
-    font-weight: 600;">Soles:  4403003222018
-                    </p>
-                    <p style="font-size: 10pt;
-    font-family: Arial, sans-serif;margin-bottom:1pt;
-    font-weight: 600;">CCI Soles: 00344000300322201855
-                    </p>
-                    <p style="font-size: 10pt;
-    font-family: Arial, sans-serif;margin-bottom:1pt;
-    font-weight: 600;"> Dólares: 4403003222025
-                    </p>
-                    <p style="font-size: 10pt;
-    font-family: Arial, sans-serif;margin-bottom:1pt;
-    font-weight: 600;"> CCI Dólares: 00344000300322202550
-                    </p>
-                    
-                    
-                    </p>
-                    <p class="MsoNormal"
-                        style="margin-bottom: 0.0001pt; text-align: justify; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">
-                        <span style="font-size: 11pt;
-    font-family: Arial, sans-serif;
-    font-weight: 600; color:#002a8d;">
+    font-weight: 600; color:#028484;">
                             <i class="fa fa-credit-card-alt" aria-hidden="true"></i> BANCO CONTINENTAL BBVA
                             <o:p></o:p>
                         </span>
@@ -1231,7 +1103,7 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                         style="margin-bottom:1pt; text-align: justify; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">
                     <p style="font-size: 10pt;
     font-family: Arial, sans-serif;margin-bottom:1pt;
-    font-weight: 600;"> Soles: 0011-0323-0200389677
+    font-weight: 600;">Banco BBVA Soles: 0011-0323-0200389677
                     </p>
                     <p style="font-size: 10pt;
     font-family: Arial, sans-serif;margin-bottom:1pt;
@@ -1252,11 +1124,11 @@ while ($fila2 = mysqli_fetch_array($productoinfo2)) {
                         style="margin-bottom:1pt; text-align: justify; line-height: normal; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">
                     <p style="font-size: 10pt;
     font-family: Arial, sans-serif;margin-bottom:1pt;
-    font-weight: 600;">Soles: 081-0517938
+    font-weight: 600;">Banco Soles: 009-022-00000-6192980-58
                     </p>
                     <p style="font-size: 10pt;
     font-family: Arial, sans-serif;margin-bottom:1pt;
-    font-weight: 600;">CCI Soles: :009-022-200810517938-57
+    font-weight: 600;">CCI Soles: 009-022-00000-6192980-58
                     </p>
 
                     </p>

@@ -28,8 +28,8 @@ Licencia: Proveedor de servicios
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.0/css/font-awesome.min.css" rel="stylesheet"
         media="all">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
-    <link href="assets/js/bootstrap-touch-slider.css" rel="stylesheet" media="all">
-
+     <!-- Template Main CSS File -->
+  
 <!-- CCS REDES SOCIALES  -->
 
 <!-- ACA  -->
@@ -159,7 +159,7 @@ Licencia: Proveedor de servicios
     line-height: 80px; "> <a href="#" class="icon-cell" style="color: #ffffff;"><i style="    font-size: 37px;"
 	                                class="fa fa-map-marker"></i></a> </div>
 	                    <div class="icon-content ajust-cont"><br>
-	                        <h5> Tienda Villa el Salvador</h5>
+	                        <h5>Tienda Principal Soluciones</h5>
 	                        <p>Av. el Sol / Av. Revolución </p>
 	                        <p>Lt. 13 - Mz. H - Gp. 15 - St. 1</p>
 	                        <p>Villa el Salvador - Lima Peru </p>
@@ -177,7 +177,7 @@ Licencia: Proveedor de servicios
     line-height: 80px; "> <a href="#" class="icon-cell" style="color: #ffffff;"><i style="    font-size: 34px;"
 	                                class="fa fa-phone"></i></a> </div>
 	                    <div class="icon-content ajust-cont"><br>
-	                        <h5>Telefonos Tienda Villa el Salvador</h5>
+	                        <h5>Numeros Telefonicos Soluciones</h5>
 	                        <p>Informes / Asesoria +51 968-933-814</p>
 	                        <p>Ventas / Soporte +51 986-838-333</p>
 	                        <p>Averias / Garantia +51 996-727-562</p>
@@ -211,10 +211,10 @@ Licencia: Proveedor de servicios
     height: 70px;
     line-height: 80px; "> <a href="#" class="icon-cell" style="color: #ffffff;"><i style="    font-size: 37px;"
 	                                class="fa fa-bank"></i></a> </div>
-	                    <div class="icon-content ajust-cont"><br>
-	                        <h5>Cuentas Bancarias Soluciones</h5>
-	                        <p> BCP: 194-357-125-00-0-31 <br>BBVA:0011-0323-0200389677 <br>
-	                             ScotiaBank: 009-022-00000-6192980-58</p>
+	                     <div class="icon-content ajust-cont"><br>
+	                        <h5>Medios de Pagos Soluciones</h5>
+	                        <p> Visa, Mastercard <br>discover card, diners club <br>
+	                             American Express</p>
 
 	                    </div>
 	                </div>
@@ -253,18 +253,7 @@ Licencia: Proveedor de servicios
                  
                 <p>Contactar Asesor de Ventas </p>
                 <p> Tienda Lima Cercado</p>
-                <h4> </a>
-                 <a href="https://www.facebook.com/Soluciones-cctv-sistemas-sac-1626920177570816">
-                        <i class="fa fa-facebook"></i>
-                      </a>
-                    
-                      <a href="https://api.whatsapp.com/send?phone=51996727562&text=hola,%20qu%C3%A9%20tal?">
-                        <i class="fa fa-whatsapp"></i>
-                      </a>
-                   
-                      <a href="https://www.instagram.com/solucionescctvysistemas/">
-                        <i class="fa fa-instagram"></i>
-                      </a></h4>
+                
               </div>
             </div>
           </div>
@@ -278,7 +267,6 @@ Licencia: Proveedor de servicios
                 <div class="text-center team-social-icon">
                   <ul>
                     
-                      
                       </a>
                     </li>
                   </ul>
@@ -290,18 +278,8 @@ Licencia: Proveedor de servicios
                  
                  <p>Contactar Asesor de Ventas </p>
                 <p> Tienda Villa el Salvador</p>
-                <h4> </a>
-                 <a href="https://www.facebook.com/Soluciones-cctv-sistemas-sac-1626920177570816">
-                        <i class="fa fa-facebook"></i>
-                      </a>
-                    
-                      <a href="https://api.whatsapp.com/send?phone=51996727562&text=hola,%20qu%C3%A9%20tal?">
-                        <i class="fa fa-whatsapp"></i>
-                      </a>
-                   
-                      <a href="https://www.instagram.com/solucionescctvysistemas/">
-                        <i class="fa fa-instagram"></i>
-                      </a></h4>
+                
+                
               </div>
             </div>
           </div>
@@ -314,6 +292,7 @@ Licencia: Proveedor de servicios
                 </a>
                 <div class="text-center team-social-icon">
                   <ul>
+					 
                     
                       </a>
                     </li>
@@ -326,18 +305,7 @@ Licencia: Proveedor de servicios
                  
                 <p>Contactar Asesor de Ventas </p>
                 <p> Tienda Pachacamac</p>
-                <h4> </a>
-                 <a href="https://www.facebook.com/Soluciones-cctv-sistemas-sac-1626920177570816">
-                        <i class="fa fa-facebook"></i>
-                      </a>
-                    
-                      <a href="https://api.whatsapp.com/send?phone=51996727562&text=hola,%20qu%C3%A9%20tal?">
-                        <i class="fa fa-whatsapp"></i>
-                      </a>
-                   
-                      <a href="https://www.instagram.com/solucionescctvysistemas/">
-                        <i class="fa fa-instagram"></i>
-                      </a></h4>
+               
               </div>
             </div>
           </div>
@@ -350,6 +318,7 @@ Licencia: Proveedor de servicios
                 </a>
                 <div class="text-center team-social-icon">
                   <ul>
+					  
                     
                       </a>
                     </li>
@@ -362,18 +331,8 @@ Licencia: Proveedor de servicios
                 
                  <p>Contactar Asesor de Ventas </p>
                 <p> Tienda Villa el Salvador</p>
-                 <h4> </a>
-                 <a href="https://www.facebook.com/Soluciones-cctv-sistemas-sac-1626920177570816">
-                        <i class="fa fa-facebook"></i>
-                      </a>
-                    
-                      <a href="https://api.whatsapp.com/send?phone=51996727562&text=hola,%20qu%C3%A9%20tal?">
-                        <i class="fa fa-whatsapp"></i>
-                      </a>
-                   
-                      <a href="https://www.instagram.com/solucionescctvysistemas/">
-                        <i class="fa fa-instagram"></i>
-                      </a></h4>
+                
+                
               </div>
             </div>
           </div>
@@ -404,6 +363,10 @@ Licencia: Proveedor de servicios
 	                color: red;
 	            }
 	        }
+	        
+	        
+	        
+	        
 	        </section>
 	        </style>
 
@@ -479,9 +442,98 @@ Licencia: Proveedor de servicios
 	                    </div>
 	                </div>
 	                </div>
-			            
-             </section>
+	                
+	      </section>                
+		</div>
+	<div class="container" id="service" style="    margin-top: -11px;">
+<h1 class="section-title txt-rotate" data-period="2000" data-rotate='[ "Cuentas Bancarias Soluciones " ]'></h1> 
+	<hr style="margin-bottom: 1px solid #333;"> 
+	 <p class="mb-5 " style="margin-top: 17px;
+    margin-bottom: 23px;" align="center">Nuestras cuentas están a nombre de soluciones cctv y sistemas s.a.c, o a nombre de su
+representante legal jhonny david olarte gamboa. Toda cancelación con cheque sera
+    de manera presencial, no aceptamos cheques con depositos en blanco.</p>
 
+</section>
+	   
+
+	        </div>
+	            <div class="col-md-3" align="center">
+	                <div class="icon-bx-wraper bx-style-1 p-a15 center col" style="    border-width: 1px;
+    border-style: solid;
+    border-color: #2c5b8f;      padding-top: 23px;">
+	                    <div class="icon-bx-sm m-b20 radius" style="  display: inline-block;
+    text-align: center;  border-radius: 100%;    background-image: radial-gradient(circle at 33.36% 95.72%, #ffcf4e 0, #ffbe40 16.67%, #faa92c 33.33%, #ef900f 50%, #e37600 66.67%, #db5f00 83.33%, #d74a00 100%);     width: 70px;
+    height: 70px;
+    line-height: 80px; "> <a href="#" class="icon-cell" style="color: #ffffff;"><i style="    font-size: 37px;"
+	                                class="fa fa-bank"></i></a> </div>
+	                    <div class="icon-content ajust-cont"><br>
+	                        <h5>BANCO DE CREDITO BCP</h5>
+	                        <p> S/: 194-357-125-00-0-31 <br>$: 191-02423292-1-68 <br>
+	                            CCI S/: 002-19413571250003198 <br>CCI $: 002-19110242329216853 <br></p>
+	                            
+	                         
+	                            
+
+	                    </div>
+	                </div>
+	            </div>
+
+	            </div>
+	            <div class="col-md-3" align="center">
+	                <div class="icon-bx-wraper bx-style-1 p-a15 center col" style="    border-width: 1px;
+    border-style: solid;
+    border-color: #2c5b8f;      padding-top: 23px;">
+	                    <div class="icon-bx-sm m-b20 radius" style="  display: inline-block;
+    text-align: center;  border-radius: 100%;    background-image: radial-gradient(circle at 45.31% 103.62%, #70c900 0, #4fc700 25%, #13c40d 50%, #00c120 75%, #00be2f 100%);
+	     width: 70px;
+    height: 70px;
+    line-height: 80px; "> <a href="#" class="icon-cell" style="color: #ffffff;"><i style="    font-size: 37px;"
+	                                class="fa fa-bank"></i></a> </div>
+	                   <div class="icon-content ajust-cont"><br>
+	                        <h5>BANCO INTERBANK</h5>
+	                        <p> S/: 4403003222018 <br>$: 4403003222025 <br>
+	                            CCI S/: 00344000300322201855 <br>CCI $: 00344000300322202550 <br></p>
+
+	                    </div>
+	                </div>
+	            </div>
+	            </div>
+	            <div class="col-md-3" align="center">
+	                <div class="icon-bx-wraper bx-style-1 p-a15 center col" style="    border-width: 1px;
+    border-style: solid;
+    border-color: #2c5b8f;      padding-top: 23px;">
+	                    <div class="icon-bx-sm m-b20 radius" style="  display: inline-block;
+    text-align: center;  border-radius: 100%;    background-image: radial-gradient(circle at 30.93% 102.38%, #ff8a45 0, #ff7744 16.67%, #ff5e41 33.33%, #ff383b 50%, #f00037 66.67%, #e40038 83.33%, #db003e 100%);     width: 70px;
+    height: 70px;
+    line-height: 80px; "> <a href="#" class="icon-cell" style="color: #ffffff;"><i style="    font-size: 37px;"
+	                                class="fa fa-bank"></i></a> </div>
+	                     <div class="icon-content ajust-cont"><br>
+	                        <h5>BANCO SCOTIABANK</h5>
+	                        <p>  S/:081-0517938 <br> $:081-0517938 <br>
+	                             CCI S/:009-022-200810517938-57 <br>CCI  $:009-022-200810517938-57 <br></p>
+
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="col-md-3" align="center">
+	                <div class="icon-bx-wraper bx-style-1 p-a15 center col" style="    border-width: 1px;
+    border-style: solid;
+    border-color: #2c5b8f;      padding-top: 23px;">
+	                    <div class="icon-bx-sm m-b20 radius" style="  display: inline-block;
+    text-align: center;  border-radius: 100%;    background-image: linear-gradient(350deg, #5974a6 0, #0f5699 50%, #003b8c 100%);     width: 70px;
+    height: 70px;
+    line-height: 80px; "> <a href="#" class="icon-cell" style="color: #ffffff;"><i style="    font-size: 37px;"
+	                                class="fa fa-bank"></i></a> </div>
+	                    <div class="icon-content ajust-cont"><br>
+	                        <h5>BANCO CONTINENTAL BBVA</h5>
+	                        <p>  S/:0011-0323-0200389677 <br> $:0011-0323-0200389677 <br>
+	                             CCI S/:011-323-000200389677-32 <br>CCI  $:011-323-000200389677-32 <br></p>
+	                    </div>
+	                </div>
+	            </div>
+	            
+	             </section>
+      
 	              </div>
 	                <h2 align="center" style=" color:red;   font-size: 28px;     margin: 0.5em 1px 9px 10px !important;">Nuestra Ubicacion</h2> 
 	                <hr style="margin-bottom: 1px solid #333;">
@@ -493,7 +545,7 @@ Licencia: Proveedor de servicios
 	                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3899.5385969082613!2d-76.93922278584533!3d-12.21176719135753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105bb274902c075%3A0xeaf78596f47e208d!2ssoluciones+cctv+y+sistemas!5e0!3m2!1ses!2spe!4v1547750528633"
 	                        width="100%" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>
 	                </div>
-	           
+	           </div>
 			</section>
 
 	         

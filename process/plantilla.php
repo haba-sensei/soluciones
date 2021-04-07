@@ -969,7 +969,7 @@ function draw_code39($code, $x, $y, $w, $h) {
     $this->SetXY( $r1-1, $y1+18 );
 	$this->Cell(15,4, utf8_decode("* Cancelar El Importe Total De Cotizacion En Caja"), 0, 0, "L");
     $this->SetXY( $r1-1, $y1+24 );
-	$this->Cell(15,4, utf8_decode("* Recoger Su Productos Cotizados En Almacen"), 0, 0, "L");
+	$this->Cell(15,4, utf8_decode("* Tiempo de Vigencia 4 Dias Habiles"), 0, 0, "L");
     	
 	}
 	function addCadreEurosFrancs3()
@@ -1105,7 +1105,7 @@ function draw_code39($code, $x, $y, $w, $h) {
         $total_indi =  str_replace(',', '',  $total );
         
         $total_indi_1 = number_format($total_indi , 2);
-        $igv_format= $total_indi_1 - ($total_indi_1 * 0.18);
+        $igv_format= ($total_indi_1 / 1.18);
         $igv =   $total_indi_1 - $igv_format;
         $total_subtotal = number_format($igv_format, 2);
         $total_igv =  str_replace(',', '',  $igv );

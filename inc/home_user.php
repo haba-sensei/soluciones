@@ -441,7 +441,7 @@
                 </div>
                         
     
-                        <div class="col-lg-4 col-md-4">
+                        <div class="col-lg-4 col-md-4"> 
                             <div class="widget widget-stats hljs-wrapper">
                                 <div class="stats-icon"><i class="fa fa-window-maximize" style="color: #009fff;"></i></div>
                                 <div class="stats-info">

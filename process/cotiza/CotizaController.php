@@ -99,8 +99,10 @@ session_start();
                     $total_dolares = number_format($fila['Precio'] * $fila['Cantidad'], 2);
                     $total_indi =  str_replace(',', '',  $total_dolares );
                     $total_soles = number_format($globalTasaCambio_dolar * $total_indi ,2);
-                    $precio_unit = number_format($fila['Precio'], 2);
-                    // href="../infoProd.php?CodigoProd='.$fila['CodigoProd'].'"
+                     
+                    $total_dolares_f = number_format($globalTasaCambio_dolar * $fila['Precio'] ,2);
+                    $precio_unit_soles = number_format($total_dolares_f , 2);
+                    $precio_unit_dolares = number_format($fila['Precio'], 2);
                     echo '
                           <tr>
                           <td class="ajut_centrado_orden">
@@ -137,7 +139,11 @@ session_start();
                           <span class="">(Marca) = '.$fila['Marca'].'</span><br>
                           <span class="">(Sku) = '.$fila['CodigoProd'].'</span>
                           </td>
-                          <td class="ajut_centrado_orden">$ '.$precio_unit.'</td>
+                          <td class="ajut_centrado_orden">
+                          $ '.$precio_unit_dolares.' <br>
+                          S/ '.$precio_unit_soles.'
+                          
+                          </td>
                           <td class="ajut_centrado_orden">S/ '.$total_soles.'</td> 
                           <td class="ajut_centrado_orden">$ '.$total_dolares.'</td>
                           <td class="ajut_centrado_orden">
@@ -176,46 +182,7 @@ session_start();
             
             
             
-                    }  
-           
-            
-            // $detalles_finales = ejecutarSQL::consultar("SELECT `detalle_compra_online`.*, `detalle_compra_online`.`id_cotizacion`
-            // FROM `detalle_compra_online`
-            // WHERE `detalle_compra_online`.`id_cotizacion` = '$NumPedido'");
-            //    while ($deta_final=mysqli_fetch_array($detalles_finales)){ 
-
-            //         $costo_adicional = $deta_final['costo_adicional']; 
-            //         $tipo_moneda = $deta_final['moneda'];
-            //         $tipo_pago = $deta_final['forma_pago'];
-            //         $medio_pago = $deta_final['medio_pago'];
-            //         $forma_de_entrega = $deta_final['forma_entrega'];
-
-                    
-
-                //  switch ($tipo_moneda) {
-                //     case 'dolares':
-                //         $totalGeneral = $totalGeneral_sin_formato;
-                //         $simbolo = "$ ";
-                //         $costo_delivery_f =  $costo_adicional / $globalTasaCambio_dolar;
-                //         $format_delivery =  str_replace(',', '',  $costo_delivery_f); 
-                //         $costo_delivery = number_format($format_delivery, 2);
-                //         $descuento_format = $descuento;
-                        
-                //         break;
-                //     case 'soles':
-                //         $totalGeneral = $totalGeneral_sin_formato * $globalTasaCambio_dolar;
-                //         $simbolo = "S/ ";
-                //         $costo_delivery_f =  $costo_adicional;
-                //         $format_delivery =  str_replace(',', '',  $costo_delivery_f); 
-                //         $costo_delivery = number_format($format_delivery, 2);
-                //         $descuento_format = $descuento;
-                        
-                //         break; 
-                     
-                //  } 
-
-            //    }
-			 
+                    }   
 
                $totalGeneral = $totalGeneral_sin_formato * $globalTasaCambio_dolar;
                $simbolo = "S/ ";
@@ -224,11 +191,12 @@ session_start();
                $costo_delivery = number_format($format_delivery, 2);
                $descuento_format = $descuento;
                 
-               $monto_igv_format = number_format($totalGeneral * 1.18 - $totalGeneral, 2);
-               $monto_igv = $totalGeneral * 1.18 - $totalGeneral;
                
-               $subtotal = number_format($totalGeneral - $monto_igv, 2);
                
+               
+               $subtotal = number_format($totalGeneral / 1.18, 2);
+               $monto_igv_format = number_format($totalGeneral - $subtotal, 2);
+
                $total_a_cuenta = 0.00;
                $total_tarjeta = 0.00;
                 
@@ -314,7 +282,7 @@ session_start();
                     </td>
                      
                     <td  colspan="2">
-                    <button class="btn btn-new btn-block " style="background: #ab2200!important" onclick="registro_compra(&quot;'.$NumPedido.'&quot; , &quot;'.$total_a_cuenta.'&quot; , &quot;'.$total_tarjeta.'&quot;)"><i class="fas fa-check fa-fw"></i> REGISTRAR COMPRA </button>
+                    <button class="btn btn-new btn-block " style="background: #ab2200!important" onclick="registro_compra(&quot;'.$NumPedido.'&quot; , &quot;'.$total_a_cuenta.'&quot; , &quot;'.$total_tarjeta.'&quot;)"><i class="fas fa-check fa-fw"></i> APROBAR COTIZACION </button>
                     <a class="btn btn-new btn-block "  style="background: #ab2200!important" target="_blank" href="../process/cotiza/cotiza_imprimir.php?num_cotiza='.$NumPedido.'"><i class="fas fa-print fa-fw"></i> IMPRIMIR </a>
                     </td>';
                         break;
@@ -325,7 +293,7 @@ session_start();
                              </td>
                               
                              <td  colspan="2">
-                             <button class="btn btn-new btn-block " style="background: #ab2200!important" ><i class="fas fa-check fa-fw"></i> REGISTRAR COMPRA </button>
+                             <button class="btn btn-new btn-block " style="background: #ab2200!important" ><i class="fas fa-check fa-fw"></i> APROBAR COTIZACION </button>
                              <a class="btn btn-new btn-block "  style="background: #ab2200!important" target="_blank" href="../process/cotiza/cotiza_imprimir.php?num_cotiza='.$NumPedido.'"><i class="fas fa-print fa-fw"></i> IMPRIMIR </a>
                              </td>';
                         break;
@@ -337,7 +305,7 @@ session_start();
                              </td>
                               
                              <td  colspan="2">
-                             <button class="btn btn-new btn-block " style="background: #ab2200!important" ><i class="fas fa-check fa-fw"></i> REGISTRAR COMPRA </button>
+                             <button class="btn btn-new btn-block " style="background: #ab2200!important" ><i class="fas fa-check fa-fw"></i> APROBAR COTIZACION </button>
                              <a class="btn btn-new btn-block "  style="background: #ab2200!important" target="_blank" href="../process/cotiza/cotiza_imprimir.php?num_cotiza='.$NumPedido.'"><i class="fas fa-print fa-fw"></i> IMPRIMIR </a>
                              </td>';
                         break;
@@ -348,7 +316,7 @@ session_start();
                     </td>
                      
                     <td  colspan="2">
-                    <button class="btn btn-new btn-block " style="background: #ab2200!important" onclick="registro_compra(&quot;'.$NumPedido.'&quot; , &quot;'.$total_a_cuenta.'&quot; , &quot;'.$total_tarjeta.'&quot;)"><i class="fas fa-check fa-fw"></i> REGISTRAR COMPRA </button>
+                    <button class="btn btn-new btn-block " style="background: #ab2200!important" onclick="registro_compra(&quot;'.$NumPedido.'&quot; , &quot;'.$total_a_cuenta.'&quot; , &quot;'.$total_tarjeta.'&quot;)"><i class="fas fa-check fa-fw"></i> APROBAR COTIZACION </button>
                     <a class="btn btn-new btn-block "  style="background: #ab2200!important" target="_blank" href="../process/cotiza/cotiza_imprimir.php?num_cotiza='.$NumPedido.'"><i class="fas fa-print fa-fw"></i> IMPRIMIR </a>
                     </td>';
                         break;
@@ -359,7 +327,7 @@ session_start();
                              </td>
                               
                              <td  colspan="2">
-                             <button class="btn btn-new btn-block " style="background: #ab2200!important" ><i class="fas fa-check fa-fw"></i> REGISTRAR COMPRA </button>
+                             <button class="btn btn-new btn-block " style="background: #ab2200!important" ><i class="fas fa-check fa-fw"></i> APROBAR COTIZACION </button>
                              <a class="btn btn-new btn-block "  style="background: #ab2200!important" target="_blank" href="../process/cotiza/cotiza_imprimir.php?num_cotiza='.$NumPedido.'"><i class="fas fa-print fa-fw"></i> IMPRIMIR </a>
                              </td>';
                         break;
@@ -370,7 +338,7 @@ session_start();
                              </td>
                               
                              <td  colspan="2">
-                             <button class="btn btn-new btn-block " style="background: #ab2200!important" ><i class="fas fa-check fa-fw"></i> REGISTRAR COMPRA </button>
+                             <button class="btn btn-new btn-block " style="background: #ab2200!important" ><i class="fas fa-check fa-fw"></i> APROBAR COTIZACION </button>
                              <a class="btn btn-new btn-block "  style="background: #ab2200!important" target="_blank" href="../process/cotiza/cotiza_imprimir.php?num_cotiza='.$NumPedido.'"><i class="fas fa-print fa-fw"></i> IMPRIMIR </a>
                              </td>';
                         break;

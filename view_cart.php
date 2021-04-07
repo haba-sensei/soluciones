@@ -634,7 +634,7 @@ include_once("library/config.inc.php");
                 }
 
                 .texto_precio_mobil {
-                    font-size: xx-large!important; 
+                    font-size: x-large!important; 
                     font-weight: 600!important;
                     text-align: -webkit-center!important;
                 }
@@ -647,14 +647,18 @@ include_once("library/config.inc.php");
                 }
                 .dis-total {
                 float: right;
-                width: 100%!important;
+                width: 121%!important;
                 text-align: right;
-                background: #ffffff;
+                background: #ffffff00!important;
+                }
+
+                .dis-res {
+                    width: 129px!important;
                 }
 
                 .cart-checkout {
                 padding-right: 59px !important;
-                padding-left: 50px !important;
+                padding-left: 29px !important;
                 margin-right: 104px !important;
                 display: table-cell;
                 }
@@ -675,29 +679,46 @@ include_once("library/config.inc.php");
                 }
 
                 .init_2 {
-                height: 141vh;
+                    height: 157vh;
+                }
+
+                .generar_coti_compra {
+                    position: relative;
+                    left: -87px!important;
+                    padding: 16px;
                 }
                 
                 .generar_coti {
                     position: absolute!important;
-                    bottom: -127px!important;
-                    padding: 16px!important;
-                    right: -7px!important;
-                    width: 51%!important;
+    bottom: -127px!important;
+    padding: 16px!important;
+    right: -7px!important;
+    width: 59%!important;
                 }
 
                 .btn_sunat_ajust {
                     color: #f5f5f5;
                     background: #27ae60;
-                    top: -48px;
-                    left: 10em!important;
+                    top: -47px;
+                    left: 8em!important;
                     font-weight: 600;
                     position: absolute;
-                    font-size: 17px;
+                    font-size: 16px;
+                }
+
+                .previus_ajuste_mobl {
+                    margin-right: 17px!important;
+                    margin-left: 15px!important;
+                    padding: 16px!important;
+                    padding-right: 9px!important;
                 }
 
                 .enviar_correo_btn {
                     margin-left: -48px!important;
+                }
+
+                .description_mbl {
+                    padding-left: 45px!important;
                 }
             }
  
@@ -710,7 +731,7 @@ include_once("library/config.inc.php");
                                 <thead class="thead_ajust">
                                     <tr class="main-heading">
                                         <th style="width: 20%" class="ocultame_mobil">Imagen</th>
-                                        <th style="width: 20%" class="long-txt texto_mobil">Descripcion</th>
+                                        <th style="width: 20%" class="long-txt texto_mobil description_mbl">Descripcion</th>
                                         <th style="width: 20%" class="texto_mobil">Cantidad</th>
                                         <th style="width: 20%" class="texto_mobil">Precio</th>
                                         <th style="width: 20%" class="texto_mobil">Total</th>
@@ -837,25 +858,25 @@ include_once("library/config.inc.php");
 
                             <div class="dis-total">
                             <h1 style="width:  40%; ">Sub Total :&nbsp;</h1>
-                                <h1 style="width: 157px;     background: #cecece;"><?php echo $currency." ". $total_format;  ?></h1>
+                                <h1 class="dis-res" style="width: 157px;     background: #cecece;"><?php echo $currency." ". $total_format;  ?></h1>
 
                             </div>
                             <div class="clear"> </div>
                             <div class="dis-total">
                             <h1 style="width:  40%; ">IGV (18 %) : </h1>
-                            <h1 style="width: 157px;     background: #cecece;"><?php echo $list_tax; ?></h1>
+                            <h1 class="dis-res" style="width: 157px;     background: #cecece;"><?php echo $list_tax; ?></h1>
 
                             </div>
                             <div class="clear"> </div>
                             <div class="dis-total">
                             <h1 style="width:  40%; ">Total Sol :&nbsp;   </h1>
-                                <h1 style="width: 157px;       color: #00578a;  background: #cecece;"><?php echo $currency ." ".number_format($total * $globalTasaCambio_dolar, 2, '.', ',');  ?></h1>
+                                <h1 class="dis-res" style="width: 157px;       color: #00578a;  background: #cecece;"><?php echo $currency ." ".number_format($total * $globalTasaCambio_dolar, 2, '.', ',');  ?></h1>
 
                             </div>
                             <div class="clear"> </div>
                             <div class="dis-total">
-                            <h1 style="width:  40%; ">Total Dolar :&nbsp;   </h1>
-                                <h1 style="width: 157px;       color: #238028;  background: #cecece;"><?php echo "$ ".number_format($total, 2, '.', ','); ?></h1>
+                            <h1 style="width:  43%; ">Total Dolar :&nbsp;   </h1>
+                                <h1 class="dis-res" style="width: 157px;       color: #238028;  background: #cecece;"><?php echo "$ ".number_format($total, 2, '.', ','); ?></h1>
 
                             </div>
 
@@ -896,7 +917,7 @@ include_once("library/config.inc.php");
 
                     </div>
                     <br><br>
-                    <input type="button" name="previous" style="margin-right: 60px; padding: 16px;" class="previous action-button" value="Retroceder"
+                    <input type="button" name="previous" style="margin-right: 60px; padding: 16px;" class="previous action-button previus_ajuste_mobl" value="Retroceder"
                         onclick="ajusteBox_end();">
                     <input type="button" name="next" style="padding: 16px;" class="next action-button select_ope deshabilitado"
                         onclick="ajusteBox_next();" value="Continuar" disabled />
@@ -1105,7 +1126,7 @@ include_once("library/config.inc.php");
                     </div>
                     <div class="clear"> </div>
                     <br>
-                    <input type="button" name="previous" style="padding: 16px; margin-right: 60px;" class="previous action-button" value="Retroceder"
+                    <input type="button" name="previous" style="padding: 16px; margin-right: 60px;" class="previous action-button previus_ajuste_mobl" value="Retroceder"
                         onclick="ajusteBox_retrocede();">
                     <input type="button" name="next" style="padding: 16px; " class="next action-button" value="Continuar"
                         onclick="ajusteBox_final();" >
@@ -1361,7 +1382,7 @@ include_once("library/config.inc.php");
 
                     </div>
                     <br> <br>
-                    <input type="button" name="previous" style="position: relative; left: -118px; padding: 16px;" class="previous action-button"
+                    <input type="button" name="previous" style="position: relative; left: -118px; padding: 16px;" class="previous action-button generar_coti_compra"
                         onclick="ajusteBox_back_final()" value="Retroceder" />
 
                     <a style="display:none;"
