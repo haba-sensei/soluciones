@@ -81,7 +81,7 @@
 
 			<li class="has-sub ">
 
-
+			<li style=" letter-spacing: 3px;"> <a href="deliveryEspera.php"><i class="fa fa-cubes"></i>&nbsp;General</a></li>
 			<li style=" letter-spacing: 3px;"> <a href="delivery.php"><i class="fa fa-cubes"></i>&nbsp;Delivery</a></li>
 			<li  style=" letter-spacing: 3px;"><a href="envios.php"><i class="fas fa-cubes"></i>&nbsp;Envios</a></li>
 			<li  style=" letter-spacing: 3px;"><a href="recojo.php"><i class="fas fa-cubes"></i>&nbsp;Recojo</a></li>
@@ -281,7 +281,7 @@
 
 			<li class="has-sub ">
 
-
+			<li style=" letter-spacing: 3px;"> <a href="deliveryEspera.php"><i class="fa fa-cubes"></i>&nbsp;General</a></li>
 			<li style=" letter-spacing: 3px;"> <a href="delivery.php"><i class="fa fa-cubes"></i>&nbsp;Delivery</a></li>
 			<li  style=" letter-spacing: 3px;"><a href="envios.php"><i class="fas fa-cubes"></i>&nbsp;Envios</a></li>
 			<li  style=" letter-spacing: 3px;"><a href="recojo.php"><i class="fas fa-cubes"></i>&nbsp;Recojo</a></li>

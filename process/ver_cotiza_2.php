@@ -71,8 +71,10 @@ if (
         );
     } 
 
-    $verificar_cotizacion = ejecutarSQL::consultar("select * from cotizacion_online where id_cotizacion='" . $cod . "'");
+    $verificar_cotizacion = ejecutarSQL::consultar("select * from cotizacion_online where id_cotizacion='".$cod."'");
     $num_cotizacion_row = mysqli_num_rows($verificar_cotizacion);
+
+    
 
     if ($num_cotizacion_row <= 0) {
 
@@ -160,7 +162,7 @@ if (
         $arr = array( "orden_pdf" => $orden,"orden_"    => $orden_, "correo"    => $correo );
         echo json_encode($arr);
      
-    }
+     }
 
 
 

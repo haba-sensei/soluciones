@@ -124,6 +124,70 @@ Licencia: Proveedor de servicios
 
        </style>
          
+<?php 
+                        
+                        $pedido_con_espera_delivery= ejecutarSQL::consultar("SELECT `cotizacion_online`.*, `cotizacion_online`.`Estado` FROM `cotizacion_online` WHERE `cotizacion_online`.`Estado` = '2'  ");
+        $delivery_espera = mysqli_num_rows($pedido_con_espera_delivery);
+
+        $pedido_con_aprob_delivery= ejecutarSQL::consultar("SELECT `cotizacion_online`.*, `cotizacion_online`.`Estado` FROM `cotizacion_online` WHERE `cotizacion_online`.`Estado` = '4'  ");
+        $delivery_aprob = mysqli_num_rows($pedido_con_aprob_delivery);
+        
+        $pedido_con_totales_delivery= ejecutarSQL::consultar("SELECT `cotizacion_online`.*, `cotizacion_online`.`Estado` FROM `cotizacion_online` WHERE `cotizacion_online`.`Estado` = '4' OR `cotizacion_online`.`Estado` = '2'  ");
+        $delivery_totales = mysqli_num_rows($pedido_con_totales_delivery);
+
+                        echo '
+                        <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                    <div class="widget widget-stats hljs-wrapper">
+                        <div class="stats-icon"><i class="fa fa-minus-circle" style="color: #ef2121;"></i></div>
+                        <div class="stats-info">
+                            <h4>DELIVERYS EN ESPERA</h4>
+                            <p>'. $delivery_espera.' </p>
+                        </div>
+                        <div class="stats-link">
+                            <a href="deliveryEspera.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                        
+    
+    
+                        <div class="col-lg-4 col-md-4">
+                            <div class="widget widget-stats hljs-wrapper">
+                                <div class="stats-icon"><i class="fa fa-window-restore" style="color: #009fff;"></i></div>
+                                <div class="stats-info">
+                                    <h4>DELIVERYS ENVIADOS</h4>
+                                    <p>'. $delivery_aprob.' </p>
+    
+                                </div>
+                                <div class="stats-link">
+                                    <a href="deliveryAprobado.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-lg-4 col-md-4">
+                        <div class="widget widget-stats hljs-wrapper">
+                            <div class="stats-icon"><i class="fa fa-window-restore" style="color: #009fff;"></i></div>
+                            <div class="stats-info">
+                                <h4>DELIVERYS TOTALES</h4>
+                                <p>  '.$delivery_totales.' </p>
+    
+                            </div>
+                            <div class="stats-link">
+                                <a href="deliveryTotales.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                        
+    
+                    </div>
+
+                        ';
+
+
+
+?>
 			
 	 <div class="panel panel-inverse">
                         <!-- begin panel-heading -->
@@ -142,6 +206,7 @@ Licencia: Proveedor de servicios
                     <th>N° Pedido</th> 
                     <th>Fecha Emision</th>
                     <th>Forma de Entrega</th>
+                    <th>Estado</th>
                     <th>Opciones</th>
                      
                     
@@ -185,11 +250,39 @@ Licencia: Proveedor de servicios
                      }
                      
                     ?></td>
-                     
+                    <td >
+                    <?php 
+                    switch ($estado_coti) {
+                    case 4:
+                    echo 'Enviado';
+                    break;
+
+                    case 2:
+                    echo 'En Espera';
+                    break;
+
+                    }
+
+                    ?>
+                      </td>
                     
                        <td style="display: flex;">
                           <a href="../process/pedido/pedido_imprimir.php?num_cotiza=<?=$id_coti?>" target="_blank" class="btn btn-block btn-new"  style="margin-right: 10px; margin-top: 8px; margin-left: 10px;" ><i class="fas fa-plus fa-fw"></i> Imprimir  </a>
-                          <button class="btn btn-block btn-new"  onclick="enviarDelivery(&quot;<?php echo $id_coti ?>&quot;)" style="margin-right: 10px; margin-top: 8px; margin-left: 10px;"  ><i class="fas fa-plus fa-fw"></i> Delivery Enviado</button>
+                          <?php 
+                     switch ($estado_coti) {
+                      case 4:
+                        echo ' <button class="btn btn-block btn-elim"  onclick="regresarDelivery(&quot;'.$id_coti.'&quot;)" style="margin-right: 10px; margin-top: 8px; margin-left: 10px;"  ><i class="fas fa-minus fa-fw"></i> Delivery Regresado</button>';
+                       break;
+
+                       case 2:
+                        echo ' <button class="btn btn-block btn-new"  onclick="enviarDelivery(&quot;'.$id_coti.'&quot;)" style="margin-right: 10px; margin-top: 8px; margin-left: 10px;"  ><i class="fas fa-plus fa-fw"></i> Delivery Enviado</button>';
+                       break;
+                        
+                     }
+                     
+                    ?>
+                        
+                         
                           
                            
                            

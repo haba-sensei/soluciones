@@ -64,10 +64,9 @@ Licencia: Proveedor de servicios
 
                             <div class="info">
 
-                            <?php
+                                <?php
 									include '../inc/titulos_header_admin.php';
 								?>
-								
 
                             </div>
                         </a>
@@ -84,83 +83,75 @@ Licencia: Proveedor de servicios
 					
 					 ?>
 
-
                     <div id="content" class="content">
                         <!-- begin breadcrumb -->
                         <ol class="breadcrumb pull-right">
                             <li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
-                            <li class="breadcrumb-item"><a href="javascript:;">Pedidos</a></li>
-                            <li class="breadcrumb-item active">Lista de Pedidos en Espera</li>
+                            <li class="breadcrumb-item"><a href="javascript:;">Cotizacion</a></li>
+                            <li class="breadcrumb-item active">Lista de Cotizacion Totales</li>
                         </ol>
                         <!-- end breadcrumb -->
                         <!-- begin page-header -->
-                        <h1 class="page-header">Lista de Pedidos en Espera<small> Modulo de Pedidos</small></h1>
-
-                        <?php 
-                        
-                        $pedido_con_total= ejecutarSQL::consultar("SELECT `cotizacion_online`.*, `cotizacion_online`.`Estado` FROM `cotizacion_online` WHERE `cotizacion_online`.`Estado` = '1' OR `cotizacion_online`.`Estado` = '2'  ");
-                        $pedido_total = mysqli_num_rows($pedido_con_total);
-
-                        $pedido_con_aprob= ejecutarSQL::consultar("SELECT `cotizacion_online`.*, `cotizacion_online`.`Estado` FROM `cotizacion_online` WHERE `cotizacion_online`.`Estado` = '2'  ");
-                        $pedido_aprob = mysqli_num_rows($pedido_con_aprob);
-                        
-                        $pedido_con_espera= ejecutarSQL::consultar("SELECT `cotizacion_online`.*, `cotizacion_online`.`Estado` FROM `cotizacion_online` WHERE `cotizacion_online`.`Estado` = '1'  ");
-                        $pedido_espera = mysqli_num_rows($pedido_con_espera);
-
-                        echo '
+                        <h1 class="page-header">Lista de Cotizacion Totales<small> Modulo de Cotizacion</small></h1>
                         <div class="row">
-                            
-                        <div class="col-lg-4 col-md-4">
-                        <div class="widget widget-stats hljs-wrapper">
-                            <div class="stats-icon"><i class="fa fa-minus-circle" style="color: #ef2121;"></i></div>
-                            <div class="stats-info">
-                                <h4>PEDIDOS EN ESPERA</h4>
-                                <p> '.$pedido_espera.' </p>
-                            </div>
-                            <div class="stats-link">
-                                <a href="listaPedidos.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
-                            </div>
-                        </div>
-                        </div>
-                            
 
-                            <div class="col-lg-4 col-md-4"> 
+                            <?php 
+
+                            $cotiza_con_total= ejecutarSQL::consultar("SELECT `cotizacion_online`.*, `cotizacion_online`.`Estado` FROM `cotizacion_online` WHERE `cotizacion_online`.`Estado` = '0' OR `cotizacion_online`.`Estado` = '3'  ");
+                            $cotiza_total = mysqli_num_rows($cotiza_con_total);
+
+                            $cotiza_con_aprob= ejecutarSQL::consultar("SELECT `cotizacion_online`.*, `cotizacion_online`.`Estado` FROM `cotizacion_online` WHERE `cotizacion_online`.`Estado` = '3'  ");
+                            $cotiza_aprob = mysqli_num_rows($cotiza_con_aprob);
+
+                            $cotiza_con_espera= ejecutarSQL::consultar("SELECT `cotizacion_online`.*, `cotizacion_online`.`Estado` FROM `cotizacion_online` WHERE `cotizacion_online`.`Estado` = '0'  ");
+                            $cotiza_espera = mysqli_num_rows($cotiza_con_espera);
+                            ?>
+                            <div class="col-lg-4 col-md-4">
                                 <div class="widget widget-stats hljs-wrapper">
-                                    <div class="stats-icon"><i class="fa fa-window-maximize" style="color: #009fff;"></i></div>
+                                    <div class="stats-icon"><i class="fa fa-minus-circle" style="color: #ef2121;"></i></div>
                                     <div class="stats-info">
-                                        <h4>PEDIDOS APROBADOS</h4>
-                                        <p> '.$pedido_aprob.' </p>
+                                        <h4>COTIZACIONES EN ESPERA</h4>
+                                        <p> <?=$cotiza_espera?> </p>
+                                    </div>
+                                    <div class="stats-link">
+                                        <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4">
+                                <div class="widget widget-stats hljs-wrapper">
+                                    <div class="stats-icon"><i class="fa fa-window-restore" style="color: #009fff;"></i></div>
+                                    <div class="stats-info">
+                                        <h4>COTIZACIONES APROBADAS</h4>
+                                        <p> <?=$cotiza_aprob?> </p>
 
                                     </div>
                                     <div class="stats-link">
-                                        <a href="listaPedidos_aprob.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                        <a href="listaCotiza_aprob.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4">
-                            <div class="widget widget-stats hljs-wrapper">
-                                <div class="stats-icon"><i class="fa fa-window-maximize" style="color: #009fff;"></i></div>
-                                <div class="stats-info">
-                                    <h4>PEDIDOS TOTALES</h4>
-                                    <p> '.$pedido_total.' </p>
+                                <div class="widget widget-stats hljs-wrapper">
+                                    <div class="stats-icon"><i class="fa fa-window-restore" style="color: #009fff;"></i></div>
+                                    <div class="stats-info">
+                                        <h4>COTIZACIONES TOTALES</h4>
+                                        <p> <?=$cotiza_total?></p>
 
-                                </div>
-                                <div class="stats-link">
-                                    <a href="listaPedidos_totales.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                    </div>
+                                    <div class="stats-link">
+                                        <a href="listaCotiza_totales.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                    </div>
                                 </div>
                             </div>
+
+
                         </div>
-                            
-                        </div>
-
-                        ';
 
 
+                        <?php include '../process/cotiza/cotiza_totales.php'; ?>
 
-?>
-
-                        <?php include '../process/pedido/pedido.php'; ?>
-                       
 
 
                         <?php include '../inc/scripts_interno.php' ?>

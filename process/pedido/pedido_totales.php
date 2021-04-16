@@ -20,7 +20,7 @@
 			
             $ordenU=  ejecutarSQL::consultar("SELECT `cotizacion_online`.*, `cotizacion_online`.`Estado`
             FROM `cotizacion_online`
-            WHERE `cotizacion_online`.`Estado` = '1';");
+            WHERE `cotizacion_online`.`Estado` = '1' OR  `cotizacion_online`.`Estado` = '2';");
             
         while($ordenP=mysqli_fetch_assoc($ordenU)){
 				$ordenList=$ordenP['id_cotizacion'];
@@ -87,7 +87,9 @@
                       case 2:
                         echo "Aprobado";
                         break;
-                      
+                      case 0:
+                        echo "Cotizado";
+                        break;
                     }
                     
                     

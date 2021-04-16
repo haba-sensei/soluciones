@@ -109,8 +109,8 @@
 
 				$pdf->SetFillColor(255,255,255);
 
-				$product_price_f = number_format($product_price * $globalTasaCambio_dolar, 2) ;
-				$product_subtotal_f = number_format($product_subtotal * $globalTasaCambio_dolar, 2) ;
+				$product_price_f = $product_price * $globalTasaCambio_dolar;
+				$product_subtotal_f = $product_subtotal * $globalTasaCambio_dolar;
 				
 				$line = array( 
 							"Item"    => $i,
@@ -129,7 +129,7 @@
 			
 				
 			}	 
-					$monto_soles = $GranTotal * $globalTasaCambio_dolar;
+					$monto_soles = number_format($GranTotal * $globalTasaCambio_dolar, 2);
 
 					$monto_final = $monto_soles - $descuento;
 

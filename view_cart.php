@@ -410,7 +410,9 @@ include_once("library/config.inc.php");
     }
 
     .vocher {
-        padding: 25.1em 0em 0em 0em;
+        /* padding: 25.1em 0em 0em 0em; */
+
+        padding: 1rem 0em 0em 0em;
     }
 
     .img-inside {
@@ -595,7 +597,7 @@ include_once("library/config.inc.php");
     <main>
         <style>
         .init_1 {
-            height: 175vh;
+            height: fit-content;
         }
 
         .init_2 {
@@ -721,10 +723,12 @@ include_once("library/config.inc.php");
                     padding-left: 45px!important;
                 }
             }
- 
+ .jode_box {
+    position: relative!important;
+ }
                 </style>
                 <!-- fieldsets 1 -->
-                <fieldset>
+                <fieldset  class="jode_box">
                     <div class="cart-bottom">
                         <div class="table table-responsive">
                             <table id="shopping-cart-results">
@@ -1233,15 +1237,15 @@ include_once("library/config.inc.php");
                                                 </li>
 
                                                 <li class="">
-                                                
-                                                    <div class="radio-option" id="aca_cotiza"
-                                                        style="text-align: -webkit-center; padding-top: 23px; margin-bottom: -7px;">
-                                                        
-                                                        <input type="button"
+                                                 <input type="button"
                                                             style="position: absolute; bottom: -126px; padding: 16px; right: 450px; width: 22%;"
                                                             name="cotizacion" class=" action-button generar_coti" onclick="formSend('cotizacion')"
                                                             style="width:25%" value="Generar Cotizacion" />
 
+                                                    <div class="radio-option" id="aca_cotiza"
+                                                        style="text-align: -webkit-center; padding-top: 23px; margin-bottom: -7px;">
+                                                        
+                                                       
                                                     </div>
                                                 </li>
                                             </div>
@@ -1860,7 +1864,7 @@ include_once("library/config.inc.php");
             success: function(response) {
 
                 alert("APROBADO CON EXITO");
-                // console.log(response);
+                 
                 html = "";
                 // // <input type="button" name="submit[descarga]" class=" action-button" onclick="formSend('descarga')" style="width:25%" value="Descargar Comprobante1" />
                 // // <input type="button" name="submit[enviar_correo]" class=" action-button" onclick="formSend('enviar_correo')" style="width:25%"  value="Enviar Correo1" />

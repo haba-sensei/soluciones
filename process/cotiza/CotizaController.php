@@ -90,24 +90,26 @@ session_start();
 	                    </tr>
 	                </thead>
 	                <tbody>
-
+                    <!-- 643.356 -->
 	                    <?php  
-                    
+                    $sum = 0.00;
                     $conFact= ejecutarSQL::consultar("SELECT `detalle_cotizacion_online`.*, `detalle_cotizacion_online`.`id_cotizacion`, `producto`.`CodigoProd`, `producto`.*, `cotizacion_online`.`id_cotizacion` FROM `detalle_cotizacion_online`, `producto`, `cotizacion_online` WHERE `detalle_cotizacion_online`.`id_cotizacion` = '$NumPedido' AND `producto`.`CodigoProd` = `detalle_cotizacion_online`.`CodigoProd` AND `cotizacion_online`.`id_cotizacion` = `detalle_cotizacion_online`.`id_cotizacion`;");
                     while ($fila=mysqli_fetch_array($conFact)){
-                
-                    $total_dolares = number_format($fila['Precio'] * $fila['Cantidad'], 2);
-                    $total_indi =  str_replace(',', '',  $total_dolares );
-                    $total_soles = number_format($globalTasaCambio_dolar * $total_indi ,2);
-                     
-                    $total_dolares_f = number_format($globalTasaCambio_dolar * $fila['Precio'] ,2);
-                    $precio_unit_soles = number_format($total_dolares_f , 2);
-                    $precio_unit_dolares = number_format($fila['Precio'], 2);
+                        // * $fila['Cantidad'] * $globalTasaCambio_dolar
+                    $total_dolares_unit =  $fila['Precio']  * $fila['Cantidad'] * $globalTasaCambio_dolar;
+                    $total_soles =  $total_dolares_unit;
+
+                   
+                    $total_dolares = $fila['Precio'] * $fila['Cantidad'];
+                    $sum+= $total_dolares;
+                    $total_dolares_f = $fila['Precio'] * $globalTasaCambio_dolar;
+                    $precio_unit_soles = $total_dolares_f ;
+                    $precio_unit_dolares = $fila['Precio'];
                     echo '
                           <tr>
                           <td class="ajut_centrado_orden">
                           '.$fila['Cantidad'].'
-                          ';
+                          '; 
                           switch ($_SESSION['CodigoArea']) { 
   
                               case 1: 
@@ -183,19 +185,20 @@ session_start();
             
             
                     }   
-
-               $totalGeneral = $totalGeneral_sin_formato * $globalTasaCambio_dolar;
+                    // 643.38
+               $general =  $totalGeneral_sin_formato * $globalTasaCambio_dolar;
+               $totalGeneral = $general;
                $simbolo = "S/ ";
                $costo_delivery_f =  0.00;
                $format_delivery =  str_replace(',', '',  $costo_delivery_f); 
-               $costo_delivery = number_format($format_delivery, 2);
+               $costo_delivery = $format_delivery;
                $descuento_format = $descuento;
                 
+               $igv_cifra = round($general / 1.18, 2, PHP_ROUND_HALF_DOWN);
                
                
-               
-               $subtotal = number_format($totalGeneral / 1.18, 2);
-               $monto_igv_format = number_format($totalGeneral - $subtotal, 2);
+               $subtotal = $igv_cifra;
+               $monto_igv_format = round($general - $subtotal, 2, PHP_ROUND_HALF_DOWN);
 
                $total_a_cuenta = 0.00;
                $total_tarjeta = 0.00;
@@ -203,7 +206,7 @@ session_start();
 
                 
                                  
-               $total_a_facturar = number_format($totalGeneral - $descuento_format, 2); 
+               $total_a_facturar = round($totalGeneral,2); 
                
                $total_final_format_without_comma =  str_replace(',', '',  $total_a_facturar);
                $total_a_cuenta_format_without_comma =  str_replace(',', '',  $total_a_cuenta);

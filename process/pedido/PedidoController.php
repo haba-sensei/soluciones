@@ -233,21 +233,21 @@ session_start();
                  }
 
                  if($medio_pago == "Tarjeta"){
-                    $total_tarjeta = number_format($totalGeneral * 0.05, 2);
+                    $total_tarjeta = ($totalGeneral + $costo_delivery) * 0.05;
                  }else {
                     $total_tarjeta = 0;
                  }
 
                  
                                   
-                $total_a_facturar = number_format($totalGeneral - $descuento_format + $costo_delivery + $total_tarjeta, 2);
-                $total_a_facturar_format = number_format($totalGeneral, 2);  
+                $total_a_facturar = $totalGeneral - $descuento_format + $costo_delivery + $total_tarjeta;
+                $total_a_facturar_format = number_format($totalGeneral + $costo_delivery, 2);  
                 
                 $total_final_format_without_comma =  str_replace(',', '',  $total_a_facturar);
                 
                 $total_final_tarjeta_format_without_comma =  str_replace(',', '',  $total_tarjeta);
                  
-                $total_a_pagar_general =  number_format($total_final_format_without_comma + $costo_delivery + $total_final_tarjeta_format_without_comma, 2);
+                $total_a_pagar_general =  number_format($total_final_format_without_comma, 2);
                 $total_a_pagar_general_format_without_comma =  str_replace(',', '',   $total_a_pagar_general);
                 
                 if($tipo_pago == "A Cuenta"){
@@ -282,29 +282,28 @@ session_start();
                 <td colspan="4" class="border_hidden fondo_vacio"></td> 
                 <td>DESCUENTO</td>
                 <td>'.$simbolo.$descuento_format.'</td>
-                </tr>
-
+                </tr> 
+                ';
+                if($forma_de_entrega == "Lima" || $forma_de_entrega == "Provincia"){
+                    echo '
+                    <tr class="borde_lateral">
+                    <td colspan="4" class="border_hidden fondo_vacio"></td>
+                         
+                        <td>DELIVERY</td>
+                        <td>'.$simbolo.$costo_delivery.'</td>
+                        </tr>
+                    
+                    ';
+                   }else {
+                       echo '';
+                   }
+                echo'
                 <tr class="borde_lateral">
                 <td colspan="4" class="border_hidden fondo_vacio"></td> 
                 <td>TOTAL A FACTURAR</td>
                 <td>'.$simbolo.$total_a_facturar_format.'</td>
-                </tr>
-
-                '; 
-                
-               if($forma_de_entrega == "Lima" || $forma_de_entrega == "Provincia"){
-                echo '
-                <tr class="borde_lateral">
-                <td colspan="4" class="border_hidden fondo_vacio"></td>
-                     
-                    <td>DELIVERY</td>
-                    <td>'.$simbolo.$costo_delivery.'</td>
-                    </tr>
-                
-                ';
-               }else {
-                   echo '';
-               }
+                </tr> 
+                ';  
                 if( $medio_pago == "Tarjeta"){
                     echo ' <tr class="borde_lateral">
                     <td colspan="4" class="border_hidden fondo_vacio"></td>

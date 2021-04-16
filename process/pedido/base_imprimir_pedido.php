@@ -27,6 +27,9 @@
 			 
 			 
 				switch ($estado) {
+						case 4:
+							$estatus_operacion = "Enviado";
+						break;
 					case 2:
 						$estatus_operacion = "Aprobado";
 						break;

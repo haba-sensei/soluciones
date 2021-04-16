@@ -1104,8 +1104,8 @@ function draw_code39($code, $x, $y, $w, $h) {
         $total = $subtotal + $total;
         $total_indi =  str_replace(',', '',  $total );
         
-        $total_indi_1 = number_format($total_indi , 2);
-        $igv_format= ($total_indi_1 / 1.18);
+        $total_indi_1 = $total_indi;
+        $igv_format= $total_indi_1 / 1.18;
         $igv =   $total_indi_1 - $igv_format;
         $total_subtotal = number_format($igv_format, 2);
         $total_igv =  str_replace(',', '',  $igv );
@@ -1115,8 +1115,8 @@ function draw_code39($code, $x, $y, $w, $h) {
         $i = $i + 1;
         $nums++;	
         $total_final =  $total_final + $subtotal;
-        $total_venta_f =  number_format($total_final, 2);
-        $total_venta_delivery =  number_format($total_final + $costo_adicional, 2);
+        $total_venta_f =  $total_final;
+        $total_venta_delivery =  $total_final + $costo_adicional;
        
     }
     
@@ -1126,9 +1126,9 @@ function draw_code39($code, $x, $y, $w, $h) {
             break;
         
         case 'A Cuenta':
-            $calc_cuenta =  str_replace(',', '',  $total_venta_f  );
-            $a_cuenta_f = ($calc_cuenta * 0.40);
-            $a_cuenta =  number_format($a_cuenta_f, 2);
+            // $calc_cuenta =  str_replace(',', '',  $total_venta_f  );
+            // $a_cuenta_f = ($calc_cuenta * 0.40);
+            $a_cuenta =  $total_venta_f * 0.40;
             break;
     }
 
@@ -1136,9 +1136,9 @@ function draw_code39($code, $x, $y, $w, $h) {
 
     $valor_final_con_acuenta = $total_venta_delivery - $a_cuenta;
 
-    $calc =  str_replace(',', '', $valor_final_con_acuenta  );
+    $calc = $valor_final_con_acuenta;
     $otro = $calc  * 0.05 + $calc; 
-    $total_tarjeta =  number_format($otro, 2);
+    $total_tarjeta =  $otro;
 
    
 
@@ -1151,7 +1151,7 @@ function draw_code39($code, $x, $y, $w, $h) {
     $a_cuenta_f_dolar = ($calc_cuenta_dolares * 0.40);
     $a_cuenta_dolar =  number_format($a_cuenta_f_dolar, 2);
 
-    $valor_final_con_acuenta_dolares = $total_dolares_final - $a_cuenta_dolar;
+    
     
 	
 	switch ($Moneda_pago) {
@@ -1174,7 +1174,7 @@ function draw_code39($code, $x, $y, $w, $h) {
 
     if($M_pago == "Tarjeta"){
 
-        $total_tarjeta = ($total_venta_f * 0.05);
+        $total_tarjeta = $total_venta_f * 0.05;
 
 
         $total_con_tarjeta =  $total_tarjeta;
@@ -1194,7 +1194,7 @@ function draw_code39($code, $x, $y, $w, $h) {
     switch ($F_pago) { 
 
         case 'A Cuenta':
-            $oper = $total_venta_f - $a_cuenta + $delivery_f + $total_con_tarjeta;
+            $oper = number_format($total_venta_f - $a_cuenta + $delivery_f + $total_con_tarjeta, 2);
             $this->SetXY( $r1+40, $y1+12 );
             $this->Cell(15,4, $simbolo." ".$igv, 0, 0, "C"); 
 
@@ -1202,10 +1202,10 @@ function draw_code39($code, $x, $y, $w, $h) {
             $this->Cell(15,4, $simbolo." ".$delivery_f, 0, 0, "C");
             
             $this->SetXY( $r1+40, $y1+29 );
-            $this->Cell(15,4, $simbolo." ".$a_cuenta, 0, 0, "C");
+            $this->Cell(15,4, $simbolo." ".number_format($a_cuenta, 2), 0, 0, "C");
             
             $this->SetXY( $r1+40, $y1+37 );
-            $this->Cell(15,4, $simbolo." ".number_format($oper, 2), 0, 0, "C");
+            $this->Cell(15,4, $simbolo." ".$oper, 0, 0, "C");
             if($M_pago == "Tarjeta"){
             $this->SetFont( "Arial", "B", 8);
             $this->SetXY( $r1+40, $y1+41 );
@@ -1216,7 +1216,7 @@ function draw_code39($code, $x, $y, $w, $h) {
 
         case 'Al Contado':
             
-            $oper = $total_venta_f + $delivery_f + $total_con_tarjeta;
+            $oper = number_format($total_venta_f + $delivery_f + $total_con_tarjeta, 2) ;
 
 
 
@@ -1224,7 +1224,7 @@ function draw_code39($code, $x, $y, $w, $h) {
             $this->Cell(15,4, $simbolo." ".$igv, 0, 0, "C");
 
             $this->SetXY( $r1+40, $y1+35 );
-            $this->Cell(15,4, $simbolo." ".number_format($oper, 2), 0, 0, "C");
+            $this->Cell(15,4, $simbolo." ".$oper, 0, 0, "C");
              
             
             $this->SetXY( $r1+40, $y1+25 );

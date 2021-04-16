@@ -18,7 +18,7 @@
 				  <?php
             
 			
-			$ordenU=  ejecutarSQL::consultar("SELECT `cotizacion_online`.*, `cotizacion_online`.`Estado` FROM `cotizacion_online` WHERE `cotizacion_online`.`Estado` = '0' ORDER BY `cotizacion_online`.`id_cotizacion` ASC");
+			$ordenU=  ejecutarSQL::consultar("SELECT `cotizacion_online`.*, `cotizacion_online`.`Estado` FROM `cotizacion_online` WHERE `cotizacion_online`.`Estado` = '0' OR `cotizacion_online`.`Estado` = '3' ORDER BY `cotizacion_online`.`id_cotizacion` ASC");
             
         while($ordenP=mysqli_fetch_assoc($ordenU)){
 				$ordenList=$ordenP['id_cotizacion'];

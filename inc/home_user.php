@@ -122,7 +122,7 @@
                             <p> '.$pedido_espera.' </p>
                         </div>
                         <div class="stats-link">
-                            <a href="actualizarPedidos.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                            <a href="listaPedidos.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -137,7 +137,7 @@
 
                                 </div>
                                 <div class="stats-link">
-                                    <a href="listaPedidos.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                    <a href="listaPedidos_aprob.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -150,7 +150,7 @@
 
                             </div>
                             <div class="stats-link">
-                                <a href="listaPedidos.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                <a href="listaPedidos_totales.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -169,7 +169,7 @@
                             <p> '.$cotiza_espera.' </p>
                         </div>
                         <div class="stats-link">
-                            <a href="actualizarCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                            <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -183,7 +183,7 @@
 
                                 </div>
                                 <div class="stats-link">
-                                    <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                    <a href="listaCotiza_aprob.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -196,7 +196,7 @@
 
                             </div>
                             <div class="stats-link">
-                                <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                <a href="listaCotiza_totales.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -224,7 +224,7 @@
                             <div class="widget widget-stats hljs-wrapper">
                                 <div class="stats-icon"><i class="fa fa-window-restore" style="color: #009fff;"></i></div>
                                 <div class="stats-info">
-                                    <h4>DELIVERYS APROBADOS</h4>
+                                    <h4>DELIVERYS ENVIADOSS</h4>
                                     <p>'. $delivery_aprob.' </p>
     
                                 </div>
@@ -376,7 +376,7 @@
                             <p> '.$pedido_espera.' </p>
                         </div>
                         <div class="stats-link">
-                            <a href="actualizarPedidos.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                            <a href="listaPedidos.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -391,7 +391,7 @@
     
                                 </div>
                                 <div class="stats-link">
-                                    <a href="listaPedidos.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                    <a href="listaPedidos_aprob.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -404,7 +404,7 @@
     
                             </div>
                             <div class="stats-link">
-                                <a href="listaPedidos.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                <a href="listaPedidos_totales.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -435,7 +435,7 @@
                             <p> '.$pedido_espera.' </p>
                         </div>
                         <div class="stats-link">
-                            <a href="actualizarPedidos.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                            <a href="listaPedidos.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -450,7 +450,7 @@
     
                                 </div>
                                 <div class="stats-link">
-                                    <a href="listaPedidos.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                    <a href="listaPedidos_aprob.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -463,7 +463,7 @@
     
                             </div>
                             <div class="stats-link">
-                                <a href="listaPedidos.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                <a href="listaPedidos_totales.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -501,7 +501,7 @@
                             <div class="widget widget-stats hljs-wrapper">
                                 <div class="stats-icon"><i class="fa fa-window-restore" style="color: #009fff;"></i></div>
                                 <div class="stats-info">
-                                    <h4>DELIVERYS APROBADOS</h4>
+                                    <h4>DELIVERYS ENVIADOSS</h4>
                                     <p>'. $delivery_aprob.' </p>
     
                                 </div>

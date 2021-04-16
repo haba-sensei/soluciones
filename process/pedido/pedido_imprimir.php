@@ -32,7 +32,7 @@
             $Direccion = $lista2['Direccion'];
             $ID_cliente_2 = $lista2['ID']; 
 
-            if($estado == 2){
+            if($estado == 2 || $estado == 4){
                 
                 switch ($moneda) {
                     case 'soles':

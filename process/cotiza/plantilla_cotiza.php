@@ -1021,7 +1021,7 @@ function draw_code39($code, $x, $y, $w, $h) {
 
 	$this->SetXY( $r1+40, $y1+4 );
     $this->Cell(15,4, $simbolo." ". $subtotal_final , 0, 0, "C");
-	
+	 
 	
  
     $this->SetXY( $r1+40, $y1+15 );

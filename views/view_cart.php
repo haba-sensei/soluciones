@@ -115,7 +115,7 @@ Licencia: Proveedor de servicios
                         <div class="panel-heading">
                             
                             <h4 class="panel-title">Cesta de Articulos Cotizados</h4>
-                        </div>
+                         </div>
                         <!-- end panel-heading -->
                         <!-- begin panel-body -->
                         <div class="panel-body">
@@ -125,7 +125,7 @@ Licencia: Proveedor de servicios
 				<?php		
 				if(isset($_SESSION["products"]) && count($_SESSION["products"])>0) { 
 				?>
-				<table class="table   shopping-cart animated fadeInUp" id="shopping-cart-results">
+				<table class="table shopping-cart animated fadeInUp" id="shopping-cart-results">
 					<thead>
 						<tr>
 							<th >
@@ -188,10 +188,10 @@ Licencia: Proveedor de servicios
 								<?php echo $currency; echo sprintf("%01.2f", ($product_price_total)); ?>
 							</td>
 							<td style="width: 10%;">
-								<input type="number" style="    width: 100%;" data-code="<?php echo $product_code; ?>" class="form-control  text-center  quantity" value="<?php echo $product_qty; ?>">
+								<input type="number" style="    width: 100%;" data-code="<?php echo $product_code; ?>" class="text-center form-control quantity" value="<?php echo $product_qty; ?>">
 							</td>
 							<td style="width: 12%;">
-							<input type="text" style="    width: 100%;" data-code="<?php echo $product_code; ?>" class="form-control  text-center descPorc "  value="<?php echo $product_descPorc;?> "><span style=" margin-top: -28px;  margin-left: 69px;   position: absolute;">&#37;</span>
+							<input type="text" style="    width: 100%;" data-code="<?php echo $product_code; ?>" class="text-center form-control descPorc "  value="<?php echo $product_descPorc;?> "><span style=" margin-top: -28px;  margin-left: 69px;   position: absolute;">&#37;</span>
 							</td>
 							<td style="width: 15%;">
 							<?php  echo $currency; echo sprintf("%01.2f",($descPorcVer));?>
@@ -224,7 +224,7 @@ Licencia: Proveedor de servicios
 					</tbody>
 				</table>
 
-				<div class="cart-options clearfix" style="    margin-top: -28px;">
+				<div class="clearfix cart-options" style="    margin-top: -28px;">
 							
 				<div class="row">
 					<div  style="    margin-left: 71%;">

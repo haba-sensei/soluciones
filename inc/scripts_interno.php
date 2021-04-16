@@ -954,6 +954,43 @@ $(function() {
 
     }
 
+    function regresarDelivery(id_pedido){
+       
+       swal({
+           title: "Seguro que se Regreso el Delivery?",
+           text: "Esta operacion es definitiva!",
+           type: "warning",
+           showCancelButton: true,
+           confirmButtonClass: "btn-danger",
+           confirmButtonText: "Regresar!",
+           closeOnConfirm: false
+       },
+       function() { 
+           
+           $.ajax({
+               type: "POST",
+               url: "../process/RegresoDeliveryController.php",
+               data: {
+                   id_pedido: id_pedido
+               },
+               success: function(data) {
+                   
+                   if (data == "exito") {
+
+                       swal("Delivery Regresado", "", "success"); 
+                       setTimeout(function(){ location.reload() }, 2000);
+                   } 
+                     
+               }
+           });
+
+
+
+       });
+
+
+   }
+
     function enviarProvincia(id_pedido){
        
        swal({

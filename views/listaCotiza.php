@@ -114,7 +114,7 @@ Licencia: Proveedor de servicios
                                         <p> <?=$cotiza_espera?> </p>
                                     </div>
                                     <div class="stats-link">
-                                        <a href="actualizarCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                        <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -128,7 +128,7 @@ Licencia: Proveedor de servicios
 
                                     </div>
                                     <div class="stats-link">
-                                        <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                        <a href="listaCotiza_aprob.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -141,7 +141,7 @@ Licencia: Proveedor de servicios
 
                                     </div>
                                     <div class="stats-link">
-                                        <a href="listaCotiza.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+                                        <a href="listaCotiza_totales.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
                                     </div>
                                 </div>
                             </div>

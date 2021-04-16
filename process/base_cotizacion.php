@@ -144,7 +144,7 @@
 
 						switch ($Moneda_pago) {
 							case 'soles':
-								$product_soles_ = number_format($product_price_unitario * $globalTasaCambio_dolar, 2); 
+								$product_soles_ = $product_price_unitario * $globalTasaCambio_dolar; 
 								break;
 							
 								case 'dolares':
@@ -155,8 +155,8 @@
 
 						$total_indi =  str_replace(',', '',  $product_soles_ );
 
-						$subtotal_f = ($total_indi * $product_qty);
-						$subtotal = number_format($subtotal_f, 2);
+						$subtotal_f = $total_indi * $product_qty;
+						$subtotal = number_format($subtotal_f, 3);
    						$total = $subtotal_f + $total ; 
 						 
 						} 
@@ -164,7 +164,7 @@
 						switch ($aSubmitVal) {
 							case 'cotizacion': 
 								$base_tarjeta_precio = $total;
-								$fin_total_base =  $total;
+								$fin_total_base = $total;
 								$fin_total_base_f = $fin_total_base;
 							break;
 
@@ -176,22 +176,23 @@
 										break;
 									
 									case 'A Cuenta':
-										$calc_cuenta_base =  str_replace(',', '',  $total);
-										$a_cuenta_f_base = ($calc_cuenta_base * 0.40);
-										$a_cuenta_base =  number_format($a_cuenta_f_base, 2);
+										// $calc_cuenta_base =  str_replace(',', '',  $total);
+										// $a_cuenta_f_base = ($calc_cuenta_base * 0.40);
+										$a_cuenta_base = $total * 0.40 ;
 										break;
 								}
 
 								$base_tarjeta_precio = $total;
-								$fin_total_base =  $total + $costo_adicional - $a_cuenta_base;
+								$fin_total_base =  number_format($total + $costo_adicional - $a_cuenta_base, 2);
 											
 												
 								if($M_pago == "Tarjeta"){
 
-									$total_tarjeta = number_format($base_tarjeta_precio * 0.05, 2);
+									$total_tarjeta = $base_tarjeta_precio * 0.05;
+									$total_formato_tarjeta =  str_replace(',', '',  $fin_total_base);
 
 
-									$fin_total_base_f = $fin_total_base + $total_tarjeta;
+									$fin_total_base_f = $total_formato_tarjeta + $total_tarjeta;
 								}else {
 
 									$fin_total_base_f = $fin_total_base;
@@ -224,12 +225,13 @@
 			
 				
 				}				
+				$calc_cuenta_bas =  str_replace(',', '',  $fin_total_base_f);
+				$total_letras_h = round($calc_cuenta_bas, 2);
 			
 				
 				
-				
 				$pdf->SetFont('Arial','B',12);
-				$num_letra = strtoupper(numtoletras( $fin_total_base_f ));
+				$num_letra = strtoupper(numtoletras( $total_letras_h ));
 				
 				$pdf->fact_dev12(utf8_decode("Son: "), $num_letra );	
 				$pdf->Code39(10,210, $cod);
@@ -243,7 +245,7 @@
 				$pdf->addCadreEurosFrancs3();
 				$pdf->addCadreEurosFrancs4();
 				
-				unset($_SESSION["products"]);
+				 unset($_SESSION["products"]);
 				 	
 		
 				

@@ -1057,8 +1057,8 @@ function draw_code39($code, $x, $y, $w, $h) {
             $simbolo ="S/";
             $monto_soles = $GranTotal * $globalTasaCambio_dolar;
 
-            $subtotal_final = number_format( $monto_soles / 1.18 , 2);
-            $monto_igv = number_format( $monto_soles - $subtotal_final, 2); 
+             $monto_igv = $monto_soles * 1.18 - $monto_soles;
+             $subtotal_final =  $monto_soles - $monto_igv; 
             
             $monto_delivery = $costo_adicional;
             
@@ -1071,8 +1071,8 @@ function draw_code39($code, $x, $y, $w, $h) {
             $simbolo ="$";
             $monto_dolares = $GranTotal; 
 
-            $subtotal_final = $monto_dolares / 1.18;
-            $monto_igv = $monto_dolares - $subtotal_final; 
+            $monto_igv = $monto_dolares * 1.18 - $monto_dolares;
+             $subtotal_final = $monto_dolares - $monto_igv; 
 
             $monto_delivery = number_format($costo_adicional / $globalTasaCambio_dolar, 2) ;
             $operacion = $monto_dolares - $a_cuenta - $descuento + $monto_delivery + $tarjeta_5_porciento;
@@ -1086,7 +1086,7 @@ function draw_code39($code, $x, $y, $w, $h) {
 
 
 	$this->SetXY( $r1+40, $y1+4 );
-    $this->Cell(15,4, $simbolo." ". $subtotal_final , 0, 0, "C");
+    $this->Cell(15,4, $simbolo." ".number_format( $subtotal_final, 2) , 0, 0, "C");
 	
 	
 
@@ -1095,13 +1095,13 @@ function draw_code39($code, $x, $y, $w, $h) {
         case 'A Cuenta':
 
             $this->SetXY( $r1+40, $y1+12 );
-            $this->Cell(15,4, $simbolo." ".$monto_igv, 0, 0, "C"); 
+            $this->Cell(15,4, $simbolo." ". number_format($monto_igv, 2), 0, 0, "C"); 
 
             $this->SetXY( $r1+40, $y1+21 );
             $this->Cell(15,4, $simbolo." ".$monto_delivery, 0, 0, "C");
             
             $this->SetXY( $r1+40, $y1+29 );
-            $this->Cell(15,4, $simbolo." ".$a_cuenta, 0, 0, "C");
+            $this->Cell(15,4, $simbolo." ".number_format($a_cuenta, 2), 0, 0, "C");
             
             $this->SetXY( $r1+40, $y1+37 );
             $this->Cell(15,4, $simbolo." ".$total_venta, 0, 0, "C");
