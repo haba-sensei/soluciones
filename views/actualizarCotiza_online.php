@@ -398,7 +398,7 @@ Licencia: Proveedor de servicios
                                             $("#caja_loading").html('');
                                             cargarOrden('<?=$NumPedido?>', '<?=$type?>');
 
-                                            if (data == "eliminado") {
+                                            if (data = "eliminado") {
 
                                                 swal("Eliminado con Exito", "", "success");
 
@@ -647,102 +647,23 @@ Licencia: Proveedor de servicios
                         }
 
                        
-                        
-
-						$('#table_new_prod').DataTable({
-							"processing": true,
-							"serverSide": true,
-							"searching": true,
-							"sAjaxSource": "../process/producto/actualizarStck.php",
-							"responsive": true,
-							"iDisplayLength": "5",
-							"aLengthMenu": [5, 50, 100, 150, 200, 250],
-							"lengthMenu": false,
-							"columns": [{
-							"sName": "Imagen",
-							"bSearchable": false,
-							"bSortable": false,
-							"mRender": function(data, type, full) {
-
-							return '<img src=../assets/img-products/'+full[0]+' width="50" height="50" />'
-							}
-							},
-							{
-							"sName": "CodigoProd",
-							"bSearchable": true,
-							"bSortable": true,
-							"mRender": function(data, type, full) {
-							return full[1]
-							}
-							},
-							{
-							"sName": "NombreProd",
-							"bSearchable": true,
-							"bSortable": true,
-							"mRender": function(data, type, full) {
-							return full[2]
-							}
-							},
-							{
-							"sName": "Modelo",
-							"bSearchable": true,
-							"bSortable": true,
-							"mRender": function(data, type, full) {
-							return full[3]
-							}
-							},
-							{
-							"sName": "Marca",
-							"bSearchable": true,
-							"bSortable": true,
-							"mRender": function(data, type, full) {
-							return full[4]
-							}
-							}, 
-							{
-							"sName": "Stock",
-							"bSearchable": true,
-							"bSortable": true,
-							"mRender": function(data, type, full) { 
-							return full[10]  
-							}
-							},
-							{
-							"sName": "Venta",
-							"bSearchable": false,
-							"bSortable": false,
-							"mRender": function(data, type, full) {
-
-							var taza_dia = <?php echo number_format($globalTasaCambio_dolar, 2); ?>;
-							var ope = full[8] * taza_dia;
-							const options = {
-							minimumFractionDigits: 2,
-							maximumFractionDigits: 2
-							};
-							const total_sol = Number(ope).toLocaleString('en', options);
-							const total_dolar = Number(full[8]).toLocaleString('en', options);
-							// var result = parseFloat(ope).toFixed(2);
-							return '$ ' + total_dolar + '<br>' + 'S/  ' + total_sol
-
-							}
-							},
-							{
-							"sName": "Opciones",
-							"bSearchable": false,
-							"bSortable": false,
-							"mRender": function(data, type, full) {
-
-								var num_order = "<?=$NumPedido?>";
-
-								return " <button class='btn btn-new btn-block ' style='margin-top: 8px;' onclick='AddProdNew(&quot;"+full[1]+"&quot; , &quot;"+num_order+"&quot;)'><i class='fas fa-plus fa-fw'></i> AGREGAR </button>"
-
-								
-
-							}
-							}
-							]
-
-						});
+                        <?php 
+                       $_SESSION['numero_orden'] = $NumPedido;
+                       
+                       ?>
+                        var dataTable4=$('#table_new_prod').DataTable({
+                        "processing": true,
+                        "serverSide":true,
+                        "responsive": true,
+                        "iDisplayLength": "5",
+                        "aLengthMenu": [5, 50, 100, 150, 200, 250],
+                        "lengthMenu": false,
+                        "ajax":{
+                            url:"../process/producto/new_prod.php",
+                            type:"post",
+                            
+                        }
+                        }); 
 
                           
                        
