@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-04-2021 a las 13:06:54
+-- Tiempo de generación: 17-04-2021 a las 13:58:35
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.11
 
@@ -151,7 +151,10 @@ INSERT INTO `compras` (`id`, `num_comprobante`, `tipo_comprobante`, `ruc`, `razo
 (29, 'E00-29', 'factura', '20475318880', 'SEGESANET S.R.L.', 'CAL.LAS FLORES MZA. J LOTE. 30 COO.  UNAMARCA  (KM 14.5 DE LA PANAMERICANA SUR) - SAN JUAN DE MIRAFLORES', '2021/03/19', 'S/', 'efectivo', 'sunat_aceptado', 'estado_cancelado', '180.10'),
 (30, 'F103-00014878', 'factura', '20106836451', 'SEGO SEGURIDAD OPTIMA S A', 'CAL.LOS NEGOCIOS NRO. 391 URB.  LIMATAMBO  (ALT.CRUCE AV.REP.PANAMA-AV TOMAS MARSANO) - SURQUILLO', '2021/03/20', 'S/', 'transferencia', 'sunat_aceptado', 'estado_cancelado', '885.26'),
 (31, 'F001-00000084', 'factura', '10092929251', 'ESPINOZA CARRASCO JULIO', 'AV VELASCO', '2021/03/25', 'S/', 'efectivo', 'sunat_aceptado', 'estado_cancelado', '10.00'),
-(32, 'F103-00014988', 'factura', '20106836451', 'SEGO SEGURIDAD OPTIMA S A', 'CAL.LOS NEGOCIOS NRO. 391 URB.  LIMATAMBO  (ALT.CRUCE AV.REP.PANAMA-AV TOMAS MARSANO) - SURQUILLO', '2021/03/30', 'S/', 'transferencia', 'sunat_aceptado', 'estado_cancelado', '522.61');
+(32, 'F103-00014988', 'factura', '20106836451', 'SEGO SEGURIDAD OPTIMA S A', 'CAL.LOS NEGOCIOS NRO. 391 URB.  LIMATAMBO  (ALT.CRUCE AV.REP.PANAMA-AV TOMAS MARSANO) - SURQUILLO', '2021/03/30', 'S/', 'transferencia', 'sunat_aceptado', 'estado_cancelado', '522.61'),
+(33, 'F101-00077245', 'factura', '20106836451', 'SEGO SEGURIDAD OPTIMA S A', 'CAL.LOS NEGOCIOS NRO. 391 URB.  LIMATAMBO  (ALT.CRUCE AV.REP.PANAMA-AV TOMAS MARSANO) - SURQUILLO', '2021/04/12', 'S/', 'transferencia', 'sunat_aceptado', 'estado_cancelado', '509.51'),
+(34, 'FA01-006211', 'factura', '20457079037', 'INFO CENTER E.I.R.L.', 'JR. LETICIA NRO. 928 - LIMA', '2021/04/13', 'S/', 'efectivo', 'sunat_aceptado', 'estado_cancelado', '356.00'),
+(35, 'FI95-00001481', 'factura', '20508565934', 'HIPERMERCADOS TOTTUS S.A', 'AV. ANGAMOS ESTE NRO. 1805 INT. P10 (PISO 10 OF 5 Y PISO 11 OF 6A) - SURQUILLO', '2021/04/14', 'S/', 'efectivo', 'sunat_aceptado', 'estado_cancelado', '52.99');
 
 -- --------------------------------------------------------
 
@@ -207,10 +210,11 @@ INSERT INTO `cotizacion_online` (`id_cotizacion`, `ID`, `fecha_cotizacion`, `Gra
 ('ON000031', '20601883164', '2021-04-13', '102', '0.00', 1),
 ('ON000032', '20601883164', '2021-04-13', '102', '0.00', 1),
 ('ON000033', '20601883164', '2021-04-13', '102', '0.00', 1),
-('ON000034', '20601883164', '2021-04-13', '10200', '0.00', 1),
+('ON000034', '20601883164', '2021-04-16', '10200', '15.30', 2),
 ('ON000035', '20601883164', '2021-04-16', '10200', '0.00', 4),
 ('ON000036', '20601883164', '2021-04-16', '10200', '110.00', 2),
-('ON000037', '20601883164', '2021-04-13', '102', '0.00', 0);
+('ON000037', '20601883164', '2021-04-13', '102', '0.00', 0),
+('ON000038', '20601883164', '2021-04-16', '6231', '0.00', 2);
 
 -- --------------------------------------------------------
 
@@ -252,9 +256,10 @@ INSERT INTO `detalle_compra_online` (`id`, `id_cotizacion`, `forma_entrega`, `fo
 (12, 'ON000031', 'Lima', 'Al Contado', 'Efectivo', 'miraflores', '30.00', 'ewerwerw', 'werwerwer', 'soles', '0.00', '0.00'),
 (13, 'ON000032', 'Lima', 'A Cuenta', 'Efectivo', 'miraflores', '30.00', 'ewerwerw', 'werwerwer', 'soles', '0.00', '0.00'),
 (14, 'ON000033', 'Lima', 'A Cuenta', 'Tarjeta', 'miraflores', '30.00', 'ewerwerw', 'werwerwer', 'soles', '0.00', '0.00'),
-(15, 'ON000034', 'Lima', 'Al Contado', 'Efectivo', 'miraflores', '30.00', 'ewerwerw', 'werwerwer', 'soles', '0.00', '0.00'),
+(15, 'ON000034', 'Lima', 'A Cuenta', 'Tarjeta', 'miraflores', '30.00', 'ewerwerw', 'werwerwer', 'soles', '16200.00', '1929.30'),
 (16, 'ON000035', 'Lima', 'A Cuenta', 'Efectivo', 'miraflores', '30.00', 'ewerwerw', 'werwerwer', 'soles', '15434.40', '0.00'),
-(17, 'ON000036', 'Lima', 'A Cuenta', 'Tarjeta', 'miraflores', '30.00', 'ewerwerw', 'werwerwer', 'dolares', '4243.34', '510.40');
+(17, 'ON000036', 'Lima', 'A Cuenta', 'Tarjeta', 'miraflores', '30.00', 'ewerwerw', 'werwerwer', 'dolares', '4243.34', '510.40'),
+(18, 'ON000038', 'Tienda', 'Al Contado', 'Efectivo', 'sucursal villa el salvador', '0.00', 'ewerwerw', 'werwerwer', 'soles', '0.00', '0.00');
 
 -- --------------------------------------------------------
 
@@ -482,7 +487,13 @@ INSERT INTO `detalle_cotizacion_online` (`id`, `id_cotizacion`, `CodigoProd`, `C
 (207, 'ON000036', 'P000003', 100, '3600.00'),
 (208, 'ON000037', 'P000001', 1, '33.00'),
 (209, 'ON000037', 'P000002', 1, '33.00'),
-(210, 'ON000037', 'P000003', 1, '36.00');
+(210, 'ON000037', 'P000003', 1, '36.00'),
+(211, 'ON000038', 'P000444', 1, '13.00'),
+(212, 'ON000038', 'P000445', 1, '17.00'),
+(213, 'ON000038', 'P000446', 1, '28.00'),
+(214, 'ON000038', 'P000448', 1, '65.00'),
+(215, 'ON000038', 'P000832', 1, '518.00'),
+(216, 'ON000038', 'P000833', 10, '5590.00');
 
 -- --------------------------------------------------------
 
@@ -533,9 +544,11 @@ CREATE TABLE `impuestos` (
 INSERT INTO `impuestos` (`id`, `anual`, `mensual`, `monto`, `igv`, `estado`, `estado_renta`) VALUES
 (1, '2021', '02', '0.00', '1.00', 'Pagado', 'No Pagado'),
 (2, '2021', '01', '0.00', '27.00', 'Pagado', 'No Pagado'),
-(3, '2021', '03', '0.00', '0.00', 'No Pagado', 'No Pagado'),
+(3, '2021', '03', '0.00', '5.00', 'Pagado', 'No Pagado'),
 (4, '2021', '12', '0.00', '0.00', 'No Pagado', ''),
-(5, '2021', '12', '0.00', '0.00', 'No Pagado', '');
+(5, '2021', '12', '0.00', '0.00', 'No Pagado', ''),
+(6, '2021', '04', '0.00', '0.00', 'No Pagado', ''),
+(7, '1969', '12', '0.00', '0.00', 'No Pagado', '');
 
 -- --------------------------------------------------------
 
@@ -848,12 +861,12 @@ INSERT INTO `producto` (`CodigoProd`, `NombreProd`, `CodigoCat`, `Precio`, `Comp
 ('P000236', 'PARLANTE DE AUDIO 15W', 'C000000', '15.00', '10.00', 'MIC S308', 'MICRONICS', '30 g', 0, 'S/', 'NUEVO', b'1', 'Parlante Multimedia Gamer Sound 2.0.\nCuerpo de Color (Negro).\nIluminacion LED de Colores RGB.\nControl de Volumen en la Parte Frontal.\nConector Jack 3.5mm.\nEspecificaciones Tecnicas\nParlantes: 2.5 x 2. \nAlimentacion de Energia por Conexion USB.\nCompatible con: Computadoras, TV, DVD, Smartphone, Tablet, Laptop y otros Equipos de Audio.', b'1', b'1', '2047-impulso-informatico.jpg', '', ''),
 ('P000237', 'PARLANTE DE AUDIO 15W', 'C000000', '17.00', '5.00', 'HA S220', 'HALION', '10 g', 0, 'S/', 'NUEVO', b'1', 'Parlante Power Sound 2.0.\nControl de Volumen.\nAlimentacion de Energia por Conexion USB.\nBocinas: 2\nAcabado Brillante de Lujo.\nCompatible con: Computadoras, Laptop y otros Equipos de Audio. Podra oirlo todo a su alrededor, incluso con fuentes de dos canales. Los altavoces convierten el sonido estereo de dos canales en una experiencia de sonido realmente envolvente.', b'1', b'1', 'parlante-gamer-halion-ha_s220-ng_rjo-2_0-usb.jpg', '', ''),
 ('P000238', 'PARLANTE WOOFER 20W', 'C000000', '28.00', '11.00', 'FENDER MIC S6004BT', 'MICRONICS', '0.3 kg', 0, 'S/', 'NUEVO', b'1', 'Parlante woofer Conexion Inalambrica BT, hasta 10 metros de distancia\nLector de Memorias USB y SD.\nRadio FM.\nControl remoto numerico 50w\n\nCompatible con: Computadoras, TV, Blu-Ray, DVD, Smartphone, Tablet, Laptop y otros equipos de audio\"', b'1', b'1', 'parlante-21-micronics-killer-20w-.jpg', '', ''),
-('P000239', 'AURICULAR GAMER LED', 'C000000', '15.00', '11.00', 'MIC HG815', 'MICRONICS', '20 g', 0, 'S/', 'NUEVO', b'1', 'Auricular Gamer con Microfono.\nIluminacion LED Rojo.\nControl de Volumen y Microfono en Orejera.\nAlmohadillas y Vincha Protectoras de Cuero Para Mayor Comodidad.   \nOrejeras Acolchadas.\nMicrofono Flexible.\nBanda Interior de Metal. \nEspecificaciones Tecnicas\nDiametro de Bocina: 50 mm.\nLongitud del Cable: 2.1 m.\nConector USB para Encendido de Luces LED. \nConector Jack Gold 3.5 mm para: PC, Laptop, Tablet, Smartphone, MP3, MP4 y otros Equipos.', b'1', b'1', 'audifono-gamer-alien-mic-hg815.jpg', '', ''),
-('P000240', 'AURICULAR GAMER LED', 'C000000', '16.00', '11.00', 'MIC HG800', 'MICRONICS', '20 g', 0, 'S/', 'NUEVO', b'1', 'Auricular Estereo Gamer con Microfono.\nOrejeras Acolchadas.\nAcabado Brillante, Ergonomico.\nIluminacion LED Azul.\nBanda Ajustable Interior de Metal.\nControl de Volumen en Linea.\nAlmohadillas y Vincha Protectora de Cuero.\nEspecificaciones Tecnicas\nMicrofono 7 mm Plegable.\nDiametro de la Bocina: 40 mm.\nCable de Nylon Trenzado. \nConector USB para el Encendido de Luces y Vibracion. \nConector Jack Gold de 3.5 mm para Entrada', b'1', b'1', 'micronics-audifonos-gamer-therodactil-mic-hg800-con-.jpg', '', ''),
-('P000241', 'AURICULAR GAMER LED', 'C000000', '17.00', '14.00', 'MIC HG802', 'MICRONICS', '20 g', 0, 'S/', 'NUEVO', b'1', 'Auricular Gamer con Microfono.\nIluminacion LED Azul.\nAlmohadillas Protectoras de Cuero.\nVincha Reforzada Para Mayor Durabilidad.\nEspecificaciones Tecnicas\nCable de Nylon Trenzado Cubierto en PVC. \nControl de Volumen en la Orejera. \nConector USB Para Encendido de Luces LED.\nConector Jack Gold 3.5 mm Para Audio.\nCompatible con PC, Laptop, y Otros Equipos de Audio.', b'1', b'1', 'micronics-audifonos-gamer-.jpg', '', ''),
+('P000239', 'AURICULAR GAMER RGB', 'C000000', '15.00', '11.00', 'MIC HG815', 'MICRONICS', '20 g', 0, 'S/', 'NUEVO', b'1', 'Auricular Gamer con Microfono.\r\nIluminacion LED Rojo.\r\nControl de Volumen y Microfono en Orejera.\r\nAlmohadillas y Vincha Protectoras de Cuero Para Mayor Comodidad.   \r\nOrejeras Acolchadas.\r\nMicrofono Flexible.\r\nBanda Interior de Metal. \r\nEspecificaciones Tecnicas\r\nDiametro de Bocina: 50 mm.\r\nLongitud del Cable: 2.1 m.\r\nConector USB para Encendido de Luces LED. \r\nConector Jack Gold 3.5 mm para: PC, Laptop, Tablet, Smartphone, MP3, MP4 y otros Equipos.', b'1', b'1', 'audifono-gamer-alien-mic-hg815.jpg', '', ''),
+('P000240', 'AURICULAR GAMER RGB', 'C000000', '16.00', '11.00', 'MIC HG800', 'MICRONICS', '20 g', 0, 'S/', 'NUEVO', b'1', 'Auricular Estereo Gamer con Microfono.\r\nOrejeras Acolchadas.\r\nAcabado Brillante, Ergonomico.\r\nIluminacion LED Azul.\r\nBanda Ajustable Interior de Metal.\r\nControl de Volumen en Linea.\r\nAlmohadillas y Vincha Protectora de Cuero.\r\nEspecificaciones Tecnicas\r\nMicrofono 7 mm Plegable.\r\nDiametro de la Bocina: 40 mm.\r\nCable de Nylon Trenzado. \r\nConector USB para el Encendido de Luces y Vibracion. \r\nConector Jack Gold de 3.5 mm para Entrada', b'1', b'1', 'micronics-audifonos-gamer-therodactil-mic-hg800-con-.jpg', '', 'UNID'),
+('P000241', 'AURICULAR GAMER RGB', 'C000000', '17.00', '14.00', 'MIC HG802', 'MICRONICS', '20 g', 0, 'S/', 'NUEVO', b'1', 'Auricular Gamer con Microfono.\r\nIluminacion LED Azul.\r\nAlmohadillas Protectoras de Cuero.\r\nVincha Reforzada Para Mayor Durabilidad.\r\nEspecificaciones Tecnicas\r\nCable de Nylon Trenzado Cubierto en PVC. \r\nControl de Volumen en la Orejera. \r\nConector USB Para Encendido de Luces LED.\r\nConector Jack Gold 3.5 mm Para Audio.\r\nCompatible con PC, Laptop, y Otros Equipos de Audio.', b'1', b'1', 'micronics-audifonos-gamer-.jpg', '', ''),
 ('P000242', 'AURICULAR GAMER RGB', 'C000000', '21.00', '18.00', 'MIC HG855', 'MICRONICS', '20 g', 0, 'S/', 'NUEVO', b'1', 'Auricular Gamer con Microfono.                                                                                            \nOrejeras Acolchadas.\nSonido Envolvente 7.1 de Alta Calidad.\nIluminacion LED RGB.\nBanda Ajustable de Acero Para Mayor Duracion. \nControl en Linea: Volumen, Vibracion, LED, Silenciador y Microfono. \nAlmohadillas y Vincha Protectoras de Cuero. \nCable de Nylon Trenzado - 2.2Metros \n \nEspecificaciones Tecnicas\nMicrofono Flexible (Para Facil Manipulacion) . \nBocinas de 50mm.\nSistema de Sonido con Vibracion.\nConector USB para el Encendido de Luces LED. \nCompatible con: PC, Laptop y Otros Equipos de Audio.  \nTablet, MP3, MP4 y Otros Equipos de Audio.', b'1', b'1', '3299-impulso-informatico.jpg', '', ''),
-('P000243', 'AURICULAR GAMER USB LED', 'C000000', '24.00', '19.00', 'MIC HG8000', 'MICRONICS', '20 g', 0, 'S/', 'NUEVO', b'1', 'Auricular Estereo con Microfono.\nIluminacion LED de 7 Colores.\nSonido Envolvente 7.1 \nAlmohadillas y Banda de Cuero.\nConector USB Dorado. \nMicrofono de Goma Flexible. \nControl de Volumen en Linea.\nOrejeras Acolchadas. \nCable de Nylon Trenzado.\nFiltro Antielectromagnetico.', b'1', b'1', '4202-impulso-informatico.jpg', '', ''),
-('P000244', 'AURICULAR GAMER LED', 'C000000', '14.00', '11.00', 'MIC H701', 'MICRONICS', '20 g', 0, 'S/', 'NUEVO', b'1', 'Auricular Estereo con Microfono	\nVariedad de Colores	\nBanda Ajustable	\nControl de Volumen oculto	\nCable de 2.2 m	\nFrecuencia: 20-20,000Hz	\nCable de 2.2 m		\nFrecuencia: 20-20,000Hz		\nAur: 32 Ohms	\nmperancia		\nAur: 120dB 3dB		\nRadio de Poder: 30m', b'1', b'1', '4292-impulso-informatico.jpg', '', ''),
+('P000243', 'AURICULAR GAMER RGB', 'C000000', '24.00', '19.00', 'MIC HG8000', 'MICRONICS', '20 g', 0, 'S/', 'NUEVO', b'1', 'Auricular Estereo con Microfono.\r\nIluminacion LED de 7 Colores.\r\nSonido Envolvente 7.1 \r\nAlmohadillas y Banda de Cuero.\r\nConector USB Dorado. \r\nMicrofono de Goma Flexible. \r\nControl de Volumen en Linea.\r\nOrejeras Acolchadas. \r\nCable de Nylon Trenzado.\r\nFiltro Antielectromagnetico.', b'1', b'1', '4202-impulso-informatico.jpg', '', ''),
+('P000244', 'AURICULAR ', 'C000000', '14.00', '11.00', 'MIC H701', 'MICRONICS', '20 g', 0, 'S/', 'NUEVO', b'1', 'Auricular Estereo con Microfono	\r\nVariedad de Colores	\r\nBanda Ajustable	\r\nControl de Volumen oculto	\r\nCable de 2.2 m	\r\nFrecuencia: 20-20,000Hz	\r\nCable de 2.2 m		\r\nFrecuencia: 20-20,000Hz		\r\nAur: 32 Ohms	\r\nmperancia		\r\nAur: 120dB 3dB		\r\nRadio de Poder: 30m', b'1', b'1', '4292-impulso-informatico.jpg', '', ''),
 ('P000245', 'CAMARA WEB 720P', 'C000000', '21.00', '15.00', 'Z-720P', 'ZONG', '40 g', 0, 'S/', 'NUEVO', b'1', 'Webcam\nMaterial: ABS\nChip DSP: sin controlador\nSensor de imagen: CMOS\nLente: lente de vidrio de calidad superior\nAlta definicion: 12.0M pixeles\nVelocidad de fotogramas: 30 fps\nInterfaz: USB 2.0\nPlug & Play, Grabacion de video\ndimensiones o: 8 cm x 3 cm x 11 cm / 3.15 \"x 1.18\" x 4.33 \njack es para el microfono de la camara', b'1', b'1', 'camara-web-zong-hd-grabacion-de-video-1.png', '', ''),
 ('P000246', 'CAMARA WEB 480P', 'C000000', '26.00', '20.00', 'TE-9054', 'TEROS', '40 g', 0, 'S/', 'NUEVO', b'1', 'Camara Web Teros Te-9054, Hasta 480p, Microfono Incorporado, Usb 2.0. Trabaja Con Casi Todas Las Aplicaciones De Video-conferencias. Resolucion: 480p A 30fps, Encaja Perfectamente En Tu Pantalla Lcd O Laptop Donde Quiera Que Trabajes Captura De Video : Hasta 640 a 480 p\nCaptura De Fotografia : Hasta 640 a 480 p\nMicrofono:  Integrado\nPlataformas De Trabajo : Windows Windows 10 / 8.1', b'1', b'1', '778ec80293569c2f558cb86b06a09630-zoom.jpg', '', ''),
 ('P000247', 'CAMARA WEB 720P', 'C000000', '30.00', '22.00', 'TE-9060', 'TEROS', '80 g', 0, 'S/', 'NUEVO', b'1', 'Camara web Teros TE-9060, hasta 720p, microfono incorporado, USB 2.0. Trabaja con casi todas las aplicaciones de video-conferencias. Resolucion: 720p a 25fps, encaja perfectamente en tu pantalla LCD o laptop donde quiera que trabajes WINDOWS	WINDOWS 10 / 8.1 / 7', b'1', b'1', 'camara_teros_720p.jpg', '', 'UNID'),
@@ -957,9 +970,9 @@ INSERT INTO `producto` (`CodigoProd`, `NombreProd`, `CodigoCat`, `Precio`, `Comp
 ('P000344', 'SWITCH 16 PORT POE', 'C000001', '353.00', '332.00', 'DS-3E1318P-E', 'HIKVISION', '1 K', 0, 'S/', 'NUEVO', b'1', 'Switch PoE 250 Metros Larga Distancia  Administrable / Configuracion WEB 16 Puertos 802.3at (30 W) 100 Mbps + 2 Puertos Gigabit + 2 Puertos SFP Tecnologia de 8 nucleos de alimentacion estandar 802.3af/at PoE reduciendo perdidas en la alimentacion.\n​Administracion por medio de interfaz web.\nMonitoreo y control de datos en puertos importantes.\nModo extendido disponible para alcanzar una transmision por cable de hasta 250 metros.\nAl momento de habilitar el modo EXTEND el ancho de banda sera de 10Mbps y la alimentacion no debera de exceder de 8W maximo por puerto.\n​16 puerto PoE 802.3af/at que soportan modo EXTEND.\n2 puertos Gigabit para interconexion.\n2 puertos SFP para utilizar fibra optica', b'1', b'1', 'DS-3E1318P-E-Web-managed-PoE-Switch.jpg', '1', 'UNID'),
 ('P000345', 'SWITCH 16 PORT POE', 'C000001', '268.00', '256.00', 'PFS4218-16ET-240', 'DAHUA', '1 K', 0, 'S/', 'NUEVO', b'1', 'Tecnologia: Switches\nClase: Switch Administrable,\nTipo: Switch PoE Administrable\nNumero de Puertos RJ45: 16P RJ45\nMax. Velocidad de Transferencia: Fast Ethernet\nMax. Entrega Potencia por Puertos y Ttoal: 2 Pto. Hasta 60W, Restantes hasta 30W, Total 240W', b'1', b'1', 'Dahua-PFS4218-16ET-240-interruptor-PoE-de-16-puertos.jpg', '1', 'UNID'),
 ('P000346', 'SWITCH 16 PORT POE', 'C000001', '310.00', '287.00', 'UTP3-SW16-TP300', 'UTEPO', '1 K', 0, 'S/', 'NUEVO', b'1', 'SWITCH ADMINISTRABLE 16 puertos POE 10/100Base-Tx\n· Estandar IEEE 802.3af/at (PSE)\n· 2 Puertos Gigabit Ethernet uplink\n· Administrable Capa 2 con configuracion basado en WEB\n· Capacidad: 7.2Gbps\n· Throughput: 5.3Mpps\n· Salida de alimentacion PoE: 54Vdc, 30 Watts maximo por puerto\n· Potencia Total PoE hasta 270 Watts\n· Sin perdida de cuadros en Transmision de Datos IP\n· VLAN\n· Calidad de Servicio QoS\n· Multicast · Proteccion Contra Rayos 6KV.', b'1', b'1', 'Utepo_16port.jpg', '1', 'UNID'),
-('P000347', 'USB WIFI 2.4', 'C000001', '10.00', '7.00', 'TL-WN725N', 'TP-LINK', '40 g', 0, 'S/', 'NUEVO', b'1', 'ADAPTADOR USB INALAMBRICO \n150Mbps Wi-Fi USB Adapter\nSPEED 150 Mbps at 2.4 GHz\nSPEC USB 2.0\nFEATURE: Nano Size', b'1', b'1', 'TP-Link-TL-WN725N-03.jpg', '6.94E+12', 'UNID'),
+('P000347', 'USB WIFI 2.4', 'C000001', '11.00', '7.00', 'TL-WN725N', 'TP-LINK', '40 g', 0, 'S/', 'NUEVO', b'1', 'ADAPTADOR USB INALAMBRICO \r\n150Mbps Wi-Fi USB Adapter\r\nSPEED 150 Mbps at 2.4 GHz\r\nSPEC USB 2.0\r\nFEATURE: Nano Size', b'1', b'1', 'TP-Link-TL-WN725N-03.jpg', '6.94E+12', 'UNID'),
 ('P000348', 'USB WIFI 2.4', 'C000001', '12.00', '9.00', 'TL-WN823N', 'TP-LINK', '11 g', 0, 'S/', 'NUEVO', b'1', 'Usb wifi Frecuencia: 2.400 2.4835GHz.\nIEEE 802.11b, IEEE 802.11g, IEEE 802.11n.\n\nSensibilidad de Recepcion\nEIRP 20dBm (EIRP)\n Modo Soft AP\n Modo Client (soporta Ad-hoc/red de infraestructura)\n\n64/128-bit WEP\nWPA-PSK / WPA2-PSK\nWPA / WPA2', b'1', b'1', 'Tl-WN823N_0.png', '', ''),
-('P000349', 'USB WIFI 2.4', 'C000001', '14.00', '11.00', 'TL-WN722N', 'TP-LINK', '12 g', 0, 'S/', 'NUEVO', b'1', 'Usb wifi Interface	USB 2.0\nDimensiones (W X D X H)	3.7 x 1.0 x 0.4 pulgadas. (93.5 x 26 x 11mm)\nTipo de Antena	Desmontable Omnidireccional (RP-SMA)\nGanancia de Antena	4dBi\n\n	IEEE 802.11n, IEEE 802.11g, IEEE 802.11b\nFrecuencia	2.400-2.4835GHz compatible con Windows 10/8.1/8/7/XP\nMac OS X 10.8-10.14\nLinux OS', b'1', b'1', 'TL-WN722N.jpg', '6.94E+12', 'UNID'),
+('P000349', 'USB WIFI 2.4', 'C000001', '15.00', '12.00', 'TL-WN722N', 'TP-LINK', '12 g', 0, 'S/', 'NUEVO', b'1', 'Usb wifi Interface	USB 2.0\r\nDimensiones (W X D X H)	3.7 x 1.0 x 0.4 pulgadas. (93.5 x 26 x 11mm)\r\nTipo de Antena	Desmontable Omnidireccional (RP-SMA)\r\nGanancia de Antena	4dBi\r\n\r\n	IEEE 802.11n, IEEE 802.11g, IEEE 802.11b\r\nFrecuencia	2.400-2.4835GHz compatible con Windows 10/8.1/8/7/XP\r\nMac OS X 10.8-10.14\r\nLinux OS', b'1', b'1', 'TL-WN722N.jpg', '6.94E+12', 'UNID'),
 ('P000350', 'USB WIFI 2.4', 'C000001', '15.00', '12.00', 'AULUB155U2', 'NEXX', '7 g', 0, 'S/', 'NUEVO', b'1', 'Tecnologia inalambrica: 802.11n\nMbps: 150Mps\nDoble banda: No Miniadaptador USB inalambrico-N Basado en la tecnologia Wi-Fi 802.11n, este receptor ultracompacto Metodos de configuracion Wi-Fi (WPS) mediante codigo de seguridad.\nWindows XP, Vista, 7, 8, 8.1 y 10.', b'1', b'1', 'usb-nano-150mbps-nanolynx-nexxt.jpg', '', ''),
 ('P000351', 'USB WIFI 2.4/5', 'C000001', '15.00', '12.00', 'ARCHER-T2U-NANO', 'TP-LINK', '50 g', 0, 'S/', 'NUEVO', b'1', 'ADAPTADOR WIRELESS USB NANO DOBLE BANDA 2.4 5GHZ \nAC600 Nano Wi-Fi USB Adapter\nSPEED: 433 Mbps at 5 GHz + 200 Mbps at 2.4 GHz\nSPEC: USB 2.0', b'1', b'1', 'TP-Link-Archer-T2U-Nano-02.jpg', '', ''),
 ('P000352', 'USB WIFI 2.4/5', 'C000001', '16.00', '14.00', 'ARCHER-T2U', 'TP-LINK', '50 g', 0, 'S/', 'NUEVO', b'1', 'ADAPTADOR USB DOBLE BANDA 2.4 5GHZ \nAC600 Wi-Fi USB Adapter\nSPEED 433 Mbps at 5 GHz + 150 Mbps at 2.4 GHz\nSPEC USB 2.0\nFEATURE: Mini Size', b'1', b'1', 'ef794f4a896d0720e3227d7ebf9e1932.jpg', '', ''),
@@ -1622,7 +1635,17 @@ INSERT INTO `producto` (`CodigoProd`, `NombreProd`, `CodigoCat`, `Precio`, `Comp
 ('P001003', 'SILLA GAMER AMARILLO NEGRO', 'C000008', '177.00', '172.00', 'RTA-057', 'TECHNI', '10 Kg', 0, 'S/', 'NUEVO', b'1', 'Material de silla Espuma y nylon\nDiametro estrella de silla No especifica\nInclinacion de silla No especifica\nAltura regulable de silla Si\nDetalles adicionales de la silla Silla ergonomica de estilo Gamer Comoda y resistente.\nTipo de silla Sillas de escritorio\nResistencia de silla 260 Kg\nAlto de silla 123 133 cm\nAncho de silla 66 cm', b'1', b'1', 'Silla_gamer_amarillo_negro.webp', '', 'UNIT'),
 ('P001004', 'SILLA GAMER ROJO NEGRO', 'C000008', '196.00', '204.00', 'RTA-057', 'TECHNI', '10 Kg', 0, 'S/', 'NUEVO', b'1', 'Silla Gamer Reclinable 180 Color Rojo con Negro, Estructura de PVC y Reposa Pies Soporta hasta 120 Kg Silla Gamer con estructura de PVC y Reposa Pies 2 Almohadas (Cabecera y Columna) Regulable en altura para un mayor comfort Material Acolchado Recubierto con Cuerina de espesor 9 cm Apoya brazos con cojin suave en material PU no regulable Mecanismo regulable en altura con gas revestido clase II 5 Ruedas ligeras y silenciosas en el traslado 80 Largo x 64 Ancho x 53 Profundidad (cm)  Ideales para pasar horas en la computadora bien sea jugando o de trabajo', b'1', b'1', '170021-800-auto.webp', '', ''),
 ('P001005', 'SILLA GAMER BLANCO NEGRO', 'C000008', '305.00', '272.00', 'RTA-057', 'AKRACING', '10 Kg', 0, 'S/', 'NUEVO', b'1', 'Silla Gamer Reclinable 180 Color Rojo con Negro, Estructura de PVC y Reposa Pies Soporta hasta 120 Kg Silla Gamer con estructura de PVC y Reposa Pies 2 Almohadas (Cabecera y Columna) Regulable en altura para un mayor comfort Material Acolchado Recubierto con Cuerina de espesor 9 cm Apoya brazos con cojin suave en material PU no regulable Mecanismo regulable en altura con gas revestido clase II 5 Ruedas ligeras y silenciosas en el traslado 80 Largo x 64 Ancho x 53 Profundidad (cm) Ideales para pasar horas en la computadora bien sea jugando o de trabajo', b'1', b'1', '167177-800-auto.webp', '', ''),
-('P001006', 'SILLA GAMER CELESTE NEGRO', 'C000008', '196.00', '191.00', 'RTA-057', 'TECHNISPORT', '10 Kg', 0, 'S/', 'NUEVO', b'1', 'Silla Gamer Reclinable 180 Color Rojo con Negro, Estructura de PVC y Reposa Pies Soporta hasta 120 Kg Silla Gamer con estructura de PVC y Reposa Pies 2 Almohadas (Cabecera y Columna) Regulable en altura para un mayor comfort Material Acolchado Recubierto con Cuerina de espesor 9 cm Apoya brazos con cojin suave en material PU no regulable Mecanismo regulable en altura con gas revestido clase II 5 Ruedas ligeras y silenciosas en el traslado 80 Largo x 64 Ancho x 53 Profundidad (cm) Ideales para pasar horas en la computadora bien sea jugando o de trabajo', b'1', b'1', '170018-800-auto.webp', '', '');
+('P001006', 'SILLA GAMER CELESTE NEGRO', 'C000008', '196.00', '191.00', 'RTA-057', 'TECHNISPORT', '10 Kg', 0, 'S/', 'NUEVO', b'1', 'Silla Gamer Reclinable 180 Color Rojo con Negro, Estructura de PVC y Reposa Pies Soporta hasta 120 Kg Silla Gamer con estructura de PVC y Reposa Pies 2 Almohadas (Cabecera y Columna) Regulable en altura para un mayor comfort Material Acolchado Recubierto con Cuerina de espesor 9 cm Apoya brazos con cojin suave en material PU no regulable Mecanismo regulable en altura con gas revestido clase II 5 Ruedas ligeras y silenciosas en el traslado 80 Largo x 64 Ancho x 53 Profundidad (cm) Ideales para pasar horas en la computadora bien sea jugando o de trabajo', b'1', b'1', '170018-800-auto.webp', '', ''),
+('P001007', 'PROCESADOR CORE I5 2.6 GHZ', 'C000000', '225.00', '218.00', '11400F', 'INTEL', '50 g', 0, '', 'NUEVO', b'1', 'Intel Core i5-11400\r\nSocket FCLGA1200 Rocket Lake\r\nLitografia: 14nm\r\nCantidad de nucleos: 6\r\nCantidad de subprocesos: 12\r\nCache: 12MB Intel Smart Cache\r\nFrecuencia basica: 2,60 GHz\r\nFrecuencia turbo: 4,40GHz\r\nVelocidad del bus: 8 GT/s\r\nTDP: 65W\r\nSoporta hasta 128GB DDR4-3200, 2 canales, 50GB/s\r\nConfiguraciones PCIe: Hasta 1x 6 + 1x4, 2x8 + 1x4, 1x8 + 3x4\r\nSolucion termica: PCG 2019C\r\nTecnologia Hyper-Threading\r\n64 bit', b'0', b'0', 'procesador-intel-core-i5-11400f-26-ghz-12mb-cache-lga-1200-bx8070811400f.jpg', '1', 'UNID'),
+('P001008', 'PROCESADOR CORE I7 2.5 GHZ', 'C000000', '465.00', '430.00', '11700F', 'INTEL', '40 g', 1, '', 'NUEVO', b'1', 'Procesador intel core  I7-11700F , 2.5 GHZ, 16MB CACHE, LGA 1200 (BX8070811700F)\r\n de nucleos: 8\r\nde los hilos: 16\r\nFrecuencia base del procesador: 2.50 GHz\r\nFrecuencia turbo maxima: 4,90 GHz\r\nCache: 16 MB de cache inteligente Intel\r\nVelocidad del autobus: 8 GT / s\r\nFrecuencia de la tecnologia Intel Turbo Boost 2.0: 4,80 GHz\r\nTDP: 65 W\r\nEspecificaciones de memoria\r\nmemoria maximo (depende del tipo de memoria): 128 GB\r\nTipos de memoria: DDR4-3200\r\nCantidad maxima de canales de memoria: 2\r\nMaximo de ancho de banda de memoria: 50 GB/s\r\nCompatible con memoria ECC ', b'0', b'0', 'procesador-intel-core-i7-11700f-25-ghz-16mb-cache-lga-1200-bx8070811700f.jpg', '1', 'UNID');
+INSERT INTO `producto` (`CodigoProd`, `NombreProd`, `CodigoCat`, `Precio`, `Compra`, `Modelo`, `Marca`, `Peso`, `Stock`, `Simbolo`, `Detalle`, `Venta`, `TecDetalle`, `Descuento`, `nro_cot`, `Imagen`, `codigoBarras`, `unidadMedida`) VALUES
+('P001009', 'PROCESADOR CORE I7 3.6 GHZ', 'C000000', '595.00', '570.00', '11700K', 'INTEL', '70 g', 1, '', 'NUEVO', b'1', 'Procesador Intel Core i7-11700K, 3.60 GHz  5.0 GHz, 16 MB Cache, LGA1200, 95W, 14 nm\r\nN de nucleos de procesador\r\n:\r\n8\r\nN de hilos de procesador\r\n:\r\n16\r\nFrecuencia base del procesador\r\n:\r\n2,50 GHz\r\nCache\r\n:\r\nCache inteligente Intel de 16 MB\r\nGraficos del procesador\r\n:\r\nGraficos Intel UHD 730\r\nSockets compatibles\r\n:\r\nFCLGA1200', b'0', b'0', 'i7-11XXX-400x400.jpg', '1', 'UNID'),
+('P001010', 'PROCESADOR CORE I7 3.6 GHZ', 'C000000', '570.00', '540.00', '11700KF', 'INTEL', '50 g', 1, '', 'NUEVO', b'1', 'Procesador Intel Core i7-11700KF - 3.60 GHz - 8 Nucleos - Socket 1200 - 16MB Cache - 125W \r\nCantidad de subprocesos\r\n16\r\n\r\nFrecuencia basica del procesador\r\n3,60 GHz\r\n\r\nFrecuencia turbo maxima\r\n5,00 GHz\r\n\r\nCache\r\n16 MB Intel Smart Cache\r\n\r\nVelocidad del bus\r\n8 GT/s\r\n\r\nFrecuencia de la Tecnologia Intel Turbo Boost Max 3.0 \r\n5,00 GHz\r\n\r\nFrecuencia de la Tecnologia Intel Turbo Boost 2.0\r\n4.90 GHz\r\n\r\nTDP\r\n125 W\r\n\r\nFrecuencia de descenso de TDP configurable\r\n3.10 GHz\r\n\r\nDescenso de TDP configurable\r\n95 W\r\n', b'0', b'0', 'i7-11XXX-400x400.jpg', '1', 'UNID'),
+('P001011', 'MOUSE USB GAMER', 'C000000', '14.91', '13.00', 'HA-M425R', 'HALION', '30 g', 1, '', 'NUEVO', b'1', 'Mouse optico\r\nConector USB 2.0\r\nColor: Negro Rubber\r\n7 botones\r\nScroll para facil desplazamiento\r\nFunciona en cualquier superficie (No reflectiva)\r\nAlta Sensibilidad 1200-1600-2400-3200 DPI \r\nPlug and play\r\nLuces RGB\r\nCable 1.5 mt\r\nMedida: 128 x 67 x 40mm\r\nCompatible con Windows 2000/XP/Win 7/8/10', b'0', b'0', 'D_NQ_NP_804365-MPE43140504429_082020-O.jpg', '1', 'UNID'),
+('P001012', 'AURICULAR', 'C000000', '14.36', '12.00', 'GXB-HG8311', 'XBLADE', '40 g', 1, '', 'NUEVO', b'1', 'Audifono Venom GXB-HG8311 XBlade\r\n\r\nAudifono con Microfono Gaming\r\n\r\nFrequencia de respuesta 20Hz 20kHz\r\n\r\nSpeaker 40mm 32\r\n\r\nSensibilidad del auricular 105dB 3dB\r\n\r\n microfono 6 5mm\r\n\r\nSensibilidad del microfono 58dB 2dB\r\n\r\nMicrofono Omnidirectional\r\n\r\nCable trenzado de 1.8M', b'0', b'0', 'audifono-xblade-venom-gaming-stereo-con-microfono-black-red-pngxb-hg8311.jpg', '1', 'UNID'),
+('P001013', 'AURICULAR', 'C000000', '10.30', '9.00', 'T3', 'HALION', '30 g', 1, '', 'NUEVO', b'1', ' Sensibilidad del altavoz: 1203dB±.\r\n Respuesta de frecuencia del altavoz: 20-20000Hz.\r\n microfono: 9.7 x 4.5 mm,\r\nSensibilidad del microfono: -54dB ± 3dB.\r\n Respuesta de frecuencia del microfono: 20-16000Hz,\r\n cable: 2m', b'0', b'0', 'audifono-con-microfono-Halion-T3.jpg', '1', 'UNID'),
+('P001014', 'KIT TECLADO 4 EN 1 USB', 'C000000', '36.59', '34.00', 'GXB-KMHP370', 'XBLADE', '1 k', 1, '', 'NUEVO', b'1', 'Kit Demolisher GXB-KMHP370 XBlade\r\n• NROPARTE: GXB-KMHP370\r\n• MODELO: DEMOLISHER\r\n• KIT 4 en 1: Mouse + Keyboard + Headphone + Pad Mouse\r\nMOUSE\r\n• Iluminacion Multicolor hasta en 7 colores.\r\n• 4 Botones\r\n• 4 Niveles de DPI: 800/1600/2400/3200\r\n• Interfaz USB\r\n• Tiempo de vida: hasta 1 millon de clicks\r\n• Longitud Cable: 1.5m\r\n• Cable trenzado\r\nTECLADO\r\n• Retroiluminacion Multicolor hasta en 3 colores.\r\n• 19 Teclas Anti-ghosting\r\n• Total de teclas: 105\r\n• Interfaz USB\r\n• Tiempo de vida: hasta 5 millones de pulsaciones\r\n• Longitud cable: 1.5m\r\n• Cable trenzado\r\nAUDIFONO\r\n• Sonido Estereo\r\n• Microfono omnidireccional\r\n• Frecuencia de respuesta: 20 Hz - 20 KHz\r\n•  auricular 40mm\r\n•   microfono 6x5 mm\r\n• Conectores: 3.5mm Jack x 2\r\n• Longitud de cable: 2.2mm\r\nPAD MOUSE\r\n• Superfi', b'0', b'0', 'kit-4-en-1-xblade-demolisher.jpg', '1', 'UNID'),
+('P001015', 'KIT TECLADO MOUSE USB GAMER', 'C000000', '29.81', '27.00', 'REXARV', 'GAMBYTE', '1 k', 1, '', 'NUEVO', b'1', 'CARACTERISTICAS DEL TECLADO	Led Multicolor (RGB)    \r\nCABLE: 1.50M 1 3.8mm, braid cable    \r\nVOLTAGE: +5V    \r\nCURRENT: 5000mA    \r\nPORT: USB1.1    \r\nBUTTON BACK STRECH: 55\r\nCARACTERISTICAS DEL MOUSE	MATERIAL: BODY ABS 3D WHEEL BLACK    \r\nCABLE LENGTH: 1.8M, braid cable    \r\nBODY WEIGHT: 132 10g    \r\nRESPONSE: 500HZ', b'0', b'0', 'D_NQ_NP_895145-MPE28013354294_082018-O.jpg', '1', 'UNID');
 
 -- --------------------------------------------------------
 
@@ -1706,7 +1729,10 @@ INSERT INTO `ventas` (`id`, `num_comprobante`, `tipo_comprobante`, `ruc`, `razon
 (6, 'E001-80', 'factura', '20545736421', 'INDUSTRIA E INVERSIONES FIVESA E.I.R.L.- FIVESA E.I.R.L.', 'AV. SEPARADORA INDUSTRIAL MZA. F1 LOTE. 6 IND. PARQUE INDUSTRIAL - VILLA EL SALVADOR', '2021/02/08', 'MANTENIMIENTO DE IMPRESORA', 'servicio', 'S/', 'efectivo', 'sunat_aceptado', 'estado_cancelado', '70.00'),
 (7, 'E001-81', 'factura', '20545736421', 'INDUSTRIA E INVERSIONES FIVESA E.I.R.L.- FIVESA E.I.R.L.', 'AV. SEPARADORA INDUSTRIAL MZA. F1 LOTE. 6 IND. PARQUE INDUSTRIAL - VILLA EL SALVADOR', '2021/02/17', 'MANTENIMIENTO DE IMPRESORA AREA CONTABILIDAD', 'servicio', 'S/', 'efectivo', 'sunat_aceptado', 'estado_cancelado', '70.00'),
 (8, 'E001-82', 'factura', '20601883164', 'SOLUCIONES CCTV & SISTEMAS S.A.C.', 'MZA. H LOTE. 13 SEC.  1 - GP. 15 - VILLA EL SALVADOR', '2021/03/16', 'MATENIMIENTO DE IMPRESORA AREA CONTABILIDAD', 'servicio', 'S/', 'efectivo', 'sunat_aceptado', 'estado_cancelado', '110.00'),
-(9, 'E001-83', 'factura', '20601883164', 'SOLUCIONES CCTV & SISTEMAS S.A.C.', 'MZA. H LOTE. 13 SEC.  1 - GP. 15 - VILLA EL SALVADOR', '2021/03/23', 'VENTA DE DISCO SOLIDO 240 GB MEMORIA RAM 8GB', 'producto', 'S/', 'efectivo', 'sunat_aceptado', 'estado_cancelado', '430.00');
+(9, 'E001-83', 'factura', '20601883164', 'SOLUCIONES CCTV & SISTEMAS S.A.C.', 'MZA. H LOTE. 13 SEC.  1 - GP. 15 - VILLA EL SALVADOR', '2021/03/23', 'VENTA DE DISCO SOLIDO 240 GB MEMORIA RAM 8GB', 'producto', 'S/', 'efectivo', 'sunat_aceptado', 'estado_cancelado', '430.00'),
+(10, 'E001-84', 'factura', '20603979517', 'MELASERVIS Y ASOCIADOS S.A.C.', '----SUBLT 13A MZA. N PRQIND CONO SUR  (ESTACION VILLA EL SALVADOR A LA ESPALDA) - VILLA EL SALVADOR', '2021/04/08', 'VENTA DE DISCO DURO 2TB', 'producto', 'S/', 'efectivo', 'sunat_aceptado', 'estado_cancelado', '300.00'),
+(11, 'E001-85', 'factura', '20545736421', 'INDUSTRIA E INVERSIONES FIVESA E.I.R.L.- FIVESA E.I.R.L.', 'AV. SEPARADORA INDUSTRIAL MZA. F1 LOTE. 6 IND. PARQUE INDUSTRIAL - VILLA EL SALVADOR', '2021/04/12', 'MANTENIMIENTO DE COMPUTADORA', 'servicio', 'S/', 'efectivo', 'sunat_aceptado', 'estado_cancelado', '40.00'),
+(12, 'E001-86', 'factura', '20602746829', 'INVERSIONES MEGACAPITAL S.A.C.', 'JR. LAS GRANADAS NRO. 4053 URB.  MICAELA BASTIDAS - LOS OLIVOS', '2021/04/12', 'VENTA DE DVR 8 CANALES Y CONFIGURACION', 'producto', 'S/', 'efectivo', 'sunat_aceptado', 'estado_cancelado', '550.00');
 
 --
 -- Índices para tablas volcadas
@@ -1819,19 +1845,19 @@ ALTER TABLE `afiliado`
 -- AUTO_INCREMENT de la tabla `compras`
 --
 ALTER TABLE `compras`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT de la tabla `detalle_compra_online`
 --
 ALTER TABLE `detalle_compra_online`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `detalle_cotizacion_online`
 --
 ALTER TABLE `detalle_cotizacion_online`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=211;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=217;
 
 --
 -- AUTO_INCREMENT de la tabla `distritos`
@@ -1843,7 +1869,7 @@ ALTER TABLE `distritos`
 -- AUTO_INCREMENT de la tabla `impuestos`
 --
 ALTER TABLE `impuestos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `perfil`
@@ -1873,7 +1899,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Restricciones para tablas volcadas

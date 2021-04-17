@@ -119,7 +119,7 @@ Licencia: Proveedor de servicios
 <iframe src="https://www.youtube.com/channel/UCNI4wnYU1I9nBuX_JOmjZxA" width="100%" height="100%"  scrolling="yes" frameBorder="0" allowFullScreen="true"></iframe>
 
 	</section>
-	<!-- sucribte  -->
+		<!-- sucribte  -->
 
     </section>
 
@@ -131,7 +131,7 @@ Licencia: Proveedor de servicios
     }
 
     .input_subs {
-        width: 50%;
+        width: 75%;
         margin: auto;
         margin-bottom: 22px;
         margin-top: 22px;
@@ -171,16 +171,16 @@ Licencia: Proveedor de servicios
     </style>
     <section class="p-5 mt-4 text-center bg-primary box_subs">
         <div class="container p-3">
-            <h3>SUBSCRIBETE AHORA</h3>
+            <h3>Si te ha gustado, nuestra pagina web y nuestros productos puedes recibir mas en tu correo</h3>
             <form action="process/subscript.php" method="POST">
                 <input type="email" name="correo-subs" class="form-control input_subs"
                     placeholder="Ingresa tu Correo Electronico">
-                <button type="submit" class="btn btn-warning">Subscribete</button>
+                <button type="submit" class="btn btn-warning">Suscribete</button>
             </form>
         </div>
- </section>
- <!-- sucribte  -->
-
+       
+    </section>
+     <!-- sucribte  -->
 
 <?php include 'inc/slider_bottom.php';?>
 	<?php include 'inc/footer.php';?>

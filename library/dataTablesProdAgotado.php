@@ -64,7 +64,7 @@ class TableData {
 			$sWhere = substr_replace( $sWhere, "", -3 );
 			$sWhere .= ')';
 			
-		}
+		} 
 		
 		// Individual column filtering
 		for ( $i=0 ; $i<count($columns) ; $i++ ) {

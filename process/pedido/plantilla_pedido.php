@@ -1057,9 +1057,10 @@ function draw_code39($code, $x, $y, $w, $h) {
             $simbolo ="S/";
             $monto_soles = $GranTotal * $globalTasaCambio_dolar;
 
-             $monto_igv = $monto_soles * 1.18 - $monto_soles;
-             $subtotal_final =  $monto_soles - $monto_igv; 
             
+             $subtotal_final =  $monto_soles / 1.18 ; 
+             $monto_igv = $monto_soles - $subtotal_final ;
+
             $monto_delivery = $costo_adicional;
             
             $operacion = $monto_soles - $a_cuenta - $descuento + $costo_adicional + $tarjeta_5_porciento;
@@ -1069,10 +1070,11 @@ function draw_code39($code, $x, $y, $w, $h) {
         
         case 'dolares':
             $simbolo ="$";
-            $monto_dolares = $GranTotal; 
-
-            $monto_igv = $monto_dolares * 1.18 - $monto_dolares;
-             $subtotal_final = $monto_dolares - $monto_igv; 
+            $monto_dolares = $GranTotal;  
+            
+             $subtotal_final = $monto_dolares / 1.18; 
+            $monto_igv = $monto_dolares  - $subtotal_final;
+            
 
             $monto_delivery = number_format($costo_adicional / $globalTasaCambio_dolar, 2) ;
             $operacion = $monto_dolares - $a_cuenta - $descuento + $monto_delivery + $tarjeta_5_porciento;
@@ -1086,7 +1088,7 @@ function draw_code39($code, $x, $y, $w, $h) {
 
 
 	$this->SetXY( $r1+40, $y1+4 );
-    $this->Cell(15,4, $simbolo." ".number_format( $subtotal_final, 2) , 0, 0, "C");
+    $this->Cell(15,4, $simbolo." ".number_format($subtotal_final, 2) , 0, 0, "C");
 	
 	
 
@@ -1121,7 +1123,7 @@ function draw_code39($code, $x, $y, $w, $h) {
         case 'Al Contado':
 
             $this->SetXY( $r1+40, $y1+15 );
-            $this->Cell(15,4, $simbolo." ".$monto_igv, 0, 0, "C");
+            $this->Cell(15,4, $simbolo." ".number_format($monto_igv, 2), 0, 0, "C");
 
             $this->SetXY( $r1+40, $y1+35 );
             $this->Cell(15,4, $simbolo." ".$total_venta, 0, 0, "C");

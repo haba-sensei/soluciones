@@ -24,7 +24,7 @@
         
        
 		
-        if(!$codeProd=="" && !$nameProd=="" && !$cateProd==""  && !$priceProd=="" && !$priceCompraProd=="" && !$modelProd=="" && !$marcaProd=="" && !$pesoProd=="" && !$stockProd=="" && !$detaProd=="" && !$codigoBarraProd =="" && !$unidadMedidaProd =="" && !$tecProd=="" && !$_FILES['img']['name']==""){
+        if(!$codeProd=="" && !$nameProd=="" && !$cateProd==""  && !$priceProd=="" && !$priceCompraProd=="" && !$modelProd=="" && !$marcaProd=="" && !$pesoProd=="" && !$detaProd=="" && !$codigoBarraProd =="" && !$unidadMedidaProd =="" && !$tecProd=="" && !$_FILES['img']['name']==""){
             $verificar=  ejecutarSQL::consultar("select * from producto where CodigoProd='".$codeProd."'");
             $verificaltotal = mysqli_num_rows($verificar);
             if($verificaltotal<=0){

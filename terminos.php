@@ -125,7 +125,7 @@ Licencia: Proveedor de servicios
 	<?php include 'inc/scripts.php';?>
 
 
-<!-- sucribte  -->
+	<!-- sucribte  -->
 
     </section>
 

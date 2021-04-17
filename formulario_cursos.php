@@ -697,7 +697,7 @@ width: 100%;
 	</main><!-- End main -->
 	
 	
-	      <!-- sucribte  -->
+		<!-- sucribte  -->
 
     </section>
 
@@ -709,7 +709,7 @@ width: 100%;
     }
 
     .input_subs {
-        width: 50%;
+        width: 75%;
         margin: auto;
         margin-bottom: 22px;
         margin-top: 22px;
@@ -749,11 +749,11 @@ width: 100%;
     </style>
     <section class="p-5 mt-4 text-center bg-primary box_subs">
         <div class="container p-3">
-            <h3>SUBSCRIBETE AHORA</h3>
+            <h3>Si te ha gustado, nuestra pagina web y nuestros productos puedes recibir mas en tu correo</h3>
             <form action="process/subscript.php" method="POST">
                 <input type="email" name="correo-subs" class="form-control input_subs"
                     placeholder="Ingresa tu Correo Electronico">
-                <button type="submit" class="btn btn-warning">Subscribete</button>
+                <button type="submit" class="btn btn-warning">Suscribete</button>
             </form>
         </div>
        

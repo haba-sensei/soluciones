@@ -167,7 +167,7 @@ div.dataTables_wrapper div.dataTables_info {
 
         <?php include '../inc/scripts_interno.php' ?>
 
-
+      
 
 </body>
 

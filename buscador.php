@@ -119,7 +119,21 @@ $buscame = $bus->buscar();
 	<?php include_once 'inc/navbar-mobile.php';?>
 	<?php include 'inc/navbar-prod.php';?>
 	
-	
+	</nav>
+</div>
+<section style="    background: #f5f5f5;     padding-bottom: 1%;">
+	<div id="get_quote" class="ajuste">
+			<div class="container animated fadeInUp">
+				<div class="row">
+					<div class="col-md-9">
+						<h3 class="hidden-xs">¿ Busca Aqui Nuestros Productos o Servicios ?</h3>
+					</div>
+					<div class="col-md-3">
+						 <button class="button-two bton-serv hidden-xs" onclick="window.location.href='formulario_servicios.php'"><span>¿ CONTACTANOS ?</span></button>
+					</div>
+				</div><!-- End row -->
+			</div><!-- End container -->
+		</div>
 
 
 </nav>
@@ -250,7 +264,7 @@ $buscame = $bus->buscar();
         
         </div>
         
-        <!-- sucribte  -->
+     	<!-- sucribte  -->
 
     </section>
 
@@ -262,7 +276,7 @@ $buscame = $bus->buscar();
     }
 
     .input_subs {
-        width: 50%;
+        width: 75%;
         margin: auto;
         margin-bottom: 22px;
         margin-top: 22px;
@@ -302,11 +316,11 @@ $buscame = $bus->buscar();
     </style>
     <section class="p-5 mt-4 text-center bg-primary box_subs">
         <div class="container p-3">
-            <h3>SUBSCRIBETE AHORA</h3>
+            <h3>Si te ha gustado, nuestra pagina web y nuestros productos puedes recibir mas en tu correo</h3>
             <form action="process/subscript.php" method="POST">
                 <input type="email" name="correo-subs" class="form-control input_subs"
                     placeholder="Ingresa tu Correo Electronico">
-                <button type="submit" class="btn btn-warning">Subscribete</button>
+                <button type="submit" class="btn btn-warning">Suscribete</button>
             </form>
         </div>
        
