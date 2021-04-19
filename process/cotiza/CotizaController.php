@@ -206,14 +206,16 @@ session_start();
 
                 
                                  
-               $total_a_facturar = round($totalGeneral,2); 
+               $total_a_facturar = round($totalGeneral  ,2); 
+               $total_final_descuento_format_without_comma =  str_replace(',', '',  $descuento_format);
+               $total_a_facturar_end = number_format( $total_a_facturar  - $total_final_descuento_format_without_comma, 2);
                
                $total_final_format_without_comma =  str_replace(',', '',  $total_a_facturar);
                $total_a_cuenta_format_without_comma =  str_replace(',', '',  $total_a_cuenta);
                $total_final_tarjeta_format_without_comma =  str_replace(',', '',  $total_tarjeta);
-
+              
                
-               $total_a_pagar =  number_format($total_final_format_without_comma + $costo_delivery - $total_a_cuenta_format_without_comma + $total_final_tarjeta_format_without_comma, 2);
+               $total_a_pagar =  number_format($total_final_format_without_comma + $costo_delivery - $total_final_descuento_format_without_comma - $total_a_cuenta_format_without_comma + $total_final_tarjeta_format_without_comma, 2);
                  
 
 
@@ -245,7 +247,7 @@ session_start();
                 <tr class="borde_lateral">
                 <td colspan="4" class="border_hidden fondo_vacio"></td> 
                 <td>TOTAL A FACTURAR</td>
-                <td>'.$simbolo.$total_a_facturar.'</td>
+                <td>'.$simbolo.$total_a_facturar_end.'</td>
                 </tr>
 
                     <tr class="borde_lateral">

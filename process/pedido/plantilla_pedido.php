@@ -1126,7 +1126,7 @@ function draw_code39($code, $x, $y, $w, $h) {
             $this->Cell(15,4, $simbolo." ".number_format($monto_igv, 2), 0, 0, "C");
 
             $this->SetXY( $r1+40, $y1+35 );
-            $this->Cell(15,4, $simbolo." ".$total_venta, 0, 0, "C");
+            $this->Cell(15,4, $simbolo."  ".$total_venta, 0, 0, "C");
              
             
             $this->SetXY( $r1+40, $y1+25 );
@@ -1139,7 +1139,28 @@ function draw_code39($code, $x, $y, $w, $h) {
             }else{
                 
             }
-            break;
+        break;
+
+        default:
+
+            $this->SetXY( $r1+40, $y1+15 );
+            $this->Cell(15,4, $simbolo." ".number_format($monto_igv, 2), 0, 0, "C");
+
+            $this->SetXY( $r1+40, $y1+35 );
+            $this->Cell(15,4, $simbolo."  ".$total_venta, 0, 0, "C");
+            
+            
+            $this->SetXY( $r1+40, $y1+25 );
+            $this->Cell(15,4, $simbolo." ".$monto_delivery, 0, 0, "C");
+
+        if($tarjeta_5_porciento > 0.00){
+                $this->SetFont( "Arial", "B", 8);
+                $this->SetXY( $r1+40, $y1+41 );
+                $this->Cell(15,4,"5% Extra ", 0, 0, "C");
+            }else{
+                
+            }
+        break;
 
     }
     

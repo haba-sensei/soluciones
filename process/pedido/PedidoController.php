@@ -241,7 +241,7 @@ session_start();
                  
                                   
                 $total_a_facturar = $totalGeneral - $descuento_format + $costo_delivery + $total_tarjeta;
-                $total_a_facturar_format = number_format($totalGeneral + $costo_delivery, 2);  
+                $total_a_facturar_format = number_format($totalGeneral + $costo_delivery - $descuento_format, 2);  
                 
                 $total_final_format_without_comma =  str_replace(',', '',  $total_a_facturar);
                 

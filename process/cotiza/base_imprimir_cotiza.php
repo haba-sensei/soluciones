@@ -130,8 +130,8 @@
 				
 			}	 
 					$monto_soles = number_format($GranTotal * $globalTasaCambio_dolar, 2);
-
-					$monto_final = $monto_soles - $descuento;
+					$total_final_format_without_comma =  str_replace(',', '',  $monto_soles);
+					$monto_final = $total_final_format_without_comma - $descuento;
 
 			 
 				
