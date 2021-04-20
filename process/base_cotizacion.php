@@ -33,8 +33,8 @@
 						$tipo_operacion = "COTIZACION";
 						$medio_pago = "Al Contado";
 						$estatus_operacion = "En Revision";
-						$M_pago = "Efectivo-Visa";
-						$F_entrega = "Tienda";
+						$M_pago = "En Revision";
+						$F_entrega = "En Revision";
 						$distritos_ = "-";
 						$costo_adicional = 0.00;
 						$direccion_envio = "-";

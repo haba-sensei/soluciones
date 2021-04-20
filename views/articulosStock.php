@@ -97,7 +97,65 @@ Licencia: Proveedor de servicios
                         <!-- begin page-header -->
                         <h1 class="page-header">Busqueda de Articulos <small> Modulo de Almacen</small></h1>
 
+                        <?php 
 
+$con1= ejecutarSQL::consultar("SELECT * from producto");
+$prod = mysqli_num_rows($con1);
+
+$con2= ejecutarSQL::consultar("SELECT `producto`.*, `producto`.`Stock` FROM `producto` WHERE `producto`.`Stock` ='0' ");
+$stock_agotado = mysqli_num_rows($con2);
+
+$con3= ejecutarSQL::consultar("SELECT `producto`.*, `producto`.`Stock` FROM `producto` WHERE `producto`.`Stock` ='1' ");
+$stock_abilitado = mysqli_num_rows($con3);
+
+
+echo '  <div class="row">
+    
+<div class="col-lg-4 col-md-4">
+    <div class="widget widget-stats hljs-wrapper">
+        <div class="stats-icon"><i class="fa fa-tags" style="color: #009fff;"></i></div>
+        <div class="stats-info">
+            <h4>ARTICULOS TOTALES </h4>
+            <p>'. $prod.' </p>
+
+    </div>
+    <div class="stats-link">
+        <a href="actualizarStock.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+    </div>
+
+</div>
+</div>
+
+<div class="col-lg-4 col-md-4">
+<div class="widget widget-stats hljs-wrapper">
+    <div class="stats-icon"><i class="fa fa-tags" style="color: #009fff;"></i></div>
+    <div class="stats-info">
+        <h4>ARTICULOS EN STOCK</h4>
+        <p> '.$stock_abilitado.' </p>
+
+    </div>
+    <div class="stats-link">
+        <a href="articulosStock.php" style="color: #fff;">Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+    </div>
+</div>
+</div>
+
+<div class="col-lg-4 col-md-4">
+<div class="widget widget-stats hljs-wrapper">
+    <div class="stats-icon"><i class="fa fa-minus-circle" style="color: #ef2121;"></i></div>
+    <div class="stats-info">
+        <h4>ARTICULOS AGOTADOS</h4>
+        <p> '.$stock_agotado.' </p>
+    </div>
+    <div class="stats-link">
+        <a href="actualizarStockAgotado.php" style="color: #fff;"> Ver Mas <i class="fa fa-arrow-alt-circle-right"></i></a>
+    </div>
+</div>
+</div>
+</div>';
+
+
+?>
 <style>
 div.dataTables_wrapper div.dataTables_info {
     padding-top: 0px;  

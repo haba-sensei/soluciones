@@ -18,9 +18,7 @@
 				  <?php
             
 			
-            $ordenU=  ejecutarSQL::consultar("SELECT `cotizacion_online`.*, `cotizacion_online`.`Estado`
-            FROM `cotizacion_online`
-            WHERE `cotizacion_online`.`Estado` = '1';");
+            $ordenU=  ejecutarSQL::consultar("SELECT `cotizacion_online`.*, `detalle_compra_online`.*, `cotizacion_online`.`Estado`, `detalle_compra_online`.`id_cotizacion` FROM `cotizacion_online`, `detalle_compra_online` WHERE `cotizacion_online`.`Estado` = '1' AND `detalle_compra_online`.`id_cotizacion` = `cotizacion_online`.`id_cotizacion`;");
             
         while($ordenP=mysqli_fetch_assoc($ordenU)){
 				$ordenList=$ordenP['id_cotizacion'];
@@ -28,6 +26,8 @@
 				$ordenNit=$ordenP['ID'];
 				$ordenEst=$ordenP['Estado'];
         $ordenPrice=$ordenP['GranTotal'];
+        $ordenMoneda=$ordenP['moneda'];
+        $ordenDescuento=$ordenP['descuento'];
         
 				
 				
@@ -75,8 +75,18 @@
                     ?>
                     </td>
                     
-                    <td>S/ <?php  
-                    $total_soles =  number_format($ordenPrice * $globalTasaCambio_dolar , 2);
+                    <td> <?php 
+                    
+                    switch ($ordenMoneda) {
+                      case 'soles':
+                       echo 'S/ ';
+                        break;
+                      
+                        case 'dolares':
+                       echo '$ ';
+                        break;
+                    }
+                    $total_soles =  number_format($ordenPrice * $globalTasaCambio_dolar - $ordenDescuento, 2);
                     echo $total_soles;
                     ?></td>
                     <td><?php 

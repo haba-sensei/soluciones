@@ -186,18 +186,18 @@ session_start();
             
                     }   
                     // 643.38
-               $general =  $totalGeneral_sin_formato * $globalTasaCambio_dolar;
-               $totalGeneral = $general;
+               $general =  $totalGeneral_sin_formato * $globalTasaCambio_dolar - $descuento;
+               $totalGeneral = $general + $descuento ;
                $simbolo = "S/ ";
                $costo_delivery_f =  0.00;
                $format_delivery =  str_replace(',', '',  $costo_delivery_f); 
                $costo_delivery = $format_delivery;
                $descuento_format = $descuento;
-                
-               $igv_cifra = round($general / 1.18, 2, PHP_ROUND_HALF_DOWN);
+               $total_final_descuento_format_without_comma =  str_replace(',', '',  $descuento_format);
+               $igv_cifra = round($general / 1.18 , 2, PHP_ROUND_HALF_DOWN);
                
                
-               $subtotal = $igv_cifra;
+               $subtotal = $igv_cifra ;
                $monto_igv_format = round($general - $subtotal, 2, PHP_ROUND_HALF_DOWN);
 
                $total_a_cuenta = 0.00;
@@ -205,9 +205,9 @@ session_start();
                 
 
                 
-                                 
+             
                $total_a_facturar = round($totalGeneral  ,2); 
-               $total_final_descuento_format_without_comma =  str_replace(',', '',  $descuento_format);
+              
                $total_a_facturar_end = number_format( $total_a_facturar  - $total_final_descuento_format_without_comma, 2);
                
                $total_final_format_without_comma =  str_replace(',', '',  $total_a_facturar);

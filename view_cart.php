@@ -755,8 +755,8 @@ include_once("library/config.inc.php");
                                         $product_qty = $product["product_qty"];
                                         $modelo_prod = $product["Modelo"];
                                         $marca_prod =  $product["Marca"];
-                                        $product_price_soles = number_format($globalTasaCambio_dolar * $product_price_dolares , 2, '.', ''); 
-                                        $product_price = number_format($product_price_dolares, 2, '.', ''); 
+                                        $product_price_soles = $globalTasaCambio_dolar * $product_price_dolares; 
+                                        $product_price = $product_price_dolares; 
                                             
 
                                         $ordenU =  ejecutarSQL::consultar("SELECT `producto`.*, `perfil`.* FROM `producto` , `perfil`;");
@@ -765,10 +765,6 @@ include_once("library/config.inc.php");
 
                                             $product_ganancia = $ordenP['ganancia'];
                                             $product_medio = $ordenP['medio']; 
-
-                                            
-
-
                                             
                                             $product_price_total = ($product_price);
                                             $product_price_total_soles = ($product_price_soles);
@@ -812,12 +808,12 @@ include_once("library/config.inc.php");
                                             </div>
                                         </td>
                                         <td class="cakes price texto_precio_mobil" style="width: 20%;">
-                                            <?php echo $currency." ".number_format($product_price_soles, 2); ?></h4>
+                                            <?php echo $currency." ".number_format($product_price_soles, 3); ?></h4>
 
                                         </td>
                                         <td class="cakes top-remove " style="width: 20%;">
                                             <h4 class="texto_precio_mobil"><?php echo $currency;
-                                                    echo number_format($total_indi, 2); ?></h4>
+                                                    echo number_format($total_indi, 3); ?></h4>
                                             <div class="close-btm botones_remove_ver_prod">
 
                                                 <a href="javascript:" align="left" class="remove-item" style="margin-right: 6px;" data-code="<?php echo $product_code; ?>">

@@ -90,8 +90,8 @@ switch ($CodArea) { //Compra
     break;
 
 }
-$total_dolar = $row[11];//Venta
-$total_sol = $row[11] * $globalTasaCambio_dolar;//Venta
+$total_dolar = $row[3];//Venta
+$total_sol = $row[3] * $globalTasaCambio_dolar;//Venta
 switch ($CodArea) { //Venta
     case 1: 
         $subdata[]= '$ '.$total_dolar.'<br>'.'S/  '.$total_sol;

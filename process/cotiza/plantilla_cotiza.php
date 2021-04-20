@@ -1010,12 +1010,13 @@ function draw_code39($code, $x, $y, $w, $h) {
         $globalTasaCambio_dolar = number_format($compra_dolar, 2);
 
         $simbolo ="S/";
-        $monto_soles = $GranTotal * $globalTasaCambio_dolar;
-       
+        $monto_soles = $GranTotal * $globalTasaCambio_dolar - $descuento;
+        $totalGeneral = $monto_soles + $descuento ;
         
-        $subtotal_final = number_format($monto_soles / 1.18, 2);
-        $monto_igv = number_format( $monto_soles - $subtotal_final , 2); 
-        $operacion = $monto_soles - $descuento;
+        $subtotal_final = number_format($monto_soles / 1.18 , 2);
+        $subtotal_final_format_without_comma =  str_replace(',', '',  $subtotal_final);
+        $monto_igv = number_format( $monto_soles - $subtotal_final_format_without_comma , 2); 
+        $operacion = $totalGeneral - $descuento;
         $total_venta = number_format($operacion , 2 ) ;
  
 
