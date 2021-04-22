@@ -1,7 +1,7 @@
  <?php  
 
   switch ($_SESSION['CodigoArea']) {
-	  case 1:
+	  case 1://admin
 		echo ' 
 			<ul class="nav">
 			<li class="active"><a href="index.php"><i class="fas fa-home fa-fw"></i> <span style="letter-spacing: 3px;">Inicio</span></a></li>
@@ -61,6 +61,7 @@
 			</a>
 			<ul class="sub-menu">
 			<li style="color:white; letter-spacing: 3px;"><a href="../process/reportes/producto/index.php" target="_blank"><i class="fas fa-file-pdf"></i> <span>General.</span></a></li>
+			<li style="color:white; letter-spacing: 3px;"><a href="repoCat.php" target="_blank"><i class="fas fa-file-pdf"></i> <span>Categorias.</span></a></li>
 			<li style="color:white; letter-spacing: 3px;"><a href="../process/reportes/stock/index.php" target="_blank"><i class="fas fa-file-pdf"></i> <span>Stock Existente </span></a></li>
 			<li style="color:white; letter-spacing: 3px;"><a href="../process/reportes/agotado/index.php" target="_blank"><i class="fas fa-file-pdf"></i> <span>Stock Agotado</span></a></li>
 			<li style="color:white; letter-spacing: 3px;"><a href="../process/reportes/stock_cliente/index.php" target="_blank"><i class="fas fa-file-pdf"></i> <span>Stock Ventas</span></a></li>
@@ -102,7 +103,7 @@
 		';
 	  break;
 	  
-	  case 2:
+	  case 2://almacen
 		echo ' 
 			<ul class="nav">
 			<li class="active"><a href="index.php"><i class="fas fa-home fa-fw"></i> <span style="letter-spacing: 3px;">Inicio</span></a></li>
@@ -151,6 +152,7 @@
 			</a>
 			<ul class="sub-menu">
 			<li style="color:white; letter-spacing: 3px;"><a href="../process/reportes/producto/index.php" target="_blank"><i class="fas fa-file-pdf"></i> <span>General.</span></a></li>
+			<li style="color:white; letter-spacing: 3px;"><a href="repoCat.php" ><i class="fas fa-file-pdf"></i> <span>Categorias.</span></a></li>
 			<li style="color:white; letter-spacing: 3px;"><a href="../process/reportes/stock/index.php" target="_blank"><i class="fas fa-file-pdf"></i> <span>Stock Existente </span></a></li>
 			<li style="color:white; letter-spacing: 3px;"><a href="../process/reportes/agotado/index.php" target="_blank"><i class="fas fa-file-pdf"></i> <span>Stock Agotado</span></a></li>
 			<li style="color:white; letter-spacing: 3px;"><a href="../process/reportes/stock_cliente/index.php" target="_blank"><i class="fas fa-file-pdf"></i> <span>Stock Ventas</span></a></li>
@@ -169,7 +171,7 @@
 		';
 	  break;
 
-	  case 3:
+	  case 3://consultas
 		echo ' 
 			<ul class="nav">
 			<li class="active"><a href="index.php"><i class="fas fa-home fa-fw"></i> <span style="letter-spacing: 3px;">Inicio</span></a></li>
@@ -225,7 +227,7 @@
 		';
 	  break;
 
-	  case 4:
+	  case 4://comprobantes_admin
 		echo ' 
 			<ul class="nav">
 			<li class="active"><a href="index.php"><i class="fas fa-home fa-fw"></i> <span style="letter-spacing: 3px;">Inicio</span></a></li>
@@ -244,7 +246,7 @@
 		';
 	  break;
 
-	  case 5:
+	  case 5://comprobantes_simples
 		echo ' 
 			<ul class="nav">
 			<li class="active"><a href="index.php"><i class="fas fa-home fa-fw"></i> <span style="letter-spacing: 3px;">Inicio</span></a></li>
@@ -264,7 +266,7 @@
 		';
 	  break;
 
-	  case 6:
+	  case 6://delivery
 		echo ' 
 			<ul class="nav">
 			<li class="active"><a href="index.php"><i class="fas fa-home fa-fw"></i> <span style="letter-spacing: 3px;">Inicio</span></a></li>

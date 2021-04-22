@@ -1,10 +1,10 @@
 <?php
 	include 'plantilla.php';
 	require 'conexion.php';
-	
+	$codigoCat = $_GET['codigo'];
 	$query = "SELECT `producto`.*, `producto`.`Stock`
 	FROM `producto`
-	WHERE `producto`.`Stock` >= '0' ORDER BY `CodigoProd` ASC";
+	WHERE `producto`.`CodigoCat` = '$codigoCat' ORDER BY `CodigoProd` ASC";
 	$resultado = $mysqli->query($query);
 	 
 	$taza_dia_query = "SELECT `taza_cambio`.*, `taza_cambio`.`id` FROM `taza_cambio` WHERE `taza_cambio`.`id` = '1';";
