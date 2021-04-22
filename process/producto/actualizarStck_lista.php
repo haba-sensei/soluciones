@@ -27,7 +27,7 @@ $col =array(
 
 );  //create column like table in database
 
-$sql ="SELECT * FROM producto WHERE Stock = '1' ";
+$sql ="SELECT * FROM producto WHERE Stock >= '1' ";
 $query=mysqli_query($conn,$sql);
 
 $totalData=mysqli_num_rows($query);
@@ -35,7 +35,7 @@ $totalData=mysqli_num_rows($query);
 $totalFilter=$totalData;
 
 //Search
-$sql ="SELECT * FROM producto WHERE Stock = '1' ";
+$sql ="SELECT * FROM producto WHERE Stock >= '1' ";
 if(!empty($request['search']['value'])){  
 $sql.=" AND (CodigoProd Like '".$request['search']['value']."%' ";
 $sql.=" OR NombreProd Like '".$request['search']['value']."%' ";

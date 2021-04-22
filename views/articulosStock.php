@@ -105,7 +105,7 @@ $prod = mysqli_num_rows($con1);
 $con2= ejecutarSQL::consultar("SELECT `producto`.*, `producto`.`Stock` FROM `producto` WHERE `producto`.`Stock` ='0' ");
 $stock_agotado = mysqli_num_rows($con2);
 
-$con3= ejecutarSQL::consultar("SELECT `producto`.*, `producto`.`Stock` FROM `producto` WHERE `producto`.`Stock` ='1' ");
+$con3= ejecutarSQL::consultar("SELECT `producto`.*, `producto`.`Stock` FROM `producto` WHERE `producto`.`Stock`  >= '1' ");
 $stock_abilitado = mysqli_num_rows($con3);
 
 
