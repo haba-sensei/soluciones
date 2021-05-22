@@ -57,7 +57,11 @@ $data=array();
 $CodArea = $_SESSION['CodigoArea'];
 while($row=mysqli_fetch_array($query)){
 $subdata=array();
-$subdata[]='<img src=../assets/img-products/'.$row[15].' width="50" height="50" />'; //id
+if($row[8] == 0){
+    $subdata[]='<img src=../assets/img-products/'.$row[15].' style="border: solid 3px red;" width="50" height="50" />'; //id
+}else {
+    $subdata[]='<img src=../assets/img-products/'.$row[15].' style="border: solid 3px green;" width="50" height="50" />'; //id
+}
 $subdata[]=$row[0]; //cod_prod
 $subdata[]=$row[1]; //nombre
 $subdata[]=$row[5]; //modelo    

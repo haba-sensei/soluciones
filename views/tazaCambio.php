@@ -136,7 +136,7 @@ Licencia: Proveedor de servicios
                                      $fecha = date("Y-m-d"); 
                                     
                                     ?>
-                                    <a href="https://api.sunat.cloud/cambio/<?=$fecha?>" class="btn btn-primary" target="_blank" >Consulta del Dia</a>
+                                    <a href="https://api.apis.net.pe/v1/tipo-cambio-sunat?fecha=<?=$fecha?>" class="btn btn-primary" target="_blank" >Consulta del Dia</a>
                                     </p>
                                     
                                    

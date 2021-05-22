@@ -210,7 +210,7 @@ session_start();
                         
                         break;
                     case 'soles':
-                        $totalGeneral = $totalGeneral_sin_formato * $globalTasaCambio_dolar;
+                        $totalGeneral = round($totalGeneral_sin_formato * $globalTasaCambio_dolar, 2);
                         $simbolo = "S/ ";
                         $costo_delivery_f =  $costo_adicional;
                         $format_delivery =  str_replace(',', '',  $costo_delivery_f); 

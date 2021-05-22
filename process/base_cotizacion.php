@@ -245,7 +245,7 @@
 				$pdf->addCadreEurosFrancs3();
 				$pdf->addCadreEurosFrancs4();
 				
-				 unset($_SESSION["products"]);
+				unset($_SESSION["products"]);
 				 	
 		
 				

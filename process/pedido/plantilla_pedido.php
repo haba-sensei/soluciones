@@ -1055,7 +1055,7 @@ function draw_code39($code, $x, $y, $w, $h) {
 	switch ($moneda) {
         case 'soles':
             $simbolo ="S/";
-            $monto_soles = $GranTotal * $globalTasaCambio_dolar;
+            $monto_soles = round($GranTotal * $globalTasaCambio_dolar, 2);
 
             
              $subtotal_final =  $monto_soles / 1.18 ; 

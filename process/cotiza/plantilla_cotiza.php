@@ -913,7 +913,7 @@ function draw_code39($code, $x, $y, $w, $h) {
     
     $this->SetFont( "Arial", "B", 8);
     $this->SetXY( $r1+23, $y1 );
-    $this->Cell(15,4, "FIRMA Y SELLO", 0, 0, "C");
+    $this->Cell(15,4, "FIRMA Y SELLO ", 0, 0, "C");
     $this->SetFont( "Arial", "", 7);		
 	$this->SetXY( $r1+23, $y1+32 );
     $this->Cell(15,4, "Es una representacion impresa de la cotizacion ", 0, 0, "C");
@@ -988,7 +988,7 @@ function draw_code39($code, $x, $y, $w, $h) {
 
     $this->SetFont( "Arial", "B", 12);
     $this->SetXY( $r1+4, $y1+4 );
-    $this->Cell(15,4, utf8_decode("Subtotal "), 0, 0, "C");
+    $this->Cell(15,4, utf8_decode("Subtotal 1"), 0, 0, "C");
 
     $this->SetXY( $r1+4, $y1+15 );
     $this->Cell(15,4, utf8_decode("Igv 18% "), 0, 0, "C");            
@@ -1010,8 +1010,8 @@ function draw_code39($code, $x, $y, $w, $h) {
         $globalTasaCambio_dolar = number_format($compra_dolar, 2);
 
         $simbolo ="S/";
-        $monto_soles = $GranTotal * $globalTasaCambio_dolar - $descuento;
-        $totalGeneral = $monto_soles + $descuento ;
+        $monto_soles = round($GranTotal * $globalTasaCambio_dolar - $descuento, 2);
+        $totalGeneral =  $monto_soles + $descuento;
         
         $subtotal_final = number_format($monto_soles / 1.18 , 2);
         $subtotal_final_format_without_comma =  str_replace(',', '',  $subtotal_final);

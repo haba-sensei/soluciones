@@ -197,7 +197,7 @@ echo '  <div class="row">
                                                 <th>Stock</th>
                                                 <th>Peso</th>
                                                 <th>CodBarras</th>
-                                                <th>UniTMedida</th>
+                                                <th>UniTMedida</th> 
                                             </tr>
                                         </thead>
                                         <tbody>

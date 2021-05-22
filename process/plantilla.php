@@ -1088,7 +1088,7 @@ function draw_code39($code, $x, $y, $w, $h) {
 
         switch ($Moneda_pago) {
         case 'soles':
-            $subtotal = $product_price_total  * $globalTasaCambio_dolar;
+            $subtotal = round($product_price_total  * $globalTasaCambio_dolar, 2);
             break;
             
         case 'dolares':
@@ -1097,7 +1097,7 @@ function draw_code39($code, $x, $y, $w, $h) {
             break;
     
         default:
-            $subtotal = $product_price_total  * $globalTasaCambio_dolar;
+            $subtotal = round($product_price_total  * $globalTasaCambio_dolar, 2 );
             break;        
         }
         

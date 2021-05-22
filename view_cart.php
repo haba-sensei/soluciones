@@ -835,7 +835,7 @@ include_once("library/config.inc.php");
                         </div>
                         <div class="vocher ajust_caja_voucher_mobil">
                             <?php
-                            $subtotal_final =  $total * $globalTasaCambio_dolar;
+                            $subtotal_final = round($total * $globalTasaCambio_dolar, 2);
                             
                             foreach ($taxes as $key => $value) {
                                 $import = 1.18;
@@ -849,7 +849,7 @@ include_once("library/config.inc.php");
                             //$shipping_cost = ($shipping_cost)?'Costo de envio : '.$currency. sprintf("%01.2f", $shipping_cost).'<br />':'';	
                             //$shipping_cost
                             $newstr = number_format($total_final_soles, 2, '.', '');
-                            $total_format = number_format($subtotal_final / 1.18, 2); 
+                            $total_format = round($subtotal_final / 1.18, 2); 
                             
                             ?>
 
@@ -1234,9 +1234,13 @@ include_once("library/config.inc.php");
 
                                                 <li class="">
                                                  <input type="button"
-                                                            style="position: absolute; bottom: -126px; padding: 16px; right: 450px; width: 22%;"
+                                                            style=" position: absolute;  bottom: -126px; padding: 16px;
+    right: 502px;
+    width: 25%;"
                                                             name="cotizacion" class=" action-button generar_coti" onclick="formSend('cotizacion')"
                                                             style="width:25%" value="Generar Cotizacion" />
+                                                            <a href='process/limpiar.php'  style="position: absolute; bottom: -126px; padding: 11px; right: 325px; background: red; width: 25%; text-align: center;"
+                                                class='action-button'>Finalizar Cotizacion</a>
 
                                                     <div class="radio-option" id="aca_cotiza"
                                                         style="text-align: -webkit-center; padding-top: 23px; margin-bottom: -7px;">
@@ -1351,17 +1355,21 @@ include_once("library/config.inc.php");
                                                 </li>
 
                                                 <li class="">
+                                                 
                                                 <input type="button"
-                                                            style=" position: absolute; bottom: -126px; right: 466px; width: 23%; padding: 16px;"
-                                                            name="compra1" class=" action-button" onclick="formSend('compra')"
+                                                            style="    position: absolute; bottom: -126px; right: 501px; width: 25%; padding: 16px;"
+                                                            name="compra1" class=" action-button generar_coti"   onclick="formSend('compra')"
                                                             value="Generar Compra" />
+
+                                                            <a href='process/limpiar.php'  style="position: absolute; bottom: -126px; padding: 11px; right: 325px; background: red; width: 25%; text-align: center;"
+                                                class='action-button'>Finalizar Cotizacion</a>
+
+
+
                                                     <div class="radio-option" id="aca_compra"
                                                         style=" text-align: -webkit-center; padding-top: 23px; margin-bottom: -7px;">
                                                         
-                                                        <input type="button"
-                                                            style=" position: absolute; bottom: -126px; right: 466px; width: 23%; padding: 16px;"
-                                                            name="compra1" class=" action-button generar_coti"   onclick="formSend('compra')"
-                                                            value="Generar Compra" />
+                                                        
 
                                                     </div>
                                                 </li>
@@ -1382,7 +1390,10 @@ include_once("library/config.inc.php");
 
                     </div>
                     <br> <br>
-                    <input type="button" name="previous" style="position: relative; left: -118px; padding: 16px;" class="previous action-button generar_coti_compra"
+                    <input type="button" name="previous" style="position: relative;
+    left: -160px;
+    padding: 15px;
+    width: 12%;" class="previous action-button generar_coti_compra"
                         onclick="ajusteBox_back_final()" value="Retroceder" />
 
                     <a style="display:none;"
@@ -1825,10 +1836,8 @@ include_once("library/config.inc.php");
                 },
                 dataType: "json",
             }).done(function(result) {
-
-
-
-                $('#nombre').val(result['razonSocial']);
+                
+                $('#nombre').val(result['nombre']);
 
                 $('#direccion').val(result['direccion'] + " - " + result['distrito']);
 

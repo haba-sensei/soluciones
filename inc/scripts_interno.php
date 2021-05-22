@@ -68,7 +68,7 @@ $(document).ready(function() {
 <script src="../assets/js/admin.js"></script> 
 <script>
  $(document).ready(function(){
-
+ 
 var dataTable1=$('#example2').DataTable({
     "processing": true,
     "serverSide":true,
