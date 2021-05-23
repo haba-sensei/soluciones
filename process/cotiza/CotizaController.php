@@ -97,13 +97,13 @@ session_start();
                     while ($fila=mysqli_fetch_array($conFact)){
                         // * $fila['Cantidad'] * $globalTasaCambio_dolar
                     $total_dolares_unit =  $fila['Precio']  * $fila['Cantidad'] * $globalTasaCambio_dolar;
-                    $total_soles =  $total_dolares_unit;
+                    $total_soles =  number_format($total_dolares_unit, 2);
 
 
-                    $total_dolares = $fila['Precio'] * $fila['Cantidad'];
+                    $total_dolares = number_format($fila['Precio'] * $fila['Cantidad'], 2);
                     $sum+= $total_dolares;
                     $total_dolares_f = $fila['Precio'] * $globalTasaCambio_dolar;
-                    $precio_unit_soles = $total_dolares_f ;
+                    $precio_unit_soles = number_format($total_dolares_f, 2);
                     $precio_unit_dolares = $fila['Precio'];
                     echo '
                           <tr>

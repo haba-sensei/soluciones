@@ -968,7 +968,8 @@ function draw_code39($code, $x, $y, $w, $h) {
         $fecha_cotizacion = $lista1['fecha_cotizacion'];
         $GranTotal = $lista1['GranTotal'];
         $descuento = $lista1['descuento'];
-        $estado = $lista1['Estado'];
+        $estado = $lista1['Estado']; 
+        $taza_cambio = $lista1['taza_cambio'];
         $forma_entrega = $lista1['forma_entrega'];
         $forma_pago = $lista1['forma_pago'];
         $medio_pago = $lista1['medio_pago'];
@@ -1048,14 +1049,21 @@ function draw_code39($code, $x, $y, $w, $h) {
         $compra_dolar=$tazaC['taza'];        
         }
 
-        $globalTasaCambio_dolar = number_format($compra_dolar, 2);
+        if($taza_cambio > 0.00){
+            $globalTasaCambio_dolar_f = $taza_cambio;
+        }else {
+            $globalTasaCambio_dolar_f = number_format($compra_dolar, 2);
+        }
+
+
+       
    
  
   
 	switch ($moneda) {
         case 'soles':
             $simbolo ="S/";
-            $monto_soles = round($GranTotal * $globalTasaCambio_dolar, 2);
+            $monto_soles = round($GranTotal * $globalTasaCambio_dolar_f, 2);
 
             
              $subtotal_final =  $monto_soles / 1.18 ; 
@@ -1076,7 +1084,7 @@ function draw_code39($code, $x, $y, $w, $h) {
             $monto_igv = $monto_dolares  - $subtotal_final;
             
 
-            $monto_delivery = number_format($costo_adicional / $globalTasaCambio_dolar, 2) ;
+            $monto_delivery = number_format($costo_adicional / $globalTasaCambio_dolar_f, 2) ;
             $operacion = $monto_dolares - $a_cuenta - $descuento + $monto_delivery + $tarjeta_5_porciento;
             $total_venta = number_format($operacion , 2 ) ;
             break;

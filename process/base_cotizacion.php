@@ -144,7 +144,7 @@
 
 						switch ($Moneda_pago) {
 							case 'soles':
-								$product_soles_ = $product_price_unitario * $globalTasaCambio_dolar; 
+								$product_soles_ = number_format($product_price_unitario * $globalTasaCambio_dolar, 2); 
 								break;
 							
 								case 'dolares':
@@ -156,8 +156,8 @@
 						$total_indi =  str_replace(',', '',  $product_soles_ );
 
 						$subtotal_f = $total_indi * $product_qty;
-						$subtotal = number_format($subtotal_f, 3);
-   						$total = $subtotal_f + $total ; 
+						$subtotal = number_format($subtotal_f, 2);
+   						$total = $subtotal_f + $total; 
 						 
 						} 
 
@@ -245,7 +245,7 @@
 				$pdf->addCadreEurosFrancs3();
 				$pdf->addCadreEurosFrancs4();
 				
-				unset($_SESSION["products"]);
+				// unset($_SESSION["products"]);
 				 	
 		
 				

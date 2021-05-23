@@ -808,12 +808,12 @@ include_once("library/config.inc.php");
                                             </div>
                                         </td>
                                         <td class="cakes price texto_precio_mobil" style="width: 20%;">
-                                            <?php echo $currency." ".number_format($product_price_soles, 3); ?></h4>
+                                            <?php echo $currency." ".number_format($product_price_soles, 2); ?></h4>
 
                                         </td>
                                         <td class="cakes top-remove " style="width: 20%;">
                                             <h4 class="texto_precio_mobil"><?php echo $currency;
-                                                    echo number_format($total_indi, 3); ?></h4>
+                                                    echo number_format($total_indi, 2); ?></h4>
                                             <div class="close-btm botones_remove_ver_prod">
 
                                                 <a href="javascript:" align="left" class="remove-item" style="margin-right: 6px;" data-code="<?php echo $product_code; ?>">
@@ -858,7 +858,7 @@ include_once("library/config.inc.php");
 
                             <div class="dis-total">
                             <h1 style="width:  40%; ">Sub Total :&nbsp;</h1>
-                                <h1 class="dis-res" style="width: 157px;     background: #cecece;"><?php echo $currency." ". $total_format;  ?></h1>
+                                <h1 class="dis-res" style="width: 157px;     background: #cecece;"><?php echo $currency." ". number_format($total_format, 2);  ?></h1>
 
                             </div>
                             <div class="clear"> </div>

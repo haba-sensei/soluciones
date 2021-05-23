@@ -96,12 +96,12 @@ session_start();
                     $conFact= ejecutarSQL::consultar("SELECT `detalle_cotizacion_online`.*, `detalle_cotizacion_online`.`id_cotizacion`, `producto`.`CodigoProd`, `producto`.*, `cotizacion_online`.`id_cotizacion` FROM `detalle_cotizacion_online`, `producto`, `cotizacion_online` WHERE `detalle_cotizacion_online`.`id_cotizacion` = '$NumPedido' AND `producto`.`CodigoProd` = `detalle_cotizacion_online`.`CodigoProd` AND `cotizacion_online`.`id_cotizacion` = `detalle_cotizacion_online`.`id_cotizacion`;");
                     while ($fila=mysqli_fetch_array($conFact)){
                 
-                    $total_dolares = $fila['Precio'] * $fila['Cantidad'];
+                    $total_dolares = number_format($fila['Precio'] * $fila['Cantidad'], 2);
                     $total_indi =  str_replace(',', '',  $total_dolares );
-                    $total_soles = $globalTasaCambio_dolar * $total_indi;
+                    $total_soles = number_format($globalTasaCambio_dolar * $total_indi, 2);
                     $total_dolares_f = $globalTasaCambio_dolar * $fila['Precio'];
-                    $precio_unit_soles = $total_dolares_f;
-                    $precio_unit_dolares = $fila['Precio'];
+                    $precio_unit_soles = number_format($total_dolares_f, 2);
+                    $precio_unit_dolares = number_format($fila['Precio'], 2);
                     // href="../infoProd.php?CodigoProd='.$fila['CodigoProd'].'"
                     echo '
                           <tr>

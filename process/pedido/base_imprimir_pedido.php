@@ -80,11 +80,15 @@
 						break; 
 				}
 
-
+				if($taza_cambio > 0.00){
+					$globalTasaCambio_dolar_f = $taza_cambio;
+				}else {
+					$globalTasaCambio_dolar_f = number_format($compra_dolar, 2);
+				}
 
 				$pdf->fact_dev10(utf8_decode( "Forma de Entrega: "), $despacho);
 				$pdf->fact_dev11(utf8_decode( "Estatus:"), $estatus_operacion);
-				$pdf->fact_dev13(utf8_decode( "Taza Dia:"), "S/ ".$globalTasaCambio_dolar);
+				$pdf->fact_dev13(utf8_decode( "Taza Dia:"), "S/ ".$globalTasaCambio_dolar_f);
 				
 				
 			}
@@ -132,8 +136,8 @@
 				switch ($moneda) {
 					case 'soles':
 						 
-						$product_price_f = number_format($product_price * $globalTasaCambio_dolar, 2) ;
-						$product_subtotal_f = number_format($product_subtotal * $globalTasaCambio_dolar, 2) ;
+						$product_price_f = number_format($product_price * $globalTasaCambio_dolar_f, 2) ;
+						$product_subtotal_f = number_format($product_subtotal * $globalTasaCambio_dolar_f, 2) ;
 						break;
 					
 					case 'dolares':
@@ -164,7 +168,7 @@
 				switch ($moneda) {
 					case 'soles':
 						 
-						$monto_soles = $GranTotal * $globalTasaCambio_dolar;
+						$monto_soles = $GranTotal * $globalTasaCambio_dolar_f;
 						
 						$monto_final = $monto_soles - $descuento - $a_cuenta + $tarjeta_5_porciento + $costo_adicional;
 
@@ -173,7 +177,7 @@
 					case 'dolares':
 
 						$monto_dolares = $GranTotal;
-						$monto_delivery = number_format($costo_adicional / $globalTasaCambio_dolar, 2) ;
+						$monto_delivery = number_format($costo_adicional / $globalTasaCambio_dolar_f, 2) ;
 						$monto_final = $monto_dolares - $descuento - $a_cuenta + $tarjeta_5_porciento + $monto_delivery;
 
 						break;

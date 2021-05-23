@@ -13,6 +13,7 @@
         $GranTotal = $lista1['GranTotal'];
         $descuento = $lista1['descuento'];
         $estado = $lista1['Estado'];
+        $taza_cambio = $lista1['taza_cambio'];
         $forma_entrega = $lista1['forma_entrega'];
         $forma_pago = $lista1['forma_pago'];
         $medio_pago = $lista1['medio_pago'];
